@@ -34,6 +34,7 @@
 import argparse, subprocess
 from argparse import RawTextHelpFormatter
 from pwstats import PasswordStats
+import os.path
 import time
 
 JTR_POT_FILE_PATH = "/opt/john/run/john.pot"
@@ -82,8 +83,9 @@ def run_jtr(pMethod: int, pVerbose: bool, pDebug: bool) -> None:
         print("[*] Working on file {}".format(lHashFile))
 
     if pDebug:
-        lCompletedProcess = subprocess.run(["rm", JTR_POT_FILE_PATH], stdout=subprocess.PIPE)
-        print("[*] Deleted file {}".format(JTR_POT_FILE_PATH))
+        if os.path.exists(JTR_POT_FILE_PATH):
+            lCompletedProcess = subprocess.run(["rm", JTR_POT_FILE_PATH], stdout=subprocess.PIPE)
+            print("[*] Deleted file {}".format(JTR_POT_FILE_PATH))
         time.sleep(1)
 
     if pMethod == 1:
@@ -98,7 +100,7 @@ def run_jtr(pMethod: int, pVerbose: bool, pDebug: bool) -> None:
     elif pMethod == 4:
         if pVerbose: print("[*] Starting mode: Wordlist hob0-short-crack.txt Rule best64")
         lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/hob0-short-crack.txt", "--rules=best64", lHashFile], stdout=subprocess.PIPE)
-    elif pMethod == 5:
+    elif pMethod == 5:best102
         if pVerbose: print("[*] Starting mode: Wordlist other-base-words.txt Rule best64")
         lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/other-base-words.txt", "--rules=best64", lHashFile], stdout=subprocess.PIPE)
     elif pMethod == 6:
@@ -107,16 +109,6 @@ def run_jtr(pMethod: int, pVerbose: bool, pDebug: bool) -> None:
     elif pMethod == 7:
         if pVerbose: print("[*] Starting mode: Wordlist female-given-names.txt Rule best64")
         lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/female-given-names.txt", "--rules=best64", lHashFile], stdout=subprocess.PIPE)
-
-    elif pMethod == 8:
-        if pVerbose: print("[*] Starting mode: Wordlist top-10000-english-words.txt Rule korelogic")
-        lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/top-10000-english-words.txt", "--rules=korelogic", lHashFile], stdout=subprocess.PIPE)
-
-    elif pMethod == 9:
-        if pVerbose: print("[*] Starting mode: Wordlist top-10000-english-words.txt Rule d3adhob0")
-        lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/top-10000-english-words.txt", "--rules=d3adhob0", lHashFile], stdout=subprocess.PIPE)
-
-
 
     #print(lCompletedProcess.stdout)
     time.sleep(1)
@@ -157,11 +149,10 @@ if __name__ == '__main__':
 
     lHashFile = lArgs.input_file
 
-    #for i in range(1,8,1):
-    run_jtr(8, True, True)
-    time.sleep(1)
-    run_jtr(9, True, True)
-    time.sleep(1)
+    for i in range(1,8,1):
+        run_jtr(i, True, True)
+        time.sleep(1)
+
 
     if lArgs.stat_crack:
 
