@@ -73,54 +73,74 @@ def parse_jtr_pot(pVerbose: bool, pDebug: bool) -> list:
     return lListOfPasswords
 
 
-def run_jtr(pMethod: int, pVerbose: bool, pDebug: bool) -> None:
+def run_jtr_prayer_mode(pMethod: int, pVerbose: bool, pDebug: bool) -> None:
 
-    lStartTime = 0
+    lStartTime = time.time()
     lEndTime = 0
 
-    if pVerbose:
-        lStartTime = time.time()
-        print("[*] Working on file {}".format(lHashFile))
-
-    if pDebug:
-        if os.path.exists(JTR_POT_FILE_PATH):
+    if pDebug and os.path.exists(JTR_POT_FILE_PATH):
             lCompletedProcess = subprocess.run(["rm", JTR_POT_FILE_PATH], stdout=subprocess.PIPE)
             print("[*] Deleted file {}".format(JTR_POT_FILE_PATH))
-        time.sleep(1)
+            time.sleep(1)
 
     if pMethod == 1:
         if pVerbose: print("[*] Starting mode: Wordlist passwords-hailmary.txt")
         lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=passwords/passwords-hailmary.txt", lHashFile], stdout=subprocess.PIPE)
     elif pMethod == 2:
-        if pVerbose: print("[*] Starting mode: Wordlist top-10000-english-words.txt Rule best64")
-        lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/top-10000-english-words.txt", "--rules=best64", lHashFile], stdout=subprocess.PIPE)
+        if pVerbose: print("[*] Starting mode: Wordlist top-10000-english-words.txt Rule best102")
+        lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/top-10000-english-words.txt", "--rules=best102", lHashFile], stdout=subprocess.PIPE)
     elif pMethod == 3:
-        if pVerbose: print("[*] Starting mode: Wordlist worst-10000-passwords.txt Rule best64")
-        lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=passwords/worst-10000-passwords.txt", "--rules=best64", lHashFile], stdout=subprocess.PIPE)
+        if pVerbose: print("[*] Starting mode: Wordlist worst-10000-passwords.txt Rule best102")
+        lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=passwords/worst-10000-passwords.txt", "--rules=best102", lHashFile], stdout=subprocess.PIPE)
     elif pMethod == 4:
-        if pVerbose: print("[*] Starting mode: Wordlist hob0-short-crack.txt Rule best64")
-        lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/hob0-short-crack.txt", "--rules=best64", lHashFile], stdout=subprocess.PIPE)
-    elif pMethod == 5:best102
-        if pVerbose: print("[*] Starting mode: Wordlist other-base-words.txt Rule best64")
-        lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/other-base-words.txt", "--rules=best64", lHashFile], stdout=subprocess.PIPE)
+        if pVerbose: print("[*] Starting mode: Wordlist hob0-short-crack.txt Rule best102")
+        lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/hob0-short-crack.txt", "--rules=best102", lHashFile], stdout=subprocess.PIPE)
+    elif pMethod == 5:
+        if pVerbose: print("[*] Starting mode: Wordlist other-base-words.txt Rule best102")
+        lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/other-base-words.txt", "--rules=best102", lHashFile], stdout=subprocess.PIPE)
     elif pMethod == 6:
-        if pVerbose: print("[*] Starting mode: Wordlist sports-related-words.txt Rule best64")
-        lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/sports-related-words.txt", "--rules=best64", lHashFile], stdout=subprocess.PIPE)
+        if pVerbose: print("[*] Starting mode: Wordlist sports-related-words.txt Rule best102")
+        lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/sports-related-words.txt", "--rules=best102", lHashFile], stdout=subprocess.PIPE)
     elif pMethod == 7:
-        if pVerbose: print("[*] Starting mode: Wordlist female-given-names.txt Rule best64")
-        lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/female-given-names.txt", "--rules=best64", lHashFile], stdout=subprocess.PIPE)
-
-    #print(lCompletedProcess.stdout)
-    time.sleep(1)
+        if pVerbose: print("[*] Starting mode: Wordlist female-given-names.txt Rule best102")
+        lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/female-given-names.txt", "--rules=best102", lHashFile], stdout=subprocess.PIPE)
 
     if pVerbose:
-        lEndTime = time.time()
+        print(lCompletedProcess.stdout)
         lListOfPasswords = parse_jtr_pot(True, True)
         print("[*] Finished")
-        print("Duration: {}".format(lEndTime - lStartTime))
         print("[*] Passwords cracked: " + str(lListOfPasswords.__len__()))
 
-    time.sleep(1)
+    if pDebug:
+        lEndTime = time.time()
+        print("Duration: {}".format(lEndTime - lStartTime))
+
+
+def run_jtr_mask_mode(pMask: str, pVerbose: bool, pDebug: bool) -> None:
+
+        lStartTime = time.time()
+        lEndTime = 0
+
+        if pDebug and os.path.exists(JTR_POT_FILE_PATH):
+            lCompletedProcess = subprocess.run(["rm", JTR_POT_FILE_PATH], stdout=subprocess.PIPE)
+            print("[*] Deleted file {}".format(JTR_POT_FILE_PATH))
+            time.sleep(1)
+
+        if pVerbose: print("[*] Starting mask mode: {}".format(pMask))
+        lCompletedProcess = subprocess.run(
+                [JTR_FILE_PATH, "--format=descrypt", "--mask={}".format(pMask), lHashFile],
+                stdout=subprocess.PIPE)
+
+        if pVerbose:
+            print(lCompletedProcess.stdout)
+            lListOfPasswords = parse_jtr_pot(True, True)
+            print("[*] Finished")
+            print("[*] Passwords cracked: " + str(lListOfPasswords.__len__()))
+
+        if pDebug:
+            lEndTime = time.time()
+            print("Duration: {}".format(lEndTime - lStartTime))
+
 
 if __name__ == '__main__':
 
@@ -134,6 +154,10 @@ if __name__ == '__main__':
     lArgParser.add_argument('-s', '--stat-crack',
                             help='Enable smart crack. Byepass will run relatively fast cracking strategies in hopes of cracking enough passwords to induce a pattern and create "high probability" masks. Byepass will use the masks in an attempt to crack more passwords.',
                             action='store_true')
+    lArgParser.add_argument('-p', '--percentile',
+                            type=float,
+                            help='Based on statistical analysis of the passwords provided, only list masks needed to crack at least the given percent of passwords. For example, if a value of 0.25 provided, only lists the relatively few masks needed to crack 25% of the passwords. The prediction is only as good as the sample passwords provided in the INPUT FILE. The more closely the provided passwords match the target passwords, the better the prediction.',
+                            action='store')
     lArgParser.add_argument('-v', '--verbose',
                             help='Enable verbose output',
                             action='store_true')
@@ -149,10 +173,13 @@ if __name__ == '__main__':
 
     lHashFile = lArgs.input_file
 
-    for i in range(1,8,1):
-        run_jtr(i, True, True)
-        time.sleep(1)
+    if lArgs.verbose:
+        lStartTime = time.time()
+        print("[*] Working on file {}".format(lHashFile))
 
+    for i in range(1,8,1):
+        run_jtr_prayer_mode(i, True, False)
+        time.sleep(1)
 
     if lArgs.stat_crack:
 
@@ -169,5 +196,18 @@ if __name__ == '__main__':
             print("[*] Finished parsing input file " + JTR_POT_FILE_PATH)
             print("[*] Parsed {} passwords into {} masks".format(lPasswordStats.count_passwords, lPasswordStats.count_masks))
 
-        if lArgs.verbose: print("[*] Password masks ({} percentile):".format(lArgs.percentile), end='')
-        print(lPasswordStats.masks)
+        if lArgs.percentile:
+            if not 0.0 <= lArgs.percentile <= 1.00:
+                raise ValueError('The percentile provided must be between 0.0 and 1.0.')
+            lPercentile = lArgs.percentile
+        else:
+            lPercentile = 1.0
+
+        if lArgs.verbose: print("[*] Password masks ({} percentile):".format(lPercentile), end='')
+        lMasks = lPasswordStats.get_popular_masks(lPercentile)
+        print(lMasks)
+
+        for lMask in lMasks:
+            run_jtr_mask_mode(lMask, True, False)
+            time.sleep(1)
+
