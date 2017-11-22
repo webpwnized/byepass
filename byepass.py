@@ -254,6 +254,7 @@ if __name__ == '__main__':
         lMasks = lPasswordStats.get_popular_masks(lPercentile)
         print(lMasks)
 
+        lUndefinedMasks = []
         for lMask in lMasks:
             if lArgs.verbose: print("[*] Processing mask: {}".format(lMask))
             if re.match('^(\?l)+$', lMask):
@@ -295,4 +296,7 @@ if __name__ == '__main__':
                 run_jtr_wordlist_mode(pWordlist=lWordlist, pRule=lRule, pVerbose=True, pDebug=False)
                 time.sleep(1)
             else:
+                lUndefinedMasks.append(lMask)
                 print("[*] WARNING: No policy defined for mask {}".format(lMask))
+
+        print("[*] WARNING: There was nos policy defined for the following masks: {}".format(lUndefinedMasks))
