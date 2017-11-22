@@ -36,6 +36,7 @@ from argparse import RawTextHelpFormatter
 from pwstats import PasswordStats
 import os.path
 import time
+import re
 
 JTR_POT_FILE_PATH = "/opt/john/run/john.pot"
 JTR_FILE_PATH = "/opt/john/run/john"
@@ -71,6 +72,31 @@ def parse_jtr_pot(pVerbose: bool, pDebug: bool) -> list:
                 lListOfPasswords.append(lPassword)
 
     return lListOfPasswords
+
+def run_jtr_wordlist_mode(pWordlist: int, pVerbose: bool, pDebug: bool) -> None:
+
+    lStartTime = time.time()
+    lEndTime = 0
+
+    if pDebug and os.path.exists(JTR_POT_FILE_PATH):
+        lCompletedProcess = subprocess.run(["rm", JTR_POT_FILE_PATH], stdout=subprocess.PIPE)
+        print("[*] Deleted file {}".format(JTR_POT_FILE_PATH))
+        time.sleep(1)
+
+    if pVerbose: print("[*] Starting wordlist mode: {}".format(pWordlist))
+    lCompletedProcess = subprocess.run(
+        [JTR_FILE_PATH, "--format=descrypt", "--wordlist={}".format(pWordlist), lHashFile],
+        stdout=subprocess.PIPE)
+
+    if pVerbose:
+        print(lCompletedProcess.stdout)
+        lListOfPasswords = parse_jtr_pot(True, True)
+        print("[*] Finished")
+        print("[*] Passwords cracked: " + str(lListOfPasswords.__len__()))
+
+    if pDebug:
+        lEndTime = time.time()
+        print("Duration: {}".format(lEndTime - lStartTime))
 
 
 def run_jtr_prayer_mode(pMethod: int, pVerbose: bool, pDebug: bool) -> None:
@@ -178,8 +204,8 @@ if __name__ == '__main__':
         print("[*] Working on file {}".format(lHashFile))
 
     for i in range(1,8,1):
-        run_jtr_prayer_mode(i, True, False)
-        time.sleep(1)
+         run_jtr_prayer_mode(i, True, False)
+         time.sleep(1)
 
     if lArgs.stat_crack:
 
@@ -208,6 +234,8 @@ if __name__ == '__main__':
         print(lMasks)
 
         for lMask in lMasks:
-            run_jtr_mask_mode(lMask, True, False)
-            time.sleep(1)
+            if re.match('^[?l]+$', lMask):
+                lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lMask.count('?l')))
+                run_jtr_wordlist_mode(lWordlist, True, False)
+                time.sleep(1)
 
