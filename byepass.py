@@ -139,11 +139,19 @@ def run_jtr_prayer_mode(pMethod: int, pVerbose: bool, pDebug: bool) -> None:
         lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/sports-related-words.txt", "--rules=best126", lHashFile], stdout=subprocess.PIPE)
     elif pMethod == 7:
         if pVerbose: print("[*] Starting mode: Wordlist persons-names.txt Rule best126")
-        lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/female-given-names.txt", "--rules=best126", lHashFile], stdout=subprocess.PIPE)
+        lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/persons-names.txt", "--rules=best126", lHashFile], stdout=subprocess.PIPE)
     elif pMethod == 8:
-        if pVerbose: print("[*] Starting mode: Wordlist 4-digit-numbers.txt")
+        if pVerbose: print("[*] Starting mode: Wordlist 4-digit-numbers.txt Rule best126")
         lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/4-digit-numbers.txt", "--rules=best126", lHashFile], stdout=subprocess.PIPE)
-
+    elif pMethod == 9:
+        if pVerbose: print("[*] Starting mode: Wordlist 6-digit-numbers.txt Rule best126")
+        lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/6-digit-numbers.txt", "--rules=best126", lHashFile], stdout=subprocess.PIPE)
+    elif pMethod == 10:
+        if pVerbose: print("[*] Starting mode: Wordlist calendar.txt Rule BPAppendYears")
+        lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/calendar.txt", "--rules=bpappendyears", lHashFile], stdout=subprocess.PIPE)
+    elif pMethod == 11:
+        if pVerbose: print("[*] Starting mode: JTR single crack")
+        lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--single", lHashFile], stdout=subprocess.PIPE)
 
     if pVerbose:
         print("Command: {}".format(lCompletedProcess.args))
@@ -216,7 +224,7 @@ if __name__ == '__main__':
         lStartTime = time.time()
         print("[*] Working on file {}".format(lHashFile))
 
-    for i in range(1,9,1):
+    for i in range(1,12,1):
           run_jtr_prayer_mode(i, True, False)
           time.sleep(1)
 
