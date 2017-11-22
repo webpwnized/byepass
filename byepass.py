@@ -101,6 +101,7 @@ def run_jtr_wordlist_mode(pWordlist: str, pRule: str, pVerbose: bool, pDebug: bo
             stdout=subprocess.PIPE)
 
     if pVerbose:
+        print("Command: {}".format(lCompletedProcess.args))
         print(lCompletedProcess.stdout)
         lListOfPasswords = parse_jtr_pot(True, True)
         print("[*] Finished")
@@ -122,25 +123,30 @@ def run_jtr_prayer_mode(pMethod: int, pVerbose: bool, pDebug: bool) -> None:
         if pVerbose: print("[*] Starting mode: Wordlist passwords-hailmary.txt")
         lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=passwords/passwords-hailmary.txt", lHashFile], stdout=subprocess.PIPE)
     elif pMethod == 2:
-        if pVerbose: print("[*] Starting mode: Wordlist top-10000-english-words.txt Rule best102")
-        lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/top-10000-english-words.txt", "--rules=best102", lHashFile], stdout=subprocess.PIPE)
+        if pVerbose: print("[*] Starting mode: Wordlist top-10000-english-words.txt Rule best126")
+        lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/top-10000-english-words.txt", "--rules=best126", lHashFile], stdout=subprocess.PIPE)
     elif pMethod == 3:
-        if pVerbose: print("[*] Starting mode: Wordlist worst-10000-passwords.txt Rule best102")
-        lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=passwords/worst-10000-passwords.txt", "--rules=best102", lHashFile], stdout=subprocess.PIPE)
+        if pVerbose: print("[*] Starting mode: Wordlist worst-10000-passwords.txt Rule best126")
+        lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=passwords/worst-10000-passwords.txt", "--rules=best126", lHashFile], stdout=subprocess.PIPE)
     elif pMethod == 4:
-        if pVerbose: print("[*] Starting mode: Wordlist hob0-short-crack.txt Rule best102")
-        lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/hob0-short-crack.txt", "--rules=best102", lHashFile], stdout=subprocess.PIPE)
+        if pVerbose: print("[*] Starting mode: Wordlist hob0-short-crack.txt Rule best126")
+        lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/hob0-short-crack.txt", "--rules=best126", lHashFile], stdout=subprocess.PIPE)
     elif pMethod == 5:
-        if pVerbose: print("[*] Starting mode: Wordlist other-base-words.txt Rule best102")
-        lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/other-base-words.txt", "--rules=best102", lHashFile], stdout=subprocess.PIPE)
+        if pVerbose: print("[*] Starting mode: Wordlist other-base-words.txt Rule best126")
+        lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/other-base-words.txt", "--rules=best126", lHashFile], stdout=subprocess.PIPE)
     elif pMethod == 6:
-        if pVerbose: print("[*] Starting mode: Wordlist sports-related-words.txt Rule best102")
-        lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/sports-related-words.txt", "--rules=best102", lHashFile], stdout=subprocess.PIPE)
+        if pVerbose: print("[*] Starting mode: Wordlist sports-related-words.txt Rule best126")
+        lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/sports-related-words.txt", "--rules=best126", lHashFile], stdout=subprocess.PIPE)
     elif pMethod == 7:
-        if pVerbose: print("[*] Starting mode: Wordlist female-given-names.txt Rule best102")
-        lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/female-given-names.txt", "--rules=best102", lHashFile], stdout=subprocess.PIPE)
+        if pVerbose: print("[*] Starting mode: Wordlist persons-names.txt Rule best126")
+        lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/female-given-names.txt", "--rules=best126", lHashFile], stdout=subprocess.PIPE)
+    elif pMethod == 8:
+        if pVerbose: print("[*] Starting mode: Wordlist 4-digit-numbers.txt")
+        lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/4-digit-numbers.txt", "--rules=best126", lHashFile], stdout=subprocess.PIPE)
+
 
     if pVerbose:
+        print("Command: {}".format(lCompletedProcess.args))
         print(lCompletedProcess.stdout)
         lListOfPasswords = parse_jtr_pot(True, True)
         print("[*] Finished")
@@ -162,6 +168,7 @@ def run_jtr_mask_mode(pMask: str, pVerbose: bool, pDebug: bool) -> None:
         lCompletedProcess = subprocess.run(
                 [JTR_FILE_PATH, "--format=descrypt", "--mask={}".format(pMask), lHashFile],
                 stdout=subprocess.PIPE)
+        if pVerbose: print("Command: {}".format(lCompletedProcess.args))
 
         if pVerbose:
             print(lCompletedProcess.stdout)
@@ -209,7 +216,7 @@ if __name__ == '__main__':
         lStartTime = time.time()
         print("[*] Working on file {}".format(lHashFile))
 
-    for i in range(1,8,1):
+    for i in range(1,9,1):
           run_jtr_prayer_mode(i, True, False)
           time.sleep(1)
 
@@ -240,7 +247,25 @@ if __name__ == '__main__':
         print(lMasks)
 
         for lMask in lMasks:
-            if re.match('^[?l]+$', lMask):
+            if lArgs.verbose: print("[*] Processing mask: {}".format(lMask))
+            if re.match('^(\?l)+$', lMask):
+                lCountLetters = lMask.count('?l')
                 lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lMask.count('?l')))
-                run_jtr_wordlist_mode(pWordlist=lWordlist, pRule="best102", pVerbose=True, pDebug=False)
+                run_jtr_wordlist_mode(pWordlist=lWordlist, pRule="best126", pVerbose=True, pDebug=False)
                 time.sleep(1)
+            elif re.match('^(\?l)+(\?d)+$', lMask):
+                lCountLetters = lMask.count('?l')
+                lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lMask.count('?l')))
+                lRule = "append{}digits".format(str(lMask.count('?d')))
+                run_jtr_wordlist_mode(pWordlist=lWordlist, pRule=lRule, pVerbose=True, pDebug=False)
+                time.sleep(1)
+            elif re.match('^(\?u)(\?l)+$', lMask):
+                print("[*] This mask cover by previous policy")
+            elif re.match('^(\?u)(\?l)+(\?d)+$', lMask):
+                lCountLetters = lMask.count('?u') + lMask.count('?l')
+                lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
+                lRule = "capitalizeappend{}digits".format(str(lMask.count('?d')))
+                run_jtr_wordlist_mode(pWordlist=lWordlist, pRule=lRule, pVerbose=True, pDebug=False)
+                time.sleep(1)
+            else:
+                print("[*] WARNING: No policy defined for mask {}".format(lMask))
