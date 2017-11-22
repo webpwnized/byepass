@@ -73,20 +73,32 @@ def parse_jtr_pot(pVerbose: bool, pDebug: bool) -> list:
 
     return lListOfPasswords
 
-def run_jtr_wordlist_mode(pWordlist: int, pVerbose: bool, pDebug: bool) -> None:
 
-    lStartTime = time.time()
-    lEndTime = 0
+def rm_jtr_pot_file() -> None:
 
-    if pDebug and os.path.exists(JTR_POT_FILE_PATH):
+    if os.path.exists(JTR_POT_FILE_PATH):
         lCompletedProcess = subprocess.run(["rm", JTR_POT_FILE_PATH], stdout=subprocess.PIPE)
         print("[*] Deleted file {}".format(JTR_POT_FILE_PATH))
         time.sleep(1)
 
-    if pVerbose: print("[*] Starting wordlist mode: {}".format(pWordlist))
-    lCompletedProcess = subprocess.run(
-        [JTR_FILE_PATH, "--format=descrypt", "--wordlist={}".format(pWordlist), lHashFile],
-        stdout=subprocess.PIPE)
+
+def run_jtr_wordlist_mode(pWordlist: str, pRule: str, pVerbose: bool, pDebug: bool) -> None:
+
+    lStartTime = time.time()
+    lEndTime = 0
+
+    if pDebug: rm_jtr_pot_file()
+
+    if pRule:
+        if pVerbose: print("[*] Starting wordlist mode: {} Rule: {}".format(pWordlist, pRule))
+        lCompletedProcess = subprocess.run(
+            [JTR_FILE_PATH, "--format=descrypt", "--wordlist={}".format(pWordlist), "--rule={}".format(pRule), lHashFile],
+            stdout=subprocess.PIPE)
+    else:
+        if pVerbose: print("[*] Starting wordlist mode: {}".format(pWordlist))
+        lCompletedProcess = subprocess.run(
+            [JTR_FILE_PATH, "--format=descrypt", "--wordlist={}".format(pWordlist), lHashFile],
+            stdout=subprocess.PIPE)
 
     if pVerbose:
         print(lCompletedProcess.stdout)
@@ -104,10 +116,7 @@ def run_jtr_prayer_mode(pMethod: int, pVerbose: bool, pDebug: bool) -> None:
     lStartTime = time.time()
     lEndTime = 0
 
-    if pDebug and os.path.exists(JTR_POT_FILE_PATH):
-            lCompletedProcess = subprocess.run(["rm", JTR_POT_FILE_PATH], stdout=subprocess.PIPE)
-            print("[*] Deleted file {}".format(JTR_POT_FILE_PATH))
-            time.sleep(1)
+    if pDebug: rm_jtr_pot_file()
 
     if pMethod == 1:
         if pVerbose: print("[*] Starting mode: Wordlist passwords-hailmary.txt")
@@ -147,10 +156,7 @@ def run_jtr_mask_mode(pMask: str, pVerbose: bool, pDebug: bool) -> None:
         lStartTime = time.time()
         lEndTime = 0
 
-        if pDebug and os.path.exists(JTR_POT_FILE_PATH):
-            lCompletedProcess = subprocess.run(["rm", JTR_POT_FILE_PATH], stdout=subprocess.PIPE)
-            print("[*] Deleted file {}".format(JTR_POT_FILE_PATH))
-            time.sleep(1)
+        if pDebug: rm_jtr_pot_file()
 
         if pVerbose: print("[*] Starting mask mode: {}".format(pMask))
         lCompletedProcess = subprocess.run(
@@ -204,8 +210,8 @@ if __name__ == '__main__':
         print("[*] Working on file {}".format(lHashFile))
 
     for i in range(1,8,1):
-         run_jtr_prayer_mode(i, True, False)
-         time.sleep(1)
+          run_jtr_prayer_mode(i, True, False)
+          time.sleep(1)
 
     if lArgs.stat_crack:
 
@@ -236,6 +242,5 @@ if __name__ == '__main__':
         for lMask in lMasks:
             if re.match('^[?l]+$', lMask):
                 lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lMask.count('?l')))
-                run_jtr_wordlist_mode(lWordlist, True, False)
+                run_jtr_wordlist_mode(pWordlist=lWordlist, pRule="best102", pVerbose=True, pDebug=False)
                 time.sleep(1)
-
