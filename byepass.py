@@ -144,8 +144,8 @@ def run_jtr_prayer_mode(pMethod: int, pVerbose: bool, pDebug: bool) -> None:
         if pVerbose: print("[*] Starting mode: Wordlist 4-digit-numbers.txt Rule best126")
         lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/4-digit-numbers.txt", "--rules=best126", lHashFile], stdout=subprocess.PIPE)
     elif pMethod == 9:
-        if pVerbose: print("[*] Starting mode: Wordlist 6-digit-numbers.txt Rule best126")
-        lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/6-digit-numbers.txt", "--rules=best126", lHashFile], stdout=subprocess.PIPE)
+        if pVerbose: print("[*] Starting mode: Wordlist 6-digit-numbers.txt")
+        lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/6-digit-numbers.txt", lHashFile], stdout=subprocess.PIPE)
     elif pMethod == 10:
         if pVerbose: print("[*] Starting mode: Wordlist calendar.txt Rule BPAppendYears")
         lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/calendar.txt", "--rules=bpappendyears", lHashFile], stdout=subprocess.PIPE)
@@ -224,7 +224,7 @@ if __name__ == '__main__':
         lStartTime = time.time()
         print("[*] Working on file {}".format(lHashFile))
 
-    for i in range(1,12,1):
+    for i in range(1,11,1):
           run_jtr_prayer_mode(i, True, False)
           time.sleep(1)
 
@@ -258,21 +258,40 @@ if __name__ == '__main__':
             if lArgs.verbose: print("[*] Processing mask: {}".format(lMask))
             if re.match('^(\?l)+$', lMask):
                 lCountLetters = lMask.count('?l')
-                lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lMask.count('?l')))
+                lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
                 run_jtr_wordlist_mode(pWordlist=lWordlist, pRule="best126", pVerbose=True, pDebug=False)
                 time.sleep(1)
             elif re.match('^(\?l)+(\?d)+$', lMask):
                 lCountLetters = lMask.count('?l')
-                lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lMask.count('?l')))
-                lRule = "append{}digits".format(str(lMask.count('?d')))
+                lCountDigits = lMask.count('?d')
+                lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
+                lRule = "append{}digits".format(str(lCountDigits))
                 run_jtr_wordlist_mode(pWordlist=lWordlist, pRule=lRule, pVerbose=True, pDebug=False)
                 time.sleep(1)
             elif re.match('^(\?u)(\?l)+$', lMask):
-                print("[*] This mask cover by previous policy")
-            elif re.match('^(\?u)(\?l)+(\?d)+$', lMask):
                 lCountLetters = lMask.count('?u') + lMask.count('?l')
                 lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
-                lRule = "capitalizeappend{}digits".format(str(lMask.count('?d')))
+                lRule = "capitalize"
+                run_jtr_wordlist_mode(pWordlist=lWordlist, pRule=lRule, pVerbose=True, pDebug=False)
+                time.sleep(1)
+            elif re.match('^(\?u)(\?l)+(\?d)+$', lMask):
+                lCountLetters = lMask.count('?u') + lMask.count('?l')
+                lCountDigits = lMask.count('?d')
+                lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
+                lRule = "capitalizeappend{}digits".format(str(lCountDigits))
+                run_jtr_wordlist_mode(pWordlist=lWordlist, pRule=lRule, pVerbose=True, pDebug=False)
+                time.sleep(1)
+            elif re.match('^(\?u)+$', lMask):
+                lCountLetters = lMask.count('?u')
+                lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
+                lRule = "uppercase"
+                run_jtr_wordlist_mode(pWordlist=lWordlist, pRule=lRule, pVerbose=True, pDebug=False)
+                time.sleep(1)
+            elif re.match('^(\?u)+(\?d)+$', lMask):
+                lCountLetters = lMask.count('?u')
+                lCountDigits = lMask.count('?d')
+                lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
+                lRule = "uppercaseappend{}digits".format(str(lCountDigits))
                 run_jtr_wordlist_mode(pWordlist=lWordlist, pRule=lRule, pVerbose=True, pDebug=False)
                 time.sleep(1)
             else:
