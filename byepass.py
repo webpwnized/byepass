@@ -226,6 +226,13 @@ if __name__ == '__main__':
 
     if lArgs.stat_crack:
 
+        if lArgs.percentile:
+            if not 0.0 <= lArgs.percentile <= 1.00:
+                raise ValueError('The percentile provided must be between 0.0 and 1.0.')
+            lPercentile = lArgs.percentile
+        else:
+            lPercentile = 1.0
+
         if lArgs.verbose: print("[*] Parsing JTR POT file at {}".format(JTR_POT_FILE_PATH))
         lListOfPasswords = parse_jtr_pot(True, True)
 
@@ -234,21 +241,12 @@ if __name__ == '__main__':
             print("[*] Using {} passwords in statistical analysis: ".format(str(lCountPasswords)))
             if lCountPasswords > 1000000: print("[*] That is a lot of passwords. Statistical analysis may take a while.")
 
+        if lArgs.verbose: print("[*] Beginning statistical analysis")
         lPasswordStats = PasswordStats(lListOfPasswords)
-        if lArgs.verbose:
-            print("[*] Finished parsing input file " + JTR_POT_FILE_PATH)
-            print("[*] Parsed {} passwords into {} masks".format(lPasswordStats.count_passwords, lPasswordStats.count_masks))
+        if lArgs.verbose: print("[*] Parsed {} passwords into {} masks".format(lPasswordStats.count_passwords, lPasswordStats.count_masks))
 
-        if lArgs.percentile:
-            if not 0.0 <= lArgs.percentile <= 1.00:
-                raise ValueError('The percentile provided must be between 0.0 and 1.0.')
-            lPercentile = lArgs.percentile
-        else:
-            lPercentile = 1.0
-
-        if lArgs.verbose: print("[*] Password masks ({} percentile):".format(lPercentile), end='')
         lMasks = lPasswordStats.get_popular_masks(lPercentile)
-        print(lMasks)
+        if lArgs.verbose: print("[*] Password masks ({} percentile): {}".format(lPercentile, lMasks))
 
         lUndefinedMasks = []
         for lMask in lMasks:
