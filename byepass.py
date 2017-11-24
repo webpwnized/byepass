@@ -45,20 +45,14 @@ def parse_jtr_show(pVerbose: bool, pDebug: bool) -> None:
     lCompletedProcess = subprocess.run([JTR_EXE_FILE_PATH, "--show", "--format=descrypt", lHashFile], stdout=subprocess.PIPE)
     lCrackedPasswords = lCompletedProcess.stdout.split(b'\n')
     for lCrackedPassword in lCrackedPasswords:
-        try:
-            print(lCrackedPassword.decode("utf-8"))
-        except:
-            # do nothing
-            print()
+        try: print(lCrackedPassword.decode("utf-8"))
+        except: pass
 
 
 def parse_jtr_pot(pVerbose: bool, pDebug: bool) -> list:
 
-    lPotFile = []
     lListOfPasswords = []
-    if pVerbose:
-        print()
-        print("[*] Reading input file " + JTR_POT_FILE_PATH)
+    if pVerbose: print("[*] Reading input file " + JTR_POT_FILE_PATH)
     with open(JTR_POT_FILE_PATH, READ_BYTES) as lFile:
         lPotFile = lFile.readlines()
     if pVerbose: print("[*] Finished reading input file " + JTR_POT_FILE_PATH)
@@ -197,6 +191,10 @@ if __name__ == '__main__':
     lArgParser = argparse.ArgumentParser(description='ByePass: Automate the most common password cracking tasks',
                                          epilog='',
                                          formatter_class=RawTextHelpFormatter)
+    lArgParser.add_argument('-f', '--hash-format',
+                            type=str,
+                            help='The hash algorithm used to hash the password(s). This value must be one of the values supported by John the Ripper. To see formats supported by JTR, use command "john --list=formats"',
+                            action='store')
     lArgParser.add_argument('-s', '--stat-crack',
                             help='Enable smart crack. Byepass will run relatively fast cracking strategies in hopes of cracking enough passwords to induce a pattern and create "high probability" masks. Byepass will use the masks in an attempt to crack more passwords.',
                             action='store_true')
@@ -221,22 +219,21 @@ if __name__ == '__main__':
 
     if lArgs.verbose:
         lStartTime = time.time()
-        print("[*] Working on file {}".format(lHashFile))
+        print("[*] Working on input file {}".format(lHashFile))
 
     for i in range(1,11,1):
           run_jtr_prayer_mode(i, True, False)
-          time.sleep(1)
 
     if lArgs.stat_crack:
 
+        if lArgs.verbose: print("[*] Parsing JTR POT file at {}".format(JTR_POT_FILE_PATH))
         lListOfPasswords = parse_jtr_pot(True, True)
 
         if lArgs.verbose:
             lCountPasswords = lListOfPasswords.__len__()
-            print("[*] Passwords imported: " + str(lCountPasswords))
-            if lCountPasswords > 1000000: print("[*] That is a lot of passwords. Parsing may take a while.")
+            print("[*] Using {} passwords in statistical analysis: ".format(str(lCountPasswords)))
+            if lCountPasswords > 1000000: print("[*] That is a lot of passwords. Statistical analysis may take a while.")
 
-        if lArgs.verbose: print("[*] Parsing input file " + JTR_POT_FILE_PATH)
         lPasswordStats = PasswordStats(lListOfPasswords)
         if lArgs.verbose:
             print("[*] Finished parsing input file " + JTR_POT_FILE_PATH)
