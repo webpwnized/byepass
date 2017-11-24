@@ -31,6 +31,7 @@
 #   ?W is just like ?w except the original word is case toggled (so PassWord
 #      becomes pASSwORD).
 
+import config.py as Config
 import argparse, subprocess
 from argparse import RawTextHelpFormatter
 from pwstats import PasswordStats
@@ -38,13 +39,10 @@ import os.path
 import time
 import re
 
-JTR_POT_FILE_PATH = "/opt/john/run/john.pot"
-JTR_FILE_PATH = "/opt/john/run/john"
-
 
 def parse_jtr_show(pVerbose: bool, pDebug: bool) -> None:
 
-    lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--show", "--format=descrypt", lHashFile], stdout=subprocess.PIPE)
+    lCompletedProcess = subprocess.run([JTR_EXE_FILE_PATH, "--show", "--format=descrypt", lHashFile], stdout=subprocess.PIPE)
     lCrackedPasswords = lCompletedProcess.stdout.split(b'\n')
     for lCrackedPassword in lCrackedPasswords:
         try:
@@ -92,12 +90,12 @@ def run_jtr_wordlist_mode(pWordlist: str, pRule: str, pVerbose: bool, pDebug: bo
     if pRule:
         if pVerbose: print("[*] Starting wordlist mode: {} Rule: {}".format(pWordlist, pRule))
         lCompletedProcess = subprocess.run(
-            [JTR_FILE_PATH, "--format=descrypt", "--wordlist={}".format(pWordlist), "--rule={}".format(pRule), lHashFile],
+            [JTR_EXE_FILE_PATH, "--format=descrypt", "--wordlist={}".format(pWordlist), "--rule={}".format(pRule), lHashFile],
             stdout=subprocess.PIPE)
     else:
         if pVerbose: print("[*] Starting wordlist mode: {}".format(pWordlist))
         lCompletedProcess = subprocess.run(
-            [JTR_FILE_PATH, "--format=descrypt", "--wordlist={}".format(pWordlist), lHashFile],
+            [JTR_EXE_FILE_PATH, "--format=descrypt", "--wordlist={}".format(pWordlist), lHashFile],
             stdout=subprocess.PIPE)
 
     if pVerbose:
@@ -121,37 +119,37 @@ def run_jtr_prayer_mode(pMethod: int, pVerbose: bool, pDebug: bool) -> None:
 
     if pMethod == 1:
         if pVerbose: print("[*] Starting mode: Wordlist passwords-hailmary.txt")
-        lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=passwords/passwords-hailmary.txt", lHashFile], stdout=subprocess.PIPE)
+        lCompletedProcess = subprocess.run([JTR_EXE_FILE_PATH, "--format=descrypt", "--wordlist=passwords/passwords-hailmary.txt", lHashFile], stdout=subprocess.PIPE)
     elif pMethod == 2:
         if pVerbose: print("[*] Starting mode: Wordlist top-10000-english-words.txt Rule best126")
-        lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/top-10000-english-words.txt", "--rules=best126", lHashFile], stdout=subprocess.PIPE)
+        lCompletedProcess = subprocess.run([JTR_EXE_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/top-10000-english-words.txt", "--rules=best126", lHashFile], stdout=subprocess.PIPE)
     elif pMethod == 3:
         if pVerbose: print("[*] Starting mode: Wordlist worst-10000-passwords.txt Rule best126")
-        lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=passwords/worst-10000-passwords.txt", "--rules=best126", lHashFile], stdout=subprocess.PIPE)
+        lCompletedProcess = subprocess.run([JTR_EXE_FILE_PATH, "--format=descrypt", "--wordlist=passwords/worst-10000-passwords.txt", "--rules=best126", lHashFile], stdout=subprocess.PIPE)
     elif pMethod == 4:
         if pVerbose: print("[*] Starting mode: Wordlist hob0-short-crack.txt Rule best126")
-        lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/hob0-short-crack.txt", "--rules=best126", lHashFile], stdout=subprocess.PIPE)
+        lCompletedProcess = subprocess.run([JTR_EXE_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/hob0-short-crack.txt", "--rules=best126", lHashFile], stdout=subprocess.PIPE)
     elif pMethod == 5:
         if pVerbose: print("[*] Starting mode: Wordlist other-base-words.txt Rule best126")
-        lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/other-base-words.txt", "--rules=best126", lHashFile], stdout=subprocess.PIPE)
+        lCompletedProcess = subprocess.run([JTR_EXE_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/other-base-words.txt", "--rules=best126", lHashFile], stdout=subprocess.PIPE)
     elif pMethod == 6:
         if pVerbose: print("[*] Starting mode: Wordlist sports-related-words.txt Rule best126")
-        lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/sports-related-words.txt", "--rules=best126", lHashFile], stdout=subprocess.PIPE)
+        lCompletedProcess = subprocess.run([JTR_EXE_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/sports-related-words.txt", "--rules=best126", lHashFile], stdout=subprocess.PIPE)
     elif pMethod == 7:
         if pVerbose: print("[*] Starting mode: Wordlist persons-names.txt Rule best126")
-        lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/persons-names.txt", "--rules=best126", lHashFile], stdout=subprocess.PIPE)
+        lCompletedProcess = subprocess.run([JTR_EXE_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/persons-names.txt", "--rules=best126", lHashFile], stdout=subprocess.PIPE)
     elif pMethod == 8:
         if pVerbose: print("[*] Starting mode: Wordlist 4-digit-numbers.txt Rule best126")
-        lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/4-digit-numbers.txt", "--rules=best126", lHashFile], stdout=subprocess.PIPE)
+        lCompletedProcess = subprocess.run([JTR_EXE_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/4-digit-numbers.txt", "--rules=best126", lHashFile], stdout=subprocess.PIPE)
     elif pMethod == 9:
         if pVerbose: print("[*] Starting mode: Wordlist 6-digit-numbers.txt")
-        lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/6-digit-numbers.txt", lHashFile], stdout=subprocess.PIPE)
+        lCompletedProcess = subprocess.run([JTR_EXE_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/6-digit-numbers.txt", lHashFile], stdout=subprocess.PIPE)
     elif pMethod == 10:
         if pVerbose: print("[*] Starting mode: Wordlist calendar.txt Rule BPAppendYears")
-        lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/calendar.txt", "--rules=bpappendyears", lHashFile], stdout=subprocess.PIPE)
+        lCompletedProcess = subprocess.run([JTR_EXE_FILE_PATH, "--format=descrypt", "--wordlist=dictionaries/calendar.txt", "--rules=bpappendyears", lHashFile], stdout=subprocess.PIPE)
     elif pMethod == 11:
         if pVerbose: print("[*] Starting mode: JTR single crack")
-        lCompletedProcess = subprocess.run([JTR_FILE_PATH, "--format=descrypt", "--single", lHashFile], stdout=subprocess.PIPE)
+        lCompletedProcess = subprocess.run([JTR_EXE_FILE_PATH, "--format=descrypt", "--single", lHashFile], stdout=subprocess.PIPE)
 
     if pVerbose:
         print("Command: {}".format(lCompletedProcess.args))
@@ -174,7 +172,7 @@ def run_jtr_mask_mode(pMask: str, pVerbose: bool, pDebug: bool) -> None:
 
         if pVerbose: print("[*] Starting mask mode: {}".format(pMask))
         lCompletedProcess = subprocess.run(
-                [JTR_FILE_PATH, "--format=descrypt", "--mask={}".format(pMask), lHashFile],
+                [JTR_EXE_FILE_PATH, "--format=descrypt", "--mask={}".format(pMask), lHashFile],
                 stdout=subprocess.PIPE)
         if pVerbose: print("Command: {}".format(lCompletedProcess.args))
 
@@ -193,7 +191,8 @@ if __name__ == '__main__':
 
     READ_BYTES = 'rb'
     READ_LINES = 'r'
-    JTR_POT_FILE_PATH = "/opt/john/run/john.pot"
+    JTR_POT_FILE_PATH = Config.JTR_FILE_PATH + Config.JTR_POT_FILENAME
+    JTR_EXE_FILE_PATH = Config.JTR_FILE_PATH + Config.JTR_EXECUTABLE_FILENAME
 
     lArgParser = argparse.ArgumentParser(description='ByePass: Automate the most common password cracking tasks',
                                          epilog='',
