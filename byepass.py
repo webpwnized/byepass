@@ -74,23 +74,24 @@ def rm_jtr_pot_file() -> None:
         time.sleep(1)
 
 
-def run_jtr_wordlist_mode(pWordlist: str, pRule: str, pVerbose: bool, pDebug: bool) -> None:
+def run_jtr_wordlist_mode(pWordlist: str, pRule: str, pHashFormat:str,  pVerbose: bool, pDebug: bool) -> None:
 
     lStartTime = time.time()
     lEndTime = 0
 
     if pDebug: rm_jtr_pot_file()
 
-    if pRule:
-        if pVerbose: print("[*] Starting wordlist mode: {} Rule: {}".format(pWordlist, pRule))
-        lCompletedProcess = subprocess.run(
-            [JTR_EXE_FILE_PATH, "--format=descrypt", "--wordlist={}".format(pWordlist), "--rule={}".format(pRule), lHashFile],
-            stdout=subprocess.PIPE)
-    else:
-        if pVerbose: print("[*] Starting wordlist mode: {}".format(pWordlist))
-        lCompletedProcess = subprocess.run(
-            [JTR_EXE_FILE_PATH, "--format=descrypt", "--wordlist={}".format(pWordlist), lHashFile],
-            stdout=subprocess.PIPE)
+    lCmdArgs = [JTR_EXE_FILE_PATH]
+    if pHashFormat: lCmdArgs.append("--format={}".format(pHashFormat))
+    lCmdArgs.append("--wordlist={}".format(pWordlist))
+    if pRule: lCmdArgs.append("--rule={}".format(pRule))
+    lCmdArgs.append(lHashFile)
+
+    if pVerbose:
+        print("[*] Starting wordlist mode: {}".format(pWordlist))
+        if pRule: print("[*] Using rule: {}".format(pRule))
+
+    lCompletedProcess = subprocess.run(lCmdArgs, stdout=subprocess.PIPE)
 
     if pVerbose:
         print("Command: {}".format(lCompletedProcess.args))
@@ -121,39 +122,40 @@ def run_jtr_prayer_mode(pMethod: int, pHashFormat: str, pVerbose: bool, pDebug: 
         lCmdArgs.append("--wordlist=passwords/passwords-hailmary.txt")
     elif pMethod == 2:
         if pVerbose: print("[*] Starting mode: Wordlist top-10000-english-words.txt Rule best126")
-        lCmdArgs.append("--wordlist=passwords/top-10000-english-words.txt")
+        lCmdArgs.append("--wordlist=dictionaries/top-10000-english-words.txt")
+        lCmdArgs.append("--rules=best126")
     elif pMethod == 3:
         if pVerbose: print("[*] Starting mode: Wordlist worst-10000-passwords.txt Rule best126")
-        lCmdArgs.append("--wordlist=dictionaries/worst-10000-passwords.txt")
+        lCmdArgs.append("--wordlist=passwords/worst-10000-passwords.txt")
         lCmdArgs.append("--rules=best126")
     elif pMethod == 4:
-        if pVerbose: print("[*] Starting mode: Wordlist hob0-short-crack.txt Rule best126")
-        lCmdArgs.append("--wordlist=dictionaries/hob0-short-crack.txt")
+        if pVerbose: print("[*] Starting mode: Wordlist persons-names.txt Rule best126")
+        lCmdArgs.append("--wordlist=dictionaries/persons-names.txt")
         lCmdArgs.append("--rules=best126")
     elif pMethod == 5:
         if pVerbose: print("[*] Starting mode: Wordlist other-base-words.txt Rule best126")
         lCmdArgs.append("--wordlist=dictionaries/other-base-words.txt")
         lCmdArgs.append("--rules=best126")
     elif pMethod == 6:
+        if pVerbose: print("[*] Starting mode: Wordlist hob0-short-crack.txt Rule best126")
+        lCmdArgs.append("--wordlist=dictionaries/hob0-short-crack.txt")
+        lCmdArgs.append("--rules=best126")
+    elif pMethod == 7:
         if pVerbose: print("[*] Starting mode: Wordlist sports-related-words.txt Rule best126")
         lCmdArgs.append("--wordlist=dictionaries/sports-related-words.txt")
         lCmdArgs.append("--rules=best126")
-    elif pMethod == 7:
-        if pVerbose: print("[*] Starting mode: Wordlist persons-names.txt Rule best126")
-        lCmdArgs.append("--wordlist=dictionaries/persons-names.txt")
-        lCmdArgs.append("--rules=best126")
     elif pMethod == 8:
-        if pVerbose: print("[*] Starting mode: Wordlist 4-digit-numbers.txt Rule best126")
-        lCmdArgs.append("--wordlist=dictionaries/4-digit-numbers.txt")
-        lCmdArgs.append("--rules=best126")
-    elif pMethod == 9:
         if pVerbose: print("[*] Starting mode: Wordlist 6-digit-numbers.txt")
         lCmdArgs.append("--wordlist=dictionaries/6-digit-numbers.txt")
+        lCmdArgs.append("--rules=best126")
+    elif pMethod == 9:
+        if pVerbose: print("[*] Starting mode: Wordlist 4-digit-numbers.txt Rule best126")
+        lCmdArgs.append("--wordlist=dictionaries/4-digit-numbers.txt")
         lCmdArgs.append("--rules=best126")
     elif pMethod == 10:
         if pVerbose: print("[*] Starting mode: Wordlist calendar.txt Rule BPAppendYears")
         lCmdArgs.append("--wordlist=dictionaries/calendar.txt")
-        lCmdArgs.append("--rules=best126")
+        lCmdArgs.append("--rules=bpappendyears")
     elif pMethod == 11:
         if pVerbose: print("[*] Starting mode: JTR single crack")
         lCmdArgs.append("--single")
@@ -173,17 +175,24 @@ def run_jtr_prayer_mode(pMethod: int, pHashFormat: str, pVerbose: bool, pDebug: 
         print("Duration: {}".format(lEndTime - lStartTime))
 
 
-def run_jtr_mask_mode(pMask: str, pVerbose: bool, pDebug: bool) -> None:
+def run_jtr_mask_mode(pMask: str, pWordlist: str, pHashFormat:str, pVerbose: bool, pDebug: bool) -> None:
 
         lStartTime = time.time()
         lEndTime = 0
 
         if pDebug: rm_jtr_pot_file()
 
-        if pVerbose: print("[*] Starting mask mode: {}".format(pMask))
-        lCompletedProcess = subprocess.run(
-                [JTR_EXE_FILE_PATH, "--format=descrypt", "--mask={}".format(pMask), lHashFile],
-                stdout=subprocess.PIPE)
+        lCmdArgs = [JTR_EXE_FILE_PATH]
+        if pHashFormat: lCmdArgs.append("--format={}".format(pHashFormat))
+        lCmdArgs.append(pMask)
+        if pWordlist: lCmdArgs.append("--wordlist={}".format(pWordlist))
+        lCmdArgs.append(lHashFile)
+
+        if pVerbose:
+            print("[*] Starting mask mode: {}".format(pMask))
+            if pWordlist: print("[*] Using wordlist: {}".format(pWordlist))
+
+        lCompletedProcess = subprocess.run(lCmdArgs, stdout=subprocess.PIPE)
         if pVerbose: print("Command: {}".format(lCompletedProcess.args))
 
         if pVerbose:
@@ -231,6 +240,7 @@ if __name__ == '__main__':
         print("[*] WARNING: Argument 'percentile' provided with argument 'stat_crack'. Percentile will be ignored")
 
     lHashFile = lArgs.input_file
+    lVerbose = lArgs.verbose
 
     try:
         lHashFormat = lArgs.hash_format
@@ -243,8 +253,8 @@ if __name__ == '__main__':
 
     # Try to crack a relatively few passwords as quickly as possible.
     # These can be used in statistical analysis
-    for i in range(1,11,1):
-        run_jtr_prayer_mode(pMethod=i, pHashFormat=lHashFormat, pVerbose=True, pDebug=False)
+    for i in range(1,12,1):
+        run_jtr_prayer_mode(pMethod=i, pHashFormat=lHashFormat, pVerbose=lVerbose, pDebug=False)
 
     # If the user choose, begin statistical analysis to aid targeted cracking routines
     if lArgs.stat_crack:
@@ -258,7 +268,7 @@ if __name__ == '__main__':
 
         # The JTR POT file is the source of passwords
         if lArgs.verbose: print("[*] Parsing JTR POT file at {}".format(JTR_POT_FILE_PATH))
-        lListOfPasswords = parse_jtr_pot(True, True)
+        lListOfPasswords = parse_jtr_pot(lVerbose, True)
 
         if lArgs.verbose:
             lCountPasswords = lListOfPasswords.__len__()
@@ -283,7 +293,21 @@ if __name__ == '__main__':
             if re.match('^(\?l)+$', lMask):
                 lCountLetters = lMask.count('?l')
                 lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
-                run_jtr_wordlist_mode(pWordlist=lWordlist, pRule="best126", pVerbose=True, pDebug=False)
+                run_jtr_wordlist_mode(pWordlist=lWordlist, pRule="best126", pHashFormat=lHashFormat, pVerbose=lVerbose, pDebug=False)
+
+            # All uppercase
+            elif re.match('^(\?u)+$', lMask):
+                lCountLetters = lMask.count('?u')
+                lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
+                lRule = "uppercase"
+                run_jtr_wordlist_mode(pWordlist=lWordlist, pRule=lRule, pHashFormat=lHashFormat, pVerbose=lVerbose, pDebug=False)
+
+            # Uppercase followed by lowercase (assume only leading letter is uppercase)
+            elif re.match('^(\?u)(\?l)+$', lMask):
+                lCountLetters = lMask.count('?u') + lMask.count('?l')
+                lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
+                lRule = "capitalize"
+                run_jtr_wordlist_mode(pWordlist=lWordlist, pRule=lRule, pHashFormat=lHashFormat, pVerbose=lVerbose, pDebug=False)
 
             # Lowercase ending with digits
             elif re.match('^(\?l)+(\?d)+$', lMask):
@@ -291,29 +315,7 @@ if __name__ == '__main__':
                 lCountDigits = lMask.count('?d')
                 lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
                 lRule = "append{}digits".format(str(lCountDigits))
-                run_jtr_wordlist_mode(pWordlist=lWordlist, pRule=lRule, pVerbose=True, pDebug=False)
-
-            # Uppercase followed by lowercase (assume only leading letter is uppercase)
-            elif re.match('^(\?u)(\?l)+$', lMask):
-                lCountLetters = lMask.count('?u') + lMask.count('?l')
-                lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
-                lRule = "capitalize"
-                run_jtr_wordlist_mode(pWordlist=lWordlist, pRule=lRule, pVerbose=True, pDebug=False)
-
-            # Uppsercase, lowercase, then digits (assume only leading letter is uppercase)
-            elif re.match('^(\?u)(\?l)+(\?d)+$', lMask):
-                lCountLetters = lMask.count('?u') + lMask.count('?l')
-                lCountDigits = lMask.count('?d')
-                lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
-                lRule = "capitalizeappend{}digits".format(str(lCountDigits))
-                run_jtr_wordlist_mode(pWordlist=lWordlist, pRule=lRule, pVerbose=True, pDebug=False)
-
-            # All uppercase
-            elif re.match('^(\?u)+$', lMask):
-                lCountLetters = lMask.count('?u')
-                lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
-                lRule = "uppercase"
-                run_jtr_wordlist_mode(pWordlist=lWordlist, pRule=lRule, pVerbose=True, pDebug=False)
+                run_jtr_wordlist_mode(pWordlist=lWordlist, pRule=lRule, pHashFormat=lHashFormat, pVerbose=lVerbose, pDebug=False)
 
             # Uppercase followed by digits
             elif re.match('^(\?u)+(\?d)+$', lMask):
@@ -321,7 +323,32 @@ if __name__ == '__main__':
                 lCountDigits = lMask.count('?d')
                 lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
                 lRule = "uppercaseappend{}digits".format(str(lCountDigits))
-                run_jtr_wordlist_mode(pWordlist=lWordlist, pRule=lRule, pVerbose=True, pDebug=False)
+                run_jtr_wordlist_mode(pWordlist=lWordlist, pRule=lRule, pHashFormat=lHashFormat, pVerbose=lVerbose, pDebug=False)
+
+            # Uppercase, lowercase, then digits (assume only leading letter is uppercase)
+            elif re.match('^(\?u)(\?l)+(\?d)+$', lMask):
+                lCountLetters = lMask.count('?u') + lMask.count('?l')
+                lCountDigits = lMask.count('?d')
+                lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
+                lRule = "capitalizeappend{}digits".format(str(lCountDigits))
+                run_jtr_wordlist_mode(pWordlist=lWordlist, pRule=lRule, pHashFormat=lHashFormat, pVerbose=lVerbose, pDebug=False)
+
+            # Low number of digits. We do not cover large numbers of digits because
+            # precomputing dictionary files would be huge and running mask mode takes a long time.
+            # Right now we support 4-6 digits only. Recall we cover 4 and 6 digits specifically in
+            # "prayer" mode so we do not repeat those two masks here.
+            elif re.match('^(\?d)+$', lMask):
+                lCountDigits = lMask.count('?d')
+                if lCountDigits == 5:
+                    lWordlist = "dictionaries/{}-digit-numbers.txt".format(str(lCountDigits))
+                    run_jtr_wordlist_mode(pWordlist=lWordlist, pRule=None, pHashFormat=lHashFormat, pVerbose=lVerbose, pDebug=False)
+
+            # Lowercase ending with something other than the masks already accounted for
+            elif re.match('^(\?l)+', lMask):
+                lCountLetters = lMask.count('?l')
+                lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
+                lMask = "?w" + lMask.replace("?l")
+                run_jtr_mask_mode(pMask=lMask, pWordlist=lWordlist, pHashFormat=lHashFormat, pVerbose=lVerbose, pDebug=False)
 
             else:
                 lUndefinedMasks.append(lMask)
