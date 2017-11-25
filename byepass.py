@@ -351,13 +351,19 @@ if __name__ == '__main__':
                 else:
                     print("[*] WARNING: Did not process mask {} because it is out of policy".format(lMask))
 
-            # Lowercase ending with something other than the masks already accounted for
+            # Lowercase ending with something other than the masks already accounted for. If the
+            # ending pattern is longer than 3 characters, we do not try because it takes a long time
+            # to test that many hashes
             elif re.match('^(\?l)+', lMask):
-                lSubMask = re.search('^(\?l)+', lMask).group()
-                lCountLetters = lSubMask.count("?l")
-                lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
-                lMaskParam = "--mask=?w{}".format(lMask.replace("?l",""))
-                run_jtr_mask_mode(pMask=lMaskParam, pWordlist=lWordlist, pHashFormat=lHashFormat, pVerbose=lVerbose, pDebug=False)
+                lPrefix = re.search('^(\?l)+', lMask).group()
+                lCountLetters = lPrefix.count("?l")
+                lSuffix = lMask[lCountLetters*2:]
+                if len(lSuffix) < 4:
+                    lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
+                    lMaskParam = "--mask=?w{}".format(lSuffix)
+                    run_jtr_mask_mode(pMask=lMaskParam, pWordlist=lWordlist, pHashFormat=lHashFormat, pVerbose=lVerbose, pDebug=False)
+                else:
+                    print("[*] WARNING: Did not process mask {} because it is out of policy".format(lMask))
 
             else:
                 lUndefinedMasks.append(lMask)
