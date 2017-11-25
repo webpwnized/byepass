@@ -31,7 +31,7 @@
 #   ?W is just like ?w except the original word is case toggled (so PassWord
 #      becomes pASSwORD).
 
-import config.py as Config
+import config as Config
 import argparse, subprocess
 from argparse import RawTextHelpFormatter
 from pwstats import PasswordStats
@@ -121,7 +121,7 @@ def run_jtr_prayer_mode(pMethod: int, pHashFormat: str, pVerbose: bool, pDebug: 
         lCmdArgs.append("--wordlist=passwords/passwords-hailmary.txt")
     elif pMethod == 2:
         if pVerbose: print("[*] Starting mode: Wordlist top-10000-english-words.txt Rule best126")
-        lCmdArgs.append("--wordlist=dictionaries/top-10000-english-words.txt")
+        lCmdArgs.append("--wordlist=passwords/top-10000-english-words.txt")
     elif pMethod == 3:
         if pVerbose: print("[*] Starting mode: Wordlist worst-10000-passwords.txt Rule best126")
         lCmdArgs.append("--wordlist=dictionaries/worst-10000-passwords.txt")
@@ -140,7 +140,7 @@ def run_jtr_prayer_mode(pMethod: int, pHashFormat: str, pVerbose: bool, pDebug: 
         lCmdArgs.append("--rules=best126")
     elif pMethod == 7:
         if pVerbose: print("[*] Starting mode: Wordlist persons-names.txt Rule best126")
-        lCmdArgs.append("--wordlist=dictionaries/persons-names.txt.txt")
+        lCmdArgs.append("--wordlist=dictionaries/persons-names.txt")
         lCmdArgs.append("--rules=best126")
     elif pMethod == 8:
         if pVerbose: print("[*] Starting mode: Wordlist 4-digit-numbers.txt Rule best126")
@@ -328,4 +328,4 @@ if __name__ == '__main__':
                 print("[*] WARNING: No policy defined for mask {}".format(lMask))
 
         # List masks that did not match a pattern so that a pattern can be added
-        print("[*] WARNING: There was nos policy defined for the following masks: {}".format(lUndefinedMasks))
+        print("[*] WARNING: There was no policy defined for the following masks: {}".format(lUndefinedMasks))
