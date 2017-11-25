@@ -92,9 +92,10 @@ def run_jtr_wordlist_mode(pWordlist: str, pRule: str, pHashFormat:str,  pVerbose
         if pRule: print("[*] Using rule: {}".format(pRule))
 
     lCompletedProcess = subprocess.run(lCmdArgs, stdout=subprocess.PIPE)
+    time.sleep(1)
 
     if pVerbose:
-        print("Command: {}".format(lCompletedProcess.args))
+        print("[*] Command: {}".format(lCompletedProcess.args))
         print(lCompletedProcess.stdout)
         lListOfPasswords = parse_jtr_pot(True, True)
         print("[*] Finished")
@@ -102,7 +103,7 @@ def run_jtr_wordlist_mode(pWordlist: str, pRule: str, pHashFormat:str,  pVerbose
 
     if pDebug:
         lEndTime = time.time()
-        print("Duration: {}".format(lEndTime - lStartTime))
+        print("[*] Duration: {}".format(lEndTime - lStartTime))
 
 
 def run_jtr_prayer_mode(pMethod: int, pHashFormat: str, pVerbose: bool, pDebug: bool) -> None:
@@ -157,14 +158,18 @@ def run_jtr_prayer_mode(pMethod: int, pHashFormat: str, pVerbose: bool, pDebug: 
         lCmdArgs.append("--wordlist=dictionaries/calendar.txt")
         lCmdArgs.append("--rules=bpappendyears")
     elif pMethod == 11:
+        if pVerbose: print("[*] Starting mode: Wordlist keyboard-patterns.txt")
+        lCmdArgs.append("--wordlist=dictionaries/keyboard-patterns.txt")
+    elif pMethod == 12:
         if pVerbose: print("[*] Starting mode: JTR single crack")
         lCmdArgs.append("--single")
 
     lCmdArgs.append(lHashFile)
     lCompletedProcess = subprocess.run(lCmdArgs, stdout=subprocess.PIPE)
+    time.sleep(1)
 
     if pVerbose:
-        print("Command: {}".format(lCompletedProcess.args))
+        print("[*] Command: {}".format(lCompletedProcess.args))
         print(lCompletedProcess.stdout)
         lListOfPasswords = parse_jtr_pot(True, True)
         print("[*] Finished")
@@ -172,7 +177,7 @@ def run_jtr_prayer_mode(pMethod: int, pHashFormat: str, pVerbose: bool, pDebug: 
 
     if pDebug:
         lEndTime = time.time()
-        print("Duration: {}".format(lEndTime - lStartTime))
+        print("[*] Duration: {}".format(lEndTime - lStartTime))
 
 
 def run_jtr_mask_mode(pMask: str, pWordlist: str, pHashFormat:str, pVerbose: bool, pDebug: bool) -> None:
@@ -193,9 +198,10 @@ def run_jtr_mask_mode(pMask: str, pWordlist: str, pHashFormat:str, pVerbose: boo
             if pWordlist: print("[*] Using wordlist: {}".format(pWordlist))
 
         lCompletedProcess = subprocess.run(lCmdArgs, stdout=subprocess.PIPE)
-        if pVerbose: print("Command: {}".format(lCompletedProcess.args))
+        time.sleep(1)
 
         if pVerbose:
+            print("[*] Command: {}".format(lCompletedProcess.args))
             print(lCompletedProcess.stdout)
             lListOfPasswords = parse_jtr_pot(True, True)
             print("[*] Finished")
@@ -203,7 +209,7 @@ def run_jtr_mask_mode(pMask: str, pWordlist: str, pHashFormat:str, pVerbose: boo
 
         if pDebug:
             lEndTime = time.time()
-            print("Duration: {}".format(lEndTime - lStartTime))
+            print("[*] Duration: {}".format(lEndTime - lStartTime))
 
 
 if __name__ == '__main__':
@@ -253,8 +259,8 @@ if __name__ == '__main__':
 
     # Try to crack a relatively few passwords as quickly as possible.
     # These can be used in statistical analysis
-    for i in range(1,12,1):
-        run_jtr_prayer_mode(pMethod=i, pHashFormat=lHashFormat, pVerbose=lVerbose, pDebug=False)
+    # for i in range(1,13,1):
+    #     run_jtr_prayer_mode(pMethod=i, pHashFormat=lHashFormat, pVerbose=lVerbose, pDebug=False)
 
     # If the user choose, begin statistical analysis to aid targeted cracking routines
     if lArgs.stat_crack:
@@ -342,17 +348,23 @@ if __name__ == '__main__':
                 if lCountDigits == 5:
                     lWordlist = "dictionaries/{}-digit-numbers.txt".format(str(lCountDigits))
                     run_jtr_wordlist_mode(pWordlist=lWordlist, pRule=None, pHashFormat=lHashFormat, pVerbose=lVerbose, pDebug=False)
+                else:
+                    print("[*] WARNING: Did not process mask {} because it is out of policy".format(lMask))
 
             # Lowercase ending with something other than the masks already accounted for
             elif re.match('^(\?l)+', lMask):
-                lCountLetters = lMask.count('?l')
+                lSubMask = re.search('^(\?l)+', lMask).group()
+                lCountLetters = lSubMask.count("?l")
                 lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
-                lMask = "?w" + lMask.replace("?l")
-                run_jtr_mask_mode(pMask=lMask, pWordlist=lWordlist, pHashFormat=lHashFormat, pVerbose=lVerbose, pDebug=False)
+                lMaskParam = "--mask=?w{}".format(lMask.replace("?l",""))
+                run_jtr_mask_mode(pMask=lMaskParam, pWordlist=lWordlist, pHashFormat=lHashFormat, pVerbose=lVerbose, pDebug=False)
 
             else:
                 lUndefinedMasks.append(lMask)
                 print("[*] WARNING: No policy defined for mask {}".format(lMask))
 
         # List masks that did not match a pattern so that a pattern can be added
-        print("[*] WARNING: There was no policy defined for the following masks: {}".format(lUndefinedMasks))
+        if lUndefinedMasks: print("[*] WARNING: There was no policy defined for the following masks: {}".format(lUndefinedMasks))
+
+    lEndTime = time.time()
+    print("[*] Duration: {}".format(lEndTime - lStartTime))
