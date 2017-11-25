@@ -347,7 +347,7 @@ if __name__ == '__main__':
                 lCountDigits = lMask.count('?d')
                 if lCountDigits == 5:
                     lWordlist = "dictionaries/{}-digit-numbers.txt".format(str(lCountDigits))
-                    run_jtr_wordlist_mode(pWordlist=lWordlist, pRule=None, pHashFormat=lHashFormat, pVerbose=lVerbose, pDebug=False)
+                    run_jtr_wordlist_mode(pWordlist=lWordlist, pRule="", pHashFormat=lHashFormat, pVerbose=lVerbose, pDebug=False)
                 else:
                     print("[*] WARNING: Did not process mask {} because it is out of policy".format(lMask))
 
@@ -375,4 +375,4 @@ if __name__ == '__main__':
     lEndTime = time.time()
     lMinutes, lSeconds = divmod(lEndTime, 60)
     lHours, lMinutes = divmod(lMinutes, 60)
-    print("[*] Duration: {}".format(time.strftime("%H:%M:%S", lEndTime - lStartTime)))
+    print("[*] Duration: {}".format(time.strftime("%H:%M:%S", time.gmtime(lEndTime - lStartTime))))
