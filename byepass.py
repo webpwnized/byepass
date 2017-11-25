@@ -130,23 +130,23 @@ def run_jtr_prayer_mode(pMethod: int, pHashFormat: str, pVerbose: bool, pDebug: 
         if pVerbose: print("[*] Starting mode: Wordlist hob0-short-crack.txt Rule best126")
         lCmdArgs.append("--wordlist=dictionaries/hob0-short-crack.txt")
         lCmdArgs.append("--rules=best126")
-   elif pMethod == 5:
+    elif pMethod == 5:
         if pVerbose: print("[*] Starting mode: Wordlist other-base-words.txt Rule best126")
         lCmdArgs.append("--wordlist=dictionaries/other-base-words.txt")
         lCmdArgs.append("--rules=best126")
-   elif pMethod == 6:
+    elif pMethod == 6:
         if pVerbose: print("[*] Starting mode: Wordlist sports-related-words.txt Rule best126")
         lCmdArgs.append("--wordlist=dictionaries/sports-related-words.txt")
         lCmdArgs.append("--rules=best126")
-   elif pMethod == 7:
+    elif pMethod == 7:
         if pVerbose: print("[*] Starting mode: Wordlist persons-names.txt Rule best126")
         lCmdArgs.append("--wordlist=dictionaries/persons-names.txt.txt")
         lCmdArgs.append("--rules=best126")
-   elif pMethod == 8:
+    elif pMethod == 8:
         if pVerbose: print("[*] Starting mode: Wordlist 4-digit-numbers.txt Rule best126")
         lCmdArgs.append("--wordlist=dictionaries/4-digit-numbers.txt")
         lCmdArgs.append("--rules=best126")
-   elif pMethod == 9:
+    elif pMethod == 9:
         if pVerbose: print("[*] Starting mode: Wordlist 6-digit-numbers.txt")
         lCmdArgs.append("--wordlist=dictionaries/6-digit-numbers.txt")
         lCmdArgs.append("--rules=best126")
