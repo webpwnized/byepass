@@ -259,8 +259,8 @@ if __name__ == '__main__':
 
     # Try to crack a relatively few passwords as quickly as possible.
     # These can be used in statistical analysis
-    # for i in range(1,13,1):
-    #     run_jtr_prayer_mode(pMethod=i, pHashFormat=lHashFormat, pVerbose=lVerbose, pDebug=False)
+    for i in range(1,13,1):
+        run_jtr_prayer_mode(pMethod=i, pHashFormat=lHashFormat, pVerbose=lVerbose, pDebug=False)
 
     # If the user choose, begin statistical analysis to aid targeted cracking routines
     if lArgs.stat_crack:
@@ -358,7 +358,7 @@ if __name__ == '__main__':
                 lPrefix = re.search('^(\?l)+', lMask).group()
                 lCountLetters = lPrefix.count("?l")
                 lSuffix = lMask[lCountLetters*2:]
-                if len(lSuffix) < 4:
+                if len(lSuffix) <= 6:
                     lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
                     lMaskParam = "--mask=?w{}".format(lSuffix)
                     run_jtr_mask_mode(pMask=lMaskParam, pWordlist=lWordlist, pHashFormat=lHashFormat, pVerbose=lVerbose, pDebug=False)
@@ -373,4 +373,6 @@ if __name__ == '__main__':
         if lUndefinedMasks: print("[*] WARNING: There was no policy defined for the following masks: {}".format(lUndefinedMasks))
 
     lEndTime = time.time()
-    print("[*] Duration: {}".format(lEndTime - lStartTime))
+    lMinutes, lSeconds = divmod(lEndTime, 60)
+    lHours, lMinutes = divmod(lMinutes, 60)
+    print("[*] Duration: {}".format(time.strftime("%H:%M:%S", lEndTime - lStartTime)))
