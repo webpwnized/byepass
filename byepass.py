@@ -161,6 +161,10 @@ def run_jtr_prayer_mode(pMethod: int, pHashFormat: str, pVerbose: bool, pDebug: 
         if pVerbose: print("[*] Starting mode: Wordlist keyboard-patterns.txt")
         lCmdArgs.append("--wordlist=dictionaries/keyboard-patterns.txt")
     elif pMethod == 12:
+        if pVerbose: print("[*] Starting mode: Wordlist places.txt Rule best126")
+        lCmdArgs.append("--wordlist=dictionaries/places.txt")
+        lCmdArgs.append("--rules=best126")
+    elif pMethod == 13:
         if pVerbose: print("[*] Starting mode: JTR single crack")
         lCmdArgs.append("--single")
 
@@ -259,7 +263,7 @@ if __name__ == '__main__':
 
     # Try to crack a relatively few passwords as quickly as possible.
     # These can be used in statistical analysis
-    for i in range(1,13,1):
+    for i in range(1,14,1):
         run_jtr_prayer_mode(pMethod=i, pHashFormat=lHashFormat, pVerbose=lVerbose, pDebug=False)
 
     # If the user choose, begin statistical analysis to aid targeted cracking routines
@@ -352,13 +356,13 @@ if __name__ == '__main__':
                     print("[*] WARNING: Did not process mask {} because it is out of policy".format(lMask))
 
             # Lowercase ending with something other than the masks already accounted for. If the
-            # ending pattern is longer than 3 characters, we do not try because it takes a long time
+            # ending pattern is longer than 2 characters, we do not try because it takes a long time
             # to test that many hashes
             elif re.match('^(\?l)+', lMask):
                 lPrefix = re.search('^(\?l)+', lMask).group()
                 lCountLetters = lPrefix.count("?l")
                 lSuffix = lMask[lCountLetters*2:]
-                if len(lSuffix) <= 6:
+                if len(lSuffix) <= 4:
                     lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
                     lMaskParam = "--mask=?w{}".format(lSuffix)
                     run_jtr_mask_mode(pMask=lMaskParam, pWordlist=lWordlist, pHashFormat=lHashFormat, pVerbose=lVerbose, pDebug=False)
