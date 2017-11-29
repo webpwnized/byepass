@@ -98,12 +98,48 @@ def run_jtr_wordlist_mode(pWordlist: str, pRule: str, pHashFormat:str,  pVerbose
         print("[*] Command: {}".format(lCompletedProcess.args))
         print(lCompletedProcess.stdout)
         lListOfPasswords = parse_jtr_pot(True, True)
+        lNumberPasswordsCracked = lListOfPasswords.__len__()
         print("[*] Finished")
-        print("[*] Passwords cracked: " + str(lListOfPasswords.__len__()))
+        print("[*] Passwords cracked: {}".format(lNumberPasswordsCracked))
 
     if pDebug:
-        lEndTime = time.time()
-        print("[*] Duration: {}".format(lEndTime - lStartTime))
+        lRunTime = time.time() - lStartTime
+        print("[*] Duration: {}".format(lRunTime))
+        print("[*] Passwords cracked per second: {}".format(lNumberPasswordsCracked // lRunTime))
+
+
+def run_jtr_mask_mode(pMask: str, pWordlist: str, pHashFormat:str, pVerbose: bool, pDebug: bool) -> None:
+
+    lStartTime = time.time()
+    lEndTime = 0
+
+    if pDebug: rm_jtr_pot_file()
+
+    lCmdArgs = [JTR_EXE_FILE_PATH]
+    if pHashFormat: lCmdArgs.append("--format={}".format(pHashFormat))
+    lCmdArgs.append(pMask)
+    if pWordlist: lCmdArgs.append("--wordlist={}".format(pWordlist))
+    lCmdArgs.append(lHashFile)
+
+    if pVerbose:
+        print("[*] Starting mask mode: {}".format(pMask))
+        if pWordlist: print("[*] Using wordlist: {}".format(pWordlist))
+
+    lCompletedProcess = subprocess.run(lCmdArgs, stdout=subprocess.PIPE)
+    time.sleep(1)
+
+    if pVerbose:
+        print("[*] Command: {}".format(lCompletedProcess.args))
+        print(lCompletedProcess.stdout)
+        lListOfPasswords = parse_jtr_pot(True, True)
+        lNumberPasswordsCracked = lListOfPasswords.__len__()
+        print("[*] Finished")
+        print("[*] Passwords cracked: {}".format(lNumberPasswordsCracked))
+
+    if pDebug:
+        lRunTime = time.time() - lStartTime
+        print("[*] Duration: {}".format(lRunTime))
+        print("[*] Passwords cracked per second: {}".format(lNumberPasswordsCracked // lRunTime))
 
 
 def run_jtr_prayer_mode(pMethod: int, pHashFormat: str, pVerbose: bool, pDebug: bool) -> None:
@@ -119,35 +155,35 @@ def run_jtr_prayer_mode(pMethod: int, pHashFormat: str, pVerbose: bool, pDebug: 
     if pHashFormat: lCmdArgs.append("--format={}".format(pHashFormat))
 
     if pMethod == 1:
-        if pVerbose: print("[*] Starting mode: Wordlist passwords-hailmary.txt")
-        lCmdArgs.append("--wordlist=passwords/passwords-hailmary.txt")
-    elif pMethod == 2:
-        if pVerbose: print("[*] Starting mode: Wordlist top-10000-english-words.txt Rule best126")
-        lCmdArgs.append("--wordlist=dictionaries/top-10000-english-words.txt")
-        lCmdArgs.append("--rules=best126")
-    elif pMethod == 3:
-        if pVerbose: print("[*] Starting mode: Wordlist worst-10000-passwords.txt Rule best126")
-        lCmdArgs.append("--wordlist=passwords/worst-10000-passwords.txt")
-        lCmdArgs.append("--rules=best126")
-    elif pMethod == 4:
-        if pVerbose: print("[*] Starting mode: Wordlist persons-names.txt Rule best126")
-        lCmdArgs.append("--wordlist=dictionaries/persons-names.txt")
-        lCmdArgs.append("--rules=best126")
-    elif pMethod == 5:
-        if pVerbose: print("[*] Starting mode: Wordlist other-base-words.txt Rule best126")
-        lCmdArgs.append("--wordlist=dictionaries/other-base-words.txt")
-        lCmdArgs.append("--rules=best126")
-    elif pMethod == 6:
         if pVerbose: print("[*] Starting mode: Wordlist hob0-short-crack.txt Rule best126")
         lCmdArgs.append("--wordlist=dictionaries/hob0-short-crack.txt")
         lCmdArgs.append("--rules=best126")
-    elif pMethod == 7:
+    elif pMethod == 2:
+        if pVerbose: print("[*] Starting mode: Wordlist worst-95000-passwords.txt Rule best126")
+        lCmdArgs.append("--wordlist=passwords/worst-95000-passwords.txt")
+        lCmdArgs.append("--rules=best126")
+    elif pMethod == 3:
+        if pVerbose: print("[*] Starting mode: Wordlist passwords-hailmary.txt")
+        lCmdArgs.append("--wordlist=passwords/passwords-hailmary.txt")
+    elif pMethod == 4:
+        if pVerbose: print("[*] Starting mode: Wordlist top-10000-english-words.txt Rule best126")
+        lCmdArgs.append("--wordlist=dictionaries/top-10000-english-words.txt")
+        lCmdArgs.append("--rules=best126")
+    elif pMethod == 5:
+        if pVerbose: print("[*] Starting mode: Wordlist persons-names.txt Rule best126")
+        lCmdArgs.append("--wordlist=dictionaries/persons-names.txt")
+        lCmdArgs.append("--rules=best126")
+    elif pMethod == 6:
         if pVerbose: print("[*] Starting mode: Wordlist sports-related-words.txt Rule best126")
         lCmdArgs.append("--wordlist=dictionaries/sports-related-words.txt")
         lCmdArgs.append("--rules=best126")
+    elif pMethod == 7:
+        if pVerbose: print("[*] Starting mode: Wordlist other-base-words.txt Rule best126")
+        lCmdArgs.append("--wordlist=dictionaries/other-base-words.txt")
+        lCmdArgs.append("--rules=best126")
     elif pMethod == 8:
-        if pVerbose: print("[*] Starting mode: Wordlist 6-digit-numbers.txt")
-        lCmdArgs.append("--wordlist=dictionaries/6-digit-numbers.txt")
+        if pVerbose: print("[*] Starting mode: Wordlist places.txt Rule best126")
+        lCmdArgs.append("--wordlist=dictionaries/places.txt")
         lCmdArgs.append("--rules=best126")
     elif pMethod == 9:
         if pVerbose: print("[*] Starting mode: Wordlist 4-digit-numbers.txt Rule best126")
@@ -158,12 +194,12 @@ def run_jtr_prayer_mode(pMethod: int, pHashFormat: str, pVerbose: bool, pDebug: 
         lCmdArgs.append("--wordlist=dictionaries/calendar.txt")
         lCmdArgs.append("--rules=bpappendyears")
     elif pMethod == 11:
+        if pVerbose: print("[*] Starting mode: Wordlist 6-digit-numbers.txt")
+        lCmdArgs.append("--wordlist=dictionaries/6-digit-numbers.txt")
+        lCmdArgs.append("--rules=best126")
+    elif pMethod == 12:
         if pVerbose: print("[*] Starting mode: Wordlist keyboard-patterns.txt")
         lCmdArgs.append("--wordlist=dictionaries/keyboard-patterns.txt")
-    elif pMethod == 12:
-        if pVerbose: print("[*] Starting mode: Wordlist places.txt Rule best126")
-        lCmdArgs.append("--wordlist=dictionaries/places.txt")
-        lCmdArgs.append("--rules=best126")
     elif pMethod == 13:
         if pVerbose: print("[*] Starting mode: JTR single crack")
         lCmdArgs.append("--single")
@@ -176,44 +212,14 @@ def run_jtr_prayer_mode(pMethod: int, pHashFormat: str, pVerbose: bool, pDebug: 
         print("[*] Command: {}".format(lCompletedProcess.args))
         print(lCompletedProcess.stdout)
         lListOfPasswords = parse_jtr_pot(True, True)
+        lNumberPasswordsCracked = lListOfPasswords.__len__()
         print("[*] Finished")
-        print("[*] Passwords cracked: " + str(lListOfPasswords.__len__()))
+        print("[*] Passwords cracked: {}".format(lNumberPasswordsCracked))
 
     if pDebug:
-        lEndTime = time.time()
-        print("[*] Duration: {}".format(lEndTime - lStartTime))
-
-
-def run_jtr_mask_mode(pMask: str, pWordlist: str, pHashFormat:str, pVerbose: bool, pDebug: bool) -> None:
-
-        lStartTime = time.time()
-        lEndTime = 0
-
-        if pDebug: rm_jtr_pot_file()
-
-        lCmdArgs = [JTR_EXE_FILE_PATH]
-        if pHashFormat: lCmdArgs.append("--format={}".format(pHashFormat))
-        lCmdArgs.append(pMask)
-        if pWordlist: lCmdArgs.append("--wordlist={}".format(pWordlist))
-        lCmdArgs.append(lHashFile)
-
-        if pVerbose:
-            print("[*] Starting mask mode: {}".format(pMask))
-            if pWordlist: print("[*] Using wordlist: {}".format(pWordlist))
-
-        lCompletedProcess = subprocess.run(lCmdArgs, stdout=subprocess.PIPE)
-        time.sleep(1)
-
-        if pVerbose:
-            print("[*] Command: {}".format(lCompletedProcess.args))
-            print(lCompletedProcess.stdout)
-            lListOfPasswords = parse_jtr_pot(True, True)
-            print("[*] Finished")
-            print("[*] Passwords cracked: " + str(lListOfPasswords.__len__()))
-
-        if pDebug:
-            lEndTime = time.time()
-            print("[*] Duration: {}".format(lEndTime - lStartTime))
+        lRunTime = time.time() - lStartTime
+        print("[*] Duration: {}".format(lRunTime))
+        print("[*] Passwords cracked per second: {}".format(lNumberPasswordsCracked // lRunTime))
 
 
 if __name__ == '__main__':
