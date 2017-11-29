@@ -1,3 +1,8 @@
+# Setup
+
+git clone to desired directory
+unzip passwords/passwords-hailmary.txt.zip
+
 # Best Masks (50th percentile)
 
 By parsing 319,855,485 passwords into 6,094,033 masks it was found only 32 masks were needed to crack 50% of hashes.
