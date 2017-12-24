@@ -1,50 +1,71 @@
 # Setup
 
-git clone to desired directory
-unzip passwords/passwords-hailmary.txt.zip
+Change into desired directory, clone the project and decompress passwords-hailmary.txt.zip.
 
-# Best Masks (50th percentile)
+**Example:**
 
-By parsing 319,855,485 passwords into 6,094,033 masks it was found only 32 masks were needed to crack 50% of hashes.
+`git clone https://github.com/webpwnized/byepass.git`
 
-	      Mask                          MP  	CP  		Passwords
-	 1  ?l?l?l?l?l?l?l?l                14.96	14.96		47846388
-	 2  ?l?l?l?l?l?l?d?d                2.19	17.15		7011912
-	 3  ?d?d?d?d?d?d?d?d                1.94	19.09		6211851
-	 4  ?l?l?l?l?l?l?l?l?l?l            1.89	20.98		6050289
-	 5  ?l?l?l?l?l?l?l?l?l              1.68	22.67		5388919
-	 6  ?l?l?l?l?l?l?l?d?d              1.62	24.29		5181442
-	 7  ?l?l?l?l?l?l?l?l?d?d            1.61	25.90		5139694
-	 8  ?l?l?l?l?l?l?l                  1.56	27.46		4999039
-	 9  ?l?l?l?l?d?d?d?d                1.50	28.96		4798380
-	10  ?d?d?d?d?d?d?d                  1.50	30.46		4798347
-	11  ?d?d?d?d?d?d?d?d?d?d            1.49	31.95		4754448
-	12  ?l?l?l?l?l?l?d?d?d?d            1.37	33.32		4383789
-	13  ?l?l?l?l?l?l                    1.30	34.62		4159331
-	14  ?l?l?l?l?l?d?d?d?d              1.26	35.87		4018983
-	15  ?l?l?l?l?l?l?d?d?d              1.13	37.00		3616250
-	16  ?d?d?d?d?d?d?d?d?d?d?d?d?d?d?d  1.09	38.09		3483784
-	17  ?l?l?l?l?l?l?l?d                1.09	39.18		3472544
-	18  ?l?l?l?l?l?d?d                  1.01	40.19		3232583
-	19  ?l?l?l?l?l?l?l?l?d              0.96	41.15		3074637
-	20  ?l?l?l?d?d?d?d                  0.92	42.07		2936164
-	21  ?l?l?l?l?l?l?l?l?l?l?l          0.90	42.97		2870797
-	22  ?l?l?l?l?l?d?d?d                0.90	43.86		2865105
-	23  ?l?l?l?l?l?l?l?l?l?d            0.88	44.74		2822914
-	24  ?l?l?l?l?l?l?d                  0.86	45.61		2761091
-	25  ?l?l?l?l?l?l?l?d?d?d            0.82	46.43		2635349
-	26  ?d?d?d?d?d?d?d?d?d              0.82	47.25		2621331
-	27  ?l?l?l?l?l?l?l?l?l?l?l?l        0.73	47.99		2348937
-	28  ?d?d?d?d?d?d?d?d?d?d?d          0.61	48.59		1942563
-	29  ?l?l?l?l?d?d                    0.60	49.19		1922303
-	30  ?l?l?l?l?l?l?l?d?d?d?d          0.57	49.76		1819833
-	31  ?l?l?l?l?l?l?l?l?l?d?d          0.50	50.26		1605382
+`cd bypass/passwords`
 
-# Hashes and Cracked Hashes
+`unzip passwords-hailmary.txt.zip`
+
+Verify config.py is properly configured. If unsure of location of John the Ripper, try 
+
+`locate john.pot`
+
+**Example:**
+
+if locate finds john installed in /opt/john/run/
+
+`locate john.pot`
+
+`/opt/john/run/`
+
+Then the config.py should contain the following
+
+`JTR_FILE_PATH = "/opt/john/run/"`
+
+`JTR_EXECUTABLE_FILENAME = "john"`
+
+`JTR_POT_FILENAME = "john.pot"`
+
+# Usage
+
+**PassTime: Automate statistical analysis of passwords in support of password cracking tasks**
+
+**Usage**: passtime.py [-h] [-v] [-l] [-p PERCENTILE] [-a] -i INPUT_FILE
+
+**Optional arguments:**
+
+      -h, --help            show this help message and exit
+      -v, --verbose         Enable verbose output
+      -l, --list-masks      List password masks for the passwords provided in the INPUT FILE
+      -p PERCENTILE, --percentile PERCENTILE
+                            Based on statistical analysis of the passwords provided, only list masks matching the given PERCENTILE percent of passwords. For example, if a value of 0.25 provided, only lists the relatively few masks needed to crack 25 percent of the passwords. Ideally, these would be the only masks needed to crack the same percentage of the remaining, uncracked passwords. However, the prediction is only as good as the sample passwords provided in the INPUT FILE. The more closely the provided passwords match the target passwords, the better the prediction.
+      -a, --analyze-passwords
+                            Perform analysis on the password provided in the INPUT FILE. A probability density function (PDF) will be displayed with the masks matching PERCENTILE percent of passwords. The marginal and cummulative percentages represented by each mask are provided with the number of passwords matched by the mask.
+      -i INPUT_FILE, --input-file INPUT_FILE
+                            Path to file containing passwords to analyze
+
+**Examples**:
+
+List masks representing 75 percent of the passwords in input file worst-10000-passwords.txt
+
+`python3 passtime.py -l -p 0.75 -i worst-10000-passwords.txt
+`
+
+Generate probability density function (PDF), masks, marginal percentile (MP), cummulative percentile (CP) and count of passwords representing 75 percent of the passwords in input file worst-10000-passwords.txt
+
+`python3 passtime.py -a -p 0.75 -i worst-10000-passwords.txt
+`
+# Hashes and Cracked Hashes for Practice
 
 These resources host hashes and the resulting passwords. These can be helpful for practice.
 
 **Adeptus Mechanicus**: http://www.adeptus-mechanicus.com/codex/hashpass/hashpass.php
+
+**Hashes.org**: https://hashes.org/leaks.php
 
 # Educational Resources
 

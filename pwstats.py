@@ -339,7 +339,7 @@ class PasswordStats:
 
         # Legend
         print()
-        print("Legend:")
+        print("Legend: (MP - Marginal Percentile, CP - Cummulative Percentile)")
         print()
 
         # Headers
