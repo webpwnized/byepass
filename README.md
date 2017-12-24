@@ -10,15 +10,29 @@ Change into desired directory, clone the project and decompress passwords-hailma
 
 `unzip passwords-hailmary.txt.zip`
 
-Verify config.py is properly configured. If unsure of location of John the Ripper, try 
+Verify config.py is properly configured. 
 
-`locate john.pot`
+**JTR_FILE_PATH**: Install path for John the Ripper. This is
+ system and situation dependent. On Kali Linux, the default 
+ path is "/usr/share/john". When john is compiled natively,
+ the path may be "/opt/john/run/" but the user who installed
+ JTR could put it in others directories.
+
+**JTR_EXECUTABLE_FILENAME**: Filename of the john executable. By default, this is 
+"john" and should not need to be changed. On Windows it is john.exe by default.
+
+**JTR_POT_FILENAME**: Filename of the john.pot file. By default, this is 
+"john.pot" and should not need to be changed
+
+If unsure of location of John the Ripper, try 
+
+`locate john`
 
 **Example:**
 
 if locate finds john installed in /opt/john/run/
 
-`locate john.pot`
+`locate john`
 
 `/opt/john/run/`
 
