@@ -97,7 +97,7 @@ def run_jtr_wordlist_mode(pWordlist: str, pRule: str, pHashFormat:str,  pVerbose
     if pVerbose:
         print("[*] Command: {}".format(lCompletedProcess.args))
         print(lCompletedProcess.stdout)
-        lListOfPasswords = parse_jtr_pot(True, True)
+        lListOfPasswords = parse_jtr_pot(pVerbose, pDebug)
         lNumberPasswordsCracked = lListOfPasswords.__len__()
         print("[*] Finished")
         print("[*] Passwords cracked: {}".format(lNumberPasswordsCracked))
@@ -131,7 +131,7 @@ def run_jtr_mask_mode(pMask: str, pWordlist: str, pHashFormat:str, pVerbose: boo
     if pVerbose:
         print("[*] Command: {}".format(lCompletedProcess.args))
         print(lCompletedProcess.stdout)
-        lListOfPasswords = parse_jtr_pot(True, True)
+        lListOfPasswords = parse_jtr_pot(pVerbose, pDebug)
         lNumberPasswordsCracked = lListOfPasswords.__len__()
         print("[*] Finished")
         print("[*] Passwords cracked: {}".format(lNumberPasswordsCracked))
@@ -211,7 +211,7 @@ def run_jtr_prayer_mode(pMethod: int, pHashFormat: str, pVerbose: bool, pDebug: 
     if pVerbose:
         print("[*] Command: {}".format(lCompletedProcess.args))
         print(lCompletedProcess.stdout)
-        lListOfPasswords = parse_jtr_pot(True, True)
+        lListOfPasswords = parse_jtr_pot(pVerbose=pVerbose, pDebug=pDebug)
         lNumberPasswordsCracked = lListOfPasswords.__len__()
         print("[*] Finished")
         print("[*] Passwords cracked: {}".format(lNumberPasswordsCracked))
@@ -222,33 +222,162 @@ def run_jtr_prayer_mode(pMethod: int, pHashFormat: str, pVerbose: bool, pDebug: 
         print("[*] Passwords cracked per second: {}".format(lNumberPasswordsCracked // lRunTime))
 
 
+def perform_statistical_cracking(pPercentile: float, pHashFormat: str, pVerbose: bool, pDebug: bool) -> None:
+
+    # The JTR POT file is the source of passwords
+    if pVerbose: print("[*] Parsing JTR POT file at {}".format(JTR_POT_FILE_PATH))
+    lListOfPasswords = parse_jtr_pot(pVerbose, True)
+
+    if pVerbose:
+        lCountPasswords = lListOfPasswords.__len__()
+        print("[*] Using {} passwords in statistical analysis: ".format(str(lCountPasswords)))
+        if lCountPasswords > 1000000: print("[*] That is a lot of passwords. Statistical analysis may take a while.")
+
+    # Let PasswordStats class analyze most likely masks
+    if pVerbose: print("[*] Beginning statistical analysis")
+    lPasswordStats = PasswordStats(lListOfPasswords)
+    if pVerbose: print(
+        "[*] Parsed {} passwords into {} masks".format(lPasswordStats.count_passwords, lPasswordStats.count_masks))
+
+    # Calculate masks most likely need to crack X% of the password hashes
+    lMasks = lPasswordStats.get_popular_masks(lPercentile)
+    if pVerbose: print("[*] Password masks ({} percentile): {}".format(pPercentile, lMasks))
+
+    # For each mask, try high probability guesses
+    lUndefinedMasks = []
+    for lMask in lMasks:
+        if pVerbose: print("[*] Processing mask: {}".format(lMask))
+
+        # All lowercase letters
+        if re.match('^(\?l)+$', lMask):
+            lCountLetters = lMask.count('?l')
+            lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
+            run_jtr_wordlist_mode(pWordlist=lWordlist, pRule="best126", pHashFormat=pHashFormat,
+                                  pVerbose=pVerbose, pDebug=pDebug)
+
+        # All uppercase
+        elif re.match('^(\?u)+$', lMask):
+            lCountLetters = lMask.count('?u')
+            lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
+            lRule = "uppercase"
+            run_jtr_wordlist_mode(pWordlist=lWordlist, pRule=lRule, pHashFormat=pHashFormat,
+                                  pVerbose=pVerbose, pDebug=pDebug)
+
+        # Uppercase followed by lowercase (assume only leading letter is uppercase)
+        elif re.match('^(\?u)(\?l)+$', lMask):
+            lCountLetters = lMask.count('?u') + lMask.count('?l')
+            lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
+            lRule = "capitalize"
+            run_jtr_wordlist_mode(pWordlist=lWordlist, pRule=lRule, pHashFormat=pHashFormat,
+                                  pVerbose=pVerbose, pDebug=pDebug)
+
+        # Lowercase ending with digits
+        elif re.match('^(\?l)+(\?d)+$', lMask):
+            lCountLetters = lMask.count('?l')
+            lCountDigits = lMask.count('?d')
+            lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
+            lRule = "append{}digits".format(str(lCountDigits))
+            run_jtr_wordlist_mode(pWordlist=lWordlist, pRule=lRule, pHashFormat=pHashFormat,
+                                  pVerbose=pVerbose, pDebug=pDebug)
+
+        # Uppercase followed by digits
+        elif re.match('^(\?u)+(\?d)+$', lMask):
+            lCountLetters = lMask.count('?u')
+            lCountDigits = lMask.count('?d')
+            lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
+            lRule = "uppercaseappend{}digits".format(str(lCountDigits))
+            run_jtr_wordlist_mode(pWordlist=lWordlist, pRule=lRule, pHashFormat=pHashFormat,
+                                  pVerbose=pVerbose, pDebug=pDebug)
+
+        # Uppercase, lowercase, then digits (assume only leading letter is uppercase)
+        elif re.match('^(\?u)(\?l)+(\?d)+$', lMask):
+            lCountLetters = lMask.count('?u') + lMask.count('?l')
+            lCountDigits = lMask.count('?d')
+            lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
+            lRule = "capitalizeappend{}digits".format(str(lCountDigits))
+            run_jtr_wordlist_mode(pWordlist=lWordlist, pRule=lRule, pHashFormat=pHashFormat,
+                                  pVerbose=pVerbose, pDebug=pDebug)
+
+        # Low number of digits. We do not cover large numbers of digits because
+        # precomputing dictionary files would be huge and running mask mode takes a long time.
+        # Right now we support 4-6 digits only. Recall we cover 4 and 6 digits specifically in
+        # "prayer" mode so we do not repeat those two masks here.
+        elif re.match('^(\?d)+$', lMask):
+            lCountDigits = lMask.count('?d')
+            if lCountDigits == 5:
+                lWordlist = "dictionaries/{}-digit-numbers.txt".format(str(lCountDigits))
+                run_jtr_wordlist_mode(pWordlist=lWordlist, pRule="", pHashFormat=pHashFormat,
+                                      pVerbose=pVerbose, pDebug=pDebug)
+            else:
+                print("[*] WARNING: Did not process mask {} because it is out of policy".format(lMask))
+
+        # Lowercase ending with something other than the masks already accounted for. If the
+        # ending pattern is longer than 2 characters, we do not try because it takes a long time
+        # to test that many hashes
+        elif re.match('^(\?l)+', lMask):
+            lPrefix = re.search('^(\?l)+', lMask).group()
+            lCountLetters = lPrefix.count("?l")
+            lSuffix = lMask[lCountLetters * 2:]
+            if len(lSuffix) <= 4:
+                lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
+                lMaskParam = "--mask=?w{}".format(lSuffix)
+                run_jtr_mask_mode(pMask=lMaskParam, pWordlist=lWordlist, pHashFormat=pHashFormat,
+                                  pVerbose=pVerbose, pDebug=pDebug)
+            else:
+                print("[*] WARNING: Did not process mask {} because it is out of policy".format(lMask))
+
+        else:
+            lUndefinedMasks.append(lMask)
+            print("[*] WARNING: No policy defined for mask {}".format(lMask))
+
+    # List masks that did not match a pattern so that a pattern can be added
+    if lUndefinedMasks: print(
+        "[*] WARNING: There was no policy defined for the following masks: {}".format(lUndefinedMasks))
+
+
 if __name__ == '__main__':
 
     READ_BYTES = 'rb'
     READ_LINES = 'r'
     JTR_POT_FILE_PATH = Config.JTR_FILE_PATH + Config.JTR_POT_FILENAME
     JTR_EXE_FILE_PATH = Config.JTR_FILE_PATH + Config.JTR_EXECUTABLE_FILENAME
+    DEBUG = False
 
     lArgParser = argparse.ArgumentParser(description='ByePass: Automate the most common password cracking tasks',
                                          epilog='',
                                          formatter_class=RawTextHelpFormatter)
     lArgParser.add_argument('-f', '--hash-format',
                             type=str,
-                            help='The hash algorithm used to hash the password(s). This value must be one of the values supported by John the Ripper. To see formats supported by JTR, use command "john --list=formats". It is strongly recommended to provide an optimal value. If no value is provided, John the Ripper will guess.',
+                            help="""The hash algorithm used to hash the password(s). 
+                                    This value must be one of the values supported by John the Ripper. 
+                                    To see formats supported by JTR, use command "john --list=formats". 
+                                    It is strongly recommended to provide an optimal value. If no value is provided, 
+                                    John the Ripper will guess.""",
                             action='store')
     lArgParser.add_argument('-s', '--stat-crack',
-                            help='Enable smart crack. Byepass will run relatively fast cracking strategies in hopes of cracking enough passwords to induce a pattern and create "high probability" masks. Byepass will use the masks in an attempt to crack more passwords.',
+                            help="""Enable statistical cracking. Byepass will run relatively fast cracking 
+                                    strategies in hopes of cracking enough passwords to induce a pattern and create 
+                                    "high probability" masks. Byepass will use the masks in an attempt to crack 
+                                    more passwords.""",
                             action='store_true')
     lArgParser.add_argument('-p', '--percentile',
                             type=float,
-                            help='Based on statistical analysis of the passwords provided, only list masks needed to crack at least the given percent of passwords. For example, if a value of 0.25 provided, only lists the relatively few masks needed to crack 25% of the passwords. The prediction is only as good as the sample passwords provided in the INPUT FILE. The more closely the provided passwords match the target passwords, the better the prediction. Note that password cracking effort follows an exponential distribution, so cracking a few more passwords takes a lot more effort (relatively speaking). A good starting value if completely unsure is 25% (0.25).',
+                            help="""Based on statistical analysis of the passwords cracked during 
+                                    initial phase, use only the masks statistically likely to be needed to 
+                                    crack at least the given percent of passwords. For example, if a value of 0.25 
+                                    provided, only use the relatively few masks needed to crack 25 passwords of the 
+                                    passwords. Note that password cracking effort follows an exponential distribution, 
+                                    so cracking a few more passwords takes a lot more effort (relatively speaking). 
+                                    A good starting value if completely unsure is 25% (0.25).""",
                             action='store')
     lArgParser.add_argument('-v', '--verbose',
-                            help='Enable verbose output',
+                            help='Enable verbose output such as current progress and duration',
                             action='store_true')
-    lArgParser.add_argument('-i', '--input-file',
-                            help='Path to file containing hashes',
-                            action='store', required=True)
+    requiredAguments = lArgParser.add_argument_group('required arguments')
+    requiredAguments.add_argument('-i', '--input-file',
+                                  type=str,
+                                  help='Path to file containing password hashes to attempt to crack',
+                                  action='store',required=True)
     lArgs = lArgParser.parse_args()
 
     # Input parameter validation
@@ -263,16 +392,16 @@ if __name__ == '__main__':
     except:
         lHashFormat = ""
 
-    if lArgs.verbose:
+    if lVerbose:
         lStartTime = time.time()
         print("[*] Working on input file {}".format(lHashFile))
 
     # Try to crack a relatively few passwords as quickly as possible.
     # These can be used in statistical analysis
     for i in range(1,14,1):
-        run_jtr_prayer_mode(pMethod=i, pHashFormat=lHashFormat, pVerbose=lVerbose, pDebug=False)
+        run_jtr_prayer_mode(pMethod=i, pHashFormat=lHashFormat, pVerbose=lVerbose, pDebug=DEBUG)
 
-    # If the user choose, begin statistical analysis to aid targeted cracking routines
+    # If the user chooses, begin statistical analysis to aid targeted cracking routines
     if lArgs.stat_crack:
 
         if lArgs.percentile:
@@ -282,107 +411,11 @@ if __name__ == '__main__':
         else:
             lPercentile = 1.0
 
-        # The JTR POT file is the source of passwords
-        if lArgs.verbose: print("[*] Parsing JTR POT file at {}".format(JTR_POT_FILE_PATH))
-        lListOfPasswords = parse_jtr_pot(lVerbose, True)
+        perform_statistical_cracking(pPercentile=lPercentile, pHashFormat=lHashFormat,
+                                     pVerbose=lVerbose, pDebug=DEBUG)
 
-        if lArgs.verbose:
-            lCountPasswords = lListOfPasswords.__len__()
-            print("[*] Using {} passwords in statistical analysis: ".format(str(lCountPasswords)))
-            if lCountPasswords > 1000000: print("[*] That is a lot of passwords. Statistical analysis may take a while.")
+    if lVerbose:
+        lEndTime = time.time()
+        lElaspsedTime = time.gmtime(lEndTime - lStartTime)
+        print("[*] Duration: {}".format(time.strftime("%H:%M:%S", lElaspsedTime)))
 
-        # Let PasswordStats class analyze most likely masks
-        if lArgs.verbose: print("[*] Beginning statistical analysis")
-        lPasswordStats = PasswordStats(lListOfPasswords)
-        if lArgs.verbose: print("[*] Parsed {} passwords into {} masks".format(lPasswordStats.count_passwords, lPasswordStats.count_masks))
-
-        # Calculate masks most likely need to crack X% of the password hashes
-        lMasks = lPasswordStats.get_popular_masks(lPercentile)
-        if lArgs.verbose: print("[*] Password masks ({} percentile): {}".format(lPercentile, lMasks))
-
-        #For each mask, try high probability guesses
-        lUndefinedMasks = []
-        for lMask in lMasks:
-            if lArgs.verbose: print("[*] Processing mask: {}".format(lMask))
-
-            # All lowercase letters
-            if re.match('^(\?l)+$', lMask):
-                lCountLetters = lMask.count('?l')
-                lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
-                run_jtr_wordlist_mode(pWordlist=lWordlist, pRule="best126", pHashFormat=lHashFormat, pVerbose=lVerbose, pDebug=False)
-
-            # All uppercase
-            elif re.match('^(\?u)+$', lMask):
-                lCountLetters = lMask.count('?u')
-                lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
-                lRule = "uppercase"
-                run_jtr_wordlist_mode(pWordlist=lWordlist, pRule=lRule, pHashFormat=lHashFormat, pVerbose=lVerbose, pDebug=False)
-
-            # Uppercase followed by lowercase (assume only leading letter is uppercase)
-            elif re.match('^(\?u)(\?l)+$', lMask):
-                lCountLetters = lMask.count('?u') + lMask.count('?l')
-                lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
-                lRule = "capitalize"
-                run_jtr_wordlist_mode(pWordlist=lWordlist, pRule=lRule, pHashFormat=lHashFormat, pVerbose=lVerbose, pDebug=False)
-
-            # Lowercase ending with digits
-            elif re.match('^(\?l)+(\?d)+$', lMask):
-                lCountLetters = lMask.count('?l')
-                lCountDigits = lMask.count('?d')
-                lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
-                lRule = "append{}digits".format(str(lCountDigits))
-                run_jtr_wordlist_mode(pWordlist=lWordlist, pRule=lRule, pHashFormat=lHashFormat, pVerbose=lVerbose, pDebug=False)
-
-            # Uppercase followed by digits
-            elif re.match('^(\?u)+(\?d)+$', lMask):
-                lCountLetters = lMask.count('?u')
-                lCountDigits = lMask.count('?d')
-                lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
-                lRule = "uppercaseappend{}digits".format(str(lCountDigits))
-                run_jtr_wordlist_mode(pWordlist=lWordlist, pRule=lRule, pHashFormat=lHashFormat, pVerbose=lVerbose, pDebug=False)
-
-            # Uppercase, lowercase, then digits (assume only leading letter is uppercase)
-            elif re.match('^(\?u)(\?l)+(\?d)+$', lMask):
-                lCountLetters = lMask.count('?u') + lMask.count('?l')
-                lCountDigits = lMask.count('?d')
-                lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
-                lRule = "capitalizeappend{}digits".format(str(lCountDigits))
-                run_jtr_wordlist_mode(pWordlist=lWordlist, pRule=lRule, pHashFormat=lHashFormat, pVerbose=lVerbose, pDebug=False)
-
-            # Low number of digits. We do not cover large numbers of digits because
-            # precomputing dictionary files would be huge and running mask mode takes a long time.
-            # Right now we support 4-6 digits only. Recall we cover 4 and 6 digits specifically in
-            # "prayer" mode so we do not repeat those two masks here.
-            elif re.match('^(\?d)+$', lMask):
-                lCountDigits = lMask.count('?d')
-                if lCountDigits == 5:
-                    lWordlist = "dictionaries/{}-digit-numbers.txt".format(str(lCountDigits))
-                    run_jtr_wordlist_mode(pWordlist=lWordlist, pRule="", pHashFormat=lHashFormat, pVerbose=lVerbose, pDebug=False)
-                else:
-                    print("[*] WARNING: Did not process mask {} because it is out of policy".format(lMask))
-
-            # Lowercase ending with something other than the masks already accounted for. If the
-            # ending pattern is longer than 2 characters, we do not try because it takes a long time
-            # to test that many hashes
-            elif re.match('^(\?l)+', lMask):
-                lPrefix = re.search('^(\?l)+', lMask).group()
-                lCountLetters = lPrefix.count("?l")
-                lSuffix = lMask[lCountLetters*2:]
-                if len(lSuffix) <= 4:
-                    lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
-                    lMaskParam = "--mask=?w{}".format(lSuffix)
-                    run_jtr_mask_mode(pMask=lMaskParam, pWordlist=lWordlist, pHashFormat=lHashFormat, pVerbose=lVerbose, pDebug=False)
-                else:
-                    print("[*] WARNING: Did not process mask {} because it is out of policy".format(lMask))
-
-            else:
-                lUndefinedMasks.append(lMask)
-                print("[*] WARNING: No policy defined for mask {}".format(lMask))
-
-        # List masks that did not match a pattern so that a pattern can be added
-        if lUndefinedMasks: print("[*] WARNING: There was no policy defined for the following masks: {}".format(lUndefinedMasks))
-
-    lEndTime = time.time()
-    lMinutes, lSeconds = divmod(lEndTime, 60)
-    lHours, lMinutes = divmod(lMinutes, 60)
-    print("[*] Duration: {}".format(time.strftime("%H:%M:%S", time.gmtime(lEndTime - lStartTime))))
