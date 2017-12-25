@@ -164,7 +164,7 @@ def run_jtr_prayer_mode(pMethod: int, pHashFormat: str, pVerbose: bool, pDebug: 
         lCmdArgs.append("--rules=best126")
     elif pMethod == 3:
         if pVerbose: print("[*] Starting mode: Wordlist passwords-hailmary.txt")
-        lCmdArgs.append("--wordlist=passwords/pw.txt")
+        lCmdArgs.append("--wordlist=passwords/passwords-hailmary.txt")
     elif pMethod == 4:
         if pVerbose: print("[*] Starting mode: Wordlist top-10000-english-words.txt Rule best126")
         lCmdArgs.append("--wordlist=dictionaries/top-10000-english-words.txt")
@@ -398,9 +398,6 @@ Attempt to crack password hashes found in input file "password.hashes", then run
     if lVerbose:
         lStartTime = time.time()
         print("[*] Working on input file {}".format(lHashFile))
-
-    run_jtr_prayer_mode(pMethod=3, pHashFormat=lHashFormat, pVerbose=lVerbose, pDebug=lDebug)
-    exit(0)
 
     # Try to crack a relatively few passwords as quickly as possible.
     # These can be used in statistical analysis

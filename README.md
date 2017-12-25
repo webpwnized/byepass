@@ -6,6 +6,7 @@ Step 1: Change into desired directory, clone the project and decompress password
 
     git clone https://github.com/webpwnized/byepass.git
     cd bypass/passwords
+    cat passwords-hailmary-1.txt.zip passwords-hailmary-2.txt.zip passwords-hailmary-3.txt.zip passwords-hailmary-4.txt.zip passwords-hailmary-5.txt.zip passwords-hailmary-6.txt.zip > passwords-hailmary.txt.zip
     unzip passwords-hailmary.txt.zip
 
 Step 2: Verify config.py is properly configured. 
