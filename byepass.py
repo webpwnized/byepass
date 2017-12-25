@@ -164,7 +164,7 @@ def run_jtr_prayer_mode(pMethod: int, pHashFormat: str, pVerbose: bool, pDebug: 
         lCmdArgs.append("--rules=best126")
     elif pMethod == 3:
         if pVerbose: print("[*] Starting mode: Wordlist passwords-hailmary.txt")
-        lCmdArgs.append("--wordlist=passwords/passwords-hailmary.txt")
+        lCmdArgs.append("--wordlist=passwords/pw.txt")
     elif pMethod == 4:
         if pVerbose: print("[*] Starting mode: Wordlist top-10000-english-words.txt Rule best126")
         lCmdArgs.append("--wordlist=dictionaries/top-10000-english-words.txt")
@@ -341,7 +341,7 @@ if __name__ == '__main__':
     READ_LINES = 'r'
     JTR_POT_FILE_PATH = Config.JTR_FILE_PATH + Config.JTR_POT_FILENAME
     JTR_EXE_FILE_PATH = Config.JTR_FILE_PATH + Config.JTR_EXECUTABLE_FILENAME
-    DEBUG = False
+    DEBUG = Config.DEBUG
 
     lArgParser = argparse.ArgumentParser(description='ByePass: Automate the most common password cracking tasks',
                                          epilog="""
@@ -349,7 +349,9 @@ Examples:\n\n
 Attempt to crack password hashes found in input file "password.hashes"\n\n
 \tpython3 byepass.py -v --hash-format=descrypt --input-file=password.hashes\n\n
 Attempt to crack password hashes found in input file "password.hashes", then run statistical analysis to determine masks needed to crack 50 percent of passwords, and try to crack again using the masks.\n\n
-\tpython3 byepass.py --verbose --hash-format=descrypt --stat-crack --percentile=0.50 --input-file=password.hashes
+\tpython3 byepass.py --verbose --hash-format=descrypt --stat-crack --percentile=0.50 --input-file=password.hashes\n\n
+\"Real life\" example attempting to crack 25 percent of the linked-in hash set\n 
+\tpython3 byepass.py --verbose --hash-format=Raw-SHA1 --stat-crack --percentile=0.25 --input-file=linkedin.hashes
                                          """,
                                          formatter_class=RawTextHelpFormatter)
     lArgParser.add_argument('-f', '--hash-format',
@@ -366,6 +368,9 @@ Attempt to crack password hashes found in input file "password.hashes", then run
     lArgParser.add_argument('-v', '--verbose',
                             help='Enable verbose output such as current progress and duration',
                             action='store_true')
+    lArgParser.add_argument('-d', '--debug',
+                            help='Enable debug mode',
+                            action='store_true')
     requiredAguments = lArgParser.add_argument_group('required arguments')
     requiredAguments.add_argument('-i', '--input-file',
                                   type=str,
@@ -380,6 +385,11 @@ Attempt to crack password hashes found in input file "password.hashes", then run
     lHashFile = lArgs.input_file
     lVerbose = lArgs.verbose
 
+    if lArgs.debug:
+        lDebug = lArgs.debug
+    else:
+        lDebug = DEBUG
+
     try:
         lHashFormat = lArgs.hash_format
     except:
@@ -389,10 +399,13 @@ Attempt to crack password hashes found in input file "password.hashes", then run
         lStartTime = time.time()
         print("[*] Working on input file {}".format(lHashFile))
 
+    run_jtr_prayer_mode(pMethod=3, pHashFormat=lHashFormat, pVerbose=lVerbose, pDebug=lDebug)
+    exit(0)
+
     # Try to crack a relatively few passwords as quickly as possible.
     # These can be used in statistical analysis
     for i in range(1,14,1):
-        run_jtr_prayer_mode(pMethod=i, pHashFormat=lHashFormat, pVerbose=lVerbose, pDebug=DEBUG)
+        run_jtr_prayer_mode(pMethod=i, pHashFormat=lHashFormat, pVerbose=lVerbose, pDebug=lDebug)
 
     # If the user chooses, begin statistical analysis to aid targeted cracking routines
     if lArgs.stat_crack:
@@ -405,7 +418,7 @@ Attempt to crack password hashes found in input file "password.hashes", then run
             lPercentile = 1.0
 
         perform_statistical_cracking(pPercentile=lPercentile, pHashFormat=lHashFormat,
-                                     pVerbose=lVerbose, pDebug=DEBUG)
+                                     pVerbose=lVerbose, pDebug=lDebug)
 
     if lVerbose:
         lEndTime = time.time()

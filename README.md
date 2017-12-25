@@ -104,13 +104,15 @@ Attempt to crack password hashes found in input file "password.hashes", then run
 
 	python3 byepass.py --verbose --hash-format=descrypt --stat-crack --percentile=0.50 --input-file=password.hashes
                                          
-# Hashes and Cracked Hashes for Practice
+# Hashes and Password Lists
 
 These resources host hashes and the resulting passwords. These can be helpful for practice.
 
 **Adeptus Mechanicus**: http://www.adeptus-mechanicus.com/codex/hashpass/hashpass.php
 
 **Hashes.org**: https://hashes.org/leaks.php
+
+**CrackStation's Password Cracking Dictionary**: https://crackstation.net/buy-crackstation-wordlist-password-cracking-dictionary.htm
 
 # Educational Resources
 
