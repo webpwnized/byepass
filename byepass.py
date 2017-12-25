@@ -344,31 +344,24 @@ if __name__ == '__main__':
     DEBUG = False
 
     lArgParser = argparse.ArgumentParser(description='ByePass: Automate the most common password cracking tasks',
-                                         epilog='',
+                                         epilog="""
+Examples:\n\n
+Attempt to crack password hashes found in input file "password.hashes"\n\n
+\tpython3 byepass.py -v --hash-format=descrypt --input-file=password.hashes\n\n
+Attempt to crack password hashes found in input file "password.hashes", then run statistical analysis to determine masks needed to crack 50 percent of passwords, and try to crack again using the masks.\n\n
+\tpython3 byepass.py --verbose --hash-format=descrypt --stat-crack --percentile=0.50 --input-file=password.hashes
+                                         """,
                                          formatter_class=RawTextHelpFormatter)
     lArgParser.add_argument('-f', '--hash-format',
                             type=str,
-                            help="""The hash algorithm used to hash the password(s). 
-                                    This value must be one of the values supported by John the Ripper. 
-                                    To see formats supported by JTR, use command "john --list=formats". 
-                                    It is strongly recommended to provide an optimal value. If no value is provided, 
-                                    John the Ripper will guess.""",
+                            help="The hash algorithm used to hash the password(s). This value must be one of the values supported by John the Ripper. To see formats supported by JTR, use command \"john --list=formats\". It is strongly recommended to provide an optimal value. If no value is provided, John the Ripper will guess.",
                             action='store')
     lArgParser.add_argument('-s', '--stat-crack',
-                            help="""Enable statistical cracking. Byepass will run relatively fast cracking 
-                                    strategies in hopes of cracking enough passwords to induce a pattern and create 
-                                    "high probability" masks. Byepass will use the masks in an attempt to crack 
-                                    more passwords.""",
+                            help="Enable statistical cracking. Byepass will run relatively fast cracking strategies in hopes of cracking enough passwords to induce a pattern and create \"high probability\" masks. Byepass will use the masks in an attempt to crack more passwords.",
                             action='store_true')
     lArgParser.add_argument('-p', '--percentile',
                             type=float,
-                            help="""Based on statistical analysis of the passwords cracked during 
-                                    initial phase, use only the masks statistically likely to be needed to 
-                                    crack at least the given percent of passwords. For example, if a value of 0.25 
-                                    provided, only use the relatively few masks needed to crack 25 passwords of the 
-                                    passwords. Note that password cracking effort follows an exponential distribution, 
-                                    so cracking a few more passwords takes a lot more effort (relatively speaking). 
-                                    A good starting value if completely unsure is 25% (0.25).""",
+                            help="Based on statistical analysis of the passwords cracked during initial phase, use only the masks statistically likely to be needed to crack at least the given percent of passwords. For example, if a value of 0.25 provided, only use the relatively few masks needed to crack 25 passwords of the passwords. Note that password cracking effort follows an exponential distribution, so cracking a few more passwords takes a lot more effort (relatively speaking). A good starting value if completely unsure is 25 percent (0.25).",
                             action='store')
     lArgParser.add_argument('-v', '--verbose',
                             help='Enable verbose output such as current progress and duration',
