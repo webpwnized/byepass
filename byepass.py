@@ -418,4 +418,8 @@ if __name__ == '__main__':
         lEndTime = time.time()
         lElaspsedTime = time.gmtime(lEndTime - lStartTime)
         print("[*] Duration: {}".format(time.strftime("%H:%M:%S", lElaspsedTime)))
-
+        print("Cracking attempt complete. Use john --show to see cracked passwords.")
+        if lHashFormat:
+            print("The command should be something like {} --format={} --show {}".format(JTR_EXE_FILE_PATH, lHashFormat, lHashFile))
+        else:
+            print("The command should be something like {} --show {}".format(JTR_EXE_FILE_PATH, lHashFile))
