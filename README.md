@@ -43,7 +43,7 @@ Then the config.py should contain the following
 
 Usage for passtime and byepass
 
-#PassTime
+# PassTime
 
 **Automate statistical analysis of passwords in support of password cracking tasks**
 
@@ -72,8 +72,7 @@ Generate probability density function (PDF), masks, marginal percentile (MP), cu
 
     python3 passtime.py -a -p 0.75 -i worst-10000-passwords.txt
 
-
-#ByePass
+# ByePass
 
 **Automate the most common password cracking tasks**
 
