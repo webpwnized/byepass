@@ -89,6 +89,7 @@ Generate probability density function (PDF), masks, marginal percentile (MP), cu
       -p PERCENTILE, --percentile PERCENTILE
                             Based on statistical analysis of the passwords cracked during initial phase, use only the masks statistically likely to be needed to crack at least the given percent of passwords. For example, if a value of 0.25 provided, only use the relatively few masks needed to crack 25 passwords of the passwords. Note that password cracking effort follows an exponential distribution, so cracking a few more passwords takes a lot more effort (relatively speaking). A good starting value if completely unsure is 25 percent (0.25).
       -v, --verbose         Enable verbose output such as current progress and duration
+      -d, --debug           Enable debug mode
 
 **Required arguments:**
 
