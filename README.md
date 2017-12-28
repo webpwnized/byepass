@@ -77,7 +77,7 @@ Generate probability density function (PDF), masks, marginal percentile (MP), cu
 
 **Automate the most common password cracking tasks**
 
-**Usage**: byepass.py [-h] [-f HASH_FORMAT] [-s] [-p PERCENTILE] [-v] -i
+**Usage**: byepass.py [-h] [-f HASH_FORMAT] [-s] [-p PERCENTILE] [-v] [-d] -i
                   INPUT_FILE
 
 **Optional arguments:**
