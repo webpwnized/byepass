@@ -1,6 +1,6 @@
 # Setup
 
-Step 1: Change into desired directory, clone the project and decompress passwords-hailmary.txt.zip.
+**Step 1: Change into desired directory, clone the project and decompress passwords-hailmary.txt.zip.**
 
 **Example:**
 
@@ -9,7 +9,7 @@ Step 1: Change into desired directory, clone the project and decompress password
     cat passwords-hailmary-1.txt.zip passwords-hailmary-2.txt.zip passwords-hailmary-3.txt.zip passwords-hailmary-4.txt.zip passwords-hailmary-5.txt.zip passwords-hailmary-6.txt.zip > passwords-hailmary.txt.zip
     unzip passwords-hailmary.txt.zip
 
-Step 2: Verify config.py is properly configured. 
+**Step 2: Verify config.py is properly configured.** 
 
 **JTR_FILE_PATH**: Install path for John the Ripper. This is
  system and situation dependent. On Kali Linux, the default 
