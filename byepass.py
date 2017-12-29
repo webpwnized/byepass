@@ -77,7 +77,6 @@ def rm_jtr_pot_file() -> None:
 def run_jtr_wordlist_mode(pWordlist: str, pRule: str, pHashFormat:str,  pVerbose: bool, pDebug: bool) -> None:
 
     lStartTime = time.time()
-    lEndTime = 0
 
     if pDebug: rm_jtr_pot_file()
 
@@ -91,27 +90,45 @@ def run_jtr_wordlist_mode(pWordlist: str, pRule: str, pHashFormat:str,  pVerbose
         print("[*] Starting wordlist mode: {}".format(pWordlist))
         if pRule: print("[*] Using rule: {}".format(pRule))
 
+    # Determine number of passwords cracked before trying this method
+    try:
+        lListOfPasswords = parse_jtr_pot(pVerbose=pVerbose, pDebug=pDebug)
+        lNumberPasswordsAlreadyCracked = lListOfPasswords.__len__()
+    except:
+        lNumberPasswordsAlreadyCracked = 0
+
+    if pVerbose:
+        print("[*] Finished")
+        print("[*] Passwords cracked before using wordlist {}: {}".format(pWordlist, lNumberPasswordsAlreadyCracked))
+
     lCompletedProcess = subprocess.run(lCmdArgs, stdout=subprocess.PIPE)
     time.sleep(1)
+
+    # Determine number of passwords cracked after trying this method
+    try:
+        lListOfPasswords = parse_jtr_pot(pVerbose=pVerbose, pDebug=pDebug)
+        lNumberPasswordsCracked = lListOfPasswords.__len__()
+    except:
+        lNumberPasswordsCracked = 0
+
+    lNumberPasswordsCrackedByThisMethod = lNumberPasswordsCracked - lNumberPasswordsAlreadyCracked
+    print("[*] Passwords cracked using wordlist {}: {}".format(pWordlist, lNumberPasswordsCrackedByThisMethod))
 
     if pVerbose:
         print("[*] Command: {}".format(lCompletedProcess.args))
         print(lCompletedProcess.stdout)
-        lListOfPasswords = parse_jtr_pot(pVerbose, pDebug)
-        lNumberPasswordsCracked = lListOfPasswords.__len__()
         print("[*] Finished")
-        print("[*] Passwords cracked: {}".format(lNumberPasswordsCracked))
+        print("[*] Passwords cracked: {}".format(lNumberPasswordsCrackedByThisMethod))
 
     if pDebug:
         lRunTime = time.time() - lStartTime
         print("[*] Duration: {}".format(lRunTime))
-        print("[*] Passwords cracked per second: {}".format(lNumberPasswordsCracked // lRunTime))
+        print("[*] Passwords cracked per second: {}".format(lNumberPasswordsCrackedByThisMethod // lRunTime))
 
 
 def run_jtr_mask_mode(pMask: str, pWordlist: str, pHashFormat:str, pVerbose: bool, pDebug: bool) -> None:
 
     lStartTime = time.time()
-    lEndTime = 0
 
     if pDebug: rm_jtr_pot_file()
 
@@ -125,21 +142,40 @@ def run_jtr_mask_mode(pMask: str, pWordlist: str, pHashFormat:str, pVerbose: boo
         print("[*] Starting mask mode: {}".format(pMask))
         if pWordlist: print("[*] Using wordlist: {}".format(pWordlist))
 
+    # Determine number of passwords cracked before trying this method
+    try:
+        lListOfPasswords = parse_jtr_pot(pVerbose=pVerbose, pDebug=pDebug)
+        lNumberPasswordsAlreadyCracked = lListOfPasswords.__len__()
+    except:
+        lNumberPasswordsAlreadyCracked = 0
+
+    if pVerbose:
+        print("[*] Finished")
+        print("[*] Passwords cracked before using mask {}: {}".format(pMask, lNumberPasswordsAlreadyCracked))
+
     lCompletedProcess = subprocess.run(lCmdArgs, stdout=subprocess.PIPE)
     time.sleep(1)
+
+    # Determine number of passwords cracked after trying this method
+    try:
+        lListOfPasswords = parse_jtr_pot(pVerbose=pVerbose, pDebug=pDebug)
+        lNumberPasswordsCracked = lListOfPasswords.__len__()
+    except:
+        lNumberPasswordsCracked = 0
+
+    lNumberPasswordsCrackedByThisMethod = lNumberPasswordsCracked - lNumberPasswordsAlreadyCracked
+    print("[*] Passwords cracked using mask {}: {}".format(pMask, lNumberPasswordsCrackedByThisMethod))
 
     if pVerbose:
         print("[*] Command: {}".format(lCompletedProcess.args))
         print(lCompletedProcess.stdout)
-        lListOfPasswords = parse_jtr_pot(pVerbose, pDebug)
-        lNumberPasswordsCracked = lListOfPasswords.__len__()
         print("[*] Finished")
-        print("[*] Passwords cracked: {}".format(lNumberPasswordsCracked))
+        print("[*] Passwords cracked: {}".format(lNumberPasswordsCrackedByThisMethod))
 
     if pDebug:
         lRunTime = time.time() - lStartTime
         print("[*] Duration: {}".format(lRunTime))
-        print("[*] Passwords cracked per second: {}".format(lNumberPasswordsCracked // lRunTime))
+        print("[*] Passwords cracked per second: {}".format(lNumberPasswordsCrackedByThisMethod // lRunTime))
 
 
 def run_jtr_prayer_mode(pMethod: int, pHashFormat: str, pVerbose: bool, pDebug: bool) -> None:
@@ -147,7 +183,6 @@ def run_jtr_prayer_mode(pMethod: int, pHashFormat: str, pVerbose: bool, pDebug: 
     # lCmdArgs is this list.
 
     lStartTime = time.time()
-    lEndTime = 0
 
     if pDebug: rm_jtr_pot_file()
 
@@ -204,22 +239,41 @@ def run_jtr_prayer_mode(pMethod: int, pHashFormat: str, pVerbose: bool, pDebug: 
         if pVerbose: print("[*] Starting mode: JTR single crack")
         lCmdArgs.append("--single")
 
+    # Determine number of passwords cracked before trying this method
+    try:
+        lListOfPasswords = parse_jtr_pot(pVerbose=pVerbose, pDebug=pDebug)
+        lNumberPasswordsAlreadyCracked = lListOfPasswords.__len__()
+    except:
+        lNumberPasswordsAlreadyCracked = 0
+
+    if pVerbose:
+        print("[*] Finished")
+        print("[*] Passwords cracked at start of prayer mode {}: {}".format(pMethod, lNumberPasswordsAlreadyCracked))
+
     lCmdArgs.append(lHashFile)
     lCompletedProcess = subprocess.run(lCmdArgs, stdout=subprocess.PIPE)
-    time.sleep(1)
+    time.sleep(0.5)
+
+    # Determine number of passwords cracked after trying this method
+    try:
+        lListOfPasswords = parse_jtr_pot(pVerbose=pVerbose, pDebug=pDebug)
+        lNumberPasswordsCracked = lListOfPasswords.__len__()
+    except:
+        lNumberPasswordsCracked = 0
 
     if pVerbose:
         print("[*] Command: {}".format(lCompletedProcess.args))
         print(lCompletedProcess.stdout)
-        lListOfPasswords = parse_jtr_pot(pVerbose=pVerbose, pDebug=pDebug)
-        lNumberPasswordsCracked = lListOfPasswords.__len__()
         print("[*] Finished")
-        print("[*] Passwords cracked: {}".format(lNumberPasswordsCracked))
+        print("[*] Passwords cracked at end of prayer mode {}: {}".format(pMethod, lNumberPasswordsCracked))
+
+    lNumberPasswordsCrackedByThisMethod = lNumberPasswordsCracked - lNumberPasswordsAlreadyCracked
+    print("[*] Passwords cracked by prayer mode {}: {}".format(pMethod, lNumberPasswordsCrackedByThisMethod))
 
     if pDebug:
         lRunTime = time.time() - lStartTime
         print("[*] Duration: {}".format(lRunTime))
-        print("[*] Passwords cracked per second: {}".format(lNumberPasswordsCracked // lRunTime))
+        print("[*] Passwords cracked per second: {}".format(lNumberPasswordsCrackedByThisMethod // lRunTime))
 
 
 def perform_statistical_cracking(pPercentile: float, pHashFormat: str, pVerbose: bool, pDebug: bool) -> None:
@@ -350,8 +404,10 @@ Attempt to crack password hashes found in input file "password.hashes"\n\n
 \tpython3 byepass.py -v --hash-format=descrypt --input-file=password.hashes\n\n
 Attempt to crack password hashes found in input file "password.hashes", then run statistical analysis to determine masks needed to crack 50 percent of passwords, and try to crack again using the masks.\n\n
 \tpython3 byepass.py --verbose --hash-format=descrypt --stat-crack --percentile=0.50 --input-file=password.hashes\n\n
-\"Real life\" example attempting to crack 25 percent of the linked-in hash set\n 
-\tpython3 byepass.py --verbose --hash-format=Raw-SHA1 --stat-crack --percentile=0.25 --input-file=linkedin.hashes
+\"Real life\" example attempting to crack 25 percent of the linked-in hash set\n\n
+\tpython3 byepass.py --verbose --hash-format=Raw-SHA1 --stat-crack --percentile=0.25 --input-file=linkedin.hashes\n\n
+Attempt to crack linked-in hashes using base words linkedin and linked\n\n
+\tpython3 byepass.py --hash-format=Raw-SHA1 --base-words=linkedin,linked --input-file=linkedin-1.hashes
                                          """,
                                          formatter_class=RawTextHelpFormatter)
     lArgParser.add_argument('-f', '--hash-format',
@@ -361,6 +417,10 @@ Attempt to crack password hashes found in input file "password.hashes", then run
     lArgParser.add_argument('-s', '--stat-crack',
                             help="Enable statistical cracking. Byepass will run relatively fast cracking strategies in hopes of cracking enough passwords to induce a pattern and create \"high probability\" masks. Byepass will use the masks in an attempt to crack more passwords.",
                             action='store_true')
+    lArgParser.add_argument('-b', '--base-words',
+                            type=str,
+                            help="Supply a comma-separated list of lowercase, unmangled base words thought to be good candidates. For example, if Wiley Coyote is cracking hashes from Acme Inc., Wiley might provide the word \"acme\". Be careful how many words are supplied as Byepass will apply many mangling rules. Up to several dozen should run reasonably fast.",
+                            action='store')
     lArgParser.add_argument('-p', '--percentile',
                             type=float,
                             help="Based on statistical analysis of the passwords cracked during initial phase, use only the masks statistically likely to be needed to crack at least the given percent of passwords. For example, if a value of 0.25 provided, only use the relatively few masks needed to crack 25 passwords of the passwords. Note that password cracking effort follows an exponential distribution, so cracking a few more passwords takes a lot more effort (relatively speaking). A good starting value if completely unsure is 25 percent (0.25).",
@@ -380,7 +440,7 @@ Attempt to crack password hashes found in input file "password.hashes", then run
 
     # Input parameter validation
     if lArgs.percentile and not lArgs.stat_crack:
-        print("[*] WARNING: Argument 'percentile' provided with argument 'stat_crack'. Percentile will be ignored")
+        print("[*] WARNING: Argument 'percentile' provided without argument 'stat_crack'. Percentile will be ignored")
 
     lHashFile = lArgs.input_file
     lVerbose = lArgs.verbose
@@ -398,6 +458,16 @@ Attempt to crack password hashes found in input file "password.hashes", then run
     if lVerbose:
         lStartTime = time.time()
         print("[*] Working on input file {}".format(lHashFile))
+
+    if lArgs.base_words:
+        lBaseWords = list(lArgs.base_words.split(","))
+        lBaseWordsFile = open('basewords/basewords.txt', 'w')
+        for lWord in lBaseWords:
+            lBaseWordsFile.write("%s\n" % lWord)
+        lBaseWordsFile.flush()
+        lBaseWordsFile.close()
+        run_jtr_wordlist_mode(pWordlist="basewords/basewords.txt", pRule="All", pHashFormat=lHashFormat,
+                              pVerbose=lVerbose, pDebug=lDebug)
 
     # Try to crack a relatively few passwords as quickly as possible.
     # These can be used in statistical analysis
