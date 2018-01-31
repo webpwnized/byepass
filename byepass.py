@@ -200,10 +200,11 @@ def run_jtr_prayer_mode(pMethod: int, pHashFormat: str, pVerbose: bool, pDebug: 
     elif pMethod == 3:
         if pVerbose: print("[*] Starting mode: Wordlist passwords-hailmary.txt")
         lCmdArgs.append("--wordlist=passwords/passwords-hailmary.txt")
+        lCmdArgs.append("--rules=Wordlist")
     elif pMethod == 4:
         if pVerbose: print("[*] Starting mode: Wordlist top-10000-english-words.txt Rule best126")
         lCmdArgs.append("--wordlist=dictionaries/top-10000-english-words.txt")
-        lCmdArgs.append("--rules=best126")
+        lCmdArgs.append("--rules=HailMary")
     elif pMethod == 5:
         if pVerbose: print("[*] Starting mode: Wordlist persons-names.txt Rule best126")
         lCmdArgs.append("--wordlist=dictionaries/persons-names.txt")
