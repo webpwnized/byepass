@@ -200,11 +200,11 @@ def run_jtr_prayer_mode(pMethod: int, pHashFormat: str, pVerbose: bool, pDebug: 
     elif pMethod == 3:
         if pVerbose: print("[*] Starting mode: Wordlist passwords-hailmary.txt")
         lCmdArgs.append("--wordlist=passwords/passwords-hailmary.txt")
-        lCmdArgs.append("--rules=Wordlist")
+        lCmdArgs.append("--rules=HailMary")
     elif pMethod == 4:
         if pVerbose: print("[*] Starting mode: Wordlist top-10000-english-words.txt Rule best126")
         lCmdArgs.append("--wordlist=dictionaries/top-10000-english-words.txt")
-        lCmdArgs.append("--rules=HailMary")
+        lCmdArgs.append("--rules=best126")
     elif pMethod == 5:
         if pVerbose: print("[*] Starting mode: Wordlist persons-names.txt Rule best126")
         lCmdArgs.append("--wordlist=dictionaries/persons-names.txt")
@@ -394,8 +394,8 @@ if __name__ == '__main__':
 
     READ_BYTES = 'rb'
     READ_LINES = 'r'
-    JTR_POT_FILE_PATH = Config.JTR_FILE_PATH + Config.JTR_POT_FILENAME
-    JTR_EXE_FILE_PATH = Config.JTR_FILE_PATH + Config.JTR_EXECUTABLE_FILENAME
+    JTR_POT_FILE_PATH = Config.JTR_POT_FILE_PATH
+    JTR_EXE_FILE_PATH = Config.JTR_EXECUTABLE_FILE_PATH
     DEBUG = Config.DEBUG
 
     lArgParser = argparse.ArgumentParser(description='ByePass: Automate the most common password cracking tasks',
@@ -462,13 +462,15 @@ Attempt to crack linked-in hashes using base words linkedin and linked\n\n
 
     if lArgs.base_words:
         lBaseWords = list(lArgs.base_words.split(","))
-        lBaseWordsFile = open('basewords/basewords.txt', 'w')
+        lBaseWordsFileName = 'basewords/basewords.txt'
+        lBaseWordsFile = open(lBaseWordsFileName, 'w')
         for lWord in lBaseWords:
             lBaseWordsFile.write("%s\n" % lWord)
         lBaseWordsFile.flush()
         lBaseWordsFile.close()
         run_jtr_wordlist_mode(pWordlist="basewords/basewords.txt", pRule="All", pHashFormat=lHashFormat,
                               pVerbose=lVerbose, pDebug=lDebug)
+        os.remove(lBaseWordsFileName)
 
     # Try to crack a relatively few passwords as quickly as possible.
     # These can be used in statistical analysis

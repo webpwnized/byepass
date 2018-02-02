@@ -11,34 +11,50 @@
 
 **Step 2: Verify config.py is properly configured.** 
 
-**JTR_FILE_PATH**: Install path for John the Ripper. This is
- system and situation dependent. On Kali Linux, the default 
- path is "/usr/share/john". When john is compiled natively,
- the path may be "/opt/john/run/" but the user who installed
- JTR could put it in others directories.
+**JTR_EXECUTABLE_FILE_PATH**: Filepath to the john executable. On
+ Kali Linux Rolling this is "/usr/sbin/john" by default. If john is
+ compiled natively, this path is usually <install directory>/john/run/john.
 
-**JTR_EXECUTABLE_FILENAME**: Filename of the john executable. By default, this is 
-"john" and should not need to be changed. On Windows it is john.exe by default.
+**JTR_POT_FILE_PATH**: Filepath of the john.pot file. On
+ Kali Linux Rolling this is "/root/.john/john.pot" by default. If john is
+ compiled natively, this path is usually <install directory>/john/run/john.
 
-**JTR_POT_FILENAME**: Filename of the john.pot file. By default, this is 
-"john.pot" and should not need to be changed
+If unsure of location of the John the Ripper executable and pot file, try 
 
-If unsure of location of John the Ripper, try 
-
-    locate john
+    which john
+    locate john.pot
 
 **Example:**
 
-if locate finds john installed in /opt/john/run/
+if locate finds john installed in the following
 
-    locate john
-    /opt/john/run/
+    which john
+    /usr/sbin/john
+
+    locate john.pot
+    /root/.john/john.pot
 
 Then the config.py should contain the following
 
-    JTR_FILE_PATH = "/opt/john/run/"
-    JTR_EXECUTABLE_FILENAME = "john"
-    JTR_POT_FILENAME = "john.pot"
+    JTR_EXECUTABLE_FILE_PATH = "/usr/sbin/john"
+    JTR_POT_FILE_PATH = "/root/.john/john.pot"
+
+**Step 3: Tell john the location of byepass's word mangling rules** 
+
+The rule are located in <byepass directory>/rules/byepass.conf. To
+tell john the location, add the following line to john.conf.
+
+    .include "<location of bypass>/byepass/rules/byepass.conf"
+
+where <location of bypass> is the location that byepass is installed.
+For example, if byepass is installed in /opt, add the following line
+into john.conf
+
+    .include "/opt/byepass/rules/byepass.conf"
+ 
+Tips: To find a good location in john.conf to place the line, search
+for ".include" and place the new include line near other include lines. The gedit
+editor is easy to use.
 
 # Usage
 
@@ -115,7 +131,7 @@ Attempt to crack password hashes found in input file "password.hashes", then run
 Attempt to crack linked-in hashes using base words linkedin and linked
 
 	python3 byepass.py --hash-format=Raw-SHA1 --base-words=linkedin,linked --input-file=linkedin-1.hashes
-                                         
+
 # Hashes and Password Lists
 
 These resources host hashes and the resulting passwords. These can be helpful for practice.
