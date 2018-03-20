@@ -292,6 +292,7 @@ class PasswordStats:
 
         lPlotDatum = []
         lLongestMask = 0
+        lCountPasswordsPlotted = 0
         for lPasswordMask in self.__mPasswordMasks.masks_with_stats:
 
             if len(lPasswordMask.mask) > lLongestMask: lLongestMask = len(lPasswordMask.mask)
@@ -299,12 +300,13 @@ class PasswordStats:
                          lPasswordMask.marginal_percentile, lPasswordMask.pretty_marginal_percentile,
                          lPasswordMask.cummulative_percentile, lPasswordMask.pretty_cummulative_percentile)
             lPlotDatum.append(lPlotData)
+            lCountPasswordsPlotted += lPasswordMask.count_passwords_represented
 
             if lPasswordMask.cummulative_percentile >= pPercentile:
                 break
 
         lCountMasks = self.__mPasswordMasks.count
-        lPlotDatumRange = lPlotDatum.__len__() + 1
+        lPlotDatumRange = lPlotDatum.__len__()
         lCountDashes = max(lPlotDatumRange * 4 + 14, 38)
         lPlotDatumMaxMarginalPercentile = int(math.ceil(lPlotDatum[0][MP] * 100))
 
@@ -332,7 +334,7 @@ class PasswordStats:
         # Graph Footer
         self.__print_dashes(lCountDashes)
         print("\t", end="")
-        for i in range(1, lPlotDatumRange, 1):
+        for i in range(1, lPlotDatumRange + 1, 1):
             print("{}{}".format(i, PADDING), end="")
         print()
         self.__print_dashes(lCountDashes)
@@ -364,7 +366,7 @@ class PasswordStats:
         print("\t\t\t\t--------")
         print("\t", end="")
         self.__make_spaces(lLongestMask + PADDING.__len__())
-        print("\t\t\t\t{}".format(self.__mPasswordMasks.count_passwords_represented))
+        print("\t\t\t\t{} out of {} passwords".format(lCountPasswordsPlotted, self.__mPasswordMasks.count_passwords_represented))
         print()
 
     # Static Methods
