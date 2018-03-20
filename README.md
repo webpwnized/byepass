@@ -46,7 +46,7 @@ tell john the location, add the following line to john.conf.
 
     .include "<location of bypass>/byepass/rules/byepass.conf"
 
-where <location of bypass> is the location that byepass is installed.
+where "location of bypass" is the location that byepass is installed.
 For example, if byepass is installed in /opt, add the following line
 into john.conf
 
