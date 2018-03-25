@@ -142,6 +142,8 @@ These resources host hashes and the resulting passwords. These can be helpful fo
 
 **CrackStation's Password Cracking Dictionary**: https://crackstation.net/buy-crackstation-wordlist-password-cracking-dictionary.htm
 
+**Daniel Miessler's SecLists/Passwords**: https://github.com/danielmiessler/SecLists/tree/master/Passwords
+
 # Educational Resources
 
 **John the Ripper's cracking modes**: http://www.openwall.com/john/doc/MODES.shtml
@@ -149,3 +151,5 @@ These resources host hashes and the resulting passwords. These can be helpful fo
 **John the Ripper usage examples**: http://www.openwall.com/john/doc/EXAMPLES.shtml
 
 **Luis Rocha's John the Ripper Cheat Sheet**: https://countuponsecurity.files.wordpress.com/2016/09/jtr-cheat-sheet.pdf
+
+**Martin Bos's Thoughts**: https://www.trustedsec.com/2016/06/introduction-gpu-password-cracking-owning-linkedin-password-dump/

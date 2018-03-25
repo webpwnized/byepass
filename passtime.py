@@ -22,6 +22,7 @@ if __name__ == '__main__':
     lArgParser.add_argument('-l', '--list-masks', help='List password masks for the passwords provided in the INPUT FILE', action='store_true')
     lArgParser.add_argument('-p', '--percentile', type=float, help='Based on statistical analysis of the passwords provided, only list masks matching the given PERCENTILE percent of passwords. For example, if a value of 0.25 provided, only lists the relatively few masks needed to crack 25 percent of the passwords. Ideally, these would be the only masks needed to crack the same percentage of the remaining, uncracked passwords. However, the prediction is only as good as the sample passwords provided in the INPUT FILE. The more closely the provided passwords match the target passwords, the better the prediction.', action='store')
     lArgParser.add_argument('-a', '--analyze-passwords', help='Perform analysis on the password provided in the INPUT FILE. A probability density function (PDF) will be displayed with the masks matching PERCENTILE percent of passwords. The marginal and cummulative percentages represented by each mask are provided with the number of passwords matched by the mask.', action='store_true')
+    lArgParser.add_argument('-o', '--output-file', type=str, help='Write the ordinal position and count of passwords represented to file. Useful to analyze values in spreadsheet. Values are written comma-separated.', action='store')
     requiredAguments = lArgParser.add_argument_group('required arguments')
     requiredAguments.add_argument('-i', '--input-file', type=str, help='Path to file containing passwords to analyze', action='store',
                             required=True)
@@ -70,3 +71,8 @@ if __name__ == '__main__':
     if lArgs.list_masks:
         if lArgs.verbose: print("[*] Password masks ({} percentile):".format(lPercentile), end='')
         print(lPasswordStats.get_popular_masks(lPercentile))
+
+    if lArgs.output_file:
+        lPasswordStats.export_password_counts_to_csv(lArgs.output_file)
+        if lArgs.verbose: print("[*] Finished writing password counts per mask to output file " + lArgs.output_file)
+

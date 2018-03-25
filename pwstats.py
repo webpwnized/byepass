@@ -41,6 +41,7 @@ class PasswordMask:
 
     # Private Attributes
     __mMask = ""
+    __mOrdinalPosition = 0
     __mCountPasswordsRepresented = 0
     __mMarginalPercentilePasswordsRepresented = 0.0
     __mCummulativePercentilePasswordsRepresented = 0.0
@@ -55,6 +56,14 @@ class PasswordMask:
     @mask.setter
     def mask(self: object, pMask: str) -> None:
         self.__mMask = pMask
+
+    @property
+    def oridinal_position(self: object) -> int:
+        return self.__mOrdinalPosition
+
+    @oridinal_position.setter
+    def oridinal_position(self: object, pOrdinalPosition: int) -> None:
+        self.__mOrdinalPosition = pOrdinalPosition
 
     @property
     def count_passwords_represented(self: object) -> int:
@@ -251,10 +260,11 @@ class PasswordStats:
 
         lPWMasks = []
         lCummulativeCountSoFar = 0
-        for lMask, lCount in lMasks.items():
+        for lIndex, (lMask, lCount) in enumerate(lMasks.items()):
             lCummulativeCountSoFar += lCount
             lPWMask = PasswordMask()
             lPWMask.mask = lMask
+            lPWMask.oridinal_position = (lIndex + 1)
             lPWMask.count_passwords_represented = lCount
             lPWMask.marginal_percentile = lCount / lCountPasswords
             lPWMask.cummulative_percentile = lCummulativeCountSoFar / lCountPasswords
@@ -276,6 +286,22 @@ class PasswordStats:
             lMasks.append(lMask.mask)
             if lMask.cummulative_percentile >= pPercentile:
                 return lMasks
+
+
+    def export_password_counts_to_csv(self: object, pFileName: str) -> None:
+
+        lOrdinalPositions = ""
+        lPasswordCounts = ""
+        for lPasswordMask in self.__mPasswordMasks.masks_with_stats:
+            lOrdinalPositions += str(lPasswordMask.oridinal_position) + ","
+            lPasswordCounts += str(lPasswordMask.count_passwords_represented) + ","
+
+        lFileHandle = open(pFileName, mode="w")
+        lFileHandle.write(lOrdinalPositions[0:lOrdinalPositions.__len__()-1] + "\n")
+        lFileHandle.write(lPasswordCounts[0:lPasswordCounts.__len__()-1] + "\n")
+        lFileHandle.flush()
+        lFileHandle.close()
+
 
     def get_analysis(self: object, pPercentile:float = 1.00) -> None:
 
