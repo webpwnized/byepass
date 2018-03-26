@@ -178,6 +178,24 @@ def run_jtr_mask_mode(pMask: str, pWordlist: str, pHashFormat:str, pVerbose: boo
         print("[*] Passwords cracked per second: {}".format(lNumberPasswordsCrackedByThisMethod // lRunTime))
 
 
+def run_jtr_baseword_mode(pBaseWords: str, pHashFormat: str, pVerbose: bool, pDebug: bool) -> None:
+
+    if pVerbose: print("[*] Starting mode: Baseword with words {}", pBaseWords)
+
+    lBaseWords = list(pBaseWords.split(","))
+    lBaseWordsFileName = 'basewords/basewords.txt'
+    lBaseWordsFile = open(lBaseWordsFileName, 'w')
+    for lWord in lBaseWords:
+        lBaseWordsFile.write("%s\n" % lWord)
+    lBaseWordsFile.flush()
+    lBaseWordsFile.close()
+    run_jtr_wordlist_mode(pWordlist="basewords/basewords.txt", pRule="All", pHashFormat=pHashFormat,
+                          pVerbose=pVerbose, pDebug=pDebug)
+    os.remove(lBaseWordsFileName)
+
+    if pVerbose: print("[*] Finished Baseword Mode")
+
+
 def run_jtr_prayer_mode(pMethod: int, pHashFormat: str, pVerbose: bool, pDebug: bool) -> None:
     # Note: subprocess.run() accepts the command to run as a list of arguments.
     # lCmdArgs is this list.
@@ -206,37 +224,41 @@ def run_jtr_prayer_mode(pMethod: int, pHashFormat: str, pVerbose: bool, pDebug: 
         lCmdArgs.append("--wordlist=dictionaries/top-10000-english-words.txt")
         lCmdArgs.append("--rules=best126")
     elif pMethod == 5:
+        if pVerbose: print("[*] Starting mode: Wordlist top-10000-spanish-words.txt Rule best126")
+        lCmdArgs.append("--wordlist=dictionaries/top-10000-english-words.txt")
+        lCmdArgs.append("--rules=best126")
+    elif pMethod == 6:
         if pVerbose: print("[*] Starting mode: Wordlist persons-names.txt Rule best126")
         lCmdArgs.append("--wordlist=dictionaries/persons-names.txt")
         lCmdArgs.append("--rules=best126")
-    elif pMethod == 6:
+    elif pMethod == 7:
         if pVerbose: print("[*] Starting mode: Wordlist sports-related-words.txt Rule best126")
         lCmdArgs.append("--wordlist=dictionaries/sports-related-words.txt")
         lCmdArgs.append("--rules=best126")
-    elif pMethod == 7:
+    elif pMethod == 8:
         if pVerbose: print("[*] Starting mode: Wordlist other-base-words.txt Rule best126")
         lCmdArgs.append("--wordlist=dictionaries/other-base-words.txt")
         lCmdArgs.append("--rules=best126")
-    elif pMethod == 8:
+    elif pMethod == 9:
         if pVerbose: print("[*] Starting mode: Wordlist places.txt Rule best126")
         lCmdArgs.append("--wordlist=dictionaries/places.txt")
         lCmdArgs.append("--rules=best126")
-    elif pMethod == 9:
+    elif pMethod == 10:
         if pVerbose: print("[*] Starting mode: Wordlist 4-digit-numbers.txt Rule best126")
         lCmdArgs.append("--wordlist=dictionaries/4-digit-numbers.txt")
         lCmdArgs.append("--rules=best126")
-    elif pMethod == 10:
+    elif pMethod == 11:
         if pVerbose: print("[*] Starting mode: Wordlist calendar.txt Rule BPAppendYears")
         lCmdArgs.append("--wordlist=dictionaries/calendar.txt")
         lCmdArgs.append("--rules=bpappendyears")
-    elif pMethod == 11:
+    elif pMethod == 12:
         if pVerbose: print("[*] Starting mode: Wordlist 6-digit-numbers.txt")
         lCmdArgs.append("--wordlist=dictionaries/6-digit-numbers.txt")
         lCmdArgs.append("--rules=best126")
-    elif pMethod == 12:
+    elif pMethod == 13:
         if pVerbose: print("[*] Starting mode: Wordlist keyboard-patterns.txt")
         lCmdArgs.append("--wordlist=dictionaries/keyboard-patterns.txt")
-    elif pMethod == 13:
+    elif pMethod == 14:
         if pVerbose: print("[*] Starting mode: JTR single crack")
         lCmdArgs.append("--single")
 
@@ -418,7 +440,7 @@ Attempt to crack linked-in hashes using base words linkedin and linked\n\n
     lArgParser.add_argument('-s', '--stat-crack',
                             help="Enable statistical cracking. Byepass will run relatively fast cracking strategies in hopes of cracking enough passwords to induce a pattern and create \"high probability\" masks. Byepass will use the masks in an attempt to crack more passwords.",
                             action='store_true')
-    lArgParser.add_argument('-b', '--base-words',
+    lArgParser.add_argument('-b', '--basewords',
                             type=str,
                             help="Supply a comma-separated list of lowercase, unmangled base words thought to be good candidates. For example, if Wiley Coyote is cracking hashes from Acme Inc., Wiley might provide the word \"acme\". Be careful how many words are supplied as Byepass will apply many mangling rules. Up to several dozen should run reasonably fast.",
                             action='store')
@@ -460,21 +482,13 @@ Attempt to crack linked-in hashes using base words linkedin and linked\n\n
         lStartTime = time.time()
         print("[*] Working on input file {}".format(lHashFile))
 
-    if lArgs.base_words:
-        lBaseWords = list(lArgs.base_words.split(","))
-        lBaseWordsFileName = 'basewords/basewords.txt'
-        lBaseWordsFile = open(lBaseWordsFileName, 'w')
-        for lWord in lBaseWords:
-            lBaseWordsFile.write("%s\n" % lWord)
-        lBaseWordsFile.flush()
-        lBaseWordsFile.close()
-        run_jtr_wordlist_mode(pWordlist="basewords/basewords.txt", pRule="All", pHashFormat=lHashFormat,
+    if lArgs.basewords:
+        run_jtr_baseword_mode(pBaseWords=lArgs.basewords, pHashFormat=lHashFormat,
                               pVerbose=lVerbose, pDebug=lDebug)
-        os.remove(lBaseWordsFileName)
 
     # Try to crack a relatively few passwords as quickly as possible.
     # These can be used in statistical analysis
-    for i in range(1,14,1):
+    for i in range(1,15,1):
         run_jtr_prayer_mode(pMethod=i, pHashFormat=lHashFormat, pVerbose=lVerbose, pDebug=lDebug)
 
     # If the user chooses, begin statistical analysis to aid targeted cracking routines

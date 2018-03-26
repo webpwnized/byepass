@@ -89,6 +89,10 @@ Generate probability density function (PDF), masks, marginal percentile (MP), cu
 
     python3 passtime.py -a -p 0.75 -i worst-10000-passwords.txt
 
+Output the number of passwords represented by each mask sorted by count descending. The first row labels the mask. The second row contains the counts. Values are comma-separated.
+
+    python3 passtime.py -v -i leaked-passwords/hotmail.txt -o /tmp/hm.csv
+
 # ByePass
 
 **Automate the most common password cracking tasks**
@@ -102,8 +106,8 @@ Generate probability density function (PDF), masks, marginal percentile (MP), cu
       -f HASH_FORMAT, --hash-format HASH_FORMAT
                             The hash algorithm used to hash the password(s). This value must be one of the values supported by John the Ripper. To see formats supported by JTR, use command "john --list=formats". It is strongly recommended to provide an optimal value. If no value is provided, John the Ripper will guess.
       -s, --stat-crack      Enable statistical cracking. Byepass will run relatively fast cracking strategies in hopes of cracking enough passwords to induce a pattern and create "high probability" masks. Byepass will use the masks in an attempt to crack more passwords.
-      -b BASE_WORDS, --base-words BASE_WORDS
-                            Supply a comma-separated list of lowercase, unmangled base words thought to be good candidates. For example, if Wiley Coyote is cracking hashes from Acme Inc., Wiley might provide the word "acme". Be careful how many words are supplied as Byepass will apply many mangling rules. Up to several dozen should run reasonably fast.
+      -b BASEWORDS, --basewords BASEWORDS
+                            Supply a comma-separated list of lowercase, unmangled base words thought to be good candidates. For example, if Wiley Coyote is cracking hashes from Acme Inc., Wiley might provide the word "acme". Be careful how many words are supplied as Byepass will apply many mangling rules. Up to a dozen might run reasonably fast.
       -p PERCENTILE, --percentile PERCENTILE
                             Based on statistical analysis of the passwords cracked during initial phase, use only the masks statistically likely to be needed to crack at least the given percent of passwords. For example, if a value of 0.25 provided, only use the relatively few masks needed to crack 25 passwords of the passwords. Note that password cracking effort follows an exponential distribution, so cracking a few more passwords takes a lot more effort (relatively speaking). A good starting value if completely unsure is 25 percent (0.25).
       -v, --verbose         Enable verbose output such as current progress and duration
@@ -130,7 +134,7 @@ Attempt to crack password hashes found in input file "password.hashes", then run
 
 Attempt to crack linked-in hashes using base words linkedin and linked
 
-	python3 byepass.py --hash-format=Raw-SHA1 --base-words=linkedin,linked --input-file=linkedin-1.hashes
+	python3 byepass.py --hash-format=Raw-SHA1 --basewords=linkedin,linked --input-file=linkedin-1.hashes
 
 # Hashes and Password Lists
 
@@ -153,3 +157,5 @@ These resources host hashes and the resulting passwords. These can be helpful fo
 **Luis Rocha's John the Ripper Cheat Sheet**: https://countuponsecurity.files.wordpress.com/2016/09/jtr-cheat-sheet.pdf
 
 **Martin Bos's Thoughts**: https://www.trustedsec.com/2016/06/introduction-gpu-password-cracking-owning-linkedin-password-dump/
+
+**Lists**: http://scrapmaker.com/home
