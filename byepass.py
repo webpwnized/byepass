@@ -225,7 +225,7 @@ def run_jtr_prayer_mode(pMethod: int, pHashFormat: str, pVerbose: bool, pDebug: 
         lCmdArgs.append("--rules=best126")
     elif pMethod == 5:
         if pVerbose: print("[*] Starting mode: Wordlist top-10000-spanish-words.txt Rule best126")
-        lCmdArgs.append("--wordlist=dictionaries/top-10000-english-words.txt")
+        lCmdArgs.append("--wordlist=dictionaries/top-10000-spanish-words.txt")
         lCmdArgs.append("--rules=best126")
     elif pMethod == 6:
         if pVerbose: print("[*] Starting mode: Wordlist persons-names.txt Rule best126")

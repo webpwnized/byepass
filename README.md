@@ -6,7 +6,7 @@
 
     git clone https://github.com/webpwnized/byepass.git
     cd bypass/passwords
-    cat passwords-hailmary-1.txt.zip passwords-hailmary-2.txt.zip > passwords-hailmary.txt.zip
+    cat passwords-hailmary-1.txt.zip passwords-hailmary-2.txt.zip passwords-hailmary-3.txt.zip > passwords-hailmary.txt.zip
     unzip passwords-hailmary.txt.zip
 
 **Step 2: Verify config.py is properly configured.** 
@@ -148,6 +148,8 @@ These resources host hashes and the resulting passwords. These can be helpful fo
 
 **Daniel Miessler's SecLists/Passwords**: https://github.com/danielmiessler/SecLists/tree/master/Passwords
 
+**Lists of Words**: http://scrapmaker.com/home
+
 # Educational Resources
 
 **John the Ripper's cracking modes**: http://www.openwall.com/john/doc/MODES.shtml
@@ -157,5 +159,3 @@ These resources host hashes and the resulting passwords. These can be helpful fo
 **Luis Rocha's John the Ripper Cheat Sheet**: https://countuponsecurity.files.wordpress.com/2016/09/jtr-cheat-sheet.pdf
 
 **Martin Bos's Thoughts**: https://www.trustedsec.com/2016/06/introduction-gpu-password-cracking-owning-linkedin-password-dump/
-
-**Lists**: http://scrapmaker.com/home
