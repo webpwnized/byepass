@@ -131,15 +131,12 @@ abbott
 abby
 abc
 abc123
-ABC123
 abcd
 abcd123
 abcd1234
 abcde
 abcdef
-Abcdef
 abcdefg
-Abcdefg
 abel
 abigail
 abraham
@@ -189,7 +186,6 @@ alexandr
 alexandra
 alexis
 alexis
-Alexis
 alfaro
 alfonso
 alfred
@@ -219,7 +215,6 @@ alma
 aloha
 alonzo
 alpha
-Alpha
 alpha1
 alpine
 altamira
@@ -256,7 +251,6 @@ andres
 andrew
 andrew!
 andrew
-Andrew
 andrew1
 andromed
 andy
@@ -275,7 +269,7 @@ angie
 angie1
 angus
 animal
-Animals
+animals
 anita
 anita
 ann
@@ -292,7 +286,6 @@ annie
 antares
 anthony
 anthony
-Anthony
 antoinette
 antonia
 antonio
@@ -315,7 +308,6 @@ archie
 archie
 ariane
 ariel
-Ariel
 arizona
 arlene
 arlene
@@ -334,7 +326,6 @@ asdf1234
 asdfasdf
 asdfg
 asdfgh
-Asdfgh
 asdfghjk
 asdfjkl
 asdfjkl;
@@ -373,7 +364,6 @@ bach
 backup
 badger
 bailey
-Bailey
 bambi
 bamboo
 banana
@@ -397,7 +387,7 @@ basil
 basket
 basketball
 bass
-Bastard
+bastard
 batman
 batman1
 bball
@@ -417,7 +407,6 @@ beautiful
 beauty
 beaver
 beavis
-Beavis
 beavis1
 bebe
 becca
@@ -496,7 +485,7 @@ birdy
 birthday
 biscuit
 bishop
-Bismillah
+bismillah
 bitch
 biteme
 bitter
@@ -539,14 +528,12 @@ bogey
 bogus
 bombay
 bond007
-Bond007
 bonjour
 bonnie
 bonnie
-Bonzo
+bonzo
 boobie
 booboo
-Booboo
 booger
 boogie
 boomer
@@ -556,9 +543,7 @@ bootsie
 boris
 bosco
 boss
-BOSS
 boston
-Boston
 boulder
 bourbon
 boxer
@@ -594,7 +579,7 @@ bridget
 bright
 britain
 brittany
-Broadway
+broadway
 broker
 bronco
 bronte
@@ -672,12 +657,11 @@ canela
 cannon
 cannondale
 canon
-Canucks
+canucks
 captain
 car
 carbon
 cardinal
-Cardinal
 carebear
 carl
 carl
@@ -690,7 +674,6 @@ carmen
 carnage
 carol
 carol
-Carol
 carol1
 carole
 carole
@@ -707,7 +690,7 @@ cary
 cascade
 casey
 casey
-Casio
+casio
 casper
 cassandra
 cassie
@@ -734,7 +717,7 @@ cedric
 celia
 celica
 celine
-Celtics
+celtics
 cement
 center
 cesar
@@ -746,7 +729,7 @@ chainsaw
 challenge
 chameleon
 champion
-Champs
+champs
 chance
 chandler
 chanel
@@ -754,8 +737,6 @@ chang
 change
 changeit
 changeme
-Changeme
-ChangeMe
 chantal
 chaos
 chapman
@@ -766,7 +747,6 @@ charles
 charles
 charlie
 charlie
-Charlie
 charlie1
 charlotte
 charlotte
@@ -798,7 +778,6 @@ chocolate
 chouette
 chris
 chris
-Chris
 chris1
 chris123
 christ1
@@ -882,7 +861,6 @@ commander
 compaq
 compton
 computer
-Computer
 concept
 concorde
 confused
@@ -918,7 +896,6 @@ cory
 cosmo
 cosmos
 cougar
-Cougar
 cougars
 country
 courier
@@ -934,7 +911,6 @@ craig
 craig
 crawford
 creative
-Creative
 crescent
 cricket
 cristina
@@ -955,7 +931,6 @@ cupcake
 current
 curtis
 curtis
-Curtis
 cutie
 cutlass
 cyber
@@ -987,7 +962,6 @@ dance
 dancer
 daniel
 daniel
-Daniel
 daniel1
 danielle
 danielle
@@ -996,7 +970,7 @@ danny
 daphne
 darin
 dark1
-Darkman
+darkman
 darkstar
 darla
 darlene
@@ -1053,7 +1027,6 @@ denali
 denis
 denise
 denise
-Denise
 dennis
 dennis
 denny
@@ -1151,7 +1124,6 @@ downtown
 doyle
 draft
 dragon
-Dragon
 dragon1
 dragonfly
 dreamer
@@ -1178,7 +1150,6 @@ e
 eagle
 eagle1
 eagles
-Eagles
 earl
 earnest
 easter
@@ -1219,7 +1190,6 @@ elisa
 elissa
 elizabeth
 elizabeth
-Elizabeth
 ella
 ella
 ellen
@@ -1271,7 +1241,7 @@ essie
 estelle
 estelle
 esther
-Esther
+esther
 ethel
 etoile
 eugene
@@ -1298,7 +1268,6 @@ faith
 falcon
 fall
 family
-Family
 family1
 fannie
 farmer
@@ -1324,7 +1293,7 @@ ferret
 ferris
 fiction
 fidel
-Figaro
+figaro
 finance
 fiona
 fire
@@ -1336,12 +1305,10 @@ first
 fish
 fish1
 fisher
-Fisher
 fishes
 fishhead
 fishie
 fishing
-Fishing
 flamingo
 flanders
 flash
@@ -1371,7 +1338,7 @@ football
 ford
 forest
 forrest
-Fortune
+fortune
 forward
 foster
 fountain
@@ -1399,7 +1366,6 @@ freda
 freddie
 freddie
 freddy
-Freddy
 frederic
 frederick
 fredrick
@@ -1410,10 +1376,8 @@ freeman
 french
 french1
 friday
-Friday
 friend
 friends
-Friends
 frisco
 fritz
 frodo
@@ -1423,7 +1387,6 @@ froggies
 froggy
 frogs
 front242
-Front242
 frontier
 fubar
 fucker
@@ -1432,8 +1395,6 @@ fuckme
 fuckoff
 fucku
 fuckyou
-Fuckyou
-FuckYou
 fugazi
 fun
 funguy
@@ -1454,7 +1415,6 @@ gambler
 games
 gammaphi
 gandalf
-Gandalf
 garcia
 garden
 garfield
@@ -1495,7 +1455,7 @@ gerardo
 german
 germany
 germany1
-Geronimo
+geronimo
 gertrude
 getout
 ggeorge
@@ -1512,10 +1472,9 @@ gilles
 gina
 ginger
 ginger
-Gingers
+gingers
 giselle
 gizmo
-Gizmo
 gladys
 glen
 glenda
@@ -1538,14 +1497,12 @@ gofish
 goforit
 gold
 golden
-Golden
 goldfish
 golf
 golfer
 gollum
 gone
 goober
-Goober
 good
 goodluck
 good-luck
@@ -1580,7 +1537,7 @@ gremlin
 greta
 gretchen
 gretchen
-Gretel
+gretel
 gretzky
 grizzly
 groovy
@@ -1603,7 +1560,6 @@ gwen
 gwendolyn
 h2opolo
 hacker
-Hacker
 haggis
 haha
 hailey
@@ -1615,7 +1571,6 @@ hamid
 hamilton
 hamlet
 hammer
-Hammer
 hank
 hanna
 hannah
@@ -1628,8 +1583,6 @@ happy123
 happyday
 hardcore
 harley
-Harley
-HARLEY
 harley1
 haro
 harold
@@ -1654,7 +1607,6 @@ health1
 heart
 heather
 heather
-Heather
 heather1
 heather2
 heaven
@@ -1670,7 +1622,6 @@ helena
 helene
 hell
 hello
-Hello
 hello1
 hello123
 hello8
@@ -1680,17 +1631,15 @@ help123
 helper
 helpme
 hendrix
-Hendrix
 henrietta
 henry
 henry
-Henry
 herbert
 herbert
 herman
 herman
 hermes
-Hershey
+hershey
 herzog
 heythere
 highland
@@ -1713,7 +1662,6 @@ home
 homebrew
 homer
 homer
-Homer
 homerj
 honda
 honda1
@@ -1784,7 +1732,6 @@ integra
 integral
 intern
 internet
-Internet
 intrepid
 iomega
 ira
@@ -1821,7 +1768,6 @@ jackie
 jackie
 jackie1
 jackson
-Jackson
 jacob
 jacob
 jacqueline
@@ -1845,7 +1791,7 @@ jana
 jane
 jane
 janet
-Janet
+janet
 janice
 janice
 janie
@@ -1870,7 +1816,6 @@ jeanette
 jeanette
 jeanne
 jeanne
-Jeanne
 jeannette
 jeannie
 jedi
@@ -1888,7 +1833,6 @@ jennie
 jennie
 jennifer
 jennifer
-Jennifer
 jenny
 jenny
 jenny1
@@ -1902,13 +1846,12 @@ jermaine
 jerome
 jerry
 jerry
-Jersey
+jersey
 jesse
 jesse
 jesse1
 jessica
 jessica
-Jessica
 jessie
 jessie
 jester
@@ -1936,7 +1879,6 @@ joanie
 joann
 joanna
 joanna
-Joanna
 joanne
 jodi
 jody
@@ -1958,7 +1900,6 @@ johnnie
 johnny
 johnny
 johnson
-Johnson
 jojo
 joker
 joker1
@@ -1968,7 +1909,6 @@ jonathan
 jonathon
 jordan
 jordan
-Jordan
 jordan23
 jordie
 jorge
@@ -1983,14 +1923,13 @@ josh
 josh
 joshua
 joshua
-Joshua
 josie
 journey
 joy
 joy
 joyce
 joyce
-JSBach
+jsbach
 juan
 juana
 juanita
@@ -2056,7 +1995,6 @@ kathy
 kathy
 katie
 katie
-Katie
 katie1
 katrina
 kay
@@ -2098,8 +2036,6 @@ khan
 kidder
 kids
 killer
-Killer
-KILLER
 kim
 kim
 kimberly
@@ -2114,7 +2050,6 @@ kissa2
 kissme
 kitkat
 kitten
-Kitten
 kitty
 kittycat
 kiwi
@@ -2122,7 +2057,6 @@ kkkkkk
 kleenex
 knicks
 knight
-Knight
 koala
 koko
 kombat
@@ -2215,7 +2149,6 @@ levi
 lewis
 lexus1
 liberty
-Liberty
 libra
 library
 life
@@ -2230,7 +2163,6 @@ linda
 linda
 lindsay
 lindsay
-Lindsay
 lindsey
 lindsey
 lionel
@@ -2244,7 +2176,6 @@ little
 liverpool
 liz
 lizard
-Lizard
 lizzy
 lloyd
 lloyd
@@ -2329,7 +2260,7 @@ macse30
 maddie
 maddog
 madeline
-Madeline
+madeline
 madison
 madmax
 madoka
@@ -2372,7 +2303,6 @@ marcus
 marcus
 margaret
 margaret
-Margaret
 margarita
 margie
 marguerite
@@ -2424,7 +2354,6 @@ mary
 maryann
 maryjane
 master
-Master
 master1
 math
 mathew
@@ -2433,7 +2362,6 @@ matt
 matt
 matthew
 matthew
-Matthew
 matti1
 mattie
 mattingly
@@ -2448,7 +2376,6 @@ maxine
 maxine
 maxmax
 maxwell
-Maxwell
 may
 may
 mayday
@@ -2471,7 +2398,7 @@ melina
 melinda
 melissa
 melissa
-Mellon
+mellon
 melody
 melody
 melvin
@@ -2488,28 +2415,23 @@ meredith
 merle
 merlin
 merlot
-Merlot
 mermaid
 merrill
 metal
 metallic
-Metallic
 mexico
 miami
 michael
 michael
-Michael
 michael1
 michal
 micheal
 michel
-Michel
-Michel1
+michel1
 michele
 michele
 michelle
 michelle
-Michelle
 michigan
 michou
 mickel
@@ -2573,10 +2495,8 @@ molson
 mom
 mona
 monday
-Monday
 monet
 money
-Money
 money1
 monica
 monica
@@ -2586,11 +2506,10 @@ monkey
 monkey1
 monopoly
 monroe
-Monster
+monster
 montana
 montana3
 montreal
-Montreal
 montrose
 monty
 moocow
@@ -2653,7 +2572,6 @@ nation
 national
 nautica
 ncc1701
-NCC1701
 ncc1701d
 ncc1701e
 ne1410s
@@ -2684,7 +2602,6 @@ newlife
 newpass
 news
 newton
-Newton
 newuser
 newyork
 newyork1
@@ -2693,7 +2610,6 @@ nguyen
 nicarao
 nicholas
 nicholas
-Nicholas
 nichole
 nichole
 nick
@@ -2727,7 +2643,7 @@ none
 none1
 nopass
 nora
-Noriko
+noriko
 norma
 normal
 norman
@@ -2752,7 +2668,6 @@ obiwan
 obsession
 ocean
 october
-October
 ohshit
 oicu812
 olga
@@ -2791,7 +2706,6 @@ oscar
 otis
 otter
 ou812
-OU812
 overkill
 owen
 oxford
@@ -2806,13 +2720,12 @@ packers
 packrat
 paint
 painter
-Paladin
+paladin
 paloma
 pam
 pam
 pamela
 pamela
-Pamela
 pancake
 panda
 pandora
@@ -2832,7 +2745,6 @@ pass
 passion
 passwd
 password
-Password
 pat
 pat
 patches
@@ -2857,10 +2769,8 @@ payton
 peace
 peach
 peaches
-Peaches
 peanut
 peanuts
-Peanuts
 pearl
 pearl
 pearljam
@@ -2877,10 +2787,8 @@ penguin
 penny
 penny
 pentium
-Pentium
 people
 pepper
-Pepper
 pepsi
 percy
 percy
@@ -2893,7 +2801,6 @@ pete
 pete
 peter
 peter
-Peter
 peter1
 peterk
 peterpan
@@ -2911,7 +2818,6 @@ phillips
 phish
 phishy
 phoenix
-Phoenix
 phoenix1
 phone
 photo
@@ -2928,7 +2834,6 @@ pierce
 pierre
 pigeon
 piglet
-Piglet
 pink
 pinkfloyd
 pioneer
@@ -2961,7 +2866,6 @@ pontiac
 poohbear
 pookey
 pookie
-Pookie
 pookie1
 popcorn
 pope
@@ -2973,7 +2877,6 @@ porter
 portland
 power
 ppp
-PPP
 praise
 prayer
 precious
@@ -2985,7 +2888,6 @@ preston
 primus
 prince
 princess
-Princess
 print
 printing
 priscilla
@@ -3003,7 +2905,6 @@ pumpkin
 punkin
 puppy
 purple
-Purple
 pussy
 pussy1
 pyramid
@@ -3020,14 +2921,11 @@ quest
 qwaszx
 qwer
 qwert
-Qwert
 qwerty
-Qwerty
 qwerty12
 qwertyui
 r0ger
 rabbit
-Rabbit
 rabbit1
 racer
 racerx
@@ -3041,10 +2939,9 @@ radio
 rafael
 rafiki
 raiders
-Raiders
 rain
 rainbow
-Raistlin
+raistlin
 raleigh
 ralph
 ralph
@@ -3059,7 +2956,6 @@ randal
 randall
 randolph
 random
-Random
 randy
 randy
 randy1
@@ -3081,7 +2977,6 @@ raymond
 reality
 rebecca
 rebecca
-Rebecca
 red
 redcloud
 reddog
@@ -3141,7 +3036,6 @@ robbie
 robby
 robert
 robert
-Robert
 robert1
 roberta
 roberto
@@ -3220,7 +3114,6 @@ running
 rush
 russell
 russell
-Russell
 rusty
 ruth
 ruth
@@ -3254,11 +3147,9 @@ sam
 samantha
 samantha
 samiam
-samIam
 sammie
 sammy
 sammy
-Sammy
 sampson
 samsam
 samson
@@ -3285,7 +3176,6 @@ sassy
 satori
 saturday
 saturn
-Saturn
 saturn5
 saul
 savage
@@ -3330,7 +3220,6 @@ sergey
 sergio
 server
 service
-Service
 services
 seth
 seven
@@ -3338,7 +3227,6 @@ seven7
 sex
 sexy
 shadow
-Shadow
 shadow1
 shaggy
 shalom
@@ -3387,11 +3275,10 @@ shoes
 shogun
 shorty
 shotgun
-Sidekick
+sidekick
 sidney
 sidney
 sierra
-Sierra
 sigmachi
 signal
 signature
@@ -3408,7 +3295,6 @@ singer
 sirius
 skate
 skeeter
-Skeeter
 skibum
 skidoo
 skiing
@@ -3437,7 +3323,6 @@ smiths
 smitty
 smoke
 smokey
-Smokey
 smurfy
 snake
 snakes
@@ -3448,7 +3333,6 @@ sniper
 snoop
 snoopdog
 snoopy
-Snoopy
 snow
 snowball
 snowflake
@@ -3478,14 +3362,12 @@ spain
 spanky
 sparks
 sparky
-Sparky
 sparrow
 spartan
 spazz
 special
 speedo
 speedy
-Speedy
 spencer
 spencer
 sphynx
@@ -3538,13 +3420,12 @@ stephanie
 stephen
 stephen
 stephi
-Sterling
+sterling
 steve
 steve
 steve1
 steven
 steven
-Steven
 steven1
 stevens
 stewart
@@ -3582,7 +3463,6 @@ sue
 sugar
 sultan
 summer
-Summer
 summit
 sumuinen
 sun
@@ -3596,11 +3476,9 @@ sunny1
 sunrise
 sunset
 sunshine
-Sunshine
 super
 superfly
 superman
-Superman
 superstar
 support
 supra
@@ -3617,7 +3495,7 @@ suzanne
 suzanne
 suzuki
 suzy
-Sverige
+sverige
 swanson
 sweden
 sweetie
@@ -3627,7 +3505,7 @@ swim
 swimmer
 swimming
 switzer
-Swoosh
+swoosh
 swordfish
 sydney
 sylvester
@@ -3666,10 +3544,8 @@ tasha
 tata
 tattoo
 taurus
-Taurus
 taylor
 taylor
-Taylor
 tazdevil
 tbird
 t-bone
@@ -3685,7 +3561,6 @@ telecom
 temp
 temporal
 tennis
-Tennis
 tequila
 terence
 teresa
@@ -3721,17 +3596,14 @@ thelorax
 theodore
 theresa
 theresa
-Theresa
 thisisit
 thomas
 thomas
-Thomas
 thompson
 thorne
 thrasher
 thumper
 thunder
-Thunder
 thunderbird
 thursday
 thx1138
@@ -3741,7 +3613,6 @@ tiger
 tiger2
 tigers
 tigger
-Tigger
 tightend
 tigre
 tika
@@ -3830,7 +3701,6 @@ trustno1
 tucker
 tucson
 tuesday
-Tuesday
 tula
 turbo
 turbo2
@@ -3876,7 +3746,7 @@ vera
 vermont
 verna
 vernon
-Vernon
+vernon
 veronica
 veronica
 vette
@@ -3890,14 +3760,12 @@ victor
 victor1
 victoria
 victoria
-Victoria
 victory
 video
 viking
 vikram
 vincent
 vincent
-Vincent
 vincent1
 viola
 violet
@@ -3941,7 +3809,7 @@ warrior
 warriors
 water
 water1
-Waterloo
+waterloo
 watson
 wayne
 wayne
@@ -3949,7 +3817,6 @@ wayne1
 weasel
 webmaster
 webster
-Webster
 wedge
 weezer
 welcome
@@ -3986,7 +3853,6 @@ willie
 willie
 willis
 willow
-Willow
 willy
 wilma
 wilma
@@ -3995,12 +3861,11 @@ wilson
 win95
 wind
 window
-Windows
+windows
 windsurf
 winifred
 winner
 winnie
-Winnie
 winniethepooh
 winona
 winston
@@ -4013,18 +3878,16 @@ wolf
 wolf1
 wolfgang
 wolverine
-Wolverine
 wolves
 wombat
 wombat1
 wonder
 woodrow
-Woodrow
+woodrow
 woody
 woofwoof
 word
 world
-World
 wrangler
 wright
 www
@@ -4080,8 +3943,6 @@ zorro
 zxc
 zxc123
 zxcvb
-Zxcvb
 zxcvbn
 zxcvbnm
-Zxcvbnm
 zzz
