@@ -45,13 +45,15 @@ The rule are located in <byepass directory>/rules/byepass.conf. To
 tell john the location, add the following line to john.conf.
 
     .include "<location of bypass>/byepass/rules/byepass.conf"
+    .include "<location of bypass>/byepass/rules/OneRuleToRuleThemAll.rule"
 
 where "location of bypass" is the location that byepass is installed.
 For example, if byepass is installed in /opt, add the following line
 into john.conf
 
     .include "/opt/byepass/rules/byepass.conf"
- 
+    .include "/opt/byepass/rules/OneRuleToRuleThemAll.rule"
+
 Tips: To find a good location in john.conf to place the line, search
 for ".include" and place the new include line near other include lines. The gedit
 editor is easy to use.
@@ -159,3 +161,5 @@ These resources host hashes and the resulting passwords. These can be helpful fo
 **Luis Rocha's John the Ripper Cheat Sheet**: https://countuponsecurity.files.wordpress.com/2016/09/jtr-cheat-sheet.pdf
 
 **Martin Bos's Thoughts**: https://www.trustedsec.com/2016/06/introduction-gpu-password-cracking-owning-linkedin-password-dump/
+
+** One Rule to Rule them ALl **: https://github.com/NotSoSecure/password_cracking_rules
