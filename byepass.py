@@ -477,6 +477,7 @@ Attempt to crack linked-in hashes using base words linkedin and linked\n\n
     #                         type=str,
     #                         help="Pass-through the raw parameter to John the Ripper",
     #                         action='store')
+
     lArgParser.add_argument('-s', '--skip-prayer-mode',
                             help='Skip prayer mode; the attempt to crack passwords using a variety of techniques in hopes of finding passwords for statistical analysis. If prayer mode is skipped, ByePass will rely on passwords found in Johns POT file. This is useful if prayer mode was already run, JTR was used independently of ByePass or the POT file was imported.',
                             action='store_true')
