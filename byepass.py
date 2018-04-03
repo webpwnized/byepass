@@ -74,7 +74,8 @@ def rm_jtr_pot_file() -> None:
         time.sleep(1)
 
 
-def run_jtr_wordlist_mode(pWordlist: str, pRule: str, pHashFormat:str,  pVerbose: bool, pDebug: bool) -> None:
+def run_jtr_wordlist_mode(pWordlist: str, pRule: str, pHashFormat:str,
+                          pVerbose: bool, pDebug: bool, pPassThrough: str) -> None:
 
     lStartTime = time.time()
 
@@ -84,6 +85,7 @@ def run_jtr_wordlist_mode(pWordlist: str, pRule: str, pHashFormat:str,  pVerbose
     if pHashFormat: lCmdArgs.append("--format={}".format(pHashFormat))
     lCmdArgs.append("--wordlist={}".format(pWordlist))
     if pRule: lCmdArgs.append("--rule={}".format(pRule))
+    if pPassThrough: lCmdArgs.append(pPassThrough)
     lCmdArgs.append(lHashFile)
 
     if pVerbose:
@@ -126,7 +128,8 @@ def run_jtr_wordlist_mode(pWordlist: str, pRule: str, pHashFormat:str,  pVerbose
         print("[*] Passwords cracked per second: {}".format(lNumberPasswordsCrackedByThisMethod // lRunTime))
 
 
-def run_jtr_mask_mode(pMask: str, pWordlist: str, pHashFormat:str, pVerbose: bool, pDebug: bool) -> None:
+def run_jtr_mask_mode(pMask: str, pWordlist: str, pHashFormat:str,
+                      pVerbose: bool, pDebug: bool, pPassThrough: str) -> None:
 
     lStartTime = time.time()
 
@@ -136,6 +139,7 @@ def run_jtr_mask_mode(pMask: str, pWordlist: str, pHashFormat:str, pVerbose: boo
     if pHashFormat: lCmdArgs.append("--format={}".format(pHashFormat))
     lCmdArgs.append(pMask)
     if pWordlist: lCmdArgs.append("--wordlist={}".format(pWordlist))
+    if pPassThrough: lCmdArgs.append(pPassThrough)
     lCmdArgs.append(lHashFile)
 
     if pVerbose:
@@ -178,7 +182,8 @@ def run_jtr_mask_mode(pMask: str, pWordlist: str, pHashFormat:str, pVerbose: boo
         print("[*] Passwords cracked per second: {}".format(lNumberPasswordsCrackedByThisMethod // lRunTime))
 
 
-def run_jtr_baseword_mode(pBaseWords: str, pHashFormat: str, pVerbose: bool, pDebug: bool) -> None:
+def run_jtr_baseword_mode(pBaseWords: str, pHashFormat: str,
+                          pVerbose: bool, pDebug: bool, pPassThrough: str) -> None:
 
     if pVerbose: print("[*] Starting mode: Baseword with words {}", pBaseWords)
 
@@ -190,13 +195,14 @@ def run_jtr_baseword_mode(pBaseWords: str, pHashFormat: str, pVerbose: bool, pDe
     lBaseWordsFile.flush()
     lBaseWordsFile.close()
     run_jtr_wordlist_mode(pWordlist="basewords/basewords.txt", pRule="All", pHashFormat=pHashFormat,
-                          pVerbose=pVerbose, pDebug=pDebug)
+                          pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough)
     os.remove(lBaseWordsFileName)
 
     if pVerbose: print("[*] Finished Baseword Mode")
 
 
-def run_jtr_prayer_mode(pMethod: int, pHashFormat: str, pVerbose: bool, pDebug: bool) -> None:
+def run_jtr_prayer_mode(pMethod: int, pHashFormat: str,
+                        pVerbose: bool, pDebug: bool, pPassThrough: str) -> None:
     # Note: subprocess.run() accepts the command to run as a list of arguments.
     # lCmdArgs is this list.
 
@@ -206,6 +212,7 @@ def run_jtr_prayer_mode(pMethod: int, pHashFormat: str, pVerbose: bool, pDebug: 
 
     lCmdArgs = [JTR_EXE_FILE_PATH]
     if pHashFormat: lCmdArgs.append("--format={}".format(pHashFormat))
+    if pPassThrough: lCmdArgs.append(pPassThrough)
 
     if pMethod == 1:
         if pVerbose: print("[*] Starting mode: Wordlist hob0-short-crack.txt Rule best126")
@@ -324,7 +331,8 @@ def run_jtr_prayer_mode(pMethod: int, pHashFormat: str, pVerbose: bool, pDebug: 
         print("[*] Passwords cracked per second: {}".format(lNumberPasswordsCrackedByThisMethod // lRunTime))
 
 
-def perform_statistical_cracking(pPercentile: float, pHashFormat: str, pVerbose: bool, pDebug: bool) -> None:
+def perform_statistical_cracking(pPercentile: float, pHashFormat: str,
+                                 pVerbose: bool, pDebug: bool, pPassThrough: str) -> None:
 
     # The JTR POT file is the source of passwords
     if pVerbose: print("[*] Parsing JTR POT file at {}".format(JTR_POT_FILE_PATH))
@@ -355,7 +363,7 @@ def perform_statistical_cracking(pPercentile: float, pHashFormat: str, pVerbose:
             lCountLetters = lMask.count('?l')
             lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
             run_jtr_wordlist_mode(pWordlist=lWordlist, pRule="best126", pHashFormat=pHashFormat,
-                                  pVerbose=pVerbose, pDebug=pDebug)
+                                  pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough)
 
         # All uppercase
         elif re.match('^(\?u)+$', lMask):
@@ -363,7 +371,7 @@ def perform_statistical_cracking(pPercentile: float, pHashFormat: str, pVerbose:
             lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
             lRule = "uppercase"
             run_jtr_wordlist_mode(pWordlist=lWordlist, pRule=lRule, pHashFormat=pHashFormat,
-                                  pVerbose=pVerbose, pDebug=pDebug)
+                                  pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough)
 
         # Uppercase followed by lowercase (assume only leading letter is uppercase)
         elif re.match('^(\?u)(\?l)+$', lMask):
@@ -371,7 +379,7 @@ def perform_statistical_cracking(pPercentile: float, pHashFormat: str, pVerbose:
             lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
             lRule = "capitalize"
             run_jtr_wordlist_mode(pWordlist=lWordlist, pRule=lRule, pHashFormat=pHashFormat,
-                                  pVerbose=pVerbose, pDebug=pDebug)
+                                  pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough)
 
         # Lowercase ending with digits
         elif re.match('^(\?l)+(\?d)+$', lMask):
@@ -380,7 +388,7 @@ def perform_statistical_cracking(pPercentile: float, pHashFormat: str, pVerbose:
             lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
             lRule = "append{}digits".format(str(lCountDigits))
             run_jtr_wordlist_mode(pWordlist=lWordlist, pRule=lRule, pHashFormat=pHashFormat,
-                                  pVerbose=pVerbose, pDebug=pDebug)
+                                  pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough)
 
         # Uppercase followed by digits
         elif re.match('^(\?u)+(\?d)+$', lMask):
@@ -389,7 +397,7 @@ def perform_statistical_cracking(pPercentile: float, pHashFormat: str, pVerbose:
             lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
             lRule = "uppercaseappend{}digits".format(str(lCountDigits))
             run_jtr_wordlist_mode(pWordlist=lWordlist, pRule=lRule, pHashFormat=pHashFormat,
-                                  pVerbose=pVerbose, pDebug=pDebug)
+                                  pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough)
 
         # Uppercase, lowercase, then digits (assume only leading letter is uppercase)
         elif re.match('^(\?u)(\?l)+(\?d)+$', lMask):
@@ -398,7 +406,7 @@ def perform_statistical_cracking(pPercentile: float, pHashFormat: str, pVerbose:
             lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
             lRule = "capitalizeappend{}digits".format(str(lCountDigits))
             run_jtr_wordlist_mode(pWordlist=lWordlist, pRule=lRule, pHashFormat=pHashFormat,
-                                  pVerbose=pVerbose, pDebug=pDebug)
+                                  pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough)
 
         # Low number of digits. We do not cover large numbers of digits because
         # precomputing dictionary files would be huge and running mask mode takes a long time.
@@ -409,7 +417,7 @@ def perform_statistical_cracking(pPercentile: float, pHashFormat: str, pVerbose:
             if lCountDigits == 5:
                 lWordlist = "dictionaries/{}-digit-numbers.txt".format(str(lCountDigits))
                 run_jtr_wordlist_mode(pWordlist=lWordlist, pRule="", pHashFormat=pHashFormat,
-                                      pVerbose=pVerbose, pDebug=pDebug)
+                                      pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough)
             else:
                 print("[*] WARNING: Did not process mask {} because it is out of policy".format(lMask))
 
@@ -424,7 +432,7 @@ def perform_statistical_cracking(pPercentile: float, pHashFormat: str, pVerbose:
                 lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
                 lMaskParam = "--mask=?w{}".format(lSuffix)
                 run_jtr_mask_mode(pMask=lMaskParam, pWordlist=lWordlist, pHashFormat=pHashFormat,
-                                  pVerbose=pVerbose, pDebug=pDebug)
+                                  pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough)
             else:
                 print("[*] WARNING: Did not process mask {} because it is out of policy".format(lMask))
 
@@ -473,12 +481,11 @@ Attempt to crack linked-in hashes using base words linkedin and linked\n\n
                             type=float,
                             help="Based on statistical analysis of the passwords cracked during initial phase, use only the masks statistically likely to be needed to crack at least the given percent of passwords. For example, if a value of 0.25 provided, only use the relatively few masks needed to crack 25 passwords of the passwords. Note that password cracking effort follows an exponential distribution, so cracking a few more passwords takes a lot more effort (relatively speaking). A good starting value if completely unsure is 25 percent (0.25).",
                             action='store')
-    # lArgParser.add_argument('-t', '--pass-through',
-    #                         type=str,
-    #                         help="Pass-through the raw parameter to John the Ripper",
-    #                         action='store')
-
-    lArgParser.add_argument('-s', '--skip-prayer-mode',
+    lArgParser.add_argument('-t', '--pass-through',
+                             type=str,
+                             help="Pass-through the raw parameter to John the Ripper. Example: --pass-through=\"--fork=2\"",
+                             action='store')
+    lArgParser.add_argument('-n', '--skip-prayer-mode',
                             help='Skip prayer mode; the attempt to crack passwords using a variety of techniques in hopes of finding passwords for statistical analysis. If prayer mode is skipped, ByePass will rely on passwords found in Johns POT file. This is useful if prayer mode was already run, JTR was used independently of ByePass or the POT file was imported.',
                             action='store_true')
     lArgParser.add_argument('-v', '--verbose',
@@ -517,14 +524,18 @@ Attempt to crack linked-in hashes using base words linkedin and linked\n\n
 
     if lArgs.basewords:
         run_jtr_baseword_mode(pBaseWords=lArgs.basewords, pHashFormat=lHashFormat,
-                              pVerbose=lVerbose, pDebug=lDebug)
+                              pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through)
+
+    run_jtr_prayer_mode(pMethod=12, pHashFormat=lHashFormat,
+                        pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through)
+    exit(0)
 
     # Try to crack a relatively few passwords as quickly as possible.
     # These can be used in statistical analysis
     if not lArgs.skip_prayer_mode:
         for i in range(1,21,1):
             run_jtr_prayer_mode(pMethod=i, pHashFormat=lHashFormat,
-                                pVerbose=lVerbose, pDebug=lDebug)
+                                pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through)
 
     # If the user chooses, begin statistical analysis to aid targeted cracking routines
     if lArgs.stat_crack:
@@ -537,7 +548,7 @@ Attempt to crack linked-in hashes using base words linkedin and linked\n\n
             lPercentile = 1.0
 
         perform_statistical_cracking(pPercentile=lPercentile, pHashFormat=lHashFormat,
-                                     pVerbose=lVerbose, pDebug=lDebug)
+                                     pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through)
 
     if lVerbose:
         lEndTime = time.time()
