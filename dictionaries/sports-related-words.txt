@@ -41,6 +41,7 @@ advancement
 adventist
 advertisement
 aerobatics
+aerobics
 aeronautic
 aeronautical
 aeronautics
@@ -201,6 +202,7 @@ aquinascollege
 arbor
 arcadia
 arcata
+archer
 archers
 archery
 architectural
@@ -210,6 +212,7 @@ ardmore
 are
 area
 arecibo
+arena
 arenafootball
 argonauts
 argosy
@@ -258,6 +261,7 @@ atchison
 athenas
 athenians
 athens
+athlete
 athletic
 athletics
 athyn
@@ -297,6 +301,7 @@ avengers
 averett
 avila
 avon
+axel
 axemen
 axewomen
 aztecs
@@ -349,17 +354,21 @@ barry
 bars
 barton
 baruch
+base
 baseball
 basejumping
 basin
 basketball
 bastyr
+bat
 bates
 batesville
 baton
 batontwirling
 bats
+batter
 battery
+batting
 battlers
 battlin
 battling
@@ -449,7 +458,9 @@ bhsu
 biathlon
 bible
 biblical
+bicycle
 bicyclepolo
+bicycling
 biddeford
 big
 bigblack
@@ -463,6 +474,8 @@ bigten
 bigviolet
 bigwhite
 bigyellow
+bike
+biking
 billiards
 billikens
 billings
@@ -543,6 +556,7 @@ bonaventure
 bonifacius
 bonnies
 book
+boomerang
 boomerangthrow
 boone
 boricua
@@ -555,12 +569,16 @@ bothell
 bottineau
 boulder
 bouldering
+boules
 bourbonnais
+bow
 bowdoin
 bowie
 bowiestate
+bowler
 bowling
 bowls
+boxer
 boxers
 boxing
 boyce
@@ -616,6 +634,7 @@ broncos
 broncs
 bronx
 bronxville
+bronze medal
 brook
 brookhaven
 brookings
@@ -657,6 +676,7 @@ bullriding
 bulls
 bumperpool
 bungeejumping
+bunt
 burlington
 burn
 burnaby
@@ -723,6 +743,7 @@ canisius
 cankdeska
 cannoneers
 cannons
+canoe
 canoeing
 canton
 canucks
@@ -774,6 +795,8 @@ castleton
 cat
 catamounts
 catawba
+catch
+catcher
 catchwrestling
 catchyshubby
 categories:
@@ -794,6 +817,7 @@ cccb
 ccga
 ccis
 ccny
+c cont.
 ccsj
 ccsu
 ccuniversity
@@ -825,6 +849,8 @@ chaffey
 chamberlain
 chaminade
 champaign
+champion
+championship
 champlain
 chancellor
 chancelloru
@@ -914,6 +940,7 @@ clayton
 clear
 clearwater
 cleary
+cleats
 clemson
 cleveland
 cliff
@@ -925,8 +952,10 @@ clippers
 closed
 closehauled
 cloud
+club
 cmich
 cmpr
+coach
 coahuila
 coast
 coastal
@@ -980,7 +1009,11 @@ commodores
 commons
 commonwealth
 community
+compete
+competing
+competition
 competitiveeating
+competitor
 compton
 conception
 concord
@@ -1065,6 +1098,7 @@ croquet
 cross
 crosscheck
 crosscountry
+cross country
 crosscountryrally
 crosscountryrunning
 crosscountryskiing
@@ -1106,6 +1140,7 @@ cuaa
 cubs
 cucamonga
 cuchicago
+cue
 cuesports
 culinary
 cullowhee
@@ -1127,7 +1162,9 @@ curtis
 curve
 cuthbert
 c.w.
+cycle
 cycling
+cyclist
 cyclocross
 cyclones
 dade
@@ -1145,6 +1182,8 @@ dance
 danes
 daniel
 danville
+dart
+dartboard
 dartmouth
 darts
 davenport
@@ -1161,6 +1200,7 @@ daytonastate
 dc
 de
 deacons
+deadlifting
 dean
 dearborn
 decathlon
@@ -1206,6 +1246,7 @@ devils
 devry
 diablo
 diablos
+diamond
 diamondbacks
 dibbling
 dicas
@@ -1226,6 +1267,8 @@ disclaimers
 discontinued
 discus
 district
+dive
+diver
 divine
 diving
 divinity
@@ -1243,6 +1286,7 @@ dominion
 donate
 dons
 dordt
+doubleheader
 douglas
 dover
 dowling
@@ -1268,6 +1312,7 @@ dubuque
 ducks
 dudley
 due
+dugout
 duhawks
 duke
 dukes
@@ -1362,11 +1407,13 @@ englishbilliards
 enmu
 enterprise
 environmental
+epee
 ephraim
 ephs
 equestrian
 equestrianvaulting
 equinepolo
+equipment
 equitation
 erau
 erie
@@ -1401,6 +1448,7 @@ ewing
 excalibur
 excelsior
 except
+exercise
 exeter
 explicitly
 explorers
@@ -1453,16 +1501,20 @@ ferrum
 fgcu
 fhchs
 fhsu
+field
 fieldarchery
+fielder
 fieldgoal
 fieldhandball
 fieldhockey
+field hockey
 fielding
 fieldtarget
 fighters
 fightin
 fighting
 figureskating
+figure skating
 file
 film
 financial
@@ -1478,6 +1530,7 @@ fishing
 fisk
 fistball
 fitchburg
+fitness
 fitnyc
 five
 fivepinbowling
@@ -1527,6 +1580,7 @@ forks
 former
 fort
 fortlewis
+forward
 foulball
 foundation
 four
@@ -1564,6 +1618,7 @@ freestyleslalomskating
 freestylesnowboarding
 freestyleswimming
 freethrow
+free throw
 freighter
 fremont
 frenchcricket
@@ -1601,6 +1656,7 @@ gallaudet
 galloway
 galveston
 gambier
+game
 gamecocks
 gannon
 gaolie
@@ -1618,7 +1674,9 @@ gators
 gauchos
 gbcnv
 gbcol
+g cont.
 gcsu
+gear
 geauga
 geckos
 gee-gees
@@ -1629,6 +1687,7 @@ genesee
 geneseo
 geneva
 gentlemen
+geocaching
 geoducks
 geographic
 george
@@ -1674,7 +1733,11 @@ gold
 golden
 goldey-beacom
 goldfarb
+gold medal
+golf
 golfcross
+golfer
+golfing
 gonzaga
 goodwell
 gophers
@@ -1748,6 +1811,9 @@ gwinnett
 gwizzlies
 gwynedd
 gwynedd-mercy
+gym
+gymnasium
+gymnast
 gymnastics
 gyrenes
 hackettstown
@@ -1764,6 +1830,7 @@ hamden
 hamilton
 hamline
 hammerthrow
+hammer throw
 hammond
 hampden
 hampden-sydney
@@ -1773,10 +1840,12 @@ hamptonu
 hanaichimonme
 handball
 hanggliding
+hang gliding
 hannibal-lagrange
 hanover
 hapkido
 harbor
+hardball
 hardeman
 hardin-baylor
 hardin–baylor
@@ -1838,12 +1907,14 @@ heels
 heidelberg
 heights
 helena
+helmet
 help
 hempstead
 henderson
 hendrix
 henry
 hens
+heptathlon
 herd
 here
 heritage
@@ -1862,6 +1933,7 @@ highbeam
 highdive
 highdiving
 highjump
+high jump
 highland
 highlanders
 highlands
@@ -1882,6 +1954,7 @@ hiphopdance
 hiram
 hispanic
 history
+hitter
 hiwassee
 hobart
 hobbs
@@ -1892,6 +1965,7 @@ hodges
 hofstra
 hokies
 hokkaido
+hole-in-one
 holland
 hollins
 holly
@@ -1901,12 +1975,16 @@ holycross
 holyfamily
 holyoke
 home
+home plate
 homerun
+home run
+home team
 honolulu
 hood
 hook
 hooks
 hookshot
+hoop
 hoops
 hoosiers
 hooverball
@@ -1932,6 +2010,7 @@ hputx
 hsbc
 hssu
 hsutx
+huddle
 hudson
 hulman
 hult
@@ -1944,6 +2023,7 @@ hunting
 huntingdon
 huntington
 huntsville
+hurdle
 hurdles
 hurling
 huron
@@ -1963,9 +2043,13 @@ ibl
 ice
 iceboating
 icehockey
+ice hockey
 icehogs
 iceracing
+ice rink
+ice skates
 iceskating
+ice skating
 iceyachting
 ichabods
 icing
@@ -2002,10 +2086,13 @@ indstate
 indwes
 inferno
 infield
+infielder
 information
 inland
 inlinehockey
+inline skates
 inlinespeedskating
+inning
 institute
 integral
 intelligence
@@ -2050,6 +2137,7 @@ jackson
 jacksonville
 jaguars
 jaialai
+jai-alai
 jamaica
 james
 jamestown
@@ -2081,6 +2169,8 @@ jimmies
 jiujitsu
 jjay
 jmls
+jog
+jogger
 john
 johnnies
 johns
@@ -2111,8 +2201,11 @@ juilliard
 jujutsu
 jumbo
 jumbos
+jump
+jumper
 jumpers
 jumping
+jump rope
 jumpshot
 junction
 juneau
@@ -2131,6 +2224,7 @@ karate
 kartracing
 kaskaskia
 kayak
+kayaker
 kayaking
 kc
 kcad
@@ -2165,6 +2259,7 @@ kickboxing
 kickers
 kilgore
 king
+king fu
 kings
 king's
 kingsmen
@@ -2177,6 +2272,7 @@ kirksville
 kirkwood
 kishwaukee
 kissimmee
+kite
 kitefighting
 kiteflying
 kitelandboarding
@@ -2186,6 +2282,7 @@ kitsap
 klamath
 kmbc
 kneeboarding
+kneepads
 knickerbockers
 knicks
 knifethrowing
@@ -2282,6 +2379,7 @@ laval
 laverne
 law
 lawnbowling
+lawn bowling
 lawrence
 lawrenceville
 lawson
@@ -2291,6 +2389,7 @@ lclark
 lcsc
 le
 leafs
+league
 leathernecks
 leavenworth
 lebanon
@@ -2386,6 +2485,7 @@ long
 longboarding
 longhorns
 longjump
+long jump
 longtime
 longueuil
 longview
@@ -2400,6 +2500,8 @@ lords
 loretto
 lorman
 los
+lose
+loser
 lou
 loudonville
 louis
@@ -2438,6 +2540,7 @@ lutes
 luther
 lutheran
 luthersem
+lutz
 lycoming
 lyme
 lymeacademy
@@ -2481,6 +2584,7 @@ maine-machias
 mainemaritime
 maine–presque
 major
+major league
 majors
 makers
 malibu
@@ -2533,6 +2637,7 @@ mars
 marshall
 marshfield
 marshfield/wood
+martial arts
 martin
 martinez
 martinmethodist
@@ -2563,6 +2668,7 @@ massart
 masters
 master's
 mastodons
+mat
 matadors
 matball
 matkot
@@ -2604,6 +2710,7 @@ meca
 mechanical
 mechanics
 medaille
+medal
 medcenter
 medford
 medgar
@@ -2692,6 +2799,7 @@ mining
 minneapolis
 minnesota
 minnesota-duluth
+minor league
 minot
 minotstateu
 minutemen
@@ -2712,6 +2820,7 @@ missouristate
 missouriwestern
 mit
 mitchell
+mitt
 ml
 mlc-wels
 mls
@@ -2789,7 +2898,10 @@ mounties
 "mounties"
 mountsaintvincent
 mountunion
+mouthguard
 moval
+move
+movement
 moyne
 mscd
 mslaw
@@ -2834,6 +2946,7 @@ muskogee
 mustangs
 mville
 mvnu
+mvp
 mvsu
 mwsu
 myers
@@ -2884,6 +2997,7 @@ needham
 neit
 neiu
 neoucom
+net
 netball
 nets
 neumann
@@ -2925,11 +3039,13 @@ nmhu
 nmsu
 nnmc
 nobts
+no-hitter
 non
 noodling
 norbert
 nordiccombined
 nordicskiing
+nordic skiing
 noreasters
 norfolk
 normal
@@ -3003,6 +3119,7 @@ oceanrowing
 ocelots
 october
 of
+offense
 offroadracing
 offsides
 ogden
@@ -3034,6 +3151,7 @@ olin
 olive
 olivet
 olivetcollege
+ollie
 ollusa
 olmecas
 olmecs
@@ -3041,6 +3159,7 @@ ololcollege
 olympia
 olympians
 olympic
+olympics
 omaha
 one
 oneonta
@@ -3086,6 +3205,9 @@ otters
 ouachita
 ouhsc
 our
+out
+outfield
+outfielder
 outlaws
 overland
 overtime
@@ -3107,6 +3229,7 @@ pack
 packers
 paddle
 paddleball
+paddling
 padres
 page
 pages
@@ -3143,6 +3266,7 @@ park
 parker
 parkercc
 parkersburg
+parkour
 parkside
 parkville
 parrots
@@ -3170,6 +3294,7 @@ payne
 pbars
 pcad
 pcl
+p cont.
 pdf
 peace
 peacocks
@@ -3238,6 +3363,7 @@ pilots
 pima
 pine
 pingpong
+ping pong
 pington
 pinned
 pins
@@ -3247,6 +3373,8 @@ pippa
 piratas
 pirates
 pistons
+pitch
+pitcher
 pitt
 pitt-greensburg
 pittsburg
@@ -3265,6 +3393,10 @@ platt
 platteville
 plattsburgh
 platypi
+play
+player
+playing
+playoffs
 pleasant
 plume
 plymouth
@@ -3272,12 +3404,15 @@ pnca
 pocatello
 podiatric
 poets
+pogo stick
 point
 pointers
 pointloma
 pointpark
 polar
+pole
 polevault
+pole vault
 police
 policy
 politics
@@ -3353,6 +3488,7 @@ psychological
 psychology
 ptseminary
 ptstulsa
+puck
 pucpr
 puebla
 pueblo
@@ -3371,6 +3507,7 @@ pvamu
 pygmies
 quake
 quakers
+quarter
 quarterback
 quebec
 québec
@@ -3381,7 +3518,10 @@ quinn
 quinnipiac
 quinsigamond
 quintana
+quiver
 r.
+race
+racer
 racers
 racewalking
 racing
@@ -3464,6 +3604,7 @@ red wings
 redwoods
 reed
 refer
+referee
 references
 refers
 regals
@@ -3480,6 +3621,7 @@ reinhardt
 reining
 reivers
 related
+relay
 relayrace
 religion
 remotecontrol
@@ -3511,16 +3653,19 @@ richmond
 richmont
 rico
 riddle
+ride
 rider
 riders
 ridge
 ridgebacks
+riding
 rieleros
 rightfield
 ringette
 ringling
 ringo
 rings
+rink
 rinkball
 rinkhockey
 rio
@@ -3559,6 +3704,7 @@ roche
 rochelle
 rochester
 rock
+rock climbing
 rockefeller
 rockets
 rockfishing
@@ -3579,7 +3725,9 @@ rojos
 rolla
 rollerderby
 rollerhockey
+roller skates
 rollerskating
+roller skating
 rollerspeedskating
 rollins
 rome
@@ -3601,8 +3749,10 @@ roughnecks
 roughriders
 round
 rounders
+row
 rowan
 rowdies
+rower
 rowing
 roxboro
 royaking
@@ -3617,6 +3767,7 @@ rugbyleague
 rugbysevens
 rugbyunion
 rumble
+run
 runner
 runnin
 running
@@ -3729,7 +3880,9 @@ sciarc
 science
 sciences
 sckans
+s cont.
 score
+scoreboard
 scorpions
 scotia
 scots
@@ -3743,8 +3896,11 @@ screaming
 scripps
 scrippscollege
 scsu
+scuba
 scubadiving
 scuhs
+scull
+sculling
 sdcc
 sdstate
 sdsu
@@ -3833,7 +3989,9 @@ shores
 shorinjikempo
 shorter
 shortformcricket
+shortstop
 shotput
+shot put
 showboats
 showjumping
 showtime
@@ -3855,6 +4013,7 @@ silat
 siloam
 silver
 silverbacks
+silver medal
 silverswords
 simmons
 simon
@@ -3882,13 +4041,17 @@ sjcsf
 sjfc
 sjsu
 sjvcs
+skate
 skateboarding
 skaterhockey
+skating rink
 skeetshooting
 skeleton
+ski
 skibob
 skibobbing
 skidmore
+skier
 skiflying
 skiing
 skijoring
@@ -3912,6 +4075,8 @@ slamball
 slamdunk
 slapshot
 slc
+sled
+sledder
 sledding
 slippery
 slugs
@@ -3930,7 +4095,10 @@ snhu
 snohomish
 snooker
 snorkeling
+snorkling
 snow
+snowboard
+snowboarder
 snowboarding
 snowkiting
 snowshoeing
@@ -3942,6 +4110,7 @@ soka
 soldiers
 some
 somers
+somersault
 somerville
 sonics
 sonoma
@@ -3976,6 +4145,7 @@ speedgolf
 speedminton
 speedpool
 speedskating
+speed skating
 speedskiing
 spelman
 spertus
@@ -3987,11 +4157,13 @@ spirits
 spokane
 spongeepolo
 spoon
+sport
 sportfishing
 sporting
 sportkite
 sports
 sportslists
+sportsmanship
 sportstacking
 spring
 springdale
@@ -4009,6 +4181,7 @@ squirtboating
 st
 st.
 stac
+stadium
 staff
 stags
 stallions
@@ -4065,6 +4238,7 @@ stfrancis
 stfranciscollege
 stgregorys
 sticas
+stick
 still
 stillman
 stillrings
@@ -4105,6 +4279,7 @@ strikeout
 strikers
 striking
 stritch
+stroke
 strose
 stroudsburg
 stthom
@@ -4127,6 +4302,7 @@ sultanes
 sultans
 summit
 sumo
+sumo wrestling
 sumter
 sun
 sunbirds
@@ -4152,6 +4328,7 @@ supersonics
 supersportracing
 surf
 surfboat
+surfer
 surffishing
 surfing
 surfkayaking
@@ -4172,6 +4349,8 @@ swcc
 swcu
 swedes
 sweet
+swim
+swimmer
 swimming
 switchbacks
 swlaw
@@ -4181,6 +4360,7 @@ sycamores
 sydney
 synchronizedskating
 synchronizedswimming
+synchronized swimming
 syracuse
 system
 systems
@@ -4188,6 +4368,7 @@ tabasco
 tablefootball
 tablehockey
 tabletennis
+table tennis
 tabor
 tack
 tackle
@@ -4196,6 +4377,7 @@ taekkyeon
 taekwondo
 taft
 taftu
+tag
 tahlequah
 tai
 taichichuan
@@ -4218,6 +4400,7 @@ tamuk
 tamut
 tapdance
 tar
+target
 tarleton
 tars
 tartans
@@ -4227,9 +4410,11 @@ taylor
 tball
 tcm
 tcnj
+t cont.
 teachers
 team
 teamen
+teammate
 teams
 teams:
 teaneck
@@ -4238,8 +4423,10 @@ technical
 technological
 technology
 techsters
+tee
 teedee
 tejanos
+telemark skiing
 tempe
 temple
 tenball
@@ -4306,6 +4493,7 @@ three
 threeball
 threshers
 throggs
+throw
 throwball
 throwing
 thrust
@@ -4319,6 +4507,7 @@ thundering
 thunderwolves
 tide
 tides
+tie
 tiffin
 tifton
 tiger-cats
@@ -4365,6 +4554,7 @@ township
 towson
 tracers
 track
+track and field
 trackcycling
 trackracing
 trade
@@ -4372,6 +4562,7 @@ trademark
 trail
 trailblazers
 training
+trampoline
 trampolining
 transpersonal
 transy
@@ -4383,6 +4574,7 @@ travelers
 trent
 trenton
 trevecca
+triathlete
 triathlon
 tribe
 tribes
@@ -4398,6 +4590,8 @@ trinitycollege
 trinitycollegeqc
 trinitydc
 triplejump
+triple jump
+triple play
 tritons
 trnty
 trois-rivières
@@ -4413,6 +4607,7 @@ trumbull
 ttuhsc
 tucson
 tufts
+tug of war
 tugowar
 tui
 tuiu
@@ -4485,6 +4680,7 @@ ultimate
 ultimatefootball
 ultimatefrisbee
 ultramarathon
+ultramarathoner
 umaine
 umary
 umaryland
@@ -4502,6 +4698,7 @@ umich
 umkc
 umobile
 umpi
+umpire
 umsl
 umsystem
 umuc
@@ -4526,8 +4723,11 @@ underwaterfootball
 underwaterhockey
 underwaterrugby
 unevenbars
+unicycle
 unicycletrials
+unicyclist
 unification
+uniform
 uniformed
 union
 uniondale
@@ -4663,6 +4863,8 @@ vassar
 vaughan
 vaughn
 vault
+vaulter
+vaulting
 vcsu
 vegas
 veracruz
@@ -4698,13 +4900,16 @@ virgin
 virginia
 virginia–parkersburg
 virginia's
+visiting team
 vista
 visual
 viterbo
 vixens
 vmi
 volcanoes
+volley
 volleyball
+volley ball
 volunteers
 voorhees
 voyageurs
@@ -4723,6 +4928,8 @@ waldenu
 waldorf
 wales
 waleska
+walk
+walker
 walking
 walla
 wallace
@@ -4752,7 +4959,11 @@ washjeff
 wasps
 waterloo
 waterpolo
+water polo
 waters
+waterski
+waterskier
+waterskiing
 watertown
 waterville
 watkins
@@ -4778,6 +4989,7 @@ weber
 website
 webster
 weevils
+weightlifter
 weightlifting
 weights
 wellesley
@@ -4807,6 +5019,7 @@ westminstercollege
 westminster-mo
 westmont
 westville
+wetsuit
 whalers
 whales
 what
@@ -4827,10 +5040,12 @@ white sox
 whitewater
 whitewaterkayaking
 whitewaterrafting
+white water rafting
 whitman
 whittier
 whitworth
 wichita
+wicket
 widener
 wiffleball
 wikidata
@@ -4861,12 +5076,16 @@ wilmington
 wilmore
 wilmu
 wilson
+win
 windsor
+windsurfer
 windsurfing
 winfield
 wingate
 wings
 wingsuitflying
+winner
+winning
 winnipeg
 winnipegk
 winona
@@ -4928,12 +5147,15 @@ worcester
 word
 work
 world
+world cup
+world series
 worth
 worthington
 would
 wpi
 wpunj
 wrestle
+wrestler
 wrestling
 wright
 wscal

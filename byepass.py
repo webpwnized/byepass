@@ -244,37 +244,46 @@ def run_jtr_prayer_mode(pMethod: int, pHashFormat: str, pVerbose: bool, pDebug: 
         lCmdArgs.append("--wordlist=dictionaries/persons-names.txt")
         lCmdArgs.append("--rules=best126")
     elif pMethod == 10:
+        if pVerbose: print("[*] Starting mode: Wordlist persons-names.txt Rule OneRuleToRuleThemAll")
+        lCmdArgs.append("--wordlist=dictionaries/persons-names.txt")
+        lCmdArgs.append("--rules=oneruletorulethemall")
+    elif pMethod == 11:
         if pVerbose: print("[*] Starting mode: Wordlist sports-related-words.txt Rule best126")
         lCmdArgs.append("--wordlist=dictionaries/sports-related-words.txt")
         lCmdArgs.append("--rules=best126")
-    elif pMethod == 11:
+    elif pMethod == 12:
         if pVerbose: print("[*] Starting mode: Wordlist sports-related-words.txt Rule OneRuleToRuleThemAll")
         lCmdArgs.append("--wordlist=dictionaries/sports-related-words.txt")
         lCmdArgs.append("--rules=oneruletorulethemall")
-    elif pMethod == 12:
+    elif pMethod == 13:
         if pVerbose: print("[*] Starting mode: Wordlist other-base-words.txt Rule best126")
         lCmdArgs.append("--wordlist=dictionaries/other-base-words.txt")
         lCmdArgs.append("--rules=best126")
-    elif pMethod == 13:
+    elif pMethod == 14:
         if pVerbose: print("[*] Starting mode: Wordlist places.txt Rule best126")
         lCmdArgs.append("--wordlist=dictionaries/places.txt")
         lCmdArgs.append("--rules=best126")
-    elif pMethod == 14:
+    elif pMethod == 15:
         if pVerbose: print("[*] Starting mode: Wordlist 4-digit-numbers.txt Rule best126")
         lCmdArgs.append("--wordlist=dictionaries/4-digit-numbers.txt")
         lCmdArgs.append("--rules=best126")
-    elif pMethod == 15:
+    elif pMethod == 16:
         if pVerbose: print("[*] Starting mode: Wordlist calendar.txt Rule BPAppendYears")
         lCmdArgs.append("--wordlist=dictionaries/calendar.txt")
         lCmdArgs.append("--rules=bpappendyears")
-    elif pMethod == 16:
+    elif pMethod == 17:
+        if pVerbose: print("[*] Starting mode: Wordlist calendar.txt Rule OneRuleToRuleThemAll")
+        lCmdArgs.append("--wordlist=dictionaries/calendar.txt")
+        lCmdArgs.append("--rules=oneruletorulethemall")
+    elif pMethod == 18:
         if pVerbose: print("[*] Starting mode: Wordlist 6-digit-numbers.txt")
         lCmdArgs.append("--wordlist=dictionaries/6-digit-numbers.txt")
         lCmdArgs.append("--rules=best126")
-    elif pMethod == 17:
-        if pVerbose: print("[*] Starting mode: Wordlist keyboard-patterns.txt")
+    elif pMethod == 19:
+        if pVerbose: print("[*] Starting mode: Wordlist keyboard-patterns.txt Rule OneRuleToRuleThemAll")
         lCmdArgs.append("--wordlist=dictionaries/keyboard-patterns.txt")
-    elif pMethod == 18:
+        lCmdArgs.append("--rules=oneruletorulethemall")
+    elif pMethod == 20:
         if pVerbose: print("[*] Starting mode: JTR single crack")
         lCmdArgs.append("--single")
 
@@ -468,6 +477,9 @@ Attempt to crack linked-in hashes using base words linkedin and linked\n\n
     #                         type=str,
     #                         help="Pass-through the raw parameter to John the Ripper",
     #                         action='store')
+    lArgParser.add_argument('-s', '--skip-prayer-mode',
+                            help='Skip prayer mode; the attempt to crack passwords using a variety of techniques in hopes of finding passwords for statistical analysis. If prayer mode is skipped, ByePass will rely on passwords found in Johns POT file. This is useful if prayer mode was already run, JTR was used independently of ByePass or the POT file was imported.',
+                            action='store_true')
     lArgParser.add_argument('-v', '--verbose',
                             help='Enable verbose output such as current progress and duration',
                             action='store_true')
@@ -508,8 +520,10 @@ Attempt to crack linked-in hashes using base words linkedin and linked\n\n
 
     # Try to crack a relatively few passwords as quickly as possible.
     # These can be used in statistical analysis
-    for i in range(1,19,1):
-        run_jtr_prayer_mode(pMethod=i, pHashFormat=lHashFormat, pVerbose=lVerbose, pDebug=lDebug)
+    if not lArgs.skip_prayer_mode:
+        for i in range(1,21,1):
+            run_jtr_prayer_mode(pMethod=i, pHashFormat=lHashFormat,
+                                pVerbose=lVerbose, pDebug=lDebug)
 
     # If the user chooses, begin statistical analysis to aid targeted cracking routines
     if lArgs.stat_crack:
