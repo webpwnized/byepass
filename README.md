@@ -162,4 +162,4 @@ These resources host hashes and the resulting passwords. These can be helpful fo
 
 **Martin Bos's Thoughts**: https://www.trustedsec.com/2016/06/introduction-gpu-password-cracking-owning-linkedin-password-dump/
 
-** One Rule to Rule them ALl **: https://github.com/NotSoSecure/password_cracking_rules
+**One Rule to Rule them All**: https://github.com/NotSoSecure/password_cracking_rules
