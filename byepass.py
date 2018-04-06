@@ -430,7 +430,7 @@ def perform_statistical_cracking(pPercentile: float, pHashFormat: str,
                 print("[*] WARNING: Did not process mask {} because it is out of policy".format(lMask))
 
         # Lowercase ending with something other than the masks already accounted for. If the
-        # ending pattern is longer than 2 characters, we do not try because it takes a long time
+        # ending pattern is longer than 4 characters, we do not try because it takes a long time
         # to test that many hashes
         elif re.match('^(\?l)+', lMask):
             lPrefix = re.search('^(\?l)+', lMask).group()
