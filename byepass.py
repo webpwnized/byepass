@@ -534,8 +534,7 @@ Attempt to crack linked-in hashes using base words linkedin and linked\n\n
         run_jtr_baseword_mode(pBaseWords=lArgs.basewords, pHashFormat=lHashFormat,
                               pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through)
 
-    # Try to crack a relatively few passwords as quickly as possible.
-    # These can be used in statistical analysis
+    # Try to crack a relatively few passwords as quickly as possible to use in statistical analysis
     if not lArgs.skip_prayer_mode:
         for i in range(1,23,1):
             run_jtr_prayer_mode(pMethod=i, pHashFormat=lHashFormat,
