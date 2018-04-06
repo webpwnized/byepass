@@ -185,7 +185,7 @@ def run_jtr_mask_mode(pMask: str, pWordlist: str, pHashFormat:str,
 def run_jtr_baseword_mode(pBaseWords: str, pHashFormat: str,
                           pVerbose: bool, pDebug: bool, pPassThrough: str) -> None:
 
-    if pVerbose: print("[*] Starting mode: Baseword with words {}", pBaseWords)
+    if pVerbose: print("[*] Starting mode: Baseword with words {}".format(pBaseWords))
 
     lBaseWords = list(pBaseWords.split(","))
     lBaseWordsFileName = 'basewords/basewords.txt'
