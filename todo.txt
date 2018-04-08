@@ -1,6 +1,8 @@
 Spanish masks
 Phone numbers
-Table of cracking results
+Table of cracking results display at end
 Merge best126 with OneRules and collapse runs
 Prince mode
 Have I been pwned passwords
+Reading pot file slow when lots of passwords broken
+Can we keep track of cracked passwords without using show command?

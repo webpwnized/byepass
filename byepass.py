@@ -546,16 +546,6 @@ Use pass-through to pass fork command to JTR\n\n
         run_jtr_baseword_mode(pBaseWords=lArgs.basewords, pHashFormat=lHashFormat,
                               pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through)
 
-    run_jtr_prayer_mode(pMethod=11, pHashFormat=lHashFormat,
-                        pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through)
-    run_jtr_prayer_mode(pMethod=12, pHashFormat=lHashFormat,
-                        pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through)
-    run_jtr_prayer_mode(pMethod=13, pHashFormat=lHashFormat,
-                        pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through)
-    run_jtr_prayer_mode(pMethod=14, pHashFormat=lHashFormat,
-                        pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through)
-    exit(0)
-
     # Try to crack a relatively few passwords as quickly as possible to use in statistical analysis
     if not lArgs.skip_prayer_mode:
         for i in range(1,23,1):
