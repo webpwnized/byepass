@@ -57,11 +57,13 @@ def parse_jtr_pot(pVerbose: bool, pDebug: bool) -> list:
         lPotFile = lFile.readlines()
     if pVerbose: print("[*] Finished reading input file " + JTR_POT_FILE_PATH)
 
+    if pVerbose: print("[*] Processing input file " + JTR_POT_FILE_PATH)
     for lLine in lPotFile:
         if not lLine[0:3] == b'$LM':
             lPassword = lLine.strip().split(b':')[1]
             if not lPassword in lListOfPasswords:
                 lListOfPasswords.append(lPassword)
+    if pVerbose: print("[*] Finished processing input file " + JTR_POT_FILE_PATH)
 
     return lListOfPasswords
 
@@ -465,13 +467,23 @@ if __name__ == '__main__':
                                          epilog="""
 Examples:\n\n
 Attempt to crack password hashes found in input file "password.hashes"\n\n
-\tpython3 byepass.py -v --hash-format=descrypt --input-file=password.hashes\n\n
+\tpython3 byepass.py --verbose --hash-format=descrypt --input-file=password.hashes\n\n
+\tpython3 byepass.py -v -f descrypt -i password.hashes\n\n
 Attempt to crack password hashes found in input file "password.hashes", then run statistical analysis to determine masks needed to crack 50 percent of passwords, and try to crack again using the masks.\n\n
 \tpython3 byepass.py --verbose --hash-format=descrypt --stat-crack --percentile=0.50 --input-file=password.hashes\n\n
+\tpython3 byepass.py -v -f descrypt -s -p 0.50 -i password.hashes\n\n
 \"Real life\" example attempting to crack 25 percent of the linked-in hash set\n\n
 \tpython3 byepass.py --verbose --hash-format=Raw-SHA1 --stat-crack --percentile=0.25 --input-file=linkedin.hashes\n\n
+\tpython3 byepass.py -v -f Raw-SHA1 -s -f 0.25 -i linkedin.hashes\n\n
 Attempt to crack linked-in hashes using base words linkedin and linked\n\n
-\tpython3 byepass.py --hash-format=Raw-SHA1 --base-words=linkedin,linked --input-file=linkedin-1.hashes
+\tpython3 byepass.py --verbose --hash-format=Raw-SHA1 --base-words=linkedin,linked --input-file=linkedin-1.hashes\n\n
+\tpython3 byepass.py -v -f -b linkedin,linked -i linkedin-1.hashes\n\n
+Do not run prayer mode. Only run statistical analysis to determine masks needed to crack 50 percent of passwords, and try to crack using the masks.\n\n
+\tpython3 byepass.py -v --skip-prayer-mode --hash-format=descrypt --stat-crack --percentile=0.50 --input-file=password.hashes\n\n
+\tpython3 byepass.py -v -n -f descrypt -s -p 0.50 -i password.hashes\n\n
+Use pass-through to pass fork command to JTR\n\n
+\tpython3 byepass.py --verbose --pass-through="--fork=4" --hash-format=descrypt --input-file=password.hashes\n\n
+\tpython3 byepass.py -v -t="--fork=4" -f descrypt -i password.hashes
                                          """,
                                          formatter_class=RawTextHelpFormatter)
     lArgParser.add_argument('-f', '--hash-format',
@@ -533,6 +545,16 @@ Attempt to crack linked-in hashes using base words linkedin and linked\n\n
     if lArgs.basewords:
         run_jtr_baseword_mode(pBaseWords=lArgs.basewords, pHashFormat=lHashFormat,
                               pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through)
+
+    run_jtr_prayer_mode(pMethod=11, pHashFormat=lHashFormat,
+                        pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through)
+    run_jtr_prayer_mode(pMethod=12, pHashFormat=lHashFormat,
+                        pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through)
+    run_jtr_prayer_mode(pMethod=13, pHashFormat=lHashFormat,
+                        pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through)
+    run_jtr_prayer_mode(pMethod=14, pHashFormat=lHashFormat,
+                        pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through)
+    exit(0)
 
     # Try to crack a relatively few passwords as quickly as possible to use in statistical analysis
     if not lArgs.skip_prayer_mode:

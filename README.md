@@ -112,6 +112,10 @@ Output the number of passwords represented by each mask sorted by count descendi
                             Supply a comma-separated list of lowercase, unmangled base words thought to be good candidates. For example, if Wiley Coyote is cracking hashes from Acme Inc., Wiley might provide the word "acme". Be careful how many words are supplied as Byepass will apply many mangling rules. Up to a dozen might run reasonably fast.
       -p PERCENTILE, --percentile PERCENTILE
                             Based on statistical analysis of the passwords cracked during initial phase, use only the masks statistically likely to be needed to crack at least the given percent of passwords. For example, if a value of 0.25 provided, only use the relatively few masks needed to crack 25 passwords of the passwords. Note that password cracking effort follows an exponential distribution, so cracking a few more passwords takes a lot more effort (relatively speaking). A good starting value if completely unsure is 25 percent (0.25).
+      -t PASS_THROUGH, --pass-through PASS_THROUGH
+                        Pass-through the raw parameter to John the Ripper. Example: --pass-through="--fork=2"
+      -n, --skip-prayer-mode
+                        Skip prayer mode; the attempt to crack passwords using a variety of techniques in hopes of finding passwords for statistical analysis. If prayer mode is skipped, ByePass will rely on passwords found in Johns POT file. This is useful if prayer mode was already run, JTR was used independently of ByePass or the POT file was imported.
       -v, --verbose         Enable verbose output such as current progress and duration
       -d, --debug           Enable debug mode
 
@@ -124,19 +128,39 @@ Output the number of passwords represented by each mask sorted by count descendi
 
 Attempt to crack password hashes found in input file "password.hashes"
 
-	python3 byepass.py -v --hash-format=descrypt --input-file=password.hashes
+	python3 byepass.py --verbose --hash-format=descrypt --input-file=password.hashes
+
+	python3 byepass.py -v -f descrypt -i password.hashes
 
 Attempt to crack password hashes found in input file "password.hashes", then run statistical analysis to determine masks needed to crack 50 percent of passwords, and try to crack again using the masks.
 
 	python3 byepass.py --verbose --hash-format=descrypt --stat-crack --percentile=0.50 --input-file=password.hashes
 
+	python3 byepass.py -v -f descrypt -s -p 0.50 -i password.hashes
+
 "Real life" example attempting to crack 25 percent of the linked-in hash set
 
 	python3 byepass.py --verbose --hash-format=Raw-SHA1 --stat-crack --percentile=0.25 --input-file=linkedin.hashes
 
+	python3 byepass.py -v -f Raw-SHA1 -s -f 0.25 -i linkedin.hashes
+
 Attempt to crack linked-in hashes using base words linkedin and linked
 
-	python3 byepass.py --hash-format=Raw-SHA1 --basewords=linkedin,linked --input-file=linkedin-1.hashes
+	python3 byepass.py --verbose --hash-format=Raw-SHA1 --base-words=linkedin,linked --input-file=linkedin-1.hashes
+
+	python3 byepass.py -v -f -b linkedin,linked -i linkedin-1.hashes
+
+Do not run prayer mode. Only run statistical analysis to determine masks needed to crack 50 percent of passwords, and try to crack using the masks.
+
+	python3 byepass.py -v --skip-prayer-mode --hash-format=descrypt --stat-crack --percentile=0.50 --input-file=password.hashes
+
+	python3 byepass.py -v -n -f descrypt -s -p 0.50 -i password.hashes
+
+Use pass-through to pass fork command to JTR
+
+	python3 byepass.py --verbose --pass-through="--fork=4" --hash-format=descrypt --input-file=password.hashes
+
+	python3 byepass.py -v -t="--fork=4" -f descrypt -i password.hashes
 
 # Hashes and Password Lists
 
