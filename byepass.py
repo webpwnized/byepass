@@ -230,100 +230,120 @@ def run_jtr_prayer_mode(pHashFile: str, pMethod: int, pHashFormat: str,
         lCmdArgs.append("--wordlist=dictionaries/hob0-short-crack.txt")
         lCmdArgs.append("--rules=oneruletorulethemall")
     elif pMethod == 2:
+        if pVerbose: print("[*] Starting mode: Wordlist animals.txt Rule OneRuleToRuleThemAll")
+        lCmdArgs.append("--wordlist=dictionaries/animals.txt")
+        lCmdArgs.append("--rules=oneruletorulethemall")
+    elif pMethod == 3:
         if pVerbose: print("[*] Starting mode: Wordlist worst-95000-passwords.txt Rule Best126")
         lCmdArgs.append("--wordlist=passwords/worst-95000-passwords.txt")
         lCmdArgs.append("--rules=best126")
-    elif pMethod == 3:
+    elif pMethod == 4:
         if pVerbose: print("[*] Starting mode: Wordlist passwords-hailmary.txt Rule HailMary")
         lCmdArgs.append("--wordlist=passwords/passwords-hailmary.txt")
         lCmdArgs.append("--rules=HailMary")
-    elif pMethod == 4:
+    elif pMethod == 5:
         if pVerbose: print("[*] Starting mode: Wordlist 4-digit-numbers.txt Rule Best126")
         lCmdArgs.append("--wordlist=dictionaries/4-digit-numbers.txt")
         lCmdArgs.append("--rules=best126")
-    elif pMethod == 5:
+    elif pMethod == 6:
         if pVerbose: print("[*] Starting mode: Wordlist calendar.txt Rule BPAppendYears")
         lCmdArgs.append("--wordlist=dictionaries/calendar.txt")
         lCmdArgs.append("--rules=bpappendyears")
-    elif pMethod == 6:
+    elif pMethod == 7:
         if pVerbose: print("[*] Starting mode: Wordlist calendar.txt Rule OneRuleToRuleThemAll")
         lCmdArgs.append("--wordlist=dictionaries/calendar.txt")
         lCmdArgs.append("--rules=oneruletorulethemall")
-    elif pMethod == 7:
+    elif pMethod == 8:
         if pVerbose: print("[*] Starting mode: Wordlist 6-digit-numbers.txt Rule Best126")
         lCmdArgs.append("--wordlist=dictionaries/6-digit-numbers.txt")
         lCmdArgs.append("--rules=best126")
-    elif pMethod == 8:
+    elif pMethod == 9:
         if pVerbose: print("[*] Starting mode: JTR single crack Rule Single")
         lCmdArgs.append("--single")
 
     # These modes run quickly
-    elif pMethod == 9:
+    elif pMethod == 10:
         if pVerbose: print("[*] Starting mode: Wordlist top-10000-english-words.txt Rule Best126")
         lCmdArgs.append("--wordlist=dictionaries/top-10000-english-words.txt")
         lCmdArgs.append("--rules=best126")
-    elif pMethod == 10:
+    elif pMethod == 11:
         if pVerbose: print("[*] Starting mode: Wordlist top-10000-spanish-words.txt Rule Best126")
         lCmdArgs.append("--wordlist=dictionaries/top-10000-spanish-words.txt")
         lCmdArgs.append("--rules=best126")
-    elif pMethod == 11:
+    elif pMethod == 12:
         if pVerbose: print("[*] Starting mode: Wordlist sports-related-words.txt Rule Best126")
         lCmdArgs.append("--wordlist=dictionaries/sports-related-words.txt")
         lCmdArgs.append("--rules=best126")
-    elif pMethod == 12:
+    elif pMethod == 13:
         if pVerbose: print("[*] Starting mode: Wordlist bible.txt Rule Best126")
         lCmdArgs.append("--wordlist=dictionaries/bible.txt")
         lCmdArgs.append("--rules=best126")
-    elif pMethod == 13:
+    elif pMethod == 14:
         if pVerbose: print("[*] Starting mode: Wordlist persons-names.txt Rule Best126")
         lCmdArgs.append("--wordlist=dictionaries/persons-names.txt")
         lCmdArgs.append("--rules=best126")
-    elif pMethod == 14:
+    elif pMethod == 15:
         if pVerbose: print("[*] Starting mode: Wordlist other-base-words.txt Rule Best126")
         lCmdArgs.append("--wordlist=dictionaries/other-base-words.txt")
         lCmdArgs.append("--rules=best126")
-    elif pMethod == 15:
+    elif pMethod == 16:
         if pVerbose: print("[*] Starting mode: Wordlist places.txt Rule Best126")
         lCmdArgs.append("--wordlist=dictionaries/places.txt")
         lCmdArgs.append("--rules=best126")
-    elif pMethod == 16:
+    elif pMethod == 17:
         if pVerbose: print("[*] Starting mode: Wordlist keyboard-patterns.txt Rule Best126")
         lCmdArgs.append("--wordlist=dictionaries/keyboard-patterns.txt")
         lCmdArgs.append("--rules=best126")
 
     # These modes take a long time but try a lot of words
-    elif pMethod == 17:
+    elif pMethod == 18:
         if pVerbose: print("[*] Starting mode: Wordlist top-10000-english-words.txt Rule OneRuleToRuleThemAll")
         lCmdArgs.append("--wordlist=dictionaries/top-10000-english-words.txt")
         lCmdArgs.append("--rules=oneruletorulethemall")
-    elif pMethod == 18:
+    elif pMethod == 19:
         if pVerbose: print("[*] Starting mode: Wordlist top-10000-spanish-words.txt Rule OneRuleToRuleThemAll")
         lCmdArgs.append("--wordlist=dictionaries/top-10000-spanish-words.txt")
         lCmdArgs.append("--rules=oneruletorulethemall")
-    elif pMethod == 19:
+    elif pMethod == 20:
         if pVerbose: print("[*] Starting mode: Wordlist sports-related-words.txt Rule OneRuleToRuleThemAll")
         lCmdArgs.append("--wordlist=dictionaries/sports-related-words.txt")
         lCmdArgs.append("--rules=oneruletorulethemall")
-    elif pMethod == 20:
+    elif pMethod == 21:
         if pVerbose: print("[*] Starting mode: Wordlist bible.txt Rule OneRuleToRuleThemAll")
         lCmdArgs.append("--wordlist=dictionaries/bible.txt")
         lCmdArgs.append("--rules=oneruletorulethemall")
-    elif pMethod == 21:
+    elif pMethod == 22:
         if pVerbose: print("[*] Starting mode: Wordlist persons-names.txt Rule OneRuleToRuleThemAll")
         lCmdArgs.append("--wordlist=dictionaries/persons-names.txt")
         lCmdArgs.append("--rules=oneruletorulethemall")
-    elif pMethod == 22:
+    elif pMethod == 23:
         if pVerbose: print("[*] Starting mode: Wordlist other-base-words.txt Rule OneRuleToRuleThemAll")
         lCmdArgs.append("--wordlist=dictionaries/other-base-words.txt")
         lCmdArgs.append("--rules=oneruletorulethemall")
-    elif pMethod == 23:
+    elif pMethod == 24:
         if pVerbose: print("[*] Starting mode: Wordlist places.txt Rule OneRuleToRuleThemAll")
         lCmdArgs.append("--wordlist=dictionaries/places.txt")
         lCmdArgs.append("--rules=oneruletorulethemall")
-    elif pMethod == 24:
+    elif pMethod == 25:
         if pVerbose: print("[*] Starting mode: Wordlist keyboard-patterns.txt Rule OneRuleToRuleThemAll")
         lCmdArgs.append("--wordlist=dictionaries/keyboard-patterns.txt")
         lCmdArgs.append("--rules=oneruletorulethemall")
+    elif pMethod == 26:
+        if pVerbose: print("[*] Starting mode: Wordlist keyboard-patterns.txt Rule Best126")
+        lCmdArgs.append("--wordlist=dictionaries/all-english-words.txt")
+        lCmdArgs.append("--rules=best126")
+    elif pMethod == 27:
+        if pVerbose: print("[*] Starting mode: Wordlist all-spanish-words.txt Rule Best126")
+        lCmdArgs.append("--wordlist=dictionaries/all-spanish-words.txt")
+        lCmdArgs.append("--rules=best126")
+    elif pMethod == 28:
+        if pVerbose: print("[*] Starting mode: Wordlist all-german-words.txt Rule Best126")
+        lCmdArgs.append("--wordlist=dictionaries/all-german-words.txt")
+        lCmdArgs.append("--rules=best126")
+    elif pMethod == 29:
+        if pVerbose: print("[*] Starting mode: Wordlist all-french-words.txt Rule Best126")
+        lCmdArgs.append("--wordlist=dictionaries/all-french-words.txt")
+        lCmdArgs.append("--rules=best126")
 
 # Determine number of passwords cracked before trying this method
     try:
@@ -570,17 +590,17 @@ Use pass-through to pass fork command to JTR\n\n
 
     # Try to crack a relatively few passwords as quickly as possible to use in statistical analysis
     if not lArgs.skip_prayer_mode:
-        for i in range(1,9,1):
+        for i in range(1,10,1):
             run_jtr_prayer_mode(pHashFile=lHashFile, pMethod=i, pHashFormat=lHashFormat,
                                 pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through)
         if lArgs.quick:
             # Quick mode
-            for i in range(9,17,1):
+            for i in range(10,18,1):
                 run_jtr_prayer_mode(pHashFile=lHashFile, pMethod=i, pHashFormat=lHashFormat,
                                     pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through)
         else:
             # Long mode
-            for i in range(17,25,1):
+            for i in range(18,30,1):
                 run_jtr_prayer_mode(pHashFile=lHashFile, pMethod=i, pHashFormat=lHashFormat,
                                     pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through)
 

@@ -98,6 +98,7 @@ absence
 absent
 abstain
 abstinence
+abt
 abundance
 abundant
 abundantly
@@ -442,6 +443,7 @@ alpha
 alphaeus
 already
 also
+alt
 altar
 altars
 alter
@@ -449,6 +451,7 @@ alteration
 altered
 altereth
 alternate
+alternative
 although
 altogether
 alush
@@ -484,6 +487,7 @@ amen
 amend
 amends
 amerce
+american
 amethyst
 ami
 amiable
@@ -513,8 +517,10 @@ amorites
 amos
 amounting
 amoz
+amp
 amphipolis
 amplias
+amplified
 amram
 amramites
 amrams
@@ -608,6 +614,8 @@ aphik
 aphrah
 aphses
 apiece
+apo
+apocrypha
 apollonia
 apollos
 apollyon
@@ -768,6 +776,7 @@ asaphs
 asareel
 asarelah
 asas
+asb
 ascend
 ascended
 ascendeth
@@ -815,6 +824,7 @@ askelon
 askest
 asketh
 asking
+asl
 asleep
 asnah
 asnapper
@@ -866,6 +876,7 @@ astrologer
 astrologers
 asunder
 asuppim
+asv
 asyncritus
 at
 atad
@@ -873,6 +884,7 @@ atarah
 ataroth
 atarothadar
 atarothaddar
+atb
 ate
 ater
 athach
@@ -906,8 +918,11 @@ aul
 aunt
 austere
 author
+authorised
 authorities
 authority
+authorized
+av
 ava
 available
 availeth
@@ -1121,6 +1136,7 @@ basest
 bashan
 bashanhavothjair
 bashemath
+basic
 basket
 baskets
 basmath
@@ -1147,6 +1163,8 @@ bavai
 bay
 bazlith
 bazluth
+bbe
+bcp
 bdellium
 be
 beacon
@@ -1328,6 +1346,7 @@ beriah
 beriites
 berites
 berith
+berkeley
 bernice
 berodachbaladan
 berothah
@@ -1436,7 +1455,9 @@ bezai
 bezaleel
 bezek
 bezer
+bgt
 bible
+biblia
 bichri
 bid
 bidden
@@ -1514,6 +1535,7 @@ blasted
 blasting
 blastus
 blaze
+blb
 bleating
 bleatings
 blemish
@@ -1552,6 +1574,7 @@ blue
 blueness
 blunt
 blush
+blv
 boanerges
 boar
 board
@@ -1829,6 +1852,7 @@ buyeth
 buz
 buzi
 buzite
+bwe
 by
 byways
 byword
@@ -1974,6 +1998,7 @@ catch
 catcheth
 caterpiller
 caterpillers
+catholic
 cattle
 caught
 caul
@@ -1988,10 +2013,13 @@ causeway
 causing
 cave
 caves
+ccb
+ce
 cease
 ceased
 ceaseth
 ceasing
+ceb
 cedar
 cedars
 cedron
@@ -2004,6 +2032,7 @@ censer
 censers
 centurion
 centurions
+century
 cephas
 ceremonies
 certain
@@ -2011,6 +2040,7 @@ certainly
 certainty
 certified
 certify
+cev
 chafed
 chaff
 chain
@@ -2218,6 +2248,7 @@ cities
 citizen
 citizens
 city
+cjb
 clad
 claim
 clamorous
@@ -2369,6 +2400,7 @@ communication
 communications
 communing
 communion
+community
 compact
 compacted
 companied
@@ -2429,6 +2461,7 @@ conclude
 concluded
 conclusion
 concord
+concordant
 concourse
 concubine
 concubines
@@ -2535,6 +2568,7 @@ containing
 contemn
 contemned
 contemneth
+contemporary
 contempt
 contemptible
 contemptuously
@@ -2700,6 +2734,7 @@ cow
 cows
 coz
 cozbi
+cpdv
 crackling
 cracknels
 craft
@@ -2819,6 +2854,8 @@ cuttest
 cutteth
 cutting
 cuttings
+cv
+cw
 cymbal
 cymbals
 cypress
@@ -2866,7 +2903,10 @@ daniel
 danites
 danjaan
 dannah
+dar
 dara
+darby
+darbys
 darda
 dare
 darius
@@ -3007,6 +3047,7 @@ defile
 defiled
 defiledst
 defileth
+defined
 defraud
 defrauded
 defy
@@ -3358,6 +3399,7 @@ divorce
 divorced
 divorcement
 dizahab
+dkjb
 do
 doctor
 doctors
@@ -3399,6 +3441,7 @@ doted
 doth
 dothan
 doting
+douay-rheims
 double
 doubled
 doubletongued
@@ -3476,6 +3519,7 @@ droves
 drown
 drowned
 drowsiness
+drp
 drunk
 drunkard
 drunkards
@@ -3543,6 +3587,7 @@ east
 easter
 eastward
 easy
+easy-to-read
 eat
 eaten
 eater
@@ -3734,6 +3779,7 @@ emptied
 emptiers
 emptiness
 empty
+emtv
 emulation
 emulations
 enabled
@@ -3779,6 +3825,7 @@ engaged
 engannim
 engedi
 engines
+english
 engrafted
 engrave
 engraven
@@ -3822,6 +3869,7 @@ ensigns
 ensnared
 ensue
 ensuring
+ent
 entangle
 entangled
 entangleth
@@ -3901,6 +3949,7 @@ erred
 erreth
 error
 errors
+erv
 esaias
 esarhaddon
 esau
@@ -3947,6 +3996,7 @@ estimate
 estimation
 estimations
 estranged
+esv
 etam
 eternal
 eternity
@@ -3968,6 +4018,7 @@ euodias
 euphrates
 euroclydon
 eutychus
+evangelical
 evangelist
 evangelists
 eve
@@ -4058,6 +4109,7 @@ exile
 exists
 exodus
 exorcists
+expanded
 expectation
 expected
 expecting
@@ -4271,6 +4323,8 @@ female
 fence
 fenced
 fens
+fenton
+ferrar
 ferret
 ferry
 fervent
@@ -4286,6 +4340,7 @@ few
 fewer
 fewest
 fewness
+ff
 fidelity
 field
 fields
@@ -4733,6 +4788,7 @@ gat
 gatam
 gate
 gates
+gateway
 gath
 gather
 gathered
@@ -4782,6 +4838,7 @@ general
 generally
 generation
 generations
+genesis
 gennesaret
 gentile
 gentiles
@@ -4900,6 +4957,7 @@ glory
 glorying
 glutton
 gluttonous
+glw
 gnash
 gnashed
 gnasheth
@@ -4907,6 +4965,9 @@ gnashing
 gnat
 gnaw
 gnawed
+gnb
+gnc
+gnt
 go
 goad
 goads
@@ -5086,6 +5147,7 @@ gutenberg-tm
 gutenberg-tms
 gutter
 gutters
+gwd
 ha
 haahashtari
 habaiah
@@ -5351,6 +5413,7 @@ hazezontamar
 haziel
 hazo
 hazor
+hcsb
 he
 head
 headbands
@@ -5404,6 +5467,7 @@ heavy
 heber
 heberites
 hebers
+hebot
 hebrew
 hebrewess
 hebrews
@@ -5585,6 +5649,8 @@ hivite
 hivites
 hizkiah
 hizkijah
+hnt
+hnv
 ho
 hoar
 hoarfrost
@@ -5615,6 +5681,7 @@ holiest
 holily
 holiness
 hollow
+holman
 holon
 holpen
 holy
@@ -5792,6 +5859,7 @@ ibneiah
 ibnijah
 ibri
 ibzan
+icb
 ice
 ichabod
 ichabods
@@ -5820,6 +5888,7 @@ ignominy
 ignorance
 ignorant
 ignorantly
+ii
 iim
 ijeabarim
 ijon
@@ -5999,6 +6068,7 @@ intermeddle
 intermeddleth
 intermission
 internal
+internation
 international
 interpret
 interpretation
@@ -6043,6 +6113,7 @@ is
 isaac
 isaacs
 isaiah
+isb
 iscah
 iscariot
 ishbah
@@ -6086,6 +6157,7 @@ issued
 issues
 isuah
 isui
+isv
 it
 italian
 italy
@@ -6218,6 +6290,7 @@ jawbone
 jaws
 jazer
 jaziz
+jbp
 je
 jealous
 jealousies
@@ -6375,6 +6448,7 @@ jimnah
 jimnites
 jiphtah
 jiphthahel
+jnt
 joab
 joabs
 joah
@@ -6463,6 +6537,8 @@ joyous
 jozabad
 jozachar
 jozadak
+jps
+jpsot
 jubal
 jubile
 jucal
@@ -6583,6 +6659,7 @@ kingdom
 kingdoms
 kingly
 kings
+kinh-thanh
 kinsfolk
 kinsfolks
 kinsman
@@ -6618,6 +6695,10 @@ kite
 kithlish
 kitron
 kittim
+kj2000
+kj21
+kjii
+kjv
 knead
 kneaded
 kneadingtroughs
@@ -6654,7 +6735,9 @@ korathites
 kore
 korhites
 koz
+ktv
 kushaiah
+la
 laadah
 laadan
 laban
@@ -6769,6 +6852,8 @@ layest
 layeth
 laying
 lazarus
+lb
+lbla
 lead
 leader
 leaders
@@ -6960,9 +7045,11 @@ liquors
 listed
 listen
 listeth
+literal
 literary
 litters
 little
+litv
 live
 lived
 lively
@@ -7064,6 +7151,7 @@ loweth
 lowing
 lowliness
 lowly
+lsbv
 lubim
 lubims
 lucas
@@ -7131,6 +7219,7 @@ madmen
 madmenah
 madness
 madon
+maev
 magbish
 magdala
 magdalene
@@ -7179,6 +7268,7 @@ maintainest
 maintaining
 maintenance
 majesty
+majority
 makaz
 make
 maker
@@ -7459,6 +7549,7 @@ meroz
 merrily
 merry
 merryhearted
+mes
 mesech
 mesha
 meshach
@@ -7478,6 +7569,7 @@ messenger
 messengers
 messes
 messiah
+messianic
 messias
 met
 mete
@@ -7544,6 +7636,7 @@ miletum
 miletus
 milk
 mill
+millennium
 millet
 millions
 millo
@@ -7624,6 +7717,8 @@ mizpar
 mizpeh
 mizraim
 mizzah
+mkjv
+mlb
 mnason
 moab
 moabite
@@ -7641,9 +7736,12 @@ mocking
 mockings
 moderately
 moderation
+modern
 modest
 modification
 modified
+mof
+moffatt
 moist
 moistened
 moisture
@@ -7785,9 +7883,11 @@ naaran
 naarath
 naashon
 naasson
+nab
 nabal
 nabals
 naboth
+nabre
 nachons
 nachor
 nadab
@@ -7830,6 +7930,8 @@ narrow
 narrowed
 narrower
 narrowly
+nas
+nasb
 nathan
 nathanael
 nathanmelech
@@ -7853,12 +7955,16 @@ nazarenes
 nazareth
 nazarite
 nazarites
+nbv
+ncv
+ndar
 neah
 neapolis
 near
 nearer
 neariah
 nearly
+neb
 nebai
 nebaioth
 nebajoth
@@ -7976,9 +8082,15 @@ nineve
 nineveh
 ninevites
 ninth
+nirv
 nisan
 nisroch
 nitre
+niv
+njb
+nkjv
+nlt
+nlv
 no
 noadiah
 noah
@@ -8028,6 +8140,7 @@ nourishing
 nourishment
 novice
 now
+nrsv
 number
 numbered
 numberest
@@ -8040,6 +8153,7 @@ nursed
 nursing
 nurture
 nuts
+nwt
 nymphas
 o
 oak
@@ -8065,6 +8179,7 @@ object
 oblation
 oblations
 oboth
+obp
 obscure
 obscurity
 observation
@@ -8096,6 +8211,7 @@ oded
 odious
 odour
 odours
+oe
 of
 off
 offence
@@ -8158,6 +8274,7 @@ onions
 online
 only
 ono
+ont
 onward
 onycha
 onyx
@@ -8222,6 +8339,8 @@ ornaments
 ornan
 orpah
 orphans
+orthodox
+osb
 osee
 oshea
 ospray
@@ -8351,6 +8470,7 @@ palestine
 pallu
 palluites
 palm
+palmers
 palmerworm
 palms
 palsies
@@ -8795,12 +8915,14 @@ pluckt
 plumbline
 plummet
 plunge
+pmb
 pochereth
 poets
 point
 pointed
 points
 poison
+pol
 pole
 policy
 polished
@@ -8814,6 +8936,7 @@ polluting
 pollution
 pollutions
 pollux
+polygot
 pomegranate
 pomegranates
 pommels
@@ -8855,6 +8978,7 @@ possible
 post
 posted
 posterity
+postmodern
 posts
 pot
 potentate
@@ -9114,6 +9238,7 @@ pruninghooks
 psalm
 psalmist
 psalms
+psalter
 psalteries
 psaltery
 ptolemais
@@ -9122,6 +9247,7 @@ puah
 public
 publican
 publicans
+publication
 publick
 publickly
 publish
@@ -9309,6 +9435,7 @@ rate
 rather
 rattleth
 rattling
+rav
 raven
 ravening
 ravenous
@@ -9317,12 +9444,14 @@ ravin
 ravished
 raw
 razor
+rbv
 reach
 reached
 reacheth
 reaching
 read
 readable
+readers
 readest
 readeth
 readiness
@@ -9345,6 +9474,7 @@ reasonable
 reasoned
 reasoning
 reasons
+reb
 reba
 rebecca
 rebekah
@@ -9361,6 +9491,7 @@ rebuker
 rebukes
 rebuketh
 rebuking
+rec
 recall
 receipt
 receive
@@ -9395,6 +9526,7 @@ recount
 recover
 recovered
 recovering
+recovery
 red
 reddish
 redeem
@@ -9649,6 +9781,7 @@ revealed
 revealer
 revealeth
 revelation
+revelationafro
 revelations
 revellings
 revenge
@@ -9669,6 +9802,7 @@ reviled
 revilers
 revilest
 revilings
+revised
 revive
 revived
 reviving
@@ -9685,6 +9819,7 @@ rezeph
 rezia
 rezin
 rezon
+rhe
 rhegium
 rhesa
 rhoda
@@ -9744,6 +9879,7 @@ rithmah
 river
 rivers
 rizpah
+rkjv
 road
 roar
 roared
@@ -9760,6 +9896,7 @@ robbers
 robbery
 robbeth
 robe
+robert
 robes
 roboam
 rock
@@ -9795,6 +9932,7 @@ ropes
 rose
 rosh
 rot
+rotherhams
 rotten
 rottenness
 rough
@@ -9810,6 +9948,7 @@ rows
 royal
 royalties
 royalty
+rsv
 rubbing
 rubbish
 rubies
@@ -9846,8 +9985,11 @@ rushed
 rushes
 rusheth
 rushing
+russian
 rust
 ruth
+rv
+rylt
 s
 sabachthani
 sabaoth
@@ -9943,6 +10085,7 @@ sandals
 sang
 sank
 sansannah
+santa
 sap
 saph
 saphir
@@ -10025,7 +10168,9 @@ scent
 sceptre
 sceptres
 sceva
+sch
 schism
+schocken
 scholar
 school
 schoolmaster
@@ -10087,6 +10232,7 @@ seat
 seated
 seats
 seatward
+seb
 seba
 sebat
 secacah
@@ -10173,6 +10319,7 @@ sentences
 sentest
 senuah
 seorim
+sep
 separate
 separated
 separateth
@@ -10182,6 +10329,7 @@ sephar
 sepharad
 sepharvaim
 sepharvites
+septuagant
 sepulchre
 sepulchres
 serah
@@ -10797,6 +10945,7 @@ soberness
 sobriety
 socho
 sochoh
+society
 socket
 sockets
 socoh
@@ -10901,6 +11050,7 @@ spain
 spake
 spakest
 span
+spanish
 spanned
 spare
 spared
@@ -11457,7 +11607,9 @@ tamar
 tame
 tamed
 tammuz
+tan
 tanach
+tanakh
 tanhumeth
 tanner
 tapestry
@@ -11594,6 +11746,8 @@ testifying
 testimonies
 testimony
 tetrarch
+tev
+text
 thaddaeus
 thahash
 thamah
@@ -11804,6 +11958,9 @@ titles
 tittle
 titus
 tizite
+tm
+tmb
+tniv
 to
 toah
 tob
@@ -11812,6 +11969,7 @@ tobiah
 tobijah
 tochen
 today
+todays
 toe
 toes
 togarmah
@@ -11908,6 +12066,8 @@ transgressors
 translate
 translated
 translation
+translationaat
+translations
 transparent
 trap
 traps
@@ -12042,12 +12202,15 @@ twoedged
 two-edged
 twofold
 tychicus
+tyn
 types
 tyrannus
 tyre
 tyrus
+tyyndale
 ucal
 uel
+ukjv
 ulai
 ulam
 ulla
@@ -12284,6 +12447,7 @@ verified
 verily
 verity
 vermilion
+vernacular
 version
 very
 vessel
@@ -12365,6 +12529,8 @@ vowest
 voweth
 vows
 voyage
+vul
+vulgate
 vulture
 vultures
 wafer
@@ -12493,6 +12659,7 @@ wayfaring
 waymarks
 ways
 wayside
+wbt
 we
 weak
 weaken
@@ -12521,6 +12688,7 @@ weavers
 weavest
 web
 webs
+webster
 wedding
 wedge
 wedlock
@@ -12554,10 +12722,13 @@ wentest
 wept
 were
 wert
+wesleys
 west
 western
 westward
 wet
+wey
+weymouth
 whale
 whales
 what
@@ -12728,6 +12899,8 @@ witty
 wives
 wizard
 wizards
+wms
+wnt
 woe
 woeful
 woes
@@ -12773,6 +12946,7 @@ works
 world
 worldly
 worlds
+worldwide
 worm
 worms
 wormwood
@@ -12837,7 +13011,10 @@ wroth
 wrought
 wroughtest
 wrung
+wuest
 wwwgutenbergorg
+wyc
+wycliffe
 yarn
 ye
 yea
@@ -12857,6 +13034,7 @@ yield
 yielded
 yieldeth
 yielding
+ylt
 yoke
 yoked
 yokefellow
@@ -12866,6 +13044,7 @@ you
 young
 younger
 youngest
+youngs
 your
 yours
 yourselves
