@@ -224,7 +224,7 @@ def run_jtr_prayer_mode(pHashFile: str, pMethod: int, pHashFormat: str,
     if pHashFormat: lCmdArgs.append("--format={}".format(pHashFormat))
     if pPassThrough: lCmdArgs.append(pPassThrough)
 
-    # These modes run regardless
+    # Level 1: Highly effective modes
     if pMethod == 1:
         if pVerbose: print("[*] Starting mode: Wordlist hob0-short-crack.txt Rule OneRuleToRuleThemAll")
         lCmdArgs.append("--wordlist=dictionaries/hob0-short-crack.txt")
@@ -261,7 +261,7 @@ def run_jtr_prayer_mode(pHashFile: str, pMethod: int, pHashFormat: str,
         if pVerbose: print("[*] Starting mode: JTR single crack Rule Single")
         lCmdArgs.append("--single")
 
-    # These modes run quickly
+    # Level 1: Best dictionaries with best rules
     elif pMethod == 10:
         if pVerbose: print("[*] Starting mode: Wordlist top-10000-english-words.txt Rule Best126")
         lCmdArgs.append("--wordlist=dictionaries/top-10000-english-words.txt")
@@ -295,7 +295,7 @@ def run_jtr_prayer_mode(pHashFile: str, pMethod: int, pHashFormat: str,
         lCmdArgs.append("--wordlist=dictionaries/keyboard-patterns.txt")
         lCmdArgs.append("--rules=best126")
 
-    # These modes take a long time but try a lot of words
+    # Level 2: Best dictionaries with all the rules
     elif pMethod == 18:
         if pVerbose: print("[*] Starting mode: Wordlist top-10000-english-words.txt Rule OneRuleToRuleThemAll")
         lCmdArgs.append("--wordlist=dictionaries/top-10000-english-words.txt")
@@ -328,8 +328,10 @@ def run_jtr_prayer_mode(pHashFile: str, pMethod: int, pHashFormat: str,
         if pVerbose: print("[*] Starting mode: Wordlist keyboard-patterns.txt Rule OneRuleToRuleThemAll")
         lCmdArgs.append("--wordlist=dictionaries/keyboard-patterns.txt")
         lCmdArgs.append("--rules=oneruletorulethemall")
+
+    # Level 3: Big dicitonaries with best rules
     elif pMethod == 26:
-        if pVerbose: print("[*] Starting mode: Wordlist keyboard-patterns.txt Rule Best126")
+        if pVerbose: print("[*] Starting mode: Wordlist all-english-words.txt Rule Best126")
         lCmdArgs.append("--wordlist=dictionaries/all-english-words.txt")
         lCmdArgs.append("--rules=best126")
     elif pMethod == 27:
@@ -344,6 +346,24 @@ def run_jtr_prayer_mode(pHashFile: str, pMethod: int, pHashFormat: str,
         if pVerbose: print("[*] Starting mode: Wordlist all-french-words.txt Rule Best126")
         lCmdArgs.append("--wordlist=dictionaries/all-french-words.txt")
         lCmdArgs.append("--rules=best126")
+
+    # Level 4: Big dicitonaries with all the rules
+    elif pMethod == 30:
+        if pVerbose: print("[*] Starting mode: Wordlist all-english-words.txt Rule OneRuleToRuleThemAll")
+        lCmdArgs.append("--wordlist=dictionaries/all-english-words.txt")
+        lCmdArgs.append("--rules=oneruletorulethemall")
+    elif pMethod == 31:
+        if pVerbose: print("[*] Starting mode: Wordlist all-spanish-words.txt Rule OneRuleToRuleThemAll")
+        lCmdArgs.append("--wordlist=dictionaries/all-spanish-words.txt")
+        lCmdArgs.append("--rules=oneruletorulethemall")
+    elif pMethod == 32:
+        if pVerbose: print("[*] Starting mode: Wordlist all-german-words.txt Rule OneRuleToRuleThemAll")
+        lCmdArgs.append("--wordlist=dictionaries/all-german-words.txt")
+        lCmdArgs.append("--rules=oneruletorulethemall")
+    elif pMethod == 33:
+        if pVerbose: print("[*] Starting mode: Wordlist all-french-words.txt Rule OneRuleToRuleThemAll")
+        lCmdArgs.append("--wordlist=dictionaries/all-french-words.txt")
+        lCmdArgs.append("--rules=oneruletorulethemall")
 
 # Determine number of passwords cracked before trying this method
     try:
@@ -527,34 +547,32 @@ Use pass-through to pass fork command to JTR\n\n
                                          formatter_class=RawTextHelpFormatter)
     lArgParser.add_argument('-f', '--hash-format',
                             type=str,
-                            help="The hash algorithm used to hash the password(s). This value must be one of the values supported by John the Ripper. To see formats supported by JTR, use command \"john --list=formats\". It is strongly recommended to provide an optimal value. If no value is provided, John the Ripper will guess.",
+                            help="The hash algorithm used to hash the password(s). This value must be one of the values supported by John the Ripper. To see formats supported by JTR, use command \"john --list=formats\". It is strongly recommended to provide an optimal value. If no value is provided, John the Ripper will guess.\n\n",
                             action='store')
-    lArgParser.add_argument('-s', '--stat-crack',
-                            help="Enable statistical cracking. Byepass will run relatively fast cracking strategies in hopes of cracking enough passwords to induce a pattern and create \"high probability\" masks. Byepass will use the masks in an attempt to crack more passwords.",
-                            action='store_true')
     lArgParser.add_argument('-b', '--basewords',
                             type=str,
-                            help="Supply a comma-separated list of lowercase, unmangled base words thought to be good candidates. For example, if Wiley Coyote is cracking hashes from Acme Inc., Wiley might provide the word \"acme\". Be careful how many words are supplied as Byepass will apply many mangling rules. Up to several dozen should run reasonably fast.",
+                            help="Supply a comma-separated list of lowercase, unmangled base words thought to be good candidates. For example, if Wiley Coyote is cracking hashes from Acme Inc., Wiley might provide the word \"acme\". Be careful how many words are supplied as Byepass will apply many mangling rules. Up to several dozen should run reasonably fast.\n\n",
                             action='store')
+    lArgParser.add_argument('-a', '--aggression',
+                            type=int,
+                            help="Determines what password cracking techniques are attempted. Default is level 1.\n\n0: Skip prayer mode entirely\n1: Quickly try most likely techniques\n2: Best dictionaries. All rules\n3: Time is an illusion. Big dictionaries. Best Rules.\n4: Go freaking nuts. Big dictionaries. All Rules.\n\n",
+                            action='store')
+    lArgParser.add_argument('-s', '--stat-crack',
+                            help="Enable statistical cracking. Byepass will run relatively fast cracking strategies in hopes of cracking enough passwords to induce a pattern and create \"high probability\" masks. Byepass will use the masks in an attempt to crack more passwords.\n\n",
+                            action='store_true')
     lArgParser.add_argument('-p', '--percentile',
                             type=float,
-                            help="Based on statistical analysis of the passwords cracked during initial phase, use only the masks statistically likely to be needed to crack at least the given percent of passwords. For example, if a value of 0.25 provided, only use the relatively few masks needed to crack 25 passwords of the passwords. Note that password cracking effort follows an exponential distribution, so cracking a few more passwords takes a lot more effort (relatively speaking). A good starting value if completely unsure is 25 percent (0.25).",
+                            help="Based on statistical analysis of the passwords cracked during initial phase, use only the masks statistically likely to be needed to crack at least the given percent of passwords. For example, if a value of 0.25 provided, only use the relatively few masks needed to crack 25 passwords of the passwords. Note that password cracking effort follows an exponential distribution, so cracking a few more passwords takes a lot more effort (relatively speaking). A good starting value if completely unsure is 25 percent (0.25).\n\n",
                             action='store')
     lArgParser.add_argument('-t', '--pass-through',
                              type=str,
-                             help="Pass-through the raw parameter to John the Ripper. Example: --pass-through=\"--fork=2\"",
+                             help="Pass-through the raw parameter to John the Ripper. Example: --pass-through=\"--fork=2\"\n\n",
                              action='store')
-    lArgParser.add_argument('-n', '--skip-prayer-mode',
-                            help='Skip prayer mode; the attempt to crack passwords using a variety of techniques in hopes of finding passwords for statistical analysis. If prayer mode is skipped, ByePass will rely on passwords found in Johns POT file. This is useful if prayer mode was already run, JTR was used independently of ByePass or the POT file was imported.',
-                            action='store_true')
     lArgParser.add_argument('-v', '--verbose',
                             help='Enable verbose output such as current progress and duration',
                             action='store_true')
     lArgParser.add_argument('-d', '--debug',
                             help='Enable debug mode',
-                            action='store_true')
-    lArgParser.add_argument('-q', '--quick',
-                            help='Try relatively few attempts quickly. Only uses top rules.',
                             action='store_true')
     requiredAguments = lArgParser.add_argument_group('required arguments')
     requiredAguments.add_argument('-i', '--input-file',
@@ -580,6 +598,13 @@ Use pass-through to pass fork command to JTR\n\n
     except:
         lHashFormat = ""
 
+    if lArgs.aggression is not None:
+        lAggression = lArgs.aggression
+        if not 0 <= lAggression <= 4:
+            raise ValueError('The level of agression provided must be between 0 and 4.')
+    else:
+        lAggression = 1
+
     if lVerbose:
         lStartTime = time.time()
         print("[*] Working on input file {}".format(lHashFile))
@@ -589,20 +614,32 @@ Use pass-through to pass fork command to JTR\n\n
                               pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through)
 
     # Try to crack a relatively few passwords as quickly as possible to use in statistical analysis
-    if not lArgs.skip_prayer_mode:
+    if lAggression ==1:
+        # High impact modes
         for i in range(1,10,1):
             run_jtr_prayer_mode(pHashFile=lHashFile, pMethod=i, pHashFormat=lHashFormat,
                                 pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through)
-        if lArgs.quick:
-            # Quick mode
-            for i in range(10,18,1):
-                run_jtr_prayer_mode(pHashFile=lHashFile, pMethod=i, pHashFormat=lHashFormat,
-                                    pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through)
-        else:
-            # Long mode
-            for i in range(18,30,1):
-                run_jtr_prayer_mode(pHashFile=lHashFile, pMethod=i, pHashFormat=lHashFormat,
-                                    pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through)
+
+        # Best dictionaries, best rules
+        for i in range(10,18,1):
+            run_jtr_prayer_mode(pHashFile=lHashFile, pMethod=i, pHashFormat=lHashFormat,
+                                pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through)
+    if lAggression ==2:
+        # Best dictionaries, a lot of rules
+        for i in range(18,26,1):
+            run_jtr_prayer_mode(pHashFile=lHashFile, pMethod=i, pHashFormat=lHashFormat,
+                                pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through)
+    if lAggression == 3:
+        # Big dictionaries, best rules
+        for i in range(26,30,1):
+            run_jtr_prayer_mode(pHashFile=lHashFile, pMethod=i, pHashFormat=lHashFormat,
+                                pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through)
+
+    if lAggression == 4:
+        # Big dictionaries, a lot of rules
+        for i in range(30,34,1):
+            run_jtr_prayer_mode(pHashFile=lHashFile, pMethod=i, pHashFormat=lHashFormat,
+                                pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through)
 
     # If the user chooses, begin statistical analysis to aid targeted cracking routines
     if lArgs.stat_crack:
