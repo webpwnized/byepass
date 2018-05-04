@@ -126,11 +126,29 @@ Output the number of passwords represented by each mask sorted by count descendi
 
 **Examples**:
 
-Attempt to crack password hashes found in input file "password.hashes"
+Attempt to crack password hashes found in input file "password.hashes" using default aggression level 1
 
 	python3 byepass.py --verbose --hash-format=descrypt --input-file=password.hashes
 
 	python3 byepass.py -v -f descrypt -i password.hashes
+
+Be more aggressive by using agression level 2 in attempt to crack password hashes found in input file "password.hashes"
+
+	python3 byepass.py --verbose --aggression=2 --hash-format=descrypt --input-file=password.hashes
+
+	python3 byepass.py -v -a 2 -f descrypt -i password.hashes
+
+Be even more aggressive by using agression level 3 in attempt to crack password hashes found in input file "password.hashes"
+
+	python3 byepass.py --verbose --aggression=3 --hash-format=descrypt --input-file=password.hashes
+
+	python3 byepass.py -v -a 3 -f descrypt -i password.hashes
+
+Maximum effort by using agression level 4 in attempt to crack password hashes found in input file "password.hashes"
+
+	python3 byepass.py --verbose --aggression=4 --hash-format=descrypt --input-file=password.hashes
+
+	python3 byepass.py -v -a 4 -f descrypt -i password.hashes
 
 Attempt to crack password hashes found in input file "password.hashes", then run statistical analysis to determine masks needed to crack 50 percent of passwords, and try to crack again using the masks.
 
@@ -152,9 +170,9 @@ Attempt to crack linked-in hashes using base words linkedin and linked
 
 Do not run prayer mode. Only run statistical analysis to determine masks needed to crack 50 percent of passwords, and try to crack using the masks.
 
-	python3 byepass.py -v --skip-prayer-mode --hash-format=descrypt --stat-crack --percentile=0.50 --input-file=password.hashes
+	python3 byepass.py -v --aggression=0 --hash-format=descrypt --stat-crack --percentile=0.50 --input-file=password.hashes
 
-	python3 byepass.py -v -n -f descrypt -s -p 0.50 -i password.hashes
+	python3 byepass.py -v -a 0 -f descrypt -s -p 0.50 -i password.hashes
 
 Use pass-through to pass fork command to JTR
 

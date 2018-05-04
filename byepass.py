@@ -525,9 +525,18 @@ if __name__ == '__main__':
     lArgParser = argparse.ArgumentParser(description='ByePass: Automate the most common password cracking tasks',
                                          epilog="""
 Examples:\n\n
-Attempt to crack password hashes found in input file "password.hashes"\n\n
+Attempt to crack password hashes found in input file "password.hashes" using default aggression level 1\n\n
 \tpython3 byepass.py --verbose --hash-format=descrypt --input-file=password.hashes\n\n
 \tpython3 byepass.py -v -f descrypt -i password.hashes\n\n
+Be more aggressive by using agression level 2 in attempt to crack password hashes found in input file "password.hashes"\n\n
+\tpython3 byepass.py --verbose --aggression=2 --hash-format=descrypt --input-file=password.hashes\n\n
+\tpython3 byepass.py -v -a 2 -f descrypt -i password.hashes\n\n
+Be even more aggressive by using agression level 3 in attempt to crack password hashes found in input file "password.hashes"\n\n
+\tpython3 byepass.py --verbose --aggression=3 --hash-format=descrypt --input-file=password.hashes\n\n
+\tpython3 byepass.py -v -a 3 -f descrypt -i password.hashes\n\n
+Maximum effort by using agression level 4 in attempt to crack password hashes found in input file "password.hashes"\n\n
+\tpython3 byepass.py --verbose --aggression=4 --hash-format=descrypt --input-file=password.hashes\n\n
+\tpython3 byepass.py -v -a 4 -f descrypt -i password.hashes\n\n
 Attempt to crack password hashes found in input file "password.hashes", then run statistical analysis to determine masks needed to crack 50 percent of passwords, and try to crack again using the masks.\n\n
 \tpython3 byepass.py --verbose --hash-format=descrypt --stat-crack --percentile=0.50 --input-file=password.hashes\n\n
 \tpython3 byepass.py -v -f descrypt -s -p 0.50 -i password.hashes\n\n
@@ -538,8 +547,8 @@ Attempt to crack linked-in hashes using base words linkedin and linked\n\n
 \tpython3 byepass.py --verbose --hash-format=Raw-SHA1 --base-words=linkedin,linked --input-file=linkedin-1.hashes\n\n
 \tpython3 byepass.py -v -f -b linkedin,linked -i linkedin-1.hashes\n\n
 Do not run prayer mode. Only run statistical analysis to determine masks needed to crack 50 percent of passwords, and try to crack using the masks.\n\n
-\tpython3 byepass.py -v --skip-prayer-mode --hash-format=descrypt --stat-crack --percentile=0.50 --input-file=password.hashes\n\n
-\tpython3 byepass.py -v -n -f descrypt -s -p 0.50 -i password.hashes\n\n
+\tpython3 byepass.py -v --aggression=0 --hash-format=descrypt --stat-crack --percentile=0.50 --input-file=password.hashes\n\n
+\tpython3 byepass.py -v -a 0 -f descrypt -s -p 0.50 -i password.hashes\n\n
 Use pass-through to pass fork command to JTR\n\n
 \tpython3 byepass.py --verbose --pass-through="--fork=4" --hash-format=descrypt --input-file=password.hashes\n\n
 \tpython3 byepass.py -v -t="--fork=4" -f descrypt -i password.hashes
