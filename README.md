@@ -132,19 +132,19 @@ Attempt to crack password hashes found in input file "password.hashes" using def
 
 	python3 byepass.py -v -f descrypt -i password.hashes
 
-Be more aggressive by using agression level 2 in attempt to crack password hashes found in input file "password.hashes"
+Be more aggressive by using aggression level 2 in attempt to crack password hashes found in input file "password.hashes"
 
 	python3 byepass.py --verbose --aggression=2 --hash-format=descrypt --input-file=password.hashes
 
 	python3 byepass.py -v -a 2 -f descrypt -i password.hashes
 
-Be even more aggressive by using agression level 3 in attempt to crack password hashes found in input file "password.hashes"
+Be even more aggressive by using aggression level 3 in attempt to crack password hashes found in input file "password.hashes"
 
 	python3 byepass.py --verbose --aggression=3 --hash-format=descrypt --input-file=password.hashes
 
 	python3 byepass.py -v -a 3 -f descrypt -i password.hashes
 
-Maximum effort by using agression level 4 in attempt to crack password hashes found in input file "password.hashes"
+Maximum effort by using aggression level 4 in attempt to crack password hashes found in input file "password.hashes"
 
 	python3 byepass.py --verbose --aggression=4 --hash-format=descrypt --input-file=password.hashes
 
