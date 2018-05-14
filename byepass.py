@@ -666,8 +666,11 @@ Use pass-through to pass fork command to JTR\n\n
     if lVerbose:
         lEndTime = time.time()
         lElaspsedTime = time.gmtime(lEndTime - lStartTime)
+
         print("[*] Duration: {}".format(time.strftime("%H:%M:%S", lElaspsedTime)))
+        print()
         print("[*] Cracking attempt complete. Use john --show to see cracked passwords.")
         print("[*] The command should be something like {}{}{} --show {}".format(JTR_EXE_FILE_PATH, " --format=" if lHashFormat else "", lHashFormat, lHashFile))
+        print()
         print("[*] Keep cracking with incremental mode")
         print("[*] The command should be something like {}{}{} --incremental {}".format(JTR_EXE_FILE_PATH, " --format=" if lHashFormat else "", lHashFormat, lHashFile))
