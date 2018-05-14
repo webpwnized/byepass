@@ -430,14 +430,14 @@ def perform_statistical_cracking(pHashFile: str, pPercentile: float, pHashFormat
         # All lowercase letters
         if re.match('^(\?l)+$', lMask):
             lCountLetters = lMask.count('?l')
-            lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
+            lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
             run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist=lWordlist, pRule="best126", pHashFormat=pHashFormat,
                                   pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough)
 
         # All uppercase
         elif re.match('^(\?u)+$', lMask):
             lCountLetters = lMask.count('?u')
-            lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
+            lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
             lRule = "uppercase"
             run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist=lWordlist, pRule=lRule, pHashFormat=pHashFormat,
                                   pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough)
@@ -445,7 +445,7 @@ def perform_statistical_cracking(pHashFile: str, pPercentile: float, pHashFormat
         # Uppercase followed by lowercase (assume only leading letter is uppercase)
         elif re.match('^(\?u)(\?l)+$', lMask):
             lCountLetters = lMask.count('?u') + lMask.count('?l')
-            lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
+            lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
             lRule = "capitalize"
             run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist=lWordlist, pRule=lRule, pHashFormat=pHashFormat,
                                   pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough)
@@ -454,7 +454,7 @@ def perform_statistical_cracking(pHashFile: str, pPercentile: float, pHashFormat
         elif re.match('^(\?l)+(\?d)+$', lMask):
             lCountLetters = lMask.count('?l')
             lCountDigits = lMask.count('?d')
-            lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
+            lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
             lRule = "append{}digits".format(str(lCountDigits))
             run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist=lWordlist, pRule=lRule, pHashFormat=pHashFormat,
                                   pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough)
@@ -463,7 +463,7 @@ def perform_statistical_cracking(pHashFile: str, pPercentile: float, pHashFormat
         elif re.match('^(\?u)+(\?d)+$', lMask):
             lCountLetters = lMask.count('?u')
             lCountDigits = lMask.count('?d')
-            lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
+            lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
             lRule = "uppercaseappend{}digits".format(str(lCountDigits))
             run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist=lWordlist, pRule=lRule, pHashFormat=pHashFormat,
                                   pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough)
@@ -472,7 +472,7 @@ def perform_statistical_cracking(pHashFile: str, pPercentile: float, pHashFormat
         elif re.match('^(\?u)(\?l)+(\?d)+$', lMask):
             lCountLetters = lMask.count('?u') + lMask.count('?l')
             lCountDigits = lMask.count('?d')
-            lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
+            lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
             lRule = "capitalizeappend{}digits".format(str(lCountDigits))
             run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist=lWordlist, pRule=lRule, pHashFormat=pHashFormat,
                                   pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough)
@@ -498,7 +498,7 @@ def perform_statistical_cracking(pHashFile: str, pPercentile: float, pHashFormat
             lCountLetters = lPrefix.count("?l")
             lSuffix = lMask[lCountLetters * 2:]
             if len(lSuffix) <= 4:
-                lWordlist = "dictionaries/{}-character-english-words.txt".format(str(lCountLetters))
+                lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
                 lMaskParam = "--mask=?w{}".format(lSuffix)
                 run_jtr_mask_mode(pHashFile=pHashFile, pMask=lMaskParam, pWordlist=lWordlist, pHashFormat=pHashFormat,
                                   pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough)
@@ -660,7 +660,7 @@ Use pass-through to pass fork command to JTR\n\n
         else:
             lPercentile = 1.0
 
-        perform_statistical_cracking(pPercentile=lPercentile, pHashFormat=lHashFormat,
+        perform_statistical_cracking(pHashFile=lHashFile, pPercentile=lPercentile, pHashFormat=lHashFormat,
                                      pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through)
 
     if lVerbose:
