@@ -46,6 +46,7 @@ tell john the location, add the following line to john.conf.
 
     .include "<location of bypass>/byepass/rules/byepass.conf"
     .include "<location of bypass>/byepass/rules/OneRuleToRuleThemAll.rule"
+    .include "<location of bypass>/byepass/rules/Best126.rule"
 
 where "location of bypass" is the location that byepass is installed.
 For example, if byepass is installed in /opt, add the following line
@@ -53,6 +54,7 @@ into john.conf
 
     .include "/opt/byepass/rules/byepass.conf"
     .include "/opt/byepass/rules/OneRuleToRuleThemAll.rule"
+    .include "/opt/byepass/rules/Best126.rule"
 
 Tips: To find a good location in john.conf to place the line, search
 for ".include" and place the new include line near other include lines. The gedit

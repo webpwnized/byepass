@@ -40,6 +40,26 @@ import time
 import re
 
 
+def print_closing_message(pHashFile: str, pElaspsedTime: time.struct_time) -> None:
+
+        lNumberPasswords = count_passwords_in_jtr_pot_file()
+        lNumberHashes = count_hashes_in_input_file(pHashFile)
+
+        try:
+            lPercent = round(lNumberPasswords / lNumberHashes * 100, 2)
+        except:
+            lPercent = 0
+
+        print("[*] Duration: {}".format(time.strftime("%H:%M:%S", pElaspsedTime)))
+        print("[*] Passwords cracked (estimated): {} out of {} ({}%)".format(lNumberPasswords, lNumberHashes, lPercent))
+        print()
+        print("[*] Cracking attempt complete. Use john --show to see cracked passwords.")
+        print("[*] The command should be something like {}{}{} --show {}".format(JTR_EXE_FILE_PATH, " --format=" if lHashFormat else "", lHashFormat, lHashFile))
+        print()
+        print("[*] Keep cracking with incremental mode")
+        print("[*] The command should be something like {}{}{} --incremental {}".format(JTR_EXE_FILE_PATH, " --format=" if lHashFormat else "", lHashFormat, lHashFile))
+
+
 def parse_jtr_show(pHashFile: str, pHashFormat:str, pVerbose: bool, pDebug: bool) -> None:
 
     lCmdArgs = [JTR_EXE_FILE_PATH]
@@ -72,7 +92,15 @@ def parse_jtr_pot(pVerbose: bool, pDebug: bool) -> list:
     return lListOfPasswords
 
 
-def count_hashes_in_jtr_pot_file() -> int:
+def count_hashes_in_input_file(pHashFile: str) -> int:
+
+        lLines = 0
+        for lLine in open(pHashFile):
+            lLines += 1
+        return lLines
+
+
+def count_passwords_in_jtr_pot_file() -> int:
 
         lLines = 0
         for lLine in open(JTR_POT_FILE_PATH):
@@ -108,7 +136,7 @@ def run_jtr_wordlist_mode(pHashFile: str, pWordlist: str, pRule: str, pHashForma
 
     # Determine number of passwords cracked before trying this method
     try:
-        lNumberPasswordsAlreadyCracked = count_hashes_in_jtr_pot_file()
+        lNumberPasswordsAlreadyCracked = count_passwords_in_jtr_pot_file()
     except:
         lNumberPasswordsAlreadyCracked = 0
 
@@ -121,7 +149,7 @@ def run_jtr_wordlist_mode(pHashFile: str, pWordlist: str, pRule: str, pHashForma
 
     # Determine number of passwords cracked after trying this method
     try:
-        lNumberPasswordsCracked = count_hashes_in_jtr_pot_file()
+        lNumberPasswordsCracked = count_passwords_in_jtr_pot_file()
     except:
         lNumberPasswordsCracked = 0
 
@@ -160,7 +188,7 @@ def run_jtr_mask_mode(pHashFile: str, pMask: str, pWordlist: str, pHashFormat:st
 
     # Determine number of passwords cracked before trying this method
     try:
-        lNumberPasswordsAlreadyCracked = count_hashes_in_jtr_pot_file()
+        lNumberPasswordsAlreadyCracked = count_passwords_in_jtr_pot_file()
     except:
         lNumberPasswordsAlreadyCracked = 0
 
@@ -173,7 +201,7 @@ def run_jtr_mask_mode(pHashFile: str, pMask: str, pWordlist: str, pHashFormat:st
 
     # Determine number of passwords cracked after trying this method
     try:
-        lNumberPasswordsCracked = count_hashes_in_jtr_pot_file()
+        lNumberPasswordsCracked = count_passwords_in_jtr_pot_file()
     except:
         lNumberPasswordsCracked = 0
 
@@ -367,7 +395,7 @@ def run_jtr_prayer_mode(pHashFile: str, pMethod: int, pHashFormat: str,
 
 # Determine number of passwords cracked before trying this method
     try:
-        lNumberPasswordsAlreadyCracked = count_hashes_in_jtr_pot_file()
+        lNumberPasswordsAlreadyCracked = count_passwords_in_jtr_pot_file()
     except:
         lNumberPasswordsAlreadyCracked = 0
 
@@ -381,7 +409,7 @@ def run_jtr_prayer_mode(pHashFile: str, pMethod: int, pHashFormat: str,
 
     # Determine number of passwords cracked after trying this method
     try:
-        lNumberPasswordsCracked = count_hashes_in_jtr_pot_file()
+        lNumberPasswordsCracked = count_passwords_in_jtr_pot_file()
     except:
         lNumberPasswordsCracked = 0
 
@@ -666,11 +694,4 @@ Use pass-through to pass fork command to JTR\n\n
     if lVerbose:
         lEndTime = time.time()
         lElaspsedTime = time.gmtime(lEndTime - lStartTime)
-
-        print("[*] Duration: {}".format(time.strftime("%H:%M:%S", lElaspsedTime)))
-        print()
-        print("[*] Cracking attempt complete. Use john --show to see cracked passwords.")
-        print("[*] The command should be something like {}{}{} --show {}".format(JTR_EXE_FILE_PATH, " --format=" if lHashFormat else "", lHashFormat, lHashFile))
-        print()
-        print("[*] Keep cracking with incremental mode")
-        print("[*] The command should be something like {}{}{} --incremental {}".format(JTR_EXE_FILE_PATH, " --format=" if lHashFormat else "", lHashFormat, lHashFile))
+        print_closing_message(lHashFile, lElaspsedTime)
