@@ -31,27 +31,79 @@
 #   ?W is just like ?w except the original word is case toggled (so PassWord
 #      becomes pASSwORD).
 
-import config as Config
-import argparse, subprocess
 from argparse import RawTextHelpFormatter
 from pwstats import PasswordStats
+from enum import Enum
+import config as Config
+import argparse
+import subprocess
 import os.path
 import time
 import re
 
 
-def print_closing_message(pHashFile: str, pElaspsedTime: time.struct_time) -> None:
+class Techniques(Enum):
+    SKIP_PRAYER_MODE = 0
+    BEST_DICTIONARIES_BEST_RULES = 1
+    BEST_DICTIONARIES_ALL_RULES = 2
+    ALL_DICTIONARIES_BEST_RULES = 3
+    ALL_DICTIONARIES_ALL_RULES = 4
 
-        lNumberPasswords = count_passwords_in_jtr_pot_file()
-        lNumberHashes = count_hashes_in_input_file(pHashFile)
+
+def parse_arg_percentile(pArgPercentile: float) -> float:
+
+    if pArgPercentile:
+        if not 0.0 <= pArgPercentile <= 1.00:
+            raise ValueError('The percentile provided must be between 0.0 and 1.0.')
+        return pArgPercentile
+    else:
+        return 1.0
+
+
+def parse_arg_debug(pArgDebug: bool) -> bool:
+    if pArgDebug:
+        return pArgDebug
+    else:
+        return DEBUG
+
+
+def parse_arg_hash_format(pArgHashFormat: str) -> str:
+    if pArgHashFormat is not None:
+        return lArgs.hash_format
+    else:
+        return ""
+
+
+def parse_arg_techniques(pArgTechniques: str) -> list:
+    lTechniques = [1]
+
+    if lArgs.techniques is not None:
+
+        lErrorMessage = 'Techniques must be supplied as a comma-separated list of integers between 0 and 4.'
 
         try:
-            lPercent = round(lNumberPasswords / lNumberHashes * 100, 2)
+            lTechniques = list(map(int, pArgTechniques.split(",")))
+        except:
+            raise ValueError(lErrorMessage)
+
+        for lTechnique in lTechniques:
+            if not 0 <= lTechnique <= 4:
+                raise ValueError(lErrorMessage)
+
+    return lTechniques
+
+
+def print_closing_message(pNumberHashes: int, pElaspsedTime: time.struct_time) -> None:
+
+        lNumberPasswords = count_passwords_in_jtr_pot_file()
+
+        try:
+            lPercent = round(lNumberPasswords / pNumberHashes * 100, 2)
         except:
             lPercent = 0
 
         print("[*] Duration: {}".format(time.strftime("%H:%M:%S", pElaspsedTime)))
-        print("[*] Passwords cracked (estimated): {} out of {} ({}%)".format(lNumberPasswords, lNumberHashes, lPercent))
+        print("[*] Passwords cracked (estimated): {} out of {} ({}%)".format(lNumberPasswords, pNumberHashes, lPercent))
         print()
         print("[*] Cracking attempt complete. Use john --show to see cracked passwords.")
         print("[*] The command should be something like {}{}{} --show {}".format(JTR_EXE_FILE_PATH, " --format=" if lHashFormat else "", lHashFormat, lHashFile))
@@ -116,8 +168,30 @@ def rm_jtr_pot_file() -> None:
         time.sleep(1)
 
 
+def run_jtr_baseword_mode(pHashFile: str, pBaseWords: str, pHashFormat: str,
+                          pVerbose: bool, pDebug: bool, pPassThrough: str,
+                          pNumberHashes: int) -> None:
+
+    if pVerbose: print("[*] Starting mode: Baseword with words {}".format(pBaseWords))
+
+    lBaseWords = list(pBaseWords.split(","))
+    lBaseWordsFileName = 'basewords/basewords.txt'
+    lBaseWordsFile = open(lBaseWordsFileName, 'w')
+    for lWord in lBaseWords:
+        lBaseWordsFile.write("%s\n" % lWord)
+    lBaseWordsFile.flush()
+    lBaseWordsFile.close()
+    run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist="basewords/basewords.txt", pRule="All",
+                          pHashFormat=pHashFormat, pVerbose=pVerbose, pDebug=pDebug,
+                          pPassThrough=pPassThrough, pNumberHashes=pNumberHashes)
+    #os.remove(lBaseWordsFileName)
+
+    if pVerbose: print("[*] Finished Baseword Mode")
+
+
 def run_jtr_wordlist_mode(pHashFile: str, pWordlist: str, pRule: str, pHashFormat:str,
-                          pVerbose: bool, pDebug: bool, pPassThrough: str) -> None:
+                          pVerbose: bool, pDebug: bool, pPassThrough: str,
+                          pNumberHashes: int) -> None:
 
     lStartTime = time.time()
 
@@ -154,22 +228,25 @@ def run_jtr_wordlist_mode(pHashFile: str, pWordlist: str, pRule: str, pHashForma
         lNumberPasswordsCracked = 0
 
     lNumberPasswordsCrackedByThisMethod = lNumberPasswordsCracked - lNumberPasswordsAlreadyCracked
-    print("[*] Passwords cracked using wordlist {}: {}".format(pWordlist, lNumberPasswordsCrackedByThisMethod))
+    lPercentPasswordsCracked = round(lNumberPasswordsCrackedByThisMethod / pNumberHashes * 100, 2)
+    print("[*] Passwords cracked using wordlist {}: {} ({} percent)".format(pWordlist, lNumberPasswordsCrackedByThisMethod, lPercentPasswordsCracked))
 
     if pVerbose:
         print("[*] Command: {}".format(lCompletedProcess.args))
         #print(lCompletedProcess.stdout)
         print("[*] Finished")
-        print("[*] Passwords cracked: {}".format(lNumberPasswordsCrackedByThisMethod))
+        print("[*] Passwords cracked: {} ({} percent)".format(lNumberPasswordsCrackedByThisMethod, lPercentPasswordsCracked))
 
     if pDebug:
         lRunTime = time.time() - lStartTime
+        lPasswordsCrackedPerSecond = lNumberPasswordsCrackedByThisMethod // lRunTime
         print("[*] Duration: {}".format(lRunTime))
-        print("[*] Passwords cracked per second: {}".format(lNumberPasswordsCrackedByThisMethod // lRunTime))
+        print("[*] Passwords cracked per second: {}".format(lPasswordsCrackedPerSecond))
 
 
 def run_jtr_mask_mode(pHashFile: str, pMask: str, pWordlist: str, pHashFormat:str,
-                      pVerbose: bool, pDebug: bool, pPassThrough: str) -> None:
+                      pVerbose: bool, pDebug: bool, pPassThrough: str,
+                      pNumberHashes: int) -> None:
 
     lStartTime = time.time()
 
@@ -206,41 +283,25 @@ def run_jtr_mask_mode(pHashFile: str, pMask: str, pWordlist: str, pHashFormat:st
         lNumberPasswordsCracked = 0
 
     lNumberPasswordsCrackedByThisMethod = lNumberPasswordsCracked - lNumberPasswordsAlreadyCracked
-    print("[*] Passwords cracked using mask {}: {}".format(pMask, lNumberPasswordsCrackedByThisMethod))
+    lPercentPasswordsCracked = round(lNumberPasswordsCrackedByThisMethod / pNumberHashes * 100, 2)
+    print("[*] Passwords cracked using mask {}: {} ({} percent)".format(pMask, lNumberPasswordsCrackedByThisMethod, lPercentPasswordsCracked))
 
     if pVerbose:
         print("[*] Command: {}".format(lCompletedProcess.args))
-        #print(lCompletedProcess.stdout)
         print("[*] Finished")
-        print("[*] Passwords cracked: {}".format(lNumberPasswordsCrackedByThisMethod))
+        print("[*] Passwords cracked: {} ({} percent)".format(lNumberPasswordsCrackedByThisMethod, lPercentPasswordsCracked))
 
     if pDebug:
         lRunTime = time.time() - lStartTime
+        lPasswordsCrackedPerSecond = lNumberPasswordsCrackedByThisMethod // lRunTime
         print("[*] Duration: {}".format(lRunTime))
-        print("[*] Passwords cracked per second: {}".format(lNumberPasswordsCrackedByThisMethod // lRunTime))
-
-
-def run_jtr_baseword_mode(pHashFile: str, pBaseWords: str, pHashFormat: str,
-                          pVerbose: bool, pDebug: bool, pPassThrough: str) -> None:
-
-    if pVerbose: print("[*] Starting mode: Baseword with words {}".format(pBaseWords))
-
-    lBaseWords = list(pBaseWords.split(","))
-    lBaseWordsFileName = 'basewords/basewords.txt'
-    lBaseWordsFile = open(lBaseWordsFileName, 'w')
-    for lWord in lBaseWords:
-        lBaseWordsFile.write("%s\n" % lWord)
-    lBaseWordsFile.flush()
-    lBaseWordsFile.close()
-    run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist="basewords/basewords.txt", pRule="All", pHashFormat=pHashFormat,
-                          pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough)
-    #os.remove(lBaseWordsFileName)
-
-    if pVerbose: print("[*] Finished Baseword Mode")
+        print("[*] Passwords cracked per second: {}".format(lPasswordsCrackedPerSecond))
 
 
 def run_jtr_prayer_mode(pHashFile: str, pMethod: int, pHashFormat: str,
-                        pVerbose: bool, pDebug: bool, pPassThrough: str) -> None:
+                        pVerbose: bool, pDebug: bool, pPassThrough: str,
+                        pNumberHashes: int) -> None:
+
     # Note: subprocess.run() accepts the command to run as a list of arguments.
     # lCmdArgs is this list.
 
@@ -413,23 +474,26 @@ def run_jtr_prayer_mode(pHashFile: str, pMethod: int, pHashFormat: str,
     except:
         lNumberPasswordsCracked = 0
 
+    lNumberPasswordsCrackedByThisMethod = lNumberPasswordsCracked - lNumberPasswordsAlreadyCracked
+    lPercentPasswordsCracked = round(lNumberPasswordsCrackedByThisMethod / pNumberHashes * 100, 2)
+
     if pVerbose:
         print("[*] Command: {}".format(lCompletedProcess.args))
-        #print(lCompletedProcess.stdout)
         print("[*] Finished")
         print("[*] Passwords cracked at end of prayer mode {}: {}".format(pMethod, lNumberPasswordsCracked))
 
-    lNumberPasswordsCrackedByThisMethod = lNumberPasswordsCracked - lNumberPasswordsAlreadyCracked
-    print("[*] Passwords cracked by prayer mode {}: {}".format(pMethod, lNumberPasswordsCrackedByThisMethod))
+    print("[*] Passwords cracked by prayer mode {}: {} ({} percent)".format(pMethod, lNumberPasswordsCrackedByThisMethod, lPercentPasswordsCracked))
 
     if pDebug:
         lRunTime = time.time() - lStartTime
+        lPasswordsCrackedPerSecond = lNumberPasswordsCrackedByThisMethod // lRunTime
         print("[*] Duration: {}".format(lRunTime))
-        print("[*] Passwords cracked per second: {}".format(lNumberPasswordsCrackedByThisMethod // lRunTime))
+        print("[*] Passwords cracked per second: {}".format(lPasswordsCrackedPerSecond))
 
 
 def perform_statistical_cracking(pHashFile: str, pPercentile: float, pHashFormat: str,
-                                 pVerbose: bool, pDebug: bool, pPassThrough: str) -> None:
+                                 pVerbose: bool, pDebug: bool, pPassThrough: str,
+                                 pNumberHashes: int) -> None:
 
     # The JTR POT file is the source of passwords
     if pVerbose: print("[*] Parsing JTR POT file at {}".format(JTR_POT_FILE_PATH))
@@ -460,7 +524,8 @@ def perform_statistical_cracking(pHashFile: str, pPercentile: float, pHashFormat
             lCountLetters = lMask.count('?l')
             lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
             run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist=lWordlist, pRule="best126", pHashFormat=pHashFormat,
-                                  pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough)
+                                  pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough,
+                                  pNumberHashes=pNumberHashes)
 
         # All uppercase
         elif re.match('^(\?u)+$', lMask):
@@ -468,7 +533,8 @@ def perform_statistical_cracking(pHashFile: str, pPercentile: float, pHashFormat
             lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
             lRule = "uppercase"
             run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist=lWordlist, pRule=lRule, pHashFormat=pHashFormat,
-                                  pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough)
+                                  pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough,
+                                  pNumberHashes=pNumberHashes)
 
         # Uppercase followed by lowercase (assume only leading letter is uppercase)
         elif re.match('^(\?u)(\?l)+$', lMask):
@@ -476,7 +542,8 @@ def perform_statistical_cracking(pHashFile: str, pPercentile: float, pHashFormat
             lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
             lRule = "capitalize"
             run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist=lWordlist, pRule=lRule, pHashFormat=pHashFormat,
-                                  pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough)
+                                  pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough,
+                                  pNumberHashes=pNumberHashes)
 
         # Lowercase ending with digits
         elif re.match('^(\?l)+(\?d)+$', lMask):
@@ -485,7 +552,8 @@ def perform_statistical_cracking(pHashFile: str, pPercentile: float, pHashFormat
             lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
             lRule = "append{}digits".format(str(lCountDigits))
             run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist=lWordlist, pRule=lRule, pHashFormat=pHashFormat,
-                                  pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough)
+                                  pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough,
+                                  pNumberHashes=pNumberHashes)
 
         # Uppercase followed by digits
         elif re.match('^(\?u)+(\?d)+$', lMask):
@@ -494,7 +562,8 @@ def perform_statistical_cracking(pHashFile: str, pPercentile: float, pHashFormat
             lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
             lRule = "uppercaseappend{}digits".format(str(lCountDigits))
             run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist=lWordlist, pRule=lRule, pHashFormat=pHashFormat,
-                                  pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough)
+                                  pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough,
+                                  pNumberHashes=pNumberHashes)
 
         # Uppercase, lowercase, then digits (assume only leading letter is uppercase)
         elif re.match('^(\?u)(\?l)+(\?d)+$', lMask):
@@ -503,7 +572,8 @@ def perform_statistical_cracking(pHashFile: str, pPercentile: float, pHashFormat
             lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
             lRule = "capitalizeappend{}digits".format(str(lCountDigits))
             run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist=lWordlist, pRule=lRule, pHashFormat=pHashFormat,
-                                  pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough)
+                                  pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough,
+                                  pNumberHashes=pNumberHashes)
 
         # Low number of digits. We do not cover large numbers of digits because
         # precomputing dictionary files would be huge and running mask mode takes a long time.
@@ -514,7 +584,8 @@ def perform_statistical_cracking(pHashFile: str, pPercentile: float, pHashFormat
             if lCountDigits == 5:
                 lWordlist = "dictionaries/{}-digit-numbers.txt".format(str(lCountDigits))
                 run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist=lWordlist, pRule="", pHashFormat=pHashFormat,
-                                      pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough)
+                                      pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough,
+                                      pNumberHashes=pNumberHashes)
             else:
                 print("[*] WARNING: Did not process mask {} because it is out of policy".format(lMask))
 
@@ -529,7 +600,8 @@ def perform_statistical_cracking(pHashFile: str, pPercentile: float, pHashFormat
                 lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
                 lMaskParam = "--mask=?w{}".format(lSuffix)
                 run_jtr_mask_mode(pHashFile=pHashFile, pMask=lMaskParam, pWordlist=lWordlist, pHashFormat=pHashFormat,
-                                  pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough)
+                                  pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough,
+                                  pNumberHashes=pNumberHashes)
             else:
                 print("[*] WARNING: Did not process mask {} because it is out of policy".format(lMask))
 
@@ -553,18 +625,24 @@ if __name__ == '__main__':
     lArgParser = argparse.ArgumentParser(description='ByePass: Automate the most common password cracking tasks',
                                          epilog="""
 Examples:\n\n
-Attempt to crack password hashes found in input file "password.hashes" using default aggression level 1\n\n
+Attempt to crack password hashes found in input file "password.hashes" using default techniques level 1\n\n
 \tpython3 byepass.py --verbose --hash-format=descrypt --input-file=password.hashes\n\n
 \tpython3 byepass.py -v -f descrypt -i password.hashes\n\n
-Be more aggressive by using aggression level 2 in attempt to crack password hashes found in input file "password.hashes"\n\n
-\tpython3 byepass.py --verbose --aggression=2 --hash-format=descrypt --input-file=password.hashes\n\n
+Be more aggressive by using techniques level 2 in attempt to crack password hashes found in input file "password.hashes"\n\n
+\tpython3 byepass.py --verbose --techniques=2 --hash-format=descrypt --input-file=password.hashes\n\n
 \tpython3 byepass.py -v -a 2 -f descrypt -i password.hashes\n\n
-Be even more aggressive by using aggression level 3 in attempt to crack password hashes found in input file "password.hashes"\n\n
-\tpython3 byepass.py --verbose --aggression=3 --hash-format=descrypt --input-file=password.hashes\n\n
+Be even more aggressive by using techniques level 3 in attempt to crack password hashes found in input file "password.hashes"\n\n
+\tpython3 byepass.py --verbose --techniques=3 --hash-format=descrypt --input-file=password.hashes\n\n
 \tpython3 byepass.py -v -a 3 -f descrypt -i password.hashes\n\n
-Maximum effort by using aggression level 4 in attempt to crack password hashes found in input file "password.hashes"\n\n
-\tpython3 byepass.py --verbose --aggression=4 --hash-format=descrypt --input-file=password.hashes\n\n
+Maximum effort by using techniques level 4 in attempt to crack password hashes found in input file "password.hashes"\n\n
+\tpython3 byepass.py --verbose --techniques=4 --hash-format=descrypt --input-file=password.hashes\n\n
 \tpython3 byepass.py -v -a 4 -f descrypt -i password.hashes\n\n
+Go bonkers and try all techniques. Start with technique level 1 and proceed to level 4 in attempt to crack password hashes found in input file "password.hashes"\n\n
+\tpython3 byepass.py --verbose --techniques=1,2,3,4 --hash-format=descrypt --input-file=password.hashes\n\n
+\tpython3 byepass.py -v -a 1,2,3,4 -f descrypt -i password.hashes\n\n
+Only try first two techniques. Start with technique level 1 and proceed to level 2 in attempt to crack password hashes found in input file "password.hashes"\n\n
+\tpython3 byepass.py --verbose --techniques=1,2 --hash-format=descrypt --input-file=password.hashes\n\n
+\tpython3 byepass.py -v -a 1,2 -f descrypt -i password.hashes\n\n
 Attempt to crack password hashes found in input file "password.hashes", then run statistical analysis to determine masks needed to crack 50 percent of passwords, and try to crack again using the masks.\n\n
 \tpython3 byepass.py --verbose --hash-format=descrypt --stat-crack --percentile=0.50 --input-file=password.hashes\n\n
 \tpython3 byepass.py -v -f descrypt -s -p 0.50 -i password.hashes\n\n
@@ -575,11 +653,11 @@ Attempt to crack linked-in hashes using base words linkedin and linked\n\n
 \tpython3 byepass.py --verbose --hash-format=Raw-SHA1 --base-words=linkedin,linked --input-file=linkedin-1.hashes\n\n
 \tpython3 byepass.py -v -f -b linkedin,linked -i linkedin-1.hashes\n\n
 Do not run prayer mode. Only run statistical analysis to determine masks needed to crack 50 percent of passwords, and try to crack using the masks.\n\n
-\tpython3 byepass.py -v --aggression=0 --hash-format=descrypt --stat-crack --percentile=0.50 --input-file=password.hashes\n\n
+\tpython3 byepass.py -v --techniques=0 --hash-format=descrypt --stat-crack --percentile=0.50 --input-file=password.hashes\n\n
 \tpython3 byepass.py -v -a 0 -f descrypt -s -p 0.50 -i password.hashes\n\n
 Use pass-through to pass fork command to JTR\n\n
 \tpython3 byepass.py --verbose --pass-through="--fork=4" --hash-format=descrypt --input-file=password.hashes\n\n
-\tpython3 byepass.py -v -t="--fork=4" -f descrypt -i password.hashes
+\tpython3 byepass.py -v -j="--fork=4" -f descrypt -i password.hashes
                                          """,
                                          formatter_class=RawTextHelpFormatter)
     lArgParser.add_argument('-f', '--hash-format',
@@ -590,9 +668,9 @@ Use pass-through to pass fork command to JTR\n\n
                             type=str,
                             help="Supply a comma-separated list of lowercase, unmangled base words thought to be good candidates. For example, if Wiley Coyote is cracking hashes from Acme Inc., Wiley might provide the word \"acme\". Be careful how many words are supplied as Byepass will apply many mangling rules. Up to several dozen should run reasonably fast.\n\n",
                             action='store')
-    lArgParser.add_argument('-a', '--aggression',
-                            type=int,
-                            help="Determines what password cracking techniques are attempted. Default is level 1.\n\n0: Skip prayer mode entirely\n1: Quickly try most likely techniques\n2: Best dictionaries. All rules\n3: Time is an illusion. Big dictionaries. Best Rules.\n4: Go freaking nuts. Big dictionaries. All Rules.\n\n",
+    lArgParser.add_argument('-t', '--techniques',
+                            type=str,
+                            help="Comma-separated list of integers between 0-4 that determines what password cracking techniques are attempted. Default is level 1. Example of running levels 1 and 2 --techniques=1,2\n\n0: Skip prayer mode entirely\n1: Quickly try most likely techniques\n2: Best dictionaries. All rules\n3: Time is an illusion. Big dictionaries. Best Rules.\n4: Go freaking nuts. Big dictionaries. All Rules.\n\n",
                             action='store')
     lArgParser.add_argument('-s', '--stat-crack',
                             help="Enable statistical cracking. Byepass will run relatively fast cracking strategies in hopes of cracking enough passwords to induce a pattern and create \"high probability\" masks. Byepass will use the masks in an attempt to crack more passwords.\n\n",
@@ -601,7 +679,7 @@ Use pass-through to pass fork command to JTR\n\n
                             type=float,
                             help="Based on statistical analysis of the passwords cracked during initial phase, use only the masks statistically likely to be needed to crack at least the given percent of passwords. For example, if a value of 0.25 provided, only use the relatively few masks needed to crack 25 passwords of the passwords. Note that password cracking effort follows an exponential distribution, so cracking a few more passwords takes a lot more effort (relatively speaking). A good starting value if completely unsure is 25 percent (0.25).\n\n",
                             action='store')
-    lArgParser.add_argument('-t', '--pass-through',
+    lArgParser.add_argument('-j', '--pass-through',
                              type=str,
                              help="Pass-through the raw parameter to John the Ripper. Example: --pass-through=\"--fork=2\"\n\n",
                              action='store')
@@ -622,76 +700,68 @@ Use pass-through to pass fork command to JTR\n\n
     if lArgs.percentile and not lArgs.stat_crack:
         print("[*] WARNING: Argument 'percentile' provided without argument 'stat_crack'. Percentile will be ignored")
 
+    # Parse and validate input parameters
     lHashFile = lArgs.input_file
     lVerbose = lArgs.verbose
+    lDebug = parse_arg_debug(lArgs.debug)
+    lHashFormat = parse_arg_hash_format(lArgs.hash_format)
+    lTechniques = parse_arg_techniques(lArgs.techniques)
 
-    if lArgs.debug:
-        lDebug = lArgs.debug
-    else:
-        lDebug = DEBUG
-
-    try:
-        lHashFormat = lArgs.hash_format
-    except:
-        lHashFormat = ""
-
-    if lArgs.aggression is not None:
-        lAggression = lArgs.aggression
-        if not 0 <= lAggression <= 4:
-            raise ValueError('The level of agression provided must be between 0 and 4.')
-    else:
-        lAggression = 1
+    lNumberHashes = count_hashes_in_input_file(pHashFile=lHashFile)
 
     if lVerbose:
         lStartTime = time.time()
-        print("[*] Working on input file {}".format(lHashFile))
+        print("[*] Working on input file {} ({} lines)".format(lHashFile, lNumberHashes))
 
     if lArgs.basewords:
         run_jtr_baseword_mode(pHashFile=lHashFile, pBaseWords=lArgs.basewords, pHashFormat=lHashFormat,
-                              pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through)
+                              pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through,
+                              pNumberHashes=lNumberHashes)
 
     # Try to crack a relatively few passwords as quickly as possible to use in statistical analysis
-    if lAggression ==1:
+    if Techniques.BEST_DICTIONARIES_BEST_RULES.value in lTechniques:
         # High impact modes
         for i in range(1,10,1):
             run_jtr_prayer_mode(pHashFile=lHashFile, pMethod=i, pHashFormat=lHashFormat,
-                                pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through)
+                                pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through,
+                                pNumberHashes=lNumberHashes)
 
         # Best dictionaries, best rules
         for i in range(10,18,1):
             run_jtr_prayer_mode(pHashFile=lHashFile, pMethod=i, pHashFormat=lHashFormat,
-                                pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through)
-    if lAggression ==2:
+                                pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through,
+                                pNumberHashes=lNumberHashes)
+
+    if Techniques.BEST_DICTIONARIES_ALL_RULES.value in lTechniques:
         # Best dictionaries, a lot of rules
         for i in range(18,26,1):
             run_jtr_prayer_mode(pHashFile=lHashFile, pMethod=i, pHashFormat=lHashFormat,
-                                pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through)
-    if lAggression == 3:
+                                pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through,
+                                pNumberHashes=lNumberHashes)
+
+    if Techniques.ALL_DICTIONARIES_BEST_RULES.value in lTechniques:
         # Big dictionaries, best rules
         for i in range(26,30,1):
             run_jtr_prayer_mode(pHashFile=lHashFile, pMethod=i, pHashFormat=lHashFormat,
-                                pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through)
+                                pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through,
+                                pNumberHashes=lNumberHashes)
 
-    if lAggression == 4:
+    if Techniques.ALL_DICTIONARIES_ALL_RULES.value in lTechniques:
         # Big dictionaries, a lot of rules
         for i in range(30,34,1):
             run_jtr_prayer_mode(pHashFile=lHashFile, pMethod=i, pHashFormat=lHashFormat,
-                                pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through)
+                                pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through,
+                                pNumberHashes=lNumberHashes)
 
     # If the user chooses, begin statistical analysis to aid targeted cracking routines
     if lArgs.stat_crack:
 
-        if lArgs.percentile:
-            if not 0.0 <= lArgs.percentile <= 1.00:
-                raise ValueError('The percentile provided must be between 0.0 and 1.0.')
-            lPercentile = lArgs.percentile
-        else:
-            lPercentile = 1.0
-
+        lPercentile = parse_arg_percentile(lArgs.percentile)
         perform_statistical_cracking(pHashFile=lHashFile, pPercentile=lPercentile, pHashFormat=lHashFormat,
-                                     pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through)
+                                     pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through,
+                                     pNumberHashes=lNumberHashes)
 
     if lVerbose:
         lEndTime = time.time()
         lElaspsedTime = time.gmtime(lEndTime - lStartTime)
-        print_closing_message(lHashFile, lElaspsedTime)
+        print_closing_message(pNumberHashes=lNumberHashes, pElaspsedTime=lElaspsedTime)

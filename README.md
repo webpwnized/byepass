@@ -109,15 +109,27 @@ Output the number of passwords represented by each mask sorted by count descendi
       -h, --help            show this help message and exit
       -f HASH_FORMAT, --hash-format HASH_FORMAT
                             The hash algorithm used to hash the password(s). This value must be one of the values supported by John the Ripper. To see formats supported by JTR, use command "john --list=formats". It is strongly recommended to provide an optimal value. If no value is provided, John the Ripper will guess.
-      -s, --stat-crack      Enable statistical cracking. Byepass will run relatively fast cracking strategies in hopes of cracking enough passwords to induce a pattern and create "high probability" masks. Byepass will use the masks in an attempt to crack more passwords.
+                            
       -b BASEWORDS, --basewords BASEWORDS
-                            Supply a comma-separated list of lowercase, unmangled base words thought to be good candidates. For example, if Wiley Coyote is cracking hashes from Acme Inc., Wiley might provide the word "acme". Be careful how many words are supplied as Byepass will apply many mangling rules. Up to a dozen might run reasonably fast.
+                            Supply a comma-separated list of lowercase, unmangled base words thought to be good candidates. For example, if Wiley Coyote is cracking hashes from Acme Inc., Wiley might provide the word "acme". Be careful how many words are supplied as Byepass will apply many mangling rules. Up to several dozen should run reasonably fast.
+                            
+      -t TECHNIQUES, --techniques TECHNIQUES
+                            Comma-separated list of integers between 0-4 that determines what password cracking techniques are attempted. Default is level 1. Example of running levels 1 and 2 --techniques=1,2
+                            
+                            0: Skip prayer mode entirely
+                            1: Quickly try most likely techniques
+                            2: Best dictionaries. All rules
+                            3: Time is an illusion. Big dictionaries. Best Rules.
+                            4: Go freaking nuts. Big dictionaries. All Rules.
+                            
+      -s, --stat-crack      Enable statistical cracking. Byepass will run relatively fast cracking strategies in hopes of cracking enough passwords to induce a pattern and create "high probability" masks. Byepass will use the masks in an attempt to crack more passwords.
+                            
       -p PERCENTILE, --percentile PERCENTILE
                             Based on statistical analysis of the passwords cracked during initial phase, use only the masks statistically likely to be needed to crack at least the given percent of passwords. For example, if a value of 0.25 provided, only use the relatively few masks needed to crack 25 passwords of the passwords. Note that password cracking effort follows an exponential distribution, so cracking a few more passwords takes a lot more effort (relatively speaking). A good starting value if completely unsure is 25 percent (0.25).
-      -t PASS_THROUGH, --pass-through PASS_THROUGH
-                        Pass-through the raw parameter to John the Ripper. Example: --pass-through="--fork=2"
-      -n, --skip-prayer-mode
-                        Skip prayer mode; the attempt to crack passwords using a variety of techniques in hopes of finding passwords for statistical analysis. If prayer mode is skipped, ByePass will rely on passwords found in Johns POT file. This is useful if prayer mode was already run, JTR was used independently of ByePass or the POT file was imported.
+                            
+      -j PASS_THROUGH, --pass-through PASS_THROUGH
+                            Pass-through the raw parameter to John the Ripper. Example: --pass-through="--fork=2"
+                            
       -v, --verbose         Enable verbose output such as current progress and duration
       -d, --debug           Enable debug mode
 
@@ -128,29 +140,41 @@ Output the number of passwords represented by each mask sorted by count descendi
 
 **Examples**:
 
-Attempt to crack password hashes found in input file "password.hashes" using default aggression level 1
+Attempt to crack password hashes found in input file "password.hashes" using default techniques level 1
 
 	python3 byepass.py --verbose --hash-format=descrypt --input-file=password.hashes
 
 	python3 byepass.py -v -f descrypt -i password.hashes
 
-Be more aggressive by using aggression level 2 in attempt to crack password hashes found in input file "password.hashes"
+Be more aggressive by using techniques level 2 in attempt to crack password hashes found in input file "password.hashes"
 
-	python3 byepass.py --verbose --aggression=2 --hash-format=descrypt --input-file=password.hashes
+	python3 byepass.py --verbose --techniques=2 --hash-format=descrypt --input-file=password.hashes
 
 	python3 byepass.py -v -a 2 -f descrypt -i password.hashes
 
-Be even more aggressive by using aggression level 3 in attempt to crack password hashes found in input file "password.hashes"
+Be even more aggressive by using techniques level 3 in attempt to crack password hashes found in input file "password.hashes"
 
-	python3 byepass.py --verbose --aggression=3 --hash-format=descrypt --input-file=password.hashes
+	python3 byepass.py --verbose --techniques=3 --hash-format=descrypt --input-file=password.hashes
 
 	python3 byepass.py -v -a 3 -f descrypt -i password.hashes
 
-Maximum effort by using aggression level 4 in attempt to crack password hashes found in input file "password.hashes"
+Maximum effort by using techniques level 4 in attempt to crack password hashes found in input file "password.hashes"
 
-	python3 byepass.py --verbose --aggression=4 --hash-format=descrypt --input-file=password.hashes
+	python3 byepass.py --verbose --techniques=4 --hash-format=descrypt --input-file=password.hashes
 
 	python3 byepass.py -v -a 4 -f descrypt -i password.hashes
+
+Go bonkers and try all techniques. Start with technique level 1 and proceed to level 4 in attempt to crack password hashes found in input file "password.hashes"
+
+	python3 byepass.py --verbose --techniques=1,2,3,4 --hash-format=descrypt --input-file=password.hashes
+
+	python3 byepass.py -v -a 1,2,3,4 -f descrypt -i password.hashes
+
+Only try first two techniques. Start with technique level 1 and proceed to level 2 in attempt to crack password hashes found in input file "password.hashes"
+
+	python3 byepass.py --verbose --techniques=1,2 --hash-format=descrypt --input-file=password.hashes
+
+	python3 byepass.py -v -a 1,2 -f descrypt -i password.hashes
 
 Attempt to crack password hashes found in input file "password.hashes", then run statistical analysis to determine masks needed to crack 50 percent of passwords, and try to crack again using the masks.
 
@@ -172,7 +196,7 @@ Attempt to crack linked-in hashes using base words linkedin and linked
 
 Do not run prayer mode. Only run statistical analysis to determine masks needed to crack 50 percent of passwords, and try to crack using the masks.
 
-	python3 byepass.py -v --aggression=0 --hash-format=descrypt --stat-crack --percentile=0.50 --input-file=password.hashes
+	python3 byepass.py -v --techniques=0 --hash-format=descrypt --stat-crack --percentile=0.50 --input-file=password.hashes
 
 	python3 byepass.py -v -a 0 -f descrypt -s -p 0.50 -i password.hashes
 
@@ -180,7 +204,7 @@ Use pass-through to pass fork command to JTR
 
 	python3 byepass.py --verbose --pass-through="--fork=4" --hash-format=descrypt --input-file=password.hashes
 
-	python3 byepass.py -v -t="--fork=4" -f descrypt -i password.hashes
+	python3 byepass.py -v -j="--fork=4" -f descrypt -i password.hashes
 
 # Hashes and Password Lists
 
