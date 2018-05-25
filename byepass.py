@@ -181,6 +181,9 @@ def run_jtr_baseword_mode(pHashFile: str, pBaseWords: str, pHashFormat: str,
         lBaseWordsFile.write("%s\n" % lWord)
     lBaseWordsFile.flush()
     lBaseWordsFile.close()
+    run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist="basewords/basewords.txt", pRule="OneRuleToRuleThemAll",
+                          pHashFormat=pHashFormat, pVerbose=pVerbose, pDebug=pDebug,
+                          pPassThrough=pPassThrough, pNumberHashes=pNumberHashes)
     run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist="basewords/basewords.txt", pRule="All",
                           pHashFormat=pHashFormat, pVerbose=pVerbose, pDebug=pDebug,
                           pPassThrough=pPassThrough, pNumberHashes=pNumberHashes)
