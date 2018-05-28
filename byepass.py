@@ -86,8 +86,13 @@ def parse_arg_techniques(pArgTechniques: str) -> list:
         except:
             raise ValueError(lErrorMessage)
 
+        lObservedTechniques = []
         for lTechnique in lTechniques:
-            if not 0 <= lTechnique <= 4:
+            if 0 <= lTechnique <= 4:
+                if lTechnique in lObservedTechniques:
+                    raise ValueError('Duplicate technique specified: {} '.format(lTechnique) + lErrorMessage)
+                lObservedTechniques.append(lTechnique)
+            else:
                 raise ValueError(lErrorMessage)
 
     return lTechniques
@@ -353,7 +358,7 @@ def run_jtr_prayer_mode(pHashFile: str, pMethod: int, pHashFormat: str,
         if pVerbose: print("[*] Starting mode: JTR single crack Rule Single")
         lCmdArgs.append("--single")
 
-    # Level 1: Best dictionaries with best rules
+    # Level 2: Best dictionaries with best rules
     elif pMethod == 10:
         if pVerbose: print("[*] Starting mode: Wordlist top-10000-english-words.txt Rule Best126")
         lCmdArgs.append("--wordlist=dictionaries/top-10000-english-words.txt")
@@ -387,7 +392,7 @@ def run_jtr_prayer_mode(pHashFile: str, pMethod: int, pHashFormat: str,
         lCmdArgs.append("--wordlist=dictionaries/keyboard-patterns.txt")
         lCmdArgs.append("--rules=best126")
 
-    # Level 2: Best dictionaries with all the rules
+    # Level 3: Best dictionaries with all the rules
     elif pMethod == 18:
         if pVerbose: print("[*] Starting mode: Wordlist top-10000-english-words.txt Rule OneRuleToRuleThemAll")
         lCmdArgs.append("--wordlist=dictionaries/top-10000-english-words.txt")
@@ -421,7 +426,7 @@ def run_jtr_prayer_mode(pHashFile: str, pMethod: int, pHashFormat: str,
         lCmdArgs.append("--wordlist=dictionaries/keyboard-patterns.txt")
         lCmdArgs.append("--rules=oneruletorulethemall")
 
-    # Level 3: Big dicitonaries with best rules
+    # Level 4: Big dicitonaries with best rules
     elif pMethod == 26:
         if pVerbose: print("[*] Starting mode: Wordlist all-english-words.txt Rule Best126")
         lCmdArgs.append("--wordlist=dictionaries/all-english-words.txt")
@@ -439,7 +444,7 @@ def run_jtr_prayer_mode(pHashFile: str, pMethod: int, pHashFormat: str,
         lCmdArgs.append("--wordlist=dictionaries/all-french-words.txt")
         lCmdArgs.append("--rules=best126")
 
-    # Level 4: Big dicitonaries with all the rules
+    # Level 5: Big dictionaries with all the rules
     elif pMethod == 30:
         if pVerbose: print("[*] Starting mode: Wordlist all-english-words.txt Rule OneRuleToRuleThemAll")
         lCmdArgs.append("--wordlist=dictionaries/all-english-words.txt")
