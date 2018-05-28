@@ -151,11 +151,11 @@ Attempt to crack linked-in hashes using base words linkedin and linked
 
 	python3 byepass.py --verbose --hash-format=Raw-SHA1 --base-words=linkedin,linked --input-file=linkedin-1.hashes
 
-	python3 byepass.py -v -f -b linkedin,linked -i linkedin-1.hashes
+	python3 byepass.py -v -f Raw-SHA1 -b linkedin,linked -i linkedin-1.hashes
 
 ### Using Prayer Mode
 
-Attempt to crack password hashes found in input file "password.hashes" using default techniques level 1
+Attempt to crack password hashes found in input file "password.hashes" using default technique level 1
 
 	python3 byepass.py --verbose --hash-format=descrypt --input-file=password.hashes
 

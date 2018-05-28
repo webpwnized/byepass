@@ -44,9 +44,9 @@ class PasswordMask:
     __mOrdinalPosition = 0
     __mCountPasswordsRepresented = 0
     __mMarginalPercentilePasswordsRepresented = 0.0
-    __mCummulativePercentilePasswordsRepresented = 0.0
+    __mCumulativePercentilePasswordsRepresented = 0.0
     __mPrettyMarginalPercentilePasswordsRepresented = "0.0"
-    __mPrettyCummulativePercentilePasswordsRepresented = "0.0"
+    __mPrettyCumulativePercentilePasswordsRepresented = "0.0"
 
     # Public Properties
     @property
@@ -82,12 +82,12 @@ class PasswordMask:
         self.__mMarginalPercentilePasswordsRepresented = pMarginalPercentilePasswordsRepresented
 
     @property
-    def cummulative_percentile(self: object) -> float:
-        return self.__mCummulativePercentilePasswordsRepresented
+    def cumulative_percentile(self: object) -> float:
+        return self.__mCumulativePercentilePasswordsRepresented
 
-    @cummulative_percentile.setter
-    def cummulative_percentile(self: object, pCummulativePercentilePasswordsRepresented: float) -> None:
-        self.__mCummulativePercentilePasswordsRepresented = pCummulativePercentilePasswordsRepresented
+    @cumulative_percentile.setter
+    def cumulative_percentile(self: object, pCumulativePercentilePasswordsRepresented: float) -> None:
+        self.__mCumulativePercentilePasswordsRepresented = pCumulativePercentilePasswordsRepresented
 
     @property
     def pretty_marginal_percentile(self: object) -> float:
@@ -98,12 +98,12 @@ class PasswordMask:
         self.__mPrettyMarginalPercentilePasswordsRepresented = pPrettyMarginalPercentilePasswordsRepresented
 
     @property
-    def pretty_cummulative_percentile(self: object) -> float:
-        return self.__mPrettyCummulativePercentilePasswordsRepresented
+    def pretty_cumulative_percentile(self: object) -> float:
+        return self.__mPrettyCumulativePercentilePasswordsRepresented
 
-    @pretty_cummulative_percentile.setter
-    def pretty_cummulative_percentile(self: object, pPrettyCummulativePercentilePasswordsRepresented: float) -> None:
-        self.__mPrettyCummulativePercentilePasswordsRepresented = pPrettyCummulativePercentilePasswordsRepresented
+    @pretty_cumulative_percentile.setter
+    def pretty_cumulative_percentile(self: object, pPrettyCumulativePercentilePasswordsRepresented: float) -> None:
+        self.__mPrettyCumulativePercentilePasswordsRepresented = pPrettyCumulativePercentilePasswordsRepresented
 
 class PasswordMasks:
 
@@ -259,17 +259,17 @@ class PasswordStats:
         lMasks = OrderedDict(sorted(lMasks.items(), key=lambda x: -x[1]))
 
         lPWMasks = []
-        lCummulativeCountSoFar = 0
+        lCumulativeCountSoFar = 0
         for lIndex, (lMask, lCount) in enumerate(lMasks.items()):
-            lCummulativeCountSoFar += lCount
+            lCumulativeCountSoFar += lCount
             lPWMask = PasswordMask()
             lPWMask.mask = lMask
             lPWMask.oridinal_position = (lIndex + 1)
             lPWMask.count_passwords_represented = lCount
             lPWMask.marginal_percentile = lCount / lCountPasswords
-            lPWMask.cummulative_percentile = lCummulativeCountSoFar / lCountPasswords
+            lPWMask.cumulative_percentile = lCumulativeCountSoFar / lCountPasswords
             lPWMask.pretty_marginal_percentile = round(lPWMask.marginal_percentile * 100, 2)
-            lPWMask.pretty_cummulative_percentile = round(lPWMask.cummulative_percentile * 100, 2)
+            lPWMask.pretty_cumulative_percentile = round(lPWMask.cumulative_percentile * 100, 2)
             lPWMasks.append(lPWMask)
 
         self.__mPasswordMasks.masks_with_stats = lPWMasks
@@ -284,21 +284,29 @@ class PasswordStats:
         lMasks = []
         for lMask in self.__mPasswordMasks.masks_with_stats:
             lMasks.append(lMask.mask)
-            if lMask.cummulative_percentile >= pPercentile:
+            if lMask.cumulative_percentile >= pPercentile:
                 return lMasks
 
 
     def export_password_counts_to_csv(self: object, pFileName: str) -> None:
 
-        lOrdinalPositions = ""
-        lPasswordCounts = ""
+        # Output to file: Ordinal position by rank, Count of passwords represented
+        # by the mask, Cumulative count of passwords up to and including this mask
+        lOrdinalPositionsString = ""
+        lPasswordCountsString = ""
+        lCumulativeCountsString = ""
+        lCumulativeCounts = 0
         for lPasswordMask in self.__mPasswordMasks.masks_with_stats:
-            lOrdinalPositions += str(lPasswordMask.oridinal_position) + ","
-            lPasswordCounts += str(lPasswordMask.count_passwords_represented) + ","
+            lOrdinalPositionsString += str(lPasswordMask.oridinal_position) + ","
+            lPasswordCountsString += str(lPasswordMask.count_passwords_represented) + ","
+            lCumulativeCounts += lPasswordMask.count_passwords_represented
+            lCumulativeCountsString += str(lCumulativeCounts) + ","
+
 
         lFileHandle = open(pFileName, mode="w")
-        lFileHandle.write(lOrdinalPositions[0:lOrdinalPositions.__len__()-1] + "\n")
-        lFileHandle.write(lPasswordCounts[0:lPasswordCounts.__len__()-1] + "\n")
+        lFileHandle.write(lOrdinalPositionsString[0:lOrdinalPositionsString.__len__()-1] + "\n")
+        lFileHandle.write(lPasswordCountsString[0:lPasswordCountsString.__len__()-1] + "\n")
+        lFileHandle.write(lCumulativeCountsString[0:lCumulativeCountsString.__len__()-1] + "\n")
         lFileHandle.flush()
         lFileHandle.close()
 
@@ -324,11 +332,11 @@ class PasswordStats:
             if len(lPasswordMask.mask) > lLongestMask: lLongestMask = len(lPasswordMask.mask)
             lPlotData = (lPasswordMask.mask, lPasswordMask.count_passwords_represented,
                          lPasswordMask.marginal_percentile, lPasswordMask.pretty_marginal_percentile,
-                         lPasswordMask.cummulative_percentile, lPasswordMask.pretty_cummulative_percentile)
+                         lPasswordMask.cumulative_percentile, lPasswordMask.pretty_cumulative_percentile)
             lPlotDatum.append(lPlotData)
             lCountPasswordsPlotted += lPasswordMask.count_passwords_represented
 
-            if lPasswordMask.cummulative_percentile >= pPercentile:
+            if lPasswordMask.cumulative_percentile >= pPercentile:
                 break
 
         lCountMasks = self.__mPasswordMasks.count
@@ -367,7 +375,7 @@ class PasswordStats:
 
         # Legend
         print()
-        print("Legend: (MP - Marginal Percentile, CP - Cummulative Percentile)")
+        print("Legend: (MP - Marginal Percentile, CP - Cumulative Percentile)")
         print()
 
         # Headers
