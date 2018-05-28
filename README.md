@@ -82,16 +82,21 @@ Usage for passtime and byepass
       -i INPUT_FILE, --input-file INPUT_FILE
                             Path to file containing passwords to analyze
 
-**Examples**:
+## Examples:
+
+### Listing Masks
 
 List masks representing 75 percent of the passwords in input file worst-10000-passwords.txt
 
     python3 passtime.py -l -p 0.75 -i worst-10000-passwords.txt
 
+### Analyzing Passwords
 
 Generate probability density function (PDF), masks, marginal percentile (MP), cummulative percentile (CP) and count of passwords representing 75 percent of the passwords in input file worst-10000-passwords.txt
 
     python3 passtime.py -a -p 0.75 -i worst-10000-passwords.txt
+
+### Creating format suitible for import into spreadsheet
 
 Output the number of passwords represented by each mask sorted by count descending. The first row labels the mask. The second row contains the counts. Values are comma-separated.
 
@@ -138,7 +143,17 @@ Output the number of passwords represented by each mask sorted by count descendi
       -i INPUT_FILE, --input-file INPUT_FILE
                             Path to file containing password hashes to attempt to crack
 
-**Examples**:
+## Examples:
+
+### Using Base Words Mode
+
+Attempt to crack linked-in hashes using base words linkedin and linked
+
+	python3 byepass.py --verbose --hash-format=Raw-SHA1 --base-words=linkedin,linked --input-file=linkedin-1.hashes
+
+	python3 byepass.py -v -f -b linkedin,linked -i linkedin-1.hashes
+
+### Using Prayer Mode
 
 Attempt to crack password hashes found in input file "password.hashes" using default techniques level 1
 
@@ -176,6 +191,8 @@ Only try first two techniques. Start with technique level 1 and proceed to level
 
 	python3 byepass.py -v -a 1,2 -f descrypt -i password.hashes
 
+### Using Statistical Analysis Mode
+
 Attempt to crack password hashes found in input file "password.hashes", then run statistical analysis to determine masks needed to crack 50 percent of passwords, and try to crack again using the masks.
 
 	python3 byepass.py --verbose --hash-format=descrypt --stat-crack --percentile=0.50 --input-file=password.hashes
@@ -188,17 +205,13 @@ Attempt to crack password hashes found in input file "password.hashes", then run
 
 	python3 byepass.py -v -f Raw-SHA1 -s -f 0.25 -i linkedin.hashes
 
-Attempt to crack linked-in hashes using base words linkedin and linked
-
-	python3 byepass.py --verbose --hash-format=Raw-SHA1 --base-words=linkedin,linked --input-file=linkedin-1.hashes
-
-	python3 byepass.py -v -f -b linkedin,linked -i linkedin-1.hashes
-
 Do not run prayer mode. Only run statistical analysis to determine masks needed to crack 50 percent of passwords, and try to crack using the masks.
 
 	python3 byepass.py -v --techniques=0 --hash-format=descrypt --stat-crack --percentile=0.50 --input-file=password.hashes
 
 	python3 byepass.py -v -a 0 -f descrypt -s -p 0.50 -i password.hashes
+
+### Passing a switch to John the Ripper
 
 Use pass-through to pass fork command to JTR
 
