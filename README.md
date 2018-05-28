@@ -96,7 +96,7 @@ Generate probability density function (PDF), masks, marginal percentile (MP), cu
 
     python3 passtime.py -a -p 0.75 -i worst-10000-passwords.txt
 
-### Creating format suitible for import into spreadsheet
+### Creating format suitable for import into spreadsheet
 
 Output the number of passwords represented by each mask sorted by count descending. The first row labels the mask. The second row contains the counts. Values are comma-separated.
 
