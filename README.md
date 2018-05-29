@@ -86,21 +86,25 @@ Usage for passtime and byepass
 
 ### Listing Masks
 
-List masks representing 75 percent of the passwords in input file worst-10000-passwords.txt
+List masks representing 75 percent of the passwords in input file passwords.txt
 
-    python3 passtime.py -l -p 0.75 -i worst-10000-passwords.txt
+    python3 passtime.py -l -p 0.75 -i passwords.txt
 
 ### Analyzing Passwords
 
-Generate probability density function (PDF), masks, marginal percentile (MP), cummulative percentile (CP) and count of passwords representing 75 percent of the passwords in input file worst-10000-passwords.txt
+Generate probability density function (PDF), masks, marginal percentile (MP), cummulative percentile (CP) and count of passwords representing 75 percent of the passwords in input file passwords.txt
 
-    python3 passtime.py -a -p 0.75 -i worst-10000-passwords.txt
+    python3 passtime.py -a -p 0.75 -i passwords.txt
 
 ### Creating format suitable for import into spreadsheet
 
-Output the number of passwords represented by each mask sorted by count descending. The first row labels the mask. The second row contains the counts. Values are comma-separated.
+Output the number of passwords represented by each mask sorted by count descending. The first row labels the mask. The second row contains the raw counts per mask. The third row contains the cumulative counts per mask. Values are comma-separated.
 
-    python3 passtime.py -v -i leaked-passwords/hotmail.txt -o /tmp/hm.csv
+    python3 passtime.py -v -d -i passwords.txt
+
+These same values can be output to a file with the addition of the -o/--output-file argument
+
+    python3 passtime.py -v -d -i passwords.txt -o raw-data.csv
 
 # ByePass
 
