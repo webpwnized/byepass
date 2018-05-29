@@ -275,6 +275,29 @@ class PasswordStats:
         self.__mPasswordMasks.masks_with_stats = lPWMasks
         self.__mPasswordMasks.count_passwords_represented = lCountPasswords
 
+
+    def __export_password_counts(self: object) -> list:
+
+        # Output to file: Ordinal position by rank, Count of passwords represented
+        # by the mask, Cumulative count of passwords up to and including this mask
+        lData = []
+        lOrdinalPositionsString = ""
+        lPasswordCountsString = ""
+        lCumulativeCountsString = ""
+        lCumulativeCounts = 0
+        for lPasswordMask in self.__mPasswordMasks.masks_with_stats:
+            lOrdinalPositionsString += str(lPasswordMask.oridinal_position) + ","
+            lPasswordCountsString += str(lPasswordMask.count_passwords_represented) + ","
+            lCumulativeCounts += lPasswordMask.count_passwords_represented
+            lCumulativeCountsString += str(lCumulativeCounts) + ","
+
+        lData.append(lOrdinalPositionsString[0:lOrdinalPositionsString.__len__()-1] + "\n")
+        lData.append(lPasswordCountsString[0:lPasswordCountsString.__len__()-1] + "\n")
+        lData.append(lCumulativeCountsString[0:lCumulativeCountsString.__len__()-1] + "\n")
+
+        return lData
+
+
     # Public Methods
     def get_popular_masks(self: object, pPercentile:float = 1.00) -> list:
 
@@ -290,25 +313,23 @@ class PasswordStats:
 
     def export_password_counts_to_csv(self: object, pFileName: str) -> None:
 
-        # Output to file: Ordinal position by rank, Count of passwords represented
-        # by the mask, Cumulative count of passwords up to and including this mask
-        lOrdinalPositionsString = ""
-        lPasswordCountsString = ""
-        lCumulativeCountsString = ""
-        lCumulativeCounts = 0
-        for lPasswordMask in self.__mPasswordMasks.masks_with_stats:
-            lOrdinalPositionsString += str(lPasswordMask.oridinal_position) + ","
-            lPasswordCountsString += str(lPasswordMask.count_passwords_represented) + ","
-            lCumulativeCounts += lPasswordMask.count_passwords_represented
-            lCumulativeCountsString += str(lCumulativeCounts) + ","
-
+        lData = self.__export_password_counts()
 
         lFileHandle = open(pFileName, mode="w")
-        lFileHandle.write(lOrdinalPositionsString[0:lOrdinalPositionsString.__len__()-1] + "\n")
-        lFileHandle.write(lPasswordCountsString[0:lPasswordCountsString.__len__()-1] + "\n")
-        lFileHandle.write(lCumulativeCountsString[0:lCumulativeCountsString.__len__()-1] + "\n")
+        lFileHandle.write(lData[0])
+        lFileHandle.write(lData[1])
+        lFileHandle.write(lData[2])
         lFileHandle.flush()
         lFileHandle.close()
+
+
+    def export_password_counts_to_stdout(self: object) -> None:
+
+        lData = self.__export_password_counts()
+
+        print(lData[0])
+        print(lData[1])
+        print(lData[2])
 
 
     def get_analysis(self: object, pPercentile:float = 1.00) -> None:
