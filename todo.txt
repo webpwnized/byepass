@@ -3,4 +3,4 @@ Table of cracking results display at end
 Prince mode
 Have I been pwned passwords
 Add more descriptive comment to "Finished"
-Add percentage cracked output at end of run
+Add top 10000 german words
