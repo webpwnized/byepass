@@ -98,9 +98,9 @@ def parse_arg_techniques(pArgTechniques: str) -> list:
     return lTechniques
 
 
-def print_closing_message(pNumberHashes: int, pElaspsedTime: time.struct_time) -> None:
+def print_closing_message(pNumberHashes: int, pElaspsedTime: time.struct_time, pNumberPasswordsPOTFileAtStart: int) -> None:
 
-        lNumberPasswords = count_passwords_in_jtr_pot_file()
+        lNumberPasswords = count_passwords_in_jtr_pot_file() - pNumberPasswordsPOTFileAtStart
 
         try:
             lPercent = round(lNumberPasswords / pNumberHashes * 100, 2)
@@ -159,10 +159,11 @@ def count_hashes_in_input_file(pHashFile: str) -> int:
 
 def count_passwords_in_jtr_pot_file() -> int:
 
-        lLines = 0
+    lLines = 0
+    if os.path.exists(JTR_POT_FILE_PATH):
         for lLine in open(JTR_POT_FILE_PATH):
             lLines += 1
-        return lLines
+    return lLines
 
 
 def rm_jtr_pot_file() -> None:
@@ -186,6 +187,9 @@ def run_jtr_baseword_mode(pHashFile: str, pBaseWords: str, pHashFormat: str,
         lBaseWordsFile.write("%s\n" % lWord)
     lBaseWordsFile.flush()
     lBaseWordsFile.close()
+    run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist="basewords/basewords.txt", pRule="Best126",
+                          pHashFormat=pHashFormat, pVerbose=pVerbose, pDebug=pDebug,
+                          pPassThrough=pPassThrough, pNumberHashes=pNumberHashes)
     run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist="basewords/basewords.txt", pRule="OneRuleToRuleThemAll",
                           pHashFormat=pHashFormat, pVerbose=pVerbose, pDebug=pDebug,
                           pPassThrough=pPassThrough, pNumberHashes=pNumberHashes)
@@ -368,96 +372,104 @@ def run_jtr_prayer_mode(pHashFile: str, pMethod: int, pHashFormat: str,
         lCmdArgs.append("--wordlist=dictionaries/top-10000-spanish-words.txt")
         lCmdArgs.append("--rules=best126")
     elif pMethod == 12:
+        if pVerbose: print("[*] Starting mode: Wordlist top-10000-german-words.txt Rule Best126")
+        lCmdArgs.append("--wordlist=dictionaries/top-10000-german-words.txt")
+        lCmdArgs.append("--rules=best126")
+    elif pMethod == 13:
         if pVerbose: print("[*] Starting mode: Wordlist sports-related-words.txt Rule Best126")
         lCmdArgs.append("--wordlist=dictionaries/sports-related-words.txt")
         lCmdArgs.append("--rules=best126")
-    elif pMethod == 13:
+    elif pMethod == 14:
         if pVerbose: print("[*] Starting mode: Wordlist bible.txt Rule Best126")
         lCmdArgs.append("--wordlist=dictionaries/bible.txt")
         lCmdArgs.append("--rules=best126")
-    elif pMethod == 14:
+    elif pMethod == 15:
         if pVerbose: print("[*] Starting mode: Wordlist persons-names.txt Rule Best126")
         lCmdArgs.append("--wordlist=dictionaries/persons-names.txt")
         lCmdArgs.append("--rules=best126")
-    elif pMethod == 15:
+    elif pMethod == 16:
         if pVerbose: print("[*] Starting mode: Wordlist other-base-words.txt Rule Best126")
         lCmdArgs.append("--wordlist=dictionaries/other-base-words.txt")
         lCmdArgs.append("--rules=best126")
-    elif pMethod == 16:
+    elif pMethod == 17:
         if pVerbose: print("[*] Starting mode: Wordlist places.txt Rule Best126")
         lCmdArgs.append("--wordlist=dictionaries/places.txt")
         lCmdArgs.append("--rules=best126")
-    elif pMethod == 17:
+    elif pMethod == 18:
         if pVerbose: print("[*] Starting mode: Wordlist keyboard-patterns.txt Rule Best126")
         lCmdArgs.append("--wordlist=dictionaries/keyboard-patterns.txt")
         lCmdArgs.append("--rules=best126")
 
     # Level 3: Best dictionaries with all the rules
-    elif pMethod == 18:
+    elif pMethod == 19:
         if pVerbose: print("[*] Starting mode: Wordlist top-10000-english-words.txt Rule OneRuleToRuleThemAll")
         lCmdArgs.append("--wordlist=dictionaries/top-10000-english-words.txt")
         lCmdArgs.append("--rules=oneruletorulethemall")
-    elif pMethod == 19:
+    elif pMethod == 20:
         if pVerbose: print("[*] Starting mode: Wordlist top-10000-spanish-words.txt Rule OneRuleToRuleThemAll")
         lCmdArgs.append("--wordlist=dictionaries/top-10000-spanish-words.txt")
         lCmdArgs.append("--rules=oneruletorulethemall")
-    elif pMethod == 20:
+    elif pMethod == 21:
+        if pVerbose: print("[*] Starting mode: Wordlist top-10000-german-words.txt Rule OneRuleToRuleThemAll")
+        lCmdArgs.append("--wordlist=dictionaries/top-10000-german-words.txt")
+        lCmdArgs.append("--rules=oneruletorulethemall")
+    elif pMethod == 22:
         if pVerbose: print("[*] Starting mode: Wordlist sports-related-words.txt Rule OneRuleToRuleThemAll")
         lCmdArgs.append("--wordlist=dictionaries/sports-related-words.txt")
         lCmdArgs.append("--rules=oneruletorulethemall")
-    elif pMethod == 21:
+    elif pMethod == 23:
         if pVerbose: print("[*] Starting mode: Wordlist bible.txt Rule OneRuleToRuleThemAll")
         lCmdArgs.append("--wordlist=dictionaries/bible.txt")
         lCmdArgs.append("--rules=oneruletorulethemall")
-    elif pMethod == 22:
+    elif pMethod == 24:
         if pVerbose: print("[*] Starting mode: Wordlist persons-names.txt Rule OneRuleToRuleThemAll")
         lCmdArgs.append("--wordlist=dictionaries/persons-names.txt")
         lCmdArgs.append("--rules=oneruletorulethemall")
-    elif pMethod == 23:
+    elif pMethod == 25:
         if pVerbose: print("[*] Starting mode: Wordlist other-base-words.txt Rule OneRuleToRuleThemAll")
         lCmdArgs.append("--wordlist=dictionaries/other-base-words.txt")
         lCmdArgs.append("--rules=oneruletorulethemall")
-    elif pMethod == 24:
+    elif pMethod == 26:
         if pVerbose: print("[*] Starting mode: Wordlist places.txt Rule OneRuleToRuleThemAll")
         lCmdArgs.append("--wordlist=dictionaries/places.txt")
         lCmdArgs.append("--rules=oneruletorulethemall")
-    elif pMethod == 25:
+    elif pMethod == 27:
         if pVerbose: print("[*] Starting mode: Wordlist keyboard-patterns.txt Rule OneRuleToRuleThemAll")
         lCmdArgs.append("--wordlist=dictionaries/keyboard-patterns.txt")
         lCmdArgs.append("--rules=oneruletorulethemall")
 
     # Level 4: Big dicitonaries with best rules
-    elif pMethod == 26:
+    elif pMethod == 28:
         if pVerbose: print("[*] Starting mode: Wordlist all-english-words.txt Rule Best126")
         lCmdArgs.append("--wordlist=dictionaries/all-english-words.txt")
         lCmdArgs.append("--rules=best126")
-    elif pMethod == 27:
+    elif pMethod == 29:
         if pVerbose: print("[*] Starting mode: Wordlist all-spanish-words.txt Rule Best126")
         lCmdArgs.append("--wordlist=dictionaries/all-spanish-words.txt")
         lCmdArgs.append("--rules=best126")
-    elif pMethod == 28:
+    elif pMethod == 30:
         if pVerbose: print("[*] Starting mode: Wordlist all-german-words.txt Rule Best126")
         lCmdArgs.append("--wordlist=dictionaries/all-german-words.txt")
         lCmdArgs.append("--rules=best126")
-    elif pMethod == 29:
+    elif pMethod == 31:
         if pVerbose: print("[*] Starting mode: Wordlist all-french-words.txt Rule Best126")
         lCmdArgs.append("--wordlist=dictionaries/all-french-words.txt")
         lCmdArgs.append("--rules=best126")
 
     # Level 5: Big dictionaries with all the rules
-    elif pMethod == 30:
+    elif pMethod == 32:
         if pVerbose: print("[*] Starting mode: Wordlist all-english-words.txt Rule OneRuleToRuleThemAll")
         lCmdArgs.append("--wordlist=dictionaries/all-english-words.txt")
         lCmdArgs.append("--rules=oneruletorulethemall")
-    elif pMethod == 31:
+    elif pMethod == 33:
         if pVerbose: print("[*] Starting mode: Wordlist all-spanish-words.txt Rule OneRuleToRuleThemAll")
         lCmdArgs.append("--wordlist=dictionaries/all-spanish-words.txt")
         lCmdArgs.append("--rules=oneruletorulethemall")
-    elif pMethod == 32:
+    elif pMethod == 34:
         if pVerbose: print("[*] Starting mode: Wordlist all-german-words.txt Rule OneRuleToRuleThemAll")
         lCmdArgs.append("--wordlist=dictionaries/all-german-words.txt")
         lCmdArgs.append("--rules=oneruletorulethemall")
-    elif pMethod == 33:
+    elif pMethod == 35:
         if pVerbose: print("[*] Starting mode: Wordlist all-french-words.txt Rule OneRuleToRuleThemAll")
         lCmdArgs.append("--wordlist=dictionaries/all-french-words.txt")
         lCmdArgs.append("--rules=oneruletorulethemall")
@@ -716,6 +728,7 @@ Use pass-through to pass fork command to JTR\n\n
     lTechniques = parse_arg_techniques(lArgs.techniques)
 
     lNumberHashes = count_hashes_in_input_file(pHashFile=lHashFile)
+    lNumberPasswordsPOTFileAtStart = count_passwords_in_jtr_pot_file()
 
     if lVerbose:
         lStartTime = time.time()
@@ -735,28 +748,28 @@ Use pass-through to pass fork command to JTR\n\n
                                 pNumberHashes=lNumberHashes)
 
         # Best dictionaries, best rules
-        for i in range(10,18,1):
+        for i in range(10,19,1):
             run_jtr_prayer_mode(pHashFile=lHashFile, pMethod=i, pHashFormat=lHashFormat,
                                 pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through,
                                 pNumberHashes=lNumberHashes)
 
     if Techniques.BEST_DICTIONARIES_ALL_RULES.value in lTechniques:
         # Best dictionaries, a lot of rules
-        for i in range(18,26,1):
+        for i in range(19,28,1):
             run_jtr_prayer_mode(pHashFile=lHashFile, pMethod=i, pHashFormat=lHashFormat,
                                 pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through,
                                 pNumberHashes=lNumberHashes)
 
     if Techniques.ALL_DICTIONARIES_BEST_RULES.value in lTechniques:
         # Big dictionaries, best rules
-        for i in range(26,30,1):
+        for i in range(28,32,1):
             run_jtr_prayer_mode(pHashFile=lHashFile, pMethod=i, pHashFormat=lHashFormat,
                                 pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through,
                                 pNumberHashes=lNumberHashes)
 
     if Techniques.ALL_DICTIONARIES_ALL_RULES.value in lTechniques:
         # Big dictionaries, a lot of rules
-        for i in range(30,34,1):
+        for i in range(32,36,1):
             run_jtr_prayer_mode(pHashFile=lHashFile, pMethod=i, pHashFormat=lHashFormat,
                                 pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through,
                                 pNumberHashes=lNumberHashes)
@@ -772,4 +785,4 @@ Use pass-through to pass fork command to JTR\n\n
     if lVerbose:
         lEndTime = time.time()
         lElaspsedTime = time.gmtime(lEndTime - lStartTime)
-        print_closing_message(pNumberHashes=lNumberHashes, pElaspsedTime=lElaspsedTime)
+        print_closing_message(pNumberHashes=lNumberHashes, pElaspsedTime=lElaspsedTime, pNumberPasswordsPOTFileAtStart=lNumberPasswordsPOTFileAtStart)
