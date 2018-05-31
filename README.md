@@ -13,13 +13,13 @@ A video tutorial is available on the webpwnized YouTube channel at the following
 
 # Setup
 
-#### **Step 1**: Install John the Ripper
+#### Step 1: Install John the Ripper
 
 A video tutorial is available on the webpwnized YouTube channel at the following link.
 
 [How to Install John the Ripper (YouTube)](https://www.youtube.com/watch?v=7R10QN_uCh0)
 
-####**Step 2**: Change into desired directory, clone the project and decompress passwords-hailmary.txt.zip
+#### Step 2: Change into desired directory, clone the project and decompress passwords-hailmary.txt.zip
 
 **Example:**
 
@@ -30,9 +30,9 @@ A video tutorial is available on the webpwnized YouTube channel at the following
     unzip passwords-hailmary.txt.zip
     cd ..
 
-####Step 3: Verify config.py is properly configured 
+#### Step 3: Verify config.py is properly configured 
 
-#####NOTE: Read and understand the important note above labeled "Important"
+##### NOTE: Read and understand the important note above labeled "Important"
 
 Assuming John the Ripper is installed in the /opt directory, the values should be the following:
 
@@ -65,7 +65,7 @@ Then the config.py should contain the following
     JTR_EXECUTABLE_FILE_PATH = "/opt/JohnTheRipper/run/john"
     JTR_POT_FILE_PATH = "/opt/JohnTheRipper/run/john.pot"
 
-####**Step 4**: Tell john the location of byepass's word mangling rules 
+#### Step 4: Tell john the location of byepass's word mangling rules 
 
 The rule are located in <byepass directory>/rules/byepass.conf. To
 tell john the location, add the following line to john.conf.
