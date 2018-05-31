@@ -1,23 +1,49 @@
+# Important
+
+You should use ByePass with the latest build of John the Ripper. You may use ByePass with the
+default version of JTR, but many formats and rules will not work. The default version of JTR
+does not include these features. Therefore, you should be sure use ByePass with the latest 
+build of John the Ripper.
+
+### How to install John the Ripper on Kali Linux Rolling
+
+A video tutorial is available on the webpwnized YouTube channel at the following link.
+
+[How to Install John the Ripper (YouTube)](https://www.youtube.com/watch?v=7R10QN_uCh0)
+
 # Setup
 
-**Step 1: Change into desired directory, clone the project and decompress passwords-hailmary.txt.zip.**
+####**Step 1**: Install John the Ripper
+
+A video tutorial is available on the webpwnized YouTube channel at the following link.
+
+[How to Install John the Ripper (YouTube)](https://www.youtube.com/watch?v=7R10QN_uCh0)
+
+####**Step 2**: Change into desired directory, clone the project and decompress passwords-hailmary.txt.zip
 
 **Example:**
 
+    cd /opt
     git clone https://github.com/webpwnized/byepass.git
     cd bypass/passwords
     cat passwords-hailmary-1.txt.zip passwords-hailmary-2.txt.zip passwords-hailmary-3.txt.zip > passwords-hailmary.txt.zip
     unzip passwords-hailmary.txt.zip
+    cd ..
 
-**Step 2: Verify config.py is properly configured.** 
+####Step 3: Verify config.py is properly configured 
 
-**JTR_EXECUTABLE_FILE_PATH**: Filepath to the john executable. On
- Kali Linux Rolling this is "/usr/sbin/john" by default. If john is
- compiled natively, this path is usually <install directory>/john/run/john.
+#####NOTE: Read and understand the important note above labeled "Important"
 
-**JTR_POT_FILE_PATH**: Filepath of the john.pot file. On
- Kali Linux Rolling this is "/root/.john/john.pot" by default. If john is
- compiled natively, this path is usually <install directory>/john/run/john.
+Assuming John the Ripper is installed in the /opt directory, the values should be the following:
+
+    JTR_EXECUTABLE_FILE_PATH = "/opt/JohnTheRipper/run/john"
+    JTR_POT_FILE_PATH = "/opt/JohnTheRipper/run/john.pot"
+
+**JTR_EXECUTABLE_FILE_PATH**: Filepath to the john executable. If john is
+ compiled natively, this path is usually <install directory>/JohnTheRipper/run/john.
+
+**JTR_POT_FILE_PATH**: Filepath of the john.pot file. If john is
+ compiled natively, this path is usually <install directory>/JohnTheRipper/run/john.
 
 If unsure of location of the John the Ripper executable and pot file, try 
 
@@ -29,17 +55,17 @@ If unsure of location of the John the Ripper executable and pot file, try
 if locate finds john installed in the following
 
     which john
-    /usr/sbin/john
+    /opt/JohnTheRipper/run/john
 
     locate john.pot
-    /root/.john/john.pot
+    /opt/JohnTheRipper/run/john.pot
 
 Then the config.py should contain the following
 
-    JTR_EXECUTABLE_FILE_PATH = "/usr/sbin/john"
-    JTR_POT_FILE_PATH = "/root/.john/john.pot"
+    JTR_EXECUTABLE_FILE_PATH = "/opt/JohnTheRipper/run/john"
+    JTR_POT_FILE_PATH = "/opt/JohnTheRipper/run/john.pot"
 
-**Step 3: Tell john the location of byepass's word mangling rules** 
+####**Step 4**: Tell john the location of byepass's word mangling rules 
 
 The rule are located in <byepass directory>/rules/byepass.conf. To
 tell john the location, add the following line to john.conf.
@@ -56,15 +82,17 @@ into john.conf
     .include "/opt/byepass/rules/OneRuleToRuleThemAll.rule"
     .include "/opt/byepass/rules/Best126.rule"
 
-Tips: To find a good location in john.conf to place the line, search
-for ".include" and place the new include line near other include lines. The gedit
+**Tips**: 
+* To find a good location in john.conf to place the line, search
+for ".include" and place the new include line near other include lines.
+* The gedit
 editor is easy to use.
 
 # Usage
 
 Usage for passtime and byepass
 
-# PassTime
+## PassTime
 
 **Automate statistical analysis of passwords in support of password cracking tasks**
 
@@ -106,7 +134,7 @@ These same values can be output to a file with the addition of the -o/--output-f
 
     python3 passtime.py -v -d -i passwords.txt -o raw-data.csv
 
-# ByePass
+## ByePass
 
 **Automate the most common password cracking tasks**
 
