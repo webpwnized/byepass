@@ -88,7 +88,3 @@ if __name__ == '__main__':
         else:
             if lArgs.verbose: print("[*] Password counts per mask")
             lPasswordStats.export_password_counts_to_stdout()
-
-
-
-

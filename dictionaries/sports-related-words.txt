@@ -1,10 +1,11 @@
-49-ers
+49
+49ers
 76ers
 aalborg
 aalen
 aalesunds
 aamu
-aaniiih nakoda college
+aaniiih
 aarhus
 aba
 abac
@@ -16,13 +17,11 @@ abbreviation
 abconline
 aberdeen
 abilene
-abilene christian wildcats
 ability
 abington
 about
 above
 abraham
-abraham baldwin agricultural college
 abseiling
 ac
 academical
@@ -58,7 +57,6 @@ actually
 ad
 ada
 adams
-adams state university
 adanaspor
 adaptation
 adaptations
@@ -139,19 +137,17 @@ aid
 aigles
 aik
 aiken
-aiken technical college
 aikido
 aikijujutsu
 aim
 aiming
-aims community college
-ain't
-ain'ts
+aims
+aint
+aints
 air
 airborne
 aircraft
 airforce
-air force falcons
 airhockey
 airplanes
 airracing
@@ -166,35 +162,24 @@ akbible
 akhisarspor
 akhmat
 akron
-akron zips
 al
-al.
-alababma crimson tide
+alababma
 alabama
-alabama agricultural and mechanical university
-alabama a&m bulldogs
-alabama crimson tide
-alabama-huntsville
-alabama state hornets
-alabama state university
 alai
-alamance community college
-alamo community college 
+alamance
+alamo
+alamogordo
 alamosa
 alanyaspor
 alaska
-alaska-anchorage
-alaska-fairbanks
 alaskapacific
 alasu
 alavés
 albacete
 albans
 albany
-albany,
-albany great danes
-albany state university
-albany technical college
+albemarle
+albert
 alberta
 albertus
 albion
@@ -204,33 +189,27 @@ albright
 albuquerque
 alcorcón
 alcorn
-alcorn state university
 aldershot
 aldershottown
 alderson
-alderson-broaddus
 aldosivi
-a-league
 alexander
 alexandra
 alexandria
-alexandria technical and community college
 alfred
 alfredadler
 alfredstate
-alfred state college
 alianza
 alice
 aliens
 aliso
 alka
 all
-allegany college of maryland
+allegany
 allegedly
 allegheny
 allen
 allencollege
-allen community college
 allendale
 allentown
 allenuniversity
@@ -242,7 +221,6 @@ allisons
 alliterative
 allocated
 allowed
-all-star
 allsvenskan
 allusion
 alma
@@ -252,54 +230,51 @@ almería
 along
 alouettes
 aloysius
-alpena community college
+alpena
 alpine
 alpineskiing
 alpinism
 als
 also
 altach
-altamaha technical college
+altamaha
 alternately
 alternative
 although
 alto
+alton
 altoona
 altrincham
 aluminium
 alvernia
 alverno
-alvin community college
+alvin
 always
 am
-a&m
-amarillo college
+amarillo
 amateur
-amazin'mets
-amazin's
+amazinmets
+amazins
 ambassador
 ambassadors
 amber
 amberton
+ambler
 ambrose
 ambs
 amcats
-am-corpus
 america
 américa
 american
 americanfootball
 americanhandball
 americans
-american samoa community college
-american university eagles
-america'steam
+americasteam
 americus
 ames
 amherst
 amiens
 amkar
-am-kingsville
 among
 amphetamine
 amridge
@@ -324,9 +299,7 @@ anesthesia
 angel
 angeles
 angelina
-angelina college
 angelo
-angelo state university
 angels
 angers
 angles
@@ -340,15 +313,13 @@ ankle
 ann
 anna
 annamaria
-annandale-on-hudson
+annandale
 annapolis
 anne
-anne arundel community college
 annual
 annville
 ano
-anoka-ramsey community college
-anoka technical college
+anoka
 another
 anselm
 antalyaspor
@@ -380,8 +351,6 @@ apaches
 apart
 apostles
 appalachian
-appalachian state mountaineers
-appalachian state university
 apparatus
 appear
 appearance
@@ -402,7 +371,7 @@ aquatics
 aquinas
 aquinascollege
 arabia
-arapahoe community college
+arapahoe
 arbor
 arborists
 arcadia
@@ -432,28 +401,11 @@ argos
 argosy
 argyle
 arizona
-arizona cardinals
 arizonadiamondbacks
-arizona diamondbacks
-arizona state sun devils
-arizona state university
-arizona sun devils
-arizona western college
-arizona wildcats
 arka
 arkadelphia
 arkansas
 arkansasbaptist
-arkansas-monticello
-arkansas northeastern college[1]
-arkansas-pine
-arkansas razorbacks
-arkansas state red wolves
-arkansas state university
-arkansas state university-beebe
-arkansas state university-mountain home
-arkansas state university-newport
-arkansas tech university
 arlington
 arm
 armed
@@ -462,11 +414,8 @@ armored
 armour
 arms
 armstrong
-armstrong atlantic state university
 armwrestling
 army
-army black knights 
-army west point black knights
 arnis
 arnold
 arouca
@@ -477,7 +426,6 @@ arrow
 arrows
 arsenal
 art
-art,
 artacademy
 artcenter
 artes
@@ -487,23 +435,21 @@ artificial
 artinstitutes
 artistic
 arts
+arundel
 as
-a's
 asa
 asbury
 asburyseminary
 ascoli
 ash
 asheville
-asheville–buncombe technical community college
 ashford
 ashland
-ashland community and technical college
 ashtabula
 asia
 asian
 asnl
-asnuntuck community college
+asnuntuck
 aspect
 aspects
 asphalt
@@ -520,8 +466,6 @@ astros
 asurams
 asymmetric
 at
-a.t.
-a&t
 atalanta
 atb
 atchison
@@ -529,27 +473,20 @@ ath
 athenas
 athenians
 athens
-athens state university
-athens technical college
 athlete
 athletes
 athletic
 athletics
 athyn
 atiker
-atl.
+atl
 atlanta
 atlantabraves
-atlanta braves
 atlantafalcons
-atlanta falcons
 atlantahawks
-atlanta hawks
-atlanta technical college
 atlantic
 atlas
 atlético
-atlético-go
 atop
 atsu
 attach
@@ -563,32 +500,23 @@ attract
 attribution
 atv
 auburn
-auburn-montgomery
-auburn tigers
-auburn university
-auburn university at montgomery
-auburn university system
 audax
 aue
+aug
 auggies
 augie
 augsburg
 augusta
 augustana
-augusta technical college
 augustine
 augustines
-augustine's
 aum
 aupr
 aurora
 aussie
 austin
 austincollege
-austin community college
 austingrad
-austin peay governors
-austin peay state university
 austinseminary
 austintexas
 australia
@@ -606,7 +534,6 @@ autoracing
 auxerre
 avaí
 available
-available.
 avalanche
 avant
 avanzados
@@ -617,6 +544,7 @@ avemaria
 avengers
 average
 averett
+avery
 aves
 aviation
 avila
@@ -641,6 +569,7 @@ ba
 babson
 baby
 babybulls
+bac
 back
 background
 backs
@@ -657,15 +586,12 @@ baird@mail
 baja
 baker
 bakersfield
-bakersfield roadrunners
 bakeru
 balance
 balancebeam
 balances
 bald
 baldwin
-baldwin-wallace
-baldwin–wallace
 balkline
 balklines
 ball
@@ -675,14 +601,9 @@ ballooning
 ballroom
 ballroomdance
 balls
-balls:
-ball state cardinals
-ball state university
 balompié
 baltimore
-baltimore city community college
 baltimoreorioles
-baltimore orioles
 baltimoreravens
 bamboo
 banana
@@ -695,7 +616,7 @@ banger
 bangladesh
 bangor
 banjopickers
-banjopickin'
+banjopickin
 bank
 banked
 banking
@@ -706,20 +627,21 @@ baptist
 baptistcollege
 bar
 baraboo
+baraboo/sauk
 barbara
 barbell
 barbells
-barber-scotia
+barber
 barbourville
 barcelona
 barclay
 bard
 bare
 barefoot
-baresan university
+baresan
 bari
 barnard
-barnes-jewish
+barnes
 barnesjewishcollege
 barnet
 barnsley
@@ -735,12 +657,11 @@ barrels
 barre/scranton
 barriers
 barrington
+barron
 barry
 bars
 barton
-barton community college
 baruch
-baruch college
 başakşehir
 base
 baseball
@@ -759,11 +680,9 @@ bastia
 bastyr
 bat
 bates
-bates technical college
 batesville
 batin
 baton
-baton rouge community college
 batons
 batontwirling
 bats
@@ -774,24 +693,20 @@ batting
 battle
 battlers
 battlin
-battlin'bucs
+battlinbucs
 battling
 bauder
 bavarian
 bay
 bayam
 baybears
-bay de noc community college
 bayer
 bayern
 bayhawks
 baylor
-baylor bears
-bay mills community college
 baypath
 baysox
 bball
-b-ball
 bc
 bchs
 be
@@ -800,6 +715,7 @@ beachhandball
 beachrugby
 beachsoccer
 beachvolleyball
+beacom
 beacon
 beaconcollege
 beacons
@@ -811,7 +727,6 @@ bearcats
 bearkats
 bears
 beaufort
-beaufort county community college
 beaumont
 beaver
 beavers
@@ -820,6 +735,7 @@ became
 because
 becker
 becomes
+beebe
 beef
 been
 beermakers
@@ -845,16 +761,12 @@ bellarmine
 belles
 belleville
 bellevue
-bellevue college
 bellingham
-bellingham technical college
 bellmare
 bells
 bellyflop
 belmont
 belmontabbeycollege
-belmont bruins
-belmont college
 beloit
 belong
 belonged
@@ -863,7 +775,6 @@ belt
 belton
 bemidji
 bemidjistate
-bemidji state university
 bena
 bench
 benchpress
@@ -882,20 +793,22 @@ benjamin
 bennett
 bennington
 bentley
+benton
 berea
 berkeley
 berkeleycollege
 berklee
 berks
 berkshire
-berkshire community college
 berlin
 berman
 bernardino
 berrichonne
 berry
+berthold
 beşiktaş
 best
+bet
 bethany
 bethanylb
 bethanyseminary
@@ -907,18 +820,15 @@ bethelu
 bethesda
 bethlehem
 bethune
-bethune-cookman
-bethune-cookman wildcats
 betis
 better
 between
 beveren
 beverly
-bevill state community college
+bevill
 bfit
 bgsp
 bgsu
-bgsu firelands
 bhsu
 bhutan
 białystok
@@ -935,7 +845,6 @@ bid
 biddeford
 bielefeld
 big
-big bend community college
 bigblack
 bigblue
 bigbluewreckingcrew
@@ -947,7 +856,6 @@ biggreen
 bigorange
 bigred
 bigredmachine
-big sandy community and technical college
 bigten
 bigviolet
 bigwhite
@@ -965,27 +873,22 @@ bills
 biloxi
 bindings
 binghamton
-binghamton bearcats
-binghamton university
 biola
+biomedical
 biosciences
+biotechnology
 bird
-bird'
 birds
 biribol
 birmingham
 birminghamcity
-birmingham-southern
-birmingham–southern
 biscuits
 bishop
 bishops
-bishop state community college
 bismarck
-bismarck state college
 bison
 bisons
-bitterroot college of the university of montana
+bitterroot
 biyo
 bk
 black
@@ -994,18 +897,15 @@ blackbirds
 blackburn
 blackburnrovers
 blackcats
-blackfeet community college
-black hawk college
+blackfeet
+blackhawk
 blackhawks
-blackhawk technical college
-black hills state university
 blackpool
-black river technical college
 blacksburg
 blacksox
 blade
 bladed
-bladen community college
+bladen
 blades
 blading
 blaine
@@ -1015,14 +915,13 @@ blanca
 blancos
 blast
 blazers
-blessing-rieman
+blessing
 blessyouboys
 bleu
 blier
 blind
 blindcricket
 blinn
-blinn college
 blitz
 block
 blocking
@@ -1033,28 +932,19 @@ bloods
 bloomfield
 bloomington
 bloomsburg
-bloomsburg university of pennsylvania
 bloomu
 blossoms
 blount
 blue
-'blue
-blue'
 blueandgold
 bluebirds
-blue bombers
 blueboys
 bluecrew
 bluefield
 bluefieldstate
-bluefield state college
-bluegrass community and technical college
+bluegrass
 bluejays
-blue jays
-blue mountain community college
 bluenotes
-blue ridge community and technical college
-blue ridge community college
 blues
 blueshirts
 bluewave
@@ -1103,8 +993,6 @@ boilermakers
 boiling
 boise
 boisestate
-boise state broncos
-boise state university
 bolas
 boldklub
 boli
@@ -1137,22 +1025,17 @@ boricua
 boricuacollege
 boro
 borough
-borough of manhattan community college
 borussia
 bosox
 bossaball
 boßeln
 bossier
-bossier parish community college
 boston
 bostonbruins
 bostonceltics
-boston college eagles
 bostonconservatory
 bostonredsox
-boston red sox
 bostonunited
-boston university terriers
 botafogo
 both
 bothell
@@ -1171,12 +1054,9 @@ bow
 bowdoin
 bowie
 bowiestate
-bowie state university
 bowl
 bowler
 bowling
-bowling green falcons
-bowling green state university
 bowls
 bows
 box
@@ -1197,7 +1077,6 @@ bradenton
 bradford
 bradfordcity
 bradley
-bradley braves
 braga
 brahmas
 brakes
@@ -1217,7 +1096,7 @@ bravos
 bray
 brazil
 brazilian
-brazosport college
+brazosport
 brcn
 breakaway
 breakdance
@@ -1246,30 +1125,26 @@ brewers
 brewhahs
 brewing
 brewton
-brewton-parker
 briar
 briarcliff
 briarcliffe
-bridgemont community and technical college
+bridgemont
 bridgeport
 bridges
 bridgeview
 bridgew
 bridgewater
-bridgewater state university
 brigham
 brighton
-brighton&hovealbion
 bring
 brisbane
 brisbanebroncos
 brisbanelions
 bristol
 bristolcity
-bristol community college
 bristolrovers
 britain
-britain's
+britains
 british
 britishcolumbialions
 britons
@@ -1280,7 +1155,6 @@ broadstreetbellies
 broadstreetbullies
 brock
 brockport
-brockport:
 broken
 brom
 bromwich
@@ -1288,53 +1162,45 @@ bronc
 broncbusters
 bronchos
 broncos
-'broncos'
+broncoscincinnati
 broncs
 brøndby
 bronx
 bronxbombers
-bronx community college
-bronx's
+bronxs
 bronxville
 bronxzoo
-bronze medal
+bronze
 brook
 brookhaven
-brookhaven college
 brookings
 brookline
 brooklyn
-brooklyn college
-brooklyn nets
 brookville
 broom
 broomball
+broome
 broons
 brothers
 brouhaha
 broward
-broward college
 brown
-brown bears
 brownies
 browns
 brownsville
 brownwood
 brugge
 bruins
-bruk-bet
+bruk
 brummagem
 brunswick
-brunswick community college
 brutal
 bryan
 bryant
-bryant bulldogs
 bryn
 brynathyn
 brynmawr
 bs
-b's
 bsc
 bubble
 bucaramanga
@@ -1346,22 +1212,17 @@ bucket
 buckeyes
 buckhannon
 bucknell
-bucknell bison
 buckos
 bucks
 bucksaw
-bucks county community college
 bucs
 buds
 buena
 buffalo
 buffalobills
-buffalo bills
-buffalo bulls
 buffaloes
 buffalosabres
 buffalostate
-buffalo state college
 buies
 build
 builders
@@ -1369,7 +1230,6 @@ built
 bulgaria
 bull
 bulldogs
-'bulldogs'
 bullets
 bullfighting
 bullies
@@ -1379,10 +1239,11 @@ bulls
 bummers
 bumperpool
 bunch
+buncombe
 bundesliga
 bungeejumping
 bungles
-bunker hill community college
+bunker
 bunnies
 bunnock
 bunt
@@ -1403,9 +1264,6 @@ business
 but
 butchers
 butler
-butler bulldogs
-butler community college
-butler county community college
 butte
 butterfly
 buzkashi
@@ -1413,12 +1271,9 @@ buzzards
 bx
 by
 byu
-byu cougars
-byu cougars 
 byuh
-byu-hawaiʻi
 byui
-c.
+c
 c4
 ca
 cabarrus
@@ -1441,47 +1296,20 @@ calbaptist
 calcio
 caldas
 caldwell
-caldwell community college & technical institute
 caledonian
 calf
 calgary
 calgarystampeders
 calhoun
-calhoun community college
 cali
 california
-california,
-california:
-california community college
-california golden bears
-california maritime academy
-california polytechnic state university, san luis obispo 
-california state polytechnic university, pomona
-california state university, bakersfield 
-california state university, channel islands 
-california state university, chico 
-california state university, dominguez hills 
-california state university, east bay 
-california state university, fresno 
-california state university, fullerton 
-california state university, long beach
-california state university, los angeles
-california state university, monterey bay
-california state university, northridge 
-california state university, sacramento 
-california state university, san bernardino
-california state university, san marcos
-california state university, stanislaus
-california university of pennsylvania
 calisthenics
 call
 called
 calling
 callutheran
 calpoly
-cal poly mustangs
 calstate
-cal state fullerton titans
 calstatela
 caltech
 calu
@@ -1501,14 +1329,12 @@ camelracing
 camels
 camera
 cameron
-cameron university
 cameroon
 cammag
 camogie
 camouflage
-camp.
+camp
 campbell
-campbell fighting camels
 campbellsville
 campdrafting
 campeche
@@ -1536,9 +1362,7 @@ caneball
 canes
 canicross
 canisius
-canisius golden griffins
 cankdeska
-cankdeska cikana community college
 canne
 cannonball
 cannoneers
@@ -1555,15 +1379,11 @@ canucks
 canyon
 canyoning
 cape
-cape cod community college
-cape fear community college
 capella
 capers
 capital
-capital community college
 capitals
 capitol
-capitol-college
 capoeira
 caps
 capsules
@@ -1572,6 +1392,7 @@ captains
 capture
 car
 carabins
+carbon
 carbondale
 carcass
 card
@@ -1587,23 +1408,19 @@ caribbean
 caribe
 caricatured
 carl
-carl albert state college
 carleton
 carlinville
 carlisle
 carlisleunited
 carlos
 carlow
-carl sandburg college
 carlton
 carltonfootballclub
 carmen
 carmines
 carnegie
 carolina
-carolina–greensboro
 carolinahurricanes
-carolina panthers
 carom
 caroming
 caroms
@@ -1613,7 +1430,6 @@ carriage
 carried
 carrier
 carroll
-carroll community college
 carrollton
 carrollu
 carrom
@@ -1621,27 +1437,23 @@ carry
 carrying
 cars
 carson
-carson-newman
-carteret community college
+carteret
 carterville
 carthage
 cartoon
 cary
 cascades
-cascadia college
+cascadia
 case
 casper
-casper college
 cast
 castine
 casting
 castle
 castleton
-castleton state college
 cat
 catamounts
 catawba
-catawba valley community college
 catch
 catcher
 catches
@@ -1649,7 +1461,6 @@ catching
 catchwrestling
 catchyshubby
 categories
-categories:
 catharine
 catharines
 cathedral
@@ -1666,7 +1477,7 @@ cavaliers
 cavs
 cayey
 Çaykur
-cayuga community college
+cayuga
 cazenovia
 cbcag
 cbts
@@ -1676,7 +1487,6 @@ cccb
 ccga
 ccis
 ccny
-c cont.
 ccsj
 ccsu
 ccuniversity
@@ -1684,10 +1494,9 @@ cd
 cdrewu
 cdsp
 ceaprc
-cecil college
+cecil
 cedar
 cedarcrest
-cedar valley college
 cedarville
 ceif
 celta
@@ -1700,40 +1509,17 @@ centenary
 centenarycollege
 center
 central
-central alabama community college
-central arizona college
-central arkansas bears
-central carolina community college
-central carolina technical college
 centralchristian
-central community college
-central connecticut state blue devils
-central connecticut state university
-central georgia technical college
-centralia college
-central lakes college
-central louisiana technical community college
-central maine community college
+centralia
 centralmethodist
-central michigan chippewas
-central michigan university
-central new mexico community college
-central ohio technical college
-central oregon community college
 centralpenn
-central piedmont community college
 centralstate
-central state university
-central texas college
-central virginia community college
-central washington university
-central wyoming college
 centre
 centres
 centro
 centuries
 century
-century college
+ceramics
 cerezo
 cerritos
 certain
@@ -1747,7 +1533,6 @@ cfl
 cfp
 chabot
 chadron
-chadron state college
 chaffey
 chairboys
 chairman
@@ -1764,7 +1549,7 @@ champlain
 champs
 chancellor
 chancelloru
-chandler-gilbert community college
+chandler
 change
 changed
 changes
@@ -1780,11 +1565,7 @@ chargers
 charleroi
 charles
 charleston
-charleston cougars
-charleston southern buccaneers
 charlotte
-charlotte 49ers
-charlotte hornets
 charlottesville
 charlottetown
 charlton
@@ -1797,11 +1578,7 @@ chasers
 chasing
 chatham
 chattahoochee
-chattahoochee technical college
-chattahoochee valley community college
 chattanooga
-chattanooga mocs
-chattanooga state community college
 chaves
 checkered
 checkers
@@ -1813,14 +1590,13 @@ chefs
 chelsea
 cheltenham
 cheltenhamtown
-chemeketa community college
+chemeketa
 chemnitzer
 cheney
 cherries
 cherry
 chesapeake
-chesapeake college
-cheshire's
+cheshires
 chess
 chest
 chester
@@ -1830,44 +1606,37 @@ chesterfield
 chestertown
 chestnut
 cheyney
-cheyney university of pennsylvania
 chiapas
 chiavari
 chicago
 chicagobears
-chicago bears
 chicagoblackhawks
 chicagobulls
-chicago bulls
 chicagocubs
-chicago cubs
-chicago state cougars
-chicago state university
 chicagowhitesox
-chicago white sox
 chicane
 chickasha
 chico
 chicó
 chicopee
 chief
-chief dull knife college
 chiefs
-chiefwahoo'stribe
+chiefwahoostribe
 chievo
 chihuahuas
+child
 children
-children's
+childrens
 chile
 chilean
+chillicothe
 china
 chinese
 chinlone
 chip
 chipola
-chipola college
+chippewa
 chippewas
-chippewa valley technical college
 chiropractic
 chisox
 chocolate
@@ -1885,7 +1654,6 @@ christi
 christian
 christians
 christopher
-christopher newport university
 chuckwagon
 church
 ciachef
@@ -1893,35 +1661,26 @@ ciencias
 ciis
 cikana
 cincinnati
-cincinnati bearcats
 cincinnatibengals
-cincinnati bengals
 cincinnatireds
-cincinnati reds
-cincinnati state technical and community college
 cinco
 circle
 circles
 circuit
 circuits
 circular
-cisco college
+cisco
 citadel
-citadel bulldogs
 citadins
 cite
 cities
 citizens
 cittadella
 city
-'city'
-city college at montana state university billings
-city college of new york
-city colleges of chicago
 citytech
 cityu
 ciudad
-clackamas community college
+clackamas
 claflin
 claim
 clair
@@ -1930,55 +1689,40 @@ clan
 clara
 claremont
 claremontmckenna
-claremont-mudd-scripps
 claremore
-clarendon college
+clarendon
 claret
 clarets
 clarion
-clarion university of pennsylvania
-clarion university of pennsylvania, venango
 clarita
 clark
-clark-atlanta
-clark college
 clarke
 clarks
 clarkson
 clarksoncollege
-clark state community college
 clarksville
 clarku
 classes
 classic
-clatsop community college
+clatsop
 clay
 claypigeonshooting
 clays
 clayton
-clayton state university
 clean
 cleanly
 clear
 clearances
+clearfield
 clearwater
 cleary
 cleats
 clemson
-clemson tigers
-clemson university
 clermont
 cleveland
 clevelandbrowns
-cleveland browns
 clevelandcavaliers
-cleveland cavaliers
-cleveland community college
 clevelandindians
-cleveland indians
-cleveland state community college
-cleveland state university
-cleveland state vikings
 cliff
 climb
 climbing
@@ -1986,7 +1730,6 @@ climbs
 clinic
 clinical
 clinton
-clinton community college
 clippers
 clock
 clockwise
@@ -1996,27 +1739,20 @@ closehauled
 closer
 cloth
 cloud
-cloud county community college
 clout
 clover
-clover park technical college
-clovis community college
+clovis
 club
 clubs
-club's
 clues
 cmich
 cmpr
 cnapan
 coach
-coahoma community college
+coahoma
 coahuila
 coast
 coastal
-coastal bend college
-coastal carolina chanticleers
-coastal carolina community college
-coastal carolina university
 coastalrowing
 cobbers
 cobblers
@@ -2024,65 +1760,45 @@ cobleskill
 cobras
 cobresal
 cochise
-cochise college
-coconino county community college
+coconino
 coconut
+cod
 code
 codes
 coe
 cofc
 coffeyville
-coffeyville community college
 cofo
 cogswell
 coined
 coker
 colby
-colby community college
-colby-sawyer
 colchester
 colchesterunited
 coleados
 colegio
 colgate
-colgate raiders
 collect
 collection
 collective
 collectively
 college
-college,
+college[1]
+college[4]
 college/capital
 collegeforcreativestudies
-college of agriculture and life sciences
-college of central florida
-college of charleston
-college of dupage
-college of eastern utah
-college of human ecology
+college(located
 collegeofidaho
-college of lake county
-college of menominee nation
-college of southern idaho
-college of southern maryland
-college of southern nevada
-college of southern nevada 
-college of staten island
-college of the albemarle
-college of the mainland
-college of the ouachitas[1]
-college of veterinary medicine
-college of western idaho
 colleges
 collegeville
 collegiate
-collin college
+collin
 collingwood
 collingwoodfootballclub
 collins
 colloquial
 collywobbles
-colo-colo
+colo
 colombia
 colombian
 colón
@@ -2091,26 +1807,13 @@ colonials
 color
 colorado
 coloradoavalanche
-colorado buffaloes
 coloradocollege
-colorado–colorado
-colorado community colleges online
-colorado-denver
-colorado mesa university
-colorado mountain college
-colorado northwestern community college
 coloradorockies
-colorado rockies
-colorado school of mines
-colorado state rams
-colorado state university
-colorado state university–pueblo 
 coloradotech
 colored
 colorful
 colors
 colostate
-colostate-pueblo
 colour
 coloured
 colours
@@ -2119,20 +1822,11 @@ colstate
 colts
 colum
 columbia
-columbia basin college
 columbiacollegesc
 columbia|dc
-columbia gorge community college
-columbia-greene
-columbia–greene community college
-columbia lions
-columbia state community college
 columbus
 columbusbluejackets
 columbus/greensburg
-columbus state community college
-columbus state university
-columbus technical college
 column
 columnist
 combat
@@ -2149,7 +1843,6 @@ comes
 comets
 command
 comment
-comment:
 commentator
 commerce
 commercial
@@ -2162,15 +1855,6 @@ communicate
 communism
 communists
 community
-community college of allegheny county
-community college of aurora
-community college of baltimore county
-community college of beaver county
-community college of denver
-community college of philadelphia
-community college of rhode island
-community college of the air force
-community college of vermont
 compacted
 compared
 compass
@@ -2200,9 +1884,7 @@ concept
 conception
 concord
 concordia
-concordia-ny
 concordiaselma
-concord university
 concrete
 conditioning
 conditions
@@ -2214,10 +1896,10 @@ conforama
 conncoll
 connected
 connecticut
-connecticut huskies
-connors state college
+connors
 conquerors
 conquistadors
+consa
 consecutive
 consecutively
 conservatorio
@@ -2229,11 +1911,13 @@ consisting
 consists
 consortium
 consume
+cont
 contact
 containing
 content
 contents
 contestants
+continent
 continentals
 continuous
 contreras
@@ -2243,18 +1927,16 @@ controlled
 converse
 convex
 conway
+conwell
 cookeville
 cookie
 cookman
 cooley
 cooper
-cooper medical school of rowan university 
 coordinated
 coors
-copiah-lincoln community college
+copiah
 coppin
-coppin state eagles
-coppin state university
 coral
 coraz
 corazón
@@ -2266,14 +1948,12 @@ coritiba
 cork
 corkball
 cornell
-cornell big red
 cornellcollege
 corner
 cornerback
 cornerstone
 cornhuskers
 corning
-corning community college
 cornish
 corps
 corpus
@@ -2285,7 +1965,7 @@ cortland
 cortuluá
 corvallis
 cosmos
-cossatot community college
+cossatot
 costa
 cote
 côte
@@ -2296,6 +1976,7 @@ cougar
 cougars
 could
 council
+councill
 count
 counter
 countries
@@ -2306,6 +1987,7 @@ courses
 coursing
 court
 court’
+courte
 cove
 covenant
 covenantseminary
@@ -2317,7 +1999,7 @@ covering
 cowboy
 cowboys
 cowgirls
-cowley county community college
+cowley
 cows
 cox
 coxcollege
@@ -2329,7 +2011,6 @@ cracovia
 cranbrook
 cranbrookart
 craven
-craven community college
 crawfordsville
 crawley
 crawleytown
@@ -2340,8 +2021,8 @@ creative
 creek
 creeking
 creighton
-creighton bluejays
 cremona
+crescent
 cresson
 crest
 crestview
@@ -2370,7 +2051,6 @@ crossbar
 crossbow
 crosscheck
 crosscountry
-cross country
 crosscountryrally
 crosscountryrunning
 crosscountryskiing
@@ -2380,7 +2060,7 @@ crossfit
 crossroads
 crossroadscollege
 crotone
-crowder college
+crowder
 crowleys
 crown
 crows
@@ -2393,23 +2073,22 @@ cruzeiro
 crys
 crystal
 crystalpalace
-c's
+cs
 csbsju
 cska
 cstm
+csu
 csub
 csuchico
 csuci
 csudh
 csueastbay
 csufresno
-csu–global campus 
 csulb
 csum
 csumb
 csun
 csuniv
-csun matadors
 csuohio
 csupomona
 csus
@@ -2419,6 +2098,7 @@ csustan
 ctschicago
 ctsfw
 ctsnet
+cu
 cuaa
 cub
 cubbies
@@ -2435,21 +2115,13 @@ cullowhee
 cultural
 culture
 culver
-culver-stockton
 cumberland
 cumberlands
 cumbria
 cumbrians
 cune
 cuny
-cuny,
-cuny graduate center
-cuny graduate school of journalism
-cuny school of law
-cuny school of professional studies
-cuny school of public health
 cup
-cu-portland
 cups
 curby
 curicó
@@ -2468,44 +2140,36 @@ cut
 cuthbert
 cutlery
 cutting
-cuyahoga community college
-c.w.
+cuyahoga
 cycle
 cycling
 cyclist
 cyclo
 cyclocross
 cyclones
+cyfair
 cylindrical
 czech
 d
-d.
 da
-dabney s. lancaster community college
+dabney
 dade
 dads
 daegu
 daemen
 dagenham
-dagenham&redbridge
 daggers
 dahlonega
 daily
 dakota
-dakota college at bottineau
-dakota county technical college
-dakota state university
 dale
+daley
 dalhousie
 dallas
-dallas county community college
 dallascowboys
-dallas cowboys
 dallasmavericks
-dallas mavericks
 dalton
 daltonstate
-dalton state college
 damage
 dame
 damnyankees
@@ -2522,8 +2186,6 @@ danger
 daniel
 danish
 danville
-danville area community college
-danville community college
 daraidahs
 darlington
 darmstadt
@@ -2531,15 +2193,12 @@ dart
 dartboard
 dartchery
 dartmouth
-dartmouth big green
 darts
 das
 dating
 daur
 davenport
 davidson
-davidson county community college
-davidson wildcats
 davie
 davis
 davisandelkins
@@ -2547,18 +2206,14 @@ davisny
 dawgs
 dawry
 dawson
-dawson community college
 day
 days
 dayspring
 dayton
 daytona
 daytonastate
-daytona state college
-dayton flyers
 dbacks
 dc
-d.c.
 de
 deacons
 dead
@@ -2593,18 +2248,11 @@ dekalb
 del
 deland
 delaware
-delaware county community college
-delaware fightin' blue hens
-delaware state hornets
-delaware state university
 delfines
-delgado community college
+delgado
 delhi
-del mar college
 delta
-delta college
 deltastate
-delta state university
 delval
 dembums
 demolition
@@ -2615,23 +2263,18 @@ demorest
 den
 denison
 denmark
-denmark technical college
 dentistry
 denton
 denver
 denverbroncos
-denver broncos
 denvercenter
 denvernuggets
-denver nuggets
-denver pioneers
 denverseminary
 depaul
-depaul blue demons
 depauw
 depending
 depicting
-depor.
+depor
 deportes
 deportiu
 deportivo
@@ -2649,10 +2292,8 @@ descending
 describe
 described
 design
-design,
 designated
 designed
-des moines area community college
 destroyers
 desu
 details
@@ -2662,13 +2303,9 @@ detractors3
 detractors8
 detroit
 detroitlions
-detroit lions
 detroitpistons
-detroit pistons
 detroitredwings
 detroittigers
-detroit tigers
-detroit titans
 developed
 developers
 device
@@ -2688,7 +2325,6 @@ dibbling
 dicas
 dickinson
 dickinsonstate
-dickinson state university
 diego
 difference
 different
@@ -2704,7 +2340,7 @@ dillon
 dimayor
 dimensions
 dinamo
-diné college
+diné
 dinos
 diplomats
 direct
@@ -2748,24 +2384,24 @@ divinity
 divisiÓn
 divisional
 divisÓn
-d'ivoire
+divoire
 dixie
-dixie state university
 dixon
 djurgårdens
 do
 doane
 dockers
+doctoral
 dodge
 dodgeball
-dodge city community college
 dodger
 dodgers
 dog
 doggies
 dogs
 doing
-'dolly
+dolibois
+dolly
 dollyblues
 dolphin
 dolphins
@@ -2773,9 +2409,9 @@ dolts
 dominguez
 dominican
 dominion
-domino's
+dominos
 domino’s
-doña ana community college
+doña
 donate
 doncaster
 doncasterrovers
@@ -2783,16 +2419,17 @@ done
 donetsk
 dons
 dont
-don't
 doomsday
 door
 dordt
 dortmund
+dothan
 double
 doubleblue
 doubleheader
 doubles
 douglas
+douglass
 dover
 dowling
 down
@@ -2809,13 +2446,11 @@ dragons
 dragracing
 drainage
 drake
-drake bulldogs
 dresden
 dressage
 dressing
 drew
 drexel
-drexel dragons
 dribble
 dribbling
 drifting
@@ -2836,6 +2471,7 @@ drunken
 drury
 dry
 dspt
+du
 duathlon
 dubbed
 dubious
@@ -2849,91 +2485,51 @@ dugout
 duhawks
 duisburg
 duke
-duke blue devils
 dukes
+dull
 duluth
 dumog
 dundalk
 dundee
 dunwoody
+dupage
 duquesne
-duquesne dukes
 durability
 durango
 durant
 duration
 durham
-durham technical community college
 during
 düsseldorf
 dustdevils
 dutch
-dutchess community college
+dutchess
 dutchmen
 dutchwomen
 dwci
 dye
-dyersburg state community college
+dyersburg
 dynamic
 dynamo
 e
 ea
 each
 eagles
-'eagles'
 eagles!
-eagles'
 earlham
 early
 earn
+earth
 earthquakes
 easily
 east
-east arkansas community college
-east carolina huskies
-east carolina pirates
-east carolina priates
-east carolina university
-east central college
-east central community college
-east central university
 easterbrook
 eastern
-'eastern
-eastern arizona college
-eastern connecticut state university 
 easternct
-eastern florida state college
-eastern gateway community college
-eastern idaho technical college
-eastern illinois panthers
-eastern illinois university 
-eastern iowa community college district
-eastern kentucky colonels
-eastern kentucky university
-eastern maine community college
-eastern michigan eagles
-eastern michigan university
-eastern new mexico university
-eastern oklahoma state college
-eastern oregon university
-eastern shore community college
-eastern virginia medical school 
-eastern washington eagles
-eastern washington university
-eastern west virginia community and technical college
-eastern wyoming college
 eastfield
-eastfield college
-east mississippi community college
 easton
 easts
-east st. louis community college center
-east stroudsburg university of pennsylvania
-east tennessee state buccaneers
-east tennessee state university
 eastwest
-east-west
 eater
 eating
 eau
@@ -2942,29 +2538,27 @@ ebbsfleetunited
 eberly
 eckerd
 ecok
+ecology
 ecpi
 ecsu
 ecuador
 eden
-edgecombe community college
+edgecombe
 edgewood
 edinboro
-edinboro university of pennsylvania
 edinburg
 edison
-edison community college(located in piqua, ohio)
 edit
 edited
 editorinchief
 edmond
-edmonds community college
+edmonds
 edmonton
 edmontoneskimos
 edu/
 education
 edward
 edwards
-edward's
 edwardsville
 eels
 efl
@@ -2982,7 +2576,6 @@ el
 elapsed
 elbow
 elbows
-el centro college
 elche
 electric
 element
@@ -2994,7 +2587,6 @@ elevation
 eleven
 elfsborg
 elgin
-elgin community college
 eliminate
 eliminated
 elis
@@ -3002,29 +2594,23 @@ elite
 eliteserien
 eliv
 elizabeth
-elizabeth city state university
 elizabethtown
-elizabethtown community and technical college
 elk
 elkins
 ellendale
 ellensburg
 ellis
-ellsworth community college
+ellsworth
 elmhurst
 elmira
 elms
 elon
 elongated
-elon phoenix
-el paso community college
 ely
 embankments
 emblem
 embraced
 embry
-embry-riddle
-embry–riddle
 emerson
 emich
 emitting
@@ -3035,11 +2621,9 @@ emory
 emphasized
 emphasizes
 empire
-empire state college
 employed
 empoli
 emporia
-emporia state university
 en
 enable
 encased
@@ -3066,7 +2650,6 @@ enmu
 enrollments
 entella
 enterprise
-enterprise state community college
 enters
 entire
 envigado
@@ -3086,8 +2669,6 @@ erau
 eredivisie
 erfurt
 erie
-erie,
-erie community college
 erikson
 ers
 erskine
@@ -3095,6 +2676,7 @@ erzgebirge
 es
 esbjerg
 escuela
+esf
 esgrima
 eskilstuna
 eskimos
@@ -3104,22 +2686,24 @@ espanyol
 especially
 espn
 essendon
-'essendon'
 essendonfootballclub
+essex
 estac
 este
 estoril
-estrella mountain community college
+estrella
 estudiantes
 estudios
 etbu
 etc
 ethnic
+Étienne
 eton
 etown
 etsu
 ettifaq
 eugene
+eunice
 eupen
 eureka
 european
@@ -3128,17 +2712,15 @@ eutectics
 evaluated
 evang
 evangel
+evangelical
 evangels
 evanston
 evansville
-evansville aces
 even
 event
 eventing
 events
-events:
 everett
-everett community college
 everglades
 evergladesuniversity
 evergreen
@@ -3164,7 +2746,7 @@ exercise
 exercises
 exeter
 exetercity
-exist.
+exist
 expand
 expedition
 explicitly
@@ -3179,7 +2761,6 @@ extrapoint
 extreme
 eye
 f
-f.
 face
 faceoff
 facilitate
@@ -3193,12 +2774,9 @@ fair
 fairbanks
 fairfax
 fairfield
-fairfield stags
 fairleigh
-fairleigh dickinson knights
 fairmont
 fairmontstate
-fairmont state university
 faisaly
 faith
 fajardo
@@ -3223,7 +2801,6 @@ farmville
 farther
 farthest
 fashion
-fashion institute of technology
 fast
 fast5
 fastball
@@ -3235,17 +2812,12 @@ fateh
 father
 fathers
 faulkner
-faulkner state community college
 fayette
-fayette,
 fayetteville
-fayetteville state university
-fayetteville technical community college
 fayha
 fb
 fbi
 fc
-f.c.
 fcand
 fco
 fcsm
@@ -3260,6 +2832,7 @@ featuring
 federal
 federals
 feet
+feinstein
 feirense
 felician
 felines
@@ -3267,7 +2840,6 @@ fell
 fellowship
 felt
 female
-female-only
 fence
 fencing
 fenerbahçe
@@ -3276,7 +2848,6 @@ fenton
 ferguson
 ferreira
 ferris
-ferris state university
 ferrum
 few
 fewer
@@ -3284,7 +2855,6 @@ fewest
 feyenoord
 ff
 fgcu
-fgcu eagles
 fhchs
 fhsu
 field
@@ -3293,7 +2863,6 @@ fielder
 fieldgoal
 fieldhandball
 fieldhockey
-field hockey
 fielding
 fields
 fieldtarget
@@ -3308,7 +2877,6 @@ figueirense
 figure
 figures
 figureskating
-figure skating
 file
 filed
 filipino
@@ -3322,7 +2890,6 @@ finding
 findlay
 fine
 finger
-finger lakes community college
 finish
 finland
 finlandia
@@ -3337,6 +2904,7 @@ fire
 firearm
 firearms
 firebirds
+firelands
 first
 fish
 fisher
@@ -3349,10 +2917,9 @@ fisticuffs
 fists
 fit
 fitchburg
-fitchburg state university
 fitness
 fitnyc
-fiu golden panthers
+fiu
 five
 fivepinbowling
 fivepins
@@ -3371,9 +2938,10 @@ flanders
 flash
 flashes
 flat
-flathead valley community college
+flathead
 fleet
 fleetwood
+fletcher
 flexible
 flies
 flight
@@ -3387,27 +2955,11 @@ floor
 floorball
 floorex
 florence
-florence-darlington technical college
 florham
 florida
-florida,
-florida a&m rattlers
-florida a&m university
-florida atlantic owls
-florida atlantic university
 floridacollege
-florida gateway college
-florida gators
-florida gulf coast university
-florida international university
-florida keys community college
 floridamarlins
 floridapanthers
-florida polytechnic university
-florida southwestern state college
-florida state college at jacksonville
-florida state seminoles
-florida state university
 flsouthern
 flubs
 fluminense
@@ -3431,7 +2983,6 @@ folkrace
 followed
 following
 fond
-fond du lac tribal and community college
 fontbonne
 food
 foosball
@@ -3444,13 +2995,13 @@ footpool
 footvolley
 footy
 for
-for:
 force
+ford
 fordham
-fordham rams
 fords
 forearms
 forest
+forestdemon
 foresters
 forestry
 forge
@@ -3464,18 +3015,12 @@ former
 formerly
 forms
 formula
-forsyth technical community college
+forsyth
 fort
 fortaleza
-fort berthold community college
 forth
-fort hays state university
 fortlewis
-fort lewis college
-fort peck community college
-fort scott community college
 fortuna
-fort valley state university
 forward
 forwards
 fotball
@@ -3487,15 +3032,12 @@ fourball
 fox
 foxborough
 foxes
-fox valley technical college
 frame
 framingham
-framingham state university
 france
 francis
 franciscan
 francisco
-francis marion university
 franco
 francoharris
 frank
@@ -3504,10 +3046,8 @@ frankfurt
 franklin
 franklincollege
 franklinpierce
-frank phillips college
 fraser
 frederick
-frederick community college
 fredericksburg
 fredericton
 fredonia
@@ -3515,8 +3055,6 @@ free
 freeboarding
 freeboating
 freed
-freed-hardeman
-freed–hardeman
 freediving
 freefall
 freeride
@@ -3528,11 +3066,9 @@ freestyleslalomskating
 freestylesnowboarding
 freestyleswimming
 freethrow
-free throw
 freiburg
 freighter
 fremantle
-'fremantle'
 fremantlefootballclub
 fremont
 french
@@ -3541,7 +3077,6 @@ freo
 frescoball
 frescobol
 fresno
-fresno state bulldogs
 friars
 fricket
 friends
@@ -3555,14 +3090,11 @@ front
 frontale
 frontenis
 frontier
-frontier community college
 frontó
 fronton
 frontón
-front range community college
 frosinone
 frostburg
-frostburg state university
 frozen
 fsv
 ft
@@ -3577,29 +3109,25 @@ fullerton
 fullgrown
 fullnelson
 fulton
-fulton–montgomery community college
 fun
 functional
 furman
-furman paladins
 furniture
 fürth
 further
 fury
 fussball
 fußball
-fut.
+fut
 futnet
 futsal
 fuzzball
 fvsu
 fwbbc
 g
-g.
 gables
-'gades
+gades
 gadsden
-gadsden state community college
 gaelic
 gaels
 gain
@@ -3612,14 +3140,13 @@ galactic
 galatasaray
 galaxy
 galesburg
-gallatin college montana state university
+gallatin
 gallaudet
 gallen
 gallop
 gallos
 galloway
 galveston
-galveston college
 galway
 gama
 gamba
@@ -3635,16 +3162,11 @@ gangwon
 gannon
 gaolie
 garden
-garden city community college
 gardens
-gardner-webb
-gardner–webb
-gardner-webb runnin' bulldogs
+gardner
 garrett
-garrett college
-garrett-evangelical
 gashousegang
-gaston college
+gaston
 gasunofficial
 gasworks
 gate
@@ -3652,9 +3174,6 @@ gateball
 gatech
 gates
 gateway
-gateway community and technical college
-gateway community college
-gateway technical college
 gators
 gauchos
 gave
@@ -3662,16 +3181,16 @@ gazélec
 gaziantepspor
 gbcnv
 gbcol
-g cont.
 gcsu
 gdańsk
 gdynia
 gear
 geauga
 geckos
-gee-gees
+gee
 geelong
 geelongfootballclub
+gees
 geese
 gefle
 gençlerbirliği
@@ -3680,7 +3199,6 @@ general
 generals
 generic
 genesee
-genesee community college
 geneseo
 geneva
 genk
@@ -3692,30 +3210,16 @@ geoducks
 geographic
 george
 georgefox
-george mason patriots
-george mason university 
+georges
 georgetown
 georgetowncollege
-georgetown hoyas
-george washington colonials
 georgia
-georgia bulldogs
-georgia college and state university
-georgia institute of technology
 georgian
-georgia northwestern technical college
-georgia piedmont technical college
-georgia regents university
 georgiasouthern
-georgia southern eagles
-georgia southern university
-georgia southwestern state university
-georgia state panthers
-georgia state university
-georgia tech yellow jackets
 germ
+germain
 german
-germanna community college
+germanna
 germany
 get
 getafe
@@ -3729,9 +3233,8 @@ giants
 gif
 gijón
 gila
-gila community college
-gila community college district
-gillette college
+gilbert
+gillette
 gilli
 gillingham
 gills
@@ -3748,13 +3251,11 @@ glazer
 glcc
 glen
 glendale
-glendale community college
 glendive
-glen oaks community college
+glennon
 glens
 glenside
 glenville
-glenville state college
 gleska
 glider
 gliders
@@ -3789,7 +3290,6 @@ god
 goddard
 godoy
 gogebic
-gogebic community college
 gogosox
 goiás
 going
@@ -3798,22 +3298,19 @@ goldcoastfootballclub
 goldcoasttitans
 golden
 goldenstatewarriors
-golden state warriors
-goldey-beacom
+goldey
 goldfarb
-gold medal
 golf
 golfcross
 golfer
 golfing
 gonzaga
-gonzaga bulldogs
 goodwell
 goofy
 gophers
 gordon
 gordonconwell
-gordon-conwell
+gorge
 gorham
 gorillas
 gorloks
@@ -3827,7 +3324,6 @@ gotland
 goucher
 government
 governors
-governors state university
 govs
 govst
 göztepe
@@ -3835,42 +3331,32 @@ grace
 graceland
 graceuniversity
 graduate
-graduate and professional schools
 gram
 grambling
-grambling state tigers
-grambling state university
 grampus
 granada
 grand
-grand canyon antelopes
 grande
 grandprix
-grand rapids community college
 grandslam
-grand valley state university
 grandview
 granite
-granite state college
 grantham
+granting
 granville
 grappling
 grass
 grasshopper
 gratz
-grays harbor college
+grays
 grayslake
-grayson county college
+grayson
 graz
 grease
 great
-great basin college 
-great bay community college
 greater
-'greater
 greaterwesternsydneygiants
 greatest
-great falls college montana state university
 grecians
 greco
 greece
@@ -3878,23 +3364,20 @@ greeley
 green
 greenbay
 greenbaypackers
-green bay packers
-green bay phoenix
 greencastle
+greene
 greenevillle
-greenfield community college
+greenfield
 greenmachine
 greenmtn
-green river community college
 greensboro
 greensborocollege
 greensburg
 greenville
-greenville technical college
+greenwich
 greenwood
 gregg
 gregorys
-gregory's
 grêmio
 grenade
 grenadiers
@@ -3915,6 +3398,7 @@ grizzlies
 grizzly
 groningen
 großaspach
+groton
 ground
 group
 groups
@@ -3925,18 +3409,15 @@ gryphons
 gstate
 guadalajara
 guam
-guam community college
 guard
 guayama
 guelph
 guerreros
 guide
 guilford
-guilford technical community college
 guimarães
 guingamp
 gulf
-gulf coast state college
 gulfport
 gulls
 gun
@@ -3949,15 +3430,13 @@ gustavus
 gusties
 guts
 gutter
-guttman community college
+guttman
 gvsu
 gwangju
 gwinnett
-gwinnett technical college
 gwizzlies
 gws
 gwynedd
-gwynedd-mercy
 gym
 gymkhana
 gymnasium
@@ -3973,18 +3452,17 @@ häcken
 hackettstown
 hackysack
 had
-'haddock'
+haddock
 hadley
-hagerstown community college
+hagerstown
 haggishurling
-halcorn state braves
+halcorn
 half
 halfgainer
 halfmarathon
 halfnelson
 halftime
 halifax
-halifax community college
 halifaxtown
 hall
 hallescher
@@ -4004,13 +3482,10 @@ hammerheads
 hammering
 hammers
 hammerthrow
-hammer throw
 hammond
 hampden
-hampden-sydney
 hampshire
 hampton
-hampton pirates
 hamptonu
 hanaichimonme
 hand
@@ -4025,9 +3500,8 @@ handsprings
 hanford
 hang
 hanggliding
-hang gliding
 hanging
-hannibal-lagrange
+hannibal
 hannover
 hanover
 hansa
@@ -4038,38 +3512,28 @@ hard
 hardball
 hardeman
 harder
-hardin-baylor
-hardin–baylor
+hardin
 harding
-hardin-simmons
-hardin–simmons
 hardrockers
 hare
 hares
-harford community college
+harford
 harness
 harnessed
 harnessracing
-harold washington college
+harold
 harper
-harper college
 harps
 harrelson
 harriers
 harris
 harrisburg
-harrisburg area community college
 harrison
 harrisonburg
-harris-stowe
-harris–stowe
-harris-stowe state university
 harrogate
 harrowfootball
 harry
-harry s truman college
 hartford
-hartford hawks
 hartlepool
 hartlepoolunited
 hartlepoolunitedfc
@@ -4077,7 +3541,6 @@ hartsem
 hartsville
 hartwick
 harvard
-harvard crimson
 harvesters
 harvey
 has
@@ -4089,7 +3552,6 @@ hatters
 hattiesburg
 hatting
 hattrick
-hat trick
 haugesund
 haute
 have
@@ -4100,10 +3562,8 @@ having
 havre
 hawaii
 hawaiʻi
-hawaii community college
-hawaiʻi-hilo
-hawaii rainbow warriors
-hawkeye community college
+hawk
+hawkeye
 hawkeyes
 hawks
 hawthorn
@@ -4111,13 +3571,11 @@ hawthornfootballclub
 haxey
 hays
 hayward
-haywood community college
-hazard community and technical college
+haywood
+hazard
 hazelden
 hazleton
-hcc-nd
-h.consa.sapporo
-h. councill trenholm state technical college
+hcc
 he
 head
 headblow
@@ -4125,15 +3583,14 @@ headis
 headlock
 heads
 health
-health science center brooklyn
 healthsciences
 heart
 heartland
-heartland community college
 hearts
 heat
 heatwave
 heavy
+hebert
 hebrew
 hebrewcollege
 heel
@@ -4145,7 +3602,6 @@ height
 heights
 held
 helena
-helena college university of montana
 hellas
 helmet
 helmets
@@ -4156,12 +3612,9 @@ helsinki
 hempstead
 hence
 henderson
-henderson community college
-henderson state university
 hendrix
-hennepin technical college
+hennepin
 henry
-henry ford community college
 hens
 heptathlon
 heracles
@@ -4172,7 +3625,6 @@ hereford
 herefordunited
 heritage
 herkimer
-herkimer county community college
 hernando
 heroes
 herons
@@ -4182,7 +3634,7 @@ herzing
 hesston
 hi
 hialeah
-hibbing community college
+hibbing
 hibernian
 hickory
 hidden
@@ -4195,16 +3647,12 @@ highdiving
 higher
 highest
 highjump
-high jump
 highland
-highland community college
 highlanders
 highlands
-highlands college of montana tech
 highlight
-highline community college
+highline
 highpoint
-high point panthers
 hiker
 hiking
 hilal
@@ -4212,15 +3660,13 @@ hilbert
 hill
 hillcats
 hillclimbing
-hill college
 hills
 hillsboro
 hillsborough
-hillsborough community college
 hillsdale
 hilltoppers
 hilo
-hinds community college
+hinds
 hiphopdance
 hips
 hiram
@@ -4237,49 +3683,42 @@ hitter
 hitting
 hiwassee
 hjk
-hnew mexico state aggies
+hnew
 hobart
 hobbs
 hobe
 hoboken
 hobro
 hockey
-hocking college
+hocking
 hodges
 hoffenheim
 hofstra
-hofstra pride
 hokies
 hokkaido
 hold
 holding
 holds
 hole
-hole-in-one
 holes
 holland
 hollins
 hollow
 holly
-holmes community college
+holmes
 holy
 holyapostles
 holycross
-holy cross crusaders
 holyfamily
 holyoke
-holyoke community college
 homage
 home
-home|ole miss rebels
-home plate
+home|ole
 homerun
-home run
 home|schedule|stats|roster|news|tickets
-home team
-home|uapb golden lions
+home|uapb
 honolulu
-honolulu community college
+honors
 honours
 hood
 hook
@@ -4292,7 +3731,7 @@ hooverball
 hop
 hope
 hopkins
-hopkinsville community college
+hopkinsville
 horizontal
 horizontally
 horn
@@ -4300,7 +3739,7 @@ horned
 hornets
 hornussen
 hornusser
-horry-georgetown technical college
+horry
 horse
 horseback
 horsebacks
@@ -4312,32 +3751,20 @@ horseshoes
 hose
 hospital
 hostos
-hostos community college
 hot
 hotshots
 hotspur
 houghton
 hour
 hours
-housatonic community college
+housatonic
 house
 houston
 houstonastros
-houston astros
-houston baptist huskies
-houston–clear
-houston community college system
-houston cougars
-houston–downtown
-houston rockets
-houston texans
-houston–victoria
 hove
+hovealbion
 hovercraft
 howard
-howard bison
-howard college
-howard community college
 however
 hoyas
 hputx
@@ -4350,7 +3777,6 @@ huddersfield
 huddersfieldtown
 huddle
 hudson
-hudson valley community college
 huesca
 huge
 huila
@@ -4359,8 +3785,8 @@ hullcity
 hulman
 hult
 humacao
+human
 humboldt
-humboldt state university
 humorous
 humpback
 humphreys
@@ -4368,7 +3794,6 @@ hundreds
 hung
 hungary
 hunter
-hunter college
 hunting
 huntingdon
 huntington
@@ -4385,9 +3810,7 @@ huskies
 husson
 hustlin
 huston
-huston-tillotson
 hutchinson
-hutchinson community college
 hwarangdo
 hybrid
 hyde
@@ -4403,23 +3826,16 @@ ibm1
 ice
 iceboating
 icehockey
-ice hockey
 icehogs
 iceland
 iceracing
-ice rink
-ice skates
 iceskating
-ice skating
 iceyachting
 ichabods
 icing
 icsw
 ida
 idaho
-idaho state bengals
-idaho state university
-idaho vandals
 identical
 idiot
 ie
@@ -4430,17 +3846,10 @@ ii
 ik
 il
 iliff
-iḷisaġvik college
+iḷisaġvik
 illawarra
 illini
 illinois
-illinois central college
-illinois eastern community colleges
-illinois fighting illini
-illinois–springfield
-illinois state redbirds
-illinois state university 
-illinois valley community college
 ilstu
 imagery
 images
@@ -4457,7 +3866,6 @@ inbounds
 inbreds
 inc
 incarnate
-incarnate word cardinals
 incheon
 include
 included
@@ -4466,41 +3874,18 @@ including
 incomplete
 incorporating
 incurred
-ind.
-indep.
+ind
+indep
 independence
-independence community college
 independiente
 india
 indian
 indiana
-indiana hoosiers
-indiana pacers
 indianapolis
 indianapoliscolts
-indianapolis colts
-indiana state sycamores
-indiana state university
 indianatech
-indiana university
-indiana university bloomington
-indiana university east
-indiana university kokomo
-indiana university northwest
-indiana university of pennsylvania
-indiana university of pennsylvania, academy of culinary arts
-indiana university of pennsylvania, armstrong
-indiana university of pennsylvania, northpointe
-indiana university of pennsylvania, punxsutawney
-indiana university – purdue university columbus 
-indiana university – purdue university indianapolis
-indiana university south bend
-indiana university southeast
-indiana university system
-indiana wesleyan university
-indian hills community college
+indianhead
 indianola
-indian river state college
 indians
 indicating
 indictment
@@ -4515,6 +3900,7 @@ indoors
 indoorshorttrack
 indoorsoccer
 indstate
+industrial
 industry
 indwes
 infamous
@@ -4528,12 +3914,12 @@ information
 infrared
 ingham
 ingolstadt
+ingram
 initial
 initially
 inland
 inline
 inlinehockey
-inline skates
 inlinespeedskating
 inner
 inning
@@ -4542,6 +3928,7 @@ inspire
 inspired
 instead
 institute
+institutions
 instruments
 insulting
 integral
@@ -4565,7 +3952,7 @@ introductory
 invaders
 invented
 invention
-inver hills community college
+inver
 inverness
 inversions
 involve
@@ -4573,17 +3960,8 @@ involves
 involving
 iola
 iona
-iona gaels
 iowa
-iowa central community college
-iowa hawkeyes
-iowa lakes community college
-iowa state cyclones
-iowa state university
-iowa valley community college
-iowa western community college
 ipfw
-ipfw mastodons
 ipsciences
 ipswich
 ipswichtown
@@ -4603,67 +3981,52 @@ ironworks
 irvine
 irving
 is
-i's
 island
 islanders
 islands
 isle
 isles
-isothermal community college
+isothermal
 isotopes
 israel
 it
 italiano
 italy
-itasca community college
-itawamba community college
+itasca
+itawamba
 item
 ithaca
 its
-it's
 itta
 ittihad
 iupuc
 iupui
-iupui jaguars
 iusb
-ivy tech community college of indiana
+ivy
 iwata
 izumi
 j
 j1
+jacinto
 jack
 jackets
 jackknife
 jackrabbits
 jacks
 jackson
-jackson college
-jackson state community college
-jackson state tigers
-jackson state university
 jacksonville
-jacksonville dolphins
 jacksonvillejaguars
-jacksonville jaguars
-jacksonville state gamecocks
-jacksonville state university
 jagiellonia
 jags
 jaguares
 jaguars
 jai
 jaialai
-jai-alai
 jailblazers
 jamaica
 jameel
 james
-james madison dukes
-james madison university 
-james sprunt community college
 jamestown
-jamestown community college
 janes
 janesville
 japan
@@ -4684,11 +4047,6 @@ jchs
 jcsu
 jeetkunedo
 jefferson
-jefferson college
-jefferson community and technical college
-jefferson community college
-jefferson davis community college
-jefferson state community college
 jeffs
 jeju
 jena
@@ -4709,8 +4067,6 @@ jetsprint
 jeu
 jewell
 jewish
-j. f. drake state technical college
-j. f. ingram state technical college
 jfku
 jianzi
 jimmies
@@ -4728,29 +4084,20 @@ jogger
 jogging
 joggling
 john
-john a. logan college
-john jay college of criminal justice
 johnnies
 johns
-john's
 johnson
-johnson county community college
-johnson state college
-johnston community college
+johnston
 johnstone
 johnstown
-john tyler community college
-john wood community college
 joint
 joinville
 joke
 jokelandfaders/traitors
 jokgu
 joliet
-joliet junior college
 jones
 jonesboro
-jones county junior college
 jönköpings
 joplin
 jorkyball
@@ -4758,11 +4105,9 @@ jos
 jose
 joseph
 josephs
-joseph's
-jrs.
-j's
-j. sargeant reynolds community college
-j-södra
+journalism
+jrs
+js
 jstb
 jsums
 jt
@@ -4787,7 +4132,6 @@ jump
 jumper
 jumpers
 jumping
-jump rope
 jumps
 jumpshot
 jumpsuit
@@ -4809,25 +4153,17 @@ kaisers
 kaiserslautern
 kaizer
 kalamazoo
-kalamazoo valley community college
 kalmar
 kamloops
-kanawha valley community and technical college
+kanawha
 kangaroos
 kangas
 kankakee
-kankakee community college
 kansai
 kansas
 kansascitychiefs
-kansas city chiefs
-kansas city kansas community college
 kansascityroyals
-kansas city royals
-kansas jayhawks
-kansas state university
-kansas state wildcats
-kapiolani community college
+kapiolani
 kaplan
 karabükspor
 karate
@@ -4844,12 +4180,10 @@ kashiwa
 kasimpaşa
 kasımpaşa
 kaskaskia
-kaskaskia college
 katrina
 kats
-kauai community college
+kauai
 kawasaki
-kawasaki-f
 kayak
 kayaker
 kayaking
@@ -4861,42 +4195,32 @@ kcad
 kcai
 kcumb
 kean
-kean university
 kearney
 keck
 keelhaulers
 keene
-keene state college
 keep
 kegel
 keiser
 keiseruniversity
-kellogg community college
+kellogg
 kelly
 kelowna
 kemari
 ken
-kenai peninsula college
+kenai
 kendall
 kendo
 kenjutsu
-kennebec valley community college
+kennebec
 kennedy
-kennedy–king college
 kennesaw
-kennesaw state owls 
-kennesaw state university
 kenosha
 kenpo
 kenrick
-kenrick-glennon
 kensington
 kent
-kent state golden flashes
-kent state golden flashes 
 kentucky
-kentucky state university
-kentucky wildcats
 kenyon
 kept
 kerkrade
@@ -4906,7 +4230,9 @@ kettlebells
 keuka
 keydets
 keynes
+keys
 keystone
+khabarovsk
 khaleej
 khela
 khmer
@@ -4927,31 +4253,28 @@ kiel
 kielce
 kilda
 kilgore
-kilgore college
-kilian community college
+kilian
 kilikiti
 killing
 kilmarnock
 kin
 kind
 king
-king fu
 kings
-king's
-kingsborough community college
+kingsbaltimore
+kingsborough
 kingsmen
 kingsofqueens
 kingston
 kingsville
+kingwood
 kinki
 kinston
 kirkland
 kirksville
 kirkwood
-kirkwood community college
-kirtland community college
+kirtland
 kishwaukee
-kishwaukee college
 kissimmee
 kit
 kite
@@ -4964,7 +4287,6 @@ kiting
 kitsap
 kitty
 klamath
-klamath community college
 klootschieten
 km
 kmbc
@@ -4994,7 +4316,7 @@ kobe
 københavn
 kobudō
 kobujutsu
-kodiak college
+kodiak
 kofu
 kohawks
 kokomo
@@ -5017,14 +4339,12 @@ kristiansund
 krolf
 kronum
 krylya
-k-state
 kubb
 kubbs
 kumc
 kun
 kurash
 kutztown
-kutztown university of pennsylvania
 kuyper
 kv
 kvc
@@ -5036,12 +4356,11 @@ kyudo
 kzoo
 l
 la
-labette community college
+labette
 labor
 laboratory
 labrador
 lac
-lac courte oreilles ojibwa community college
 lacey
 lack
 lacollege
@@ -5050,43 +4369,28 @@ ladies
 lady
 ladyjacks
 lafayette
-lafayette leopards
 lagori
 lagrange
-laguardia community college
+laguardia
 laguna
 laie
 lake
-lake area technical institute
 lakeforest
 lakeforestmba
 lakehawks
 lakehead
 lakeland
-lake land college
-lakeland community college
-lake michigan college
 "laker"
-lake region state college
 lakers
 lakes
-lakeshore technical college
-lakes region community college
-lake–sumter
-lake–sumter state college
-lake superior college
-lake superior state university
+lakeshore
 lakeview
 lakeviewcol
-lake washington institute of technology
 lakewood
 lakota
 lakpi
 laliga
 lamar
-lamar cardinals
-lamar community college
-lamar university
 lamb
 lambs
 lambuth
@@ -5099,29 +4403,23 @@ lancers
 land
 landboarding
 lander
-lander university
 landing
 landmark
 landsailing
 landwindsurfing
 lane
 lanecollege
-lane community college
 langhorne
 langley
 langston
-langston university
 language
 languages
-lanier technical college
+lanier
 lansing
-lansing community college
 lanús
 lapta
 laramie
-laramie county community college
 laredo
-laredo community college
 large
 larger
 larks
@@ -5129,7 +4427,6 @@ laroche
 larry
 las
 lasalle
-la salle explorers
 lasell
 laser
 lasers
@@ -5155,19 +4452,17 @@ launch
 laurel
 laurentian
 laurier
-lausanne-sport
+lausanne
 laval
 lavallois
 laverne
 law
 lawn
 lawnbowling
-lawn bowling
 lawrence
 lawrenceville
 laws
 lawson
-lawson state community college
 lawton
 lazers
 lazio
@@ -5178,7 +4473,6 @@ lead
 leads
 leaf
 leafs
-'le'afs
 league
 leaps
 least
@@ -5193,14 +4487,12 @@ lecom
 Łęczna
 lee
 leech
-lee college
 leeds
 leedsunited
+lees
 leesburg
-lees-mcrae
 leeuniversity
-leeward community college
-l.e. fletcher technical community college
+leeward
 leftfield
 leg
 legally
@@ -5213,21 +4505,15 @@ legia
 legion
 legs
 lehigh
-lehigh carbon community college
-lehigh mountain hawks
 lehman
-lehman college
 leicester
 leicestercity
 leipzig
 lelo
 lemmings
 lemoyne
-lemoyne-owen
 length
 lenoir
-lenoir community college
-lenoir-rhyne
 lens
 leo
 león
@@ -5251,10 +4537,7 @@ levante
 level
 leverkusen
 lewis
-lewis and clark community college
 lewisburg
-lewis-clark
-lewis-clark state college
 lewiston
 lewisu
 lexington
@@ -5266,7 +4549,6 @@ lge
 lhup
 liberal
 liberty
-liberty flames
 libros
 lica
 license;
@@ -5283,7 +4565,6 @@ lift
 lifted
 lifting
 lifts
-lifts:
 lig
 liga
 light
@@ -5307,12 +4588,8 @@ lincolnchristian
 lincolncity
 lincolncollege
 lincolncollegene
-lincoln land community college
-lincoln trail college
 lincolnu
 lincolnuca
-lincoln university
-lincoln university of missouri
 linda
 lindenwood
 lindsborg
@@ -5327,20 +4604,17 @@ linguistics
 link
 linked
 links
-linn-benton community college
+linn
 linz
 lions
 lipscomb
-lipscomb bisons 
 liquoriceallsorts
 list
 listed
 listscollege
 lithuania
 little
-little big horn college
 liu
-liu brooklyn blackbirds
 lived
 liverpool
 livingston
@@ -5355,8 +4629,6 @@ local
 located
 locations
 lock
-lock haven university of pennsylvania
-lock haven university of pennsylvania, clearfield
 log
 logan
 logged
@@ -5368,30 +4640,20 @@ lokomotiv
 loma
 london
 lone
-lone star college-cyfair
-lone star college-kingwood
-lone star college-montgomery
-lone star college-north harris
-lone star college system
-lone star college-tomball
 lonestars
 long
 longball
-long beach state 49ers
 longboard
 longboarding
 longest
 longford
 longhorns
 longjump
-long jump
 longtime
 longue
 longueuil
 longview
 longwood
-longwood lancers
-longwood university
 look
 looking
 lookout
@@ -5400,11 +4662,10 @@ loop
 loops
 lopers
 lopes
-lorain county community college
+lorain
 loras
 lorca
 lord
-lord fairfax community college
 lords
 lordsofflatbush
 lorenzo
@@ -5412,13 +4673,9 @@ loretto
 lorient
 lorman
 los
-los angeles angels
 losangelesangelsofanaheim
-los angeles clippers
 losangelesdodgers
-los angeles dodgers
 losangeleslakers
-los angeles lakers
 losangelitos
 losc
 losdoyers
@@ -5436,36 +4693,17 @@ loudonville
 louis
 louisburg
 louisiana
-louisiana delta community college
-louisiana-lafayette
-louisiana-lafayette ragin cajuns
-louisiana-lafayette ragin' cajuns
-louisiana-monroe
-louisiana-monroe warhawks
-louisiana state university and a&m college 
-louisiana state university at alexandria 
-louisiana state university at eunice 
-louisiana state university health sciences center new orleans
-louisiana state university health sciences center shreveport
-louisiana state university in shreveport 
-louisiana tech bulldogs
-louisiana technical college
-louisiana tech university
 louisville
-louisville cardinals
 lourdes
 love
 loveablelosers
 low
+lowcountry
 lowell
 lower
-lower columbia college
 lowest
 loyno
 loyola
-loyola chicago ramblers
-loyola maryland greyhounds
-loyola marymount lions
 lpts
 lssu
 lstc
@@ -5474,10 +4712,7 @@ lsua
 lsuhsc
 lsuhscshreveport
 lsus
-lsu-shreveport
-lsu-shreveports
 lsusystem
-lsu tigers
 lubbock
 lubin
 lucchino
@@ -5487,15 +4722,15 @@ lugano
 luge
 lugo
 luis
-luke's
+lukes
 lumberjack
 lumberjacks
 lumberjills
-luna community college
+luna
 lunet
 lunge
 lure
-lurleen b. wallace community college
+lurleen
 lutes
 luther
 lutheran
@@ -5504,7 +4739,7 @@ luton
 lutontown
 lutz
 luzern
-luzerne county community college
+luzerne
 lycoming
 lying
 lyle
@@ -5513,7 +4748,6 @@ lymeacademy
 lynchburg
 lyndon
 lyndonstate
-lyndon state college
 lyngby
 lynn
 lynx
@@ -5521,10 +4755,10 @@ lyon
 lyonnais
 lyons
 m
-m.
-'ma'aple
+maaple
 mabts
 macalester
+macaulay
 maccabees
 macclesfield
 macclesfieldtown
@@ -5533,7 +4767,6 @@ machine
 machines
 macmurray
 macomb
-macomb community college
 macon
 maconstate
 macs
@@ -5542,9 +4775,7 @@ macuniversity
 mad
 made
 madison
-madison area technical college
 madisonville
-madisonville community college
 madonna
 madrid
 magdeburg
@@ -5558,20 +4789,13 @@ mahjong
 mahwah
 main
 maine
-maine-augusta
-maine black bears
-maine-farmington
-maine-fort
-maine-machias
 mainemaritime
-maine maritime academy
-maine–presque
+mainland
 mainly
 maintaining
 mainz
 maipú
 major
-major league
 majors
 make
 makers
@@ -5582,7 +4806,6 @@ málaga
 malatyaspor
 malaysia
 malcolm
-malcolm x college
 male
 malibu
 mallakhamba
@@ -5598,15 +4821,12 @@ management
 manager
 manatee
 manatees
-manatee-sarasota
 manchester
 manchestercity
-manchester community college
 manchesterunitedfc
 maneuvered
 maneuvers
 manhattan
-manhattan jaspers
 manhattanville
 manipulated
 manipulation
@@ -5625,7 +4845,6 @@ manoeuvres
 manor
 mansfield
 mansfieldtown
-mansfield university of pennsylvania
 mantis
 manu
 many
@@ -5633,7 +4852,6 @@ maori
 map
 maple
 mapleleafs
-maple leafs
 mar
 mara
 maranatha
@@ -5646,9 +4864,10 @@ marching
 marcos
 maria
 marian
+marianas
 marianna
 marianuniversity
-maricopa county community college district
+maricopa
 marie
 marietta
 marina
@@ -5657,10 +4876,7 @@ mariners
 marinette
 marinos
 marion
-marion military institute
-marion technical college
 marist
-marist red foxes
 maritime
 marítimo
 mark
@@ -5675,40 +4891,26 @@ marlins
 maroon
 maroons
 marquette
-marquette golden eagles
 mars
 marseille
 marshall
-marshall thundering herd
-marshall thundering herd 
-marshalltown community college
-marshall university
-marshall university graduate college
+marshalltown
 marshfield
 marshfield/wood
 martial
-martial arts
 martin
 martín
-martin community college
 martinez
 martinmethodist
 martins
-martin's
 marty
 mary
 marygrove
 maryland
-maryland,
-maryland–baltimore
-maryland eastern shore hawks
-maryland terrapins
 marylhurst
 marymount
 marymountpv
-mary-of-the-woods
 marys
-mary's
 marysville
 maryville
 maryvillecollege
@@ -5719,28 +4921,21 @@ masks
 mason
 massachuetts
 massachusetts
-massachusetts bay community college
-massachusetts college of art and design
-massachusetts college of liberal arts
-massachusetts-lowell river hawks
-massachusetts maritime academy
-massachusetts minutemen
 massart
-massasoit community college
+massasoit
 mast
 masters
-master's
 mastodons
 mat
 matadors
-matanuska-susitna college
+matanuska
 matball
 match
 matches
 matkot
 matrix
 mattersburg
-maui community college
+maui
 maulers
 mavericks
 mavs
@@ -5750,39 +4945,36 @@ may
 mayag
 mayagüez
 maybe
-mayland community college
+mayland
 mayo
-maysville community and technical college
+maysville
 mayville
 mayvillestate
-mayville state university
 mbbc
 mbts
 mcad
 mccks
+mcconnell
 mccormick
 mcdaniel
-mcdowell technical community college
+mcdowell
 mcgill
 mchenry
-mchenry county college
 mchs
 mckendree
 mckenna
 mckenzie
 mcla
 mclennan
-mclennan community college
 mcmaster
 mcminnville
 mcmurry
 mcneese
-mcneese state cowboys
-mcneese state university
 mcny
 mcpherson
 mcphs
-m.d.
+mcrae
+meadows
 meadville
 mean
 meaning
@@ -5798,11 +4990,9 @@ medcenter
 medellín
 medford
 medgar
-medgar evers college
 media
 mediawiki
 medical
-medical university of south carolina
 medicine
 medieval
 mediocrity
@@ -5812,7 +5002,7 @@ meek
 meharry
 meiji
 meinrad
-melb.
+melb
 melblount
 melbourne
 melbournefootballclub
@@ -5823,38 +5013,32 @@ member
 memorial
 memory
 memphis
-memphis grizzlies
 memphisseminary
-memphis tigers
-memphis tigers 
 men
-men:
 menasha
 menlo
 mennonite
+menominee
 menomonie
 mens
-men's
 mental
 mention
 menu
 meppen
 merced
 mercer
-mercer bears
 merchandising
 merchant
 mercy
 mercyhurst
 meredith
 mérida
-meridian community college
+meridian
 merrimack
 merritt
 mesa
-mesabi range community and technical college
-mesa community college
-mesalands community college
+mesabi
+mesalands
 mesastate
 mesquite
 messiah
@@ -5869,69 +5053,39 @@ methodistcollege
 metro
 metropolitan
 metropolitana
-metropolitan community college
 metropolitans
-metropolitan state university
-metropolitan state university of denver
 metrostate
 mets
 metz
 mexico
 mfc
-m'gladbach
+mgladbach
 miami
-miami dade college
 miamidolphins
-miami dolphins
-miami-hamilton
 miamiheat
-miami heat
 miamihurricanes
-miami hurricanes
-miami marlins
-miami redhawks
-miami university
-miami university dolibois european center
-miami university hamilton
-miami university middletown
 mica
 michaels
-michael's
 michiana
 michigan
-michigan state spartans
-michigan state university
-michigan technological university
-michigan wolverines
+mid
 midamerica
-mid-america
-mid-atlantic
 midcontinent
-mid-continent
 middle
 middlebury
-middle georgia state college
 middlesbrough
-middlesex community college
-middle tennessee blue raiders
-middle tennessee state university
+middlesex
 middletown
 midget
 midland
-midland college
-midlands technical college
+midlands
 midlothian
-mid michigan community college
-mid-plains community college
 midshipmen
-mid-south community college
 midstate
-mid-state technical college
 midtjylland
 midway
 midwest
 midwestern
-midwestern state university
 midwifery
 mighty
 mightyducksofanaheimnowknownastheanaheimducks
@@ -5941,14 +5095,12 @@ mikinocks
 milan
 mile
 miles
-miles community college
 military
 milledgeville
 miller
 millercollege
 millers
 millersville
-millersville university of pennsylvania
 milligan
 millikin
 millmoor
@@ -5959,14 +5111,10 @@ millwall
 milton
 miltonkeynesdons
 milwaukee
-milwaukee area technical college
 milwaukeebrewers
-milwaukee brewers
-milwaukee bucks
-milwaukee panthers
 mind
 mineiro
-mineral area college
+mineral
 miners
 mines
 mini
@@ -5975,26 +5123,13 @@ minified
 minigolf
 mining
 minneapolis
-minneapolis community and technical college
 minnesota
-minnesota-duluth
-minnesota golden gophers
-minnesota state colleges and universities
-minnesota state college – southeast technical
-minnesota state community and technical college
-minnesota state university, mankato
-minnesota state university moorhead
 minnesotatimberwolves
-minnesota timberwolves
 minnesotatwins
-minnesota twins
 minnesotavikings
-minnesota vikings
-minnesota west community and technical college
-minor league
+minor
 minot
 minotstateu
-minot state university
 minster
 minstermen
 minutemen
@@ -6012,47 +5147,28 @@ mission
 missionary
 missions
 mississippi
-mississippi delta community college
-mississippi gulf coast community college
-mississippi state bulldogs
-mississippi state university
-mississippi university for women
-mississippi valley state delta devils
-mississippi valley state university
 missoula
-missoula college university of montana
 missouri
-missouri–kansas
-missouri southern state university
-missouri-st
 missouristate
-missouri state bears
-missouri state university
-missouri state university–west plains
-missouri tigers
-missouri university of science and technology
 missouriwestern
-missouri western state university
 misspelling
 mit
 mitchell
-mitchell community college
-mitchell technical institute
 mitt
 mix
 mixed
 mixteca
 mk
 ml
-mlc-wels
+mlc
 mls
 mma
 mnstate
 mnsu
+mo
 mob
 mobap
 moberly
-moberly area community college
 mobile
 moccasins
 mocs
@@ -6062,8 +5178,8 @@ modification
 modified
 mödling
 mogul
-mohave community college
-mohawk valley community college
+mohave
+mohawk
 moines
 molde
 mölkky
@@ -6082,33 +5198,20 @@ monkeyhangers
 monks
 monm
 monmouth
-monmouth hawks
 monroe
 monroecollege
-monroe community college
-monroe county community college
 monroeville
 monsters
 monstersofthemidway
 mont
 montana
-montana grizzlies
-montana state bobcats
-montana state university
-montana state university billings
-montana state university–northern
-montana tech of the university of montana
-montcalm community college
+montcalm
 montclair
-montclair state university
 montecito
 monterey
 monterrey
 montevallo
 montgomery
-montgomery college
-montgomery community college
-montgomery county community college
 monticello
 montpellier
 montreal
@@ -6123,29 +5226,24 @@ moorhead
 moose
 moosic
 moraga
-moraine park technical college
-moraine valley community college
+moraine
 moravian
 more
 morecambe
 morehead
 moreheadstate
-morehead state eagles
-morehead state university
 morehouse
 moreirense
 morelia
 morgan
-morgan community college
-morgan state bears
-morgan state university
 morgantown
 morning
 morningside
+morrilton
 morris
 morrisville
 morthland
-morton college
+morton
 moscow
 moskva
 most
@@ -6153,7 +5251,6 @@ mostly
 motherwell
 motion
 motlow
-motlow state community college
 moto
 motoball
 motocross
@@ -6173,8 +5270,8 @@ motorized
 motors
 motorsport
 motorsports
-mott community college
-moultrie technical college
+mott
+moultrie
 moundbuilders
 mount
 mountain
@@ -6182,21 +5279,17 @@ mountainbiking
 mountainboarding
 mountaineering
 mountaineers
-mountain empire community college
 mountainmen
 mountains
 mountainstate
 mountainunicycling
-mountain view college
 mounted
 mountida
 mounties
 "mounties"
 mountsaintvincent
-mount st. mary's mountaineers
 mountunion
-mount wachusett community college
-mountwest community and technical college
+mountwest
 mouscron
 mouthguard
 movable
@@ -6211,7 +5304,7 @@ moving
 mower
 mowers
 moyne
-m's
+ms
 mscd
 mslaw
 msmary
@@ -6223,10 +5316,10 @@ msstate
 mssu
 msubillings
 msun
+mt
 mtaloy
 mtech
 mtholyoke
-mt. hood community college
 mtmary
 mtmc
 mtmercy
@@ -6256,18 +5349,14 @@ murcia
 murfreesboro
 murray
 murraystate
-murray state college
-murray state racers
-murray state university
 musc
-muscatine community college
+muscatine
 muscular
 muscularity
 mushti
 music
 musical
 muskegon
-muskegon community college
 musketeers
 muskies
 muskingum
@@ -6295,10 +5384,10 @@ nads
 naginata
 naginatajutsu
 nagoya
+nakoda
 name
 named
 names
-names,
 namesake
 name￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀상ﺿ뺿ﾼ骜ﾗ鶞ﺜꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ
 nampa
@@ -6310,35 +5399,34 @@ naperville
 napoleonic
 napoli
 naropa
+narragansett
 narrow
-nash community college
-nashua community college
+nash
+nashua
 nashville
 nashvillepredators
-nashville state community college
 nasl
-nassau community college
+nassau
 nassr
 nástic
 nàstic
 natchitoches
+nation
 national
-national-louis
-national park community college
 nationals
+nationalsboston
 nations
 native
 nats
 natural
 naturals
-naugatuck valley community college
+naugatuck
 naval
-navarro college
+navarro
 navigate
 navigation
 navy
 navyblazers
-navy midshipmen
 nazarene
 nazareth
 nba
@@ -6348,16 +5436,12 @@ nccu
 ncnm
 ncsu
 ncwc
+nd
 ndez
 ndnu
 ndsu
 nearby
 nebraska
-nebraska,
-nebraska college of technical agriculture
-nebraska cornhuskers
-nebraska indian community college
-nebraska-kearney
 nebrwesleyan
 nec
 necaxa
@@ -6371,7 +5455,8 @@ negative
 negatively
 neit
 neiu
-neosho county community college
+nelson
+neosho
 neoucom
 nepal
 net
@@ -6381,9 +5466,6 @@ nets
 netting
 neumann
 nevada
-nevada state college
-nevada system of higher education
-nevada wolf pack
 new
 newark
 newberg
@@ -6392,74 +5474,44 @@ newbury
 newcastle
 newcastleknights
 newcastleunited
-new college of florida
 newcomb
-newell's
+newells
 newenglandpatriots
-new england patriots
 newfoundland
-new hampshire technical institute
-new hampshire wildcats
 newhaven
 newhope
-new jersey city university
 newjerseydevils
-new jersey institute of technology
 newman
 newmanu
-new mexico highlands university
-new mexico institute of mining and technology
-new mexico junior college
-new mexico lobos
-new mexico military institute
-new mexico state aggies
-new mexico state university
-new mexico state university alamogordo
-new orleans pelicans
-new orleans privateers
 neworleanssaints
-new orleans saints
 newpaltz
 newport
-new river community and technical college
-new river community college
 news
 newschool
 newton
-new york city college of technology
 newyorkers
 newyorkfootballgiants
 newyorkgiants
-new york giants
 newyorkislanders
 newyorkjets
-new york jets
 newyorkknickerbockers
-new york knicks
 newyorkmets
-new york mets
 newyorkrangers
-new york state college of ceramics
 newyorkyankees
-new york yankees
 newzealandwarriors
 next
 nfl
-nfl's
+nfls
 nhl
-nhl's
+nhls
 niagara
-niagara county community college
-niagara purple eagles
 nice
 niceville
 nicholls
-nicholls colonels
-nicholls state university
 nichols
 nickname
 nicknames
-nicolet area technical college
+nicolet
 nieciecza
 niger
 night
@@ -6479,13 +5531,13 @@ nishinomiya
 nittany
 njcu
 njit
-njit highlanders
 nl
 nmhu
 nmsu
 nnmc
+no
 nobts
-no-hitter
+noc
 non
 none
 nonstandard
@@ -6494,137 +5546,58 @@ norbert
 nordic
 nordiccombined
 nordicskiing
-nordic skiing
 nordiques
 nordsjælland
 noreasters
 norfolk
-norfolk state spartans
-norfolk state university
 normal
 norman
-normandale community college
+normandale
 norrköping
 norse
 north
 northampton
-northampton community college
 northamptontown
-north arkansas college
-north carolina a&t aggies
-north carolina a&t state university
-north carolina central eagles
-north carolina central university
-north carolina state university
-north carolina state wolfpack
-north carolina tar heels
 northcentral
 northcentralcollege
-north central michigan college
-north central missouri college
-north central state college
-northcentral technical college
-north central texas college
-north country community college
-north dakota
-north dakota state bison
-north dakota state college of science
-north dakota state university
-northeast alabama community college
-northeast community college
+northeast
 northeastern
-northeastern huskies
-northeastern illinois university
-northeastern junior college
-northeastern oklahoma a&m college
-northeastern state university
-northeastern technical college
-northeast iowa community college
-northeast lakeview college
-northeast mississippi community college
-northeast state community college
-northeast texas community college
-northeast wisconsin technical college
 northern
-northern arizona lumberjacks
-northern arizona university
-northern colorado bears
-northern essex community college
-northern illinois huskies
-northern illinois university
-northern kentucky norse
-northern kentucky university
-northern maine community college
-northern marianas college
-northern michigan university
-northern new mexico college
-northern oklahoma college
-northern state university
-northern virginia community college
-northern wyoming community college
 northfield
-north florida community college
-north florida ospreys
 northgeorgia
-north georgia technical college
-north hennepin community college
-north idaho college
-north iowa area community college
-north lake college
 northland
-northland community & technical college
-northland pioneer college
 northmelbournefootballclub
 northpark
+northpointe
 northqueenslandcowboys
 northridge
 northrop
-north seattle community college
-north shore community college
-northshore technical community college
+northshore
 northsiders
 northstars
-north texas mean green
 northwest
-northwest arkansas community college
 northwestchristian
-northwest college
 northwestern
-northwestern connecticut community college
-northwestern michigan college
-northwestern oklahoma state university
-northwestern state demons
-northwestern state university
-northwestern wildcats
-northwest florida state college
-northwest iowa community college
-northwest louisiana technical college
-northwest mississippi community college
-northwest missouri state university
-northwest shoals community college
-northwest state community college
 northwestu
-northwest vista college
 northwich
 northwichvictoria
 northwood
 norton
-norwalk community college
+norwalk
 norway
 norwich
 norwichcity
 nos
 not
-note:
+note
 noted
 notes
 notre
 notredamecollege
-notre dame fighting irish
 nottingham
 nottinghamforest
 nottinghamforestfc
-nott'm
+nottm
 notts
 nottscounty
 nova
@@ -6648,7 +5621,7 @@ numancia
 number
 numbered
 numerous
-nunez community college
+nunez
 nürnberg
 nursing
 nut
@@ -6665,23 +5638,16 @@ nyit
 nymc
 nymets
 nyu
-nyu–poly
 o
-Ö.
-o'ahu
+Ö
+oahu
 oak
 oakhills
 oakland
 oaklandathletics
-oakland athletics
-oakland community college
-oakland golden grizzlies
 oaklandraiders
-oakland raiders
-oakland university
 oaks
 oakton
-oakton community college
 oakwood
 oar
 oars
@@ -6708,12 +5674,12 @@ ocean
 oceanrowing
 oceans
 ocelots
-oconee fall line technical college
+oconee
 october
 octopush
 odds
 odense
-odessa college
+odessa
 odi
 of
 off
@@ -6728,57 +5694,31 @@ offspring
 often
 ogc
 ogden
-ogeechee technical college
+ogeechee
 oglala
-oglala lakota college
 oglethorpe
 oh
-o'higgins
+ohiggins
 ohio
-ohio bobcats
+ohio)
 ohiochristian
 ohiodominican
-ohio state buckeyes
-ohio state university 
-ohio state university agricultural technical institute
-ohio state university, lima campus
-ohio state university, mansfield campus
-ohio state university, marion campus
-ohio state university, newark campus
-ohio university
-ohio university chillicothe
-ohio university eastern
-ohio university lancaster
-ohio university pickerington
-ohio university proctorville
-ohio university southern
-ohio university system
-ohio university zanesville
 ohod
 ohsu
 oil
 oilers
 oina
 oină
+ojibwa
 okanagan
 okbu
 okc
 okcu
-okefenokee technical college
+okefenokee
 okinawan
 oklahoma
-oklahoma city community college
 oklahomacitythunder
-oklahoma city thunder
-oklahoma panhandle state university
-oklahoma sooners
-oklahoma state cowboys
-oklahoma state university - center for health sciences
-oklahoma state university - oklahoma city
-oklahoma state university - okmulgee
-oklahoma state university - stillwater
-oklahoma state university system
-oklahoma state university - tulsa
+okmulgee
 okra
 okstate
 okwu
@@ -6787,8 +5727,6 @@ olaf
 olathe
 old
 oldbrowns
-old dominion monarchs
-old dominion university
 older
 oldetowneteam
 oldham
@@ -6796,31 +5734,27 @@ oldhamathletic
 oldwestbury
 ole
 olemiss
-ole miss rebels
 oles
 olhcc
 olimpo
 olin
 olive
-olive–harvey college
 olivet
 olivetcollege
 ollie
 ollusa
 olmecas
 olmecs
-olney central college
+olney
 ololcollege
 olympia
 olympiacos
 olympians
 olympic
-olympic college
 olympics
 olympique
 om
 omaha
-omaha mavericks
 omiya
 on
 once
@@ -6829,11 +5763,12 @@ oneonta
 onepocket
 ones
 oneself
+online
 only
 onondaga
-onondaga community college
 ontario
 onto
+oodham
 oostende
 open
 openwheelracing
@@ -6850,11 +5785,9 @@ optometry
 optonet
 or
 oral
-oral roberts golden eagles
 orange
 orangeandblack
 orangeburg
-orangeburg-calhoun technical college
 orangecrush
 orangenation
 order
@@ -6862,12 +5795,7 @@ ore
 Örebro
 orediggers
 oregon
-oregon coast community college
-oregon ducks
-oregon health and science university
-oregon institute of technology
-oregon state beavers
-oregon state university
+oreilles
 orem
 orenburg
 organization
@@ -6885,11 +5813,10 @@ originates
 origins
 orioles
 orlando
-orlando magic
 orleans
 orléans
 orono
-o's
+os
 osaka
 osasuna
 oshawa
@@ -6900,12 +5827,11 @@ osnabrück
 ospreys
 osteopathic
 Östersunds
+osu
 osumarion
-osu-tulsa
 oswego
-otero junior college
+otero
 other
-other doctoral-granting institutions
 others
 otherwise
 otis
@@ -6916,6 +5842,7 @@ otterbein
 otterburne
 otters
 ouachita
+ouachitas[1]
 ouhsc
 our
 out
@@ -6940,8 +5867,6 @@ owatonna
 owen
 owens
 owensboro
-owensboro community and technical college
-owens community college
 owl
 owlerton
 owls
@@ -6952,9 +5877,8 @@ ownership
 oxford
 oxfordunited
 ozark
-ozarka college
+ozarka
 ozarks
-ozarks technical community college
 oztag
 p
 pace
@@ -6964,7 +5888,6 @@ pachuca
 pacific
 pacifica
 pacificoaks
-pacific tigers
 pacificu
 pack
 packers
@@ -7005,15 +5928,13 @@ palla
 pallmall
 palm
 palmas
-palm beach state college
 palmeiras
 palmer
 palmetto
 palo
-palo alto college
 palos
 paltz
-pamlico community college
+pamlico
 pan
 panama
 panathinaikos
@@ -7021,7 +5942,6 @@ pandas
 panhandle
 pankration
 panola
-panola college
 panther
 panthers
 paok
@@ -7030,7 +5950,6 @@ para
 parachute
 parachuting
 paradise
-paradise valley community college
 paragliding
 paragould
 paraguay
@@ -7042,13 +5961,14 @@ parasailing
 paratriathlon
 pardee
 paris
-paris junior college
+parish
+parishes
 park
 pärk
 parker
 parkercc
 parkersburg
-parkland college
+parkland
 parkour
 parks
 parkside
@@ -7068,8 +5988,6 @@ particular
 parts
 pasadena
 pasco
-pasco-hernando
-pasco-hernando community college
 paso
 pass
 passed
@@ -7081,8 +5999,8 @@ patball
 paterson
 path
 pato
-patrick henry community college
-patrick's
+patrick
+patricks
 patriotas
 patriotes
 patriots
@@ -7094,12 +6012,9 @@ patten
 pattern
 patterns
 paul
-paul d. camp community college
 pauli
-paul m. hebert law center
 paulo
 pauls
-paul's
 paulsmiths
 paume
 paved
@@ -7109,15 +6024,15 @@ payne
 pbars
 pcad
 pcl
-p cont.
 pdf
 peace
 peacocks
 peahens
+peak
 pearl
-pearl river community college
 peay
 pec
+peck
 peg
 pegging
 pehlwani
@@ -7126,7 +6041,7 @@ pejorative
 pelicans
 pella
 pellets
-pellissippi state community college
+pellissippi
 pelota
 ‘pelota
 pelotamixteca
@@ -7137,47 +6052,18 @@ penalty
 pencak
 pencaksilat
 penguins
-peninsula college
+peninsula
 penmen
 penn
 pennant
 pennants
 penning
-penn quakers
-penn state abington
-penn state altoona
-penn state beaver
-penn state berks
-penn state brandywine
-penn state college of medicine
-penn state dickinson school of law
-penn state dubois
-penn state erie, the behrend college
-penn state fayette, the eberly campus
-penn state greater allegheny
-penn state great valley school of graduate professional studies
-penn state harrisburg
-penn state hazleton
-penn state lehigh valley
-penn state mont alto
-penn state new kensington
-penn state nittany lions
-penn state online
-penn state schuylkill
-penn state shenango
-penn state wilkes-barre
-penn state worthington scranton
-penn state york
 pennsylvania
 pennsylvaniah
-pennsylvania highlands community college
-pennsylvania state university
-pennsylvania state university's special mission colleges
 penrith
 penrithpanthers
 pens
 pensacola
-pensacola state college
 pensioners
 pentathlon
 pentecostal
@@ -7185,7 +6071,6 @@ people
 peoria
 pepper
 pepperdine
-pepperdine waves
 per
 pere
 peregrines
@@ -7206,7 +6091,6 @@ persons
 perth
 peru
 perugia
-peru state college
 pesäpallo
 pescara
 petanque
@@ -7218,7 +6102,6 @@ peterborough
 peterboroughunited
 peterose
 peters
-peter's
 petersburg
 petrels
 petrolera
@@ -7229,29 +6112,24 @@ phantoms
 pharmacy
 phase
 phenix
-phightin'phils
-phightin's
+phightinphils
+phightins
 philadelphia
 philadelphia76ers
-philadelphia 76ers
 philadelphiaeagles
-philadelphia eagles
 philadelphiaflyers
 philadelphiaphillies
-philadelphia phillies
 philander
 philau
 philippi
 philippines
+philips
 phillies
 phillips
-phillips community college
 philosophy
 phils
 phoenix
-phoenix college
 phoenixcoyotes
-phoenix suns
 photograph
 photography
 phrase
@@ -7259,17 +6137,14 @@ physical
 piast
 picigin
 pick
+pickerington
 pickleball
 pickles
 piece
 piedmont
-piedmont community college
-piedmont technical college
-piedmont virginia community college
 piedras
 pierce
-pierce college
-pierpont community and technical college
+pierpont
 pies
 pigeon
 pigeons
@@ -7278,7 +6153,7 @@ piggery
 pigment
 pigpens
 pike
-pikes peak community college
+pikes
 pikeville
 pile
 pilgrims
@@ -7289,23 +6164,22 @@ piloting
 pilots
 "pilots"
 pima
-pima community college
 pin
 pine
-pine technical college
 ping
 pingpong
-ping pong
 pington
 pinned
 pinning
 pins
 pinstriped
 pinstripers
+pioneer
 pioneers
 pipe
 pipers
 pippa
+piqua
 piratas
 pirate
 pirates
@@ -7321,20 +6195,12 @@ pitchers
 pitches
 pitching
 pitt
-pitt community college
-pitt-greensburg
 pitton
 pittsburg
 pittsburgh
-pittsburgh,
-pittsburgh-johnstown
-pittsburgh panthers
 pittsburghpenguins
 pittsburghpirates
-pittsburgh pirates
 pittsburghsteelers
-pittsburgh steelers
-pittsburg state university
 pittsford
 pittstate
 pitzer
@@ -7343,6 +6209,7 @@ place
 placed
 places
 placing
+plains
 plainsmen
 plainview
 plaisance
@@ -7362,7 +6229,6 @@ playboating
 played
 player
 players
-players'
 playing
 playoff
 playoffs
@@ -7376,7 +6242,6 @@ plume
 plus
 plymouth
 plymouthargyle
-plymouth state university
 pnca
 pocatello
 pocket
@@ -7387,8 +6252,8 @@ pockets
 podiatric
 pods
 poets
+pogo
 pogoń
-pogo stick
 pohang
 point
 pointers
@@ -7401,14 +6266,12 @@ polar
 pole
 poles
 polevault
-pole vault
 police
 policy
 polish
 politically
 politics
 polk
-polk state college
 polo
 polocrosse
 pölten
@@ -7420,7 +6283,6 @@ pomeroys
 pommel
 pommelhorse
 pomona
-pomona-pitzer
 pompey
 ponce
 pond
@@ -7446,12 +6308,7 @@ portal
 portales
 portimão
 portland
-portland community college
-portland pilots
-portland state university
-portland state vikings
 portlandtrailblazers
-portland trail blazers
 porto
 portpower
 portsmouth
@@ -7470,7 +6327,6 @@ posts
 pot
 potomac
 potomacdrainagebasinindigenouspersons
-potomac state college of west virginia university
 potsdam
 potter
 potters
@@ -7492,11 +6348,7 @@ pradalserey
 praha
 praia
 prairie
-prairie state college
-prairie view a&m panthers
-prairie view a&m university
 pratt
-pratt community college
 praying
 pre
 preachers
@@ -7513,7 +6365,6 @@ premiership
 prepared
 presby
 presbyterian
-presbyterian blue hose
 prescott
 prescribed
 presentation
@@ -7531,18 +6382,16 @@ prevent
 previews
 previous
 prgs
+priates
 pride
 priest
 primarily
 primary
 primera
 prince
-prince george's community college
 princes
 princess
 princeton
-princeton tigers
-prince william sound community college
 principal
 principia
 principiacollege
@@ -7557,9 +6406,9 @@ pro
 probably
 problems
 proclaiming
+proctorville
 production
 proers
-pro'ers
 profession
 professional
 profit
@@ -7582,7 +6431,6 @@ protect
 protective
 provençal
 providence
-providence friars
 provo
 prowlers
 psv
@@ -7600,30 +6448,26 @@ puck
 pucpr
 puebla
 pueblo
-pueblo community college
 puerto
 puget
 pugetsound
 pulaski
-pulaski technical college
 pull
 pulled
 pulling
 pullman
+pulse
 pumas
 punch
 punches
 punching
 punta
+punxsutawney
 pup
 pupr
 pups
 purchase
 purdue
-purdue boilermakers
-purdue university calumet
-purdue university north central
-purdue university system
 purely
 purple
 purplepeopleeaters
@@ -7659,8 +6503,7 @@ quebec
 québec
 queen
 queens
-queensborough community college
-queens college
+queensborough
 queensland
 queensparkrangers
 querétaro
@@ -7671,21 +6514,17 @@ quidditch
 quillota
 quilmes
 quincy
-quinebaug valley community college
+quinebaug
 quinn
 quinnipiac
-quinnipiac bobcats
 quinsigamond
-quinsigamond community college
 quintana
 quite
 quiver
 quoits
 r
-r.
 rabbitohs
 race
-race:
 racer
 racers
 racerunning
@@ -7701,8 +6540,6 @@ racquetball
 racquetball/squash
 racquets
 radford
-radford highlanders
-radford university
 radicals
 radio
 radiosports
@@ -7733,7 +6570,7 @@ rainbow
 rainbows
 rainey
 rainiers
-rainy river community college
+rainy
 raised
 raleigh
 rally
@@ -7741,29 +6578,28 @@ rallycross
 rallying
 ram
 ramapo
-ramapo college of new jersey
 rambelles
 ramblers
 rammers
 ramp
 rampage
 rams
+ramsey
+ramsuniversity
 rancho
 rand
 randers
 randolph
 randolphcollege
-randolph community college
-randolph-macon
 random
 range
-ranger college
+ranger
 rangers
 ranging
 rapid
 rapidball
 rapids
-rappahannock community college
+rappahannock
 raps
 raptors
 rarelyused
@@ -7788,7 +6624,6 @@ rcracing
 reach
 read
 reading
-reading area community college
 reagan
 real
 really
@@ -7805,29 +6640,23 @@ rectangular
 red
 redbirds
 redbridge
-red bulls
 reddevils
 reddies
 redding
 reddragons
 redhawks
 redimps
-red lake nation college
 redlands
-redlands community college
 redlegs
 redmen
-red rocks community college
 reds
 redskins
 redsox
-red sox
 redstorm
 redsux
 reduced
 redv
 redwings
-red wings
 redwoods
 reed
 refer
@@ -7852,13 +6681,14 @@ regiscollege
 registered
 regular
 regulation
-reid state technical college
+reid
 reign
 reims
 reinhardt
 reining
 reivers
 related
+relations
 relay
 relayrace
 released
@@ -7869,12 +6699,12 @@ remote
 remotecontrol
 remotely
 remove
-rend lake college
+rend
 renegades
 rennais
 reno
 rensselaer
-renton technical college
+renton
 replaced
 replica
 replicas
@@ -7911,16 +6741,16 @@ reversi
 revolution
 revolves
 rexburg
+reynolds
 reynosa
 reysol
 rhema
 rhinos
 rhode
-rhode island college
-rhode island rams
 rhodes
 rhyme
 rhyming
+rhyne
 rhythm
 rhythmic
 rhythmicgymnastics
@@ -7928,32 +6758,26 @@ ribbies
 ribbon
 rice
 riceinfo
-rice owls
+rich
 richard
-richard j. daley college
 richey
 richland
-richland college
-richland community college
 richmond
-richmond community college
 richmondfootballclub
-richmond spiders
 richmont
-rich mountain community college
 rico
 riddle
 ride
 rider
-rider broncs
 riders
 rides
 ridge
 ridgebacks
-ridgewater college[4]
+ridgewater
 riding
 ried
 rieleros
+rieman
 rifle
 rifles
 rightfield
@@ -7969,9 +6793,7 @@ rink
 rinkball
 rinkhockey
 rio
-rio grande community college
 rionegro
-rio salado college
 ripon
 riposte
 risd
@@ -7987,15 +6809,14 @@ riverdale
 riverhawks
 riverhead
 riverhounds
-riverland community college
+riverland
 rivermen
-river parishes community college
 rivers
 riverside
 riversiders
 riverton
-river valley community college
 rivier
+rivières
 rizers
 rizespor
 rmcad
@@ -8005,18 +6826,14 @@ roadhockey
 roadracing
 roadrunners
 roads
-roane state community college
+roane
 roanoke
-roanoke-chowan community college
 roar
 robert
 robertmorris
-robert-morris
-robert morris colonials
 roberts
-robeson community college
+robeson
 robins
-robin's
 robot
 robotcombat
 robots
@@ -8024,9 +6841,7 @@ rochdale
 roche
 rochelle
 rochester
-rochester community & technical college
 rock
-rock climbing
 rockefeller
 rockets
 rockfishing
@@ -8034,13 +6849,11 @@ rockford
 rockhounds
 rockhurst
 rockies
-rockingham community college
+rockingham
 rockland
-rockland community college
 rocklin
 rocklyblier
 rocks
-rock valley college
 rocky
 rod
 roda
@@ -8048,8 +6861,7 @@ rodeo
 rogaining
 roger
 rogers
-rogers state university
-rogue community college
+rogue
 rohnert
 rojos
 roll
@@ -8059,9 +6871,7 @@ roller
 rollerderby
 rollerhockey
 rollers
-roller skates
 rollerskating
-roller skating
 rollerspeedskating
 rolling
 rollins
@@ -8077,7 +6887,6 @@ roo
 roos
 roosevelt
 roosters
-roosters'
 roots
 rope
 ropeclimbing
@@ -8089,13 +6898,12 @@ rosalind
 rosalindfranklin
 rosario
 rose
-rose-hulman
 rosemont
 rosenborg
-rose state college
 ross
 rostock
 rostov
+rot
 rotatable
 rotates
 rotation
@@ -8103,7 +6911,6 @@ rotherham
 rotherhamunited
 rotor
 rotterdam
-rot-weiß
 rouen
 rouge
 rough
@@ -8118,21 +6925,18 @@ routines
 rovers
 row
 rowan
-rowan-cabarrus community college
-rowan university
-rowan university school of osteopathic medicine  new jersey
 rowdies
 rower
 rowing
 rows
 rox
 roxboro
-roxbury community college
+roxbury
 royaking
 royal
 royals
 rpi
-r's
+rs
 rsc
 rsl
 rubber
@@ -8153,11 +6957,10 @@ runner
 runners
 runnin
 running
-runnin'redbirds
+runninredbirds
 runs
 rush
 rushden
-rushden&diamonds
 rushu
 russellville
 russia
@@ -8170,19 +6973,12 @@ rustcollege
 rustlers
 ruston
 rutgers
-rutgers–camden
-rutgers–newark
-rutgers scarlet knights
-rutgers scarlet knights 
-rutgers schools of biomedical and health sciences
-rutgers university
 rutherford
 ryan
 ryerson
 ryukoku
 ryūkyū
 s
-s.
 sabercats
 sabers
 sabotage
@@ -8191,11 +6987,8 @@ sackrace
 sackville
 sacn
 sacramento
-sacramento kingsbaltimore ravens
-sacramento state hornets
 sacred
 sacredheart
-sacred heart pioneers
 saddle
 saddlers
 saddles
@@ -8203,7 +6996,6 @@ sagan
 sage
 sagehens
 saginaw
-saginaw valley state university
 sagrado
 sagu
 saic
@@ -8214,40 +7006,30 @@ sailing
 sailors
 saint
 sainters
-saint-Étienne
-saint francis u red flash
-saint-germain
 saintjoe
-saint joseph's hawks 
 saintkildafootballclub
 saintleo
-saint louis billikens 
 saintlouisrams
 saintlukescollege
 saintmarys
-saint mary's gaels
 saintmeinrad
-saint paul college
 saintpauls
-saint peter's peacocks
 saints
+salado
 salem
 salemstate
-salem state university
 salemu
 salernitana
 salerno
 salford
 salina
 salisbury
-salisbury university
 salish
-salish kootenai college
+salkehatchie
 salle
 salsa
 salt
 saltillo
-salt lake community college
 saltwater
 salukis
 saluqis
@@ -8261,72 +7043,55 @@ sambo
 same
 sameolds
 samford
-samford bulldogs
-sam houston state bearkats
-sam houston state university
 samoa
 samoan
 sampdoria
-sampson community college
+sampson
 samsons
 samsung
 samuel
 samuelmerritt
 san
-san antonio college
 sanantoniosaints
 sanantoniospurs
-san antonio spurs
 sand
 sanda
 sandball
 sandboarding
+sandburg
 sandecja
 sandefjord
 sandgrounders
 sandhausen
-sandhills community college
+sandhills
 sandiego
 sandiegochargers
-san diego chargers
 sandiegopadres
-san diego padres
-san diego state aztecs
-san diego state university
-san diego toreros
 sandsurfing
 sandy
 sanford
 sanfrancisco49ers
-san francisco 49ers
-san francisco dons
 sanfranciscogiants
-san francisco giants
-san francisco state university
 sanfrecce
 sangju
 sangmu
-san jacinto college
 sanjosesharks
-san jose state spartans
-san jose state university
-san juan college
 sanshou
 santa
-santa clara broncoscincinnati bearcats
-santa fe college
-santa fe community college
 santafeuniversity
 santander
 santiago
 santos
 são
 sapc
+sapporo
 sarah
 sarandi
 sarape
 saraperos
+sarasota
 saratoga
+sargeant
 sarmiento
 sarpsborg
 sarsfield
@@ -8337,20 +7102,17 @@ sasquatch
 sassuolo
 saudi
 sauk
-sauk valley community college
 sault
 saumag
 savage
 savannah
 savannahstate
-savannah state tigers
-savannah state university
-savannah technical college
 savate
 saw
 sawing
 saws
 sawx
+sawyer
 saxons
 saybrook
 says
@@ -8372,12 +7134,10 @@ schalke
 schaumburg
 scheme
 schenectady
-schenectady county community college
+schmo|schmo
 scholastica
 school
 schoolcraft
-schoolcraft college
-school of industrial and labor relations
 schoolofvisualarts
 schools
 schoolyard
@@ -8391,7 +7151,6 @@ science
 sciences
 sckans
 sco
-s cont.
 scooter
 scootering
 score
@@ -8405,11 +7164,9 @@ scotiabank
 scotland
 scots
 scott
-scott community college
 scotties
 scottish
 scottsdale
-scottsdale community college
 scr
 scranton
 scranton/wilkes
@@ -8431,14 +7188,12 @@ sd
 sdcc
 sdstate
 sdsu
+se
 sea
-'sea
 seabury
-seabury-western
 seaeagles
 seagulls
 seahawks
-sea-hawks
 seahorse
 seakayaking
 sealed
@@ -8450,11 +7205,7 @@ seasiders
 season
 seat
 seattle
-seattle community college district
 seattlemariners
-seattle mariners
-seattle redhawks
-seattle seahawks
 seattlesupersonics
 seattleu
 seawolves
@@ -8476,8 +7227,6 @@ seminary
 seminarys
 seminole
 seminoles
-seminole state college
-seminole state college of florida
 semo
 senators
 send
@@ -8489,7 +7238,6 @@ seoul
 sepak
 separate
 separated
-se-pr
 sequence
 seraphs
 serey
@@ -8499,7 +7247,6 @@ service
 services
 set
 seton
-seton hall pirates
 setonhill
 sets
 setters
@@ -8509,13 +7256,12 @@ seven
 sevenball
 sevens
 seventh
-seventy-sixers
+seventy
 several
 sevierville
 sevilla
 sewanee
 seward
-seward county community college
 sfai
 sfasu
 sfbc
@@ -8540,8 +7286,6 @@ sharkies
 sharks
 shaw
 shawnee
-shawnee community college
-shawnee state university
 shawuniversity
 shaymen
 sheagles
@@ -8555,14 +7299,13 @@ sheffieldfc
 sheffieldunited
 sheffieldwednesday
 sheldon
-shelton state community college
+shelton
 shenandoah
 shenango
 shepherd
 shepherdstown
-shepherd university
 sherbrooke
-sheridan college
+sheridan
 sherman
 shidokan
 shimer
@@ -8573,10 +7316,9 @@ shins
 shinty
 ship
 shippensburg
-shippensburg university of pennsylvania
 shipping
-s-hiroshima
 shmoes
+shoals
 shock
 shockers
 shodokan
@@ -8594,7 +7336,6 @@ shoots
 shop
 shore
 shoreline
-shoreline community college
 shoremen
 shores
 shorinjikempo
@@ -8609,7 +7350,6 @@ shorts
 shortstop
 shot
 shotput
-shot put
 shots
 shoulder
 shoulders
@@ -8622,6 +7362,7 @@ showing
 showjumping
 showtime
 shreveport
+shreveports
 shrews
 shrewsbury
 shrewsburytown
@@ -8643,7 +7384,6 @@ siegal
 siegalcollege
 siena
 sienaheights
-siena saints
 sierra
 sierranevada
 sight
@@ -8658,15 +7398,12 @@ siloam
 silver
 silverandblack
 silverbacks
-silver medal
 silverswords
 similar
 similarities
 simmons
 simon
 simons
-simon's
-simons-rock
 simple
 simplified
 simply
@@ -8676,33 +7413,30 @@ simulates
 simultaneously
 since
 sinclair
-sinclair community college
 single
 singles
 singlestick
 singlewicket
 sinner
 sinners
+sint
 sinte
 sintegleska
-sint-truiden
 sion
 sioux
 sipa
 sirius
-sisseton wahpeton college
+sisseton
 sistema
 site
 sites
 sitka
 sits
 sitting
-sitting bull college
 situated
+siu
 siuc
 siue
-siue cougars
-siu-edwardsville
 sivasspor
 six
 sixers
@@ -8717,8 +7451,8 @@ sjfc
 sjsu
 sjvcs
 sk
-skagit valley college
-ska-khabarovsk
+ska
+skagit
 skate
 skateboard
 skateboarding
@@ -8726,7 +7460,6 @@ skaterhockey
 skaters
 skates
 skating
-skating rink
 skeet
 skeetshooting
 skeleton
@@ -8747,7 +7480,7 @@ skill
 skills
 skimboarding
 skimming
-'skins
+skins
 skip
 skipjacks
 skippers
@@ -8786,7 +7519,6 @@ sliding
 slightly
 sligo
 slippery
-slippery rock university of pennsylvania
 slope
 slopes
 slopestyle
@@ -8802,19 +7534,18 @@ smcvt
 smelts
 smith
 smithfield
-smith's
+smiths
 smokies
 smooth
 smsu
+smu
 smumn
-smu mustangs
 smwc
 snack
 snake
 snakes
 snatch
 snead
-snead state community college
 snhu
 snickers
 snocross
@@ -8829,7 +7560,6 @@ snowboard
 snowboarder
 snowboarding
 snowboating
-snow college
 snowcross
 snowkayaking
 snowkiting
@@ -8845,7 +7575,6 @@ sociedad
 södra
 soft
 softball
-softball:
 sogndal
 soka
 soldiers
@@ -8857,20 +7586,19 @@ some
 somers
 somersault
 somersaults
-somerset community college
+somerset
 somerville
 sometimes
 sønderjyske
 song
 sonics
 sonoma
-sonoma state university
 sooners
 sophia
-sophie davis school of biomedical education
+sophie
 sorro
 sort
-soujourner-douglass
+soujourner
 soule
 sound
 sounders
@@ -8879,98 +7607,30 @@ sounds
 source
 sources
 south
-south alabama jaguars
 southampton
-south arkansas community college
-south carolina gamecocks
-south carolina state bulldogs
-south carolina state university
-south central college
-southcentral kentucky community and technical college
-south central louisiana technical college
+southcentral
 southcollegetn
-south dakota coyotes
-south dakota school of mines & technology 
-south dakota state jackrabbits
-south dakota state university
 southeast
-southeast arkansas college
-southeast community college
 southeastern
-southeastern community college
-southeastern illinois college
-southeastern louisiana lions
-southeastern louisiana university
-southeastern oklahoma state university
-southeastern technical college
-southeast kentucky community and technical college
-southeast missouri state redhawks
-southeast missouri state university
-southeast technical institute
 southend
 southern
-southern arkansas university
-southern arkansas university tech
-southern connecticut state university 
-southern crescent technical college
 southernct
-southern illinois salukis
-southern illinois university carbondale 
-southern illinois university edwardsville
-southern illinois university system
-southern maine community college
-southern miss golden eagles
-southern oregon university
-southern polytechnic state university
-southern state community college
-southern union state community college
-southern university
-southern university at new orleans
-southern university at shreveport
-southern university jaguars
-southern utah thunderbirds
-southern utah university
-southern west virginia community and technical college
 southfield
-south florida bulls
-south florida state college
-south georgia state college 
-south georgia technical college
-south louisiana community college
-south mountain community college
-south piedmont community college
-south plains college
+southmost
 southport
-south puget sound community college
 souths
-south seattle community college
+southside
 southsidehitmen
 southsiders
-southside virginia community college
-south suburban college
 southsydneyrabbitohs
-south texas college
 southuniversity
 southwest
 southwestern
-southwestern community college
-southwestern illinois college
-southwestern indian polytechnic institute
-southwestern michigan college
-southwestern oklahoma state university
-southwestern oregon community college
-southwest georgia technical college
-southwest minnesota state university
-southwest mississippi community college
-southwest tennessee community college
-southwest texas junior college
-southwest virginia community college
-southwest wisconsin technical college
 sovetov
 soviet
-sowela technical community college
+sowela
 sox
-sp.
+sp
 space
 spaced
 spain
@@ -8983,7 +7643,6 @@ sparky
 sparta
 spartak
 spartanburg
-spartanburg community college
 spartans
 spear
 spearfish
@@ -9005,7 +7664,6 @@ speedgolf
 speedminton
 speedpool
 speedskating
-speed skating
 speedskiing
 speedway
 spelled
@@ -9025,35 +7683,29 @@ spireites
 spires
 spirits
 spokane
-spokane community college
-spokane falls community college
 sponge
 spongee
 spongeepolo
 spoon
-spoon river college
 sport
-sport.
 sportfishing
 sportfreunde
 sporting
 sportkite
 sports
-sports:
 sportslists
 sportsmanship
 sportstacking
 spring
 springdale
 springfield
-springfield technical community college
 springs
 sprint
 sprinting
 sprints
+sprunt
 spst
 spsu
-s-pulse
 spurs
 spvgg
 spy6
@@ -9067,9 +7719,8 @@ squirtboating
 squish
 sse
 ssireum
- ssouth alabama jaguars
+ssouth
 st
-st.
 stabæk
 stac
 stack
@@ -9086,6 +7737,7 @@ stakes
 stalbanscity
 stall
 stallions
+stamford
 stampeders
 stamps
 stand
@@ -9093,76 +7745,36 @@ standard
 standing
 standish
 stanford
-stanford cardinal
 stanislaus
 stank
 stankees
 stanley
-stanly community college
+stanly
 star
 starboard
 stark
-stark state college of technology
 starkville
 stars
 start
 state
-state,
 state)
-state college of florida, manatee–sarasota
-state community college of east saint louis
 stated
-state fair community college
-state–lima
-state–mansfield
-state–marion
 statement
-state-moorhead
 staten
-state–pueblo
 states
 statesboro
 statesmen
 statesnicknames
-state–stanislaus
-state technical college of missouri
-state university of new york at brockport
-state university of new york at canton
-state university of new york at cobleskill
-state university of new york at cortland
-state university of new york at delhi
-state university of new york at farmingdale
-state university of new york at fredonia
-state university of new york at geneseo 
-state university of new york at morrisville
-state university of new york at new paltz
-state university of new york at old westbury
-state university of new york at oneonta
-state university of new york at oswego
-state university of new york at plattsburgh
-state university of new york at potsdam
-state university of new york at purchase
-state university of new york college of environmental science and forestry
-state university of new york maritime college
-state university of new york polytechnic institute
-state university of new york state college of optometry
-state university of new york upstate medical university
 stateyears
 statictrapeze
 station
 stationary
 statue
-st-aug
 staugustinecollege
 staunton
 stay
-st. bonaventure bonnies
-st. charles community college
 stcl
-st. clair county community college
 stcloudstate
-st. cloud state university
-st. cloud technical and community college
 ste
 stealth
 steam
@@ -9178,21 +7790,17 @@ steeplechase
 steer
 steers
 stephen
-stephen f. austin lumberjacks
-stephen f. austin state university
 stephens
 stephenville
 sterling
 sterlingcollege
 stern
 stetson
-stetson hatters
 steubenville
 stevenage
 stevens
 stevenson
 stfrancis
-st. francis brooklyn terriers
 stfranciscollege
 stgeorgeillawarradragons
 stgregorys
@@ -9210,37 +7818,26 @@ stingrays
 stink
 stjohns
 stjohnscollegespringfield
-st. john's red storm
-st. johns river state college
 stkate
 stlawu
 stlcop
 stlouisblues
 stlouiscardinals
-st. louis cardinals
-st. louis community college
-st. louis ramsuniversity of alabama
 stmartin
 stmary
 stmarys
-stmarys-ca
-st. mary's college of maryland
 stmarytx
 stock
 stockport
 stockportcounty
 stockton
-stockton university
 stoke
 stokecity
 stolaf
 stone
-stone child college
 stonehill
 stones
 stony
-stony brook seawolves
-stony brook university
 stoolball
 stop
 stops
@@ -9250,8 +7847,6 @@ stormy
 storrs
 stout
 stowe
-st. petersburg college
-st. philip's college
 stpt
 straight
 straps
@@ -9275,14 +7870,14 @@ striking
 stringed
 strip
 striped
-stripes'
+stripes
 stritch
 stroke
 strokes
 strømsgodset
 strong
 strongman
-'stros
+stros
 strose
 stroudsburg
 struck
@@ -9317,7 +7912,6 @@ success
 such
 sudbury
 suffolk
-suffolk county community college
 sugar
 suggested
 suita
@@ -9326,15 +7920,12 @@ suits
 sul
 sulky
 sullivan
-sullivan county community college
 sulross
-sul ross state university
 sultanes
 sultans
 summer
 summit
 sumo
-sumo wrestling
 sumter
 sun
 sunbirds
@@ -9345,21 +7936,10 @@ suno
 sunrise
 suns
 suny
-suny adirondack
-suny broome community college
-suny-canton
-suny-delhi
-suny–esf
-suny-fredonia
-suny-geneseo
 sunyit
 sunymaritime
 sunyopt
-suny orange
-suny-plattsburgh
-suny-potsdam
 sunysb
-suny ulster
 super
 sÜper
 supercross
@@ -9387,7 +7967,8 @@ surflifesaving
 surge
 surrounded
 surrounding
-surry community college
+surry
+susitna
 susla
 suspended
 susqu
@@ -9402,7 +7983,6 @@ swamp
 swamps
 swandive
 swans
-swans'
 swansea
 swanseacity
 swans/south
@@ -9437,7 +8017,6 @@ swum
 swung
 sycamores
 sydney
-sydney'
 sydneyroosters
 sydneyswans
 sydneyswans/southmelbournefootballclub
@@ -9447,10 +8026,8 @@ sync
 synchronized
 synchronizedskating
 synchronizedswimming
-synchronized swimming
 synthetic
 syracuse
-syracuse orange
 system
 systems
 szczecin
@@ -9464,14 +8041,12 @@ table
 tablefootball
 tablehockey
 tabletennis
-table tennis
 tablets
 tabor
 tack
 tackle
 tackling
 tacoma
-tacoma community college
 tactics
 taekkyeon
 taekwondo
@@ -9499,7 +8074,6 @@ talk
 tall
 talladega
 tallahassee
-tallahassee community college
 talleres
 talons
 tamaulipas
@@ -9509,13 +8083,10 @@ tami
 tamiu
 tampa
 tampabaybuccaneers
-tampa bay buccaneers
 tampabaylightning
 tampabayrays
-tampa bay rays
 tamu
 tamucc
-tamu-commerce
 tamug
 tamuk
 tamut
@@ -9530,10 +8101,9 @@ targeting
 targets
 tarkbei
 tarleton
-tarleton state university
 tarmac
 tarragona
-tarrant county college
+tarrant
 tars
 tartans
 tartars
@@ -9544,8 +8114,7 @@ tball
 tchoukball
 tcm
 tcnj
-t cont.
-tcu horned frogs
+tcu
 te
 teachers
 team
@@ -9554,13 +8123,10 @@ teamen
 teammate
 teammates
 teams
-team's
 team’s
-teams:
 teaneck
 tech
 technical
-technical college of the lowcountry
 technique
 techniques
 technological
@@ -9572,30 +8138,16 @@ tejanos
 tejo
 telemark
 telemarking
-telemark skiing
 tempe
 temperley
 temple
-temple college
-temple owls
-temple university
-temple university ambler
 temporary
 temuco
 ten
 tenball
 tenerife
 tennessee
-tennessee,
-tennessee board of regents
-tennessee-martin
-tennessee state tigers
-tennessee state university
-tennessee tech golden eagles
-tennessee technological university
 tennesseetitans
-tennessee titans
-tennessee volunteers
 tennikoit
 tenniquoits
 tennis
@@ -9611,8 +8163,8 @@ terms
 terms7
 ternana
 terni
+terra
 terrace
-terra community college
 terracota
 terrain
 terrains
@@ -9633,40 +8185,11 @@ tetons
 texanns
 texans
 texarkana
-texarkana college
 texas
-texas a&m aggies
-texas a&m-corpus christi islanders
-texas a&m international university
-texas a&m university
-texas a&m university–central texas
-texas a&m university–commerce
-texas a&m university–corpus christi
-texas a&m university–kingsville
-texas a&m university–san antonio
-texas a&m university–texarkana
-texas-arlington
-texas-austin
 texascollege
-texas-dallas
-texas-el
-texas longhorns
-texas-pan american broncs
 texasrangers
-texas rangers
-texas's
-texas–san
-texas southern tigers
-texas southern university
-texas southmost college
-texas state bobcats
-texas state technical college
-texas state university
-texas tech red raiders
-texas tech university
-texas-tyler
+texass
 texaswarriors
-texas woman's university
 texs
 text
 textile
@@ -9681,35 +8204,17 @@ the
 theamericancollege
 theartcenter
 theatre
-the-bac
 thechicagoschool
-the citadel
-the college of new jersey
-the college of william & mary
-the evergreen state college
 their
 them
 themselves
 then
-the ohio state university system
 theological
 theology
 there
 therefore
 theres
 these
-the state university of new york at buffalo
-the university of arkansas system
-the university of texas at arlington
-the university of texas at austin
-the university of texas at brownsville
-the university of texas at dallas
-the university of texas at el paso
-the university of texas at san antonio
-the university of texas at tyler
-the university of texas of the permian basin
-the university of texas–pan american
-the university of texas rio grande valley
 they
 thibodaux
 thickly
@@ -9719,10 +8224,8 @@ this
 thistle
 thomas
 thomasaquinas
-thomas edison state college
 thomasmore
 thomasmorecollege
-thomas nelson community college
 thomasu
 thomasville
 thompson
@@ -9736,7 +8239,6 @@ though
 thousand
 three
 threeball
-three rivers community college
 threshers
 thrill
 thrilling
@@ -9763,13 +8265,12 @@ tiburones
 ticats
 tide
 tides
-tidewater community college
+tidewater
 tie
 tiffin
 tifton
 tiger
 tigercats
-tiger-cats
 tigers
 tigerville
 tiges
@@ -9779,7 +8280,7 @@ tigre
 tigres
 tigs
 tijuana
-tillamook bay community college
+tillamook
 tillotson
 timbers
 timberwolves
@@ -9808,17 +8309,17 @@ toewrestling
 toffee
 toffees
 together
-tohono o'odham community college
+tohono
 tokyo
 toledo
-toledo rockets
 tolima
 toluca
 tom
 tomales
+tomball
 tomcats
 tommies
-tompkins cortland community college
+tompkins
 tomsk
 tondela
 tonylasorda
@@ -9835,17 +8336,15 @@ torino
 tornado
 tornadoes
 toronto
-'to'ronto
 torontoargonauts
 torontobluejays
-toronto blue jays
 torontomapleleafs
 torontoraptors
-toronto raptors
 toros
 torquay
 torquayunited
 torre
+torrington
 tosno
 toss
 tossing
@@ -9871,16 +8370,12 @@ towards
 towels
 tower
 town
-'town'
 towns
 township
 towson
-towson tigers
-towson university
 trabzonspor
 tracers
 track
-track and field
 trackcycling
 tracking
 trackracing
@@ -9919,22 +8414,24 @@ traveling
 traverse
 traversing
 treadmill
-treasure valley community college
+treasure
 trec
 tree
 trees
+trenholm
 trent
 trenton
 trevecca
+tri
 trial
 trials
 triathle
 triathlete
 triathlon
+tribal
 tribe
 tribes
 tribunes
-tri-cities
 tricity
 trick
 tricking
@@ -9942,51 +8439,39 @@ tricks
 trickytrees
 tricolour
 tricolours
-tri-county community college
-tri-county technical college
 tricycle
-trident technical college
+trident
 tries
 trincoll
 trine
-trinidad state junior college
+trinidad
 trinity
 trinitybiblecollege
 trinitycollege
 trinitycollegeqc
 trinitydc
-trinity valley community college
 triple
 triplejump
-triple jump
-triple play
-triton college
+triton
 tritons
 trnty
-trois-rivières
+trogansalabama
+trois
 trojans
 trolls
 tromsø
 trot
-'trot'
 trotters
 troy
 troyes
-troy trogansalabama southern community college
-troy trojans
-troy university
-troy university at dothan
-troy university at montgomery
-troy university system
-truckee meadows community college
+truckee
 truckracing
 true
 truebluebrewcrew
 truett
-truett-mcconnell
 trugo
+truiden
 truman
-truman state university
 trumbull
 try
 trying
@@ -9998,7 +8483,6 @@ tucumán
 tuesday
 tufts
 tug
-tug of war
 tugowar
 tui
 tuiu
@@ -10007,14 +8491,11 @@ tuks
 tukwila
 tula
 tulane
-tulane green wave
 tulsa
-tulsa community college
-tulsa golden hurricane
 tumbling
 tune
 tunnel
-tunxis community college
+tunxis
 turabo
 turbulent
 turf
@@ -10024,7 +8505,6 @@ turlock
 turn
 turns
 turtle
-turtle mountain community college
 tusc
 tuscaloosa
 tuscarawas
@@ -10045,14 +8525,13 @@ twists
 two
 ‘two
 two’
-t'wolves
+twolves
 txchiro
 txstate
 txwes
 tying
 tykes
 tyler
-tyler junior college
 type
 types
 typical
@@ -10060,18 +8539,13 @@ typically
 u
 [u
 uab
-uab blazers
-uacc batesville
-uacc hope
-uacc morrilton
-uaf community and technical college
+uacc
+uaf
 uafortsmith
 uakron
 ualr
-ualr trojans
 uamont
 uams
-u.a.n.l.
 uapb
 uark
 uarts
@@ -10083,27 +8557,16 @@ ucam
 uccaribe
 uccs
 ucdavis
-uc davis aggies
 ucdenver
-ucf knights
+ucf
 uchastings
 uchicago
-uc irvine anteaters
 ucla
-ucla bruins
 ucmerced
 ucmo
 ucollege
 uconn
-uconn avery point campus in groton
-uconn graduate business campus in hartford
-uconn greater hartford campus in west hartford
-uconn stamford campus in stamford
-uconn torrington campus in torrington
-uconn waterbury campus in waterbury
 ucop
-uc riverside highlanders
-uc santa barbara gauchos
 ucsb
 ucsc
 ucsd
@@ -10120,7 +8583,6 @@ ufa
 uhcl
 uhwo
 uic
-uic flames
 uidaho
 uillinois
 uindy
@@ -10129,6 +8591,7 @@ uk
 ulama
 ulm
 ulsan
+ulster
 ultimate
 ultimatefootball
 ultimatefrisbee
@@ -10142,10 +8605,8 @@ umary
 umaryland
 umass
 umassd
-umass–lowell
 umassmed
 umbc
-umbc retrievers
 umbrella
 umdnj
 umes
@@ -10154,34 +8615,25 @@ umflint
 umhb
 umich
 umkc
-umkc kangaroos
 umobile
 umpi
 umpire
-umpqua community college
+umpqua
 umsl
 umsystem
 umuc
 umwestern
-u.n.a.m.
 unarmed
 unc
 unca
-unc-asheville
-unc asheville bulldogs
 uncc
-unc-charlotte
 uncfsu
 uncg
-uncg spartans
 uncm
 unco
 uncp
-unc-pembroke
 uncsa
 uncw
-unc-wilmington
-uncw seahawks
 under
 underhand
 underneath
@@ -10193,7 +8645,7 @@ underwaterhockey
 underwaterrugby
 uneven
 unevenbars
-uni.
+uni
 unicycle
 unicycles
 unicycletrials
@@ -10208,12 +8660,10 @@ union
 unión
 uniondale
 unionky
-uni panthers
 unique
 unison
 united
 unitedseminary
-united tribes technical college
 unity
 univ
 unive
@@ -10222,200 +8672,14 @@ universitario
 université
 universities
 university
-university,
-university at albany, state university of new york
 universityaustin
-university-commerce
-university-galveston
-university-northern
-university–northern
-university of akron
-university of alabama at birmingham
-university of alabama in huntsville
-university of alaska anchorage
-university of alaska fairbanks
-university of alaska fairbanks has four community college campuses
-university of alaska southeast
-university of arizona
-university of arkansas
-university of arkansas at little rock
-university of arkansas at monticello
-university of arkansas at pine bluff
-university of arkansas for medical sciences
-university of arkansas – fort smith
-university of baltimore
-university of california, berkeley
-university of california, davis
-university of california, hastings college of the law
-university of california, irvine
-university of california, los angeles
-university of california, merced
-university of california, riverside
-university of california, san diego
-university of california, san francisco
-university of california, santa barbara
-university of california, santa cruz
-university of central arkansas
-university of central florida
-university of central missouri
-university of central oklahoma
-university of cincinnati
-university of cincinnati clermont college
-university of colorado boulder
-university of colorado colorado springs
-university of colorado denver 
-university of connecticut
-university of delaware
-university of florida
-university of georgia
-university of guam
-university of hawaii at hilo
-university of hawaii at manoa
-university of hawaii at west oahu
-university of houston
-university of houston–clear lake
-university of houston–downtown
-university of houston–victoria
-university of idaho
-university of illinois at chicago
-university of illinois at springfield
-university of illinois at urbana–champaign
-university of iowa
-university of kansas
-university of kentucky
-university of louisiana at lafayette
-university of louisiana at monroe
-university of louisville
-university of maine 
-university of maine at augusta 
-university of maine at farmington 
-university of maine at fort kent 
-university of maine at machias 
-university of maine at presque isle 
-university of maine law school
-university of maryland, baltimore
-university of maryland, baltimore county
-university of maryland biotechnology institute
-university of maryland center for environmental science
-university of maryland, college park
-university of maryland eastern shore
-university of maryland university college
-university of mary washington
-university of massachusetts amherst
-university of massachusetts boston
-university of massachusetts dartmouth
-university of massachusetts lowell
-university of massachusetts medical school
-university of memphis
-university of michigan
-university of michigan-dearborn
-university of michigan-flint
-university of minnesota crookston
-university of minnesota duluth
-university of minnesota morris
-university of minnesota rochester
-university of minnesota system
-university of minnesota twin cities 
-university of mississippi
-university of missouri
-university of missouri–kansas city
-university of missouri–st. louis
-university of montana
-university of montana western
-university of montevallo
-university of nebraska at kearney
-university of nebraska at omaha
-university of nebraska-lincoln
-university of nebraska medical center
-university of nebraska system
-university of nevada, las vegas
-university of nevada, reno 
-university of new hampshire
-university of new mexico
-university of new orleans
-university of north alabama
-university of north carolina at asheville
-university of north carolina at chapel hill
-university of north carolina at charlotte
-university of north carolina at greensboro
-university of north carolina at pembroke
-university of north carolina at wilmington
-university of north carolina school of the arts
-university of north dakota
-university of northern colorado
-university of northern iowa
-university of north florida
-university of north georgia
-university of north texas
-university of north texas at dallas
-university of oklahoma
-university of oklahoma health sciences center
-university of oklahoma-tulsa
-university of oregon
-university of pittsburgh
-university of pittsburgh at bradford
-university of pittsburgh at greensburg
-university of pittsburgh at johnstown
-university of pittsburgh at titusville
-university of rhode island
-university of science and arts of oklahoma
-university of south alabama
-university of south carolina 
-university of south carolina aiken
-university of south carolina beaufort
-university of south carolina lancaster
-university of south carolina salkehatchie
-university of south carolina sumter
-university of south carolina union
-university of south carolina upstate
-university of south dakota
-university of southern indiana
-university of southern maine 
-university of southern mississippi
-university of south florida
-university of tennessee at chattanooga
-university of tennessee at knoxville 
-university of tennessee at martin 
-university of tennessee health science center 
-university of tennessee space institute
-university of the district of columbia
-university of the virgin islands
-university of the virgin islands- st. croix campus
-university of the virgin islands system
-university of toledo
-university of utah
-university of vermont
-university of virginia
-university of virginia's college at wise
-university of washington
-university of west alabama
-university of west florida
-university of west georgia
-university of wisconsin–eau claire
-university of wisconsin–green bay
-university of wisconsin–la crosse
-university of wisconsin–madison
-university of wisconsin–milwaukee
-university of wisconsin–oshkosh
-university of wisconsin–parkside
-university of wisconsin–platteville
-university of wisconsin–river falls
-university of wisconsin–stevens point
-university of wisconsin–stout
-university of wisconsin–superior
-university of wisconsin–whitewater
-university of wyoming49ers
-university–pueblo
 university/purdue
-university system of maryland
-university-zanesville
+universitys
 unknown
 unless
 unlike
 unlimited
 unlv
-unlv rebels
-unlv runnin' rebels
 unmc
 unofficial
 unoh
@@ -10453,15 +8717,11 @@ ural
 urawa
 urban
 urbana
-urbana-champaign
-uri feinstein campus in providence
-uri narragansett bay campus in narragansett
-uri w. alton jones campus in west greenwich
+uri
 ursinus
 ursuline
 uruguay
 us
-u's
 us;
 usa
 usafa
@@ -10469,16 +8729,10 @@ usage
 usao
 usc
 usca
-usc-aiken
 uscb
-usc–beaufort
 uscga
 usciences
-usc-sumter
-usc trojans
-usc-union
 uscupstate
-usc upstate spartans
 usd
 use
 used
@@ -10498,19 +8752,9 @@ ussa
 usually
 ut
 utah
-utah jazz
-utah runnin' utes
-utah state aggies
-utah state university
-utah utes
-utah valley university
-utah valley wolverines
-ut arlington mavericks
-ut-brownsville
 utd
 utdallas
 utep
-utep miners
 utes
 utexas
 uthct
@@ -10522,57 +8766,37 @@ utica/rome
 utilize
 utilizes
 utilizing
-ut martin skyhawks
 utmb
 utoledo
 utpa
 utpb
 utrecht
 utsa
-utsa roadrunners
 utsnyc
 utsouthwestern
 utsystem
 uttyler
 utuado
 utulsa
-uw–baraboo/sauk county
-uw–barron county
-uw bothell campus
+uw
 uwec
 uwest
-uw–fond du lac
-uw–fox valley
 uwgb
 uwlax
-uw–manitowoc
-uw–marathon county
-uw–marinette
-uw–marshfield/wood county
 uwosh
 uwplatt
 uwrf
-uw–richland
-uw–rock county
 uwsa
-uw–sheboygan
 uwsp
 uwstout
 uwsuper
-uw tacoma
-uw–washington county
-uw–waukesha
 uwyo
 v
-'v'
-v.
 vaduz
 vajra
 valdosta
-valdosta state university 
 vale
 valencia
-valencia college
 valencian
 valenciennes
 vålerenga
@@ -10582,17 +8806,14 @@ valladolid
 vallecano
 vallejo
 valley
-valley city state university
 valparaiso
 valparaíso
-valparaiso crusaders
 valpo
-vance-granville community college
+vance
 vancouver
 vancouvercanucks
 vandals
 vanderbilt
-vanderbilt commodores
 vandercook
 vanguard
 vaqueros
@@ -10615,7 +8836,7 @@ vaulter
 vaulting
 vaults
 vcsu
-vcu rams
+vcu
 vegalta
 vegas
 vehicle
@@ -10623,23 +8844,21 @@ vehicles
 velcro
 vélez
 velodromes
+venango
 venezia
 venezuela
 venezuelan
+venlo
 ventforet
 veracruz
 vercelli
 verdes
 vermilion
-vermilion community college
 vermillion
 vermont
-vermont catamounts
 vermontlaw
-vermont technical college
 verne
 vernon
-vernon college
 verona
 version
 versions
@@ -10648,11 +8867,11 @@ vertical
 vertically
 very
 vestal
+veterinary
 vfb
 vfcc
 vfl
 vfr
-v-hawks
 vianney
 viborg
 vice
@@ -10660,7 +8879,6 @@ vicenza
 vics
 victimized
 victoria
-victoria college
 victory
 viejo
 vienna
@@ -10677,7 +8895,6 @@ villa
 villages
 villahermosa
 villanova
-villanova wildcats
 villans
 villarreal
 viña
@@ -10689,21 +8906,10 @@ viperball
 vipers
 virgin
 virginia
-virginia cavaliers
-virginia commonwealth university
-virginia highlands community college
-virginia-maryland regional college of veterinary medicine
-virginia–maryland regional college of veterinary medicine
-virginia military institute
-virginia–parkersburg
-virginia polytechnic institute and state university
-virginia's
-virginia state university
-virginia tech hokies
-virginia western community college
+virginias
 virtus
 visit
-visiting team
+visiting
 visitor
 vissel
 vista
@@ -10714,31 +8920,27 @@ vitesse
 vitória
 vixens
 vmi
-vmi keydets
 volcanoes
 volley
 volleyball
-volley ball
+volunteer
 volunteers
-volunteer state community college
 voorhees
 vovinam
 voyageurs
 vstix
 vulcans
-vvv-venlo
+vvv
 vx
 w
-w.
-waasl.
-waasland-beveren
+waasl
+waasland
 wabash
-wabash valley college
 wachovia
+wachusett
 wacker
 waco
 wagner
-wagner seahawks
 wahine
 wahoo
 wahoos
@@ -10746,9 +8948,6 @@ wahpeton
 waist
 wake
 wakeboarding
-wake forest demon deacons
-wake forestdemon deacons
-wake technical community college
 walden
 waldenu
 waldorf
@@ -10760,11 +8959,7 @@ walking
 wall
 walla
 wallace
-wallace community college
-wallace community college selma
-wallace state community college
 wallawalla
-walla walla community college
 wallball
 walled
 walls
@@ -10773,17 +8968,17 @@ walnut
 walsall
 walsh
 walshcollege
-walters state community college
+walters
 waltham
 wanderers
 war
+waregem
 warfare
 warhawks
 warner
 warnerpacific
 warren
 warrensburg
-warren-wilson
 warriors
 wars
 warszawa
@@ -10797,24 +8992,16 @@ washers
 washing
 washington
 washingtoncapitals
-washington county community college
-washington huskies
 washingtonnationals
-washington nationalsboston celtics
 washingtonredskins
-washington redskins
-washington state community college
-washington state cougars
-washington state university
 washingtonwizards
-washington wizards
 washjeff
-washtenaw community college
+washtenaw
 wasps
 water
+waterbury
 waterloo
 waterpolo
-water polo
 waters
 watershed
 waterski
@@ -10825,9 +9012,8 @@ watertown
 waterville
 watford
 watkins
-waubonsee community college
+waubonsee
 waukesha
-waukesha county technical college
 wausau
 wave
 waverly
@@ -10837,11 +9023,7 @@ way
 waycross
 wayland
 wayne
-wayne community college
-wayne county community college
 waynesburg
-wayne state college
-wayne state university
 ways
 wbcoll
 wcsu
@@ -10852,15 +9034,11 @@ weapons
 wear
 wearing
 weatherford
-weatherford college
 weatherproof
 webb
 webber
 webbies
-webb-institute
 weber
-weber state university
-weber state wildcats
 website
 webster
 wed
@@ -10875,13 +9053,14 @@ weighted
 weightlifter
 weightlifting
 weights
+weiß
 well
 we’ll
-well.
 wellesley
 wellington
 wells
-wenatchee valley college
+wels
+wenatchee
 wenham
 went
 wentworth
@@ -10896,67 +9075,26 @@ west
 westbromwichalbion
 westbury
 westchester
-westchester community college
-west chester university of pennsylvania
 westcoasteagles
 westerlo
 western
 westernbulldogs
-western carolina catamounts
-western carolina university
-western colorado community college
-western connecticut state university 
-western dakota technical institute
 westerners
-western illinois leathernecks
-western illinois university
-western illinois university-quad cities
-western iowa tech community college
-western kentucky hilltoppers
-western kentucky university
-western michigan broncos
-western michigan university
-western nebraska community college
-western nevada college
-western nevada college 
-western new mexico university
-western oklahoma state college
-western oregon university
-western piedmont community college
 westernseminary
-western state colorado university
-western technical college
-western texas college
 westernu
-western washington university
-western wyoming community college
 westerville
 westerwinds
 westfield
-westfield state university
 westga
-west georgia technical college
 westhamunited
-west kentucky community and technical college
 westliberty
-west liberty university
 westminster
 westminstercollege
-westminster-mo
 westmont
-westmoreland county community college
+westmoreland
 wests
-west shore community college
 weststigers
-west texas a&m university
 westville
-west virginia mountaineers
-west virginia northern community college
-west virginia school of osteopathic medicine
-west virginia state university
-west virginia university
-west virginia university at parkersburg
-west virginia university institute of technology
 westwood
 wet
 wetsuit
@@ -10964,9 +9102,9 @@ wexford
 weymouth
 whalers
 whales
-wharton county junior college
+wharton
 what
-whatcom community college
+whatcom
 wheaton
 wheatoncollege
 wheel
@@ -10991,24 +9129,19 @@ while
 whirlwinds
 white
 whitecaps
-white earth tribal and community college
 whiteelephants
-white mountains community college
 whitesox
-white sox
 whitesux
 whitewater
 whitewaterkayaking
 whitewaterrafting
-white water rafting
 whitman
 whittier
 whitworth
 whizkids
 who
+wic
 wichita
-wichita state shockers
-wichita state university
 wicket
 wickets
 wide
@@ -11024,42 +9157,34 @@ wikidata
 wikimedia
 wikipedia
 wikipedia®
-wikt:schmo|schmo
+wikt
 wilberforce
+wilbur
 wilburton
-wilbur wright college
 wild
 wildcats
 wiley
 wileyc
 wilfrid
 wilkes
-wilkes-barre
-wilkes community college
 will
 willamette
 willem
 william
-william e. macaulay honors college
-william & mary tribe
-william paterson university of new jersey
 williams
 williamsburg
-williamsburg technical college
 williamson
 williamsport
 williamstown
 williamwoods
 willimantic
 williston
-williston state college
 wilmington
 wilmore
 wilmu
 wilson
-wilson community college
 wimbledon
-wimbledon's
+wimbledons
 win
 wind
 winders
@@ -11067,7 +9192,7 @@ windmill
 windsor
 windsurfer
 windsurfing
-windward community college
+windward
 winfield
 wingate
 wings
@@ -11079,43 +9204,14 @@ winnipeg
 winnipegbluebombers
 winnipegk
 winona
-winona state university
 wins
 winston
-winston-salem
-winston-salem state university
 winter
 winthrop
-winthrop eagles
-winthrop university
 wire
-wiregrass georgia technical college
+wiregrass
 wisc
 wisconsin
-wisconsin badgers
-wisconsin–baraboo
-wisconsin–barron
-wisconsin–eau
-wisconsin–fond
-wisconsin–fox
-wisconsin indianhead technical college
-wisconsin–manitowoc
-wisconsin–marathon
-wisconsin–marinette
-wisconsin–marshfield
-wisconsin–oshkosh
-wisconsin–parkside
-wisconsin–platteville
-wisconsin–richland
-wisconsin–river
-wisconsin–rock
-wisconsin–sheboygan
-wisconsin–stevens
-wisconsin–stout
-wisconsin–superior
-wisconsin–washington
-wisconsin–waukesha
-wisconsin–whitewater
 wise
 wisła
 with
@@ -11129,9 +9225,8 @@ wmich
 wmpenn
 wnec
 wnmu
-'wobbly'
+wobbly
 wofford
-wofford terriers
 woking
 wolf
 wolfpack
@@ -11142,12 +9237,10 @@ wolverhampton
 wolverhamptonwanderers
 wolverines
 wolves
-woman's
+womans
 wombats
 women
-women:
 womens
-women's
 won
 wonder
 wood
@@ -11160,20 +9253,17 @@ woods
 wool
 wooley
 wooster
+wor
 worcester
-worcester state university
 word
 words
 work
 working
 workouts
 world
-world cup
 worlds
-world series
 worth
 worthington
-wor–wic community college
 would
 wpi
 wpunj
@@ -11184,8 +9274,6 @@ wrestlers
 wrestling
 wrexham
 wright
-wright state raiders
-wright state university
 written
 wrocław
 ws
@@ -11194,10 +9282,8 @@ wschiro
 wscn
 wspp
 wssu
+wsu
 wsulaw
-wsu spokane campus
-wsu tri-cities campus
-wsu vancouver campus
 wtamu
 würzburg
 würzburger
@@ -11211,30 +9297,26 @@ wycombe
 wycombewanderers
 wye
 wyoming
-wyoming cowboys
-wytheville community college
+wyoming49ers
+wytheville
 wyverns
 x
 xare
 xavier
-xavier musketeers
 xcountry
 xi
 xingyiquan
-x-men
 xs
 xula
-x-women
 xxxiii4
 y
 yachting
 yachts
 yağlı
 yak
-yakima valley community college
+yakima
 yaks
 yale
-yale bulldogs
 yamaha
 yamhill
 yankee
@@ -11245,7 +9327,6 @@ yarad
 yard
 yasuda
 yavapai
-yavapai college
 year
 years
 yellow
@@ -11261,20 +9342,15 @@ yoga
 yokohama
 york
 yorkcity
-york college
-york county community college
 yorker
 yorkshire
 yorkshireman
-york technical college
 yotes
 yotsudama
 you
 young
 younger
 youngstown
-youngstown state penguins
-youngstown state university
 your
 youth
 youths
@@ -11287,7 +9363,7 @@ yukigassen
 z
 zabrze
 zagłębie
-zane state college
+zane
 zanesville
 zaragoza
 zealand
@@ -11301,7 +9377,7 @@ zorb
 zorkhana
 zourkhaneh
 zui
-zulte-waregem
+zulte
 zürich
 zurkhaneh
 zwickau
