@@ -7,7 +7,7 @@ available at the following links. For written instructions, refer to the next se
 
 [How to Install ByePass Automated Password Auditor](https://www.youtube.com/watch?v=aQwoJh6cyH8)
 
-More details? [Installation Document](README-INSTALL.md)
+**More details?** [Installation Document](README-INSTALL.md)
 
 ## Usage
 
@@ -18,7 +18,7 @@ available at the following links. For written instructions, refer to the next se
 [Using ByePass: Using Fork for Faster Cracking](https://www.youtube.com/watch?v=xNSbFu7hLDc)
 [Using ByePass: More Aggressive Techniques](https://www.youtube.com/watch?v=JhfWXQdomI4)
 
-More Details? [Usage Instructions](README-USAGE.md)
+**More details?** [Usage Instructions](README-USAGE.md)
 
 ## More Help
 
