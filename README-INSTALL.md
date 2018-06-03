@@ -11,9 +11,8 @@ does not include these features.
 Video tutorials that explain how to install John the Ripper and ByePass are 
 available at the following links. For written instructions, refer to the next section.
 
-[How to Install John the Ripper (YouTube)](https://www.youtube.com/watch?v=7R10QN_uCh0)
-
-[How to Install ByePass Automated Password Auditor](https://www.youtube.com/watch?v=aQwoJh6cyH8)
+* [How to Install John the Ripper (YouTube)](https://www.youtube.com/watch?v=7R10QN_uCh0)
+* [How to Install ByePass Automated Password Auditor](https://www.youtube.com/watch?v=aQwoJh6cyH8)
 
 If you need help installing VMware, VirtualBox and/or Kali Linux, please see the video 
 tutorials in the following playlist
