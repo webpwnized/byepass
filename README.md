@@ -2,7 +2,7 @@
 
 You should use ByePass with the latest build of John the Ripper. You may use ByePass with the
 default version of JTR, but many formats and rules will not work. The default version of JTR
-does not include these features.
+does not include these features. This video tutorial explains how to installl John the Ripper.
 
 ### How to install John the Ripper on Kali Linux Rolling
 
