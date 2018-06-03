@@ -12,8 +12,13 @@ A video tutorial is available on the webpwnized YouTube channel at the following
 
 # Setup - Video Tutorials
 
-Video tutorials are available at the following links. They explain how to install John the Ripper 
-and ByePass respectively. For written instructions, refer to the next section
+If you need help installing VMware, VirtualBox and/or Kali Linux, please see the video 
+tutorials in the following playlist
+
+[Complete Guide to ByePass](https://www.youtube.com/playlist?list=PLZOToVAK85Mqfcbufx1_lQHZ4pltV8nAm)
+
+Video tutorials that explain how to install John the Ripper and ByePass are 
+available at the following links. For written instructions, refer to the next section.
 
 [How to Install John the Ripper (YouTube)](https://www.youtube.com/watch?v=7R10QN_uCh0)
 
