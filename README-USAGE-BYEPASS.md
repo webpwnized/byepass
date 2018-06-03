@@ -3,11 +3,9 @@
 Video tutorials that explain how to use ByePass are 
 available at the following links. For written instructions, refer to the next section.
 
-[Using ByePass: Basic Usage](https://www.youtube.com/watch?v=cFQjbpQUtJU)
-
-[Using ByePass: Using Fork for Faster Cracking](https://www.youtube.com/watch?v=xNSbFu7hLDc)
-
-[Using ByePass: More Aggressive Techniques](https://www.youtube.com/watch?v=JhfWXQdomI4)
+* [Using ByePass: Basic Usage](https://www.youtube.com/watch?v=cFQjbpQUtJU)
+* [Using ByePass: Using Fork for Faster Cracking](https://www.youtube.com/watch?v=xNSbFu7hLDc)
+* [Using ByePass: More Aggressive Techniques](https://www.youtube.com/watch?v=JhfWXQdomI4)
 
 If you would like more help, please see the video 
 tutorials in the following playlist
