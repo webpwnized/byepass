@@ -15,7 +15,9 @@ Video tutorials that explain how to use PassTime and ByePass are
 available at the following links. For written instructions, refer to the next section.
 
 [Using ByePass: Basic Usage](https://www.youtube.com/watch?v=cFQjbpQUtJU)
+
 [Using ByePass: Using Fork for Faster Cracking](https://www.youtube.com/watch?v=xNSbFu7hLDc)
+
 [Using ByePass: More Aggressive Techniques](https://www.youtube.com/watch?v=JhfWXQdomI4)
 
 **More details?** [Usage Instructions](README-USAGE.md)
