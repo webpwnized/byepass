@@ -190,6 +190,8 @@ def run_jtr_baseword_mode(pHashFile: str, pBaseWords: str, pHashFormat: str,
 
     lBaseWords = list(pBaseWords.split(","))
     lBaseWordsFileName = 'basewords/basewords.txt'
+    lBaseWordsDirectory = os.path.dirname(lBaseWordsFileName)
+    if not os.path.exists(lBaseWordsDirectory): os.makedirs(lBaseWordsDirectory)
     lBaseWordsFile = open(lBaseWordsFileName, 'w')
     for lWord in lBaseWords:
         lBaseWordsFile.write("%s\n" % lWord)
@@ -204,7 +206,7 @@ def run_jtr_baseword_mode(pHashFile: str, pBaseWords: str, pHashFormat: str,
     run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist="basewords/basewords.txt", pRule="All",
                           pHashFormat=pHashFormat, pVerbose=pVerbose, pDebug=pDebug,
                           pPassThrough=pPassThrough, pNumberHashes=pNumberHashes)
-    #os.remove(lBaseWordsFileName)
+    os.remove(lBaseWordsFileName)
 
     if pVerbose: print("[*] Finished Baseword Mode")
 
