@@ -20,7 +20,11 @@ available at the following links. For written instructions, refer to the next se
 
 [Using ByePass: More Aggressive Techniques](https://www.youtube.com/watch?v=JhfWXQdomI4)
 
-**More details?** [Usage Instructions](README-USAGE.md)
+**More details?** 
+
+[ByePass: Usage Instructions](README-USAGE-BYEPASS.md)
+
+[PassTime: Usage Instructions](README-USAGE-PASSTIME.md)
 
 ## More Help
 
