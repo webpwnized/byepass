@@ -145,10 +145,13 @@ def parse_jtr_pot(pVerbose: bool, pDebug: bool) -> list:
 
     if pVerbose: print("[*] Processing input file " + JTR_POT_FILE_PATH)
     for lLine in lPotFile:
+        #LANMAN passwords are case-insensitive so they throw off statistical analysis
+        #For LANMAN, we assume lowercase (most popular choice) but errors will be inherent
         if not lLine[0:3] == b'$LM':
             lPassword = lLine.strip().split(b':')[1]
-            if not lPassword in lListOfPasswords:
-                lListOfPasswords.append(lPassword)
+        else:
+            lPassword = lLine.strip().split(b':')[1].lower()
+        lListOfPasswords.append(lPassword)
     if pVerbose: print("[*] Finished processing input file " + JTR_POT_FILE_PATH)
 
     return lListOfPasswords
