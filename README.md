@@ -16,6 +16,8 @@ available at the following links. For written instructions, refer to the next se
 * [Using ByePass: Basic Usage](https://www.youtube.com/watch?v=cFQjbpQUtJU)
 * [Using ByePass: Using Fork for Faster Cracking](https://www.youtube.com/watch?v=xNSbFu7hLDc)
 * [Using ByePass: More Aggressive Techniques](https://www.youtube.com/watch?v=JhfWXQdomI4)
+* [Using ByePass: Base Words Technique](https://www.youtube.com/watch?v=5vlW5_iiOPE)
+* [Using ByePass: Statistical Cracking Technique](https://www.youtube.com/watch?v=7McTDayHJs4)
 
 **More details?** 
 
@@ -27,4 +29,4 @@ available at the following links. For written instructions, refer to the next se
 If you would like more help, please see the video 
 tutorials in the following playlist
 
-[Complete Guide to ByePass](https://www.youtube.com/playlist?list=PLZOToVAK85Mqfcbufx1_lQHZ4pltV8nAm)
+* [Complete Guide to ByePass](https://www.youtube.com/playlist?list=PLZOToVAK85Mqfcbufx1_lQHZ4pltV8nAm)
