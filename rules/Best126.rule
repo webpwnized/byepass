@@ -1,10 +1,13 @@
 [List.Rules:Best126]
-## This is really about 1146 transformations - JD
+## This is really about 253 transformations - JD
 ## nothing, reverse, uppercase, toggle-case of first letter
-:
+
+# These rules are included in SlowHashes rules
+#:
+#T0
+#u
+
 r
-u
-T0
 p
 c p
 ^!
@@ -17,43 +20,32 @@ c $! $1
 @a @e @i @o @u $!
 
 ## Special character append - JD
-$[!@#$%^&*.?]
-c $[!@#$%^&*.?]
 $! $!
 c $! $!
 
-## special number prepend and append 00-99 and 123 - JD
-$[0123456789]
-$[0123456789]$[0123456789]
-$1 $2 $3
-^[0123456789]
-^[0123456789]^[0123456789]
-^3 ^2 ^1
-
-## capitalize and special number prepend and append 00-99 and 123 - JD
-c $[0123456789]
-c $[0123456789]$[0123456789]
-c $1 $2 $3
-c ^[0123456789]
-c ^[0123456789]^[0123456789]
-c ^3 ^2 ^1
-
-## prepend and append years 1980-99 and 2000-2049 - JD
-A0"19[8-9][0-9]"
-A0"20[0-4][0-9]"
-cA0"19[8-9][0-9]"
-cA0"20[0-4][0-9]"
-uA0"19[8-9][0-9]"
-uA0"20[0-4][0-9]"
-Az"19[8-9][0-9]"
-Az"20[0-4][0-9]"
-cAz"19[8-9][0-9]"
-cAz"20[0-4][0-9]"
-uAz"19[8-9][0-9]"
-uAz"20[0-4][0-9]"
-
-## high frequency append - add e, s
+## high frequency append - add e, s already added by the "p" rule above
 $e
+
+## leetify - JD
+sa[4@]
+se3
+si[1!]
+so0
+ss[5$]
+c sa[4@]
+c se3
+c si[1!]
+c so0
+c ss[5$]
+sg[69]
+sl1
+so0 sa[@4]
+so0 si[1!]
+so0 se3
+so0 si[1!] se3 ss[5$] sa[4@]
+so0 si[1!] se3 ss[5$] sa[4@] $[0-9!]
+c so0 si[1!] se3 ss[5$] sa[4@]
+c so0 si[1!] se3 ss[5$] sa[4@] $[0-9!]
 
 ## high frequency overwrite at end
 ] $a
@@ -74,27 +66,6 @@ $e
 o0d
 o0m o1a
 
-## leetify - JD
-sa[4@]
-se3
-si[1!]
-so0
-ss[5$]
-c sa[4@]
-c se3
-c si[1!]
-c so0
-c ss[5$]
-sg[69]
-sl1
-so0 sa[@4]
-so0 si[1!]
-so0 se3
-so0 si[1!] se3 ss[5$] sa[4@]
-so0 si[1!] se3 ss[5$] sa[4@] $[0123456789!]
-c so0 si[1!] se3 ss[5$] sa[4@]
-c so0 si[1!] se3 ss[5$] sa[4@] $[0123456789!]
-
 ## simple extracts
 D2
 D2 D2
@@ -112,22 +83,10 @@ D4
 ] ] ] d
 ] ] D1 ]
 
-## rotates
-#+5 ] } } } } '4
-x02 { { { { { {
-} ] ] {
-#} } -0 x12
-} } }
-} } } } '4
-} } } } } '5
-#} } } } } } Y4 '4 d
-
 # Wordlist mode rules
 #[List.Rules:Wordlist]
 # Duplicate reasonably short pure alphabetic words (fred -> fredfred)
 <7 >1 !?A l d
-# Lowercase and reverse pure alphabetic words
->3 !?A l M r Q
 # Capitalize and duplicate short pure alphabetic words (fred -> FredFred)
 -c <7 >1 !?A c d
 # Capitalize and reverse pure alphabetic words (fred -> derF)

@@ -33,11 +33,20 @@ tutorials in the following playlist
       -t TECHNIQUES, --techniques TECHNIQUES
                             Comma-separated list of integers between 0-4 that determines what password cracking techniques are attempted. Default is level 1. Example of running levels 1 and 2 --techniques=1,2
                             
-                            0: Skip prayer mode entirely
-                            1: Quickly try most likely techniques
-                            2: Best dictionaries. All rules
-                            3: Time is an illusion. Big dictionaries. Best Rules.
-                            4: Go freaking nuts. Big dictionaries. All Rules.
+                        0: Skip prayer mode entirely
+                        1: Small Dictionaries. Small Rulesets
+                        2: Medium Dictionaries. Small Rulesets
+                        3: Small Dictionaries. Medium Rulesets
+                        4: Medium Dictionaries. Medium Rulesets
+                        5: Large Password List. Custom Ruleset
+                        6: Medium-Large Dictionaries. Small Rulesets
+                        7: Small Dictionaries. Large Rulesets
+                        8: Medium Dictionaries. Large Rulesets
+                        9: Medium-Large Dictionaries. Medium Rulesets
+                        10: Large Dictionaries. Small Rulesets
+                        11: Medium-Large Dictionaries. Large Rulesets
+                        12: Large Dictionaries. Medium Rulesets
+                        13: Large Dictionaries. Large Rulesets
                             
       -s, --stat-crack      Enable statistical cracking. Byepass will run relatively fast cracking strategies in hopes of cracking enough passwords to induce a pattern and create "high probability" masks. Byepass will use the masks in an attempt to crack more passwords.
                             

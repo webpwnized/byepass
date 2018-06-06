@@ -42,14 +42,6 @@ import time
 import re
 
 
-class Techniques(Enum):
-    SKIP_PRAYER_MODE = 0
-    BEST_DICTIONARIES_BEST_RULES = 1
-    BEST_DICTIONARIES_ALL_RULES = 2
-    ALL_DICTIONARIES_BEST_RULES = 3
-    ALL_DICTIONARIES_ALL_RULES = 4
-
-
 def parse_arg_percentile(pArgPercentile: float) -> float:
 
     if pArgPercentile:
@@ -79,7 +71,7 @@ def parse_arg_techniques(pArgTechniques: str) -> list:
 
     if lArgs.techniques is not None:
 
-        lErrorMessage = 'Techniques must be supplied as a comma-separated list of integers between 0 and 4.'
+        lErrorMessage = 'Techniques must be supplied as a comma-separated list of integers between 0 and 13.'
 
         try:
             lTechniques = list(map(int, pArgTechniques.split(",")))
@@ -88,12 +80,14 @@ def parse_arg_techniques(pArgTechniques: str) -> list:
 
         lObservedTechniques = []
         for lTechnique in lTechniques:
-            if 0 <= lTechnique <= 4:
+            if 0 <= lTechnique <= 13:
                 if lTechnique in lObservedTechniques:
                     raise ValueError('Duplicate technique specified: {} '.format(lTechnique) + lErrorMessage)
                 lObservedTechniques.append(lTechnique)
             else:
                 raise ValueError(lErrorMessage)
+
+        lTechniques.sort()
 
     return lTechniques
 
@@ -311,205 +305,6 @@ def run_jtr_mask_mode(pHashFile: str, pMask: str, pWordlist: str, pHashFormat:st
         print("[*] Passwords cracked per second: {}".format(lPasswordsCrackedPerSecond))
 
 
-def run_jtr_prayer_mode(pHashFile: str, pMethod: int, pHashFormat: str,
-                        pVerbose: bool, pDebug: bool, pPassThrough: str,
-                        pNumberHashes: int) -> None:
-
-    # Note: subprocess.run() accepts the command to run as a list of arguments.
-    # lCmdArgs is this list.
-
-    lStartTime = time.time()
-
-    if pDebug: rm_jtr_pot_file()
-
-    lCmdArgs = [JTR_EXE_FILE_PATH]
-    if pHashFormat: lCmdArgs.append("--format={}".format(pHashFormat))
-    if pPassThrough: lCmdArgs.append(pPassThrough)
-
-    # Level 1: Highly effective modes
-    if pMethod == 1:
-        if pVerbose: print("[*] Starting mode: Wordlist hob0-short-crack.txt Rule OneRuleToRuleThemAll")
-        lCmdArgs.append("--wordlist=dictionaries/hob0-short-crack.txt")
-        lCmdArgs.append("--rules=oneruletorulethemall")
-    elif pMethod == 2:
-        if pVerbose: print("[*] Starting mode: Wordlist brands.txt Rule OneRuleToRuleThemAll")
-        lCmdArgs.append("--wordlist=dictionaries/brands.txt")
-        lCmdArgs.append("--rules=oneruletorulethemall")
-    elif pMethod == 3:
-        if pVerbose: print("[*] Starting mode: Wordlist animals.txt Rule OneRuleToRuleThemAll")
-        lCmdArgs.append("--wordlist=dictionaries/animals.txt")
-        lCmdArgs.append("--rules=oneruletorulethemall")
-    elif pMethod == 4:
-        if pVerbose: print("[*] Starting mode: Wordlist worst-95000-passwords.txt Rule Best126")
-        lCmdArgs.append("--wordlist=passwords/worst-95000-passwords.txt")
-        lCmdArgs.append("--rules=best126")
-    elif pMethod == 5:
-        if pVerbose: print("[*] Starting mode: Wordlist passwords-hailmary.txt Rule HailMary")
-        lCmdArgs.append("--wordlist=passwords/passwords-hailmary.txt")
-        lCmdArgs.append("--rules=HailMary")
-    elif pMethod == 6:
-        if pVerbose: print("[*] Starting mode: Wordlist 4-digit-numbers.txt Rule Best126")
-        lCmdArgs.append("--wordlist=dictionaries/4-digit-numbers.txt")
-        lCmdArgs.append("--rules=best126")
-    elif pMethod == 7:
-        if pVerbose: print("[*] Starting mode: Wordlist calendar.txt Rule BPAppendYears")
-        lCmdArgs.append("--wordlist=dictionaries/calendar.txt")
-        lCmdArgs.append("--rules=bpappendyears")
-    elif pMethod == 8:
-        if pVerbose: print("[*] Starting mode: Wordlist calendar.txt Rule OneRuleToRuleThemAll")
-        lCmdArgs.append("--wordlist=dictionaries/calendar.txt")
-        lCmdArgs.append("--rules=oneruletorulethemall")
-    elif pMethod == 9:
-        if pVerbose: print("[*] Starting mode: Wordlist 6-digit-numbers.txt Rule Best126")
-        lCmdArgs.append("--wordlist=dictionaries/6-digit-numbers.txt")
-        lCmdArgs.append("--rules=best126")
-    elif pMethod == 10:
-        if pVerbose: print("[*] Starting mode: JTR single crack Rule Single")
-        lCmdArgs.append("--single")
-
-    # Level 2: Best dictionaries with best rules
-    elif pMethod == 11:
-        if pVerbose: print("[*] Starting mode: Wordlist top-10000-english-words.txt Rule Best126")
-        lCmdArgs.append("--wordlist=dictionaries/top-10000-english-words.txt")
-        lCmdArgs.append("--rules=best126")
-    elif pMethod == 12:
-        if pVerbose: print("[*] Starting mode: Wordlist top-10000-spanish-words.txt Rule Best126")
-        lCmdArgs.append("--wordlist=dictionaries/top-10000-spanish-words.txt")
-        lCmdArgs.append("--rules=best126")
-    elif pMethod == 13:
-        if pVerbose: print("[*] Starting mode: Wordlist top-10000-german-words.txt Rule Best126")
-        lCmdArgs.append("--wordlist=dictionaries/top-10000-german-words.txt")
-        lCmdArgs.append("--rules=best126")
-    elif pMethod == 14:
-        if pVerbose: print("[*] Starting mode: Wordlist sports-related-words.txt Rule Best126")
-        lCmdArgs.append("--wordlist=dictionaries/sports-related-words.txt")
-        lCmdArgs.append("--rules=best126")
-    elif pMethod == 15:
-        if pVerbose: print("[*] Starting mode: Wordlist bible.txt Rule Best126")
-        lCmdArgs.append("--wordlist=dictionaries/bible.txt")
-        lCmdArgs.append("--rules=best126")
-    elif pMethod == 16:
-        if pVerbose: print("[*] Starting mode: Wordlist persons-names.txt Rule Best126")
-        lCmdArgs.append("--wordlist=dictionaries/persons-names.txt")
-        lCmdArgs.append("--rules=best126")
-    elif pMethod == 17:
-        if pVerbose: print("[*] Starting mode: Wordlist other-base-words.txt Rule Best126")
-        lCmdArgs.append("--wordlist=dictionaries/other-base-words.txt")
-        lCmdArgs.append("--rules=best126")
-    elif pMethod == 18:
-        if pVerbose: print("[*] Starting mode: Wordlist places.txt Rule Best126")
-        lCmdArgs.append("--wordlist=dictionaries/places.txt")
-        lCmdArgs.append("--rules=best126")
-    elif pMethod == 19:
-        if pVerbose: print("[*] Starting mode: Wordlist keyboard-patterns.txt Rule Best126")
-        lCmdArgs.append("--wordlist=dictionaries/keyboard-patterns.txt")
-        lCmdArgs.append("--rules=best126")
-
-    # Level 3: Best dictionaries with all the rules
-    elif pMethod == 20:
-        if pVerbose: print("[*] Starting mode: Wordlist top-10000-english-words.txt Rule OneRuleToRuleThemAll")
-        lCmdArgs.append("--wordlist=dictionaries/top-10000-english-words.txt")
-        lCmdArgs.append("--rules=oneruletorulethemall")
-    elif pMethod == 21:
-        if pVerbose: print("[*] Starting mode: Wordlist top-10000-spanish-words.txt Rule OneRuleToRuleThemAll")
-        lCmdArgs.append("--wordlist=dictionaries/top-10000-spanish-words.txt")
-        lCmdArgs.append("--rules=oneruletorulethemall")
-    elif pMethod == 22:
-        if pVerbose: print("[*] Starting mode: Wordlist top-10000-german-words.txt Rule OneRuleToRuleThemAll")
-        lCmdArgs.append("--wordlist=dictionaries/top-10000-german-words.txt")
-        lCmdArgs.append("--rules=oneruletorulethemall")
-    elif pMethod == 23:
-        if pVerbose: print("[*] Starting mode: Wordlist sports-related-words.txt Rule OneRuleToRuleThemAll")
-        lCmdArgs.append("--wordlist=dictionaries/sports-related-words.txt")
-        lCmdArgs.append("--rules=oneruletorulethemall")
-    elif pMethod == 24:
-        if pVerbose: print("[*] Starting mode: Wordlist bible.txt Rule OneRuleToRuleThemAll")
-        lCmdArgs.append("--wordlist=dictionaries/bible.txt")
-        lCmdArgs.append("--rules=oneruletorulethemall")
-    elif pMethod == 25:
-        if pVerbose: print("[*] Starting mode: Wordlist persons-names.txt Rule OneRuleToRuleThemAll")
-        lCmdArgs.append("--wordlist=dictionaries/persons-names.txt")
-        lCmdArgs.append("--rules=oneruletorulethemall")
-    elif pMethod == 26:
-        if pVerbose: print("[*] Starting mode: Wordlist other-base-words.txt Rule OneRuleToRuleThemAll")
-        lCmdArgs.append("--wordlist=dictionaries/other-base-words.txt")
-        lCmdArgs.append("--rules=oneruletorulethemall")
-    elif pMethod == 27:
-        if pVerbose: print("[*] Starting mode: Wordlist places.txt Rule OneRuleToRuleThemAll")
-        lCmdArgs.append("--wordlist=dictionaries/places.txt")
-        lCmdArgs.append("--rules=oneruletorulethemall")
-    elif pMethod == 28:
-        if pVerbose: print("[*] Starting mode: Wordlist keyboard-patterns.txt Rule OneRuleToRuleThemAll")
-        lCmdArgs.append("--wordlist=dictionaries/keyboard-patterns.txt")
-        lCmdArgs.append("--rules=oneruletorulethemall")
-
-    # Level 4: Big dicitonaries with best rules
-    elif pMethod == 29:
-        if pVerbose: print("[*] Starting mode: Wordlist all-english-words.txt Rule Best126")
-        lCmdArgs.append("--wordlist=dictionaries/all-english-words.txt")
-        lCmdArgs.append("--rules=best126")
-    elif pMethod == 30:
-        if pVerbose: print("[*] Starting mode: Wordlist all-spanish-words.txt Rule Best126")
-        lCmdArgs.append("--wordlist=dictionaries/all-spanish-words.txt")
-        lCmdArgs.append("--rules=best126")
-    elif pMethod == 31:
-        if pVerbose: print("[*] Starting mode: Wordlist all-german-words.txt Rule Best126")
-        lCmdArgs.append("--wordlist=dictionaries/all-german-words.txt")
-        lCmdArgs.append("--rules=best126")
-    elif pMethod == 32:
-        if pVerbose: print("[*] Starting mode: Wordlist all-french-words.txt Rule Best126")
-        lCmdArgs.append("--wordlist=dictionaries/all-french-words.txt")
-        lCmdArgs.append("--rules=best126")
-
-    # Level 5: Big dictionaries with all the rules
-    elif pMethod == 33:
-        if pVerbose: print("[*] Starting mode: Wordlist all-english-words.txt Rule OneRuleToRuleThemAll")
-        lCmdArgs.append("--wordlist=dictionaries/all-english-words.txt")
-        lCmdArgs.append("--rules=oneruletorulethemall")
-    elif pMethod == 34:
-        if pVerbose: print("[*] Starting mode: Wordlist all-spanish-words.txt Rule OneRuleToRuleThemAll")
-        lCmdArgs.append("--wordlist=dictionaries/all-spanish-words.txt")
-        lCmdArgs.append("--rules=oneruletorulethemall")
-    elif pMethod == 35:
-        if pVerbose: print("[*] Starting mode: Wordlist all-german-words.txt Rule OneRuleToRuleThemAll")
-        lCmdArgs.append("--wordlist=dictionaries/all-german-words.txt")
-        lCmdArgs.append("--rules=oneruletorulethemall")
-    elif pMethod == 36:
-        if pVerbose: print("[*] Starting mode: Wordlist all-french-words.txt Rule OneRuleToRuleThemAll")
-        lCmdArgs.append("--wordlist=dictionaries/all-french-words.txt")
-        lCmdArgs.append("--rules=oneruletorulethemall")
-
-    # Determine number of passwords cracked before trying this method
-    lNumberPasswordsAlreadyCracked = count_passwords_in_jtr_pot_file()
-
-    if pVerbose:
-        print("[*] Finished")
-        print("[*] Passwords cracked at start of prayer mode {}: {}".format(pMethod, lNumberPasswordsAlreadyCracked))
-
-    lCmdArgs.append(pHashFile)
-    lCompletedProcess = subprocess.run(lCmdArgs, stdout=subprocess.PIPE)
-    time.sleep(0.5)
-
-    # Determine number of passwords cracked after trying this method
-    lNumberPasswordsCracked = count_passwords_in_jtr_pot_file()
-
-    lNumberPasswordsCrackedByThisMethod = lNumberPasswordsCracked - lNumberPasswordsAlreadyCracked
-    lPercentPasswordsCracked = round(lNumberPasswordsCrackedByThisMethod / pNumberHashes * 100, 2)
-
-    if pVerbose:
-        print("[*] Command: {}".format(lCompletedProcess.args))
-        print("[*] Finished")
-        print("[*] Passwords cracked at end of prayer mode {}: {}".format(pMethod, lNumberPasswordsCracked))
-
-    print("[*] Passwords cracked by prayer mode {}: {} ({} percent)".format(pMethod, lNumberPasswordsCrackedByThisMethod, lPercentPasswordsCracked))
-
-    if pDebug:
-        lRunTime = time.time() - lStartTime
-        lPasswordsCrackedPerSecond = lNumberPasswordsCrackedByThisMethod // lRunTime
-        print("[*] Duration: {}".format(lRunTime))
-        print("[*] Passwords cracked per second: {}".format(lPasswordsCrackedPerSecond))
-
-
 def perform_statistical_cracking(pHashFile: str, pPercentile: float, pHashFormat: str,
                                  pVerbose: bool, pDebug: bool, pPassThrough: str,
                                  pNumberHashes: int) -> None:
@@ -633,6 +428,209 @@ def perform_statistical_cracking(pHashFile: str, pPercentile: float, pHashFormat
         "[*] WARNING: There was no policy defined for the following masks: {}".format(lUndefinedMasks))
 
 
+def run_jtr_prayer_mode(pHashFile: str, pMethod: int, pHashFormat: str,
+                           pPassThrough: str, pVerbose: bool, pDebug: bool,
+                           pNumberHashes: int) -> None:
+
+    if pMethod == 1:
+        # Dictionaries have less than 10,000 words
+        # Rules have up to about 1,000 mangles
+        # Factor: <10,000,000
+        lFolder = "dictionaries"
+        lDictionaries = ["calendar.txt", "short-list.txt", "brands.txt",
+                         "animals.txt","cars.txt","astrology.txt","songs.txt"]
+        lRules = ["SlowHashesPhase1", "Best126", "SlowHashesPhase2"]
+
+        # <1,000 words and <10,000 mangles
+        # Factor: <100,000
+        do_run_jtr_prayer_mode(pHashFile=pHashFile, pDictionary="dictionaries/calendar.txt",
+                               pRule="Calendar", pHashFormat=pHashFormat,
+                               pPassThrough=pPassThrough, pVerbose=pVerbose,
+                               pDebug=pDebug, pNumberHashes=pNumberHashes)
+
+    elif pMethod == 2:
+        # Dictionaries have about 10,000 words
+        # Rules have up to about 1,000 mangles
+        # Factor: 10,000,000
+        lFolder = "dictionaries"
+        lDictionaries = ["sports-related-words.txt","bible.txt","top-10000-english-words.txt",
+                         "top-10000-spanish-words.txt","top-10000-german-words.txt"]
+        lRules = ["SlowHashesPhase1", "Best126", "SlowHashesPhase2"]
+
+    elif pMethod == 3:
+        # List of 1,000,000 digits
+        # Rule has 1 mangle
+        # Factor: 2,000,000
+        do_run_jtr_prayer_mode(pHashFile=pHashFile, pDictionary="dictionaries/6-digit-numbers.txt",
+                               pRule="DigitsRule", pHashFormat=pHashFormat,
+                               pPassThrough=pPassThrough, pVerbose=pVerbose,
+                               pDebug=pDebug, pNumberHashes=pNumberHashes)
+
+        # Dictionaries have less than 10,000 words
+        # Rules have up to about 6,500 mangles
+        # Factor: <65,000,000
+        lFolder = "dictionaries"
+        lDictionaries = ["calendar.txt", "short-list.txt", "brands.txt",
+                         "animals.txt","cars.txt","astrology.txt","songs.txt"]
+        lRules = ["SlowHashesPhase3"]
+
+    elif pMethod == 4:
+        # Dictionaries have about 10,000 words
+        # Rules have up to about 6,500 mangles
+        # Factor: 65,000,000
+        lFolder = "dictionaries"
+        lDictionaries = ["sports-related-words.txt","bible.txt","top-10000-english-words.txt",
+                         "top-10000-spanish-words.txt","top-10000-german-words.txt"]
+        lRules = ["SlowHashesPhase3"]
+
+    elif pMethod == 5:
+        # Dictionaries has 40,000,000 words
+        # Rules has 1 mangles
+        # Factor: 80,000,000
+        lFolder = "passwords"
+        lDictionaries = ["passwords-hailmary.txt"]
+        lRules = ["Hailmary"]
+
+    elif pMethod == 6:
+        # Dictionaries has 50,000 words
+        # Rules have up to about 1,000 mangles
+        # Factor: 50,000,000
+        lRules = ["SlowHashesPhase1", "Best126", "SlowHashesPhase2"]
+        for lRule in lRules:
+            do_run_jtr_prayer_mode(pHashFile=pHashFile, pDictionary="passwords/worst-50000-passwords.txt",
+                                   pRule=lRule, pHashFormat=pHashFormat,
+                                   pPassThrough=pPassThrough, pVerbose=pVerbose,
+                                   pDebug=pDebug, pNumberHashes=pNumberHashes)
+
+        # Dictionaries have 50,000 - 180,000 words
+        # Rules have up to about 1,000 mangles
+        # Factor: 180,000,000
+        lFolder = "dictionaries"
+        lDictionaries = ["persons-names.txt","other-base-words.txt","places.txt"]
+        lRules = ["SlowHashesPhase1", "Best126", "SlowHashesPhase2"]
+
+    elif pMethod == 7:
+        # Dictionaries have less than 10,000 words
+        # Rules have up to about 50,000 mangles
+        # Factor: <500,000,000
+        lFolder = "dictionaries"
+        lDictionaries = ["calendar.txt", "short-list.txt", "brands.txt",
+                         "animals.txt","cars.txt","astrology.txt","songs.txt"]
+        lRules = ["OneRuleToRuleThemAll"]
+
+    elif pMethod == 8:
+        # Dictionaries have about 10,000 words
+        # Rules have up to about 50,000 mangles
+        # Factor: 500,000,000
+        lFolder = "dictionaries"
+        lDictionaries = ["sports-related-words.txt","bible.txt","top-10000-english-words.txt",
+                         "top-10000-spanish-words.txt","top-10000-german-words.txt"]
+        lRules = ["OneRuleToRuleThemAll"]
+
+    elif pMethod == 9:
+        # Dictionaries have ~150,000 words
+        # Rules have up to about 6,500 mangles
+        # Factor: 975,000,000
+        lFolder = "dictionaries"
+        lDictionaries = ["persons-names.txt","other-base-words.txt","places.txt"]
+        lRules = ["SlowHashesPhase3"]
+
+    elif pMethod == 10:
+        # Dictionaries have up to ~2,000,000 words
+        # Rules have up to about 1,000 mangles
+        # Factor: 2,000,000,000
+        lFolder = "dictionaries"
+        lDictionaries = ["all-english-words.txt","all-spanish-words.txt",
+                         "all-french-words.txt","all-german-words.txt"]
+        lRules = ["SlowHashesPhase1", "Best126", "SlowHashesPhase2"]
+
+    elif pMethod == 11:
+        # Dictionaries have ~150,000 words
+        # Rules have up to about 50,000 mangles
+        # Factor: 7,500,000,000
+        lFolder = "dictionaries"
+        lDictionaries = ["persons-names.txt","other-base-words.txt","places.txt"]
+        lRules = ["OneRuleToRuleThemAll"]
+
+    elif pMethod == 12:
+        # Dictionaries have up to ~2,000,000 words
+        # Rules have up to about 6,500 mangles
+        # Factor: 13,000,000,000
+        lFolder = "dictionaries"
+        lDictionaries = ["all-english-words.txt","all-spanish-words.txt",
+                         "all-french-words.txt","all-german-words.txt"]
+        lRules = ["SlowHashesPhase3"]
+
+    elif pMethod == 13:
+        # Dictionaries have up to ~2,000,000 words
+        # Rules have up to about 50,000 mangles
+        # Factor: 100,000,000,000
+        lFolder = "dictionaries"
+        lDictionaries = ["all-english-words.txt","all-spanish-words.txt",
+                         "all-french-words.txt","all-german-words.txt"]
+        lRules = ["OneRuleToRuleThemAll"]
+
+    # Run the wordlist and rule
+    for lDictionary in lDictionaries:
+        for lRule in lRules:
+            do_run_jtr_prayer_mode(pHashFile=pHashFile, pDictionary=lFolder + "/" + lDictionary,
+                                   pRule=lRule, pHashFormat=pHashFormat,
+                                   pPassThrough=pPassThrough, pVerbose=pVerbose,
+                                   pDebug=pDebug, pNumberHashes=pNumberHashes)
+
+
+def do_run_jtr_prayer_mode(pHashFile: str, pDictionary: str, pRule: str,
+                           pHashFormat: str, pPassThrough: str,
+                           pVerbose: bool, pDebug: bool, pNumberHashes: int) -> None:
+
+    # Note: subprocess.run() accepts the command to run as a list of arguments.
+    # lCmdArgs is this list.
+
+    lStartTime = time.time()
+
+    if pDebug: rm_jtr_pot_file()
+
+    lCmdArgs = [JTR_EXE_FILE_PATH]
+    if pHashFormat: lCmdArgs.append("--format={}".format(pHashFormat))
+    if pDictionary: lCmdArgs.append("--wordlist={}".format(pDictionary))
+    if pRule: lCmdArgs.append("--rules={}".format(pRule))
+    if pPassThrough: lCmdArgs.append(pPassThrough)
+
+    if pVerbose:
+        print("[*] Starting mode: Wordlist {}".format(pDictionary), end="")
+        if pRule: print(" with Rule {}".format(pRule))
+
+    # Determine number of passwords cracked before trying this method
+    lNumberPasswordsAlreadyCracked = count_passwords_in_jtr_pot_file()
+
+    if pVerbose:
+        print("[*] Passwords cracked at start of prayer mode: {}".format(lNumberPasswordsAlreadyCracked))
+
+    lCmdArgs.append(pHashFile)
+    lCompletedProcess = subprocess.run(lCmdArgs, stdout=subprocess.PIPE)
+    time.sleep(0.5)
+
+    # Determine number of passwords cracked after trying this method
+    lNumberPasswordsCracked = count_passwords_in_jtr_pot_file()
+
+    lNumberPasswordsCrackedByThisMethod = lNumberPasswordsCracked - lNumberPasswordsAlreadyCracked
+    lPercentPasswordsCracked = round(lNumberPasswordsCrackedByThisMethod / pNumberHashes * 100, 2)
+
+    if pVerbose:
+        print("[*] Finished mode: Wordlist {}".format(pDictionary), end="")
+        if pRule: print(" with Rule {}".format(pRule))
+        print("\tCommand was: {}".format(lCompletedProcess.args))
+        print("\tPasswords cracked at end of run: {}".format(lNumberPasswordsCracked))
+
+    print("\tPasswords cracked by mode: {} ({} percent)".format(lNumberPasswordsCrackedByThisMethod, lPercentPasswordsCracked))
+
+    if pDebug:
+        lRunTime = time.time() - lStartTime
+        lPasswordsCrackedPerSecond = lNumberPasswordsCrackedByThisMethod // lRunTime
+        print("\tDuration: {}".format(lRunTime))
+        print("\tPasswords cracked per second: {}".format(lPasswordsCrackedPerSecond))
+
+
 if __name__ == '__main__':
 
     READ_BYTES = 'rb'
@@ -650,14 +648,8 @@ Attempt to crack password hashes found in input file "password.hashes" using def
 Be more aggressive by using techniques level 2 in attempt to crack password hashes found in input file "password.hashes"\n\n
 \tpython3 byepass.py --verbose --techniques=2 --hash-format=descrypt --input-file=password.hashes\n\n
 \tpython3 byepass.py -v -a 2 -f descrypt -i password.hashes\n\n
-Be even more aggressive by using techniques level 3 in attempt to crack password hashes found in input file "password.hashes"\n\n
-\tpython3 byepass.py --verbose --techniques=3 --hash-format=descrypt --input-file=password.hashes\n\n
-\tpython3 byepass.py -v -a 3 -f descrypt -i password.hashes\n\n
-Maximum effort by using techniques level 4 in attempt to crack password hashes found in input file "password.hashes"\n\n
-\tpython3 byepass.py --verbose --techniques=4 --hash-format=descrypt --input-file=password.hashes\n\n
-\tpython3 byepass.py -v -a 4 -f descrypt -i password.hashes\n\n
-Go bonkers and try all techniques. Start with technique level 1 and proceed to level 4 in attempt to crack password hashes found in input file "password.hashes"\n\n
-\tpython3 byepass.py --verbose --techniques=1,2,3,4 --hash-format=descrypt --input-file=password.hashes\n\n
+Go bonkers and try all techniques. Start with technique level 1 and proceed to level 13 in attempt to crack password hashes found in input file "password.hashes"\n\n
+\tpython3 byepass.py --verbose --techniques=1,2,3,4,5,6,7,8,9,10,11,12,13 --hash-format=descrypt --input-file=password.hashes\n\n
 \tpython3 byepass.py -v -a 1,2,3,4 -f descrypt -i password.hashes\n\n
 Only try first two techniques. Start with technique level 1 and proceed to level 2 in attempt to crack password hashes found in input file "password.hashes"\n\n
 \tpython3 byepass.py --verbose --techniques=1,2 --hash-format=descrypt --input-file=password.hashes\n\n
@@ -689,7 +681,7 @@ Use pass-through to pass fork command to JTR\n\n
                             action='store')
     lArgParser.add_argument('-t', '--techniques',
                             type=str,
-                            help="Comma-separated list of integers between 0-4 that determines what password cracking techniques are attempted. Default is level 1. Example of running levels 1 and 2 --techniques=1,2\n\n0: Skip prayer mode entirely\n1: Quickly try most likely techniques\n2: Best dictionaries. All rules\n3: Time is an illusion. Big dictionaries. Best Rules.\n4: Go freaking nuts. Big dictionaries. All Rules.\n\n",
+                            help="Comma-separated list of integers between 0-13 that determines what password cracking techniques are attempted. Default is level 1. Example of running levels 1 and 2 --techniques=1,2\n\n0: Skip prayer mode entirely\n1: Small Dictionaries. Small Rulesets\n2: Medium Dictionaries. Small Rulesets\n3: Small Dictionaries. Medium Rulesets\n4: Medium Dictionaries. Medium Rulesets\n5: Large Password List. Custom Ruleset\n6: Medium-Large Dictionaries. Small Rulesets\n7: Small Dictionaries. Large Rulesets\n8: Medium Dictionaries. Large Rulesets\n9: Medium-Large Dictionaries. Medium Rulesets\n10: Large Dictionaries. Small Rulesets\n11: Medium-Large Dictionaries. Large Rulesets\n12: Large Dictionaries. Medium Rulesets\n13: Large Dictionaries. Large Rulesets\n\n",
                             action='store')
     lArgParser.add_argument('-s', '--stat-crack',
                             help="Enable statistical cracking. Byepass will run relatively fast cracking strategies in hopes of cracking enough passwords to induce a pattern and create \"high probability\" masks. Byepass will use the masks in an attempt to crack more passwords.\n\n",
@@ -733,42 +725,15 @@ Use pass-through to pass fork command to JTR\n\n
         lStartTime = time.time()
         print("[*] Working on input file {} ({} lines)".format(lHashFile, lNumberHashes))
 
+    # Hopefully user has some knowledge of system to give good base words
     if lArgs.basewords:
         run_jtr_baseword_mode(pHashFile=lHashFile, pBaseWords=lArgs.basewords, pHashFormat=lHashFormat,
                               pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through,
                               pNumberHashes=lNumberHashes)
 
-    # Try to crack a relatively few passwords as quickly as possible to use in statistical analysis
-    if Techniques.BEST_DICTIONARIES_BEST_RULES.value in lTechniques:
-        # High impact modes
-        for i in range(1,11,1):
-            run_jtr_prayer_mode(pHashFile=lHashFile, pMethod=i, pHashFormat=lHashFormat,
-                                pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through,
-                                pNumberHashes=lNumberHashes)
-
-        # Best dictionaries, best rules
-        for i in range(11,20,1):
-            run_jtr_prayer_mode(pHashFile=lHashFile, pMethod=i, pHashFormat=lHashFormat,
-                                pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through,
-                                pNumberHashes=lNumberHashes)
-
-    if Techniques.BEST_DICTIONARIES_ALL_RULES.value in lTechniques:
-        # Best dictionaries, a lot of rules
-        for i in range(20,29,1):
-            run_jtr_prayer_mode(pHashFile=lHashFile, pMethod=i, pHashFormat=lHashFormat,
-                                pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through,
-                                pNumberHashes=lNumberHashes)
-
-    if Techniques.ALL_DICTIONARIES_BEST_RULES.value in lTechniques:
-        # Big dictionaries, best rules
-        for i in range(29,33,1):
-            run_jtr_prayer_mode(pHashFile=lHashFile, pMethod=i, pHashFormat=lHashFormat,
-                                pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through,
-                                pNumberHashes=lNumberHashes)
-
-    if Techniques.ALL_DICTIONARIES_ALL_RULES.value in lTechniques:
-        # Big dictionaries, a lot of rules
-        for i in range(33,37,1):
+    # Try to crack some passwords as quickly as possible to use in statistical analysis
+    if 0 not in lTechniques:
+        for i in lTechniques:
             run_jtr_prayer_mode(pHashFile=lHashFile, pMethod=i, pHashFormat=lHashFormat,
                                 pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through,
                                 pNumberHashes=lNumberHashes)
