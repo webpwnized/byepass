@@ -231,7 +231,6 @@ def run_jtr_wordlist_mode(pHashFile: str, pWordlist: str, pRule: str, pHashForma
     lNumberPasswordsAlreadyCracked = count_passwords_in_jtr_pot_file()
 
     if pVerbose:
-        print("[*] Finished")
         print("[*] Passwords cracked before using wordlist {}: {}".format(pWordlist, lNumberPasswordsAlreadyCracked))
 
     lCompletedProcess = subprocess.run(lCmdArgs, stdout=subprocess.PIPE)
@@ -245,10 +244,11 @@ def run_jtr_wordlist_mode(pHashFile: str, pWordlist: str, pRule: str, pHashForma
     print("[*] Passwords cracked using wordlist {}: {} ({} percent)".format(pWordlist, lNumberPasswordsCrackedByThisMethod, lPercentPasswordsCracked))
 
     if pVerbose:
-        print("[*] Command: {}".format(lCompletedProcess.args))
+        print("[*] Finished wordlist mode: {}".format(pWordlist))
+        if pRule: print("\tUsed rule: {}".format(pRule))
+        print("\tCommand: {}".format(lCompletedProcess.args))
         #print(lCompletedProcess.stdout)
-        print("[*] Finished")
-        print("[*] Passwords cracked: {} ({} percent)".format(lNumberPasswordsCrackedByThisMethod, lPercentPasswordsCracked))
+        print("\tPasswords cracked: {} ({} percent)".format(lNumberPasswordsCrackedByThisMethod, lPercentPasswordsCracked))
 
     if pDebug:
         lRunTime = time.time() - lStartTime
@@ -267,7 +267,7 @@ def run_jtr_mask_mode(pHashFile: str, pMask: str, pWordlist: str, pHashFormat:st
 
     lCmdArgs = [JTR_EXE_FILE_PATH]
     if pHashFormat: lCmdArgs.append("--format={}".format(pHashFormat))
-    lCmdArgs.append(pMask)
+    lCmdArgs.append("--mask={}".format(pMask))
     if pWordlist: lCmdArgs.append("--wordlist={}".format(pWordlist))
     if pPassThrough: lCmdArgs.append(pPassThrough)
     lCmdArgs.append(pHashFile)
@@ -280,7 +280,6 @@ def run_jtr_mask_mode(pHashFile: str, pMask: str, pWordlist: str, pHashFormat:st
     lNumberPasswordsAlreadyCracked = count_passwords_in_jtr_pot_file()
 
     if pVerbose:
-        print("[*] Finished")
         print("[*] Passwords cracked before using mask {}: {}".format(pMask, lNumberPasswordsAlreadyCracked))
 
     lCompletedProcess = subprocess.run(lCmdArgs, stdout=subprocess.PIPE)
@@ -294,9 +293,9 @@ def run_jtr_mask_mode(pHashFile: str, pMask: str, pWordlist: str, pHashFormat:st
     print("[*] Passwords cracked using mask {}: {} ({} percent)".format(pMask, lNumberPasswordsCrackedByThisMethod, lPercentPasswordsCracked))
 
     if pVerbose:
-        print("[*] Command: {}".format(lCompletedProcess.args))
-        print("[*] Finished")
-        print("[*] Passwords cracked: {} ({} percent)".format(lNumberPasswordsCrackedByThisMethod, lPercentPasswordsCracked))
+        print("[*] Finished mask mode: {}".format(pMask))
+        print("\tCommand: {}".format(lCompletedProcess.args))
+        print("\tPasswords cracked: {} ({} percent)".format(lNumberPasswordsCrackedByThisMethod, lPercentPasswordsCracked))
 
     if pDebug:
         lRunTime = time.time() - lStartTime
@@ -333,95 +332,109 @@ def perform_statistical_cracking(pHashFile: str, pPercentile: float, pHashFormat
     for lMask in lMasks:
         if pVerbose: print("[*] Processing mask: {}".format(lMask))
 
-        # All lowercase letters
-        if re.match('^(\?l)+$', lMask):
-            lCountLetters = lMask.count('?l')
-            lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
-            run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist=lWordlist, pRule="best126", pHashFormat=pHashFormat,
-                                  pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough,
-                                  pNumberHashes=pNumberHashes)
+        # If the number of characters in the mask is "small" as defined by
+        # MAX_CHARS_TO_BRUTEFORCE, then use brute-force on the pattern.
+        # If there are more characters than the limit, use "smart brute-force"
+        # which is a hybrid between dictionary and mask mode.
+        lCountCharacters = int(len(lMask) / 2)
+        if lCountCharacters <= MAX_CHARS_TO_BRUTEFORCE:
+            lWordlist = ""
+            run_jtr_mask_mode(pHashFile=pHashFile, pMask=lMask, pWordlist=lWordlist,
+                              pHashFormat=pHashFormat, pVerbose=pVerbose, pDebug=pDebug,
+                              pPassThrough=pPassThrough, pNumberHashes=pNumberHashes)
+        else:
 
-        # All uppercase
-        elif re.match('^(\?u)+$', lMask):
-            lCountLetters = lMask.count('?u')
-            lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
-            lRule = "uppercase"
-            run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist=lWordlist, pRule=lRule, pHashFormat=pHashFormat,
-                                  pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough,
-                                  pNumberHashes=pNumberHashes)
+            # All lowercase letters
+            if re.match('^(\?l)+$', lMask):
+                lCountLetters = lMask.count('?l')
+                if lCountLetters > MAX_CHARS_TO_BRUTEFORCE:
+                    lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
+                    lRule=""
+                    run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist=lWordlist, pRule=lRule, pHashFormat=pHashFormat,
+                                          pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough,
+                                          pNumberHashes=pNumberHashes)
 
-        # Uppercase followed by lowercase (assume only leading letter is uppercase)
-        elif re.match('^(\?u)(\?l)+$', lMask):
-            lCountLetters = lMask.count('?u') + lMask.count('?l')
-            lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
-            lRule = "capitalize"
-            run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist=lWordlist, pRule=lRule, pHashFormat=pHashFormat,
-                                  pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough,
-                                  pNumberHashes=pNumberHashes)
-
-        # Lowercase ending with digits
-        elif re.match('^(\?l)+(\?d)+$', lMask):
-            lCountLetters = lMask.count('?l')
-            lCountDigits = lMask.count('?d')
-            lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
-            lRule = "append{}digits".format(str(lCountDigits))
-            run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist=lWordlist, pRule=lRule, pHashFormat=pHashFormat,
-                                  pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough,
-                                  pNumberHashes=pNumberHashes)
-
-        # Uppercase followed by digits
-        elif re.match('^(\?u)+(\?d)+$', lMask):
-            lCountLetters = lMask.count('?u')
-            lCountDigits = lMask.count('?d')
-            lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
-            lRule = "uppercaseappend{}digits".format(str(lCountDigits))
-            run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist=lWordlist, pRule=lRule, pHashFormat=pHashFormat,
-                                  pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough,
-                                  pNumberHashes=pNumberHashes)
-
-        # Uppercase, lowercase, then digits (assume only leading letter is uppercase)
-        elif re.match('^(\?u)(\?l)+(\?d)+$', lMask):
-            lCountLetters = lMask.count('?u') + lMask.count('?l')
-            lCountDigits = lMask.count('?d')
-            lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
-            lRule = "capitalizeappend{}digits".format(str(lCountDigits))
-            run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist=lWordlist, pRule=lRule, pHashFormat=pHashFormat,
-                                  pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough,
-                                  pNumberHashes=pNumberHashes)
-
-        # Low number of digits. We do not cover large numbers of digits because
-        # precomputing dictionary files would be huge and running mask mode takes a long time.
-        # Right now we support 4-6 digits only. Recall we cover 4 and 6 digits specifically in
-        # "prayer" mode so we do not repeat those two masks here.
-        elif re.match('^(\?d)+$', lMask):
-            lCountDigits = lMask.count('?d')
-            if lCountDigits == 5:
-                lWordlist = "dictionaries/{}-digit-numbers.txt".format(str(lCountDigits))
-                run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist=lWordlist, pRule="", pHashFormat=pHashFormat,
+            # All uppercase
+            elif re.match('^(\?u)+$', lMask):
+                lCountLetters = lMask.count('?u')
+                lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
+                lRule = "uppercase"
+                run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist=lWordlist, pRule=lRule, pHashFormat=pHashFormat,
                                       pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough,
                                       pNumberHashes=pNumberHashes)
-            else:
-                print("[*] WARNING: Did not process mask {} because it is out of policy".format(lMask))
 
-        # Lowercase ending with something other than the masks already accounted for. If the
-        # ending pattern is longer than 4 characters, we do not try because it takes a long time
-        # to test that many hashes
-        elif re.match('^(\?l)+', lMask):
-            lPrefix = re.search('^(\?l)+', lMask).group()
-            lCountLetters = lPrefix.count("?l")
-            lSuffix = lMask[lCountLetters * 2:]
-            if len(lSuffix) <= 4:
+            # Uppercase followed by lowercase (assume only leading letter is uppercase)
+            elif re.match('^(\?u)(\?l)+$', lMask):
+                lCountLetters = lMask.count('?u') + lMask.count('?l')
                 lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
-                lMaskParam = "--mask=?w{}".format(lSuffix)
-                run_jtr_mask_mode(pHashFile=pHashFile, pMask=lMaskParam, pWordlist=lWordlist, pHashFormat=pHashFormat,
-                                  pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough,
-                                  pNumberHashes=pNumberHashes)
-            else:
-                print("[*] WARNING: Did not process mask {} because it is out of policy".format(lMask))
+                lRule = "capitalize"
+                run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist=lWordlist, pRule=lRule, pHashFormat=pHashFormat,
+                                      pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough,
+                                      pNumberHashes=pNumberHashes)
 
-        else:
-            lUndefinedMasks.append(lMask)
-            print("[*] WARNING: No policy defined for mask {}".format(lMask))
+            # Lowercase ending with digits
+            elif re.match('^(\?l)+(\?d)+$', lMask):
+                lCountLetters = lMask.count('?l')
+                lCountDigits = lMask.count('?d')
+                lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
+                lRule = "append{}digits".format(str(lCountDigits))
+                run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist=lWordlist, pRule=lRule, pHashFormat=pHashFormat,
+                                      pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough,
+                                      pNumberHashes=pNumberHashes)
+
+            # Uppercase followed by digits
+            elif re.match('^(\?u)+(\?d)+$', lMask):
+                lCountLetters = lMask.count('?u')
+                lCountDigits = lMask.count('?d')
+                lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
+                lRule = "uppercaseappend{}digits".format(str(lCountDigits))
+                run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist=lWordlist, pRule=lRule, pHashFormat=pHashFormat,
+                                      pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough,
+                                      pNumberHashes=pNumberHashes)
+
+            # Uppercase, lowercase, then digits (assume only leading letter is uppercase)
+            elif re.match('^(\?u)(\?l)+(\?d)+$', lMask):
+                lCountLetters = lMask.count('?u') + lMask.count('?l')
+                lCountDigits = lMask.count('?d')
+                lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
+                lRule = "capitalizeappend{}digits".format(str(lCountDigits))
+                run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist=lWordlist, pRule=lRule, pHashFormat=pHashFormat,
+                                      pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough,
+                                      pNumberHashes=pNumberHashes)
+
+            # Low number of digits. We do not cover large numbers of digits because
+            # precomputing dictionary files would be huge and running mask mode takes a long time.
+            # Right now we support 4-6 digits only. Recall we cover 4 and 6 digits specifically in
+            # "prayer" mode so we do not repeat those two masks here.
+            elif re.match('^(\?d)+$', lMask):
+                lCountDigits = lMask.count('?d')
+                if lCountDigits == 5:
+                    lWordlist = "dictionaries/{}-digit-numbers.txt".format(str(lCountDigits))
+                    run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist=lWordlist, pRule="", pHashFormat=pHashFormat,
+                                          pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough,
+                                          pNumberHashes=pNumberHashes)
+                else:
+                    print("[*] WARNING: Did not process mask {} because it is out of policy".format(lMask))
+
+            # Lowercase ending with something other than the masks already accounted for. If the
+            # ending pattern is longer than 4 characters, we do not try because it takes a long time
+            # to test that many hashes
+            elif re.match('^(\?l)+', lMask):
+                lPrefix = re.search('^(\?l)+', lMask).group()
+                lCountLetters = lPrefix.count("?l")
+                lSuffix = lMask[lCountLetters * 2:]
+                if len(lSuffix) <= 4:
+                    lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
+                    lMaskParam = "--mask=?w{}".format(lSuffix)
+                    run_jtr_mask_mode(pHashFile=pHashFile, pMask=lMaskParam, pWordlist=lWordlist, pHashFormat=pHashFormat,
+                                      pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough,
+                                      pNumberHashes=pNumberHashes)
+                else:
+                    print("[*] WARNING: Did not process mask {} because it is out of policy".format(lMask))
+
+            else:
+                lUndefinedMasks.append(lMask)
+                print("[*] WARNING: No policy defined for mask {}".format(lMask))
 
     # List masks that did not match a pattern so that a pattern can be added
     if lUndefinedMasks: print(
@@ -617,8 +630,11 @@ def do_run_jtr_prayer_mode(pHashFile: str, pDictionary: str, pRule: str,
     lPercentPasswordsCracked = round(lNumberPasswordsCrackedByThisMethod / pNumberHashes * 100, 2)
 
     if pVerbose:
-        print("[*] Finished mode: Wordlist {}".format(pDictionary), end="")
-        if pRule: print(" with Rule {}".format(pRule))
+        print("[*] Finished prayer mode: Wordlist {}".format(pDictionary), end="")
+        if pRule:
+            print(" with Rule {}".format(pRule))
+        else:
+            print()
         print("\tCommand was: {}".format(lCompletedProcess.args))
         print("\tPasswords cracked at end of run: {}".format(lNumberPasswordsCracked))
 
@@ -638,6 +654,7 @@ if __name__ == '__main__':
     JTR_POT_FILE_PATH = Config.JTR_POT_FILE_PATH
     JTR_EXE_FILE_PATH = Config.JTR_EXECUTABLE_FILE_PATH
     DEBUG = Config.DEBUG
+    MAX_CHARS_TO_BRUTEFORCE = Config.MAX_CHARS_TO_BRUTEFORCE
 
     lArgParser = argparse.ArgumentParser(description='ByePass: Automate the most common password cracking tasks',
                                          epilog="""
@@ -732,6 +749,7 @@ Use pass-through to pass fork command to JTR\n\n
                               pNumberHashes=lNumberHashes)
 
     # Try to crack some passwords as quickly as possible to use in statistical analysis
+    # If no technique is given, default is 1. If 0 is given, this mode is skipped
     if 0 not in lTechniques:
         for i in lTechniques:
             run_jtr_prayer_mode(pHashFile=lHashFile, pMethod=i, pHashFormat=lHashFormat,

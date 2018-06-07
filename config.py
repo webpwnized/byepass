@@ -14,3 +14,9 @@ JTR_POT_FILE_PATH = "/opt/JohnTheRipper/run/john.pot"
 #JTR_POT_FILE_PATH = "/opt/john/run/john.pot"
 
 DEBUG = False
+
+# For the statistical cracking mode, MAX_CHARS_TO_BRUTEFORCE decides
+# whether ByePass will brute-force all possible values or use
+# "smart brute" mode which is a hybrid cracking mode that uses
+# dicitionary words as the basis for mask cracking.
+MAX_CHARS_TO_BRUTEFORCE = 5
