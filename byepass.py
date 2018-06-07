@@ -437,7 +437,7 @@ def run_jtr_prayer_mode(pHashFile: str, pMethod: int, pHashFormat: str,
         # Rules have up to about 1,000 mangles
         # Factor: <10,000,000
         lFolder = "dictionaries"
-        lDictionaries = ["calendar.txt", "short-list.txt", "brands.txt",
+        lDictionaries = ["calendar.txt", "short-list.txt", "brands.txt","movie-characters.txt",
                          "animals.txt","cars.txt","astrology.txt","songs.txt"]
         lRules = ["SlowHashesPhase1", "Best126", "SlowHashesPhase2"]
 
@@ -470,7 +470,7 @@ def run_jtr_prayer_mode(pHashFile: str, pMethod: int, pHashFormat: str,
         # Rules have up to about 6,500 mangles
         # Factor: <65,000,000
         lFolder = "dictionaries"
-        lDictionaries = ["calendar.txt", "short-list.txt", "brands.txt",
+        lDictionaries = ["calendar.txt", "short-list.txt", "brands.txt","movie-characters.txt",
                          "animals.txt","cars.txt","astrology.txt","songs.txt"]
         lRules = ["SlowHashesPhase3"]
 
@@ -514,7 +514,7 @@ def run_jtr_prayer_mode(pHashFile: str, pMethod: int, pHashFormat: str,
         # Rules have up to about 50,000 mangles
         # Factor: <500,000,000
         lFolder = "dictionaries"
-        lDictionaries = ["calendar.txt", "short-list.txt", "brands.txt",
+        lDictionaries = ["calendar.txt", "short-list.txt", "brands.txt","movie-characters.txt",
                          "animals.txt","cars.txt","astrology.txt","songs.txt"]
         lRules = ["OneRuleToRuleThemAll"]
 
