@@ -506,6 +506,16 @@ def run_jtr_prayer_mode(pHashFile: str, pMethod: int, pHashFormat: str,
         # List of 1,000,000 digits
         # Rule has 1 mangle
         # Factor: 2,000,000
+        do_run_jtr_prayer_mode(pHashFile=pHashFile, pDictionary="dictionaries/4-digit-numbers.txt",
+                               pRule="DigitsRule", pHashFormat=pHashFormat,
+                               pPassThrough=pPassThrough, pVerbose=pVerbose,
+                               pDebug=pDebug, pNumberHashes=pNumberHashes)
+
+        do_run_jtr_prayer_mode(pHashFile=pHashFile, pDictionary="dictionaries/5-digit-numbers.txt",
+                               pRule="DigitsRule", pHashFormat=pHashFormat,
+                               pPassThrough=pPassThrough, pVerbose=pVerbose,
+                               pDebug=pDebug, pNumberHashes=pNumberHashes)
+
         do_run_jtr_prayer_mode(pHashFile=pHashFile, pDictionary="dictionaries/6-digit-numbers.txt",
                                pRule="DigitsRule", pHashFormat=pHashFormat,
                                pPassThrough=pPassThrough, pVerbose=pVerbose,

@@ -3,3 +3,4 @@ Phone numbers
 Table of cracking results display at end
 Prince mode
 Have I been pwned passwords
+Try some small scale brute force up front
