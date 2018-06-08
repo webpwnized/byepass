@@ -5,7 +5,7 @@ available at the following links. For written instructions, refer to the next se
 
 * [Using ByePass: Basic Usage](https://www.youtube.com/watch?v=cFQjbpQUtJU)
 * [Using ByePass: Using Fork for Faster Cracking](https://www.youtube.com/watch?v=xNSbFu7hLDc)
-* [Using ByePass: More Aggressive Techniques](https://www.youtube.com/watch?v=JhfWXQdomI4)
+* [Using ByePass: More Aggressive Techniques](https://www.youtube.com/watch?v=WlxQ11uYH-U)
 * [Using ByePass: Base Words Technique](https://www.youtube.com/watch?v=5vlW5_iiOPE)
 * [Using ByePass: Statistical Cracking Technique](https://www.youtube.com/watch?v=7McTDayHJs4)
 
