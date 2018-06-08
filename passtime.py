@@ -4,22 +4,24 @@ from argparse import RawTextHelpFormatter
 from pwstats import PasswordStats
 
 
+def print_example_usage():
+    print("""
+    List masks representing 75 percent of the passwords in input file worst-10000-passwords.txt\n
+    \tpython3 passtime.py -l -p 0.75 -i worst-10000-passwords.txt\n
+    Generate probability density function (PDF), masks, marginal percentile (MP), cummulative percentile (CP) and count of passwords representing 75 percent of the passwords in input file worst-10000-passwords.txt\n
+    \tpython3 passtime.py -a -p 0.75 -i worst-10000-passwords.txt\n
+    Write the ordinal position, raw count and cumulative count of passwords represented to stdout\n
+    \tpython3 passtime.py -v -d -i passwords/worst-95000-passwords.txt\n
+    Write the ordinal position, raw count and cumulative count of passwords represented to file /tmp/w95.csv\n
+    \tpython3 passtime.py -v -d -o w95.csv -i passwords/worst-95000-passwords.txt
+""")
+
 if __name__ == '__main__':
 
     READ_BYTES = 'rb'
 
     lArgParser = argparse.ArgumentParser(
         description='PassTime: Automate statistical analysis of passwords in support of password cracking tasks',
-        epilog="""Examples:\n\n
-        List masks representing 75 percent of the passwords in input file worst-10000-passwords.txt\n\n
-        \tpython3 passtime.py -l -p 0.75 -i worst-10000-passwords.txt\n\n
-        Generate probability density function (PDF), masks, marginal percentile (MP), cummulative percentile (CP) and count of passwords representing 75 percent of the passwords in input file worst-10000-passwords.txt\n\n
-        \tpython3 passtime.py -a -p 0.75 -i worst-10000-passwords.txt\n\n
-        Write the ordinal position, raw count and cumulative count of passwords represented to stdout\n\n
-        \tpython3 passtime.py -v -d -i passwords/worst-95000-passwords.txt\n\n
-        Write the ordinal position, raw count and cumulative count of passwords represented to file /tmp/w95.csv\n\n
-        \tpython3 passtime.py -v -d -o w95.csv -i passwords/worst-95000-passwords.txt\n
-        """,
         formatter_class=RawTextHelpFormatter)
     lArgParser.add_argument('-v', '--verbose', help='Enable verbose output', action='store_true')
     lArgParser.add_argument('-l', '--list-masks', help='List password masks for the passwords provided in the INPUT FILE', action='store_true')
@@ -28,10 +30,17 @@ if __name__ == '__main__':
     lRawDataOptionsGroup = lArgParser.add_argument_group('Raw Data Options')
     lRawDataOptionsGroup.add_argument('-d', '--dump-data', help='Output the ordinal position, raw count and cumulative count of passwords represented. Useful to analyze values in spreadsheet. Values are written comma-separated.', action='store_true')
     lRawDataOptionsGroup.add_argument('-o', '--output-file', type=str, help='Write the raw data dump to the file specified', action='store')
-    requiredAguments = lArgParser.add_argument_group('required arguments')
-    requiredAguments.add_argument('-i', '--input-file', type=str, help='Path to file containing passwords to analyze', action='store',
-                            required=True)
+    requiredAguments = lArgParser.add_mutually_exclusive_group(required=True)
+    requiredAguments.add_argument('-e', '--examples',
+                            help='Show example usage',
+                            action='store_true')
+    requiredAguments.add_argument('-i', '--input-file', type=str,
+                                  help='Path to file containing passwords to analyze', action='store')
     lArgs = lArgParser.parse_args()
+
+    if lArgs.examples:
+        print_example_usage()
+        exit(0)
 
     # Input validation
     if lArgs.percentile and not (lArgs.list_masks or lArgs.analyze_passwords):

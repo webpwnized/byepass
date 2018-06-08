@@ -31,22 +31,22 @@ tutorials in the following playlist
                             Supply a comma-separated list of lowercase, unmangled base words thought to be good candidates. For example, if Wiley Coyote is cracking hashes from Acme Inc., Wiley might provide the word "acme". Be careful how many words are supplied as Byepass will apply many mangling rules. Up to several dozen should run reasonably fast.
                             
       -t TECHNIQUES, --techniques TECHNIQUES
-                            Comma-separated list of integers between 0-4 that determines what password cracking techniques are attempted. Default is level 1. Example of running levels 1 and 2 --techniques=1,2
+                            Comma-separated list of integers between 0-13 that determines what password cracking techniques are attempted. Default is level 1. Example of running levels 1 and 2 --techniques=1,2
                             
-                        0: Skip prayer mode entirely
-                        1: Small Dictionaries. Small Rulesets
-                        2: Medium Dictionaries. Small Rulesets
-                        3: Small Dictionaries. Medium Rulesets
-                        4: Medium Dictionaries. Medium Rulesets
-                        5: Large Password List. Custom Ruleset
-                        6: Medium-Large Dictionaries. Small Rulesets
-                        7: Small Dictionaries. Large Rulesets
-                        8: Medium Dictionaries. Large Rulesets
-                        9: Medium-Large Dictionaries. Medium Rulesets
-                        10: Large Dictionaries. Small Rulesets
-                        11: Medium-Large Dictionaries. Large Rulesets
-                        12: Large Dictionaries. Medium Rulesets
-                        13: Large Dictionaries. Large Rulesets
+                            0: Skip prayer mode entirely
+                            1: Small Dictionaries. Small Rulesets
+                            2: Medium Dictionaries. Small Rulesets
+                            3: Small Dictionaries. Medium Rulesets
+                            4: Medium Dictionaries. Medium Rulesets
+                            5: Large Password List. Custom Ruleset
+                            6: Medium-Large Dictionaries. Small Rulesets
+                            7: Small Dictionaries. Large Rulesets
+                            8: Medium Dictionaries. Large Rulesets
+                            9: Medium-Large Dictionaries. Medium Rulesets
+                            10: Large Dictionaries. Small Rulesets
+                            11: Medium-Large Dictionaries. Large Rulesets
+                            12: Large Dictionaries. Medium Rulesets
+                            13: Large Dictionaries. Large Rulesets
                             
       -s, --stat-crack      Enable statistical cracking. Byepass will run relatively fast cracking strategies in hopes of cracking enough passwords to induce a pattern and create "high probability" masks. Byepass will use the masks in an attempt to crack more passwords.
                             
@@ -58,7 +58,8 @@ tutorials in the following playlist
                             
       -v, --verbose         Enable verbose output such as current progress and duration
       -d, --debug           Enable debug mode
-
+      -e, --examples        Show example usage
+  
 **Required arguments:**
 
       -i INPUT_FILE, --input-file INPUT_FILE

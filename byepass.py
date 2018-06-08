@@ -42,6 +42,38 @@ import time
 import re
 
 
+def print_example_usage():
+    print("""
+Attempt to crack password hashes found in input file "password.hashes" using default techniques level 1\n
+\tpython3 byepass.py --verbose --hash-format=descrypt --input-file=password.hashes
+\tpython3 byepass.py -v -f descrypt -i password.hashes\n
+Be more aggressive by using techniques level 2 in attempt to crack password hashes found in input file "password.hashes"\n
+\tpython3 byepass.py --verbose --techniques=2 --hash-format=descrypt --input-file=password.hashes
+\tpython3 byepass.py -v -a 2 -f descrypt -i password.hashes\n
+Go bonkers and try all techniques. Start with technique level 1 and proceed to level 13 in attempt to crack password hashes found in input file "password.hashes"\n
+\tpython3 byepass.py --verbose --techniques=1,2,3,4,5,6,7,8,9,10,11,12,13 --hash-format=descrypt --input-file=password.hashes
+\tpython3 byepass.py -v -a 1,2,3,4 -f descrypt -i password.hashes\n
+Only try first two techniques. Start with technique level 1 and proceed to level 2 in attempt to crack password hashes found in input file "password.hashes"\n
+\tpython3 byepass.py --verbose --techniques=1,2 --hash-format=descrypt --input-file=password.hashes
+\tpython3 byepass.py -v -a 1,2 -f descrypt -i password.hashes\n
+Attempt to crack password hashes found in input file "password.hashes", then run statistical analysis to determine masks needed to crack 50 percent of passwords, and try to crack again using the masks.\n
+\tpython3 byepass.py --verbose --hash-format=descrypt --stat-crack --percentile=0.50 --input-file=password.hashes
+\tpython3 byepass.py -v -f descrypt -s -p 0.50 -i password.hashes\n
+\"Real life\" example attempting to crack 25 percent of the linked-in hash set\n
+\tpython3 byepass.py --verbose --hash-format=Raw-SHA1 --stat-crack --percentile=0.25 --input-file=linkedin.hashes
+\tpython3 byepass.py -v -f Raw-SHA1 -s -f 0.25 -i linkedin.hashes\n
+Attempt to crack linked-in hashes using base words linkedin and linked\n
+\tpython3 byepass.py --verbose --hash-format=Raw-SHA1 --base-words=linkedin,linked --input-file=linkedin-1.hashes
+\tpython3 byepass.py -v -f -b linkedin,linked -i linkedin-1.hashes\n
+Do not run prayer mode. Only run statistical analysis to determine masks needed to crack 50 percent of passwords, and try to crack using the masks.\n
+\tpython3 byepass.py -v --techniques=0 --hash-format=descrypt --stat-crack --percentile=0.50 --input-file=password.hashes
+\tpython3 byepass.py -v -a 0 -f descrypt -s -p 0.50 -i password.hashes\n
+Use pass-through to pass fork command to JTR\n
+\tpython3 byepass.py --verbose --pass-through="--fork=4" --hash-format=descrypt --input-file=password.hashes
+\tpython3 byepass.py -v -j="--fork=4" -f descrypt -i password.hashes
+""")
+
+
 def parse_arg_percentile(pArgPercentile: float) -> float:
 
     if pArgPercentile:
@@ -656,38 +688,15 @@ if __name__ == '__main__':
     DEBUG = Config.DEBUG
     MAX_CHARS_TO_BRUTEFORCE = Config.MAX_CHARS_TO_BRUTEFORCE
 
-    lArgParser = argparse.ArgumentParser(description='ByePass: Automate the most common password cracking tasks',
-                                         epilog="""
-Examples:\n\n
-Attempt to crack password hashes found in input file "password.hashes" using default techniques level 1\n\n
-\tpython3 byepass.py --verbose --hash-format=descrypt --input-file=password.hashes\n\n
-\tpython3 byepass.py -v -f descrypt -i password.hashes\n\n
-Be more aggressive by using techniques level 2 in attempt to crack password hashes found in input file "password.hashes"\n\n
-\tpython3 byepass.py --verbose --techniques=2 --hash-format=descrypt --input-file=password.hashes\n\n
-\tpython3 byepass.py -v -a 2 -f descrypt -i password.hashes\n\n
-Go bonkers and try all techniques. Start with technique level 1 and proceed to level 13 in attempt to crack password hashes found in input file "password.hashes"\n\n
-\tpython3 byepass.py --verbose --techniques=1,2,3,4,5,6,7,8,9,10,11,12,13 --hash-format=descrypt --input-file=password.hashes\n\n
-\tpython3 byepass.py -v -a 1,2,3,4 -f descrypt -i password.hashes\n\n
-Only try first two techniques. Start with technique level 1 and proceed to level 2 in attempt to crack password hashes found in input file "password.hashes"\n\n
-\tpython3 byepass.py --verbose --techniques=1,2 --hash-format=descrypt --input-file=password.hashes\n\n
-\tpython3 byepass.py -v -a 1,2 -f descrypt -i password.hashes\n\n
-Attempt to crack password hashes found in input file "password.hashes", then run statistical analysis to determine masks needed to crack 50 percent of passwords, and try to crack again using the masks.\n\n
-\tpython3 byepass.py --verbose --hash-format=descrypt --stat-crack --percentile=0.50 --input-file=password.hashes\n\n
-\tpython3 byepass.py -v -f descrypt -s -p 0.50 -i password.hashes\n\n
-\"Real life\" example attempting to crack 25 percent of the linked-in hash set\n\n
-\tpython3 byepass.py --verbose --hash-format=Raw-SHA1 --stat-crack --percentile=0.25 --input-file=linkedin.hashes\n\n
-\tpython3 byepass.py -v -f Raw-SHA1 -s -f 0.25 -i linkedin.hashes\n\n
-Attempt to crack linked-in hashes using base words linkedin and linked\n\n
-\tpython3 byepass.py --verbose --hash-format=Raw-SHA1 --base-words=linkedin,linked --input-file=linkedin-1.hashes\n\n
-\tpython3 byepass.py -v -f -b linkedin,linked -i linkedin-1.hashes\n\n
-Do not run prayer mode. Only run statistical analysis to determine masks needed to crack 50 percent of passwords, and try to crack using the masks.\n\n
-\tpython3 byepass.py -v --techniques=0 --hash-format=descrypt --stat-crack --percentile=0.50 --input-file=password.hashes\n\n
-\tpython3 byepass.py -v -a 0 -f descrypt -s -p 0.50 -i password.hashes\n\n
-Use pass-through to pass fork command to JTR\n\n
-\tpython3 byepass.py --verbose --pass-through="--fork=4" --hash-format=descrypt --input-file=password.hashes\n\n
-\tpython3 byepass.py -v -j="--fork=4" -f descrypt -i password.hashes
-                                         """,
-                                         formatter_class=RawTextHelpFormatter)
+    lArgParser = argparse.ArgumentParser(description="""
+  ___          ___
+ | _ )_  _ ___| _ \__ _ ______
+ | _ \ || / -_)  _/ _` (_-<_-<
+ |___/\_, \___|_| \__,_/__/__/
+      |__/
+ 
+ Automated password hash analysis
+""", formatter_class=RawTextHelpFormatter)
     lArgParser.add_argument('-f', '--hash-format',
                             type=str,
                             help="The hash algorithm used to hash the password(s). This value must be one of the values supported by John the Ripper. To see formats supported by JTR, use command \"john --list=formats\". It is strongly recommended to provide an optimal value. If no value is provided, John the Ripper will guess.\n\n",
@@ -717,12 +726,19 @@ Use pass-through to pass fork command to JTR\n\n
     lArgParser.add_argument('-d', '--debug',
                             help='Enable debug mode',
                             action='store_true')
-    requiredAguments = lArgParser.add_argument_group('required arguments')
+    requiredAguments = lArgParser.add_mutually_exclusive_group(required=True)
+    requiredAguments.add_argument('-e', '--examples',
+                            help='Show example usage',
+                            action='store_true')
     requiredAguments.add_argument('-i', '--input-file',
                                   type=str,
                                   help='Path to file containing password hashes to attempt to crack',
-                                  action='store',required=True)
+                                  action='store')
     lArgs = lArgParser.parse_args()
+
+    if lArgs.examples:
+        print_example_usage()
+        exit(0)
 
     # Input parameter validation
     if lArgs.percentile and not lArgs.stat_crack:
