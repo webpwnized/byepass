@@ -506,20 +506,23 @@ def run_jtr_prayer_mode(pHashFile: str, pMethod: int, pHashFormat: str,
         # List of 1,000,000 digits
         # Rule has 1 mangle
         # Factor: 2,000,000
-        do_run_jtr_prayer_mode(pHashFile=pHashFile, pDictionary="dictionaries/4-digit-numbers.txt",
-                               pRule="DigitsRule", pHashFormat=pHashFormat,
-                               pPassThrough=pPassThrough, pVerbose=pVerbose,
-                               pDebug=pDebug, pNumberHashes=pNumberHashes)
 
-        do_run_jtr_prayer_mode(pHashFile=pHashFile, pDictionary="dictionaries/5-digit-numbers.txt",
-                               pRule="DigitsRule", pHashFormat=pHashFormat,
-                               pPassThrough=pPassThrough, pVerbose=pVerbose,
-                               pDebug=pDebug, pNumberHashes=pNumberHashes)
-
-        do_run_jtr_prayer_mode(pHashFile=pHashFile, pDictionary="dictionaries/6-digit-numbers.txt",
-                               pRule="DigitsRule", pHashFormat=pHashFormat,
-                               pPassThrough=pPassThrough, pVerbose=pVerbose,
-                               pDebug=pDebug, pNumberHashes=pNumberHashes)
+        for i in range(4, MAX_CHARS_TO_BRUTEFORCE+1):
+            lDigitsMask = "?d" * i
+            lLettersMask = "?l" * i
+            lUppersMask = "?u" * i
+            lUpperLettersMask = "?u"+ "?l" * (i-1)
+            lLettersDigitMask = "?l" * (i-1) + "?d"
+            lLettersTwoDigitMask = "?l" * (i-2) + "?d?d"
+            lUpperLettersDigitMask = "?u" + "?l" * (i-2) + "?d"
+            lUpperLettersTwoDigitMask = "?u" + "?l" * (i-3) + "?d?d"
+            lMasks = [lLettersMask, lUppersMask, lDigitsMask, lLettersDigitMask,
+                      lLettersTwoDigitMask,lUpperLettersMask, lUpperLettersDigitMask,
+                      lUpperLettersTwoDigitMask]
+            for lMask in lMasks:
+                run_jtr_mask_mode(pHashFile=pHashFile, pMask=lMask, pWordlist=None,
+                                  pHashFormat=pHashFormat, pPassThrough=pPassThrough,
+                                  pVerbose=pVerbose, pDebug=pDebug, pNumberHashes=pNumberHashes)
 
         # Dictionaries have less than 10,000 words
         # Rules have up to about 6,500 mangles

@@ -27,25 +27,33 @@ c $! $!
 $e
 
 ## leetify - JD
+#vowels - a,e,i,o
 sa[4@]
 se3
 si[1!]
 so0
-ss[5$]
 c sa[4@]
 c se3
 c si[1!]
 c so0
-c ss[5$]
-sg[69]
+
+#consonants s,t,l
+sg9
 sl1
-so0 sa[@4]
-so0 si[1!]
-so0 se3
-so0 si[1!] se3 ss[5$] sa[4@]
-so0 si[1!] se3 ss[5$] sa[4@] $[0-9!]
-c so0 si[1!] se3 ss[5$] sa[4@]
-c so0 si[1!] se3 ss[5$] sa[4@] $[0-9!]
+ss[5$]
+st[7+]
+c sg9
+c sl1
+c ss[5$]
+c st[7+]
+
+# All combinations, then add digit, then add digit with exclamation point
+sa[4@] se3 si[1!] so0 sg9 sl1 ss[5$] st[7+]
+sa[4@] se3 si[1!] so0 sg9 sl1 ss[5$] st[7+] $[0-9]
+sa[4@] se3 si[1!] so0 sg9 sl1 ss[5$] st[7+] $[0-9] $!
+c sa[4@] se3 si[1!] so0 sg9 sl1 ss[5$] st[7+]
+c sa[4@] se3 si[1!] so0 sg9 sl1 ss[5$] st[7+] $[0-9]
+c sa[4@] se3 si[1!] so0 sg9 sl1 ss[5$] st[7+] $[0-9] $!
 
 ## high frequency overwrite at end
 ] $a
