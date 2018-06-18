@@ -44,6 +44,12 @@ import re
 
 def print_example_usage():
     print("""
+Attempt to crack linked-in hashes using base words linkedin and linked\n
+\tpython3 byepass.py --verbose --hash-format=Raw-SHA1 --base-words=linkedin,linked --input-file=linkedin-1.hashes
+\tpython3 byepass.py -v -f Raw-SHA1 -b linkedin,linked -i linkedin-1.hashes\n
+Attempt to brute force words up to 5 characters in length\n
+\tpython3 byepass.py --verbose --hash-format=Raw-MD5 --brute-force=5 --input-file=hashes.txt
+\tpython3 byepass.py -f Raw-MD5 -j="--fork=4" -v -t 0 -r 5 -i hashes.txt\n
 Attempt to crack password hashes found in input file "password.hashes" using default techniques level 1\n
 \tpython3 byepass.py --verbose --hash-format=descrypt --input-file=password.hashes
 \tpython3 byepass.py -v -f descrypt -i password.hashes\n
@@ -103,7 +109,7 @@ def parse_arg_techniques(pArgTechniques: str) -> list:
 
     if lArgs.techniques is not None:
 
-        lErrorMessage = 'Techniques must be supplied as a comma-separated list of integers between 0 and 13.'
+        lErrorMessage = 'Techniques must be supplied as a comma-separated list of integers between 0 and 13'
 
         try:
             lTechniques = list(map(int, pArgTechniques.split(",")))
@@ -122,6 +128,18 @@ def parse_arg_techniques(pArgTechniques: str) -> list:
         lTechniques.sort()
 
     return lTechniques
+
+
+def parse_arg_brute_force(pArgBruteForce: int) -> int:
+
+    lErrorMessage = 'Amount of characters to bruce-force must be a positive integer greater than 0'
+
+    try:
+        if pArgBruteForce < 1:
+            raise ValueError(lErrorMessage)
+        return pArgBruteForce
+    except:
+        raise ValueError(lErrorMessage)
 
 
 def print_closing_message(pNumberHashes: int, pNumberPasswordsPOTFileAtStart: int,
@@ -472,6 +490,36 @@ def perform_statistical_cracking(pHashFile: str, pPercentile: float, pHashFormat
     if lUndefinedMasks: print(
         "[*] WARNING: There was no policy defined for the following masks: {}".format(lUndefinedMasks))
 
+def run_jtr_brute_force_mode(pHashFile: str, pMaxCharactersToBruteForce: int,
+                             pHashFormat: str, pPassThrough: str,
+                             pVerbose: bool, pDebug: bool, pNumberHashes: int) -> None:
+
+    for i in range(1, pMaxCharactersToBruteForce + 1):
+        lDigitsMask = "?d" * i
+        lLettersMask = "?l" * i
+        lUppersMask = "?u" * i
+        lUpperLettersMask = "?u" + "?l" * (i - 1)
+        lLettersDigitMask = "?l" * (i - 1) + "?d"
+        lLettersTwoDigitMask = "?l" * (i - 2) + "?d?d"
+        lUpperLettersDigitMask = "?u" + "?l" * (i - 2) + "?d"
+        lUpperLettersTwoDigitMask = "?u" + "?l" * (i - 3) + "?d?d"
+        lMasks = [lLettersMask, lUppersMask, lDigitsMask]
+        if i > 1:
+            lMasks.append(lUpperLettersMask)
+            lMasks.append(lLettersDigitMask)
+
+        if i > 2:
+            lMasks.append(lLettersTwoDigitMask)
+            lMasks.append(lUpperLettersDigitMask)
+
+        if i > 3:
+            lMasks.append(lUpperLettersTwoDigitMask)
+
+        for lMask in lMasks:
+            run_jtr_mask_mode(pHashFile=pHashFile, pMask=lMask, pWordlist=None,
+                              pHashFormat=pHashFormat, pPassThrough=pPassThrough,
+                              pVerbose=pVerbose, pDebug=pDebug, pNumberHashes=pNumberHashes)
+
 
 def run_jtr_prayer_mode(pHashFile: str, pMethod: int, pHashFormat: str,
                            pPassThrough: str, pVerbose: bool, pDebug: bool,
@@ -503,30 +551,10 @@ def run_jtr_prayer_mode(pHashFile: str, pMethod: int, pHashFormat: str,
         lRules = ["SlowHashesPhase1", "Best126", "SlowHashesPhase2"]
 
     elif pMethod == 3:
-        # List of 1,000,000 digits
-        # Rule has 1 mangle
-        # Factor: 2,000,000
-
-        for i in range(4, MAX_CHARS_TO_BRUTEFORCE+1):
-            lDigitsMask = "?d" * i
-            lLettersMask = "?l" * i
-            lUppersMask = "?u" * i
-            lUpperLettersMask = "?u"+ "?l" * (i-1)
-            lLettersDigitMask = "?l" * (i-1) + "?d"
-            lLettersTwoDigitMask = "?l" * (i-2) + "?d?d"
-            lUpperLettersDigitMask = "?u" + "?l" * (i-2) + "?d"
-            lUpperLettersTwoDigitMask = "?u" + "?l" * (i-3) + "?d?d"
-            lMasks = [lLettersMask, lUppersMask, lDigitsMask, lLettersDigitMask,
-                      lLettersTwoDigitMask,lUpperLettersMask, lUpperLettersDigitMask,
-                      lUpperLettersTwoDigitMask]
-            for lMask in lMasks:
-                run_jtr_mask_mode(pHashFile=pHashFile, pMask=lMask, pWordlist=None,
-                                  pHashFormat=pHashFormat, pPassThrough=pPassThrough,
-                                  pVerbose=pVerbose, pDebug=pDebug, pNumberHashes=pNumberHashes)
-
         # Dictionaries have less than 10,000 words
         # Rules have up to about 6,500 mangles
         # Factor: <65,000,000
+
         lFolder = "dictionaries"
         lDictionaries = ["calendar.txt", "short-list.txt", "brands.txt","movie-characters.txt",
                          "animals.txt","astrology.txt","songs.txt"]
@@ -718,6 +746,10 @@ if __name__ == '__main__':
                             type=str,
                             help="Supply a comma-separated list of lowercase, unmangled base words thought to be good candidates. For example, if Wiley Coyote is cracking hashes from Acme Inc., Wiley might provide the word \"acme\". Be careful how many words are supplied as Byepass will apply many mangling rules. Up to several dozen should run reasonably fast.\n\n",
                             action='store')
+    lArgParser.add_argument('-r', '--brute-force',
+                            type=int,
+                            help="Bruce force common patterns up to MAX characters. Provide maxiumum number of characters as positive integer.\n\n",
+                            action='store')
     lArgParser.add_argument('-t', '--techniques',
                             type=str,
                             help="Comma-separated list of integers between 0-13 that determines what password cracking techniques are attempted. Default is level 1. Example of running levels 1 and 2 --techniques=1,2\n\n0: Skip prayer mode entirely\n1: Small Dictionaries. Small Rulesets\n2: Medium Dictionaries. Small Rulesets\n3: Small Dictionaries. Medium Rulesets\n4: Medium Dictionaries. Medium Rulesets\n5: Large Password List. Custom Ruleset\n6: Medium-Large Dictionaries. Small Rulesets\n7: Small Dictionaries. Large Rulesets\n8: Medium Dictionaries. Large Rulesets\n9: Medium-Large Dictionaries. Medium Rulesets\n10: Large Dictionaries. Small Rulesets\n11: Medium-Large Dictionaries. Large Rulesets\n12: Large Dictionaries. Medium Rulesets\n13: Large Dictionaries. Large Rulesets\n\n",
@@ -776,6 +808,13 @@ if __name__ == '__main__':
         run_jtr_baseword_mode(pHashFile=lHashFile, pBaseWords=lArgs.basewords, pHashFormat=lHashFormat,
                               pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through,
                               pNumberHashes=lNumberHashes)
+
+    if lArgs.brute_force:
+        lMaxCharactersToBruteForce = parse_arg_brute_force(lArgs.brute_force)
+        run_jtr_brute_force_mode(pHashFile=lHashFile, pMaxCharactersToBruteForce=lMaxCharactersToBruteForce,
+                                 pHashFormat=lHashFormat, pVerbose=lVerbose,
+                                 pDebug=lDebug, pPassThrough=lArgs.pass_through,
+                                 pNumberHashes=lNumberHashes)
 
     # Try to crack some passwords as quickly as possible to use in statistical analysis
     # If no technique is given, default is 1. If 0 is given, this mode is skipped

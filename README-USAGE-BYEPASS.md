@@ -29,6 +29,9 @@ tutorials in the following playlist
                             
       -b BASEWORDS, --basewords BASEWORDS
                             Supply a comma-separated list of lowercase, unmangled base words thought to be good candidates. For example, if Wiley Coyote is cracking hashes from Acme Inc., Wiley might provide the word "acme". Be careful how many words are supplied as Byepass will apply many mangling rules. Up to several dozen should run reasonably fast.
+
+      -r BRUTE_FORCE, --brute-force BRUTE_FORCE
+                            Bruce force common patterns up to MAX characters. Provide maxiumum number of characters as positive integer.
                             
       -t TECHNIQUES, --techniques TECHNIQUES
                             Comma-separated list of integers between 0-13 that determines what password cracking techniques are attempted. Default is level 1. Example of running levels 1 and 2 --techniques=1,2
@@ -74,6 +77,14 @@ Attempt to crack linked-in hashes using base words linkedin and linked
 	python3 byepass.py --verbose --hash-format=Raw-SHA1 --base-words=linkedin,linked --input-file=linkedin-1.hashes
 
 	python3 byepass.py -v -f Raw-SHA1 -b linkedin,linked -i linkedin-1.hashes
+
+### Using Brute Force Mode
+
+Attempt to brute force words up to 5 characters in length
+
+	python3 byepass.py --verbose --hash-format=Raw-MD5 --brute-force=5 --input-file=hashes.txt
+
+    python3 byepass.py -f Raw-MD5 -j="--fork=4" -v -t 0 -r 5 -i hashes.txt
 
 ### Using Prayer Mode
 
