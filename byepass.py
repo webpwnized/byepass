@@ -483,7 +483,7 @@ def run_jtr_prayer_mode(pHashFile: str, pMethod: int, pHashFormat: str,
         # Factor: <10,000,000
         lFolder = "dictionaries"
         lDictionaries = ["calendar.txt", "short-list.txt", "brands.txt","movie-characters.txt",
-                         "animals.txt","cars.txt","astrology.txt","songs.txt"]
+                         "animals.txt","astrology.txt","songs.txt"]
         lRules = ["SlowHashesPhase1", "Best126", "SlowHashesPhase2"]
 
         # <1,000 words and <10,000 mangles
@@ -529,7 +529,7 @@ def run_jtr_prayer_mode(pHashFile: str, pMethod: int, pHashFormat: str,
         # Factor: <65,000,000
         lFolder = "dictionaries"
         lDictionaries = ["calendar.txt", "short-list.txt", "brands.txt","movie-characters.txt",
-                         "animals.txt","cars.txt","astrology.txt","songs.txt"]
+                         "animals.txt","astrology.txt","songs.txt"]
         lRules = ["SlowHashesPhase3"]
 
     elif pMethod == 4:
@@ -573,7 +573,7 @@ def run_jtr_prayer_mode(pHashFile: str, pMethod: int, pHashFormat: str,
         # Factor: <500,000,000
         lFolder = "dictionaries"
         lDictionaries = ["calendar.txt", "short-list.txt", "brands.txt","movie-characters.txt",
-                         "animals.txt","cars.txt","astrology.txt","songs.txt"]
+                         "animals.txt","astrology.txt","songs.txt"]
         lRules = ["OneRuleToRuleThemAll"]
 
     elif pMethod == 8:
