@@ -1,6 +1,10 @@
-49
+
+12
+2018
+21st
 49ers
 76ers
+aac
 aalborg
 aalen
 aalesunds
@@ -23,12 +27,13 @@ about
 above
 abraham
 abseiling
-ac
 academical
 academy
 academyart
 acadia
+acc
 accent
+acceptance
 accessible
 accompanied
 accomplished
@@ -54,7 +59,6 @@ activities
 activity
 actual
 actually
-ad
 ada
 adams
 adanaspor
@@ -67,11 +71,9 @@ addiction
 addison
 addition
 additional
-addition/update
 address
 adds
 adelaide
-adelaidefootballclub
 adelphi
 adidas
 adirondack
@@ -89,7 +91,9 @@ advanced
 advancement
 adventist
 adventure
+advertise
 advertisement
+advertising
 aek
 aerial
 aerials
@@ -154,7 +158,6 @@ airracing
 airsoft
 airtricity
 aiuniv
-aj
 ajaccio
 ajax
 ajula
@@ -162,7 +165,6 @@ akbible
 akhisarspor
 akhmat
 akron
-al
 alababma
 alabama
 alai
@@ -250,7 +252,7 @@ alvernia
 alverno
 alvin
 always
-am
+a&m
 amarillo
 amateur
 amazinmets
@@ -279,7 +281,6 @@ among
 amphetamine
 amridge
 amridgeuniversity
-an
 ana
 anaheim
 ancestor
@@ -290,7 +291,6 @@ ancient
 and
 anderlecht
 anderson
-anderson/muncie
 andersonuniversity
 andover
 andrew
@@ -436,7 +436,6 @@ artinstitutes
 artistic
 arts
 arundel
-as
 asa
 asbury
 asburyseminary
@@ -465,7 +464,7 @@ astonvilla
 astros
 asurams
 asymmetric
-at
+a&t
 atalanta
 atb
 atchison
@@ -559,13 +558,11 @@ axel
 axemen
 axes
 axewomen
-az
 aztecs
+aztecs’
 azul
 azusa
-b
 “b”
-ba
 babson
 baby
 babybulls
@@ -585,6 +582,7 @@ bahía
 baird@mail
 baja
 baker
+[baker
 bakersfield
 bakeru
 balance
@@ -627,7 +625,6 @@ baptist
 baptistcollege
 bar
 baraboo
-baraboo/sauk
 barbara
 barbell
 barbells
@@ -654,7 +651,6 @@ barre
 barrel
 barrelracing
 barrels
-barre/scranton
 barriers
 barrington
 barron
@@ -707,9 +703,7 @@ baylor
 baypath
 baysox
 bball
-bc
 bchs
-be
 beach
 beachhandball
 beachrugby
@@ -780,7 +774,6 @@ bench
 benchpress
 benchrest
 bend
-bend/elkhart
 bending
 benedict
 benedictine
@@ -890,7 +883,6 @@ bison
 bisons
 bitterroot
 biyo
-bk
 black
 blackandgold
 blackbirds
@@ -976,7 +968,7 @@ boca
 bocce
 boccia
 bochum
-bodø/glimt
+bodø
 body
 bodyblow
 bodyboard
@@ -1073,6 +1065,7 @@ boysinblue
 boysofsummer
 bozeman
 bpie
+bracket
 bradenton
 bradford
 bradfordcity
@@ -1146,7 +1139,6 @@ bristolrovers
 britain
 britains
 british
-britishcolumbialions
 britons
 broad
 broadcaster
@@ -1197,10 +1189,10 @@ brunswick
 brutal
 bryan
 bryant
+bryant]
 bryn
 brynathyn
 brynmawr
-bs
 bsc
 bubble
 bucaramanga
@@ -1268,14 +1260,10 @@ butte
 butterfly
 buzkashi
 buzzards
-bx
-by
 byu
 byuh
 byui
-c
-c4
-ca
+caa
 cabarrus
 cabarruscollege
 caber
@@ -1373,7 +1361,6 @@ canoeing
 canoes
 canopy
 canterburybankstown
-canterburybankstownbulldogs
 canton
 canucks
 canyon
@@ -1490,7 +1477,6 @@ ccny
 ccsj
 ccsu
 ccuniversity
-cd
 cdrewu
 cdsp
 ceaprc
@@ -1499,6 +1485,7 @@ cedar
 cedarcrest
 cedarville
 ceif
+celebration
 celta
 celtic
 celtics
@@ -1527,7 +1514,6 @@ certainly
 cesena
 cesta
 cestoball
-cf
 cffp
 cfl
 cfp
@@ -1643,6 +1629,7 @@ chocolate
 chocolatesoldiers
 choctaws
 choice
+choices
 chopping
 choreographed
 chorzów
@@ -1778,6 +1765,9 @@ colchesterunited
 coleados
 colegio
 colgate
+colin
+[colin
+colin’s
 collect
 collection
 collective
@@ -1785,16 +1775,12 @@ collectively
 college
 college[1]
 college[4]
-college/capital
-collegeforcreativestudies
-college(located
 collegeofidaho
 colleges
 collegeville
 collegiate
 collin
 collingwood
-collingwoodfootballclub
 collins
 colloquial
 collywobbles
@@ -1826,7 +1812,6 @@ columbiacollegesc
 columbia|dc
 columbus
 columbusbluejackets
-columbus/greensburg
 column
 columnist
 combat
@@ -1891,6 +1876,8 @@ conditions
 conducted
 cone
 cones
+conference
+conferences
 confined
 conforama
 conncoll
@@ -1910,6 +1897,7 @@ consist
 consisting
 consists
 consortium
+constitutes
 consume
 cont
 contact
@@ -1999,12 +1987,12 @@ covering
 cowboy
 cowboys
 cowgirls
+cowherd
 cowley
 cows
 cox
 coxcollege
 coyotes
-cp
 crab
 crabs
 cracovia
@@ -2039,10 +2027,10 @@ crimson
 criollas
 crispy
 criswell
+criticism
 croatia
 croix
 cronullasutherland
-cronullasutherlandsharks
 crooked
 crookston
 croquet
@@ -2052,7 +2040,6 @@ crossbow
 crosscheck
 crosscountry
 crosscountryrally
-crosscountryrunning
 crosscountryskiing
 crosse
 crossed
@@ -2073,7 +2060,6 @@ cruzeiro
 crys
 crystal
 crystalpalace
-cs
 csbsju
 cska
 cstm
@@ -2098,7 +2084,6 @@ csustan
 ctschicago
 ctsfw
 ctsnet
-cu
 cuaa
 cub
 cubbies
@@ -2150,8 +2135,6 @@ cyclones
 cyfair
 cylindrical
 czech
-d
-da
 dabney
 dade
 dads
@@ -2161,6 +2144,7 @@ dagenham
 daggers
 dahlonega
 daily
+dak
 dakota
 dale
 daley
@@ -2197,6 +2181,7 @@ darts
 das
 dating
 daur
+dave
 davenport
 davidson
 davie
@@ -2213,8 +2198,6 @@ dayton
 daytona
 daytonastate
 dbacks
-dc
-de
 deacons
 dead
 deadlifting
@@ -2314,6 +2297,7 @@ devilettes
 devils
 devry
 devs
+dez
 diablo
 diablos
 dialect
@@ -2388,7 +2372,6 @@ divoire
 dixie
 dixon
 djurgårdens
-do
 doane
 dockers
 doctoral
@@ -2471,7 +2454,6 @@ drunken
 drury
 dry
 dspt
-du
 duathlon
 dubbed
 dubious
@@ -2511,8 +2493,6 @@ dye
 dyersburg
 dynamic
 dynamo
-e
-ea
 each
 eagles
 eagles!
@@ -2555,14 +2535,13 @@ edmond
 edmonds
 edmonton
 edmontoneskimos
-edu/
+edu
 education
 edward
 edwards
 edwardsville
 eels
 efl
-eg
 egypt
 egyptian
 eibar
@@ -2572,7 +2551,6 @@ eighteen
 eintracht
 either
 ekstraklasa
-el
 elapsed
 elbow
 elbows
@@ -2596,6 +2574,7 @@ eliv
 elizabeth
 elizabethtown
 elk
+elkhart
 elkins
 ellendale
 ellensburg
@@ -2624,7 +2603,6 @@ empire
 employed
 empoli
 emporia
-en
 enable
 encased
 enclosed
@@ -2673,7 +2651,6 @@ erikson
 ers
 erskine
 erzgebirge
-es
 esbjerg
 escuela
 esf
@@ -2686,7 +2663,6 @@ espanyol
 especially
 espn
 essendon
-essendonfootballclub
 essex
 estac
 este
@@ -2722,7 +2698,6 @@ eventing
 events
 everett
 everglades
-evergladesuniversity
 evergreen
 evers
 everton
@@ -2739,6 +2714,7 @@ excalibur
 excel
 excelsior
 except
+excited
 exclusively
 executed
 executive
@@ -2753,6 +2729,7 @@ explicitly
 explodes
 explorers
 explosion
+export
 expos
 express
 extended
@@ -2760,7 +2737,6 @@ extension
 extrapoint
 extreme
 eye
-f
 face
 faceoff
 facilitate
@@ -2815,14 +2791,10 @@ faulkner
 fayette
 fayetteville
 fayha
-fb
 fbi
-fc
 fcand
 fco
 fcsm
-fcunitedofmanchester
-fe
 fear
 feats
 feature
@@ -2853,7 +2825,6 @@ few
 fewer
 fewest
 feyenoord
-ff
 fgcu
 fhchs
 fhsu
@@ -2872,6 +2843,7 @@ fifteen
 fight
 fighters
 fightin
+fightin'
 fighting
 figueirense
 figure
@@ -2909,7 +2881,6 @@ first
 fish
 fisher
 fishing
-fishing/shrimping
 fisk
 fist
 fistball
@@ -2925,7 +2896,6 @@ fivepinbowling
 fivepins
 fives
 fixed
-fk
 flag
 flagfootball
 flagler
@@ -2980,6 +2950,7 @@ focus
 foggia
 folk
 folkrace
+follow
 followed
 following
 fond
@@ -3062,14 +3033,11 @@ freerunning
 freestyle
 freestylefootball
 freestyleskiing
-freestyleslalomskating
-freestylesnowboarding
 freestyleswimming
 freethrow
 freiburg
 freighter
 fremantle
-fremantlefootballclub
 fremont
 french
 frenchcricket
@@ -3096,9 +3064,8 @@ frontón
 frosinone
 frostburg
 frozen
+fs1
 fsv
-ft
-fu
 fuel
 fukuoka
 fulham
@@ -3124,7 +3091,6 @@ futsal
 fuzzball
 fvsu
 fwbbc
-g
 gables
 gades
 gadsden
@@ -3189,7 +3155,6 @@ geauga
 geckos
 gee
 geelong
-geelongfootballclub
 gees
 geese
 gefle
@@ -3225,7 +3190,6 @@ get
 getafe
 getting
 gettysburg
-gf
 gfc
 gial
 giant
@@ -3261,6 +3225,7 @@ glider
 gliders
 gliding
 glima
+glimt
 gliwice
 global
 globaluniversity
@@ -3274,7 +3239,6 @@ glovers
 gloves
 gmen
 gnats
-go
 goal
 goalball
 goalie
@@ -3294,10 +3258,8 @@ gogosox
 goiás
 going
 gold
-goldcoastfootballclub
 goldcoasttitans
 golden
-goldenstatewarriors
 goldey
 goldfarb
 golf
@@ -3355,7 +3317,6 @@ graz
 grease
 great
 greater
-greaterwesternsydneygiants
 greatest
 grecians
 greco
@@ -3445,7 +3406,6 @@ gymnastic
 gymnastics
 gymnasts
 gyrenes
-h
 haag
 habs
 häcken
@@ -3567,7 +3527,6 @@ hawkeye
 hawkeyes
 hawks
 hawthorn
-hawthornfootballclub
 haxey
 hays
 hayward
@@ -3576,9 +3535,9 @@ hazard
 hazelden
 hazleton
 hcc
-he
 head
 headblow
+heading
 headis
 headlock
 heads
@@ -3632,7 +3591,6 @@ hershey
 hertha
 herzing
 hesston
-hi
 hialeah
 hibbing
 hibernian
@@ -3715,7 +3673,6 @@ homage
 home
 home|ole
 homerun
-home|schedule|stats|roster|news|tickets
 home|uapb
 honolulu
 honors
@@ -3732,6 +3689,7 @@ hop
 hope
 hopkins
 hopkinsville
+horizon
 horizontal
 horizontally
 horn
@@ -3817,7 +3775,6 @@ hyde
 hydroplane
 hydroplanes
 hyundai
-i
 iaia
 iastate
 ibl
@@ -3838,13 +3795,8 @@ ida
 idaho
 identical
 idiot
-ie
-if
 ifk
 ignoring
-ii
-ik
-il
 iliff
 iḷisaġvik
 illawarra
@@ -3861,7 +3813,6 @@ impaired
 implement
 implies
 imps
-in
 inbounds
 inbreds
 inc
@@ -3877,6 +3828,7 @@ incurred
 ind
 indep
 independence
+independents
 independiente
 india
 indian
@@ -3917,6 +3869,7 @@ ingolstadt
 ingram
 initial
 initially
+injuries
 inland
 inline
 inlinehockey
@@ -3936,11 +3889,11 @@ intelligence
 intensity
 inter
 interaction
+interactive
 interamericana
 interchangeably
 intercontinental
 intercrosse
-interdenominational
 intermont
 internacional
 internal
@@ -3980,7 +3933,6 @@ ironwood
 ironworks
 irvine
 irving
-is
 island
 islanders
 islands
@@ -3989,7 +3941,6 @@ isles
 isothermal
 isotopes
 israel
-it
 italiano
 italy
 itasca
@@ -4005,8 +3956,6 @@ iusb
 ivy
 iwata
 izumi
-j
-j1
 jacinto
 jack
 jackets
@@ -4015,7 +3964,6 @@ jackrabbits
 jacks
 jackson
 jacksonville
-jacksonvillejaguars
 jagiellonia
 jags
 jaguares
@@ -4042,7 +3990,6 @@ jay
 jayhawks
 jays
 jazz
-jc
 jchs
 jcsu
 jeetkunedo
@@ -4077,6 +4024,7 @@ jiujitsu
 jjay
 jmls
 jndjans
+jobs
 jockey
 jockeys
 jog
@@ -4086,6 +4034,7 @@ joggling
 john
 johnnies
 johns
+john's
 johnson
 johnston
 johnstone
@@ -4093,7 +4042,6 @@ johnstown
 joint
 joinville
 joke
-jokelandfaders/traitors
 jokgu
 joliet
 jones
@@ -4105,12 +4053,11 @@ jos
 jose
 joseph
 josephs
+joseph's
 journalism
 jrs
-js
 jstb
 jsums
-jt
 jtsa
 juan
 júbilo
@@ -4135,6 +4082,7 @@ jumping
 jumps
 jumpshot
 jumpsuit
+jun
 junction
 juneau
 juniata
@@ -4144,8 +4092,6 @@ just
 justice
 justicia
 juventus
-k
-k1
 kaa
 kabaddi
 kaisa
@@ -4190,7 +4136,6 @@ kayaking
 kayaks
 kayserispor
 kazan
-kc
 kcad
 kcai
 kcumb
@@ -4238,7 +4183,6 @@ khela
 khmer
 kho
 khokho
-ki
 kick
 kickball
 kickboxing
@@ -4247,7 +4191,6 @@ kickers
 kicking
 kicks
 kidderminster
-kidderminsterharriers
 kids
 kiel
 kielce
@@ -4288,7 +4231,6 @@ kitsap
 kitty
 klamath
 klootschieten
-km
 kmbc
 knee
 kneeboarding
@@ -4346,7 +4288,6 @@ kun
 kurash
 kutztown
 kuyper
-kv
 kvc
 kwansei
 kwikcricket
@@ -4354,8 +4295,6 @@ kyoto
 kysu
 kyudo
 kzoo
-l
-la
 labette
 labor
 laboratory
@@ -4380,7 +4319,7 @@ lakeforestmba
 lakehawks
 lakehead
 lakeland
-"laker"
+laker
 lakers
 lakes
 lakeshore
@@ -4440,6 +4379,7 @@ late
 latech
 later
 lateral
+latest
 latics
 latin
 latina
@@ -4468,7 +4408,6 @@ lazers
 lazio
 lclark
 lcsc
-le
 lead
 leads
 leaf
@@ -4621,6 +4560,7 @@ livingston
 livingstone
 llama
 llamas
+llc
 lloyd
 lmunet
 loaded
@@ -4673,7 +4613,6 @@ loretto
 lorient
 lorman
 los
-losangelesangelsofanaheim
 losangelesdodgers
 losangeleslakers
 losangelitos
@@ -4754,9 +4693,10 @@ lynx
 lyon
 lyonnais
 lyons
-m
+maac
 maaple
 mabts
+mac
 macalester
 macaulay
 maccabees
@@ -4835,7 +4775,6 @@ manitoba
 manitowoc
 mankato
 manlywarringah
-manlywarringahseaeagles
 manners
 manoa
 manoeuver
@@ -4896,7 +4835,6 @@ marseille
 marshall
 marshalltown
 marshfield
-marshfield/wood
 martial
 martin
 martín
@@ -4911,6 +4849,7 @@ marylhurst
 marymount
 marymountpv
 marys
+mary's
 marysville
 maryville
 maryvillecollege
@@ -4945,6 +4884,7 @@ may
 mayag
 mayagüez
 maybe
+mayfield
 mayland
 mayo
 maysville
@@ -4974,6 +4914,7 @@ mcny
 mcpherson
 mcphs
 mcrae
+meac
 meadows
 meadville
 mean
@@ -4991,6 +4932,7 @@ medellín
 medford
 medgar
 media
+media,
 mediawiki
 medical
 medicine
@@ -5005,7 +4947,6 @@ meinrad
 melb
 melblount
 melbourne
-melbournefootballclub
 melbournestorm
 mellon
 melt!
@@ -5088,7 +5029,6 @@ midwest
 midwestern
 midwifery
 mighty
-mightyducksofanaheimnowknownastheanaheimducks
 mightywhites
 miis
 mikinocks
@@ -5124,7 +5064,6 @@ minigolf
 mining
 minneapolis
 minnesota
-minnesotatimberwolves
 minnesotatwins
 minnesotavikings
 minor
@@ -5158,14 +5097,12 @@ mitt
 mix
 mixed
 mixteca
-mk
-ml
+mlb
 mlc
 mls
 mma
 mnstate
 mnsu
-mo
 mob
 mobap
 moberly
@@ -5202,7 +5139,6 @@ monroe
 monroecollege
 monroeville
 monsters
-monstersofthemidway
 mont
 montana
 montcalm
@@ -5261,7 +5197,6 @@ motorbikes
 motorboatracing
 motorcitykitties
 motorcycle
-motorcycledragracing
 motorcycleracing
 motorcycles
 motorcyclespeedway
@@ -5286,7 +5221,6 @@ mountainunicycling
 mounted
 mountida
 mounties
-"mounties"
 mountsaintvincent
 mountunion
 mountwest
@@ -5304,7 +5238,6 @@ moving
 mower
 mowers
 moyne
-ms
 mscd
 mslaw
 msmary
@@ -5316,7 +5249,6 @@ msstate
 mssu
 msubillings
 msun
-mt
 mtaloy
 mtech
 mtholyoke
@@ -5369,14 +5301,12 @@ mvnu
 mvp
 mvsu
 mwsu
-mx
 myanmar
 myers
 myrtle
 mystics
 mythical
 myunion
-n
 nac
 nacional
 nacogdoches
@@ -5389,7 +5319,6 @@ name
 named
 names
 namesake
-name￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀쇁￁쇁￁샀￀샀￀샀￀쇁￁샀￀샀ﻀ샀￀상ﺿ뺿ﾼ骜ﾗ鶞ﺜꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ龟ﾟꂠﾠ龟ﾟꂠﾠꂠﺠꂠﾠ龟ﾟ龟ﾟ龟ﾟ
 nampa
 namur
 nancy
@@ -5401,6 +5330,7 @@ napoli
 naropa
 narragansett
 narrow
+nascar
 nash
 nashua
 nashville
@@ -5436,7 +5366,6 @@ nccu
 ncnm
 ncsu
 ncwc
-nd
 ndez
 ndnu
 ndsu
@@ -5490,16 +5419,15 @@ news
 newschool
 newton
 newyorkers
-newyorkfootballgiants
 newyorkgiants
 newyorkislanders
 newyorkjets
-newyorkknickerbockers
 newyorkmets
 newyorkrangers
 newyorkyankees
 newzealandwarriors
 next
+nfc
 nfl
 nfls
 nhl
@@ -5531,11 +5459,9 @@ nishinomiya
 nittany
 njcu
 njit
-nl
 nmhu
 nmsu
 nnmc
-no
 nobts
 noc
 non
@@ -5559,17 +5485,14 @@ north
 northampton
 northamptontown
 northcentral
-northcentralcollege
 northeast
 northeastern
 northern
 northfield
 northgeorgia
 northland
-northmelbournefootballclub
 northpark
 northpointe
-northqueenslandcowboys
 northridge
 northrop
 northshore
@@ -5629,7 +5552,6 @@ nwciowa
 nwhealth
 nwmissouri
 nwosu
-ny
 nyack
 nyackcollege
 nycc
@@ -5638,8 +5560,6 @@ nyit
 nymc
 nymets
 nyu
-o
-Ö
 oahu
 oak
 oakhills
@@ -5665,7 +5585,6 @@ observed
 obstacle
 obstacles
 obvious
-oc
 ocala
 ocb
 occasionally
@@ -5681,7 +5600,6 @@ odds
 odense
 odessa
 odi
-of
 off
 offense
 official
@@ -5697,10 +5615,8 @@ ogden
 ogeechee
 oglala
 oglethorpe
-oh
 ohiggins
 ohio
-ohio)
 ohiochristian
 ohiodominican
 ohod
@@ -5717,12 +5633,10 @@ okcu
 okefenokee
 okinawan
 oklahoma
-oklahomacitythunder
 okmulgee
 okra
 okstate
 okwu
-ol
 olaf
 olathe
 old
@@ -5753,10 +5667,8 @@ olympians
 olympic
 olympics
 olympique
-om
 omaha
 omiya
-on
 once
 one
 oneonta
@@ -5783,7 +5695,6 @@ opposite
 opsu
 optometry
 optonet
-or
 oral
 orange
 orangeandblack
@@ -5816,7 +5727,6 @@ orlando
 orleans
 orléans
 orono
-os
 osaka
 osasuna
 oshawa
@@ -5851,6 +5761,7 @@ outdoors
 outfield
 outfielder
 outlaws
+outlines
 outrace
 outrigger
 outriggers
@@ -5880,7 +5791,7 @@ ozark
 ozarka
 ozarks
 oztag
-p
+pac
 pace
 paced
 pacers
@@ -6001,6 +5912,7 @@ path
 pato
 patrick
 patricks
+patriot
 patriotas
 patriotes
 patriots
@@ -6102,11 +6014,11 @@ peterborough
 peterboroughunited
 peterose
 peters
+peter's
 petersburg
 petrels
 petrolera
 pfeiffer
-ph
 phailures
 phantoms
 pharmacy
@@ -6118,7 +6030,6 @@ philadelphia
 philadelphia76ers
 philadelphiaeagles
 philadelphiaflyers
-philadelphiaphillies
 philander
 philau
 philippi
@@ -6162,7 +6073,6 @@ pillsbury
 pilota
 piloting
 pilots
-"pilots"
 pima
 pin
 pine
@@ -6204,7 +6114,6 @@ pittsburghsteelers
 pittsford
 pittstate
 pitzer
-pl
 place
 placed
 places
@@ -6272,6 +6181,7 @@ polish
 politically
 politics
 polk
+polls
 polo
 polocrosse
 pölten
@@ -6303,12 +6213,10 @@ popularized
 popularly
 population
 port
-portadelaidefootballclub
 portal
 portales
 portimão
 portland
-portlandtrailblazers
 porto
 portpower
 portsmouth
@@ -6326,7 +6234,6 @@ postgraduate
 posts
 pot
 potomac
-potomacdrainagebasinindigenouspersons
 potsdam
 potter
 potters
@@ -6340,7 +6247,6 @@ powerchair
 powered
 powerlifting
 poznań
-pr
 practical
 practiced
 pradal
@@ -6357,6 +6263,7 @@ precision
 precursor
 predators
 predetermined
+predictions
 predominantly
 preds
 prem
@@ -6395,8 +6302,8 @@ princeton
 principal
 principia
 principiacollege
+print
 printable
-print/export
 prisonerball
 privacy
 privateers
@@ -6430,6 +6337,7 @@ propulsion
 protect
 protective
 provençal
+provided
 providence
 provo
 prowlers
@@ -6437,7 +6345,6 @@ psv
 psychoanalysis
 psychological
 psychology
-pt
 ptseminary
 ptstulsa
 pub
@@ -6486,7 +6393,6 @@ puzzles
 pvamu
 pygmies
 pyramid
-q
 qadisiyah
 qianball
 qpr
@@ -6522,7 +6428,6 @@ quintana
 quite
 quiver
 quoits
-r
 rabbitohs
 race
 racer
@@ -6537,7 +6442,6 @@ racketlon
 rackets
 racquet
 racquetball
-racquetball/squash
 racquets
 radford
 radicals
@@ -6552,6 +6456,7 @@ raft
 rafting
 rage
 ragin
+ragin'
 rags
 rahi
 raid
@@ -6616,9 +6521,7 @@ rays
 raytown
 razorbacks
 razzaracing
-rb
 rbis
-rc
 rcd
 rcracing
 reach
@@ -6636,6 +6539,7 @@ recent
 recorded
 records
 recreational
+recruiting
 rectangular
 red
 redbirds
@@ -6721,10 +6625,12 @@ resemble
 resembles
 resembling
 reserve
+reserved
 resided
 resident
 residing
 respective
+responds
 response
 rest
 restore
@@ -6763,7 +6669,6 @@ richard
 richey
 richland
 richmond
-richmondfootballclub
 richmont
 rico
 riddle
@@ -6901,6 +6806,7 @@ rose
 rosemont
 rosenborg
 ross
+roster
 rostock
 rostov
 rot
@@ -6936,9 +6842,9 @@ royaking
 royal
 royals
 rpi
-rs
 rsc
 rsl
+rss
 rubber
 rubbery
 rubin
@@ -6956,6 +6862,7 @@ run
 runner
 runners
 runnin
+runnin'
 running
 runninredbirds
 runs
@@ -6978,7 +6885,6 @@ ryan
 ryerson
 ryukoku
 ryūkyū
-s
 sabercats
 sabers
 sabotage
@@ -7007,7 +6913,6 @@ sailors
 saint
 sainters
 saintjoe
-saintkildafootballclub
 saintleo
 saintlouisrams
 saintlukescollege
@@ -7096,7 +7001,6 @@ sarmiento
 sarpsborg
 sarsfield
 saskatchewan
-saskatchewanroughriders
 saskatoon
 sasquatch
 sassuolo
@@ -7118,7 +7022,6 @@ saybrook
 says
 sbts
 sbuniv
-sc
 scad
 scale
 scandal
@@ -7132,6 +7035,7 @@ scent
 scf
 schalke
 schaumburg
+schedule
 scheme
 schenectady
 schmo|schmo
@@ -7169,7 +7073,6 @@ scottish
 scottsdale
 scr
 scranton
-scranton/wilkes
 scrap
 screaming
 scripps
@@ -7184,11 +7087,11 @@ sculling
 scunthorpe
 scunthorpeunited
 scurry
-sd
 sdcc
 sdstate
 sdsu
-se
+[sdsu’s
+sdsu’s
 sea
 seabury
 seaeagles
@@ -7203,6 +7106,7 @@ searcy
 seaside
 seasiders
 season
+season]
 seat
 seattle
 seattlemariners
@@ -7211,6 +7115,7 @@ seattleu
 seawolves
 sebc
 sebts
+sec
 second
 sections
 sedalia
@@ -7360,6 +7265,7 @@ showcase
 showdown
 showing
 showjumping
+shows
 showtime
 shreveport
 shreveports
@@ -7368,6 +7274,7 @@ shrewsbury
 shrewsburytown
 shrimp
 shrimpers
+shrimping
 shrimps
 shrovetide
 shsu
@@ -7442,7 +7349,6 @@ six
 sixers
 size
 sized
-sj
 sjca
 sjcme
 sjcny
@@ -7450,7 +7356,6 @@ sjcsf
 sjfc
 sjsu
 sjvcs
-sk
 ska
 skagit
 skate
@@ -7500,7 +7405,6 @@ skylanders
 skylights
 skyrunning
 skysurfing
-sl
 slalom
 slam
 slamball
@@ -7525,7 +7429,6 @@ slopestyle
 slovenia
 slow
 slugs
-sm
 small
 smallball
 smaller
@@ -7567,7 +7470,6 @@ snowmobile
 snowmobiles
 snowshoeing
 snyder
-so
 soccer
 sochaux
 social
@@ -7616,13 +7518,13 @@ southend
 southern
 southernct
 southfield
+southland
 southmost
 southport
 souths
 southside
 southsidehitmen
 southsiders
-southsydneyrabbitohs
 southuniversity
 southwest
 southwestern
@@ -7630,7 +7532,6 @@ sovetov
 soviet
 sowela
 sox
-sp
 space
 spaced
 spain
@@ -7743,6 +7644,7 @@ stamps
 stand
 standard
 standing
+standings
 standish
 stanford
 stanislaus
@@ -7757,7 +7659,7 @@ starkville
 stars
 start
 state
-state)
+state]
 stated
 statement
 staten
@@ -7769,6 +7671,8 @@ stateyears
 statictrapeze
 station
 stationary
+statistical
+stats
 statue
 staugustinecollege
 staunton
@@ -7802,7 +7706,6 @@ stevens
 stevenson
 stfrancis
 stfranciscollege
-stgeorgeillawarradragons
 stgregorys
 sticas
 stick
@@ -7817,7 +7720,6 @@ stingers
 stingrays
 stink
 stjohns
-stjohnscollegespringfield
 stkate
 stlawu
 stlcop
@@ -7953,6 +7855,7 @@ supes
 supine
 support
 supporting
+supports
 surf
 surface
 surfaces
@@ -7976,16 +7879,15 @@ susquehanna
 sussex
 suwon
 suzy
-sv
 svdp
 svsu
+swac
 swamp
 swamps
 swandive
 swans
 swansea
 swanseacity
-swans/south
 swarthmore
 swath
 swau
@@ -8019,19 +7921,15 @@ sycamores
 sydney
 sydneyroosters
 sydneyswans
-sydneyswans/southmelbournefootballclub
 symbolic
 symmetry
 sync
 synchronized
-synchronizedskating
-synchronizedswimming
 synthetic
 syracuse
 system
 systems
 szczecin
-t
 t20
 taawoun
 tabasco
@@ -8115,7 +8013,6 @@ tchoukball
 tcm
 tcnj
 tcu
-te
 teachers
 team
 teamed
@@ -8263,6 +8160,7 @@ thundering
 thunderwolves
 tiburones
 ticats
+tickets
 tide
 tides
 tidewater
@@ -8296,11 +8194,9 @@ titans
 title
 titles
 titusville
-tl
 tnstate
 tntech
 tntemple
-to
 toboggan
 toccer
 toccoa
@@ -8446,7 +8342,6 @@ trincoll
 trine
 trinidad
 trinity
-trinitybiblecollege
 trinitycollege
 trinitycollegeqc
 trinitydc
@@ -8536,8 +8431,6 @@ type
 types
 typical
 typically
-u
-[u
 uab
 uacc
 uaf
@@ -8552,7 +8445,6 @@ uarts
 uasys
 ubalt
 ubc
-uc
 ucam
 uccaribe
 uccs
@@ -8573,13 +8465,13 @@ ucsd
 ucsf
 ucumberlands
 ucwv
-ud
 udallas
 udayton
 udel
 udinese
 udmercy
 ufa
+ufc
 uhcl
 uhwo
 uic
@@ -8587,7 +8479,6 @@ uidaho
 uillinois
 uindy
 uiowa
-uk
 ulama
 ulm
 ulsan
@@ -8673,7 +8564,6 @@ université
 universities
 university
 universityaustin
-university/purdue
 universitys
 unknown
 unless
@@ -8690,8 +8580,10 @@ unsealed
 unterhaching
 until
 uoregon
-up
+upcoming
 update
+updates
+updates]
 upenn
 uphill
 upland
@@ -8721,7 +8613,6 @@ uri
 ursinus
 ursuline
 uruguay
-us
 us;
 usa
 usafa
@@ -8750,7 +8641,6 @@ usnwc
 usouthal
 ussa
 usually
-ut
 utah
 utd
 utdallas
@@ -8762,7 +8652,6 @@ uthouston
 uthsc
 uthscsa
 utica
-utica/rome
 utilize
 utilizes
 utilizing
@@ -8778,7 +8667,6 @@ utsystem
 uttyler
 utuado
 utulsa
-uw
 uwec
 uwest
 uwgb
@@ -8791,7 +8679,6 @@ uwsp
 uwstout
 uwsuper
 uwyo
-v
 vaduz
 vajra
 valdosta
@@ -8841,6 +8728,7 @@ vegalta
 vegas
 vehicle
 vehicles
+velasquez
 velcro
 vélez
 velodromes
@@ -8880,6 +8768,7 @@ vics
 victimized
 victoria
 victory
+videos
 viejo
 vienna
 vietnamese
@@ -8931,11 +8820,10 @@ voyageurs
 vstix
 vulcans
 vvv
-vx
-w
 waasl
 waasland
 wabash
+wac
 wachovia
 wachusett
 wacker
@@ -8992,12 +8880,12 @@ washers
 washing
 washington
 washingtoncapitals
-washingtonnationals
 washingtonredskins
 washingtonwizards
 washjeff
 washtenaw
 wasps
+watch
 water
 waterbury
 waterloo
@@ -9028,7 +8916,6 @@ ways
 wbcoll
 wcsu
 wcupa
-we
 weapon
 weapons
 wear
@@ -9109,7 +8996,6 @@ wheaton
 wheatoncollege
 wheel
 wheelchair
-wheelchairbasketball
 wheelchairracing
 wheelchairrugby
 wheelchairs
@@ -9140,6 +9026,7 @@ whittier
 whitworth
 whizkids
 who
+why
 wic
 wichita
 wicket
@@ -9201,7 +9088,6 @@ wingsuitflying
 winner
 winning
 winnipeg
-winnipegbluebombers
 winnipegk
 winona
 wins
@@ -9234,7 +9120,6 @@ wolfsberger
 wolfsburg
 wolfville
 wolverhampton
-wolverhamptonwanderers
 wolverines
 wolves
 womans
@@ -9276,7 +9161,6 @@ wrexham
 wright
 written
 wrocław
-ws
 wscal
 wschiro
 wscn
@@ -9300,16 +9184,12 @@ wyoming
 wyoming49ers
 wytheville
 wyverns
-x
 xare
 xavier
 xcountry
-xi
 xingyiquan
-xs
 xula
 xxxiii4
-y
 yachting
 yachts
 yağlı
@@ -9337,6 +9217,7 @@ yeomen
 yeovil
 yeoviltown
 yeshiva
+yesterday
 yiddish
 yoga
 yokohama
@@ -9360,7 +9241,6 @@ yuba
 yubi
 yucatán
 yukigassen
-z
 zabrze
 zagłębie
 zane

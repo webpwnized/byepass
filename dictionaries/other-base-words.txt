@@ -1,3 +1,5 @@
+
+0
 0p3n
 0racle
 0racle38
@@ -5,6 +7,7 @@
 0racle8
 0racle8i
 0racle9
+1
 1000
 1000s
 10023
@@ -24,8 +27,10 @@
 1111aa
 112233
 116572
+12
 12121212
 12201220
+123
 123123123
 123132123
 123258
@@ -44,7 +49,6 @@
 1234qwer!
 123654
 123789
-123.com
 123cztery
 123mudar
 123qwe
@@ -57,7 +61,6 @@
 12qw34er
 12qwaszx
 12qw!@qw
-12.x
 130590
 1322222
 1340hd
@@ -82,14 +85,14 @@
 159753456
 1660359
 166816
+168
 17161716
 17201720
 17841784
-1.79
 18140815
 18364
 187cop
-192.168.1.1
+192
 19491949
 19501950
 19511951
@@ -104,7 +107,6 @@
 1keeper
 1lkjhgfdsa
 1q2w3e4r
-1q2w3e4r..
 1q2w3e4r5t
 1q2w3e4r5t6y
 1qa@ws3ed
@@ -257,6 +259,7 @@
 77777777
 788111
 789456123
+79
 7ujmko0admin
 7ujmko0vizxv
 800s
@@ -278,6 +281,7 @@
 999999
 999999999
 9ijn7ygv
+a
 a11b12c13
 a123456
 a12345678
@@ -491,7 +495,7 @@ academicianship
 acanthus
 acarus
 acas
-acc.
+acc
 accede
 accelerated
 accelerating
@@ -806,7 +810,7 @@ admin2
 admin222
 admin5
 adminadmin
-admin@example.com
+admin@example
 admini
 administer
 administrable
@@ -887,7 +891,6 @@ adumbrate
 adumbration
 adumbrative
 adv
-adv.
 adv1
 advancer
 advancing
@@ -1668,7 +1671,7 @@ amerville
 ameslan
 amethystine
 amharic
-a.m.i
+ami
 ami~
 amiability
 amiableness
@@ -1686,8 +1689,6 @@ amiga
 amigas
 amigos
 amigosw1
-ami.key
-ami.kez
 amilopro
 amines
 aminobenzoic
@@ -1759,7 +1760,6 @@ amstel
 amstelhof
 amsterdamhoek
 amt
-amt.
 amuck
 amulet
 amusable
@@ -2060,7 +2060,7 @@ anomalousness
 anomaly
 anomic
 anomie
-anon.
+anon
 anonymity
 anonymousness
 anopheles
@@ -3402,6 +3402,7 @@ awaken
 awakened
 awakener
 awakening
+award
 ?award
 award_?
 awarder
@@ -3409,7 +3410,6 @@ award_ps
 award_pw
 award_sw
 award?sw
-award.sw
 awash
 awayness
 awed
@@ -3476,6 +3476,7 @@ aztecan
 aztech
 aztlan
 azurite
+b
 b4lls4ck
 baaing
 baardman
@@ -5955,7 +5956,7 @@ brisket
 briskness
 bristly
 bristols
-brit.
+brit
 britannic
 britches
 briticism
@@ -6046,7 +6047,7 @@ brookmead
 broomehill
 broomstick
 brooweena
-bros.
+bros
 broteni
 brothel
 brotherinlaw
@@ -6114,14 +6115,13 @@ brymac
 brymore
 bryntirion
 bsa
-b.sc.
 bsd
 bskyb
 bsxpass
 bsxuser
 btu
 btw
-bu.
+bu
 bubblegum
 bubbler
 bubbles1
@@ -6429,7 +6429,7 @@ bustling
 busybees
 busyness
 busywork
-but.
+but
 butane
 butcherer
 butchering
@@ -6506,6 +6506,7 @@ bys
 bystander
 byway
 byzantine
+c
 c0de
 c630
 caa
@@ -6924,7 +6925,6 @@ capsule
 capsulise
 capsulize
 capt
-capt.
 captaincy
 captioner
 captious
@@ -7390,7 +7390,6 @@ celebrated
 celebratedness
 celebrator
 celebratory
-c.elegans
 celeriac
 celeron
 celery
@@ -7801,7 +7800,7 @@ chelmsfordville
 chelmsleywood
 cheltondale
 chelyabinsk
-chem.
+chem
 chemic
 chemiluminescence
 chemiluminescent
@@ -8254,7 +8253,7 @@ cisinfo
 ciskei
 cisko
 cissus
-cit.
+cit
 citable
 citel
 cites
@@ -8498,7 +8497,6 @@ cliquier
 cliquiest
 cliquish
 cliquishness
-c.lit.
 clitoral
 clitorides
 clitoridis
@@ -8562,7 +8560,6 @@ closured
 closures
 closuring
 clot
-clot.
 clothbound
 clothesbrush
 clotheshorse
@@ -8907,6 +8904,7 @@ colenso
 coleskeplaas
 coleslaw
 coleus
+coli
 colic
 colicky
 coliform
@@ -9063,6 +9061,7 @@ columnize
 columnized
 columnizes
 columnizing
+com
 comae
 comair
 comaker
@@ -9112,7 +9111,7 @@ comicalness
 cominform
 comintern
 comity
-comm.
+comm
 comma
 commandant
 commandeer
@@ -10166,7 +10165,7 @@ coronetted
 corot
 coroutine
 corovoca
-corp.
+corp
 corpora
 corporately
 corporates
@@ -10981,7 +10980,7 @@ ctrls
 ctx_123
 ctxdemo
 ctxsys
-cu.
+cu
 cuban
 cubbed
 cubbing
@@ -11284,6 +11283,7 @@ czechoslovakia
 czechoslovakian
 czechs
 czerny
+d
 d00rmat
 d0dger
 d0m1n0
@@ -11658,7 +11658,6 @@ debriefer
 debriefers
 debriefing
 debris
-d.e.b.u.g
 debugger
 debugs
 debunk
@@ -11916,8 +11915,8 @@ defamation
 defamatory
 defame
 defamer
+default
 defaulter
-default.password
 defeated
 defeater
 defeatism
@@ -14664,6 +14663,7 @@ dzimauli
 dzongkha
 dzumeri
 dzungaria
+e
 e250
 e250changeme
 e500
@@ -14803,11 +14803,10 @@ ecoclimate
 ecoclimates
 ecol
 ecole
-e.coli
 ecologic
 ecologist
 ecommerce
-econ.
+econ
 econometric
 econometrica
 econometricians
@@ -14842,7 +14841,7 @@ ecumenism
 ecumenist
 eczema
 eczematous
-ed.
+ed
 edam
 edema
 edematous
@@ -14970,8 +14969,6 @@ effusiveness
 efik
 efmukl
 eft
-e.g.
-e.g..
 ega
 egad
 egagasini
@@ -15223,6 +15220,7 @@ electrotypers
 electroweak
 eleemosynary
 elegance
+elegans
 elegiac
 elegiacal
 elegy
@@ -15413,7 +15411,6 @@ emeriti
 emeritus
 emetic
 emf
-e.m.f.
 emfihlweni
 emfundweni
 emgulatshani
@@ -16188,7 +16185,6 @@ esoteric
 esoterica
 esoterically
 esp
-esp.
 espadrille
 espagnol
 espalier
@@ -16199,7 +16195,6 @@ espouse
 espouser
 espresso
 esq
-esq..
 essayer
 essayist
 esselenpark
@@ -16211,7 +16206,7 @@ essequibo
 essexvale
 essexwold
 essopville
-est.
+est
 establisher
 establishes
 estadeal
@@ -16244,7 +16239,7 @@ estuary
 esubscriber
 etadunna
 etafuleni
-etc.
+etc
 etch
 etchant
 etcher
@@ -16933,6 +16928,7 @@ ezindlovini
 ezit
 ezone
 ezsetup
+f
 f00b4r
 f00bar
 f00sball
@@ -17566,12 +17562,12 @@ fidgety
 fiducial
 fief
 fiefdom
+field
 fielded
 fieldservice
 fieldsman
 fieldsmen
 fieldstone
-field.support
 fieldwork
 fieldworker
 fiend
@@ -19219,6 +19215,7 @@ fwy
 fyi
 fynbos
 fynnland
+g
 g6pj
 g8keeper
 gabardine
@@ -20155,7 +20152,7 @@ gnostic
 gnosticism
 gnowangerup
 gnp
-go.
+go
 goa
 goahead
 goalkeeping
@@ -20378,14 +20375,12 @@ gourmand
 gourmandise
 gourmandism
 gov
-gov.
 governable
 governed
 governess
 governorship
 governs
 govt
-govt.
 gowest!
 gpa
 gpfd
@@ -22506,7 +22501,7 @@ homozygous
 homozygously
 homunculus
 homy
-hon.
+hon
 honcho
 honduran
 honecker
@@ -22815,8 +22810,8 @@ howzit
 hoyana
 hoydenish
 hoyi
+hp
 hp_admin
-hp.com
 hpdesk
 hpinvent
 hplaser
@@ -22830,7 +22825,7 @@ hpsupport
 hpt
 hpword
 hqadmin
-hr.
+hr
 hr0
 hr1
 hr2
@@ -22844,7 +22839,7 @@ hr9
 hrdmo
 hrh
 hrothgar
-hrs.
+hrs
 hs7mwxkk
 hsa
 hsadb
@@ -23212,6 +23207,7 @@ hysteria
 hysteric
 hysterical
 hystericism
+i
 iaccoca
 iamb
 iambi
@@ -23340,7 +23336,6 @@ idyll
 idyllic
 idyllically
 idyllist
-i.e.
 iee
 ieyasu
 ifafi
@@ -23858,9 +23853,9 @@ impure
 impureness
 imputable
 imputation
-imsa7.0
+imsa7
 imspringer
-imss7.0
+imss7
 inability
 inaccessibility
 inaccessible
@@ -23927,7 +23922,7 @@ inbred
 inbreed
 inbreeding
 inbuilt
-inc.
+inc
 incalculability
 incalculable
 incalculableness
@@ -23981,7 +23976,7 @@ incite
 incitement
 inciter
 incivility
-incl.
+incl
 inclemency
 inclement
 inclination
@@ -24666,7 +24661,7 @@ inri
 inroad
 inrush
 inrushing
-ins.
+ins
 insalubrious
 insangu
 insanitary
@@ -25908,7 +25903,7 @@ jiujitsu
 jivaro
 jive
 jmuser
-jnr.
+jnr
 joadja
 jobbed
 jobbery
@@ -26370,6 +26365,7 @@ keurtjieskloof
 kevlar
 kewell
 kewtown
+key
 keyboarder
 keyboardist
 keyclick
@@ -26383,6 +26379,7 @@ keypunch
 keypuncher
 keyring
 keystroke
+kez
 kfactor
 kfm
 kgabaltsane
@@ -26582,7 +26579,7 @@ kissagram
 kissings
 kissoff
 kissogram
-kit.
+kit
 kitakyushu
 kitbag
 kitchenette
@@ -26896,7 +26893,7 @@ krwakrwa
 krypton
 ksdjfg934t
 kshatriya
-kt.
+kt
 ktc
 kuala
 kuanyama
@@ -26922,7 +26919,6 @@ kuli
 kultarr
 kulthumm
 kulula
-kulula.com
 kumdyobe
 kumquat
 kumyk
@@ -28146,6 +28142,7 @@ listerwood
 listless
 listlessness
 liszt
+lit
 litany
 litchi
 literalism
@@ -28584,7 +28581,7 @@ lrisdn
 lsat
 lsd
 lsxol
-lt.
+lt
 luau
 lubakatanga
 lubaleko
@@ -28813,6 +28810,7 @@ lyttleton
 lyx
 lzh
 lzw
+m
 m0t0rhead
 m1122
 m1cha3l
@@ -29193,7 +29191,7 @@ malapropos
 malaria
 malarial
 malarious
-malarkey.
+malarkey
 malatane
 malathion
 malawian
@@ -29298,10 +29296,10 @@ managau
 manageability
 manageable
 manageableness
+manager
 manageress
 managerial
 managership
-manager.sys
 manages
 manamakgotheng
 manamela
@@ -30467,7 +30465,6 @@ mgodini
 mgojweni
 mgqashiyo
 mgr
-mgr.sys
 mgubo
 mgwalana
 mgwali
@@ -30767,7 +30764,7 @@ mimicker
 mimicking
 mimicry
 mimosa
-min.
+min
 minamoto
 minangkabau
 minaret
@@ -32000,7 +31997,6 @@ mqonci
 mqwangqweni
 mri
 msam
-m.sc.
 msebe
 mseleni
 mseni
@@ -32465,9 +32461,9 @@ mzomusha
 mzonga
 mzonyane
 mzotho
+n
 n0d0ubt1
 n0ttelling
-n.a
 naaco
 naacp
 naadmin
@@ -32879,7 +32875,7 @@ nesselrode
 nestable
 nestling
 nestorius
-.net
+net
 net101
 netadmin
 netbase
@@ -34295,6 +34291,7 @@ nzima
 nzimakazi
 nzokhulayo
 nzombane
+o
 oaf
 oafish
 oafishness
@@ -34316,7 +34313,7 @@ oat
 oatcake
 oaten
 oater
-ob.
+ob
 oban
 obanjeni
 obbligato
@@ -34840,6 +34837,7 @@ oosterville
 ootha
 ooze
 oozy
+op
 op1
 opacity
 opalescence
@@ -34872,7 +34870,6 @@ openmindedness
 openmouthed
 openness
 openoffice
-openoffice.org
 openplan
 opensource
 openspirit
@@ -34895,6 +34892,7 @@ operatively
 operativeness
 operatives
 operatns
+operator
 operetta
 opervax
 ophansi
@@ -34914,7 +34912,6 @@ opinionatedness
 opioid
 opium
 opkoms
-op.operator
 oporto
 oppermans
 opportune
@@ -35166,6 +35163,7 @@ ordure
 oreg
 oregano
 oregonian
+org
 organdie
 organdy
 organelle
@@ -35882,6 +35880,7 @@ oystering
 ozonefriendly
 ozwatini
 ozymandias
+p
 p10
 p10g
 p3t3rpan
@@ -35890,7 +35889,6 @@ p@55w0rd
 p@55w0rd!
 p8i
 p9i
-p.a.
 pa22w0rd
 paardekraal
 paardeneiland
@@ -36492,6 +36490,7 @@ passmark
 passw0rd
 passw0rd1
 passw0rd1111
+password
 *password
 password1
 password@1
@@ -37262,6 +37261,7 @@ peyote
 pfc
 pfcuser
 pfsense
+ph
 phadi
 phaethon
 phage
@@ -37309,7 +37309,6 @@ phashmaloka
 phatantsoane
 phathani
 phatsima
-ph.d.
 phekda
 phelandaba
 phelindaba
@@ -37837,7 +37836,7 @@ pizzicati
 pizzicato
 pkt
 pkwy
-pl.
+pl
 plaasjapie
 placable
 placard
@@ -38155,7 +38154,6 @@ pneumatics
 pneumonia
 png
 pniel
-p.o.
 po7
 po8
 poach
@@ -39455,7 +39453,7 @@ productively
 productiveness
 productivities
 productize
-prof.
+prof
 profanation
 profaner
 profanity
@@ -40211,6 +40209,7 @@ pyxides
 pyxidia
 pyxidium
 pzazz
+q
 q1q1q1
 q1q1q1q1
 q1q2q3q4
@@ -40284,8 +40283,7 @@ qsrvbas
 qsvr
 qs_ws
 qsysopr
-q.t.
-qtips.
+qtips
 qtown
 qua
 quaalude
@@ -40555,7 +40553,6 @@ qwayinduku
 qwe123
 !qwe123
 qwe123!@#
-qwe123.
 qwe12345
 !@#qwe123qwe
 qweasd123
@@ -40578,6 +40575,7 @@ qwerty77
 qwertys
 qwertyuiop
 qwertz123
+r
 r1qtps
 r1s
 r3volution
@@ -42720,7 +42718,7 @@ revalue
 revamp
 revamping
 revanchist
-revd.
+revd
 revealable
 revealers
 revealing
@@ -43465,9 +43463,8 @@ royldene
 rozano
 rozendal
 r@p8p0r+
-r.p.m.
 rpo
-rs.
+rs
 rsaappliance
 rsadmin
 rsbcmon
@@ -43479,7 +43476,7 @@ rsm
 rspca
 rsvp
 rsx
-rt.
+rt
 rtf
 rtfm
 rubadub
@@ -44151,6 +44148,7 @@ sayang
 saynomore
 sayso
 saz
+sc
 scabbiness
 scabbing
 scabby
@@ -44262,7 +44260,7 @@ sceptic
 sceptical
 sceptically
 scepticism
-sch.
+sch
 schadenfreude
 schauderville
 scheat
@@ -44657,7 +44655,7 @@ seborrheic
 seborrhoea
 seborrhoeic
 sebum
-sec.
+sec
 secacm
 secant
 secateurs
@@ -45131,7 +45129,7 @@ semplice
 sempre
 sempstress
 semtex
-sen.
+sen
 senatorial
 senderwood
 sendmail
@@ -45249,8 +45247,8 @@ septum
 sepulcher
 sepulchers
 sepulchral
-seq.
-seqq.
+seq
+seqq
 sequacious
 sequacity
 sequel
@@ -45449,7 +45447,6 @@ sgiweb
 sgml
 sgnt
 sgt
-sgt.
 shabbily
 shabbiness
 shackler
@@ -47053,7 +47050,7 @@ snowshoer
 snowstorm
 snowsuit
 snowwhite
-snr.
+snr
 snubbed
 snubber
 snubbing
@@ -47096,7 +47093,7 @@ soberer
 soberest
 sobering
 sobriquet
-soc.
+soc
 socalled
 sociabilities
 sociability
@@ -47943,7 +47940,7 @@ spyglass
 spyhole
 spying
 spymaster
-sq.
+sq
 sqldba
 sqluser
 sqq
@@ -48908,7 +48905,6 @@ stutterer
 stutterheim
 stuttering
 sty
-sty.
 stye
 stygian
 styled
@@ -49032,7 +49028,7 @@ subliminal
 subliming
 sublist
 subliterary
-sublt.
+sublt
 sublunary
 submachine
 submachinegun
@@ -49417,6 +49413,7 @@ suntanning
 suntrap
 sunup
 sunvision
+super
 super123
 superabundance
 superabundant
@@ -49515,7 +49512,6 @@ superstitiousness
 superstore
 superstructural
 superstructure
-super.super
 supertanker
 supertitle
 superuser
@@ -49541,6 +49537,7 @@ suppleness
 suppliant
 supplicant
 supplicate
+support
 supportability
 supportable
 supporter
@@ -49569,7 +49566,6 @@ supremal
 supremeness
 supremo
 supt
-supt.
 surabaja
 surcease
 surcharge
@@ -49675,6 +49671,7 @@ svelte
 sveltely
 svengali
 sverdlovsk
+sw
 swabbed
 swabbing
 swabby
@@ -50014,6 +50011,7 @@ syquest
 syringe
 syrup
 syrupy
+sys
 sys1
 sysa
 sysadm
@@ -50061,6 +50059,7 @@ szechwan
 szilard
 szymborska
 szyx
+t
 t00lk1t
 t00tt00t
 t0ch20x
@@ -50558,7 +50557,7 @@ tekbase
 tekiero
 tektite
 tektronix
-tel.
+tel
 telecast
 telecaster
 telecentre
@@ -52095,7 +52094,7 @@ transkei
 transl
 translatability
 translatable
-translate.org.za
+translate
 translating
 translational
 transliterate
@@ -52231,7 +52230,7 @@ trenchant
 trencherman
 trenchermen
 trendily
-trendimsa1.0
+trendimsa1
 trendiness
 trendsetter
 trendsetting
@@ -52984,6 +52983,7 @@ tzatziki
 tzeltal
 tzigane
 tzqf
+u
 uamis_
 uar
 uart
@@ -55284,7 +55284,7 @@ vaporware
 vapory
 vapourish
 vapoury
-var.
+var
 varactor
 variability
 variably
@@ -55825,7 +55825,7 @@ vivisectionist
 vivivi
 vixen
 vixenish
-viz.
+viz
 vizier
 vizir
 vizxv
@@ -55910,7 +55910,7 @@ voidness
 voids
 voile
 voip123
-vol.
+vol
 vol0215
 volapuk
 volatile
@@ -57546,6 +57546,7 @@ wyo
 wyomingite
 wyong
 wysiwyg
+x
 x#1833
 x40rocks
 x6zynd56
@@ -57824,6 +57825,7 @@ ywha
 yyl
 yzerfontein
 z0x9c8v7
+za
 zaaada
 zabaglione
 zabbix
@@ -57938,7 +57940,7 @@ zithobeni
 zizanela
 zjaaadc
 zloty
-zlxx.
+zlxx
 zmalqp10
 zodiac
 zodiac666
