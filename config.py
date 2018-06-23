@@ -19,4 +19,4 @@ DEBUG = False
 # whether ByePass will brute-force all possible values or use
 # "smart brute" mode which is a hybrid cracking mode that uses
 # dicitionary words as the basis for mask cracking.
-MAX_CHARS_TO_BRUTEFORCE = 6
+MAX_CHARS_TO_BRUTEFORCE = 7
