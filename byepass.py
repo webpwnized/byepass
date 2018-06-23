@@ -47,9 +47,9 @@ def print_example_usage():
 Attempt to crack linked-in hashes using base words linkedin and linked\n
 \tpython3 byepass.py --verbose --hash-format=Raw-SHA1 --base-words=linkedin,linked --input-file=linkedin-1.hashes
 \tpython3 byepass.py -v -f Raw-SHA1 -b linkedin,linked -i linkedin-1.hashes\n
-Attempt to brute force words up to 5 characters in length\n
-\tpython3 byepass.py --verbose --hash-format=Raw-MD5 --brute-force=5 --input-file=hashes.txt
-\tpython3 byepass.py -f Raw-MD5 -j="--fork=4" -v -t 0 -r 5 -i hashes.txt\n
+Attempt to brute force words from 3 to 5 characters in length\n
+\tpython3 byepass.py --verbose --hash-format=Raw-MD5 --brute-force=3,5 --input-file=hashes.txt
+\tpython3 byepass.py -f Raw-MD5 -j="--fork=4" -v -t 0 -r 3,5 -i hashes.txt\n
 Attempt to crack password hashes found in input file "password.hashes" using default techniques level 1\n
 \tpython3 byepass.py --verbose --hash-format=descrypt --input-file=password.hashes
 \tpython3 byepass.py -v -f descrypt -i password.hashes\n
@@ -130,16 +130,25 @@ def parse_arg_techniques(pArgTechniques: str) -> list:
     return lTechniques
 
 
-def parse_arg_brute_force(pArgBruteForce: int) -> int:
+def parse_arg_brute_force(pArgBruteForce: str) -> tuple:
 
-    lErrorMessage = 'Amount of characters to bruce-force must be a positive integer greater than 0'
+    lSyntaxErrorMessage = 'Amount of characters to bruce-force must be a comma-separated pair of positive integer greater than 0. The MIN must be less than or equal to the MAX.'
+    lValueErrorMessage = 'For amount of characters to bruce-force, the MIN must be less than or equal to the MAX.'
 
     try:
-        if pArgBruteForce < 1:
-            raise ValueError(lErrorMessage)
-        return pArgBruteForce
+        lParameters = [x.strip() for x in pArgBruteForce.split(',')]
+        lMinCharactersToBruteForce = int(lParameters[0])
+        lMaxCharactersToBruteForce = int(lParameters[1])
+
+        if lMinCharactersToBruteForce < 1:
+            raise ValueError(lSyntaxErrorMessage)
+        if lMaxCharactersToBruteForce < 1:
+            raise ValueError(lSyntaxErrorMessage)
+        if lMaxCharactersToBruteForce < lMinCharactersToBruteForce:
+            raise ValueError(lValueErrorMessage)
+        return lMinCharactersToBruteForce, lMaxCharactersToBruteForce
     except:
-        raise ValueError(lErrorMessage)
+        raise ValueError(lSyntaxErrorMessage)
 
 
 def print_closing_message(pNumberHashes: int, pNumberPasswordsPOTFileAtStart: int,
@@ -490,30 +499,34 @@ def perform_statistical_cracking(pHashFile: str, pPercentile: float, pHashFormat
     if lUndefinedMasks: print(
         "[*] WARNING: There was no policy defined for the following masks: {}".format(lUndefinedMasks))
 
-def run_jtr_brute_force_mode(pHashFile: str, pMaxCharactersToBruteForce: int,
+def run_jtr_brute_force_mode(pHashFile: str, pMinCharactersToBruteForce: int,
+                             pMaxCharactersToBruteForce: int,
                              pHashFormat: str, pPassThrough: str,
                              pVerbose: bool, pDebug: bool, pNumberHashes: int) -> None:
 
-    for i in range(1, pMaxCharactersToBruteForce + 1):
-        lDigitsMask = "?d" * i
-        lLettersMask = "?l" * i
+    for i in range(pMinCharactersToBruteForce, pMaxCharactersToBruteForce + 1):
+        lLowersMask = "?l" * i
         lUppersMask = "?u" * i
-        lUpperLettersMask = "?u" + "?l" * (i - 1)
-        lLettersDigitMask = "?l" * (i - 1) + "?d"
-        lLettersTwoDigitMask = "?l" * (i - 2) + "?d?d"
-        lUpperLettersDigitMask = "?u" + "?l" * (i - 2) + "?d"
-        lUpperLettersTwoDigitMask = "?u" + "?l" * (i - 3) + "?d?d"
-        lMasks = [lLettersMask, lUppersMask, lDigitsMask]
+        lDigitsMask = "?d" * i
+        lMasks = [lLowersMask, lUppersMask, lDigitsMask]
+
+        # UpperLower pattern requires at least 2 characters
         if i > 1:
-            lMasks.append(lUpperLettersMask)
-            lMasks.append(lLettersDigitMask)
+            lUpperLowersMask = "?u" + "?l" * (i - 1)
+            lMasks.append(lUpperLowersMask)
 
-        if i > 2:
-            lMasks.append(lLettersTwoDigitMask)
-            lMasks.append(lUpperLettersDigitMask)
+        #From 1 digit up to i-1 digits where i is length of pattern
+        for j in range(1, i):
+            lLowerDigitMask = "?l" * (i-j) + "?d" * j
+            lUpperDigitMask = "?u" * (i-j) + "?d" * j
+            lMasks.append(lLowerDigitMask)
+            lMasks.append(lUpperDigitMask)
 
-        if i > 3:
-            lMasks.append(lUpperLettersTwoDigitMask)
+            # Only generate capitalized if pattern at least 3 characters (i > 2)
+            # long and starts with at least an upper and a lower (i - j >= 2)
+            if (i > 2) and (i - j >= 2):
+                lUpperLowerDigitMask = "?u" + "?l" * (i-j-1) + "?d" * j
+                lMasks.append(lUpperLowerDigitMask)
 
         for lMask in lMasks:
             run_jtr_mask_mode(pHashFile=pHashFile, pMask=lMask, pWordlist=None,
@@ -747,8 +760,8 @@ if __name__ == '__main__':
                             help="Supply a comma-separated list of lowercase, unmangled base words thought to be good candidates. For example, if Wiley Coyote is cracking hashes from Acme Inc., Wiley might provide the word \"acme\". Be careful how many words are supplied as Byepass will apply many mangling rules. Up to several dozen should run reasonably fast.\n\n",
                             action='store')
     lArgParser.add_argument('-r', '--brute-force',
-                            type=int,
-                            help="Bruce force common patterns up to MAX characters. Provide maxiumum number of characters as positive integer.\n\n",
+                            type=str,
+                            help="Bruce force common patterns with at least MIN characters up to MAX characters. Provide minimum and maxiumum number of characters as comma-separated, positive integers (i.e. 4,6 means 4 characters to 6 characters).\n\n",
                             action='store')
     lArgParser.add_argument('-t', '--techniques',
                             type=str,
@@ -810,8 +823,9 @@ if __name__ == '__main__':
                               pNumberHashes=lNumberHashes)
 
     if lArgs.brute_force:
-        lMaxCharactersToBruteForce = parse_arg_brute_force(lArgs.brute_force)
-        run_jtr_brute_force_mode(pHashFile=lHashFile, pMaxCharactersToBruteForce=lMaxCharactersToBruteForce,
+        lMinCharactersToBruteForce, lMaxCharactersToBruteForce = parse_arg_brute_force(lArgs.brute_force)
+        run_jtr_brute_force_mode(pHashFile=lHashFile, pMinCharactersToBruteForce=lMinCharactersToBruteForce,
+                                 pMaxCharactersToBruteForce=lMaxCharactersToBruteForce,
                                  pHashFormat=lHashFormat, pVerbose=lVerbose,
                                  pDebug=lDebug, pPassThrough=lArgs.pass_through,
                                  pNumberHashes=lNumberHashes)
