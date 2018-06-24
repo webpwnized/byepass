@@ -1,16 +1,19 @@
-
-12
+1fcmagdeburg
 2018
 21st
+3liga
 49ers
 76ers
 aac
 aalborg
+aalborgbk
 aalen
 aalesunds
+aalesundsfk
 aamu
 aaniiih
 aarhus
+aarhusgf
 aba
 abac
 abashiri
@@ -31,6 +34,7 @@ academical
 academy
 academyart
 acadia
+acajaccio
 acc
 accent
 acceptance
@@ -45,6 +49,7 @@ accuracy
 acereros
 aces
 achieved
+achorsens
 acknowledged
 acphs
 acquired
@@ -60,6 +65,7 @@ activity
 actual
 actually
 ada
+adalcorcón
 adams
 adanaspor
 adaptation
@@ -74,15 +80,19 @@ additional
 address
 adds
 adelaide
+adelaideunited
 adelphi
 adidas
+adidasallstar
 adirondack
 adjacent
 adjectives
 adler
 admira
 admirals
+admirawacker
 ado
+adodenhaag
 adolphus
 adopted
 adrian
@@ -95,6 +105,7 @@ advertise
 advertisement
 advertising
 aek
+aekathens
 aerial
 aerials
 aerobatics
@@ -107,6 +118,7 @@ aeronautics
 aeros
 aesthetic
 afc
+afceskilstuna
 afcwimbledon
 affecting
 afit
@@ -159,14 +171,17 @@ airsoft
 airtricity
 aiuniv
 ajaccio
+ajauxerre
 ajax
 ajula
 akbible
 akhisarspor
 akhmat
+akhmatgrozny
 akron
 alababma
 alabama
+alahli
 alai
 alamance
 alamo
@@ -178,14 +193,17 @@ alaskapacific
 alasu
 alavés
 albacete
+albacetebpie
 albans
 albany
+albatin
 albemarle
 albert
 alberta
 albertus
 albion
 albirex
+albirexniigata
 albizu
 albright
 albuquerque
@@ -198,14 +216,20 @@ aldosivi
 alexander
 alexandra
 alexandria
+alfaisaly
+alfateh
+alfayha
 alfred
 alfredadler
 alfredstate
+alhilal
 alianza
 alice
 aliens
 aliso
+alittihad
 alka
+alkasuperliga
 all
 allegany
 allegedly
@@ -229,15 +253,21 @@ alma
 almagro
 almelo
 almería
+alnassr
 along
 alouettes
 aloysius
 alpena
+alpetrolera
 alpine
 alpineskiing
 alpinism
+alqadisiyah
+alraed
 als
+alshabab
 also
+altaawoun
 altach
 altamaha
 alternately
@@ -267,6 +297,7 @@ ambs
 amcats
 america
 américa
+américadecali
 american
 americanfootball
 americanhandball
@@ -276,7 +307,9 @@ americus
 ames
 amherst
 amiens
+amienssc
 amkar
+amkarperm
 among
 amphetamine
 amridge
@@ -302,6 +335,7 @@ angelina
 angelo
 angels
 angers
+angerssco
 angles
 angling
 angola
@@ -346,6 +380,7 @@ anyone
 anything
 anywhere
 anzhi
+anzhimakhachkala
 aoma
 apaches
 apart
@@ -394,6 +429,7 @@ arenafootball
 argentina
 argentinian
 argentinos
+argentinosjrs
 argonaut
 argonauts
 argonots
@@ -404,6 +440,7 @@ arizona
 arizonadiamondbacks
 arka
 arkadelphia
+arkagdynia
 arkansas
 arkansasbaptist
 arlington
@@ -425,6 +462,7 @@ arriving
 arrow
 arrows
 arsenal
+arsenaltula
 art
 artacademy
 artcenter
@@ -447,6 +485,7 @@ ashland
 ashtabula
 asia
 asian
+asmonaco
 asnl
 asnuntuck
 aspect
@@ -475,6 +514,7 @@ athens
 athlete
 athletes
 athletic
+athleticclub
 athletics
 athyn
 atiker
@@ -483,9 +523,18 @@ atlanta
 atlantabraves
 atlantafalcons
 atlantahawks
+atlantaunited
 atlantic
 atlas
+atlbucaramanga
 atlético
+atléticogo
+atléticohuila
+atléticomadrid
+atléticomineiro
+atléticotucumán
+atlnacional
+atlparanaense
 atop
 atsu
 attach
@@ -500,6 +549,7 @@ attribution
 atv
 auburn
 audax
+audaxitaliano
 aue
 aug
 auggies
@@ -883,6 +933,7 @@ bison
 bisons
 bitterroot
 biyo
+bkhäcken
 black
 blackandgold
 blackbirds
@@ -965,6 +1016,7 @@ bob
 bobcats
 bobsleigh
 boca
+bocajuniors
 bocce
 boccia
 bochum
@@ -981,6 +1033,7 @@ bodyshells
 bogging
 bogs
 bohemian
+bohemianfc
 boilermakers
 boiling
 boise
@@ -1041,6 +1094,7 @@ boulevard
 bounce
 bourbonnais
 bourg
+bourgenbresse
 bournemouth
 bow
 bowdoin
@@ -1087,6 +1141,7 @@ braunschweig
 braves
 bravos
 bray
+braywanderers
 brazil
 brazilian
 brazosport
@@ -1133,6 +1188,7 @@ bring
 brisbane
 brisbanebroncos
 brisbanelions
+brisbaneroar
 bristol
 bristolcity
 bristolrovers
@@ -1157,6 +1213,7 @@ broncos
 broncoscincinnati
 broncs
 brøndby
+brøndbyif
 bronx
 bronxbombers
 bronxs
@@ -1194,6 +1251,7 @@ bryn
 brynathyn
 brynmawr
 bsc
+bscyoungboys
 bubble
 bucaramanga
 buccaneer
@@ -1233,6 +1291,7 @@ bumperpool
 bunch
 buncombe
 bundesliga
+bundesliga2
 bungeejumping
 bungles
 bunker
@@ -1270,6 +1329,7 @@ caber
 cabrini
 cadets
 cádiz
+cádizcf
 caen
 cagliari
 caid
@@ -1282,6 +1342,8 @@ cal
 calarts
 calbaptist
 calcio
+calcioa
+calciob
 caldas
 caldwell
 caledonian
@@ -1311,6 +1373,7 @@ cambodia
 cambridge
 cambridgecollege
 cambridgeunited
+cambridgeutd
 camden
 camel
 camelracing
@@ -1327,6 +1390,7 @@ campbellsville
 campdrafting
 campeche
 camping
+campscotiabank
 campus
 campuses
 can
@@ -1365,6 +1429,7 @@ canton
 canucks
 canyon
 canyoning
+caosasuna
 cape
 capella
 capers
@@ -1403,6 +1468,7 @@ carlos
 carlow
 carlton
 carltonfootballclub
+carlzeissjena
 carmen
 carmines
 carnegie
@@ -1477,8 +1543,16 @@ ccny
 ccsj
 ccsu
 ccuniversity
+cdantofagasta
+cdhuachipato
+cdleganés
+cdlugo
+cdnumancia
+cdohiggins
+cdpalestino
 cdrewu
 cdsp
+cdtenerife
 ceaprc
 cecil
 cedar
@@ -1497,6 +1571,7 @@ centenarycollege
 center
 central
 centralchristian
+centralcoast
 centralia
 centralmethodist
 centralpenn
@@ -1508,6 +1583,7 @@ centuries
 century
 ceramics
 cerezo
+cerezoosaka
 cerritos
 certain
 certainly
@@ -1517,6 +1593,7 @@ cestoball
 cffp
 cfl
 cfp
+cfreus
 chabot
 chadron
 chaffey
@@ -1527,6 +1604,7 @@ challenging
 chamberlain
 chaminade
 chamois
+chamoisfc
 champaign
 champion
 champions
@@ -1555,6 +1633,7 @@ charlotte
 charlottesville
 charlottetown
 charlton
+charltonath
 charltonathletic
 charter
 charteroak
@@ -1578,6 +1657,7 @@ cheltenham
 cheltenhamtown
 chemeketa
 chemnitzer
+chemnitzerfc
 cheney
 cherries
 cherry
@@ -1599,6 +1679,7 @@ chicagobears
 chicagoblackhawks
 chicagobulls
 chicagocubs
+chicagofire
 chicagowhitesox
 chicane
 chickasha
@@ -1609,6 +1690,7 @@ chief
 chiefs
 chiefwahoostribe
 chievo
+chievoverona
 chihuahuas
 child
 children
@@ -1617,6 +1699,7 @@ chile
 chilean
 chillicothe
 china
+chinapr
 chinese
 chinlone
 chip
@@ -1706,6 +1789,7 @@ cleary
 cleats
 clemson
 clermont
+clermontfoot
 cleveland
 clevelandbrowns
 clevelandcavaliers
@@ -1730,6 +1814,7 @@ clout
 clover
 clovis
 club
+clubbrugge
 clubs
 clues
 cmich
@@ -1794,6 +1879,7 @@ color
 colorado
 coloradoavalanche
 coloradocollege
+coloradorapids
 coloradorockies
 coloradotech
 colored
@@ -1812,6 +1898,7 @@ columbiacollegesc
 columbia|dc
 columbus
 columbusbluejackets
+columbuscrewsc
 column
 columnist
 combat
@@ -1932,9 +2019,11 @@ corban
 corcoran
 cord
 córdoba
+córdobacf
 coritiba
 cork
 corkball
+corkcity
 cornell
 cornellcollege
 corner
@@ -1957,6 +2046,7 @@ cossatot
 costa
 cote
 côte
+côtedivoire
 cottage
 cottagers
 cotton
@@ -2056,12 +2146,14 @@ crunch
 crusaders
 crush
 cruz
+cruzazul
 cruzeiro
 crys
 crystal
 crystalpalace
 csbsju
 cska
+cskamoscow
 cstm
 csu
 csub
@@ -2098,6 +2190,7 @@ cuesports
 culinary
 cullowhee
 cultural
+culturalleonesa
 culture
 culver
 cumberland
@@ -2110,6 +2203,7 @@ cup
 cups
 curby
 curicó
+curicóunido
 curling
 current
 currently
@@ -2135,10 +2229,12 @@ cyclones
 cyfair
 cylindrical
 czech
+czechrepublic
 dabney
 dade
 dads
 daegu
+daegufc
 daemen
 dagenham
 daggers
@@ -2146,6 +2242,7 @@ dahlonega
 daily
 dak
 dakota
+dalavés
 dale
 daley
 dalhousie
@@ -2190,6 +2287,7 @@ davisandelkins
 davisny
 dawgs
 dawry
+dawryjameel
 dawson
 day
 days
@@ -2198,6 +2296,7 @@ dayton
 daytona
 daytonastate
 dbacks
+dcunited
 deacons
 dead
 deadlifting
@@ -2258,9 +2357,14 @@ depauw
 depending
 depicting
 depor
+deporiquique
 deportes
+deportestemuco
+deportestolima
 deportiu
 deportivo
+deportivocali
+deportivopasto
 derby
 derbycounty
 derecho
@@ -2268,6 +2372,7 @@ derive
 derived
 derogatory
 derry
+derrycity
 des
 desales
 descend
@@ -2319,11 +2424,13 @@ diggers
 digital
 digor
 dijon
+dijonfco
 dillard
 dillon
 dimayor
 dimensions
 dinamo
+dinamomoscow
 diné
 dinos
 diplomats
@@ -2372,6 +2479,7 @@ divoire
 dixie
 dixon
 djurgårdens
+djurgårdensif
 doane
 dockers
 doctoral
@@ -2394,6 +2502,7 @@ dominican
 dominion
 dominos
 domino’s
+dominosligue2
 doña
 donate
 doncaster
@@ -2444,6 +2553,7 @@ driver
 drivers
 driving
 drogheda
+droghedaunited
 drone
 drones
 drop
@@ -2473,6 +2583,7 @@ duluth
 dumog
 dundalk
 dundee
+dundeefc
 dunwoody
 dupage
 duquesne
@@ -2496,6 +2607,7 @@ dynamo
 each
 eagles
 eagles!
+eaguingamp
 earlham
 early
 earn
@@ -2542,6 +2654,9 @@ edwards
 edwardsville
 eels
 efl
+eflchampionship
+eflleagueone
+eflleaguetwo
 egypt
 egyptian
 eibar
@@ -2665,8 +2780,10 @@ espn
 essendon
 essex
 estac
+estactroyes
 este
 estoril
+estorilpraia
 estrella
 estudiantes
 estudios
@@ -2678,6 +2795,7 @@ eton
 etown
 etsu
 ettifaq
+ettifaqfc
 eugene
 eunice
 eupen
@@ -2701,6 +2819,7 @@ everglades
 evergreen
 evers
 everton
+evertondeviña
 every
 evilempire
 evms
@@ -2712,6 +2831,7 @@ exaggerated
 examples
 excalibur
 excel
+excelmouscron
 excelsior
 except
 excited
@@ -2793,8 +2913,37 @@ fayetteville
 fayha
 fbi
 fcand
+fcbarcelona
+fcbarcelona“b”
+fcbasel
+fcdallas
+fcgroningen
+fchelsingør
+fckøbenhavn
+fckrasnodar
+fclausannesport
+fclorient
+fclugano
+fcluzern
+fcmetz
+fcmidtjylland
+fcnantes
+fcnordsjælland
 fco
+fcporto
+fcrostov
+fcseoul
+fcsion
 fcsm
+fcstgallen
+fcthun
+fctokyo
+fctosno
+fctwente
+fcufa
+fcural
+fcutrecht
+fczürich
 fear
 feats
 feature
@@ -2867,6 +3016,7 @@ finland
 finlandia
 finley
 finn
+finnharps
 finnish
 fins
 finswimming
@@ -2896,6 +3046,8 @@ fivepinbowling
 fivepins
 fives
 fixed
+fkaustriawien
+fkhaugesund
 flag
 flagfootball
 flagler
@@ -2911,6 +3063,7 @@ flat
 flathead
 fleet
 fleetwood
+fleetwoodtown
 fletcher
 flexible
 flies
@@ -2974,6 +3127,7 @@ forearms
 forest
 forestdemon
 foresters
+forestgreen
 forestry
 forge
 forks
@@ -2992,6 +3146,7 @@ fortaleza
 forth
 fortlewis
 fortuna
+fortunaköln
 forward
 forwards
 fotball
@@ -3065,7 +3220,9 @@ frosinone
 frostburg
 frozen
 fs1
+fsantamaria
 fsv
+fsvzwickau
 fuel
 fukuoka
 fulham
@@ -3114,8 +3271,10 @@ gallos
 galloway
 galveston
 galway
+galwayunited
 gama
 gamba
+gambaosaka
 gambier
 gamblers
 gambling
@@ -3125,6 +3284,7 @@ gamecocks
 games
 gaming
 gangwon
+gangwonfc
 gannon
 gaolie
 garden
@@ -3144,6 +3304,7 @@ gators
 gauchos
 gave
 gazélec
+gazélecajaccio
 gaziantepspor
 gbcnv
 gbcol
@@ -3188,6 +3349,7 @@ germanna
 germany
 get
 getafe
+getafecf
 getting
 gettysburg
 gfc
@@ -3195,6 +3357,7 @@ gial
 giant
 giants
 gif
+gifsundsvall
 gijón
 gila
 gilbert
@@ -3205,7 +3368,9 @@ gills
 gimnasia
 girardeau
 girona
+gironafc
 girondins
+girondinsdebx
 given
 gladiators
 glaive
@@ -3253,6 +3418,7 @@ goats
 god
 goddard
 godoy
+godoycruz
 gogebic
 gogosox
 goiás
@@ -3277,6 +3443,7 @@ gorham
 gorillas
 gorloks
 górnik
+górnikzabrze
 gorodki
 goshen
 got
@@ -3297,6 +3464,7 @@ gram
 grambling
 grampus
 granada
+granadacf
 grand
 grande
 grandprix
@@ -3309,6 +3477,7 @@ granville
 grappling
 grass
 grasshopper
+grasshopperclub
 gratz
 grays
 grayslake
@@ -3394,6 +3563,7 @@ gutter
 guttman
 gvsu
 gwangju
+gwangjufc
 gwinnett
 gwizzlies
 gws
@@ -3426,7 +3596,9 @@ halifax
 halifaxtown
 hall
 hallescher
+hallescherfc
 halmstads
+halmstadsbk
 halo
 halos
 ham
@@ -3437,6 +3609,7 @@ hamilton
 hamiltontigercats
 hamline
 hammarby
+hammarbyif
 hammer
 hammerheads
 hammering
@@ -3465,6 +3638,7 @@ hannibal
 hannover
 hanover
 hansa
+hansarostock
 hapkido
 happens
 harbor
@@ -3520,6 +3694,7 @@ haverford
 haviland
 having
 havre
+havreac
 hawaii
 hawaiʻi
 hawk
@@ -3535,6 +3710,7 @@ hazard
 hazelden
 hazleton
 hcc
+hconsasapporo
 head
 headblow
 heading
@@ -3562,6 +3738,7 @@ heights
 held
 helena
 hellas
+hellasverona
 helmet
 helmets
 help
@@ -3577,6 +3754,7 @@ henry
 hens
 heptathlon
 heracles
+heraclesalmelo
 heraldic
 herd
 here
@@ -3641,12 +3819,14 @@ hitter
 hitting
 hiwassee
 hjk
+hjkhelsinki
 hnew
 hobart
 hobbs
 hobe
 hoboken
 hobro
+hobroik
 hockey
 hocking
 hodges
@@ -3719,6 +3899,7 @@ housatonic
 house
 houston
 houstonastros
+houstondynamo
 hove
 hovealbion
 hovercraft
@@ -3775,6 +3956,7 @@ hyde
 hydroplane
 hydroplanes
 hyundai
+hyundaialeague
 iaia
 iastate
 ibl
@@ -3795,8 +3977,12 @@ ida
 idaho
 identical
 idiot
+ifelfsborg
 ifk
+ifkgöteborg
+ifknorrköping
 ignoring
+iksirius
 iliff
 iḷisaġvik
 illawarra
@@ -3809,6 +3995,7 @@ imitation
 immaculata
 imp
 impact
+impactmontréal
 impaired
 implement
 implies
@@ -3818,6 +4005,7 @@ inbreds
 inc
 incarnate
 incheon
+incheonunited
 include
 included
 includes
@@ -3830,6 +4018,7 @@ indep
 independence
 independents
 independiente
+indepmedellín
 india
 indian
 indiana
@@ -3851,6 +4040,7 @@ indoorlacrosse
 indoors
 indoorshorttrack
 indoorsoccer
+indsantafe
 indstate
 industrial
 industry
@@ -3996,10 +4186,13 @@ jeetkunedo
 jefferson
 jeffs
 jeju
+jejuunited
 jena
 jennies
 jeonbuk
+jeonbukhyundai
 jeonnam
+jeonnamdragons
 jereed
 jerk
 jersey
@@ -4056,11 +4249,13 @@ josephs
 joseph's
 journalism
 jrs
+jsödra
 jstb
 jsums
 jtsa
 juan
 júbilo
+júbiloiwata
 judaic
 judged
 judges
@@ -4093,13 +4288,16 @@ justice
 justicia
 juventus
 kaa
+kaagent
 kabaddi
 kaisa
 kaisers
 kaiserslautern
 kaizer
+kaizerchiefs
 kalamazoo
 kalmar
+kalmarff
 kamloops
 kanawha
 kangaroos
@@ -4115,14 +4313,18 @@ karabükspor
 karate
 kardemir
 karlsruher
+karlsruhersc
 karoliina
 kart
 karting
 kartracing
 karts
 kas
+kaseupen
 kashima
+kashimaantlers
 kashiwa
+kashiwareysol
 kasimpaşa
 kasımpaşa
 kaskaskia
@@ -4130,6 +4332,7 @@ katrina
 kats
 kauai
 kawasaki
+kawasakif
 kayak
 kayaker
 kayaking
@@ -4230,6 +4433,7 @@ kiting
 kitsap
 kitty
 klamath
+kleagueclassic
 klootschieten
 kmbc
 knee
@@ -4270,6 +4474,7 @@ korea
 korean
 korfball
 korona
+koronakielce
 kortrijk
 kougars
 krachtbal
@@ -4277,6 +4482,7 @@ kraków
 krasnodar
 kravmaga
 krc
+krcgenk
 kristiansund
 krolf
 kronum
@@ -4289,12 +4495,16 @@ kurash
 kutztown
 kuyper
 kvc
+kvkortrijk
+kvmechelen
+kvoostende
 kwansei
 kwikcricket
 kyoto
 kysu
 kyudo
 kzoo
+laberrichonne
 labette
 labor
 laboratory
@@ -4307,7 +4517,9 @@ lacrosse
 ladies
 lady
 ladyjacks
+laequidad
 lafayette
+lagalaxy
 lagori
 lagrange
 laguardia
@@ -4329,6 +4541,8 @@ lakewood
 lakota
 lakpi
 laliga
+laliga1|2|3
+laligasantander
 lamar
 lamb
 lambs
@@ -4372,7 +4586,9 @@ lasers
 lasertag
 lasierra
 lask
+lasklinz
 lasorda
+laspezia
 last
 lastros
 late
@@ -4422,6 +4638,8 @@ lebanon
 lebleublancrouge
 lech
 lechia
+lechiagdańsk
+lechpoznań
 lecom
 Łęczna
 lee
@@ -4441,6 +4659,7 @@ legend
 legends
 leghold
 legia
+legiawarszawa
 legion
 legs
 lehigh
@@ -4473,6 +4692,7 @@ letterboxing
 letters
 letu
 levante
+levanteud
 level
 leverkusen
 lewis
@@ -4506,20 +4726,27 @@ lifting
 lifts
 lig
 liga
+ligabancomermx
+ligadimayor
+ligadobrasil
+liganos
 light
 lightening
 lightning
 lights
 lightweight
 ligue
+ligue1conforama
 like
 lille
 lillestrøm
+lillestrømsk
 lilywhites
 lima
 limbs
 limcollege
 limerick
+limerickfc
 limestone
 limited
 lincoln
@@ -4577,6 +4804,7 @@ logo
 logs
 lokeren
 lokomotiv
+lokomotivmoscow
 loma
 london
 lone
@@ -4605,6 +4833,7 @@ lopes
 lorain
 loras
 lorca
+lorcafc
 lord
 lords
 lordsofflatbush
@@ -4617,6 +4846,7 @@ losangelesdodgers
 losangeleslakers
 losangelitos
 losc
+losclille
 losdoyers
 lose
 loser
@@ -4688,6 +4918,7 @@ lynchburg
 lyndon
 lyndonstate
 lyngby
+lyngbybk
 lynn
 lynx
 lyon
@@ -4743,6 +4974,7 @@ makes
 makhachkala
 making
 málaga
+málagacf
 malatyaspor
 malaysia
 malcolm
@@ -4752,6 +4984,7 @@ mallakhamba
 mallet
 mallorca
 malmö
+malmöff
 malone
 malta
 mammals
@@ -4764,6 +4997,7 @@ manatees
 manchester
 manchestercity
 manchesterunitedfc
+manchesterutd
 maneuvered
 maneuvers
 manhattan
@@ -4943,11 +5177,14 @@ medium
 meek
 meharry
 meiji
+meijiyasudaj1
 meinrad
 melb
 melblount
 melbourne
+melbournecity
 melbournestorm
+melbvictory
 mellon
 melt!
 member
@@ -4962,6 +5199,7 @@ mennonite
 menominee
 menomonie
 mens
+mensnational
 mental
 mention
 menu
@@ -5065,6 +5303,7 @@ mining
 minneapolis
 minnesota
 minnesotatwins
+minnesotaunited
 minnesotavikings
 minor
 minot
@@ -5097,9 +5336,11 @@ mitt
 mix
 mixed
 mixteca
+mkdons
 mlb
 mlc
 mls
+mlsallstars
 mma
 mnstate
 mnsu
@@ -5119,11 +5360,13 @@ mohave
 mohawk
 moines
 molde
+moldefk
 mölkky
 molloy
 momoyama
 monaco
 monarcas
+monarcasmorelia
 monarchs
 monclova
 moncton
@@ -5150,6 +5393,7 @@ montevallo
 montgomery
 monticello
 montpellier
+montpellierhsc
 montreal
 montréal
 montrealalouettes
@@ -5308,6 +5552,7 @@ mystics
 mythical
 myunion
 nac
+nacbreda
 nacional
 nacogdoches
 nads
@@ -5401,10 +5646,13 @@ newberg
 newberry
 newbury
 newcastle
+newcastlejets
 newcastleknights
 newcastleunited
+newcastleutd
 newcomb
 newells
+newengland
 newenglandpatriots
 newfoundland
 newhaven
@@ -5415,9 +5663,11 @@ newmanu
 neworleanssaints
 newpaltz
 newport
+newportcounty
 news
 newschool
 newton
+newyorkcityfc
 newyorkers
 newyorkgiants
 newyorkislanders
@@ -5425,6 +5675,7 @@ newyorkjets
 newyorkmets
 newyorkrangers
 newyorkyankees
+newzealand
 newzealandwarriors
 next
 nfc
@@ -5446,6 +5697,7 @@ night
 nighthawks
 niigata
 nîmes
+nîmesolympique
 nine
 nineball
 niners
@@ -5488,6 +5740,7 @@ northcentral
 northeast
 northeastern
 northern
+northernireland
 northfield
 northgeorgia
 northland
@@ -5521,6 +5774,7 @@ nottingham
 nottinghamforest
 nottinghamforestfc
 nottm
+nottmforest
 notts
 nottscounty
 nova
@@ -5559,6 +5813,7 @@ nycpm
 nyit
 nymc
 nymets
+nyredbulls
 nyu
 oahu
 oak
@@ -5584,6 +5839,7 @@ observation
 observed
 obstacle
 obstacles
+Öbundesliga
 obvious
 ocala
 ocb
@@ -5597,7 +5853,9 @@ oconee
 october
 octopush
 odds
+oddsbk
 odense
+odensebk
 odessa
 odi
 off
@@ -5611,6 +5869,7 @@ offsides
 offspring
 often
 ogc
+ogcnice
 ogden
 ogeechee
 oglala
@@ -5620,6 +5879,7 @@ ohio
 ohiochristian
 ohiodominican
 ohod
+ohodclub
 ohsu
 oil
 oilers
@@ -5663,13 +5923,16 @@ olney
 ololcollege
 olympia
 olympiacos
+olympiacoscfp
 olympians
 olympic
 olympics
 olympique
 omaha
 omiya
+omiyaardija
 once
+oncecaldas
 one
 oneonta
 onepocket
@@ -5704,6 +5967,7 @@ orangenation
 order
 ore
 Örebro
+Örebrosk
 orediggers
 oregon
 oreilles
@@ -5724,6 +5988,8 @@ originates
 origins
 orioles
 orlando
+orlandocity
+orlandopirates
 orleans
 orléans
 orono
@@ -5737,6 +6003,7 @@ osnabrück
 ospreys
 osteopathic
 Östersunds
+Östersundsfk
 osu
 osumarion
 oswego
@@ -5803,6 +6070,7 @@ pacificu
 pack
 packers
 paços
+paçosferreira
 pad
 padding
 paddle
@@ -5872,6 +6140,7 @@ parasailing
 paratriathlon
 pardee
 paris
+parisfc
 parish
 parishes
 park
@@ -5895,6 +6164,7 @@ participant
 participants
 participate
 partick
+partickthistle
 particular
 parts
 pasadena
@@ -5945,6 +6215,7 @@ pearl
 peay
 pec
 peck
+peczwolle
 peg
 pegging
 pehlwani
@@ -6001,6 +6272,7 @@ permian
 person
 persons
 perth
+perthglory
 peru
 perugia
 pesäpallo
@@ -6046,6 +6318,7 @@ photography
 phrase
 physical
 piast
+piastgliwice
 picigin
 pick
 pickerington
@@ -6163,7 +6436,9 @@ pods
 poets
 pogo
 pogoń
+pogońszczecin
 pohang
+pohangsteelers
 point
 pointers
 pointloma
@@ -6201,6 +6476,7 @@ pondscums
 pong
 ponies
 ponte
+pontepreta
 pontiac
 pontificia
 pool
@@ -6217,6 +6493,7 @@ portal
 portales
 portimão
 portland
+portlandtimbers
 porto
 portpower
 portsmouth
@@ -6268,6 +6545,7 @@ predominantly
 preds
 prem
 premier
+premierleague
 premiership
 prepared
 presby
@@ -6285,6 +6563,7 @@ prestonnorthend
 preta
 pretoria
 preußen
+preußenmünster
 prevent
 previews
 previous
@@ -6295,6 +6574,7 @@ priest
 primarily
 primary
 primera
+primeradivisÓn
 prince
 princes
 princess
@@ -6323,6 +6603,7 @@ profs
 program
 prohibited
 projected
+proleague
 prominent
 prominently
 prone
@@ -6414,6 +6695,7 @@ queensland
 queensparkrangers
 querétaro
 quevilly
+quevillyrouen
 quickest
 quickly
 quidditch
@@ -6436,6 +6718,7 @@ racerunning
 races
 racewalking
 racing
+racingclub
 racket
 racketball
 racketlon
@@ -6494,6 +6777,7 @@ ramsuniversity
 rancho
 rand
 randers
+randersfc
 randolph
 randolphcollege
 random
@@ -6517,19 +6801,30 @@ rattlers
 rattlesnakes
 ravens
 rayo
+rayovallecano
 rays
 raytown
 razorbacks
 razzaracing
 rbis
+rbsalzburg
+rccelta
 rcd
+rcdeportivo
+rcdespanyol
+rclens
 rcracing
+rcstrasbourg
 reach
 read
 reading
 reagan
 real
+realbetis
 really
+realmadrid
+realsaltlake
+realsociedad
 reasons
 rebels
 rebound
@@ -6633,6 +6928,7 @@ respective
 responds
 response
 rest
+restofworld
 restore
 restricted
 resulting
@@ -6698,7 +6994,9 @@ rink
 rinkball
 rinkhockey
 rio
+rioave
 rionegro
+rionegroÁguilas
 ripon
 riposte
 risd
@@ -6716,6 +7014,7 @@ riverhead
 riverhounds
 riverland
 rivermen
+riverplate
 rivers
 riverside
 riversiders
@@ -6762,6 +7061,7 @@ rocks
 rocky
 rod
 roda
+rodajc
 rodeo
 rogaining
 roger
@@ -6802,10 +7102,13 @@ roque
 rosalind
 rosalindfranklin
 rosario
+rosariocentral
 rose
 rosemont
 rosenborg
+rosenborgbk
 ross
+rosscounty
 roster
 rostock
 rostov
@@ -6815,8 +7118,10 @@ rotates
 rotation
 rotherham
 rotherhamunited
+rotherhamutd
 rotor
 rotterdam
+rotweißerfurt
 rouen
 rouge
 rough
@@ -6829,6 +7134,7 @@ route
 routine
 routines
 rovers
+roviedo
 row
 rowan
 rowdies
@@ -6840,14 +7146,18 @@ roxboro
 roxbury
 royaking
 royal
+royalantwerpfc
 royals
 rpi
 rsc
+rscanderlecht
 rsl
+rsporting
 rss
 rubber
 rubbery
 rubin
+rubinkazan
 ruch
 rugby
 rugbyfives
@@ -6872,6 +7182,7 @@ rushu
 russellville
 russia
 russian
+russianleague
 russianpyramid
 russians
 russias
@@ -6881,10 +7192,12 @@ rustlers
 ruston
 rutgers
 rutherford
+rvalladolidcf
 ryan
 ryerson
 ryukoku
 ryūkyū
+rzaragoza
 sabercats
 sabers
 sabotage
@@ -6899,6 +7212,7 @@ saddle
 saddlers
 saddles
 sagan
+sagantosu
 sage
 sagehens
 saginaw
@@ -6979,15 +7293,21 @@ sanfrancisco49ers
 sanfranciscogiants
 sanfrecce
 sangju
+sangjusangmu
 sangmu
 sanjosesharks
+sanlorenzo
+sanluis
+sanmartín
 sanshou
 santa
 santafeuniversity
 santander
 santiago
 santos
+santoslaguna
 são
+sãopaulo
 sapc
 sapporo
 sarah
@@ -6999,12 +7319,14 @@ saratoga
 sargeant
 sarmiento
 sarpsborg
+sarpsborg08ff
 sarsfield
 saskatchewan
 saskatoon
 sasquatch
 sassuolo
 saudi
+saudiarabia
 sauk
 sault
 saumag
@@ -7029,6 +7351,7 @@ scandinavia
 scandinavian
 scare
 scarlet
+scbraga
 sccky
 scco
 scent
@@ -7036,6 +7359,7 @@ scf
 schalke
 schaumburg
 schedule
+scheerenveen
 scheme
 schenectady
 schmo|schmo
@@ -7070,8 +7394,11 @@ scots
 scott
 scotties
 scottish
+scottishprem
 scottsdale
+scpaderborn
 scr
+scraltach
 scranton
 scrap
 screaming
@@ -7086,8 +7413,11 @@ scull
 sculling
 scunthorpe
 scunthorpeunited
+scunthorpeutd
 scurry
 sdcc
+sdeibar
+sdhuesca
 sdstate
 sdsu
 [sdsu’s
@@ -7110,6 +7440,7 @@ season]
 seat
 seattle
 seattlemariners
+seattlesounders
 seattlesupersonics
 seattleu
 seawolves
@@ -7165,6 +7496,8 @@ seventy
 several
 sevierville
 sevilla
+sevillaatlético
+sevillafc
 sewanee
 seward
 sfai
@@ -7174,13 +7507,16 @@ sfmccon
 sfseminary
 sfsu
 sgps
+sgroßaspach
 shabab
 shabby
 shake
 shakers
 shakhtar
+shakhtardonetsk
 shallow
 shamrock
+shamrockrovers
 shandong
 shaolinkungfu
 shape
@@ -7202,6 +7538,8 @@ sheet
 sheffield
 sheffieldfc
 sheffieldunited
+sheffieldutd
+sheffieldwed
 sheffieldwednesday
 sheldon
 shelton
@@ -7215,6 +7553,7 @@ sherman
 shidokan
 shimer
 shimizu
+shimizuspulse
 shinboners
 shinbones
 shins
@@ -7222,6 +7561,7 @@ shinty
 ship
 shippensburg
 shipping
+shiroshima
 shmoes
 shoals
 shock
@@ -7300,6 +7640,7 @@ silat
 silhouette
 silk
 silkeborg
+silkeborgif
 silkmen
 siloam
 silver
@@ -7329,6 +7670,7 @@ sinners
 sint
 sinte
 sintegleska
+sinttruiden
 sion
 sioux
 sipa
@@ -7353,11 +7695,13 @@ sjca
 sjcme
 sjcny
 sjcsf
+sjearthquakes
 sjfc
 sjsu
 sjvcs
 ska
 skagit
+skakhabarovsk
 skate
 skateboard
 skateboarding
@@ -7365,6 +7709,7 @@ skaterhockey
 skaters
 skates
 skating
+skbrann
 skeet
 skeetshooting
 skeleton
@@ -7395,6 +7740,9 @@ skis
 skitouring
 skittles
 skn
+sknstpölten
+skrapidwien
+sksturmgraz
 skull
 sky
 skyblues
@@ -7411,6 +7759,8 @@ slamball
 slamdunk
 slapshot
 Śląsk
+Śląskwrocław
+slbenfica
 slc
 sled
 sledder
@@ -7422,6 +7772,7 @@ slide
 sliding
 slightly
 sligo
+sligorovers
 slippery
 slope
 slopes
@@ -7432,6 +7783,7 @@ slugs
 small
 smallball
 smaller
+smcaen
 smcm
 smcvt
 smelts
@@ -7478,6 +7830,7 @@ södra
 soft
 softball
 sogndal
+sogndalfotball
 soka
 soldiers
 solid
@@ -7509,12 +7862,14 @@ sounds
 source
 sources
 south
+southafrica
 southampton
 southcentral
 southcollegetn
 southeast
 southeastern
 southend
+southendunited
 southern
 southernct
 southfield
@@ -7543,8 +7898,12 @@ sparkill
 sparky
 sparta
 spartak
+spartakmoscow
 spartanburg
 spartans
+spartapraha
+spartarotterdam
+spcharleroi
 spear
 spearfish
 spearguns
@@ -7591,8 +7950,12 @@ spoon
 sport
 sportfishing
 sportfreunde
+sportfreundelotte
 sporting
+sportingcp
+sportingkc
 sportkite
+sportlokeren
 sports
 sportslists
 sportsmanship
@@ -7619,15 +7982,19 @@ squirrels
 squirtboating
 squish
 sse
+sseairtricityleague
 ssireum
 ssouth
-st
 stabæk
+stabækfotball
 stac
 stack
 stacked
 stacking
 stade
+stadebrestois
+stadedereims
+staderennais
 stadium
 staff
 stage
@@ -7643,6 +8010,7 @@ stampeders
 stamps
 stand
 standard
+standardliège
 standing
 standings
 standish
@@ -7720,6 +8088,7 @@ stingers
 stingrays
 stink
 stjohns
+stjohnstone
 stkate
 stlawu
 stlcop
@@ -7749,6 +8118,8 @@ stormy
 storrs
 stout
 stowe
+stpats
+stpauli
 stpt
 straight
 straps
@@ -7777,6 +8148,7 @@ stritch
 stroke
 strokes
 strømsgodset
+strømsgodsetif
 strong
 strongman
 stros
@@ -7847,6 +8219,7 @@ sÜper
 supercross
 superhoops
 superior
+sÜperlig
 superliga
 supermoto
 supersonics
@@ -7878,9 +8251,13 @@ susqu
 susquehanna
 sussex
 suwon
+suwonsamsung
 suzy
 svdp
+svmattersburg
+svmeppen
 svsu
+svwehen
 swac
 swamp
 swamps
@@ -7919,6 +8296,7 @@ swum
 swung
 sycamores
 sydney
+sydneyfc
 sydneyroosters
 sydneyswans
 symbolic
@@ -8234,6 +8612,7 @@ tornadoes
 toronto
 torontoargonauts
 torontobluejays
+torontofc
 torontomapleleafs
 torontoraptors
 toros
@@ -8255,11 +8634,13 @@ touchfootball
 touching
 tougaloo
 toulouse
+toulousefc
 touring
 touringcarracing
 tournaments
 touro
 tours
+toursfc
 tow
 toward
 towards
@@ -8355,6 +8736,7 @@ trois
 trojans
 trolls
 tromsø
+tromsøil
 trot
 trotters
 troy
@@ -8466,9 +8848,11 @@ ucsf
 ucumberlands
 ucwv
 udallas
+udalmería
 udayton
 udel
 udinese
+udlaspalmas
 udmercy
 ufa
 ufc
@@ -8482,6 +8866,7 @@ uiowa
 ulama
 ulm
 ulsan
+ulsanhyundai
 ulster
 ultimate
 ultimatefootball
@@ -8514,6 +8899,7 @@ umsl
 umsystem
 umuc
 umwestern
+unam
 unarmed
 unc
 unca
@@ -8537,11 +8923,14 @@ underwaterrugby
 uneven
 unevenbars
 uni
+unicatólica
+uniconcepción
 unicycle
 unicycles
 unicycletrials
 unicycling
 unicyclist
+unidechile
 unido
 unification
 uniform
@@ -8549,12 +8938,15 @@ uniformed
 uniforms
 union
 unión
+unionberlin
 uniondale
+uniónespañola
 unionky
 unique
 unison
 united
 unitedseminary
+unitedstates
 unity
 univ
 unive
@@ -8607,6 +8999,7 @@ upwards
 uqam
 ural
 urawa
+urawareds
 urban
 urbana
 uri
@@ -8638,6 +9031,7 @@ usmd
 usmma
 usna
 usnwc
+usorléans
 usouthal
 ussa
 usually
@@ -8684,9 +9078,12 @@ vajra
 valdosta
 vale
 valencia
+valenciacf
 valencian
 valenciennes
+valenciennesfc
 vålerenga
+vålerengafotball
 valiants
 valkyries
 valladolid
@@ -8725,12 +9122,14 @@ vaults
 vcsu
 vcu
 vegalta
+vegaltasendai
 vegas
 vehicle
 vehicles
 velasquez
 velcro
 vélez
+vélezsarsfield
 velodromes
 venango
 venezia
@@ -8738,6 +9137,7 @@ venezuela
 venezuelan
 venlo
 ventforet
+ventforetkofu
 veracruz
 vercelli
 verdes
@@ -8759,7 +9159,10 @@ veterinary
 vfb
 vfcc
 vfl
+vflosnabrück
 vfr
+vfraalen
+vguimarães
 vianney
 viborg
 vice
@@ -8777,15 +9180,19 @@ vigo
 vigoro
 vikes
 viking
+vikingfk
 vikings
 vikings7
 vila
+viladasaves
 villa
 villages
 villahermosa
+villamaipú
 villanova
 villans
 villarreal
+villarrealcf
 viña
 vincennes
 vincent
@@ -8801,6 +9208,7 @@ visit
 visiting
 visitor
 vissel
+visselkobe
 vista
 visual
 visually
@@ -8817,11 +9225,14 @@ volunteers
 voorhees
 vovinam
 voyageurs
+vsetúbal
 vstix
 vulcans
 vvv
+vvvvenlo
 waasl
 waasland
+waaslbeveren
 wabash
 wac
 wachovia
@@ -8945,6 +9356,7 @@ well
 we’ll
 wellesley
 wellington
+wellphoenix
 wells
 wels
 wenatchee
@@ -8952,6 +9364,7 @@ wenham
 went
 wentworth
 werder
+werderbremenii
 were
 wesley
 wesleyan
@@ -8959,6 +9372,7 @@ wesleyancollege
 wesleyseminary
 wesmen
 west
+westbrom
 westbromwichalbion
 westbury
 westchester
@@ -8973,6 +9387,7 @@ westerville
 westerwinds
 westfield
 westga
+westham
 westhamunited
 westliberty
 westminster
@@ -9015,6 +9430,7 @@ while
 whirlwinds
 white
 whitecaps
+whitecapsfc
 whiteelephants
 whitesox
 whitesux
@@ -9057,6 +9473,7 @@ wilkes
 will
 willamette
 willem
+willemii
 william
 williams
 williamsburg
@@ -9100,6 +9517,8 @@ wisc
 wisconsin
 wise
 wisła
+wisłakraków
+wisłapłock
 with
 within
 without
@@ -9117,6 +9536,7 @@ woking
 wolf
 wolfpack
 wolfsberger
+wolfsbergerac
 wolfsburg
 wolfville
 wolverhampton
@@ -9126,6 +9546,7 @@ womans
 wombats
 women
 womens
+womensnational
 won
 wonder
 wood
@@ -9147,6 +9568,7 @@ working
 workouts
 world
 worlds
+worldxi
 worth
 worthington
 would
@@ -9168,6 +9590,7 @@ wspp
 wssu
 wsu
 wsulaw
+wswanderers
 wtamu
 würzburg
 würzburger
@@ -9189,7 +9612,6 @@ xavier
 xcountry
 xingyiquan
 xula
-xxxiii4
 yachting
 yachts
 yağlı
@@ -9213,6 +9635,7 @@ yellow
 yellowjackets
 yellows
 yeni
+yenimalatyaspor
 yeomen
 yeovil
 yeoviltown
@@ -9221,6 +9644,7 @@ yesterday
 yiddish
 yoga
 yokohama
+yokohamaf･m
 york
 yorkcity
 yorker
@@ -9243,6 +9667,7 @@ yucatán
 yukigassen
 zabrze
 zagłębie
+zagłębielubin
 zane
 zanesville
 zaragoza
@@ -9258,6 +9683,7 @@ zorkhana
 zourkhaneh
 zui
 zulte
+zultewaregem
 zürich
 zurkhaneh
 zwickau
