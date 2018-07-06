@@ -568,6 +568,11 @@ def run_jtr_prayer_mode(pHashFile: str, pMethod: int, pHashFormat: str,
                                pPassThrough=pPassThrough, pVerbose=pVerbose,
                                pDebug=pDebug, pNumberHashes=pNumberHashes)
 
+        # Hard to say how many mangles but will be proportional to number of hashes
+        do_run_jtr_single_mode(pHashFile=pHashFile, pHashFormat=pHashFormat,
+                               pPassThrough=pPassThrough, pVerbose=pVerbose,
+                               pDebug=pDebug, pNumberHashes=pNumberHashes)
+
     elif pMethod == 2:
         # Dictionaries have about 10,000 words
         # Rules have up to about 1,000 mangles
@@ -735,6 +740,54 @@ def do_run_jtr_prayer_mode(pHashFile: str, pDictionary: str, pRule: str,
             print(" with Rule {}".format(pRule))
         else:
             print()
+        print("\tCommand was: {}".format(lCompletedProcess.args))
+        print("\tPasswords cracked at end of run: {}".format(lNumberPasswordsCracked))
+
+    print("\tPasswords cracked by mode: {} ({} percent)".format(lNumberPasswordsCrackedByThisMethod, lPercentPasswordsCracked))
+
+    if pDebug:
+        lRunTime = time.time() - lStartTime
+        lPasswordsCrackedPerSecond = lNumberPasswordsCrackedByThisMethod // lRunTime
+        print("\tDuration: {}".format(lRunTime))
+        print("\tPasswords cracked per second: {}".format(lPasswordsCrackedPerSecond))
+
+
+def do_run_jtr_single_mode(pHashFile: str, pHashFormat: str, pPassThrough: str,
+                           pVerbose: bool, pDebug: bool, pNumberHashes: int) -> None:
+
+    # Note: subprocess.run() accepts the command to run as a list of arguments.
+    # lCmdArgs is this list.
+
+    lStartTime = time.time()
+
+    if pDebug: rm_jtr_pot_file()
+
+    lCmdArgs = [JTR_EXE_FILE_PATH]
+    lCmdArgs.append("--single")
+    if pHashFormat: lCmdArgs.append("--format={}".format(pHashFormat))
+    if pPassThrough: lCmdArgs.append(pPassThrough)
+
+    if pVerbose:
+        print("[*] Starting mode: JTR Single Crack")
+
+    # Determine number of passwords cracked before trying this method
+    lNumberPasswordsAlreadyCracked = count_passwords_in_jtr_pot_file()
+
+    if pVerbose:
+        print("[*] Passwords cracked at start of single crack mode: {}".format(lNumberPasswordsAlreadyCracked))
+
+    lCmdArgs.append(pHashFile)
+    lCompletedProcess = subprocess.run(lCmdArgs, stdout=subprocess.PIPE)
+    time.sleep(0.5)
+
+    # Determine number of passwords cracked after trying this method
+    lNumberPasswordsCracked = count_passwords_in_jtr_pot_file()
+
+    lNumberPasswordsCrackedByThisMethod = lNumberPasswordsCracked - lNumberPasswordsAlreadyCracked
+    lPercentPasswordsCracked = round(lNumberPasswordsCrackedByThisMethod / pNumberHashes * 100, 2)
+
+    if pVerbose:
+        print("[*] Finished single crack mode")
         print("\tCommand was: {}".format(lCompletedProcess.args))
         print("\tPasswords cracked at end of run: {}".format(lNumberPasswordsCracked))
 
