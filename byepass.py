@@ -41,12 +41,15 @@ import os.path
 import time
 import re
 
+# GLOBALS
+masks_already_brute_forced = []
 
+#METHODS
 def print_example_usage():
     print("""
 Attempt to crack linked-in hashes using base words linkedin and linked\n
-\tpython3 byepass.py --verbose --hash-format=Raw-SHA1 --base-words=linkedin,linked --input-file=linkedin-1.hashes
-\tpython3 byepass.py -v -f Raw-SHA1 -b linkedin,linked -i linkedin-1.hashes\n
+\tpython3 byepass.py --verbose --hash-format=Raw-SHA1 --basewords=linkedin,linked --input-file=linkedin-1.hashes
+\tpython3 byepass.py -v -f Raw-SHA1 -w linkedin,linked -i linkedin-1.hashes\n
 Attempt to brute force words from 3 to 5 characters in length\n
 \tpython3 byepass.py --verbose --hash-format=Raw-MD5 --brute-force=3,5 --input-file=hashes.txt
 \tpython3 byepass.py -f Raw-MD5 -j="--fork=4" -v -t 0 -r 3,5 -i hashes.txt\n
@@ -69,8 +72,8 @@ Attempt to crack password hashes found in input file "password.hashes", then run
 \tpython3 byepass.py --verbose --hash-format=Raw-SHA1 --stat-crack --percentile=0.25 --input-file=linkedin.hashes
 \tpython3 byepass.py -v -f Raw-SHA1 -s -f 0.25 -i linkedin.hashes\n
 Attempt to crack linked-in hashes using base words linkedin and linked\n
-\tpython3 byepass.py --verbose --hash-format=Raw-SHA1 --base-words=linkedin,linked --input-file=linkedin-1.hashes
-\tpython3 byepass.py -v -f -b linkedin,linked -i linkedin-1.hashes\n
+\tpython3 byepass.py --verbose --hash-format=Raw-SHA1 --basewords=linkedin,linked --input-file=linkedin-1.hashes
+\tpython3 byepass.py -v -f -w linkedin,linked -i linkedin-1.hashes\n
 Do not run prayer mode. Only run statistical analysis to determine masks needed to crack 50 percent of passwords, and try to crack using the masks.\n
 \tpython3 byepass.py -v --techniques=0 --hash-format=descrypt --stat-crack --percentile=0.50 --input-file=password.hashes
 \tpython3 byepass.py -v -a 0 -f descrypt -s -p 0.50 -i password.hashes\n
@@ -319,6 +322,17 @@ def run_jtr_wordlist_mode(pHashFile: str, pWordlist: str, pRule: str, pHashForma
 def run_jtr_mask_mode(pHashFile: str, pMask: str, pWordlist: str, pHashFormat:str,
                       pVerbose: bool, pDebug: bool, pPassThrough: str,
                       pNumberHashes: int) -> None:
+
+    # There are two modes that run brute force using masks. Keep track of masks
+    # already checked in case the same mask would be tried twice.
+
+    #Note: masks_already_brute_forced is a global variable
+    if pMask in masks_already_brute_forced:
+        if pVerbose:
+            print("[*] Mask {} has already been tested in this session. Moving on to next task.".format(pMask))
+        return None
+    else:
+        masks_already_brute_forced.append(pMask)
 
     lStartTime = time.time()
 
@@ -755,11 +769,11 @@ if __name__ == '__main__':
                             type=str,
                             help="The hash algorithm used to hash the password(s). This value must be one of the values supported by John the Ripper. To see formats supported by JTR, use command \"john --list=formats\". It is strongly recommended to provide an optimal value. If no value is provided, John the Ripper will guess.\n\n",
                             action='store')
-    lArgParser.add_argument('-b', '--basewords',
+    lArgParser.add_argument('-w', '--basewords',
                             type=str,
-                            help="Supply a comma-separated list of lowercase, unmangled base words thought to be good candidates. For example, if Wiley Coyote is cracking hashes from Acme Inc., Wiley might provide the word \"acme\". Be careful how many words are supplied as Byepass will apply many mangling rules. Up to several dozen should run reasonably fast.\n\n",
+                            help="Supply a comma-separated list of lowercase, unmangled base words thought to be good candidates. For example, if Wiley Coyote is cracking hashes from Acme Inc., Wiley might provide the word \"acme\". Be careful how many words are supplied as Byepass will apply many mangling rules. Up to several should run reasonably fast.\n\n",
                             action='store')
-    lArgParser.add_argument('-r', '--brute-force',
+    lArgParser.add_argument('-b', '--brute-force',
                             type=str,
                             help="Bruce force common patterns with at least MIN characters up to MAX characters. Provide minimum and maxiumum number of characters as comma-separated, positive integers (i.e. 4,6 means 4 characters to 6 characters).\n\n",
                             action='store')
@@ -821,7 +835,7 @@ if __name__ == '__main__':
         run_jtr_baseword_mode(pHashFile=lHashFile, pBaseWords=lArgs.basewords, pHashFormat=lHashFormat,
                               pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through,
                               pNumberHashes=lNumberHashes)
-
+    # Smart brute-force
     if lArgs.brute_force:
         lMinCharactersToBruteForce, lMaxCharactersToBruteForce = parse_arg_brute_force(lArgs.brute_force)
         run_jtr_brute_force_mode(pHashFile=lHashFile, pMinCharactersToBruteForce=lMinCharactersToBruteForce,
@@ -838,7 +852,7 @@ if __name__ == '__main__':
                                 pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through,
                                 pNumberHashes=lNumberHashes)
 
-    # If the user chooses, begin statistical analysis to aid targeted cracking routines
+    # If the user chooses -s option, begin statistical analysis to aid targeted cracking routines
     if lArgs.stat_crack:
 
         lPercentile = parse_arg_percentile(lArgs.percentile)
