@@ -8,6 +8,7 @@ available at the following links. For written instructions, refer to the next se
 * [Using ByePass: More Aggressive Techniques](https://www.youtube.com/watch?v=WlxQ11uYH-U)
 * [Using ByePass: Base Words Technique](https://www.youtube.com/watch?v=5vlW5_iiOPE)
 * [Using ByePass: Statistical Cracking Technique](https://www.youtube.com/watch?v=7McTDayHJs4)
+* [Using ByePass: Brute-Force Technique](https://www.youtube.com/watch?v=U6LDeFZhIu0)
 
 If you would like more help, please see the video 
 tutorials in the following playlist
