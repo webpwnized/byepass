@@ -3,7 +3,8 @@
 Video tutorials that explain how to use ByePass are 
 available at the following links. For written instructions, refer to the next section.
 
-* [Using PassTime: Identifying Significant Password Patterns with PassTime](https://www.youtube.com/watch?v=X-dwrLvnY9M)
+* [Using PassTime: Identifying Significant Password Patterns](https://www.youtube.com/watch?v=X-dwrLvnY9M)
+* [Using PassTime: More Advanced Pattern Analysis](https://www.youtube.com/watch?v=s-x_aqdtZ8c)
 
 If you would like more help, please see the video 
 tutorials in the following playlist
