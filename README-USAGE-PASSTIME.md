@@ -1,5 +1,15 @@
 # Usage
 
+Video tutorials that explain how to use ByePass are 
+available at the following links. For written instructions, refer to the next section.
+
+* [Using PassTime: Identifying Significant Password Patterns with PassTime](https://www.youtube.com/watch?v=X-dwrLvnY9M)
+
+If you would like more help, please see the video 
+tutorials in the following playlist
+
+* [Complete Guide to ByePass](https://www.youtube.com/playlist?list=PLZOToVAK85Mqfcbufx1_lQHZ4pltV8nAm)
+
 ## Using PassTime
 
 **Automate statistical analysis of passwords in support of password cracking tasks**
