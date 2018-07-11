@@ -1,3 +1,8 @@
+## Project Announcements
+
+* YouTube: [https://www.youtube.com/user/webpwnized](https://www.youtube.com/user/webpwnized)
+* Twitter: [https://twitter.com/webpwnized](https://twitter.com/webpwnized)
+
 ## Installation
 
 Video tutorials that explain how to install John the Ripper and ByePass are 
