@@ -578,7 +578,7 @@ def run_jtr_prayer_mode(pHashFile: str, pMethod: int, pHashFormat: str,
         # Rules have up to about 1,000 mangles
         # Factor: 10,000,000
         lFolder = "dictionaries"
-        lDictionaries = ["sports-related-words.txt","bible.txt","top-10000-english-words.txt",
+        lDictionaries = ["anime.txt","sports-related-words.txt","bible.txt","top-10000-english-words.txt",
                          "top-10000-spanish-words.txt","top-10000-german-words.txt"]
         lRules = ["SlowHashesPhase1", "Best126", "SlowHashesPhase2"]
 
@@ -597,7 +597,7 @@ def run_jtr_prayer_mode(pHashFile: str, pMethod: int, pHashFormat: str,
         # Rules have up to about 6,500 mangles
         # Factor: 65,000,000
         lFolder = "dictionaries"
-        lDictionaries = ["sports-related-words.txt","bible.txt","top-10000-english-words.txt",
+        lDictionaries = ["anime.txt","sports-related-words.txt","bible.txt","top-10000-english-words.txt",
                          "top-10000-spanish-words.txt","top-10000-german-words.txt"]
         lRules = ["SlowHashesPhase3"]
 
@@ -641,7 +641,7 @@ def run_jtr_prayer_mode(pHashFile: str, pMethod: int, pHashFormat: str,
         # Rules have up to about 50,000 mangles
         # Factor: 500,000,000
         lFolder = "dictionaries"
-        lDictionaries = ["sports-related-words.txt","bible.txt","top-10000-english-words.txt",
+        lDictionaries = ["anime.txt","sports-related-words.txt","bible.txt","top-10000-english-words.txt",
                          "top-10000-spanish-words.txt","top-10000-german-words.txt"]
         lRules = ["OneRuleToRuleThemAll"]
 
