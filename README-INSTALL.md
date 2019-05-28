@@ -1,6 +1,6 @@
 # ByePass
 
-## Automate password cracking attempts
+### Automate password cracking attempts
 
 # Installation
 
