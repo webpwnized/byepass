@@ -43,6 +43,7 @@ import re
 
 # GLOBALS
 masks_already_brute_forced = []
+what_i_tried = []
 
 #METHODS
 def print_example_usage():
@@ -167,6 +168,11 @@ def print_closing_message(pNumberHashes: int, pNumberPasswordsPOTFileAtStart: in
         except:
             lPercent = 0
 
+        print()
+        print("[*] Techniques Attempted")
+        for string in what_i_tried:
+            print("\t{}".format(string))
+        print()
         print("[*] Duration: {}".format(time.strftime("%H:%M:%S", lElaspsedTime)))
         print("[*] Passwords cracked (estimated): {} out of {} ({}%)".format(lNumberPasswords, pNumberHashes, lPercent))
         print("[*] Passwords cracked per second (estimated): {}".format(lNumberPasswordsCrackedPerSecond))
@@ -274,6 +280,7 @@ def run_jtr_wordlist_mode(pHashFile: str, pWordlist: str, pRule: str, pHashForma
                           pVerbose: bool, pDebug: bool, pPassThrough: str,
                           pNumberHashes: int) -> None:
 
+    lWhatITried = ""
     lStartTime = time.time()
 
     if pDebug: rm_jtr_pot_file()
@@ -287,7 +294,11 @@ def run_jtr_wordlist_mode(pHashFile: str, pWordlist: str, pRule: str, pHashForma
 
     if pVerbose:
         print("[*] Starting wordlist mode: {}".format(pWordlist))
-        if pRule: print("[*] Using rule: {}".format(pRule))
+        lWhatITried = "Wordlist {}".format(pWordlist)
+        if pRule:
+            print("[*] Using rule: {}".format(pRule))
+            lWhatITried += " with rule {}".format(pRule)
+        what_i_tried.append(lWhatITried)
 
     # Determine number of passwords cracked before trying this method
     lNumberPasswordsAlreadyCracked = count_passwords_in_jtr_pot_file()
@@ -513,6 +524,7 @@ def perform_statistical_cracking(pHashFile: str, pPercentile: float, pHashFormat
     if lUndefinedMasks: print(
         "[*] WARNING: There was no policy defined for the following masks: {}".format(lUndefinedMasks))
 
+
 def run_jtr_brute_force_mode(pHashFile: str, pMinCharactersToBruteForce: int,
                              pMaxCharactersToBruteForce: int,
                              pHashFormat: str, pPassThrough: str,
@@ -704,6 +716,8 @@ def do_run_jtr_prayer_mode(pHashFile: str, pDictionary: str, pRule: str,
     # Note: subprocess.run() accepts the command to run as a list of arguments.
     # lCmdArgs is this list.
 
+    lWhatITried = ""
+
     lStartTime = time.time()
 
     if pDebug: rm_jtr_pot_file()
@@ -716,9 +730,13 @@ def do_run_jtr_prayer_mode(pHashFile: str, pDictionary: str, pRule: str,
 
     if pVerbose:
         print("[*] Starting mode: Wordlist {}".format(pDictionary), end="")
-        if pRule: print(" with Rule {}".format(pRule))
+        lWhatITried = "Wordlist {}".format(pDictionary)
+        if pRule:
+            print(" with Rule {}".format(pRule))
+            lWhatITried += " with Rule {}".format(pRule)
+            what_i_tried.append(lWhatITried)
 
-    # Determine number of passwords cracked before trying this method
+            # Determine number of passwords cracked before trying this method
     lNumberPasswordsAlreadyCracked = count_passwords_in_jtr_pot_file()
 
     if pVerbose:
