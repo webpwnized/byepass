@@ -1,0 +1,28 @@
+## Default
+
+python3 byepass.py -f Raw-MD5 -j="--fork=2" -v -i t.hashes
+
+
+## Prayer Mode Technique 4
+
+python3 byepass.py -f Raw-MD5 -j="--fork=2" -t 4 -v -i t.hashes
+
+
+## Wordlist Mode
+
+python3 byepass.py -f Raw-MD5 -j="--fork=2" -w eharmony -v -i t.hashes
+
+
+## Stat Crack Mode
+
+python3 byepass.py -f Raw-MD5 -j="--fork=2" -s -p 0.5 -v -i t.hashes
+
+
+## JTR Single Crack Mode
+
+python3 byepass.py -f Raw-MD5 -j="--fork=2" -u -v -i t.hashes
+
+
+## Brute Force Mode
+
+python3 byepass.py -f Raw-MD5 -j="--fork=2" -b 3,4 -v -i t.hashes

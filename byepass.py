@@ -33,6 +33,7 @@
 
 from argparse import RawTextHelpFormatter
 from pwstats import PasswordStats
+from technique import Techniques
 from enum import Enum
 import config as Config
 import argparse
@@ -44,10 +45,15 @@ import re
 # GLOBALS
 masks_already_brute_forced = []
 what_i_tried = []
+g_techniques = Techniques()
+
 
 #METHODS
 def print_example_usage():
     print("""
+Attempt to crack hashes using JTR Single Crack Mode\n
+\tpython3 byepass.py --verbose --hash-format=Raw-SHA1 --jtr-single-crack --input-file=linkedin-1.hashes
+\tpython3 byepass.py -v -f Raw-SHA1 -u -i linkedin-1.hashes\n
 Attempt to crack linked-in hashes using base words linkedin and linked\n
 \tpython3 byepass.py --verbose --hash-format=Raw-SHA1 --basewords=linkedin,linked --input-file=linkedin-1.hashes
 \tpython3 byepass.py -v -f Raw-SHA1 -w linkedin,linked -i linkedin-1.hashes\n
@@ -60,8 +66,8 @@ Attempt to crack password hashes found in input file "password.hashes" using def
 Be more aggressive by using techniques level 2 in attempt to crack password hashes found in input file "password.hashes"\n
 \tpython3 byepass.py --verbose --techniques=2 --hash-format=descrypt --input-file=password.hashes
 \tpython3 byepass.py -v -a 2 -f descrypt -i password.hashes\n
-Go bonkers and try all techniques. Start with technique level 1 and proceed to level 13 in attempt to crack password hashes found in input file "password.hashes"\n
-\tpython3 byepass.py --verbose --techniques=1,2,3,4,5,6,7,8,9,10,11,12,13 --hash-format=descrypt --input-file=password.hashes
+Go bonkers and try all techniques. Start with technique level 1 and proceed to level 15 in attempt to crack password hashes found in input file "password.hashes"\n
+\tpython3 byepass.py --verbose --techniques=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 --hash-format=descrypt --input-file=password.hashes
 \tpython3 byepass.py -v -a 1,2,3,4 -f descrypt -i password.hashes\n
 Only try first two techniques. Start with technique level 1 and proceed to level 2 in attempt to crack password hashes found in input file "password.hashes"\n
 \tpython3 byepass.py --verbose --techniques=1,2 --hash-format=descrypt --input-file=password.hashes
@@ -109,11 +115,11 @@ def parse_arg_hash_format(pArgHashFormat: str) -> str:
 
 
 def parse_arg_techniques(pArgTechniques: str) -> list:
-    lTechniques = [1]
+    lTechniques = []
 
-    if lArgs.techniques is not None:
+    if pArgTechniques is not None:
 
-        lErrorMessage = 'Techniques must be supplied as a comma-separated list of integers between 0 and 13'
+        lErrorMessage = 'Techniques must be supplied as a comma-separated list of integers between 0 and 15'
 
         try:
             lTechniques = list(map(int, pArgTechniques.split(",")))
@@ -122,7 +128,7 @@ def parse_arg_techniques(pArgTechniques: str) -> list:
 
         lObservedTechniques = []
         for lTechnique in lTechniques:
-            if 0 <= lTechnique <= 13:
+            if 0 <= lTechnique <= 15:
                 if lTechnique in lObservedTechniques:
                     raise ValueError('Duplicate technique specified: {} '.format(lTechnique) + lErrorMessage)
                 lObservedTechniques.append(lTechnique)
@@ -247,35 +253,6 @@ def rm_jtr_pot_file() -> None:
         time.sleep(1)
 
 
-def run_jtr_baseword_mode(pHashFile: str, pBaseWords: str, pHashFormat: str,
-                          pVerbose: bool, pDebug: bool, pPassThrough: str,
-                          pNumberHashes: int) -> None:
-
-    if pVerbose: print("[*] Starting mode: Baseword with words {}".format(pBaseWords))
-
-    lBaseWords = list(pBaseWords.split(","))
-    lBaseWordsFileName = 'basewords/basewords.txt'
-    lBaseWordsDirectory = os.path.dirname(lBaseWordsFileName)
-    if not os.path.exists(lBaseWordsDirectory): os.makedirs(lBaseWordsDirectory)
-    lBaseWordsFile = open(lBaseWordsFileName, 'w')
-    for lWord in lBaseWords:
-        lBaseWordsFile.write("%s\n" % lWord)
-    lBaseWordsFile.flush()
-    lBaseWordsFile.close()
-    run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist="basewords/basewords.txt", pRule="Best126",
-                          pHashFormat=pHashFormat, pVerbose=pVerbose, pDebug=pDebug,
-                          pPassThrough=pPassThrough, pNumberHashes=pNumberHashes)
-    run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist="basewords/basewords.txt", pRule="OneRuleToRuleThemAll",
-                          pHashFormat=pHashFormat, pVerbose=pVerbose, pDebug=pDebug,
-                          pPassThrough=pPassThrough, pNumberHashes=pNumberHashes)
-    run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist="basewords/basewords.txt", pRule="All",
-                          pHashFormat=pHashFormat, pVerbose=pVerbose, pDebug=pDebug,
-                          pPassThrough=pPassThrough, pNumberHashes=pNumberHashes)
-    os.remove(lBaseWordsFileName)
-
-    if pVerbose: print("[*] Finished Baseword Mode")
-
-
 def run_jtr_wordlist_mode(pHashFile: str, pWordlist: str, pRule: str, pHashFormat:str,
                           pVerbose: bool, pDebug: bool, pPassThrough: str,
                           pNumberHashes: int) -> None:
@@ -330,12 +307,13 @@ def run_jtr_wordlist_mode(pHashFile: str, pWordlist: str, pRule: str, pHashForma
         print("[*] Passwords cracked per second: {}".format(lPasswordsCrackedPerSecond))
 
 
-def run_jtr_mask_mode(pHashFile: str, pMask: str, pWordlist: str, pHashFormat:str,
+def do_run_jtr_mask_mode(pHashFile: str, pMask: str, pWordlist: str, pHashFormat:str,
                       pVerbose: bool, pDebug: bool, pPassThrough: str,
                       pNumberHashes: int) -> None:
 
     # There are two modes that run brute force using masks. Keep track of masks
     # already checked in case the same mask would be tried twice.
+    lWhatITried = ""
 
     #Note: masks_already_brute_forced is a global variable
     if pMask in masks_already_brute_forced:
@@ -358,7 +336,11 @@ def run_jtr_mask_mode(pHashFile: str, pMask: str, pWordlist: str, pHashFormat:st
 
     if pVerbose:
         print("[*] Starting mask mode: {}".format(pMask))
-        if pWordlist: print("[*] Using wordlist: {}".format(pWordlist))
+        lWhatITried = "Mask {}".format(pMask)
+        if pWordlist:
+            print("[*] Using wordlist: {}".format(pWordlist))
+            lWhatITried += " using wordlist {}".format(pWordlist)
+        what_i_tried.append(lWhatITried)
 
     # Determine number of passwords cracked before trying this method
     lNumberPasswordsAlreadyCracked = count_passwords_in_jtr_pot_file()
@@ -388,7 +370,146 @@ def run_jtr_mask_mode(pHashFile: str, pMask: str, pWordlist: str, pHashFormat:st
         print("[*] Passwords cracked per second: {}".format(lPasswordsCrackedPerSecond))
 
 
-def perform_statistical_cracking(pHashFile: str, pPercentile: float, pHashFormat: str,
+def do_run_jtr_prayer_mode(pHashFile: str, pDictionary: str, pRule: str,
+                           pHashFormat: str, pPassThrough: str,
+                           pVerbose: bool, pDebug: bool, pNumberHashes: int) -> None:
+    # Note: subprocess.run() accepts the command to run as a list of arguments.
+    # lCmdArgs is this list.
+
+    lWhatITried = ""
+
+    lStartTime = time.time()
+
+    if pDebug: rm_jtr_pot_file()
+
+    lCmdArgs = [JTR_EXE_FILE_PATH]
+    if pHashFormat: lCmdArgs.append("--format={}".format(pHashFormat))
+    if pDictionary: lCmdArgs.append("--wordlist={}".format(pDictionary))
+    if pRule: lCmdArgs.append("--rules={}".format(pRule))
+    if pPassThrough: lCmdArgs.append(pPassThrough)
+
+    if pVerbose:
+        print("[*] Starting mode: Wordlist {}".format(pDictionary), end="")
+        lWhatITried = "Wordlist {}".format(pDictionary)
+        if pRule:
+            print(" with rule {}".format(pRule))
+            lWhatITried += " with rule {}".format(pRule)
+        what_i_tried.append(lWhatITried)
+
+            # Determine number of passwords cracked before trying this method
+    lNumberPasswordsAlreadyCracked = count_passwords_in_jtr_pot_file()
+
+    if pVerbose:
+        print("[*] Passwords cracked at start of prayer mode: {}".format(lNumberPasswordsAlreadyCracked))
+
+    lCmdArgs.append(pHashFile)
+    lCompletedProcess = subprocess.run(lCmdArgs, stdout=subprocess.PIPE)
+    time.sleep(0.5)
+
+    # Determine number of passwords cracked after trying this method
+    lNumberPasswordsCracked = count_passwords_in_jtr_pot_file()
+
+    lNumberPasswordsCrackedByThisMethod = lNumberPasswordsCracked - lNumberPasswordsAlreadyCracked
+    lPercentPasswordsCracked = round(lNumberPasswordsCrackedByThisMethod / pNumberHashes * 100, 2)
+
+    if pVerbose:
+        print("[*] Finished prayer mode: Wordlist {}".format(pDictionary), end="")
+        if pRule:
+            print(" with rule {}".format(pRule))
+        else:
+            print()
+        print("\tCommand was: {}".format(lCompletedProcess.args))
+        print("\tPasswords cracked at end of run: {}".format(lNumberPasswordsCracked))
+
+    print("\tPasswords cracked by mode: {} ({} percent)".format(lNumberPasswordsCrackedByThisMethod,
+                                                                lPercentPasswordsCracked))
+
+    if pDebug:
+        lRunTime = time.time() - lStartTime
+        lPasswordsCrackedPerSecond = lNumberPasswordsCrackedByThisMethod // lRunTime
+        print("\tDuration: {}".format(lRunTime))
+        print("\tPasswords cracked per second: {}".format(lPasswordsCrackedPerSecond))
+
+
+def do_run_jtr_single_mode(pHashFile: str, pHashFormat: str, pPassThrough: str,
+                           pVerbose: bool, pDebug: bool, pNumberHashes: int) -> None:
+    # Note: subprocess.run() accepts the command to run as a list of arguments.
+    # lCmdArgs is this list.
+
+    lStartTime = time.time()
+
+    if pDebug: rm_jtr_pot_file()
+
+    lCmdArgs = [JTR_EXE_FILE_PATH]
+    lCmdArgs.append("--single")
+    if pHashFormat: lCmdArgs.append("--format={}".format(pHashFormat))
+    if pPassThrough: lCmdArgs.append(pPassThrough)
+
+    if pVerbose:
+        print("[*] Starting mode: JTR Single Crack")
+        what_i_tried.append("John the Ripper (JTR) Single Crack mode")
+
+    # Determine number of passwords cracked before trying this method
+    lNumberPasswordsAlreadyCracked = count_passwords_in_jtr_pot_file()
+
+    if pVerbose:
+        print("[*] Passwords cracked at start of single crack mode: {}".format(lNumberPasswordsAlreadyCracked))
+
+    lCmdArgs.append(pHashFile)
+    lCompletedProcess = subprocess.run(lCmdArgs, stdout=subprocess.PIPE)
+    time.sleep(0.5)
+
+    # Determine number of passwords cracked after trying this method
+    lNumberPasswordsCracked = count_passwords_in_jtr_pot_file()
+
+    lNumberPasswordsCrackedByThisMethod = lNumberPasswordsCracked - lNumberPasswordsAlreadyCracked
+    lPercentPasswordsCracked = round(lNumberPasswordsCrackedByThisMethod / pNumberHashes * 100, 2)
+
+    if pVerbose:
+        print("[*] Finished single crack mode")
+        print("\tCommand was: {}".format(lCompletedProcess.args))
+        print("\tPasswords cracked at end of run: {}".format(lNumberPasswordsCracked))
+
+    print("\tPasswords cracked by mode: {} ({} percent)".format(lNumberPasswordsCrackedByThisMethod,
+                                                                lPercentPasswordsCracked))
+
+    if pDebug:
+        lRunTime = time.time() - lStartTime
+        lPasswordsCrackedPerSecond = lNumberPasswordsCrackedByThisMethod // lRunTime
+        print("\tDuration: {}".format(lRunTime))
+        print("\tPasswords cracked per second: {}".format(lPasswordsCrackedPerSecond))
+
+
+def run_jtr_baseword_mode(pHashFile: str, pBaseWords: str, pHashFormat: str,
+                          pVerbose: bool, pDebug: bool, pPassThrough: str,
+                          pNumberHashes: int) -> None:
+
+    if pVerbose: print("[*] Starting mode: Baseword with words {}".format(pBaseWords))
+
+    lBaseWords = list(pBaseWords.split(","))
+    lBaseWordsFileName = 'basewords/basewords.txt'
+    lBaseWordsDirectory = os.path.dirname(lBaseWordsFileName)
+    if not os.path.exists(lBaseWordsDirectory): os.makedirs(lBaseWordsDirectory)
+    lBaseWordsFile = open(lBaseWordsFileName, 'w')
+    for lWord in lBaseWords:
+        lBaseWordsFile.write("%s\n" % lWord)
+    lBaseWordsFile.flush()
+    lBaseWordsFile.close()
+    run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist="basewords/basewords.txt", pRule="Best126",
+                          pHashFormat=pHashFormat, pVerbose=pVerbose, pDebug=pDebug,
+                          pPassThrough=pPassThrough, pNumberHashes=pNumberHashes)
+    run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist="basewords/basewords.txt", pRule="OneRuleToRuleThemAll",
+                          pHashFormat=pHashFormat, pVerbose=pVerbose, pDebug=pDebug,
+                          pPassThrough=pPassThrough, pNumberHashes=pNumberHashes)
+    run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist="basewords/basewords.txt", pRule="All",
+                          pHashFormat=pHashFormat, pVerbose=pVerbose, pDebug=pDebug,
+                          pPassThrough=pPassThrough, pNumberHashes=pNumberHashes)
+    os.remove(lBaseWordsFileName)
+
+    if pVerbose: print("[*] Finished Baseword Mode")
+
+
+def run_statistical_crack_mode(pHashFile: str, pPercentile: float, pHashFormat: str,
                                  pVerbose: bool, pDebug: bool, pPassThrough: str,
                                  pNumberHashes: int) -> None:
 
@@ -423,7 +544,7 @@ def perform_statistical_cracking(pHashFile: str, pPercentile: float, pHashFormat
         lCountCharacters = int(len(lMask) / 2)
         if lCountCharacters <= MAX_CHARS_TO_BRUTEFORCE:
             lWordlist = ""
-            run_jtr_mask_mode(pHashFile=pHashFile, pMask=lMask, pWordlist=lWordlist,
+            do_run_jtr_mask_mode(pHashFile=pHashFile, pMask=lMask, pWordlist=lWordlist,
                               pHashFormat=pHashFormat, pVerbose=pVerbose, pDebug=pDebug,
                               pPassThrough=pPassThrough, pNumberHashes=pNumberHashes)
         else:
@@ -510,7 +631,7 @@ def perform_statistical_cracking(pHashFile: str, pPercentile: float, pHashFormat
                 if len(lSuffix) <= 4:
                     lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
                     lMaskParam = "--mask=?w{}".format(lSuffix)
-                    run_jtr_mask_mode(pHashFile=pHashFile, pMask=lMaskParam, pWordlist=lWordlist, pHashFormat=pHashFormat,
+                    do_run_jtr_mask_mode(pHashFile=pHashFile, pMask=lMaskParam, pWordlist=lWordlist, pHashFormat=pHashFormat,
                                       pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough,
                                       pNumberHashes=pNumberHashes)
                 else:
@@ -555,267 +676,37 @@ def run_jtr_brute_force_mode(pHashFile: str, pMinCharactersToBruteForce: int,
                 lMasks.append(lUpperLowerDigitMask)
 
         for lMask in lMasks:
-            run_jtr_mask_mode(pHashFile=pHashFile, pMask=lMask, pWordlist=None,
+            do_run_jtr_mask_mode(pHashFile=pHashFile, pMask=lMask, pWordlist=None,
                               pHashFormat=pHashFormat, pPassThrough=pPassThrough,
                               pVerbose=pVerbose, pDebug=pDebug, pNumberHashes=pNumberHashes)
+
+
+def run_jtr_single_mode(pHashFile: str, pHashFormat: str, pPassThrough: str,
+                        pVerbose: bool, pDebug: bool, pNumberHashes: int) -> None:
+    """
+    :rtype: None
+    """
+    # Hard to say how many mangles but will be proportional to number of hashes
+    do_run_jtr_single_mode(pHashFile=pHashFile, pHashFormat=pHashFormat,
+                           pPassThrough=pPassThrough, pVerbose=pVerbose,
+                           pDebug=pDebug, pNumberHashes=pNumberHashes)
 
 
 def run_jtr_prayer_mode(pHashFile: str, pMethod: int, pHashFormat: str,
                            pPassThrough: str, pVerbose: bool, pDebug: bool,
                            pNumberHashes: int) -> None:
 
-    if pMethod == 1:
-        # Dictionaries have less than 10,000 words
-        # Rules have up to about 1,000 mangles
-        # Factor: <10,000,000
-        lFolder = "dictionaries"
-        lDictionaries = ["calendar.txt", "short-list.txt", "brands.txt","movie-characters.txt",
-                         "animals.txt","astrology.txt","songs.txt"]
-        lRules = ["SlowHashesPhase1", "Best126", "SlowHashesPhase2"]
-
-        # <1,000 words and <10,000 mangles
-        # Factor: <100,000
-        do_run_jtr_prayer_mode(pHashFile=pHashFile, pDictionary="dictionaries/calendar.txt",
-                               pRule="Calendar", pHashFormat=pHashFormat,
-                               pPassThrough=pPassThrough, pVerbose=pVerbose,
-                               pDebug=pDebug, pNumberHashes=pNumberHashes)
-
-        # Hard to say how many mangles but will be proportional to number of hashes
-        do_run_jtr_single_mode(pHashFile=pHashFile, pHashFormat=pHashFormat,
-                               pPassThrough=pPassThrough, pVerbose=pVerbose,
-                               pDebug=pDebug, pNumberHashes=pNumberHashes)
-
-    elif pMethod == 2:
-        # Dictionaries have about 10,000 words
-        # Rules have up to about 1,000 mangles
-        # Factor: 10,000,000
-        lFolder = "dictionaries"
-        lDictionaries = ["anime.txt","sports-related-words.txt","bible.txt","top-10000-english-words.txt",
-                         "top-10000-spanish-words.txt","top-10000-german-words.txt"]
-        lRules = ["SlowHashesPhase1", "Best126", "SlowHashesPhase2"]
-
-    elif pMethod == 3:
-        # Dictionaries have less than 10,000 words
-        # Rules have up to about 6,500 mangles
-        # Factor: <65,000,000
-
-        lFolder = "dictionaries"
-        lDictionaries = ["calendar.txt", "short-list.txt", "brands.txt","movie-characters.txt",
-                         "animals.txt","astrology.txt","songs.txt"]
-        lRules = ["SlowHashesPhase3"]
-
-    elif pMethod == 4:
-        # Dictionaries have about 10,000 words
-        # Rules have up to about 6,500 mangles
-        # Factor: 65,000,000
-        lFolder = "dictionaries"
-        lDictionaries = ["anime.txt","sports-related-words.txt","bible.txt","top-10000-english-words.txt",
-                         "top-10000-spanish-words.txt","top-10000-german-words.txt"]
-        lRules = ["SlowHashesPhase3"]
-
-    elif pMethod == 5:
-        # Dictionaries has 40,000,000 words
-        # Rules has 1 mangles
-        # Factor: 80,000,000
-        lFolder = "passwords"
-        lDictionaries = ["passwords-hailmary.txt"]
-        lRules = ["Hailmary"]
-
-    elif pMethod == 6:
-        # Dictionaries has 50,000 words
-        # Rules have up to about 1,000 mangles
-        # Factor: 50,000,000
-        lRules = ["SlowHashesPhase1", "Best126", "SlowHashesPhase2"]
-        for lRule in lRules:
-            do_run_jtr_prayer_mode(pHashFile=pHashFile, pDictionary="passwords/worst-50000-passwords.txt",
-                                   pRule=lRule, pHashFormat=pHashFormat,
-                                   pPassThrough=pPassThrough, pVerbose=pVerbose,
-                                   pDebug=pDebug, pNumberHashes=pNumberHashes)
-
-        # Dictionaries have 50,000 - 180,000 words
-        # Rules have up to about 1,000 mangles
-        # Factor: 180,000,000
-        lFolder = "dictionaries"
-        lDictionaries = ["persons-names.txt","other-base-words.txt","places.txt"]
-        lRules = ["SlowHashesPhase1", "Best126", "SlowHashesPhase2"]
-
-    elif pMethod == 7:
-        # Dictionaries have less than 10,000 words
-        # Rules have up to about 50,000 mangles
-        # Factor: <500,000,000
-        lFolder = "dictionaries"
-        lDictionaries = ["calendar.txt", "short-list.txt", "brands.txt","movie-characters.txt",
-                         "animals.txt","astrology.txt","songs.txt"]
-        lRules = ["OneRuleToRuleThemAll"]
-
-    elif pMethod == 8:
-        # Dictionaries have about 10,000 words
-        # Rules have up to about 50,000 mangles
-        # Factor: 500,000,000
-        lFolder = "dictionaries"
-        lDictionaries = ["anime.txt","sports-related-words.txt","bible.txt","top-10000-english-words.txt",
-                         "top-10000-spanish-words.txt","top-10000-german-words.txt"]
-        lRules = ["OneRuleToRuleThemAll"]
-
-    elif pMethod == 9:
-        # Dictionaries have ~150,000 words
-        # Rules have up to about 6,500 mangles
-        # Factor: 975,000,000
-        lFolder = "dictionaries"
-        lDictionaries = ["persons-names.txt","other-base-words.txt","places.txt"]
-        lRules = ["SlowHashesPhase3"]
-
-    elif pMethod == 10:
-        # Dictionaries have up to ~2,000,000 words
-        # Rules have up to about 1,000 mangles
-        # Factor: 2,000,000,000
-        lFolder = "dictionaries"
-        lDictionaries = ["all-english-words.txt","all-spanish-words.txt",
-                         "all-french-words.txt","all-german-words.txt"]
-        lRules = ["SlowHashesPhase1", "Best126", "SlowHashesPhase2"]
-
-    elif pMethod == 11:
-        # Dictionaries have ~150,000 words
-        # Rules have up to about 50,000 mangles
-        # Factor: 7,500,000,000
-        lFolder = "dictionaries"
-        lDictionaries = ["persons-names.txt","other-base-words.txt","places.txt"]
-        lRules = ["OneRuleToRuleThemAll"]
-
-    elif pMethod == 12:
-        # Dictionaries have up to ~2,000,000 words
-        # Rules have up to about 6,500 mangles
-        # Factor: 13,000,000,000
-        lFolder = "dictionaries"
-        lDictionaries = ["all-english-words.txt","all-spanish-words.txt",
-                         "all-french-words.txt","all-german-words.txt"]
-        lRules = ["SlowHashesPhase3"]
-
-    elif pMethod == 13:
-        # Dictionaries have up to ~2,000,000 words
-        # Rules have up to about 50,000 mangles
-        # Factor: 100,000,000,000
-        lFolder = "dictionaries"
-        lDictionaries = ["all-english-words.txt","all-spanish-words.txt",
-                         "all-french-words.txt","all-german-words.txt"]
-        lRules = ["OneRuleToRuleThemAll"]
+    lFolder = g_techniques.techniques[pMethod].Folder
+    lDictionaries = g_techniques.techniques[pMethod].Dictionaries
+    lRules = g_techniques.techniques[pMethod].Rules
 
     # Run the wordlist and rule
     for lDictionary in lDictionaries:
         for lRule in lRules:
             do_run_jtr_prayer_mode(pHashFile=pHashFile, pDictionary=lFolder + "/" + lDictionary,
-                                   pRule=lRule, pHashFormat=pHashFormat,
-                                   pPassThrough=pPassThrough, pVerbose=pVerbose,
-                                   pDebug=pDebug, pNumberHashes=pNumberHashes)
-
-
-def do_run_jtr_prayer_mode(pHashFile: str, pDictionary: str, pRule: str,
-                           pHashFormat: str, pPassThrough: str,
-                           pVerbose: bool, pDebug: bool, pNumberHashes: int) -> None:
-
-    # Note: subprocess.run() accepts the command to run as a list of arguments.
-    # lCmdArgs is this list.
-
-    lWhatITried = ""
-
-    lStartTime = time.time()
-
-    if pDebug: rm_jtr_pot_file()
-
-    lCmdArgs = [JTR_EXE_FILE_PATH]
-    if pHashFormat: lCmdArgs.append("--format={}".format(pHashFormat))
-    if pDictionary: lCmdArgs.append("--wordlist={}".format(pDictionary))
-    if pRule: lCmdArgs.append("--rules={}".format(pRule))
-    if pPassThrough: lCmdArgs.append(pPassThrough)
-
-    if pVerbose:
-        print("[*] Starting mode: Wordlist {}".format(pDictionary), end="")
-        lWhatITried = "Wordlist {}".format(pDictionary)
-        if pRule:
-            print(" with Rule {}".format(pRule))
-            lWhatITried += " with Rule {}".format(pRule)
-            what_i_tried.append(lWhatITried)
-
-            # Determine number of passwords cracked before trying this method
-    lNumberPasswordsAlreadyCracked = count_passwords_in_jtr_pot_file()
-
-    if pVerbose:
-        print("[*] Passwords cracked at start of prayer mode: {}".format(lNumberPasswordsAlreadyCracked))
-
-    lCmdArgs.append(pHashFile)
-    lCompletedProcess = subprocess.run(lCmdArgs, stdout=subprocess.PIPE)
-    time.sleep(0.5)
-
-    # Determine number of passwords cracked after trying this method
-    lNumberPasswordsCracked = count_passwords_in_jtr_pot_file()
-
-    lNumberPasswordsCrackedByThisMethod = lNumberPasswordsCracked - lNumberPasswordsAlreadyCracked
-    lPercentPasswordsCracked = round(lNumberPasswordsCrackedByThisMethod / pNumberHashes * 100, 2)
-
-    if pVerbose:
-        print("[*] Finished prayer mode: Wordlist {}".format(pDictionary), end="")
-        if pRule:
-            print(" with Rule {}".format(pRule))
-        else:
-            print()
-        print("\tCommand was: {}".format(lCompletedProcess.args))
-        print("\tPasswords cracked at end of run: {}".format(lNumberPasswordsCracked))
-
-    print("\tPasswords cracked by mode: {} ({} percent)".format(lNumberPasswordsCrackedByThisMethod, lPercentPasswordsCracked))
-
-    if pDebug:
-        lRunTime = time.time() - lStartTime
-        lPasswordsCrackedPerSecond = lNumberPasswordsCrackedByThisMethod // lRunTime
-        print("\tDuration: {}".format(lRunTime))
-        print("\tPasswords cracked per second: {}".format(lPasswordsCrackedPerSecond))
-
-
-def do_run_jtr_single_mode(pHashFile: str, pHashFormat: str, pPassThrough: str,
-                           pVerbose: bool, pDebug: bool, pNumberHashes: int) -> None:
-
-    # Note: subprocess.run() accepts the command to run as a list of arguments.
-    # lCmdArgs is this list.
-
-    lStartTime = time.time()
-
-    if pDebug: rm_jtr_pot_file()
-
-    lCmdArgs = [JTR_EXE_FILE_PATH]
-    lCmdArgs.append("--single")
-    if pHashFormat: lCmdArgs.append("--format={}".format(pHashFormat))
-    if pPassThrough: lCmdArgs.append(pPassThrough)
-
-    if pVerbose:
-        print("[*] Starting mode: JTR Single Crack")
-
-    # Determine number of passwords cracked before trying this method
-    lNumberPasswordsAlreadyCracked = count_passwords_in_jtr_pot_file()
-
-    if pVerbose:
-        print("[*] Passwords cracked at start of single crack mode: {}".format(lNumberPasswordsAlreadyCracked))
-
-    lCmdArgs.append(pHashFile)
-    lCompletedProcess = subprocess.run(lCmdArgs, stdout=subprocess.PIPE)
-    time.sleep(0.5)
-
-    # Determine number of passwords cracked after trying this method
-    lNumberPasswordsCracked = count_passwords_in_jtr_pot_file()
-
-    lNumberPasswordsCrackedByThisMethod = lNumberPasswordsCracked - lNumberPasswordsAlreadyCracked
-    lPercentPasswordsCracked = round(lNumberPasswordsCrackedByThisMethod / pNumberHashes * 100, 2)
-
-    if pVerbose:
-        print("[*] Finished single crack mode")
-        print("\tCommand was: {}".format(lCompletedProcess.args))
-        print("\tPasswords cracked at end of run: {}".format(lNumberPasswordsCracked))
-
-    print("\tPasswords cracked by mode: {} ({} percent)".format(lNumberPasswordsCrackedByThisMethod, lPercentPasswordsCracked))
-
-    if pDebug:
-        lRunTime = time.time() - lStartTime
-        lPasswordsCrackedPerSecond = lNumberPasswordsCrackedByThisMethod // lRunTime
-        print("\tDuration: {}".format(lRunTime))
-        print("\tPasswords cracked per second: {}".format(lPasswordsCrackedPerSecond))
+                                    pRule=lRule, pHashFormat=pHashFormat,
+                                    pPassThrough=pPassThrough, pVerbose=pVerbose,
+                                    pDebug=pDebug, pNumberHashes=pNumberHashes)
 
 
 if __name__ == '__main__':
@@ -850,8 +741,11 @@ if __name__ == '__main__':
                             action='store')
     lArgParser.add_argument('-t', '--techniques',
                             type=str,
-                            help="Comma-separated list of integers between 0-13 that determines what password cracking techniques are attempted. Default is level 1. Example of running levels 1 and 2 --techniques=1,2\n\n0: Skip prayer mode entirely\n1: Small Dictionaries. Small Rulesets\n2: Medium Dictionaries. Small Rulesets\n3: Small Dictionaries. Medium Rulesets\n4: Medium Dictionaries. Medium Rulesets\n5: Large Password List. Custom Ruleset\n6: Medium-Large Dictionaries. Small Rulesets\n7: Small Dictionaries. Large Rulesets\n8: Medium Dictionaries. Large Rulesets\n9: Medium-Large Dictionaries. Medium Rulesets\n10: Large Dictionaries. Small Rulesets\n11: Medium-Large Dictionaries. Large Rulesets\n12: Large Dictionaries. Medium Rulesets\n13: Large Dictionaries. Large Rulesets\n\n",
+                            help="Comma-separated list of integers between 0-15 that determines what password cracking techniques are attempted. Default is level 1,2 and 3. Example of running levels 1 and 2 --techniques=1,2\n\n1: Common Passwords\n2: Small Dictionaries. Small Rulesets\n3: Calendar Related\n4: Medium Dictionaries. Small Rulesets\n5: Small Dictionaries. Medium Rulesets\n6: Medium Dictionaries. Medium Rulesets\n7: Large Password List. Custom Ruleset\n8: Medium-Large Dictionaries. Small Rulesets\n9: Small Dictionaries. Large Rulesets\n10: Medium Dictionaries. Large Rulesets\n11: Medium-Large Dictionaries. Medium Rulesets\n12: Large Dictionaries. Small Rulesets\n13: Medium-Large Dictionaries. Large Rulesets\n14: Large Dictionaries. Medium Rulesets\n15: Large Dictionaries. Large Rulesets\n\n",
                             action='store')
+    lArgParser.add_argument('-u', '--jtr-single-crack',
+                            help='Run John the Ripper''s Single Crack mode. This mode utilizes information in the user account metadata.',
+                            action='store_true')
     lArgParser.add_argument('-s', '--stat-crack',
                             help="Enable statistical cracking. Byepass will run relatively fast cracking strategies in hopes of cracking enough passwords to induce a pattern and create \"high probability\" masks. Byepass will use the masks in an attempt to crack more passwords.\n\n",
                             action='store_true')
@@ -890,9 +784,13 @@ if __name__ == '__main__':
     # Parse and validate input parameters
     lHashFile = lArgs.input_file
     lVerbose = lArgs.verbose
+    lRunSingleCrack = lArgs.jtr_single_crack
     lDebug = parse_arg_debug(lArgs.debug)
     lHashFormat = parse_arg_hash_format(lArgs.hash_format)
     lTechniques = parse_arg_techniques(lArgs.techniques)
+    lRunDefaultTechniques = not lRunSingleCrack and not lArgs.basewords and \
+                            not lArgs.brute_force and not lArgs.techniques and \
+                            not lArgs.stat_crack
 
     lNumberHashes = count_hashes_in_input_file(pHashFile=lHashFile)
     lNumberPasswordsPOTFileAtStart = count_passwords_in_jtr_pot_file()
@@ -901,11 +799,23 @@ if __name__ == '__main__':
         lStartTime = time.time()
         print("[*] Working on input file {} ({} lines)".format(lHashFile, lNumberHashes))
 
+    # If user did not specify any technique, run default technique
+    if lRunDefaultTechniques:
+        # Run technique 1,2 and 3 by default
+        lTechniques = [1,2,3]
+        print("[*] WARNING: No technique specified. Running techniques 1,2 and 3")
+
     # Hopefully user has some knowledge of system to give good base words
     if lArgs.basewords:
         run_jtr_baseword_mode(pHashFile=lHashFile, pBaseWords=lArgs.basewords, pHashFormat=lHashFormat,
                               pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through,
                               pNumberHashes=lNumberHashes)
+
+    # John the Ripper Single Crack mode
+    if lRunSingleCrack:
+        run_jtr_single_mode(pHashFile=lHashFile, pHashFormat=lHashFormat, pVerbose=lVerbose,
+                            pDebug=lDebug, pPassThrough=lArgs.pass_through, pNumberHashes=lNumberHashes)
+
     # Smart brute-force
     if lArgs.brute_force:
         lMinCharactersToBruteForce, lMaxCharactersToBruteForce = parse_arg_brute_force(lArgs.brute_force)
@@ -915,19 +825,17 @@ if __name__ == '__main__':
                                  pDebug=lDebug, pPassThrough=lArgs.pass_through,
                                  pNumberHashes=lNumberHashes)
 
-    # Try to crack some passwords as quickly as possible to use in statistical analysis
-    # If no technique is given, default is 1. If 0 is given, this mode is skipped
-    if 0 not in lTechniques:
-        for i in lTechniques:
-            run_jtr_prayer_mode(pHashFile=lHashFile, pMethod=i, pHashFormat=lHashFormat,
-                                pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through,
-                                pNumberHashes=lNumberHashes)
+    # Try to crack passwords using the techniques specified
+    for i in lTechniques:
+        run_jtr_prayer_mode(pHashFile=lHashFile, pMethod=i, pHashFormat=lHashFormat,
+                            pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through,
+                            pNumberHashes=lNumberHashes)
 
     # If the user chooses -s option, begin statistical analysis to aid targeted cracking routines
     if lArgs.stat_crack:
 
         lPercentile = parse_arg_percentile(lArgs.percentile)
-        perform_statistical_cracking(pHashFile=lHashFile, pPercentile=lPercentile, pHashFormat=lHashFormat,
+        run_statistical_crack_mode(pHashFile=lHashFile, pPercentile=lPercentile, pHashFormat=lHashFormat,
                                      pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through,
                                      pNumberHashes=lNumberHashes)
 
