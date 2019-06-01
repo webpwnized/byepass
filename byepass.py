@@ -34,6 +34,7 @@
 from argparse import RawTextHelpFormatter
 from pwstats import PasswordStats
 from technique import Techniques
+from watcher import Watcher
 from enum import Enum
 import config as Config
 import argparse
@@ -43,10 +44,9 @@ import time
 import re
 
 # GLOBALS
-masks_already_brute_forced = []
-what_i_tried = []
+g_masks_already_brute_forced = []
+g_what_i_tried = []
 g_techniques = Techniques()
-
 
 #METHODS
 def print_example_usage():
@@ -59,19 +59,19 @@ Attempt to crack linked-in hashes using base words linkedin and linked\n
 \tpython3 byepass.py -v -f Raw-SHA1 -w linkedin,linked -i linkedin-1.hashes\n
 Attempt to brute force words from 3 to 5 characters in length\n
 \tpython3 byepass.py --verbose --hash-format=Raw-MD5 --brute-force=3,5 --input-file=hashes.txt
-\tpython3 byepass.py -f Raw-MD5 -j="--fork=4" -v -t 0 -r 3,5 -i hashes.txt\n
-Attempt to crack password hashes found in input file "password.hashes" using default techniques level 1\n
+\tpython3 byepass.py -f Raw-MD5 -j="--fork=4" -v -b 3,5 -i hashes.txt\n
+Attempt to crack password hashes found in input file "password.hashes" using default techniques\n
 \tpython3 byepass.py --verbose --hash-format=descrypt --input-file=password.hashes
 \tpython3 byepass.py -v -f descrypt -i password.hashes\n
-Be more aggressive by using techniques level 2 in attempt to crack password hashes found in input file "password.hashes"\n
-\tpython3 byepass.py --verbose --techniques=2 --hash-format=descrypt --input-file=password.hashes
-\tpython3 byepass.py -v -a 2 -f descrypt -i password.hashes\n
+Be more aggressive by using techniques level 4 in attempt to crack password hashes found in input file "password.hashes"\n
+\tpython3 byepass.py --verbose --techniques=4 --hash-format=descrypt --input-file=password.hashes
+\tpython3 byepass.py -v -t 4 -f descrypt -i password.hashes\n
 Go bonkers and try all techniques. Start with technique level 1 and proceed to level 15 in attempt to crack password hashes found in input file "password.hashes"\n
 \tpython3 byepass.py --verbose --techniques=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 --hash-format=descrypt --input-file=password.hashes
-\tpython3 byepass.py -v -a 1,2,3,4 -f descrypt -i password.hashes\n
+\tpython3 byepass.py -v -t 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 -f descrypt -i password.hashes\n
 Only try first two techniques. Start with technique level 1 and proceed to level 2 in attempt to crack password hashes found in input file "password.hashes"\n
 \tpython3 byepass.py --verbose --techniques=1,2 --hash-format=descrypt --input-file=password.hashes
-\tpython3 byepass.py -v -a 1,2 -f descrypt -i password.hashes\n
+\tpython3 byepass.py -v -t 1,2 -f descrypt -i password.hashes\n
 Attempt to crack password hashes found in input file "password.hashes", then run statistical analysis to determine masks needed to crack 50 percent of passwords, and try to crack again using the masks.\n
 \tpython3 byepass.py --verbose --hash-format=descrypt --stat-crack --percentile=0.50 --input-file=password.hashes
 \tpython3 byepass.py -v -f descrypt -s -p 0.50 -i password.hashes\n
@@ -82,8 +82,8 @@ Attempt to crack linked-in hashes using base words linkedin and linked\n
 \tpython3 byepass.py --verbose --hash-format=Raw-SHA1 --basewords=linkedin,linked --input-file=linkedin-1.hashes
 \tpython3 byepass.py -v -f -w linkedin,linked -i linkedin-1.hashes\n
 Do not run prayer mode. Only run statistical analysis to determine masks needed to crack 50 percent of passwords, and try to crack using the masks.\n
-\tpython3 byepass.py -v --techniques=0 --hash-format=descrypt --stat-crack --percentile=0.50 --input-file=password.hashes
-\tpython3 byepass.py -v -a 0 -f descrypt -s -p 0.50 -i password.hashes\n
+\tpython3 byepass.py -v --hash-format=descrypt --stat-crack --percentile=0.50 --input-file=password.hashes
+\tpython3 byepass.py -v -f descrypt -s -p 0.50 -i password.hashes\n
 Use pass-through to pass fork command to JTR\n
 \tpython3 byepass.py --verbose --pass-through="--fork=4" --hash-format=descrypt --input-file=password.hashes
 \tpython3 byepass.py -v -j="--fork=4" -f descrypt -i password.hashes
@@ -176,7 +176,7 @@ def print_closing_message(pNumberHashes: int, pNumberPasswordsPOTFileAtStart: in
 
         print()
         print("[*] Techniques Attempted")
-        for string in what_i_tried:
+        for string in g_what_i_tried:
             print("\t{}".format(string))
         print()
         print("[*] Duration: {}".format(time.strftime("%H:%M:%S", lElaspsedTime)))
@@ -245,22 +245,17 @@ def count_passwords_in_jtr_pot_file() -> int:
     return lLines
 
 
-def rm_jtr_pot_file() -> None:
-
-    if os.path.exists(JTR_POT_FILE_PATH):
-        lCompletedProcess = subprocess.run(["rm", JTR_POT_FILE_PATH], stdout=subprocess.PIPE)
-        print("[*] Deleted file {}".format(JTR_POT_FILE_PATH))
-        time.sleep(1)
-
-
 def run_jtr_wordlist_mode(pHashFile: str, pWordlist: str, pRule: str, pHashFormat:str,
                           pVerbose: bool, pDebug: bool, pPassThrough: str,
                           pNumberHashes: int) -> None:
 
-    lWhatITried = ""
-    lStartTime = time.time()
+    lCrackingMode = "Wordlist {}".format(pWordlist)
+    if pRule: lCrackingMode += " with rule {}".format(pRule)
 
-    if pDebug: rm_jtr_pot_file()
+    lWatcher = Watcher(pCrackingMode=lCrackingMode, pNumberHashes=pNumberHashes, pVerbose=pVerbose,
+                       pDebug=pDebug, pJTRPotFilePath=JTR_POT_FILE_PATH)
+    lWatcher.start_timer()
+    lWatcher.print_mode_start_message()
 
     lCmdArgs = [JTR_EXE_FILE_PATH]
     if pHashFormat: lCmdArgs.append("--format={}".format(pHashFormat))
@@ -268,43 +263,12 @@ def run_jtr_wordlist_mode(pHashFile: str, pWordlist: str, pRule: str, pHashForma
     if pRule: lCmdArgs.append("--rule={}".format(pRule))
     if pPassThrough: lCmdArgs.append(pPassThrough)
     lCmdArgs.append(pHashFile)
-
-    if pVerbose:
-        print("[*] Starting wordlist mode: {}".format(pWordlist))
-        lWhatITried = "Wordlist {}".format(pWordlist)
-        if pRule:
-            print("[*] Using rule: {}".format(pRule))
-            lWhatITried += " with rule {}".format(pRule)
-        what_i_tried.append(lWhatITried)
-
-    # Determine number of passwords cracked before trying this method
-    lNumberPasswordsAlreadyCracked = count_passwords_in_jtr_pot_file()
-
-    if pVerbose:
-        print("[*] Passwords cracked before using wordlist {}: {}".format(pWordlist, lNumberPasswordsAlreadyCracked))
-
     lCompletedProcess = subprocess.run(lCmdArgs, stdout=subprocess.PIPE)
-    time.sleep(1)
+    time.sleep(0.5)
 
-    # Determine number of passwords cracked after trying this method
-    lNumberPasswordsCracked = count_passwords_in_jtr_pot_file()
-
-    lNumberPasswordsCrackedByThisMethod = lNumberPasswordsCracked - lNumberPasswordsAlreadyCracked
-    lPercentPasswordsCracked = round(lNumberPasswordsCrackedByThisMethod / pNumberHashes * 100, 2)
-    print("[*] Passwords cracked using wordlist {}: {} ({} percent)".format(pWordlist, lNumberPasswordsCrackedByThisMethod, lPercentPasswordsCracked))
-
-    if pVerbose:
-        print("[*] Finished wordlist mode: {}".format(pWordlist))
-        if pRule: print("\tUsed rule: {}".format(pRule))
-        print("\tCommand: {}".format(lCompletedProcess.args))
-        #print(lCompletedProcess.stdout)
-        print("\tPasswords cracked: {} ({} percent)".format(lNumberPasswordsCrackedByThisMethod, lPercentPasswordsCracked))
-
-    if pDebug:
-        lRunTime = time.time() - lStartTime
-        lPasswordsCrackedPerSecond = lNumberPasswordsCrackedByThisMethod // lRunTime
-        print("[*] Duration: {}".format(lRunTime))
-        print("[*] Passwords cracked per second: {}".format(lPasswordsCrackedPerSecond))
+    lWatcher.stop_timer()
+    lWatcher.print_mode_finsihed_message()
+    if pVerbose: g_what_i_tried.append("{}\t{}\t({}%)".format(lCrackingMode, lWatcher.number_passwords_cracked_by_this_mode, lWatcher.percent_passwords_cracked_by_this_mode))
 
 
 def do_run_jtr_mask_mode(pHashFile: str, pMask: str, pWordlist: str, pHashFormat:str,
@@ -313,61 +277,35 @@ def do_run_jtr_mask_mode(pHashFile: str, pMask: str, pWordlist: str, pHashFormat
 
     # There are two modes that run brute force using masks. Keep track of masks
     # already checked in case the same mask would be tried twice.
-    lWhatITried = ""
 
-    #Note: masks_already_brute_forced is a global variable
-    if pMask in masks_already_brute_forced:
+    #Note: g_masks_already_brute_forced is a global variable
+    if pMask in g_masks_already_brute_forced:
         if pVerbose:
             print("[*] Mask {} has already been tested in this session. Moving on to next task.".format(pMask))
         return None
     else:
-        masks_already_brute_forced.append(pMask)
+        g_masks_already_brute_forced.append(pMask)
 
-    lStartTime = time.time()
+    lCrackingMode = "Mask {}".format(pMask)
+    if pWordlist: lCrackingMode += " using wordlist {}".format(pWordlist)
 
-    if pDebug: rm_jtr_pot_file()
-
+    lWatcher = Watcher(pCrackingMode=lCrackingMode, pNumberHashes=pNumberHashes, pVerbose=pVerbose,
+                       pDebug=pDebug, pJTRPotFilePath=JTR_POT_FILE_PATH)
+    lWatcher.start_timer()
+    lWatcher.print_mode_start_message()
+    
     lCmdArgs = [JTR_EXE_FILE_PATH]
     if pHashFormat: lCmdArgs.append("--format={}".format(pHashFormat))
     lCmdArgs.append("--mask={}".format(pMask))
     if pWordlist: lCmdArgs.append("--wordlist={}".format(pWordlist))
     if pPassThrough: lCmdArgs.append(pPassThrough)
     lCmdArgs.append(pHashFile)
-
-    if pVerbose:
-        print("[*] Starting mask mode: {}".format(pMask))
-        lWhatITried = "Mask {}".format(pMask)
-        if pWordlist:
-            print("[*] Using wordlist: {}".format(pWordlist))
-            lWhatITried += " using wordlist {}".format(pWordlist)
-        what_i_tried.append(lWhatITried)
-
-    # Determine number of passwords cracked before trying this method
-    lNumberPasswordsAlreadyCracked = count_passwords_in_jtr_pot_file()
-
-    if pVerbose:
-        print("[*] Passwords cracked before using mask {}: {}".format(pMask, lNumberPasswordsAlreadyCracked))
-
     lCompletedProcess = subprocess.run(lCmdArgs, stdout=subprocess.PIPE)
-    time.sleep(1)
+    time.sleep(0.5)
 
-    # Determine number of passwords cracked after trying this method
-    lNumberPasswordsCracked = count_passwords_in_jtr_pot_file()
-
-    lNumberPasswordsCrackedByThisMethod = lNumberPasswordsCracked - lNumberPasswordsAlreadyCracked
-    lPercentPasswordsCracked = round(lNumberPasswordsCrackedByThisMethod / pNumberHashes * 100, 2)
-    print("[*] Passwords cracked using mask {}: {} ({} percent)".format(pMask, lNumberPasswordsCrackedByThisMethod, lPercentPasswordsCracked))
-
-    if pVerbose:
-        print("[*] Finished mask mode: {}".format(pMask))
-        print("\tCommand: {}".format(lCompletedProcess.args))
-        print("\tPasswords cracked: {} ({} percent)".format(lNumberPasswordsCrackedByThisMethod, lPercentPasswordsCracked))
-
-    if pDebug:
-        lRunTime = time.time() - lStartTime
-        lPasswordsCrackedPerSecond = lNumberPasswordsCrackedByThisMethod // lRunTime
-        print("[*] Duration: {}".format(lRunTime))
-        print("[*] Passwords cracked per second: {}".format(lPasswordsCrackedPerSecond))
+    lWatcher.stop_timer()
+    lWatcher.print_mode_finsihed_message()
+    if pVerbose: g_what_i_tried.append("{}\t{}\t({}%)".format(lCrackingMode, lWatcher.number_passwords_cracked_by_this_mode, lWatcher.percent_passwords_cracked_by_this_mode))
 
 
 def do_run_jtr_prayer_mode(pHashFile: str, pDictionary: str, pRule: str,
@@ -376,59 +314,26 @@ def do_run_jtr_prayer_mode(pHashFile: str, pDictionary: str, pRule: str,
     # Note: subprocess.run() accepts the command to run as a list of arguments.
     # lCmdArgs is this list.
 
-    lWhatITried = ""
+    lCrackingMode = "Wordlist {}".format(pDictionary)
+    if pRule: lCrackingMode += " with rule {}".format(pRule)
 
-    lStartTime = time.time()
-
-    if pDebug: rm_jtr_pot_file()
+    lWatcher = Watcher(pCrackingMode=lCrackingMode, pNumberHashes=pNumberHashes, pVerbose=pVerbose,
+                       pDebug=pDebug, pJTRPotFilePath=JTR_POT_FILE_PATH)
+    lWatcher.start_timer()
+    lWatcher.print_mode_start_message()
 
     lCmdArgs = [JTR_EXE_FILE_PATH]
     if pHashFormat: lCmdArgs.append("--format={}".format(pHashFormat))
     if pDictionary: lCmdArgs.append("--wordlist={}".format(pDictionary))
     if pRule: lCmdArgs.append("--rules={}".format(pRule))
     if pPassThrough: lCmdArgs.append(pPassThrough)
-
-    if pVerbose:
-        print("[*] Starting mode: Wordlist {}".format(pDictionary), end="")
-        lWhatITried = "Wordlist {}".format(pDictionary)
-        if pRule:
-            print(" with rule {}".format(pRule))
-            lWhatITried += " with rule {}".format(pRule)
-        what_i_tried.append(lWhatITried)
-
-            # Determine number of passwords cracked before trying this method
-    lNumberPasswordsAlreadyCracked = count_passwords_in_jtr_pot_file()
-
-    if pVerbose:
-        print("[*] Passwords cracked at start of prayer mode: {}".format(lNumberPasswordsAlreadyCracked))
-
     lCmdArgs.append(pHashFile)
     lCompletedProcess = subprocess.run(lCmdArgs, stdout=subprocess.PIPE)
     time.sleep(0.5)
 
-    # Determine number of passwords cracked after trying this method
-    lNumberPasswordsCracked = count_passwords_in_jtr_pot_file()
-
-    lNumberPasswordsCrackedByThisMethod = lNumberPasswordsCracked - lNumberPasswordsAlreadyCracked
-    lPercentPasswordsCracked = round(lNumberPasswordsCrackedByThisMethod / pNumberHashes * 100, 2)
-
-    if pVerbose:
-        print("[*] Finished prayer mode: Wordlist {}".format(pDictionary), end="")
-        if pRule:
-            print(" with rule {}".format(pRule))
-        else:
-            print()
-        print("\tCommand was: {}".format(lCompletedProcess.args))
-        print("\tPasswords cracked at end of run: {}".format(lNumberPasswordsCracked))
-
-    print("\tPasswords cracked by mode: {} ({} percent)".format(lNumberPasswordsCrackedByThisMethod,
-                                                                lPercentPasswordsCracked))
-
-    if pDebug:
-        lRunTime = time.time() - lStartTime
-        lPasswordsCrackedPerSecond = lNumberPasswordsCrackedByThisMethod // lRunTime
-        print("\tDuration: {}".format(lRunTime))
-        print("\tPasswords cracked per second: {}".format(lPasswordsCrackedPerSecond))
+    lWatcher.stop_timer()
+    lWatcher.print_mode_finsihed_message()
+    if pVerbose: g_what_i_tried.append("{}\t{}\t({}%)".format(lCrackingMode, lWatcher.number_passwords_cracked_by_this_mode, lWatcher.percent_passwords_cracked_by_this_mode))
 
 
 def do_run_jtr_single_mode(pHashFile: str, pHashFormat: str, pPassThrough: str,
@@ -436,48 +341,25 @@ def do_run_jtr_single_mode(pHashFile: str, pHashFormat: str, pPassThrough: str,
     # Note: subprocess.run() accepts the command to run as a list of arguments.
     # lCmdArgs is this list.
 
-    lStartTime = time.time()
+    lCrackingMode = "John the Ripper (JTR) Single Crack"
 
-    if pDebug: rm_jtr_pot_file()
+    lWatcher = Watcher(pCrackingMode=lCrackingMode, pNumberHashes=pNumberHashes, pVerbose=pVerbose,
+                       pDebug=pDebug, pJTRPotFilePath=JTR_POT_FILE_PATH)
+    lWatcher.start_timer()
+    lWatcher.print_mode_start_message()
 
     lCmdArgs = [JTR_EXE_FILE_PATH]
     lCmdArgs.append("--single")
     if pHashFormat: lCmdArgs.append("--format={}".format(pHashFormat))
     if pPassThrough: lCmdArgs.append(pPassThrough)
-
-    if pVerbose:
-        print("[*] Starting mode: JTR Single Crack")
-        what_i_tried.append("John the Ripper (JTR) Single Crack mode")
-
-    # Determine number of passwords cracked before trying this method
-    lNumberPasswordsAlreadyCracked = count_passwords_in_jtr_pot_file()
-
-    if pVerbose:
-        print("[*] Passwords cracked at start of single crack mode: {}".format(lNumberPasswordsAlreadyCracked))
-
     lCmdArgs.append(pHashFile)
+    print("[*] Running command {}".format(lCmdArgs))
     lCompletedProcess = subprocess.run(lCmdArgs, stdout=subprocess.PIPE)
     time.sleep(0.5)
 
-    # Determine number of passwords cracked after trying this method
-    lNumberPasswordsCracked = count_passwords_in_jtr_pot_file()
-
-    lNumberPasswordsCrackedByThisMethod = lNumberPasswordsCracked - lNumberPasswordsAlreadyCracked
-    lPercentPasswordsCracked = round(lNumberPasswordsCrackedByThisMethod / pNumberHashes * 100, 2)
-
-    if pVerbose:
-        print("[*] Finished single crack mode")
-        print("\tCommand was: {}".format(lCompletedProcess.args))
-        print("\tPasswords cracked at end of run: {}".format(lNumberPasswordsCracked))
-
-    print("\tPasswords cracked by mode: {} ({} percent)".format(lNumberPasswordsCrackedByThisMethod,
-                                                                lPercentPasswordsCracked))
-
-    if pDebug:
-        lRunTime = time.time() - lStartTime
-        lPasswordsCrackedPerSecond = lNumberPasswordsCrackedByThisMethod // lRunTime
-        print("\tDuration: {}".format(lRunTime))
-        print("\tPasswords cracked per second: {}".format(lPasswordsCrackedPerSecond))
+    lWatcher.stop_timer()
+    lWatcher.print_mode_finsihed_message()
+    if pVerbose: g_what_i_tried.append("{}\t{}\t({}%)".format(lCrackingMode, lWatcher.number_passwords_cracked_by_this_mode, lWatcher.percent_passwords_cracked_by_this_mode))
 
 
 def run_jtr_baseword_mode(pHashFile: str, pBaseWords: str, pHashFormat: str,
@@ -744,7 +626,7 @@ if __name__ == '__main__':
                             help="Comma-separated list of integers between 0-15 that determines what password cracking techniques are attempted. Default is level 1,2 and 3. Example of running levels 1 and 2 --techniques=1,2\n\n1: Common Passwords\n2: Small Dictionaries. Small Rulesets\n3: Calendar Related\n4: Medium Dictionaries. Small Rulesets\n5: Small Dictionaries. Medium Rulesets\n6: Medium Dictionaries. Medium Rulesets\n7: Large Password List. Custom Ruleset\n8: Medium-Large Dictionaries. Small Rulesets\n9: Small Dictionaries. Large Rulesets\n10: Medium Dictionaries. Large Rulesets\n11: Medium-Large Dictionaries. Medium Rulesets\n12: Large Dictionaries. Small Rulesets\n13: Medium-Large Dictionaries. Large Rulesets\n14: Large Dictionaries. Medium Rulesets\n15: Large Dictionaries. Large Rulesets\n\n",
                             action='store')
     lArgParser.add_argument('-u', '--jtr-single-crack',
-                            help='Run John the Ripper''s Single Crack mode. This mode utilizes information in the user account metadata.',
+                            help='Run John the Ripper''s Single Crack mode. This mode uses information in the user account metadata to generate guesses. This mode is most effective when the hashes are formatted to include GECOS fields.',
                             action='store_true')
     lArgParser.add_argument('-s', '--stat-crack',
                             help="Enable statistical cracking. Byepass will run relatively fast cracking strategies in hopes of cracking enough passwords to induce a pattern and create \"high probability\" masks. Byepass will use the masks in an attempt to crack more passwords.\n\n",

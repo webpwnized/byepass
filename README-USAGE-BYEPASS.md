@@ -26,6 +26,7 @@ tutorials in the following playlist
 **Optional arguments:**
 
       -h, --help            show this help message and exit
+      
       -f HASH_FORMAT, --hash-format HASH_FORMAT
                             The hash algorithm used to hash the password(s). This value must be one of the values supported by John the Ripper. To see formats supported by JTR, use command "john --list=formats". It is strongly recommended to provide an optimal value. If no value is provided, John the Ripper will guess.
                             
@@ -36,23 +37,27 @@ tutorials in the following playlist
                             Bruce force common patterns with at least MIN characters up to MAX characters. Provide minimum and maxiumum number of characters as comma-separated, positive integers (i.e. 4,6 means 4 characters to 6 characters).
                             
       -t TECHNIQUES, --techniques TECHNIQUES
-                            Comma-separated list of integers between 0-13 that determines what password cracking techniques are attempted. Default is level 1. Example of running levels 1 and 2 --techniques=1,2
-                            
-                            0: Skip prayer mode entirely
-                            1: Small Dictionaries. Small Rulesets
-                            2: Medium Dictionaries. Small Rulesets
-                            3: Small Dictionaries. Medium Rulesets
-                            4: Medium Dictionaries. Medium Rulesets
-                            5: Large Password List. Custom Ruleset
-                            6: Medium-Large Dictionaries. Small Rulesets
-                            7: Small Dictionaries. Large Rulesets
-                            8: Medium Dictionaries. Large Rulesets
-                            9: Medium-Large Dictionaries. Medium Rulesets
-                            10: Large Dictionaries. Small Rulesets
-                            11: Medium-Large Dictionaries. Large Rulesets
-                            12: Large Dictionaries. Medium Rulesets
-                            13: Large Dictionaries. Large Rulesets
-                            
+                            Comma-separated list of integers between 0-15 that determines what password cracking techniques are attempted. Default is level 1,2 and 3. Example of running levels 1 and 2 --techniques=1,2
+                        
+                        1: Common Passwords
+                        2: Small Dictionaries. Small Rulesets
+                        3: Calendar Related
+                        4: Medium Dictionaries. Small Rulesets
+                        5: Small Dictionaries. Medium Rulesets
+                        6: Medium Dictionaries. Medium Rulesets
+                        7: Large Password List. Custom Ruleset
+                        8: Medium-Large Dictionaries. Small Rulesets
+                        9: Small Dictionaries. Large Rulesets
+                        10: Medium Dictionaries. Large Rulesets
+                        11: Medium-Large Dictionaries. Medium Rulesets
+                        12: Large Dictionaries. Small Rulesets
+                        13: Medium-Large Dictionaries. Large Rulesets
+                        14: Large Dictionaries. Medium Rulesets
+                        15: Large Dictionaries. Large Rulesets
+                        
+      -u, --jtr-single-crack
+                        Run John the Rippers Single Crack mode. This mode uses information in the user account metadata to generate guesses. This mode is most effective when the hashes are formatted to include GECOS fields.
+                           
       -s, --stat-crack      Enable statistical cracking. Byepass will run relatively fast cracking strategies in hopes of cracking enough passwords to induce a pattern and create "high probability" masks. Byepass will use the masks in an attempt to crack more passwords.
                             
       -p PERCENTILE, --percentile PERCENTILE
@@ -72,12 +77,20 @@ tutorials in the following playlist
 
 ## Examples:
 
+### Using John the Ripper (JTR) Single Crack Mode
+
+Attempt to crack hashes using JTR Single Crack Mode
+
+	python3 byepass.py --verbose --hash-format=Raw-SHA1 --jtr-single-crack --input-file=linkedin-1.hashes
+	
+	python3 byepass.py -v -f Raw-SHA1 -u -i linkedin-1.hashes
+
 ### Using Base Words Mode
 
 Attempt to crack linked-in hashes using base words linkedin and linked
 
-	python3 byepass.py --verbose --hash-format=Raw-SHA1 --base-words=linkedin,linked --input-file=linkedin-1.hashes
-
+	python3 byepass.py --verbose --hash-format=Raw-SHA1 --basewords=linkedin,linked --input-file=linkedin-1.hashes
+	
 	python3 byepass.py -v -f Raw-SHA1 -w linkedin,linked -i linkedin-1.hashes
 
 ### Using Brute Force Mode
@@ -85,46 +98,34 @@ Attempt to crack linked-in hashes using base words linkedin and linked
 Attempt to brute force words from 3 to 5 characters in length
 
 	python3 byepass.py --verbose --hash-format=Raw-MD5 --brute-force=3,5 --input-file=hashes.txt
-
-    python3 byepass.py -f Raw-MD5 -j="--fork=4" -v -t 0 -b 3,5 -i hashes.txt
+	
+	python3 byepass.py -f Raw-MD5 -j="--fork=4" -v -b 3,5 -i hashes.txt
 
 ### Using Prayer Mode
 
-Attempt to crack password hashes found in input file "password.hashes" using default technique level 1
+Attempt to crack password hashes found in input file "password.hashes" using default techniques
 
 	python3 byepass.py --verbose --hash-format=descrypt --input-file=password.hashes
-
+	
 	python3 byepass.py -v -f descrypt -i password.hashes
 
-Be more aggressive by using techniques level 2 in attempt to crack password hashes found in input file "password.hashes"
-
-	python3 byepass.py --verbose --techniques=2 --hash-format=descrypt --input-file=password.hashes
-
-	python3 byepass.py -v -a 2 -f descrypt -i password.hashes
-
-Be even more aggressive by using techniques level 3 in attempt to crack password hashes found in input file "password.hashes"
-
-	python3 byepass.py --verbose --techniques=3 --hash-format=descrypt --input-file=password.hashes
-
-	python3 byepass.py -v -a 3 -f descrypt -i password.hashes
-
-Maximum effort by using techniques level 4 in attempt to crack password hashes found in input file "password.hashes"
+Be more aggressive by using techniques level 4 in attempt to crack password hashes found in input file "password.hashes"
 
 	python3 byepass.py --verbose --techniques=4 --hash-format=descrypt --input-file=password.hashes
+	
+	python3 byepass.py -v -t 4 -f descrypt -i password.hashes
 
-	python3 byepass.py -v -a 4 -f descrypt -i password.hashes
+Go bonkers and try all techniques. Start with technique level 1 and proceed to level 15 in attempt to crack password hashes found in input file "password.hashes"
 
-Go bonkers and try all techniques. Start with technique level 1 and proceed to level 4 in attempt to crack password hashes found in input file "password.hashes"
-
-	python3 byepass.py --verbose --techniques=1,2,3,4 --hash-format=descrypt --input-file=password.hashes
-
-	python3 byepass.py -v -a 1,2,3,4 -f descrypt -i password.hashes
+	python3 byepass.py --verbose --techniques=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 --hash-format=descrypt --input-file=password.hashes
+	
+	python3 byepass.py -v -t 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 -f descrypt -i password.hashes
 
 Only try first two techniques. Start with technique level 1 and proceed to level 2 in attempt to crack password hashes found in input file "password.hashes"
 
 	python3 byepass.py --verbose --techniques=1,2 --hash-format=descrypt --input-file=password.hashes
-
-	python3 byepass.py -v -a 1,2 -f descrypt -i password.hashes
+	
+	python3 byepass.py -v -t 1,2 -f descrypt -i password.hashes
 
 ### Using Statistical Analysis Mode
 
@@ -142,7 +143,7 @@ Attempt to crack password hashes found in input file "password.hashes", then run
 
 Do not run prayer mode. Only run statistical analysis to determine masks needed to crack 50 percent of passwords, and try to crack using the masks.
 
-	python3 byepass.py -v --techniques=0 --hash-format=descrypt --stat-crack --percentile=0.50 --input-file=password.hashes
+	python3 byepass.py -v --hash-format=descrypt --stat-crack --percentile=0.50 --input-file=password.hashes
 
 	python3 byepass.py -v -a 0 -f descrypt -s -p 0.50 -i password.hashes
 
