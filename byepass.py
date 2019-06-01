@@ -35,7 +35,7 @@ from argparse import RawTextHelpFormatter
 from pwstats import PasswordStats
 from techniques import Techniques
 from watcher import Watcher
-from enum import Enum
+from reporter import Reporter
 import config as Config
 import argparse
 import subprocess
@@ -47,6 +47,7 @@ import re
 g_masks_already_brute_forced = []
 g_what_i_tried = []
 g_techniques = Techniques()
+gReporter = Reporter()
 
 #METHODS
 def print_example_usage():
@@ -176,8 +177,7 @@ def print_closing_message(pNumberHashes: int, pNumberPasswordsPOTFileAtStart: in
 
         print()
         print("[*] Techniques Attempted")
-        for string in g_what_i_tried:
-            print("\t{}".format(string))
+        gReporter.reportResults()
         print()
         print("[*] Duration: {}".format(time.strftime("%H:%M:%S", lElaspsedTime)))
         print("[*] Passwords cracked (estimated): {} out of {} ({}%)".format(lNumberPasswords, pNumberHashes, lPercent))
@@ -245,33 +245,6 @@ def count_passwords_in_jtr_pot_file() -> int:
     return lLines
 
 
-def run_jtr_wordlist_mode(pHashFile: str, pWordlist: str, pRule: str, pHashFormat:str,
-                          pVerbose: bool, pDebug: bool, pPassThrough: str,
-                          pNumberHashes: int) -> None:
-
-    lCrackingMode = "Wordlist {}".format(pWordlist)
-    if pRule: lCrackingMode += " with rule {}".format(pRule)
-
-    lWatcher = Watcher(pCrackingMode=lCrackingMode, pNumberHashes=pNumberHashes, pVerbose=pVerbose,
-                       pDebug=pDebug, pJTRPotFilePath=JTR_POT_FILE_PATH)
-    lWatcher.start_timer()
-    lWatcher.print_mode_start_message()
-
-    lCmdArgs = [JTR_EXE_FILE_PATH]
-    if pHashFormat: lCmdArgs.append("--format={}".format(pHashFormat))
-    lCmdArgs.append("--wordlist={}".format(pWordlist))
-    if pRule: lCmdArgs.append("--rule={}".format(pRule))
-    if pPassThrough: lCmdArgs.append(pPassThrough)
-    lCmdArgs.append(pHashFile)
-    print("[*] Running command {}".format(lCmdArgs))
-    lCompletedProcess = subprocess.run(lCmdArgs, stdout=subprocess.PIPE)
-    time.sleep(0.5)
-
-    lWatcher.stop_timer()
-    lWatcher.print_mode_finsihed_message()
-    if pVerbose: g_what_i_tried.append("{}\t{}\t({}%)".format(lCrackingMode, lWatcher.number_passwords_cracked_by_this_mode, lWatcher.percent_passwords_cracked_by_this_mode))
-
-
 def do_run_jtr_mask_mode(pHashFile: str, pMask: str, pWordlist: str, pHashFormat:str,
                       pVerbose: bool, pDebug: bool, pPassThrough: str,
                       pNumberHashes: int) -> None:
@@ -307,16 +280,18 @@ def do_run_jtr_mask_mode(pHashFile: str, pMask: str, pWordlist: str, pHashFormat
 
     lWatcher.stop_timer()
     lWatcher.print_mode_finsihed_message()
-    if pVerbose: g_what_i_tried.append("{}\t{}\t({}%)".format(lCrackingMode, lWatcher.number_passwords_cracked_by_this_mode, lWatcher.percent_passwords_cracked_by_this_mode))
+
+    gReporter.appendRecord(pMode=lCrackingMode, pMask=pMask, pWordlist=pWordlist, pRule="",
+                           pNumberPasswordsCracked=lWatcher.number_passwords_cracked_by_this_mode,
+                           pNumberPasswordsCrackedPerSecond=lWatcher.number_passwords_cracked_by_this_mode_per_second,
+                           pPercentPasswordsCracked=lWatcher.percent_passwords_cracked_by_this_mode)
 
 
-def do_run_jtr_prayer_mode(pHashFile: str, pDictionary: str, pRule: str,
-                           pHashFormat: str, pPassThrough: str,
-                           pVerbose: bool, pDebug: bool, pNumberHashes: int) -> None:
-    # Note: subprocess.run() accepts the command to run as a list of arguments.
-    # lCmdArgs is this list.
+def run_jtr_wordlist_mode(pHashFile: str, pWordlist: str, pRule: str, pHashFormat:str,
+                          pVerbose: bool, pDebug: bool, pPassThrough: str,
+                          pNumberHashes: int) -> None:
 
-    lCrackingMode = "Wordlist {}".format(pDictionary)
+    lCrackingMode = "Wordlist {}".format(pWordlist)
     if pRule: lCrackingMode += " with rule {}".format(pRule)
 
     lWatcher = Watcher(pCrackingMode=lCrackingMode, pNumberHashes=pNumberHashes, pVerbose=pVerbose,
@@ -326,8 +301,8 @@ def do_run_jtr_prayer_mode(pHashFile: str, pDictionary: str, pRule: str,
 
     lCmdArgs = [JTR_EXE_FILE_PATH]
     if pHashFormat: lCmdArgs.append("--format={}".format(pHashFormat))
-    if pDictionary: lCmdArgs.append("--wordlist={}".format(pDictionary))
-    if pRule: lCmdArgs.append("--rules={}".format(pRule))
+    lCmdArgs.append("--wordlist={}".format(pWordlist))
+    if pRule: lCmdArgs.append("--rule={}".format(pRule))
     if pPassThrough: lCmdArgs.append(pPassThrough)
     lCmdArgs.append(pHashFile)
     print("[*] Running command {}".format(lCmdArgs))
@@ -336,7 +311,11 @@ def do_run_jtr_prayer_mode(pHashFile: str, pDictionary: str, pRule: str,
 
     lWatcher.stop_timer()
     lWatcher.print_mode_finsihed_message()
-    if pVerbose: g_what_i_tried.append("{}\t{}\t({}%)".format(lCrackingMode, lWatcher.number_passwords_cracked_by_this_mode, lWatcher.percent_passwords_cracked_by_this_mode))
+
+    gReporter.appendRecord(pMode=lCrackingMode, pMask="", pWordlist=pWordlist, pRule=pRule,
+                           pNumberPasswordsCracked=lWatcher.number_passwords_cracked_by_this_mode,
+                           pNumberPasswordsCrackedPerSecond=lWatcher.number_passwords_cracked_by_this_mode_per_second,
+                           pPercentPasswordsCracked=lWatcher.percent_passwords_cracked_by_this_mode)
 
 
 def do_run_jtr_single_mode(pHashFile: str, pHashFormat: str, pPassThrough: str,
@@ -362,7 +341,11 @@ def do_run_jtr_single_mode(pHashFile: str, pHashFormat: str, pPassThrough: str,
 
     lWatcher.stop_timer()
     lWatcher.print_mode_finsihed_message()
-    if pVerbose: g_what_i_tried.append("{}\t{}\t({}%)".format(lCrackingMode, lWatcher.number_passwords_cracked_by_this_mode, lWatcher.percent_passwords_cracked_by_this_mode))
+
+    gReporter.appendRecord(pMode=lCrackingMode, pMask="", pWordlist="", pRule="",
+                           pNumberPasswordsCracked=lWatcher.number_passwords_cracked_by_this_mode,
+                           pNumberPasswordsCrackedPerSecond=lWatcher.number_passwords_cracked_by_this_mode_per_second,
+                           pPercentPasswordsCracked=lWatcher.percent_passwords_cracked_by_this_mode)
 
 
 def run_jtr_baseword_mode(pHashFile: str, pBaseWords: str, pHashFormat: str,
@@ -588,7 +571,7 @@ def run_jtr_prayer_mode(pHashFile: str, pMethod: int, pHashFormat: str,
     # Run the wordlist and rule
     for lDictionary in lDictionaries:
         for lRule in lRules:
-            do_run_jtr_prayer_mode(pHashFile=pHashFile, pDictionary=lFolder + "/" + lDictionary,
+            run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist=lFolder + "/" + lDictionary,
                                     pRule=lRule, pHashFormat=pHashFormat,
                                     pPassThrough=pPassThrough, pVerbose=pVerbose,
                                     pDebug=pDebug, pNumberHashes=pNumberHashes)
