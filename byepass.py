@@ -1,52 +1,20 @@
 # JTR Mask Mode: https://github.com/magnumripper/JohnTheRipper/blob/bleeding-jumbo/doc/MASK
 
-# - Static letters.
-# - Ranges in [aouei] or [a-z] syntax. Or both, [0-9abcdef] is the same as
-#      [0-9a-f].
-# - Placeholders that are just a short form for ranges, like ?l which is
-#      100% equivalent to [a-z].
-# - ?l lower-case ASCII letters
-# - ?u upper-case ASCII letters
-# - ?d digits
-# - ?s specials (all printable ASCII characters not in ?l, ?u or ?d)
-# - ?a full 'printable' ASCII. Note that for formats that don't recognize case
-#      (eg. LM), this only includes lower-case characters which is a tremendous
-#      reduction of keyspace for the win.
-# - ?B all 8-bit (0x80-0xff)
-# - ?b all (0x01-0xff) (the NULL character is currently not supported by core).
-# - ?h lower-case HEX digits (0-9, a-f)
-# - ?H upper-case HEX digits (0-9, A-F)
-# - ?L lower-case non-ASCII letters
-# - ?U upper-case non-ASCII letters
-# - ?D non-ASCII "digits"
-# - ?S non-ASCII "specials"
-# - ?A all valid characters in the current code page (including ASCII). Note
-#      that for formats that don't recognize case (eg. LM), this only includes
-#      lower-case characters which is a tremendous reduction of keyspace.
-# - Placeholders that are custom defined, so we can e.g. define ?1 to mean [?u?l]
-#   ?1 .. ?9 user-defined place-holder 1 .. 9
-# - Placeholders for Hybrid Mask mode:
-#   ?w is a placeholder for the original word produced by the parent mode in
-#      Hybrid Mask mode.
-#   ?W is just like ?w except the original word is case toggled (so PassWord
-#      becomes pASSwORD).
-
 from argparse import RawTextHelpFormatter
 from pwstats import PasswordStats
 from techniques import Techniques
 from watcher import Watcher
 from reporter import Reporter
 import config as Config
-import argparse
 import subprocess
 import os.path
 import time
 import re
+import argparse
 
 # GLOBALS
-g_masks_already_brute_forced = []
-g_what_i_tried = []
-g_techniques = Techniques()
+gMasksAlreadyBruteForced = []
+gTechniques = Techniques()
 gReporter = Reporter()
 
 #METHODS
@@ -82,9 +50,12 @@ Attempt to crack password hashes found in input file "password.hashes", then run
 Attempt to crack linked-in hashes using base words linkedin and linked\n
 \tpython3 byepass.py --verbose --hash-format=Raw-SHA1 --basewords=linkedin,linked --input-file=linkedin-1.hashes
 \tpython3 byepass.py -v -f -w linkedin,linked -i linkedin-1.hashes\n
-Do not run prayer mode. Only run statistical analysis to determine masks needed to crack 50 percent of passwords, and try to crack using the masks.\n
+Run statistical analysis to determine masks needed to crack 50 percent of passwords, and try to crack using the masks.\n
 \tpython3 byepass.py -v --hash-format=descrypt --stat-crack --percentile=0.50 --input-file=password.hashes
 \tpython3 byepass.py -v -f descrypt -s -p 0.50 -i password.hashes\n
+Use recycle mode to try cracking remaining hashes using root words generated from already cracked passwords\n
+\tpython3 byepass.py --verbose --hash-format=descrypt --recycle --input-file=password.hashes
+\tpython3 byepass.py -v -f descrypt -r -i password.hashes\n
 Use pass-through to pass fork command to JTR\n
 \tpython3 byepass.py --verbose --pass-through="--fork=4" --hash-format=descrypt --input-file=password.hashes
 \tpython3 byepass.py -v -j="--fork=4" -f descrypt -i password.hashes
@@ -115,7 +86,7 @@ def parse_arg_hash_format(pArgHashFormat: str) -> str:
         return ""
 
 
-def parse_arg_techniques(pArgTechniques: str) -> list:
+def parse_argTechniques(pArgTechniques: str) -> list:
     lTechniques = []
 
     if pArgTechniques is not None:
@@ -252,13 +223,13 @@ def do_run_jtr_mask_mode(pHashFile: str, pMask: str, pWordlist: str, pHashFormat
     # There are two modes that run brute force using masks. Keep track of masks
     # already checked in case the same mask would be tried twice.
 
-    #Note: g_masks_already_brute_forced is a global variable
-    if pMask in g_masks_already_brute_forced:
+    #Note: gMasksAlreadyBruteForced is a global variable
+    if pMask in gMasksAlreadyBruteForced:
         if pVerbose:
             print("[*] Mask {} has already been tested in this session. Moving on to next task.".format(pMask))
         return None
     else:
-        g_masks_already_brute_forced.append(pMask)
+        gMasksAlreadyBruteForced.append(pMask)
 
     lCrackingMode = "Mask {}".format(pMask)
     if pWordlist: lCrackingMode += " using wordlist {}".format(pWordlist)
@@ -375,6 +346,53 @@ def run_jtr_baseword_mode(pHashFile: str, pBaseWords: str, pHashFormat: str,
     os.remove(lBaseWordsFileName)
 
     if pVerbose: print("[*] Finished Baseword Mode")
+
+
+def run_jtr_recycle_mode(pHashFile: str, pHashFormat: str, pVerbose: bool,
+                         pDebug: bool, pPassThrough: str, pNumberHashes: int) -> None:
+
+    if pVerbose: print("[*] Starting mode: Recycle")
+
+    # The JTR POT file is the source of passwords
+    if pVerbose: print("[*] Parsing JTR POT file at {}".format(JTR_POT_FILE_PATH))
+    lListOfPasswords = parse_jtr_pot(pVerbose, True)
+
+    lRecycleFileName = 'basewords/recycle.txt'
+    lRecycleDirectory = os.path.dirname(lRecycleFileName)
+    if not os.path.exists(lRecycleDirectory): os.makedirs(lRecycleDirectory)
+    lRecycleFile = open(lRecycleFileName, 'w')
+
+    lListOfBasewords =  [ "".join(re.findall("[a-z]+", lWord.decode("utf-8").lower())) for lWord in lListOfPasswords]
+    lUniqueBasewords = list(set(lListOfBasewords))
+    for lBaseword in lUniqueBasewords:
+        lRecycleFile.write("{}\n".format(lBaseword))
+    lRecycleFile.flush()
+    lRecycleFile.close()
+
+    if pVerbose:
+        lCountPasswords = lUniqueBasewords.__len__()
+        print("[*] Using {} unique words for recycle mode: ".format(str(lCountPasswords)))
+        if lCountPasswords > 1000000: print("[*] That is a lot of words. Recycle mode may take a while.")
+
+    run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist="basewords/recycle.txt", pRule="SlowHashesPhase1",
+                          pHashFormat=pHashFormat, pVerbose=pVerbose, pDebug=pDebug,
+                          pPassThrough=pPassThrough, pNumberHashes=pNumberHashes)
+    run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist="basewords/recycle.txt", pRule="Best126",
+                          pHashFormat=pHashFormat, pVerbose=pVerbose, pDebug=pDebug,
+                          pPassThrough=pPassThrough, pNumberHashes=pNumberHashes)
+    run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist="basewords/recycle.txt", pRule="SlowHashesPhase2",
+                          pHashFormat=pHashFormat, pVerbose=pVerbose, pDebug=pDebug,
+                          pPassThrough=pPassThrough, pNumberHashes=pNumberHashes)
+    run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist="basewords/recycle.txt", pRule="SlowHashesPhase3",
+                          pHashFormat=pHashFormat, pVerbose=pVerbose, pDebug=pDebug,
+                          pPassThrough=pPassThrough, pNumberHashes=pNumberHashes)
+    run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist="basewords/recycle.txt", pRule="OneRuleToRuleThemAll",
+                          pHashFormat=pHashFormat, pVerbose=pVerbose, pDebug=pDebug,
+                          pPassThrough=pPassThrough, pNumberHashes=pNumberHashes)
+
+    os.remove(lRecycleFileName)
+
+    if pVerbose: print("[*] Finished  Mode: Recycle")
 
 
 def run_statistical_crack_mode(pHashFile: str, pPercentile: float, pHashFormat: str,
@@ -564,9 +582,9 @@ def run_jtr_prayer_mode(pHashFile: str, pMethod: int, pHashFormat: str,
                            pPassThrough: str, pVerbose: bool, pDebug: bool,
                            pNumberHashes: int) -> None:
 
-    lFolder = g_techniques.techniques[pMethod].Folder
-    lDictionaries = g_techniques.techniques[pMethod].Dictionaries
-    lRules = g_techniques.techniques[pMethod].Rules
+    lFolder = gTechniques.techniques[pMethod].Folder
+    lDictionaries = gTechniques.techniques[pMethod].Dictionaries
+    lRules = gTechniques.techniques[pMethod].Rules
 
     # Run the wordlist and rule
     for lDictionary in lDictionaries:
@@ -614,6 +632,9 @@ if __name__ == '__main__':
     lArgParser.add_argument('-u', '--jtr-single-crack',
                             help='Run John the Ripper''s Single Crack mode. This mode uses information in the user account metadata to generate guesses. This mode is most effective when the hashes are formatted to include GECOS fields.',
                             action='store_true')
+    lArgParser.add_argument('-r', '--recycle',
+                            help='After all cracking attempts are finished, use the root words of already cracked passwords to create a new dictionary. Try to crack more passwords with the new dictionary.',
+                            action='store_true')
     lArgParser.add_argument('-s', '--stat-crack',
                             help="Enable statistical cracking. Byepass will run relatively fast cracking strategies in hopes of cracking enough passwords to induce a pattern and create \"high probability\" masks. Byepass will use the masks in an attempt to crack more passwords.\n\n",
                             action='store_true')
@@ -653,12 +674,13 @@ if __name__ == '__main__':
     lHashFile = lArgs.input_file
     lVerbose = lArgs.verbose
     lRunSingleCrack = lArgs.jtr_single_crack
+    lRecyclePasswords = lArgs.recycle
     lDebug = parse_arg_debug(lArgs.debug)
     lHashFormat = parse_arg_hash_format(lArgs.hash_format)
-    lTechniques = parse_arg_techniques(lArgs.techniques)
+    lTechniques = parse_argTechniques(lArgs.techniques)
     lRunDefaultTechniques = not lRunSingleCrack and not lArgs.basewords and \
                             not lArgs.brute_force and not lArgs.techniques and \
-                            not lArgs.stat_crack
+                            not lArgs.stat_crack and not lRecyclePasswords
 
     lNumberHashes = count_hashes_in_input_file(pHashFile=lHashFile)
     lNumberPasswordsPOTFileAtStart = count_passwords_in_jtr_pot_file()
@@ -706,6 +728,11 @@ if __name__ == '__main__':
         run_statistical_crack_mode(pHashFile=lHashFile, pPercentile=lPercentile, pHashFormat=lHashFormat,
                                      pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through,
                                      pNumberHashes=lNumberHashes)
+
+    if lRecyclePasswords:
+
+        run_jtr_recycle_mode(pHashFile=lHashFile, pHashFormat=lHashFormat, pVerbose=lVerbose,
+                             pDebug=lDebug, pPassThrough=lArgs.pass_through, pNumberHashes=lNumberHashes)
 
     if lVerbose:
         lEndTime = time.time()

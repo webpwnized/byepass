@@ -26,3 +26,7 @@ python3 byepass.py -f Raw-MD5 -j="--fork=2" -u -v -i t.hashes
 ## Brute Force Mode
 
 python3 byepass.py -f Raw-MD5 -j="--fork=2" -b 3,4 -v -i t.hashes
+
+## Recycle
+
+python3 byepass.py -f Raw-MD5 -j="--fork=2" -r -v -i t.hashes

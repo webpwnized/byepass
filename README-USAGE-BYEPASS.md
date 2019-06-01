@@ -25,19 +25,19 @@ tutorials in the following playlist
 
 **Optional arguments:**
 
-      -h, --help            show this help message and exit
+      -h, --help        Show this help message and exit
       
       -f HASH_FORMAT, --hash-format HASH_FORMAT
-                            The hash algorithm used to hash the password(s). This value must be one of the values supported by John the Ripper. To see formats supported by JTR, use command "john --list=formats". It is strongly recommended to provide an optimal value. If no value is provided, John the Ripper will guess.
+                        The hash algorithm used to hash the password(s). This value must be one of the values supported by John the Ripper. To see formats supported by JTR, use command "john --list=formats". It is strongly recommended to provide an optimal value. If no value is provided, John the Ripper will guess.
                             
       -w BASEWORDS, --basewords BASEWORDS
-                            Supply a comma-separated list of lowercase, unmangled base words thought to be good candidates. For example, if Wiley Coyote is cracking hashes from Acme Inc., Wiley might provide the word "acme". Be careful how many words are supplied as Byepass will apply many mangling rules. Up to several should run reasonably fast.
+                        Supply a comma-separated list of lowercase, unmangled base words thought to be good candidates. For example, if Wiley Coyote is cracking hashes from Acme Inc., Wiley might provide the word "acme". Be careful how many words are supplied as Byepass will apply many mangling rules. Up to several should run reasonably fast.
                             
       -b BRUTE_FORCE, --brute-force BRUTE_FORCE
-                            Bruce force common patterns with at least MIN characters up to MAX characters. Provide minimum and maxiumum number of characters as comma-separated, positive integers (i.e. 4,6 means 4 characters to 6 characters).
+                        Bruce force common patterns with at least MIN characters up to MAX characters. Provide minimum and maxiumum number of characters as comma-separated, positive integers (i.e. 4,6 means 4 characters to 6 characters).
                             
       -t TECHNIQUES, --techniques TECHNIQUES
-                            Comma-separated list of integers between 0-15 that determines what password cracking techniques are attempted. Default is level 1,2 and 3. Example of running levels 1 and 2 --techniques=1,2
+                        Comma-separated list of integers between 0-15 that determines what password cracking techniques are attempted. Default is level 1,2 and 3. Example of running levels 1 and 2 --techniques=1,2
                         
                         1: Common Passwords
                         2: Small Dictionaries. Small Rulesets
@@ -58,17 +58,19 @@ tutorials in the following playlist
       -u, --jtr-single-crack
                         Run John the Rippers Single Crack mode. This mode uses information in the user account metadata to generate guesses. This mode is most effective when the hashes are formatted to include GECOS fields.
                            
-      -s, --stat-crack      Enable statistical cracking. Byepass will run relatively fast cracking strategies in hopes of cracking enough passwords to induce a pattern and create "high probability" masks. Byepass will use the masks in an attempt to crack more passwords.
+      -r, --recycle     After all cracking attempts are finished, use the root words of already cracked passwords to create a new dictionary. Try to crack more passwords with the new dictionary.
+    
+      -s, --stat-crack  Enable statistical cracking. Byepass will run relatively fast cracking strategies in hopes of cracking enough passwords to induce a pattern and create "high probability" masks. Byepass will use the masks in an attempt to crack more passwords.
                             
       -p PERCENTILE, --percentile PERCENTILE
-                            Based on statistical analysis of the passwords cracked during initial phase, use only the masks statistically likely to be needed to crack at least the given percent of passwords. For example, if a value of 0.25 provided, only use the relatively few masks needed to crack 25 passwords of the passwords. Note that password cracking effort follows an exponential distribution, so cracking a few more passwords takes a lot more effort (relatively speaking). A good starting value if completely unsure is 25 percent (0.25).
+                        Based on statistical analysis of the passwords cracked during initial phase, use only the masks statistically likely to be needed to crack at least the given percent of passwords. For example, if a value of 0.25 provided, only use the relatively few masks needed to crack 25 passwords of the passwords. Note that password cracking effort follows an exponential distribution, so cracking a few more passwords takes a lot more effort (relatively speaking). A good starting value if completely unsure is 25 percent (0.25).
                             
       -j PASS_THROUGH, --pass-through PASS_THROUGH
-                            Pass-through the raw parameter to John the Ripper. Example: --pass-through="--fork=2"
+                        Pass-through the raw parameter to John the Ripper. Example: --pass-through="--fork=2"
                             
-      -v, --verbose         Enable verbose output such as current progress and duration
-      -d, --debug           Enable debug mode
-      -e, --examples        Show example usage
+      -v, --verbose     Enable verbose output such as current progress and duration
+      -d, --debug       Enable debug mode
+      -e, --examples    Show example usage
   
 **Required arguments:**
 
@@ -146,6 +148,14 @@ Do not run prayer mode. Only run statistical analysis to determine masks needed 
 	python3 byepass.py -v --hash-format=descrypt --stat-crack --percentile=0.50 --input-file=password.hashes
 
 	python3 byepass.py -v -a 0 -f descrypt -s -p 0.50 -i password.hashes
+
+### Using Recycle Mode
+
+Use recycle mode to try cracking remaining hashes using root words generated from already cracked passwords
+
+	python3 byepass.py --verbose --hash-format=descrypt --recycle --input-file=password.hashes
+	
+	python3 byepass.py -v -f descrypt -r -i password.hashes
 
 ### Passing a switch to John the Ripper
 

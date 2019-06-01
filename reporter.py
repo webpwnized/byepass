@@ -1,6 +1,5 @@
 from typing import NamedTuple
 
-
 class TaskRecord(NamedTuple):
     Mode: str
     Mask: str
@@ -14,7 +13,6 @@ class Reporter:
 
     __mTaskRecords = []
 
-
     def appendRecord(self, pMode: str, pWordlist: str, pRule: str, pMask: str,
                      pNumberPasswordsCracked: int, pNumberPasswordsCrackedPerSecond: int,
                      pPercentPasswordsCracked):
@@ -25,7 +23,6 @@ class Reporter:
                                  PercentPasswordsCracked=pPercentPasswordsCracked)
 
         self.__mTaskRecords.append(lTaskRecord)
-
 
     def reportResults(self):
         self.__mTaskRecords.sort(key=lambda x: x.NumberPasswordsCrackedPerSecond, reverse=True)
