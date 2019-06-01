@@ -33,7 +33,7 @@
 
 from argparse import RawTextHelpFormatter
 from pwstats import PasswordStats
-from technique import Techniques
+from techniques import Techniques
 from watcher import Watcher
 from enum import Enum
 import config as Config
@@ -263,6 +263,7 @@ def run_jtr_wordlist_mode(pHashFile: str, pWordlist: str, pRule: str, pHashForma
     if pRule: lCmdArgs.append("--rule={}".format(pRule))
     if pPassThrough: lCmdArgs.append(pPassThrough)
     lCmdArgs.append(pHashFile)
+    print("[*] Running command {}".format(lCmdArgs))
     lCompletedProcess = subprocess.run(lCmdArgs, stdout=subprocess.PIPE)
     time.sleep(0.5)
 
@@ -300,6 +301,7 @@ def do_run_jtr_mask_mode(pHashFile: str, pMask: str, pWordlist: str, pHashFormat
     if pWordlist: lCmdArgs.append("--wordlist={}".format(pWordlist))
     if pPassThrough: lCmdArgs.append(pPassThrough)
     lCmdArgs.append(pHashFile)
+    print("[*] Running command {}".format(lCmdArgs))
     lCompletedProcess = subprocess.run(lCmdArgs, stdout=subprocess.PIPE)
     time.sleep(0.5)
 
@@ -328,6 +330,7 @@ def do_run_jtr_prayer_mode(pHashFile: str, pDictionary: str, pRule: str,
     if pRule: lCmdArgs.append("--rules={}".format(pRule))
     if pPassThrough: lCmdArgs.append(pPassThrough)
     lCmdArgs.append(pHashFile)
+    print("[*] Running command {}".format(lCmdArgs))
     lCompletedProcess = subprocess.run(lCmdArgs, stdout=subprocess.PIPE)
     time.sleep(0.5)
 

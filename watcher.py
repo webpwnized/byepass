@@ -35,10 +35,6 @@ class Watcher:
     def run_time(self):
         return self.__mRunTime
 
-    @run_time.setter  # setter method
-    def run_time(self: object, pRunTime: float):
-        self.__mRunTime = pRunTime
-
     @property           # getter method
     def cracking_mode(self):
         return self.__cracking_mode
@@ -78,6 +74,14 @@ class Watcher:
     @jtr_pot_file_path.setter  # setter method
     def jtr_pot_file_path(self: object, pJTRPotFilePath: str):
         self.__mJTRPotFilePath = pJTRPotFilePath
+
+    @property  # getter method
+    def number_passwords_cracked_before(self):
+        return self.__mNumberPasswordsCrackedBefore
+
+    @property  # getter method
+    def number_passwords_cracked_after(self):
+        return self.__mNumberPasswordsCrackedAfter
 
     @property  # getter method
     def number_passwords_cracked_by_this_mode(self):
@@ -120,13 +124,13 @@ class Watcher:
             time.sleep(0.5)
 
     # Public methods
-    def start_timer(self):
+    def start_timer(self) -> None:
         if self.__mDebug: self.__rm_jtr_pot_file()
         self.__mStartTime = time.time()
         self.__mNumberPasswordsCrackedBefore = self.__count_passwords_in_jtr_pot_file()
 
     # Public methods
-    def stop_timer(self):
+    def stop_timer(self) -> None:
         self.__mStopTime = time.time()
         self.__mRunTime = self.__mStopTime - self.__mStartTime
         self.__mNumberPasswordsCrackedAfter = self.__count_passwords_in_jtr_pot_file()
@@ -134,12 +138,12 @@ class Watcher:
         self.__mPercentPasswordsCrackedByThisMode = round(self.__mNumberPasswordsCrackedByThisMode / self.__mNumberHashes * 100, 2)
         self.__mNumberPasswordsCrackedByThisModePerSecond = self.__mNumberPasswordsCrackedByThisMode // self.__mRunTime
 
-    def print_mode_start_message(self):
+    def print_mode_start_message(self) -> None:
         if self.__mVerbose:
             print("[*] Starting mode: {}".format(self.__mCrackingMode))
             print("[*] Passwords cracked before {} mode: {}".format(self.__mCrackingMode, self.__mNumberPasswordsCrackedBefore))
 
-    def print_mode_finsihed_message(self):
+    def print_mode_finsihed_message(self) -> None:
         if self.__mVerbose:
             print("[*] Finished {} mode".format(self.__mCrackingMode))
 
