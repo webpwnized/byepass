@@ -83,6 +83,10 @@ class JohnTheRipper:
         lCmdArgs = ["--single"]
         self.__crack(lCmdArgs=lCmdArgs)
 
+    def run_prince_mode(self) -> None:
+        lCmdArgs = ["--prince=dictionaries/prince.txt"]
+        self.__crack(lCmdArgs=lCmdArgs)
+
     def run_wordlist_mode(self, pWordlist: str, pRule: str) -> None:
         lCmdArgs = ["--wordlist={}".format(pWordlist)]
         if pRule: lCmdArgs.append("--rule={}".format(pRule))

@@ -56,6 +56,9 @@ Run statistical analysis to determine masks needed to crack 50 percent of passwo
 Use recycle mode to try cracking remaining hashes using root words generated from already cracked passwords\n
 \tpython3 byepass.py --verbose --hash-format=descrypt --recycle --input-file=password.hashes
 \tpython3 byepass.py -v -f descrypt -r -i password.hashes\n
+Use JTR prince mode with dictionary prince.txt\n
+\tpython3 byepass.py --verbose --hash-format=descrypt --jtr-prince --input-file=password.hashes
+\tpython3 byepass.py -v -f descrypt -c -i password.hashes\n
 Use pass-through to pass fork command to JTR\n
 \tpython3 byepass.py --verbose --pass-through="--fork=4" --hash-format=descrypt --input-file=password.hashes
 \tpython3 byepass.py -v -j="--fork=4" -f descrypt -i password.hashes
@@ -133,7 +136,7 @@ def parse_arg_brute_force(pArgBruteForce: str) -> tuple:
         raise ValueError(lSyntaxErrorMessage)
 
 
-def print_closing_message(pNumberHashes: int, pNumberPasswordsPOTFileAtStart: int,
+def print_closing_message(pJTR: JohnTheRipper, pNumberHashes: int, pNumberPasswordsPOTFileAtStart: int,
                           pNumberPasswordsPOTFileAtEnd: int, pStartTime: float, pEndTime: float) -> None:
 
         lNumberPasswords = pNumberPasswordsPOTFileAtEnd - pNumberPasswordsPOTFileAtStart
@@ -155,10 +158,10 @@ def print_closing_message(pNumberHashes: int, pNumberPasswordsPOTFileAtStart: in
         print("[*] Passwords cracked per second (estimated): {}".format(lNumberPasswordsCrackedPerSecond))
         print()
         print("[*] Cracking attempt complete. Use john --show to see cracked passwords.")
-        print("[*] The command should be something like {}{}{} --show {}".format(JTR_EXE_FILE_PATH, " --format=" if lHashFormat else "", lHashFormat, lHashFile))
+        print("[*] The command should be something like {}{}{} --show {}".format(pJTR.jtr_executable_file_path, " --format=" if lHashFormat else "", lHashFormat, lHashFile))
         print()
         print("[*] Keep cracking with incremental mode")
-        print("[*] The command should be something like {}{}{} --incremental {}".format(JTR_EXE_FILE_PATH, " --format=" if lHashFormat else "", lHashFormat, lHashFile))
+        print("[*] The command should be something like {}{}{} --incremental {}".format(pJTR.jtr_executable_file_path, " --format=" if lHashFormat else "", lHashFormat, lHashFile))
 
 
 def count_hashes_in_input_file(pHashFile: str) -> int:
@@ -185,7 +188,7 @@ def do_run_jtr_mask_mode(pJTR: JohnTheRipper, pMask: str, pWordlist: str,
     if pWordlist: lCrackingMode += " using wordlist {}".format(pWordlist)
 
     lWatcher = Watcher(pCrackingMode=lCrackingMode, pNumberHashes=pNumberHashes, pVerbose=pVerbose,
-                       pDebug=pDebug, pJTRPotFilePath=JTR_POT_FILE_PATH)
+                       pDebug=pDebug, pJTRPotFilePath=pJTR.jtr_pot_file_path)
     lWatcher.start_timer()
     lWatcher.print_mode_start_message()
     
@@ -207,7 +210,7 @@ def run_jtr_wordlist_mode(pJTR: JohnTheRipper, pWordlist: str, pRule: str,
     if pRule: lCrackingMode += " with rule {}".format(pRule)
 
     lWatcher = Watcher(pCrackingMode=lCrackingMode, pNumberHashes=pNumberHashes, pVerbose=pVerbose,
-                       pDebug=pDebug, pJTRPotFilePath=JTR_POT_FILE_PATH)
+                       pDebug=pDebug, pJTRPotFilePath=pJTR.jtr_pot_file_path)
     lWatcher.start_timer()
     lWatcher.print_mode_start_message()
 
@@ -227,11 +230,31 @@ def do_run_jtr_single_mode(pJTR: JohnTheRipper, pVerbose: bool, pDebug: bool, pN
     lCrackingMode = "John the Ripper (JTR) Single Crack"
 
     lWatcher = Watcher(pCrackingMode=lCrackingMode, pNumberHashes=pNumberHashes, pVerbose=pVerbose,
-                       pDebug=pDebug, pJTRPotFilePath=JTR_POT_FILE_PATH)
+                       pDebug=pDebug, pJTRPotFilePath=pJTR.jtr_pot_file_path)
     lWatcher.start_timer()
     lWatcher.print_mode_start_message()
 
     pJTR.run_single_crack()
+
+    lWatcher.stop_timer()
+    lWatcher.print_mode_finsihed_message()
+
+    gReporter.appendRecord(pMode=lCrackingMode, pMask="", pWordlist="", pRule="",
+                           pNumberPasswordsCracked=lWatcher.number_passwords_cracked_by_this_mode,
+                           pNumberPasswordsCrackedPerSecond=lWatcher.number_passwords_cracked_by_this_mode_per_second,
+                           pPercentPasswordsCracked=lWatcher.percent_passwords_cracked_by_this_mode)
+
+
+def do_run_jtr_prince_mode(pJTR: JohnTheRipper, pVerbose: bool, pDebug: bool, pNumberHashes: int) -> None:
+
+    lCrackingMode = "John the Ripper (JTR) Prince Mode"
+
+    lWatcher = Watcher(pCrackingMode=lCrackingMode, pNumberHashes=pNumberHashes, pVerbose=pVerbose,
+                       pDebug=pDebug, pJTRPotFilePath=pJTR.jtr_pot_file_path)
+    lWatcher.start_timer()
+    lWatcher.print_mode_start_message()
+
+    pJTR.run_prince_mode()
 
     lWatcher.stop_timer()
     lWatcher.print_mode_finsihed_message()
@@ -311,7 +334,7 @@ def run_statistical_crack_mode(pJTR: JohnTheRipper, pPercentile: float, pVerbose
                                pDebug: bool, pNumberHashes: int) -> None:
 
     # The JTR POT file is the source of passwords
-    if pVerbose: print("[*] Parsing JTR POT file at {}".format(JTR_POT_FILE_PATH))
+    if pVerbose: print("[*] Parsing JTR POT file at {}".format(pJTR.jtr_pot_file_path))
     lListOfPasswords = pJTR.parse_passwords_from_pot()
 
     if pVerbose:
@@ -477,6 +500,15 @@ def run_jtr_single_mode(pJTR: JohnTheRipper, pVerbose: bool, pDebug: bool, pNumb
                            pDebug=pDebug, pNumberHashes=pNumberHashes)
 
 
+def run_jtr_prince_mode(pJTR: JohnTheRipper, pVerbose: bool, pDebug: bool, pNumberHashes: int) -> None:
+    """
+    :rtype: None
+    """
+    # Hard to say how many mangles but will be proportional to number of hashes
+    do_run_jtr_prince_mode(pJTR=pJTR, pVerbose=pVerbose,
+                           pDebug=pDebug, pNumberHashes=pNumberHashes)
+
+
 def run_jtr_prayer_mode(pJTR: JohnTheRipper, pMethod: int, pVerbose: bool,
                         pDebug: bool, pNumberHashes: int) -> None:
 
@@ -492,9 +524,6 @@ def run_jtr_prayer_mode(pJTR: JohnTheRipper, pMethod: int, pVerbose: bool,
 
 if __name__ == '__main__':
 
-    READ_LINES = 'r'
-    JTR_POT_FILE_PATH = Config.JTR_POT_FILE_PATH
-    JTR_EXE_FILE_PATH = Config.JTR_EXECUTABLE_FILE_PATH
     DEBUG = Config.DEBUG
     MAX_CHARS_TO_BRUTEFORCE = Config.MAX_CHARS_TO_BRUTEFORCE
 
@@ -528,6 +557,9 @@ if __name__ == '__main__':
                             action='store_true')
     lArgParser.add_argument('-r', '--recycle',
                             help='After all cracking attempts are finished, use the root words of already cracked passwords to create a new dictionary. Try to crack more passwords with the new dictionary.',
+                            action='store_true')
+    lArgParser.add_argument('-c', '--jtr-prince',
+                            help='Run John the Ripper''s Prince mode. This mode combines words within a dicitonary to generate guesses.',
                             action='store_true')
     lArgParser.add_argument('-s', '--stat-crack',
                             help="Enable statistical cracking. Byepass will run relatively fast cracking strategies in hopes of cracking enough passwords to induce a pattern and create \"high probability\" masks. Byepass will use the masks in an attempt to crack more passwords.\n\n",
@@ -569,13 +601,16 @@ if __name__ == '__main__':
     lVerbose = lArgs.verbose
     lRunSingleCrack = lArgs.jtr_single_crack
     lRecyclePasswords = lArgs.recycle
+    lRunPrince = lArgs.jtr_prince
     lDebug = parse_arg_debug(lArgs.debug)
     lHashFormat = parse_arg_hash_format(lArgs.hash_format)
     lTechniques = parse_argTechniques(lArgs.techniques)
     lPassThrough = lArgs.pass_through
+
     lRunDefaultTechniques = not lRunSingleCrack and not lArgs.basewords and \
                             not lArgs.brute_force and not lArgs.techniques and \
-                            not lArgs.stat_crack and not lRecyclePasswords
+                            not lArgs.stat_crack and not lRecyclePasswords and \
+                            not lRunPrince
 
     lJTR = JohnTheRipper(pJTRExecutableFilePath = Config.JTR_EXECUTABLE_FILE_PATH, pJTRPotFilePath = Config.JTR_POT_FILE_PATH,
                          pHashFilePath=lHashFile, pHashFormat=lHashFormat, pPassThrough=lPassThrough,
@@ -615,6 +650,10 @@ if __name__ == '__main__':
         run_jtr_prayer_mode(pJTR=lJTR, pMethod=i, pVerbose=lVerbose, pDebug=lDebug,
                             pNumberHashes=lNumberHashes)
 
+    # John the Ripper Single Crack mode
+    if lRunPrince:
+        run_jtr_prince_mode(pJTR=lJTR, pVerbose=lVerbose, pDebug=lDebug, pNumberHashes=lNumberHashes)
+
     # If the user chooses -s option, begin statistical analysis to aid targeted cracking routines
     if lArgs.stat_crack:
         lPercentile = parse_arg_percentile(lArgs.percentile)
@@ -628,7 +667,7 @@ if __name__ == '__main__':
     if lVerbose:
         lEndTime = time.time()
         lNumberPasswordsPOTFileAtEnd = lJTR.count_passwords_in_pot()
-        print_closing_message(pNumberHashes=lNumberHashes,
+        print_closing_message(pJTR=lJTR, pNumberHashes=lNumberHashes,
                               pNumberPasswordsPOTFileAtStart=lNumberPasswordsPOTFileAtStart,
                               pNumberPasswordsPOTFileAtEnd=lNumberPasswordsPOTFileAtEnd,
                               pStartTime=lStartTime, pEndTime=lEndTime)

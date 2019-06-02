@@ -157,6 +157,14 @@ Use recycle mode to try cracking remaining hashes using root words generated fro
 	
 	python3 byepass.py -v -f descrypt -r -i password.hashes
 
+### Using John the Ripper (JTR) Prince Mode
+
+Use prince mode with dictionary prince.txt
+
+	python3 byepass.py --verbose --hash-format=descrypt --jtr-prince --input-file=password.hashes
+	
+	python3 byepass.py -v -f descrypt -c -i password.hashes
+	
 ### Passing a switch to John the Ripper
 
 Use pass-through to pass fork command to JTR
