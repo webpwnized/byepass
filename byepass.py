@@ -5,6 +5,7 @@ from pwstats import PasswordStats
 from techniques import Techniques
 from watcher import Watcher
 from reporter import Reporter
+from jtr import JohnTheRipper
 import config as Config
 import subprocess
 import os.path
@@ -14,7 +15,6 @@ import argparse
 
 # GLOBALS
 gMasksAlreadyBruteForced = []
-gTechniques = Techniques()
 gReporter = Reporter()
 
 #METHODS
@@ -134,9 +134,9 @@ def parse_arg_brute_force(pArgBruteForce: str) -> tuple:
 
 
 def print_closing_message(pNumberHashes: int, pNumberPasswordsPOTFileAtStart: int,
-                          pStartTime: float, pEndTime: float) -> None:
+                          pNumberPasswordsPOTFileAtEnd: int, pStartTime: float, pEndTime: float) -> None:
 
-        lNumberPasswords = count_passwords_in_jtr_pot_file() - pNumberPasswordsPOTFileAtStart
+        lNumberPasswords = pNumberPasswordsPOTFileAtEnd - pNumberPasswordsPOTFileAtStart
         lElaspsedTime = time.gmtime(pEndTime - pStartTime)
         lDurationSeconds = pEndTime - pStartTime
         lNumberPasswordsCrackedPerSecond = lNumberPasswords // lDurationSeconds
@@ -161,41 +161,6 @@ def print_closing_message(pNumberHashes: int, pNumberPasswordsPOTFileAtStart: in
         print("[*] The command should be something like {}{}{} --incremental {}".format(JTR_EXE_FILE_PATH, " --format=" if lHashFormat else "", lHashFormat, lHashFile))
 
 
-def parse_jtr_show(pHashFile: str, pHashFormat:str, pVerbose: bool, pDebug: bool) -> None:
-
-    lCmdArgs = [JTR_EXE_FILE_PATH]
-    lCmdArgs.append("--show")
-    if pHashFormat: lCmdArgs.append("--format={}".format(pHashFormat))
-    lCmdArgs.append(pHashFile)
-    lCompletedProcess = subprocess.run(lCmdArgs, stdout=subprocess.PIPE)
-    lCrackedPasswords = lCompletedProcess.stdout.split(b'\n')
-    for lCrackedPassword in lCrackedPasswords:
-        try: print(lCrackedPassword.decode("utf-8"))
-        except: pass
-
-
-def parse_jtr_pot(pVerbose: bool, pDebug: bool) -> list:
-
-    lListOfPasswords = []
-    if pVerbose: print("[*] Reading input file " + JTR_POT_FILE_PATH)
-    with open(JTR_POT_FILE_PATH, READ_BYTES) as lFile:
-        lPotFile = lFile.readlines()
-    if pVerbose: print("[*] Finished reading input file " + JTR_POT_FILE_PATH)
-
-    if pVerbose: print("[*] Processing input file " + JTR_POT_FILE_PATH)
-    for lLine in lPotFile:
-        #LANMAN passwords are case-insensitive so they throw off statistical analysis
-        #For LANMAN, we assume lowercase (most popular choice) but errors will be inherent
-        if not lLine[0:3] == b'$LM':
-            lPassword = lLine.strip().split(b':')[1]
-        else:
-            lPassword = lLine.strip().split(b':')[1].lower()
-        lListOfPasswords.append(lPassword)
-    if pVerbose: print("[*] Finished processing input file " + JTR_POT_FILE_PATH)
-
-    return lListOfPasswords
-
-
 def count_hashes_in_input_file(pHashFile: str) -> int:
 
         lLines = 0
@@ -204,26 +169,11 @@ def count_hashes_in_input_file(pHashFile: str) -> int:
         return lLines
 
 
-def count_passwords_in_jtr_pot_file() -> int:
-
-    lLines = 0
-    try:
-        if os.path.exists(JTR_POT_FILE_PATH):
-            for lLine in open(JTR_POT_FILE_PATH):
-                lLines += 1
-    except:
-        lLines = 0
-    return lLines
-
-
-def do_run_jtr_mask_mode(pHashFile: str, pMask: str, pWordlist: str, pHashFormat:str,
-                      pVerbose: bool, pDebug: bool, pPassThrough: str,
-                      pNumberHashes: int) -> None:
+def do_run_jtr_mask_mode(pJTR: JohnTheRipper, pMask: str, pWordlist: str,
+                      pVerbose: bool, pDebug: bool, pNumberHashes: int) -> None:
 
     # There are two modes that run brute force using masks. Keep track of masks
     # already checked in case the same mask would be tried twice.
-
-    #Note: gMasksAlreadyBruteForced is a global variable
     if pMask in gMasksAlreadyBruteForced:
         if pVerbose:
             print("[*] Mask {} has already been tested in this session. Moving on to next task.".format(pMask))
@@ -239,15 +189,7 @@ def do_run_jtr_mask_mode(pHashFile: str, pMask: str, pWordlist: str, pHashFormat
     lWatcher.start_timer()
     lWatcher.print_mode_start_message()
     
-    lCmdArgs = [JTR_EXE_FILE_PATH]
-    if pHashFormat: lCmdArgs.append("--format={}".format(pHashFormat))
-    lCmdArgs.append("--mask={}".format(pMask))
-    if pWordlist: lCmdArgs.append("--wordlist={}".format(pWordlist))
-    if pPassThrough: lCmdArgs.append(pPassThrough)
-    lCmdArgs.append(pHashFile)
-    print("[*] Running command {}".format(lCmdArgs))
-    lCompletedProcess = subprocess.run(lCmdArgs, stdout=subprocess.PIPE)
-    time.sleep(0.5)
+    pJTR.run_mask_mode(pMask=pMask, pWordlist=pWordlist)
 
     lWatcher.stop_timer()
     lWatcher.print_mode_finsihed_message()
@@ -258,9 +200,8 @@ def do_run_jtr_mask_mode(pHashFile: str, pMask: str, pWordlist: str, pHashFormat
                            pPercentPasswordsCracked=lWatcher.percent_passwords_cracked_by_this_mode)
 
 
-def run_jtr_wordlist_mode(pHashFile: str, pWordlist: str, pRule: str, pHashFormat:str,
-                          pVerbose: bool, pDebug: bool, pPassThrough: str,
-                          pNumberHashes: int) -> None:
+def run_jtr_wordlist_mode(pJTR: JohnTheRipper, pWordlist: str, pRule: str,
+                          pVerbose: bool, pDebug: bool, pNumberHashes: int) -> None:
 
     lCrackingMode = "Wordlist {}".format(pWordlist)
     if pRule: lCrackingMode += " with rule {}".format(pRule)
@@ -270,15 +211,7 @@ def run_jtr_wordlist_mode(pHashFile: str, pWordlist: str, pRule: str, pHashForma
     lWatcher.start_timer()
     lWatcher.print_mode_start_message()
 
-    lCmdArgs = [JTR_EXE_FILE_PATH]
-    if pHashFormat: lCmdArgs.append("--format={}".format(pHashFormat))
-    lCmdArgs.append("--wordlist={}".format(pWordlist))
-    if pRule: lCmdArgs.append("--rule={}".format(pRule))
-    if pPassThrough: lCmdArgs.append(pPassThrough)
-    lCmdArgs.append(pHashFile)
-    print("[*] Running command {}".format(lCmdArgs))
-    lCompletedProcess = subprocess.run(lCmdArgs, stdout=subprocess.PIPE)
-    time.sleep(0.5)
+    pJTR.run_wordlist_mode(pWordlist=pWordlist, pRule=pRule)
 
     lWatcher.stop_timer()
     lWatcher.print_mode_finsihed_message()
@@ -289,10 +222,7 @@ def run_jtr_wordlist_mode(pHashFile: str, pWordlist: str, pRule: str, pHashForma
                            pPercentPasswordsCracked=lWatcher.percent_passwords_cracked_by_this_mode)
 
 
-def do_run_jtr_single_mode(pHashFile: str, pHashFormat: str, pPassThrough: str,
-                           pVerbose: bool, pDebug: bool, pNumberHashes: int) -> None:
-    # Note: subprocess.run() accepts the command to run as a list of arguments.
-    # lCmdArgs is this list.
+def do_run_jtr_single_mode(pJTR: JohnTheRipper, pVerbose: bool, pDebug: bool, pNumberHashes: int) -> None:
 
     lCrackingMode = "John the Ripper (JTR) Single Crack"
 
@@ -301,14 +231,7 @@ def do_run_jtr_single_mode(pHashFile: str, pHashFormat: str, pPassThrough: str,
     lWatcher.start_timer()
     lWatcher.print_mode_start_message()
 
-    lCmdArgs = [JTR_EXE_FILE_PATH]
-    lCmdArgs.append("--single")
-    if pHashFormat: lCmdArgs.append("--format={}".format(pHashFormat))
-    if pPassThrough: lCmdArgs.append(pPassThrough)
-    lCmdArgs.append(pHashFile)
-    print("[*] Running command {}".format(lCmdArgs))
-    lCompletedProcess = subprocess.run(lCmdArgs, stdout=subprocess.PIPE)
-    time.sleep(0.5)
+    pJTR.run_single_crack()
 
     lWatcher.stop_timer()
     lWatcher.print_mode_finsihed_message()
@@ -319,9 +242,8 @@ def do_run_jtr_single_mode(pHashFile: str, pHashFormat: str, pPassThrough: str,
                            pPercentPasswordsCracked=lWatcher.percent_passwords_cracked_by_this_mode)
 
 
-def run_jtr_baseword_mode(pHashFile: str, pBaseWords: str, pHashFormat: str,
-                          pVerbose: bool, pDebug: bool, pPassThrough: str,
-                          pNumberHashes: int) -> None:
+def run_jtr_baseword_mode(pJTR: JohnTheRipper, pBaseWords: str, pVerbose: bool,
+                          pDebug: bool, pNumberHashes: int) -> None:
 
     if pVerbose: print("[*] Starting mode: Baseword with words {}".format(pBaseWords))
 
@@ -334,28 +256,23 @@ def run_jtr_baseword_mode(pHashFile: str, pBaseWords: str, pHashFormat: str,
         lBaseWordsFile.write("%s\n" % lWord)
     lBaseWordsFile.flush()
     lBaseWordsFile.close()
-    run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist="basewords/basewords.txt", pRule="Best126",
-                          pHashFormat=pHashFormat, pVerbose=pVerbose, pDebug=pDebug,
-                          pPassThrough=pPassThrough, pNumberHashes=pNumberHashes)
-    run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist="basewords/basewords.txt", pRule="OneRuleToRuleThemAll",
-                          pHashFormat=pHashFormat, pVerbose=pVerbose, pDebug=pDebug,
-                          pPassThrough=pPassThrough, pNumberHashes=pNumberHashes)
-    run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist="basewords/basewords.txt", pRule="All",
-                          pHashFormat=pHashFormat, pVerbose=pVerbose, pDebug=pDebug,
-                          pPassThrough=pPassThrough, pNumberHashes=pNumberHashes)
+    run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lBaseWordsFileName, pRule="Best126",
+                          pVerbose=pVerbose, pDebug=pDebug, pNumberHashes=pNumberHashes)
+    run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lBaseWordsFileName, pRule="OneRuleToRuleThemAll",
+                          pVerbose=pVerbose, pDebug=pDebug, pNumberHashes=pNumberHashes)
+    run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lBaseWordsFileName, pRule="All",
+                          pVerbose=pVerbose, pDebug=pDebug, pNumberHashes=pNumberHashes)
     os.remove(lBaseWordsFileName)
 
     if pVerbose: print("[*] Finished Baseword Mode")
 
 
-def run_jtr_recycle_mode(pHashFile: str, pHashFormat: str, pVerbose: bool,
-                         pDebug: bool, pPassThrough: str, pNumberHashes: int) -> None:
+def run_jtr_recycle_mode(pJTR: JohnTheRipper, pVerbose: bool, pDebug: bool, pNumberHashes: int) -> None:
 
     if pVerbose: print("[*] Starting mode: Recycle")
 
     # The JTR POT file is the source of passwords
-    if pVerbose: print("[*] Parsing JTR POT file at {}".format(JTR_POT_FILE_PATH))
-    lListOfPasswords = parse_jtr_pot(pVerbose, True)
+    lListOfPasswords = pJTR.parse_passwords_from_pot()
 
     lRecycleFileName = 'basewords/recycle.txt'
     lRecycleDirectory = os.path.dirname(lRecycleFileName)
@@ -374,34 +291,28 @@ def run_jtr_recycle_mode(pHashFile: str, pHashFormat: str, pVerbose: bool,
         print("[*] Using {} unique words for recycle mode: ".format(str(lCountPasswords)))
         if lCountPasswords > 1000000: print("[*] That is a lot of words. Recycle mode may take a while.")
 
-    run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist="basewords/recycle.txt", pRule="SlowHashesPhase1",
-                          pHashFormat=pHashFormat, pVerbose=pVerbose, pDebug=pDebug,
-                          pPassThrough=pPassThrough, pNumberHashes=pNumberHashes)
-    run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist="basewords/recycle.txt", pRule="Best126",
-                          pHashFormat=pHashFormat, pVerbose=pVerbose, pDebug=pDebug,
-                          pPassThrough=pPassThrough, pNumberHashes=pNumberHashes)
-    run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist="basewords/recycle.txt", pRule="SlowHashesPhase2",
-                          pHashFormat=pHashFormat, pVerbose=pVerbose, pDebug=pDebug,
-                          pPassThrough=pPassThrough, pNumberHashes=pNumberHashes)
-    run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist="basewords/recycle.txt", pRule="SlowHashesPhase3",
-                          pHashFormat=pHashFormat, pVerbose=pVerbose, pDebug=pDebug,
-                          pPassThrough=pPassThrough, pNumberHashes=pNumberHashes)
-    run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist="basewords/recycle.txt", pRule="OneRuleToRuleThemAll",
-                          pHashFormat=pHashFormat, pVerbose=pVerbose, pDebug=pDebug,
-                          pPassThrough=pPassThrough, pNumberHashes=pNumberHashes)
+    run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lRecycleFileName, pRule="SlowHashesPhase1",
+                          pVerbose=pVerbose, pDebug=pDebug, pNumberHashes=pNumberHashes)
+    run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lRecycleFileName, pRule="Best126",
+                          pVerbose=pVerbose, pDebug=pDebug, pNumberHashes=pNumberHashes)
+    run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lRecycleFileName, pRule="SlowHashesPhase2",
+                          pVerbose=pVerbose, pDebug=pDebug, pNumberHashes=pNumberHashes)
+    run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lRecycleFileName, pRule="SlowHashesPhase3",
+                          pVerbose=pVerbose, pDebug=pDebug, pNumberHashes=pNumberHashes)
+    run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lRecycleFileName, pRule="OneRuleToRuleThemAll",
+                          pVerbose=pVerbose, pDebug=pDebug, pNumberHashes=pNumberHashes)
 
     os.remove(lRecycleFileName)
 
     if pVerbose: print("[*] Finished  Mode: Recycle")
 
 
-def run_statistical_crack_mode(pHashFile: str, pPercentile: float, pHashFormat: str,
-                                 pVerbose: bool, pDebug: bool, pPassThrough: str,
-                                 pNumberHashes: int) -> None:
+def run_statistical_crack_mode(pJTR: JohnTheRipper, pPercentile: float, pVerbose: bool,
+                               pDebug: bool, pNumberHashes: int) -> None:
 
     # The JTR POT file is the source of passwords
     if pVerbose: print("[*] Parsing JTR POT file at {}".format(JTR_POT_FILE_PATH))
-    lListOfPasswords = parse_jtr_pot(pVerbose, True)
+    lListOfPasswords = pJTR.parse_passwords_from_pot()
 
     if pVerbose:
         lCountPasswords = lListOfPasswords.__len__()
@@ -430,9 +341,8 @@ def run_statistical_crack_mode(pHashFile: str, pPercentile: float, pHashFormat: 
         lCountCharacters = int(len(lMask) / 2)
         if lCountCharacters <= MAX_CHARS_TO_BRUTEFORCE:
             lWordlist = ""
-            do_run_jtr_mask_mode(pHashFile=pHashFile, pMask=lMask, pWordlist=lWordlist,
-                              pHashFormat=pHashFormat, pVerbose=pVerbose, pDebug=pDebug,
-                              pPassThrough=pPassThrough, pNumberHashes=pNumberHashes)
+            do_run_jtr_mask_mode(pJTR=pJTR, pMask=lMask, pWordlist=lWordlist,
+                                pVerbose=pVerbose, pDebug=pDebug, pNumberHashes=pNumberHashes)
         else:
 
             # All lowercase letters
@@ -441,27 +351,24 @@ def run_statistical_crack_mode(pHashFile: str, pPercentile: float, pHashFormat: 
                 if lCountLetters > MAX_CHARS_TO_BRUTEFORCE:
                     lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
                     lRule=""
-                    run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist=lWordlist, pRule=lRule, pHashFormat=pHashFormat,
-                                          pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough,
-                                          pNumberHashes=pNumberHashes)
+                    run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lWordlist, pRule=lRule,
+                                          pVerbose=pVerbose, pDebug=pDebug, pNumberHashes=pNumberHashes)
 
             # All uppercase
             elif re.match('^(\?u)+$', lMask):
                 lCountLetters = lMask.count('?u')
                 lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
                 lRule = "uppercase"
-                run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist=lWordlist, pRule=lRule, pHashFormat=pHashFormat,
-                                      pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough,
-                                      pNumberHashes=pNumberHashes)
+                run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lWordlist, pRule=lRule,
+                                      pVerbose=pVerbose, pDebug=pDebug, pNumberHashes=pNumberHashes)
 
             # Uppercase followed by lowercase (assume only leading letter is uppercase)
             elif re.match('^(\?u)(\?l)+$', lMask):
                 lCountLetters = lMask.count('?u') + lMask.count('?l')
                 lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
                 lRule = "capitalize"
-                run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist=lWordlist, pRule=lRule, pHashFormat=pHashFormat,
-                                      pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough,
-                                      pNumberHashes=pNumberHashes)
+                run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lWordlist, pRule=lRule,
+                                      pVerbose=pVerbose, pDebug=pDebug, pNumberHashes=pNumberHashes)
 
             # Lowercase ending with digits
             elif re.match('^(\?l)+(\?d)+$', lMask):
@@ -469,9 +376,8 @@ def run_statistical_crack_mode(pHashFile: str, pPercentile: float, pHashFormat: 
                 lCountDigits = lMask.count('?d')
                 lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
                 lRule = "append{}digits".format(str(lCountDigits))
-                run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist=lWordlist, pRule=lRule, pHashFormat=pHashFormat,
-                                      pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough,
-                                      pNumberHashes=pNumberHashes)
+                run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lWordlist, pRule=lRule,
+                                      pVerbose=pVerbose, pDebug=pDebug, pNumberHashes=pNumberHashes)
 
             # Uppercase followed by digits
             elif re.match('^(\?u)+(\?d)+$', lMask):
@@ -479,9 +385,8 @@ def run_statistical_crack_mode(pHashFile: str, pPercentile: float, pHashFormat: 
                 lCountDigits = lMask.count('?d')
                 lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
                 lRule = "uppercaseappend{}digits".format(str(lCountDigits))
-                run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist=lWordlist, pRule=lRule, pHashFormat=pHashFormat,
-                                      pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough,
-                                      pNumberHashes=pNumberHashes)
+                run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lWordlist, pRule=lRule,
+                                      pVerbose=pVerbose, pDebug=pDebug, pNumberHashes=pNumberHashes)
 
             # Uppercase, lowercase, then digits (assume only leading letter is uppercase)
             elif re.match('^(\?u)(\?l)+(\?d)+$', lMask):
@@ -489,9 +394,8 @@ def run_statistical_crack_mode(pHashFile: str, pPercentile: float, pHashFormat: 
                 lCountDigits = lMask.count('?d')
                 lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
                 lRule = "capitalizeappend{}digits".format(str(lCountDigits))
-                run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist=lWordlist, pRule=lRule, pHashFormat=pHashFormat,
-                                      pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough,
-                                      pNumberHashes=pNumberHashes)
+                run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lWordlist, pRule=lRule,
+                                      pVerbose=pVerbose, pDebug=pDebug, pNumberHashes=pNumberHashes)
 
             # Low number of digits. We do not cover large numbers of digits because
             # precomputing dictionary files would be huge and running mask mode takes a long time.
@@ -501,9 +405,9 @@ def run_statistical_crack_mode(pHashFile: str, pPercentile: float, pHashFormat: 
                 lCountDigits = lMask.count('?d')
                 if lCountDigits == 5:
                     lWordlist = "dictionaries/{}-digit-numbers.txt".format(str(lCountDigits))
-                    run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist=lWordlist, pRule="", pHashFormat=pHashFormat,
-                                          pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough,
-                                          pNumberHashes=pNumberHashes)
+                    lRule =""
+                    run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lWordlist, pRule=lRule,
+                                          pVerbose=pVerbose, pDebug=pDebug, pNumberHashes=pNumberHashes)
                 else:
                     print("[*] WARNING: Did not process mask {} because it is out of policy".format(lMask))
 
@@ -517,9 +421,8 @@ def run_statistical_crack_mode(pHashFile: str, pPercentile: float, pHashFormat: 
                 if len(lSuffix) <= 4:
                     lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
                     lMaskParam = "--mask=?w{}".format(lSuffix)
-                    do_run_jtr_mask_mode(pHashFile=pHashFile, pMask=lMaskParam, pWordlist=lWordlist, pHashFormat=pHashFormat,
-                                      pVerbose=pVerbose, pDebug=pDebug, pPassThrough=pPassThrough,
-                                      pNumberHashes=pNumberHashes)
+                    do_run_jtr_mask_mode(pJTR=pJTR, pMask=lMaskParam, pWordlist=lWordlist,
+                                      pVerbose=pVerbose, pDebug=pDebug, pNumberHashes=pNumberHashes)
                 else:
                     print("[*] WARNING: Did not process mask {} because it is out of policy".format(lMask))
 
@@ -532,9 +435,8 @@ def run_statistical_crack_mode(pHashFile: str, pPercentile: float, pHashFormat: 
         "[*] WARNING: There was no policy defined for the following masks: {}".format(lUndefinedMasks))
 
 
-def run_jtr_brute_force_mode(pHashFile: str, pMinCharactersToBruteForce: int,
+def run_jtr_brute_force_mode(pJTR: JohnTheRipper, pMinCharactersToBruteForce: int,
                              pMaxCharactersToBruteForce: int,
-                             pHashFormat: str, pPassThrough: str,
                              pVerbose: bool, pDebug: bool, pNumberHashes: int) -> None:
 
     for i in range(pMinCharactersToBruteForce, pMaxCharactersToBruteForce + 1):
@@ -562,42 +464,34 @@ def run_jtr_brute_force_mode(pHashFile: str, pMinCharactersToBruteForce: int,
                 lMasks.append(lUpperLowerDigitMask)
 
         for lMask in lMasks:
-            do_run_jtr_mask_mode(pHashFile=pHashFile, pMask=lMask, pWordlist=None,
-                              pHashFormat=pHashFormat, pPassThrough=pPassThrough,
-                              pVerbose=pVerbose, pDebug=pDebug, pNumberHashes=pNumberHashes)
+            do_run_jtr_mask_mode(pJTR=pJTR, pMask=lMask, pWordlist=None,
+                                 pVerbose=pVerbose, pDebug=pDebug, pNumberHashes=pNumberHashes)
 
 
-def run_jtr_single_mode(pHashFile: str, pHashFormat: str, pPassThrough: str,
-                        pVerbose: bool, pDebug: bool, pNumberHashes: int) -> None:
+def run_jtr_single_mode(pJTR: JohnTheRipper, pVerbose: bool, pDebug: bool, pNumberHashes: int) -> None:
     """
     :rtype: None
     """
     # Hard to say how many mangles but will be proportional to number of hashes
-    do_run_jtr_single_mode(pHashFile=pHashFile, pHashFormat=pHashFormat,
-                           pPassThrough=pPassThrough, pVerbose=pVerbose,
+    do_run_jtr_single_mode(pJTR=pJTR, pVerbose=pVerbose,
                            pDebug=pDebug, pNumberHashes=pNumberHashes)
 
 
-def run_jtr_prayer_mode(pHashFile: str, pMethod: int, pHashFormat: str,
-                           pPassThrough: str, pVerbose: bool, pDebug: bool,
-                           pNumberHashes: int) -> None:
+def run_jtr_prayer_mode(pJTR: JohnTheRipper, pMethod: int, pVerbose: bool,
+                        pDebug: bool, pNumberHashes: int) -> None:
 
-    lFolder = gTechniques.techniques[pMethod].Folder
-    lDictionaries = gTechniques.techniques[pMethod].Dictionaries
-    lRules = gTechniques.techniques[pMethod].Rules
+    lTechniques = Techniques()
+    lFolder, lDictionaries, lRules = lTechniques.get_technique(pMethod)
 
     # Run the wordlist and rule
     for lDictionary in lDictionaries:
         for lRule in lRules:
-            run_jtr_wordlist_mode(pHashFile=pHashFile, pWordlist=lFolder + "/" + lDictionary,
-                                    pRule=lRule, pHashFormat=pHashFormat,
-                                    pPassThrough=pPassThrough, pVerbose=pVerbose,
-                                    pDebug=pDebug, pNumberHashes=pNumberHashes)
+            run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lFolder + "/" + lDictionary, pRule=lRule,
+                                  pVerbose=pVerbose, pDebug=pDebug, pNumberHashes=pNumberHashes)
 
 
 if __name__ == '__main__':
 
-    READ_BYTES = 'rb'
     READ_LINES = 'r'
     JTR_POT_FILE_PATH = Config.JTR_POT_FILE_PATH
     JTR_EXE_FILE_PATH = Config.JTR_EXECUTABLE_FILE_PATH
@@ -678,12 +572,17 @@ if __name__ == '__main__':
     lDebug = parse_arg_debug(lArgs.debug)
     lHashFormat = parse_arg_hash_format(lArgs.hash_format)
     lTechniques = parse_argTechniques(lArgs.techniques)
+    lPassThrough = lArgs.pass_through
     lRunDefaultTechniques = not lRunSingleCrack and not lArgs.basewords and \
                             not lArgs.brute_force and not lArgs.techniques and \
                             not lArgs.stat_crack and not lRecyclePasswords
 
+    lJTR = JohnTheRipper(pJTRExecutableFilePath = Config.JTR_EXECUTABLE_FILE_PATH, pJTRPotFilePath = Config.JTR_POT_FILE_PATH,
+                         pHashFilePath=lHashFile, pHashFormat=lHashFormat, pPassThrough=lPassThrough,
+                         pVerbose=lVerbose, pDebug=lDebug)
+
     lNumberHashes = count_hashes_in_input_file(pHashFile=lHashFile)
-    lNumberPasswordsPOTFileAtStart = count_passwords_in_jtr_pot_file()
+    lNumberPasswordsPOTFileAtStart = lJTR.count_passwords_in_pot()
 
     if lVerbose:
         lStartTime = time.time()
@@ -697,45 +596,39 @@ if __name__ == '__main__':
 
     # Hopefully user has some knowledge of system to give good base words
     if lArgs.basewords:
-        run_jtr_baseword_mode(pHashFile=lHashFile, pBaseWords=lArgs.basewords, pHashFormat=lHashFormat,
-                              pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through,
-                              pNumberHashes=lNumberHashes)
+        run_jtr_baseword_mode(pJTR=lJTR, pBaseWords=lArgs.basewords, pVerbose=lVerbose,
+                              pDebug=lDebug, pNumberHashes=lNumberHashes)
 
     # John the Ripper Single Crack mode
     if lRunSingleCrack:
-        run_jtr_single_mode(pHashFile=lHashFile, pHashFormat=lHashFormat, pVerbose=lVerbose,
-                            pDebug=lDebug, pPassThrough=lArgs.pass_through, pNumberHashes=lNumberHashes)
+        run_jtr_single_mode(pJTR=lJTR, pVerbose=lVerbose, pDebug=lDebug, pNumberHashes=lNumberHashes)
 
     # Smart brute-force
     if lArgs.brute_force:
         lMinCharactersToBruteForce, lMaxCharactersToBruteForce = parse_arg_brute_force(lArgs.brute_force)
-        run_jtr_brute_force_mode(pHashFile=lHashFile, pMinCharactersToBruteForce=lMinCharactersToBruteForce,
+        run_jtr_brute_force_mode(pJTR=lJTR, pMinCharactersToBruteForce=lMinCharactersToBruteForce,
                                  pMaxCharactersToBruteForce=lMaxCharactersToBruteForce,
-                                 pHashFormat=lHashFormat, pVerbose=lVerbose,
-                                 pDebug=lDebug, pPassThrough=lArgs.pass_through,
-                                 pNumberHashes=lNumberHashes)
+                                 pVerbose=lVerbose, pDebug=lDebug, pNumberHashes=lNumberHashes)
 
     # Try to crack passwords using the techniques specified
     for i in lTechniques:
-        run_jtr_prayer_mode(pHashFile=lHashFile, pMethod=i, pHashFormat=lHashFormat,
-                            pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through,
+        run_jtr_prayer_mode(pJTR=lJTR, pMethod=i, pVerbose=lVerbose, pDebug=lDebug,
                             pNumberHashes=lNumberHashes)
 
     # If the user chooses -s option, begin statistical analysis to aid targeted cracking routines
     if lArgs.stat_crack:
-
         lPercentile = parse_arg_percentile(lArgs.percentile)
-        run_statistical_crack_mode(pHashFile=lHashFile, pPercentile=lPercentile, pHashFormat=lHashFormat,
-                                     pVerbose=lVerbose, pDebug=lDebug, pPassThrough=lArgs.pass_through,
-                                     pNumberHashes=lNumberHashes)
+        run_statistical_crack_mode(pJTR=lJTR, pPercentile=lPercentile, pVerbose=lVerbose,
+                                   pDebug=lDebug, pNumberHashes=lNumberHashes)
 
     if lRecyclePasswords:
-
-        run_jtr_recycle_mode(pHashFile=lHashFile, pHashFormat=lHashFormat, pVerbose=lVerbose,
-                             pDebug=lDebug, pPassThrough=lArgs.pass_through, pNumberHashes=lNumberHashes)
+        run_jtr_recycle_mode(pJTR=lJTR, pVerbose=lVerbose,
+                             pDebug=lDebug, pNumberHashes=lNumberHashes)
 
     if lVerbose:
         lEndTime = time.time()
+        lNumberPasswordsPOTFileAtEnd = lJTR.count_passwords_in_pot()
         print_closing_message(pNumberHashes=lNumberHashes,
                               pNumberPasswordsPOTFileAtStart=lNumberPasswordsPOTFileAtStart,
+                              pNumberPasswordsPOTFileAtEnd=lNumberPasswordsPOTFileAtEnd,
                               pStartTime=lStartTime, pEndTime=lEndTime)

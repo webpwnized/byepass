@@ -1,11 +1,9 @@
 from typing import NamedTuple
 
-
 class Technique(NamedTuple):
-    Folder: str
-    Dictionaries: list
-    Rules: list
-
+    folder: str
+    dictionaries: list
+    rules: list
 
 class Techniques:
 
@@ -39,9 +37,11 @@ class Techniques:
     def techniques(self: object) -> dict:
         return self.__mTechniques
 
+    # Constructor
     def __init__(self: object) -> None:
         self.__generate_techniques()
 
+    # Private methods
     def __generate_techniques(self: object) -> None:
 
         # Words: 50,000 words  Rules: 1 mangles Factor: 50,000
@@ -88,3 +88,9 @@ class Techniques:
 
         # Words: 2,000,000 words  Rules: 50,000 mangles Factor: 100,000,000,000
         self.__mTechniques[15] = Technique(self.__mDictionaryFolder, self.__mVeryLargeDictionaries, self.__mLargeRules)
+
+    # Public methods
+    def get_technique(self, pTechnique: int) -> tuple:
+        return self.__mTechniques[pTechnique].folder, self.__mTechniques[pTechnique].dictionaries, \
+               self.__mTechniques[pTechnique].rules
+

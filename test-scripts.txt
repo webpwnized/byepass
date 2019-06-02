@@ -1,32 +1,32 @@
 ## Default
 
-python3 byepass.py -f Raw-MD5 -j="--fork=2" -v -i t.hashes
+python3 byepass.py -f Raw-MD5 -j="--fork=8" -v -i md5.hashes
 
 
 ## Prayer Mode Technique 4
 
-python3 byepass.py -f Raw-MD5 -j="--fork=2" -t 4 -v -i t.hashes
+python3 byepass.py -f Raw-MD5 -j="--fork=8" -t 4 -v -i md5.hashes
 
 
 ## Wordlist Mode
 
-python3 byepass.py -f Raw-MD5 -j="--fork=2" -w eharmony -v -i t.hashes
+python3 byepass.py -f Raw-MD5 -j="--fork=8" -w eharmony -v -i md5.hashes
 
 
 ## Stat Crack Mode
 
-python3 byepass.py -f Raw-MD5 -j="--fork=2" -s -p 0.5 -v -i t.hashes
+python3 byepass.py -f Raw-MD5 -j="--fork=8" -s -p 0.5 -v -i md5.hashes
 
 
 ## JTR Single Crack Mode
 
-python3 byepass.py -f Raw-MD5 -j="--fork=2" -u -v -i t.hashes
+python3 byepass.py -f Raw-MD5 -j="--fork=8" -u -v -i md5.hashes
 
 
 ## Brute Force Mode
 
-python3 byepass.py -f Raw-MD5 -j="--fork=2" -b 3,4 -v -i t.hashes
+python3 byepass.py -f Raw-MD5 -j="--fork=8" -b 8,8 -v -i md5.hashes
 
 ## Recycle
 
-python3 byepass.py -f Raw-MD5 -j="--fork=2" -r -v -i t.hashes
+python3 byepass.py -f Raw-MD5 -j="--fork=8" -r -v -i md5.hashes
