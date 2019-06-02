@@ -1,7 +1,5 @@
 Find out how to print actual passwords cracked at end
-Table of cracking results display at end
 Prince mode
-Recycle mode
 Have I been pwned passwords
 Optimize command builder in preparation for adding Hashcat
 Take a look at Hashcat automator
