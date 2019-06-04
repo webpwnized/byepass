@@ -14,7 +14,7 @@ class JohnTheRipper:
 
     @property  # getter method
     def jtr_executable_file_path(self):
-        return self.__mJTRPotFilePath
+        return self.__mJohnExecutableFilePath
 
     @jtr_executable_file_path.setter  # setter method
     def jtr_executable_file_path(self: object, pJohnExecutableFilePath: str):
@@ -66,14 +66,17 @@ class JohnTheRipper:
 
     # Private Methods
     def __crack(self, lCmdArgs: list):
+        if self.__mHashFormat: lCmdArgs.append("--format={}".format(self.__mHashFormat))
+        if self.__mPassThrough: lCmdArgs.append(self.__mPassThrough)
+        lCmdArgs.append(self.__mHashFilePath)
+        self.__run_jtr(lCmdArgs)
+
+    def __run_jtr(self, lCmdArgs: list):
         # Note: subprocess.run() accepts the command to run as a list of arguments.
         # lCmd is this list.
 
         lCmd = [self.__mJohnExecutableFilePath]
         lCmd.extend(lCmdArgs)
-        if self.__mHashFormat: lCmd.append("--format={}".format(self.__mHashFormat))
-        if self.__mPassThrough: lCmd.append(self.__mPassThrough)
-        lCmd.append(self.__mHashFilePath)
         if self.__mVerbose: print("[*] Running command {}".format(lCmd))
         lCompletedProcess = subprocess.run(lCmd, stdout=subprocess.PIPE)
         time.sleep(0.5)
@@ -85,7 +88,19 @@ class JohnTheRipper:
 
     def run_prince_mode(self) -> None:
         lCmdArgs = ["--prince=dictionaries/prince.txt"]
+        lCmdArgs.append("--rule=Best126")
+        lCmdArgs.append("--prince-wl-max=16")
+        lCmdArgs.append("--prince-case-permute")
+        # lCmdArgs.append("--prince-wl-dist-len")
         self.__crack(lCmdArgs=lCmdArgs)
+
+    def estimate_prince_mode(self) -> None:
+        lCmdArgs = ["--prince=dictionaries/prince.txt"]
+        lCmdArgs.append("--prince-wl-max=16")
+        lCmdArgs.append("--prince-case-permute")
+        # lCmdArgs.append("--prince-wl-dist-len")
+        lCmdArgs.append("--prince-keyspace")
+        self.__run_jtr(lCmdArgs=lCmdArgs)
 
     def run_wordlist_mode(self, pWordlist: str, pRule: str) -> None:
         lCmdArgs = ["--wordlist={}".format(pWordlist)]

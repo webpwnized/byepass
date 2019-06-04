@@ -25,6 +25,7 @@ class Reporter:
         self.__mTaskRecords.append(lTaskRecord)
 
     def reportResults(self):
+        self.__mTaskRecords.sort(key=lambda x: x.NumberPasswordsCracked, reverse=True)
         self.__mTaskRecords.sort(key=lambda x: x.PercentPasswordsCracked, reverse=True)
 
         for lRecord in self.__mTaskRecords:

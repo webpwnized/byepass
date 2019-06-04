@@ -254,6 +254,7 @@ def do_run_jtr_prince_mode(pJTR: JohnTheRipper, pVerbose: bool, pDebug: bool, pN
     lWatcher.start_timer()
     lWatcher.print_mode_start_message()
 
+    if pVerbose: pJTR.estimate_prince_mode()
     pJTR.run_prince_mode()
 
     lWatcher.stop_timer()

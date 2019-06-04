@@ -23,7 +23,7 @@ c $! $1
 $! $!
 c $! $!
 
-## high frequency append - add e, s already added by the "p" rule above
+## high frequency append - add "e", note that "s" already added by the "p" (plaural) rule above
 $e
 
 ## leetify - JD
