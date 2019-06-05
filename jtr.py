@@ -81,24 +81,24 @@ class JohnTheRipper:
         lCompletedProcess = subprocess.run(lCmd, stdout=subprocess.PIPE)
         time.sleep(0.5)
 
+    def __get_prince_parameters(self):
+        lCmdArgs = ["--prince=dictionaries/prince.txt"]
+        lCmdArgs.append("--prince-elem-cnt-min=2")
+        lCmdArgs.append("--prince-elem-cnt-max=3")
+        return lCmdArgs
+
     # Public Methods
     def run_single_crack(self) -> None:
         lCmdArgs = ["--single"]
         self.__crack(lCmdArgs=lCmdArgs)
 
     def run_prince_mode(self) -> None:
-        lCmdArgs = ["--prince=dictionaries/prince.txt"]
-        lCmdArgs.append("--rule=Best126")
-        lCmdArgs.append("--prince-wl-max=16")
-        lCmdArgs.append("--prince-case-permute")
-        # lCmdArgs.append("--prince-wl-dist-len")
+        lCmdArgs = self.__get_prince_parameters()
+        lCmdArgs.append("--rule=prince")
         self.__crack(lCmdArgs=lCmdArgs)
 
     def estimate_prince_mode(self) -> None:
-        lCmdArgs = ["--prince=dictionaries/prince.txt"]
-        lCmdArgs.append("--prince-wl-max=16")
-        lCmdArgs.append("--prince-case-permute")
-        # lCmdArgs.append("--prince-wl-dist-len")
+        lCmdArgs = self.__get_prince_parameters()
         lCmdArgs.append("--prince-keyspace")
         self.__run_jtr(lCmdArgs=lCmdArgs)
 
