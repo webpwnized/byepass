@@ -27,33 +27,13 @@ c $! $!
 $e
 
 ## leetify - JD
-#vowels - a,e,i,o
-sa[4@]
-se3
-si[1!]
-so0
-c sa[4@]
-c se3
-c si[1!]
-c so0
-
-#consonants g,s,t,l
-sg9
-sl1
-ss[5$]
-st[7+]
-c sg9
-c sl1
-c ss[5$]
-c st[7+]
-
 # All combinations, then add digit, then add digit with exclamation point
-sa[4@] se3 si[1!] so0 sg9 sl1 ss[5$] st[7+]
-sa[4@] se3 si[1!] so0 sg9 sl1 ss[5$] st[7+] $[0-9]
-sa[4@] se3 si[1!] so0 sg9 sl1 ss[5$] st[7+] $[0-9] $!
-c sa[4@] se3 si[1!] so0 sg9 sl1 ss[5$] st[7+]
-c sa[4@] se3 si[1!] so0 sg9 sl1 ss[5$] st[7+] $[0-9]
-c sa[4@] se3 si[1!] so0 sg9 sl1 ss[5$] st[7+] $[0-9] $!
+sa[a4@] se[e3] si[i1!] so[o0] sg[g9] sl[l1] ss[s5$] st[t7+]
+sa[a4@] se[e3] si[i1!] so[o0] sg[g9] sl[l1] ss[s5$] st[t7+] $[0-9]
+sa[a4@] se[e3] si[i1!] so[o0] sg[g9] sl[l1] ss[s5$] st[t7+] $[0-9] $!
+c sa[a4@] se[e3] si[i1!] so[o0] sg[g9] sl[l1] ss[s5$] st[t7+]
+c sa[a4@] se[e3] si[i1!] so[o0] sg[g9] sl[l1] ss[s5$] st[t7+] $[0-9]
+c sa[a4@] se[e3] si[i1!] so[o0] sg[g9] sl[l1] ss[s5$] st[t7+] $[0-9] $!
 
 ## high frequency overwrite at end
 ] $a

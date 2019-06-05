@@ -9,6 +9,10 @@ class JohnTheRipper:
     __mHashFilePath = ""
     __mHashFormat = ""
     __mPassThrough = ""
+    __mWordlist = ""
+    __mPathToWordlist = ""
+    __mPrinceElementCountMin = 2
+    __mPrinceElementCountMax = 3
 
     READ_BYTES = 'rb'
 
@@ -52,6 +56,38 @@ class JohnTheRipper:
     def pass_through(self: object, pPassThrough: str):
         self.__mPassThrough = pPassThrough
 
+    @property  # getter method
+    def wordlist(self):
+        return self.__mWordlist
+
+    @wordlist.setter  # setter method
+    def wordlist(self: object, pWordlist: str):
+        self.__mWordlist = pWordlist
+
+    @property  # getter method
+    def path_to_wordlist(self):
+        return self.__mPathToWordlist
+
+    @path_to_wordlist.setter  # setter method
+    def path_to_wordlist(self: object, pPathToWordlist: str):
+        self.__mPathToWordlist = pPathToWordlist
+
+    @property  # getter method
+    def prince_element_count_min(self):
+        return self.__mPrinceElementCountMin
+
+    @prince_element_count_min.setter  # setter method
+    def prince_element_count_min(self: object, pPrinceElementCountMin: str):
+        self.__mPrinceElementCountMin = pPrinceElementCountMin
+
+    @property  # getter method
+    def prince_element_count_max(self):
+        return self.__mPrinceElementCountMax
+
+    @prince_element_count_max.setter  # setter method
+    def prince_element_count_max(self: object, pPrinceElementCountMax: str):
+        self.__mPrinceElementCountMax = pPrinceElementCountMax
+
     # Constructor Methods
     def __init__(self: object, pJTRExecutableFilePath: str, pJTRPotFilePath: str,
                  pHashFilePath: str, pHashFormat: str, pPassThrough: str,
@@ -81,27 +117,33 @@ class JohnTheRipper:
         lCompletedProcess = subprocess.run(lCmd, stdout=subprocess.PIPE)
         time.sleep(0.5)
 
-# Must stay under 26 bits
-    def __get_prince_parameters(self, pWordlist: str) -> list:
-        lCmdArgs = ["--prince=dictionaries/{}".format(pWordlist)]
-        lCmdArgs.append("--prince-elem-cnt-min=2")
-        lCmdArgs.append("--prince-elem-cnt-max=2")
-        return lCmdArgs
+    def __estimate_prince_mode(self, pCmdArgs: list) -> None:
+        pCmdArgs.append("--prince-keyspace")
+        self.__run_jtr(lCmdArgs=pCmdArgs)
+        pCmdArgs.remove("--prince-keyspace")
 
     # Public Methods
     def run_single_crack(self) -> None:
         lCmdArgs = ["--single"]
         self.__crack(lCmdArgs=lCmdArgs)
 
-    def run_prince_mode(self, pWordlist: str) -> None:
-        lCmdArgs = self.__get_prince_parameters(pWordlist=pWordlist)
+    # Must stay under 26 bits
+    def run_prince_mode(self, pPathToWordlist: str, pWordlist: str,
+                        pPrinceElementCountMin: int, pPrinceElementCountMax: int) -> None:
+        lCmdArgs = ["--prince={}/{}".format(pPathToWordlist, pWordlist)]
+        lCmdArgs.append("--prince-elem-cnt-min={}".format(pPrinceElementCountMin))
+        lCmdArgs.append("--prince-elem-cnt-max={}".format(pPrinceElementCountMax))
+        if self.__mVerbose: self.__estimate_prince_mode(lCmdArgs)
         lCmdArgs.append("--rule=prince")
         self.__crack(lCmdArgs=lCmdArgs)
 
-    def estimate_prince_mode(self, pWordlist: str) -> None:
-        lCmdArgs = self.__get_prince_parameters(pWordlist=pWordlist)
-        lCmdArgs.append("--prince-keyspace")
-        self.__run_jtr(lCmdArgs=lCmdArgs)
+    def run_prince_mode(self) -> None:
+        lCmdArgs = ["--prince={}/{}".format(self.__mPathToWordlist, self.__mWordlist)]
+        lCmdArgs.append("--prince-elem-cnt-min={}".format(self.__mPrinceElementCountMin))
+        lCmdArgs.append("--prince-elem-cnt-max={}".format(self.__mPrinceElementCountMax))
+        if self.__mVerbose: self.__estimate_prince_mode(lCmdArgs)
+        lCmdArgs.append("--rule=prince")
+        self.__crack(lCmdArgs=lCmdArgs)
 
     def run_wordlist_mode(self, pWordlist: str, pRule: str) -> None:
         lCmdArgs = ["--wordlist={}".format(pWordlist)]

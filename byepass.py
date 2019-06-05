@@ -254,23 +254,21 @@ def do_run_jtr_prince_mode(pJTR: JohnTheRipper, pVerbose: bool, pDebug: bool, pN
     lWatcher.start_timer()
     lWatcher.print_mode_start_message()
 
-    if pVerbose: pJTR.estimate_prince_mode(pWordlist="prince.txt")
-    pJTR.run_prince_mode(pWordlist="prince.txt")
+    pJTR.prince_element_count_min = 2
+    pJTR.prince_element_count_max = 3
+    pJTR.path_to_wordlist = "dictionaries"
+    pJTR.wordlist = "prince.txt"
+    pJTR.run_prince_mode()
 
-    if pVerbose: pJTR.estimate_prince_mode(pWordlist="songs.txt")
-    pJTR.run_prince_mode(pWordlist="prince.txt")
+    pJTR.prince_element_count_min = 2
+    pJTR.prince_element_count_max = 2
+    pJTR.wordlist = "short-list.txt"
+    pJTR.run_prince_mode()
+    pJTR.run_prince_mode()
 
-    if pVerbose: pJTR.estimate_prince_mode(pWordlist="short-list.txt")
-    pJTR.run_prince_mode(pWordlist="prince.txt")
-
-    if pVerbose: pJTR.estimate_prince_mode(pWordlist="sports.txt")
-    pJTR.run_prince_mode(pWordlist="prince.txt")
-
-    if pVerbose: pJTR.estimate_prince_mode(pWordlist="top-10000-english-words.txt")
-    pJTR.run_prince_mode(pWordlist="prince.txt")
-
-    if pVerbose: pJTR.estimate_prince_mode(pWordlist="persons-names.txt")
-    pJTR.run_prince_mode(pWordlist="prince.txt")
+    pJTR.wordlist = "top-10000-english-words.txt"
+    pJTR.run_prince_mode()
+    pJTR.run_prince_mode()
 
     lWatcher.stop_timer()
     lWatcher.print_mode_finsihed_message()
@@ -584,6 +582,9 @@ if __name__ == '__main__':
                             type=float,
                             help="Based on statistical analysis of the passwords cracked during initial phase, use only the masks statistically likely to be needed to crack at least the given percent of passwords. For example, if a value of 0.25 provided, only use the relatively few masks needed to crack 25 passwords of the passwords. Note that password cracking effort follows an exponential distribution, so cracking a few more passwords takes a lot more effort (relatively speaking). A good starting value if completely unsure is 25 percent (0.25).\n\n",
                             action='store')
+    lArgParser.add_argument('-a', '--all',
+                             help="Shortcut equivalent to -t 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 -s -p 0.9 -u -c -r",
+                             action='store_true')
     lArgParser.add_argument('-j', '--pass-through',
                              type=str,
                              help="Pass-through the raw parameter to John the Ripper. Example: --pass-through=\"--fork=2\"\n\n",
@@ -612,20 +613,31 @@ if __name__ == '__main__':
     if lArgs.percentile and not lArgs.stat_crack:
         print("[*] WARNING: Argument 'percentile' provided without argument 'stat_crack'. Percentile will be ignored")
 
+    if lArgs.all:
+        lArgs.techniques = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15"
+        lArgs.jtr_single_crack = True
+        lArgs.jtr_prince = True
+        lArgs.recycle = True
+        lArgs.stat_crack = True
+        lArgs.percentile = 0.90
+
     # Parse and validate input parameters
+    lHashFormat = parse_arg_hash_format(lArgs.hash_format)
+    lBasewords = lArgs.basewords
+    lBruteForce = lArgs.brute_force
+    lStatCrack = lArgs.stat_crack
     lHashFile = lArgs.input_file
     lVerbose = lArgs.verbose
     lRunSingleCrack = lArgs.jtr_single_crack
     lRecyclePasswords = lArgs.recycle
     lRunPrince = lArgs.jtr_prince
     lDebug = parse_arg_debug(lArgs.debug)
-    lHashFormat = parse_arg_hash_format(lArgs.hash_format)
     lTechniques = parse_argTechniques(lArgs.techniques)
     lPassThrough = lArgs.pass_through
 
-    lRunDefaultTechniques = not lRunSingleCrack and not lArgs.basewords and \
-                            not lArgs.brute_force and not lArgs.techniques and \
-                            not lArgs.stat_crack and not lRecyclePasswords and \
+    lRunDefaultTechniques = not lRunSingleCrack and not lBasewords and \
+                            not lBruteForce and not lArgs.techniques and \
+                            not lStatCrack and not lRecyclePasswords and \
                             not lRunPrince
 
     lJTR = JohnTheRipper(pJTRExecutableFilePath = Config.JTR_EXECUTABLE_FILE_PATH, pJTRPotFilePath = Config.JTR_POT_FILE_PATH,
@@ -646,7 +658,7 @@ if __name__ == '__main__':
         print("[*] WARNING: No technique specified. Running techniques 1,2 and 3")
 
     # Hopefully user has some knowledge of system to give good base words
-    if lArgs.basewords:
+    if lBasewords:
         run_jtr_baseword_mode(pJTR=lJTR, pBaseWords=lArgs.basewords, pVerbose=lVerbose,
                               pDebug=lDebug, pNumberHashes=lNumberHashes)
 
@@ -655,7 +667,7 @@ if __name__ == '__main__':
         run_jtr_single_mode(pJTR=lJTR, pVerbose=lVerbose, pDebug=lDebug, pNumberHashes=lNumberHashes)
 
     # Smart brute-force
-    if lArgs.brute_force:
+    if lBruteForce:
         lMinCharactersToBruteForce, lMaxCharactersToBruteForce = parse_arg_brute_force(lArgs.brute_force)
         run_jtr_brute_force_mode(pJTR=lJTR, pMinCharactersToBruteForce=lMinCharactersToBruteForce,
                                  pMaxCharactersToBruteForce=lMaxCharactersToBruteForce,
@@ -671,7 +683,7 @@ if __name__ == '__main__':
         run_jtr_prince_mode(pJTR=lJTR, pVerbose=lVerbose, pDebug=lDebug, pNumberHashes=lNumberHashes)
 
     # If the user chooses -s option, begin statistical analysis to aid targeted cracking routines
-    if lArgs.stat_crack:
+    if lStatCrack:
         lPercentile = parse_arg_percentile(lArgs.percentile)
         run_statistical_crack_mode(pJTR=lJTR, pPercentile=lPercentile, pVerbose=lVerbose,
                                    pDebug=lDebug, pNumberHashes=lNumberHashes)
