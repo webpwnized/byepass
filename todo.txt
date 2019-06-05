@@ -5,3 +5,6 @@ Supress output from popen
 Add bash color coding to output
 Add support for Hashcat
 Optimize prince dictionary
+Add agreesion levels for prince mode
+Add a "Just do it all" pseudo-mode
+Push JTR interface out behind a generic class interface in preparation for including hashcat

@@ -16,7 +16,7 @@ class Techniques:
     # Lists of dictionaries
     __mSmallDictionaries = ["calendar.txt", "short-list.txt", "brands.txt", "movie-characters.txt", "animals.txt",
                             "astrology.txt", "songs.txt"]
-    __mMediumDictionaries = ["anime.txt", "sports-related-words.txt", "bible.txt", "top-10000-english-words.txt",
+    __mMediumDictionaries = ["anime.txt", "sports.txt", "bible.txt", "top-10000-english-words.txt",
                              "top-10000-spanish-words.txt", "top-10000-german-words.txt"]
     __mLargeDictionaries = ["persons-names.txt", "other-base-words.txt", "places.txt"]
     __mVeryLargeDictionaries = ["all-english-words.txt", "all-spanish-words.txt", "all-french-words.txt", "all-german-words.txt"]

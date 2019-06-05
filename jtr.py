@@ -81,10 +81,11 @@ class JohnTheRipper:
         lCompletedProcess = subprocess.run(lCmd, stdout=subprocess.PIPE)
         time.sleep(0.5)
 
-    def __get_prince_parameters(self):
-        lCmdArgs = ["--prince=dictionaries/prince.txt"]
+# Must stay under 26 bits
+    def __get_prince_parameters(self, pWordlist: str) -> list:
+        lCmdArgs = ["--prince=dictionaries/{}".format(pWordlist)]
         lCmdArgs.append("--prince-elem-cnt-min=2")
-        lCmdArgs.append("--prince-elem-cnt-max=3")
+        lCmdArgs.append("--prince-elem-cnt-max=2")
         return lCmdArgs
 
     # Public Methods
@@ -92,13 +93,13 @@ class JohnTheRipper:
         lCmdArgs = ["--single"]
         self.__crack(lCmdArgs=lCmdArgs)
 
-    def run_prince_mode(self) -> None:
-        lCmdArgs = self.__get_prince_parameters()
+    def run_prince_mode(self, pWordlist: str) -> None:
+        lCmdArgs = self.__get_prince_parameters(pWordlist=pWordlist)
         lCmdArgs.append("--rule=prince")
         self.__crack(lCmdArgs=lCmdArgs)
 
-    def estimate_prince_mode(self) -> None:
-        lCmdArgs = self.__get_prince_parameters()
+    def estimate_prince_mode(self, pWordlist: str) -> None:
+        lCmdArgs = self.__get_prince_parameters(pWordlist=pWordlist)
         lCmdArgs.append("--prince-keyspace")
         self.__run_jtr(lCmdArgs=lCmdArgs)
 

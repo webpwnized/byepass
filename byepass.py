@@ -254,8 +254,23 @@ def do_run_jtr_prince_mode(pJTR: JohnTheRipper, pVerbose: bool, pDebug: bool, pN
     lWatcher.start_timer()
     lWatcher.print_mode_start_message()
 
-    if pVerbose: pJTR.estimate_prince_mode()
-    pJTR.run_prince_mode()
+    if pVerbose: pJTR.estimate_prince_mode(pWordlist="prince.txt")
+    pJTR.run_prince_mode(pWordlist="prince.txt")
+
+    if pVerbose: pJTR.estimate_prince_mode(pWordlist="songs.txt")
+    pJTR.run_prince_mode(pWordlist="prince.txt")
+
+    if pVerbose: pJTR.estimate_prince_mode(pWordlist="short-list.txt")
+    pJTR.run_prince_mode(pWordlist="prince.txt")
+
+    if pVerbose: pJTR.estimate_prince_mode(pWordlist="sports.txt")
+    pJTR.run_prince_mode(pWordlist="prince.txt")
+
+    if pVerbose: pJTR.estimate_prince_mode(pWordlist="top-10000-english-words.txt")
+    pJTR.run_prince_mode(pWordlist="prince.txt")
+
+    if pVerbose: pJTR.estimate_prince_mode(pWordlist="persons-names.txt")
+    pJTR.run_prince_mode(pWordlist="prince.txt")
 
     lWatcher.stop_timer()
     lWatcher.print_mode_finsihed_message()
