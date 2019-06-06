@@ -318,6 +318,33 @@ def run_jtr_recycle_mode(pJTR: JohnTheRipper, pVerbose: bool, pDebug: bool, pNum
 
     lListOfBasewords =  [ "".join(re.findall("[a-z]+", lWord.decode("utf-8").lower())) for lWord in lListOfPasswords]
     lUniqueBasewords = list(set(lListOfBasewords))
+
+    lListOfWordsLess1 = [lWord.decode("utf-8").lower()[:lWord.__len__()-1]  for lWord in lListOfPasswords]
+    lUniqueListOfWordsLess1 = list(set(lListOfWordsLess1))
+
+    lListOfWordsLess2 = [lWord.decode("utf-8").lower()[:lWord.__len__()-2]  for lWord in lListOfPasswords]
+    lUniqueListOfWordsLess2 = list(set(lListOfWordsLess2))
+
+    lListOfWordsLess3 = [lWord.decode("utf-8").lower()[:lWord.__len__()-3]  for lWord in lListOfPasswords]
+    lUniqueListOfWordsLess3 = list(set(lListOfWordsLess3))
+
+    lListOfWordsLess4 = [lWord.decode("utf-8").lower()[:lWord.__len__()-4]  for lWord in lListOfPasswords]
+    lUniqueListOfWordsLess4 = list(set(lListOfWordsLess4))
+
+    lListOfWordsLess5 = [lWord.decode("utf-8").lower()[:lWord.__len__()-5]  for lWord in lListOfPasswords]
+    lUniqueListOfWordsLess5 = list(set(lListOfWordsLess5))
+
+    lListOfWordsLess6 = [lWord.decode("utf-8").lower()[:lWord.__len__()-6]  for lWord in lListOfPasswords]
+    lUniqueListOfWordsLess6 = list(set(lListOfWordsLess6))
+
+    lUniqueBasewords.extend(lUniqueListOfWordsLess1)
+    lUniqueBasewords.extend(lUniqueListOfWordsLess2)
+    lUniqueBasewords.extend(lUniqueListOfWordsLess3)
+    lUniqueBasewords.extend(lUniqueListOfWordsLess4)
+    lUniqueBasewords.extend(lUniqueListOfWordsLess5)
+    lUniqueBasewords.extend(lUniqueListOfWordsLess6)
+    lUniqueBasewords = list(set(lUniqueBasewords))
+
     for lBaseword in lUniqueBasewords:
         lRecycleFile.write("{}\n".format(lBaseword))
     lRecycleFile.flush()
@@ -499,6 +526,15 @@ def run_jtr_brute_force_mode(pJTR: JohnTheRipper, pMinCharactersToBruteForce: in
             if (i > 2) and (i - j >= 2):
                 lUpperLowerDigitMask = "?u" + "?l" * (i-j-1) + "?d" * j
                 lMasks.append(lUpperLowerDigitMask)
+
+        # Make additional masks by replacing last character of each mask with a symbol.
+        # This will create duplicates (i.e. ?l?l?l and ?l?l?d both become ?l?l?s)
+        lSymbolMasks = []
+        for lMask in lMasks:
+            lSymbolMasks.append(lMask[:lMask.__len__()-2] + "?s")
+
+        # Remove duplicates from symbol masks and add to list of masks
+        lMasks.extend(list(set(lSymbolMasks)))
 
         for lMask in lMasks:
             do_run_jtr_mask_mode(pJTR=pJTR, pMask=lMask, pWordlist=None,
