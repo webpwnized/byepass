@@ -10,10 +10,9 @@ Add aggression levels for prince mode
 Push JTR interface out behind a generic class interface in preparation for including hashcat
 Add warning about large keyspaces for prince mode
 Add pathwell mode
-Add symbol to end of brute force masks
 Create targeted brute force masks
-Boost recycle mode with better wordlist creation
 Automate migration to incremental mode
+Have recycle mode run in both password and dictionary modes
 
 ?u?l?l?l?l?l?d?d
 ?u?l?l?l?l?l?l?d?d

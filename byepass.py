@@ -311,39 +311,32 @@ def run_jtr_recycle_mode(pJTR: JohnTheRipper, pVerbose: bool, pDebug: bool, pNum
     # The JTR POT file is the source of passwords
     lListOfPasswords = pJTR.parse_passwords_from_pot()
 
+    lListOfBasewords =  [ "".join(re.findall("[a-z]+", lWord.decode("utf-8"))) for lWord in lListOfPasswords]
+    lListOfWordsLess1 = [lWord.decode("utf-8")[:lWord.__len__()-1]  for lWord in lListOfPasswords]
+    lListOfWordsLess2 = [lWord.decode("utf-8")[:lWord.__len__()-2]  for lWord in lListOfPasswords]
+    lListOfWordsLess3 = [lWord.decode("utf-8")[:lWord.__len__()-3]  for lWord in lListOfPasswords]
+    lListOfWordsLess4 = [lWord.decode("utf-8")[:lWord.__len__()-4]  for lWord in lListOfPasswords]
+    lListOfWordsLess5 = [lWord.decode("utf-8")[:lWord.__len__()-5]  for lWord in lListOfPasswords]
+    lListOfWordsLess6 = [lWord.decode("utf-8")[:lWord.__len__()-6]  for lWord in lListOfPasswords]
+
+    lListOfBasewords.extend(lListOfWordsLess1)
+    lListOfBasewords.extend(lListOfWordsLess2)
+    lListOfBasewords.extend(lListOfWordsLess3)
+    lListOfBasewords.extend(lListOfWordsLess4)
+    lListOfBasewords.extend(lListOfWordsLess5)
+    lListOfBasewords.extend(lListOfWordsLess6)
+    lUniqueBasewordsPreserveCase = list(set(lListOfBasewords))
+
+    lBasewordsLowerCase = [lWord.lower() for lWord in lUniqueBasewordsPreserveCase]
+    lUniqueBasewordsLowerCase = list(set(lBasewordsLowerCase))
+
+    lUniqueBasewordsPreserveCase.extend(lUniqueBasewordsLowerCase)
+    lUniqueBasewords = list(set(lUniqueBasewordsPreserveCase))
+
     lRecycleFileName = 'basewords/recycle.txt'
     lRecycleDirectory = os.path.dirname(lRecycleFileName)
     if not os.path.exists(lRecycleDirectory): os.makedirs(lRecycleDirectory)
     lRecycleFile = open(lRecycleFileName, 'w')
-
-    lListOfBasewords =  [ "".join(re.findall("[a-z]+", lWord.decode("utf-8").lower())) for lWord in lListOfPasswords]
-    lUniqueBasewords = list(set(lListOfBasewords))
-
-    lListOfWordsLess1 = [lWord.decode("utf-8").lower()[:lWord.__len__()-1]  for lWord in lListOfPasswords]
-    lUniqueListOfWordsLess1 = list(set(lListOfWordsLess1))
-
-    lListOfWordsLess2 = [lWord.decode("utf-8").lower()[:lWord.__len__()-2]  for lWord in lListOfPasswords]
-    lUniqueListOfWordsLess2 = list(set(lListOfWordsLess2))
-
-    lListOfWordsLess3 = [lWord.decode("utf-8").lower()[:lWord.__len__()-3]  for lWord in lListOfPasswords]
-    lUniqueListOfWordsLess3 = list(set(lListOfWordsLess3))
-
-    lListOfWordsLess4 = [lWord.decode("utf-8").lower()[:lWord.__len__()-4]  for lWord in lListOfPasswords]
-    lUniqueListOfWordsLess4 = list(set(lListOfWordsLess4))
-
-    lListOfWordsLess5 = [lWord.decode("utf-8").lower()[:lWord.__len__()-5]  for lWord in lListOfPasswords]
-    lUniqueListOfWordsLess5 = list(set(lListOfWordsLess5))
-
-    lListOfWordsLess6 = [lWord.decode("utf-8").lower()[:lWord.__len__()-6]  for lWord in lListOfPasswords]
-    lUniqueListOfWordsLess6 = list(set(lListOfWordsLess6))
-
-    lUniqueBasewords.extend(lUniqueListOfWordsLess1)
-    lUniqueBasewords.extend(lUniqueListOfWordsLess2)
-    lUniqueBasewords.extend(lUniqueListOfWordsLess3)
-    lUniqueBasewords.extend(lUniqueListOfWordsLess4)
-    lUniqueBasewords.extend(lUniqueListOfWordsLess5)
-    lUniqueBasewords.extend(lUniqueListOfWordsLess6)
-    lUniqueBasewords = list(set(lUniqueBasewords))
 
     for lBaseword in lUniqueBasewords:
         lRecycleFile.write("{}\n".format(lBaseword))
@@ -352,7 +345,7 @@ def run_jtr_recycle_mode(pJTR: JohnTheRipper, pVerbose: bool, pDebug: bool, pNum
 
     if pVerbose:
         lCountPasswords = lUniqueBasewords.__len__()
-        print("[*] Using {} unique words for recycle mode: ".format(str(lCountPasswords)))
+        print("[*] Using {} unique words for recycle mode".format(str(lCountPasswords)))
         if lCountPasswords > 1000000: print("[*] That is a lot of words. Recycle mode may take a while.")
 
     run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lRecycleFileName, pRule="SlowHashesPhase1",
