@@ -2,7 +2,6 @@ Find out how to print actual passwords cracked at end
 Have I been pwned passwords
 Take a look at Hashcat automator
 Supress output from popen
-Add bash color coding to output (printer class)
 Add parser class
 Add support for Hashcat
 Optimize prince dictionary
