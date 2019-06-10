@@ -20,3 +20,17 @@ DEBUG = False
 # "smart brute" mode which is a hybrid cracking mode that uses
 # dicitionary words as the basis for mask cracking.
 MAX_CHARS_TO_BRUTEFORCE = 7
+
+# If the user does not provide any instructions, these techniques run by default
+DEFAULT_TECHNIQUES = [7]
+
+# If the user chooses the "all" option, these defaults are used
+RUN_ALL_RUN_SINGLE_CRACK = True
+RUN_ALL_RUN_PRINCE_MODE = True
+RUN_ALL_RUN_RECYCLE_MODE = True
+RUN_ALL_RUN_STAT_CRACK = True
+RUN_ALL_RUN_BASEWORDS_MODE = True
+RUN_ALL_TECHNIQUES = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+RUN_ALL_PERCENTILE = 0.90
+RUN_ALL_BASEWORDS = ["password", "sunshine", "qwerty", "iloveyou", "princess", "admin", "welcome", "football", "monkey",
+                     "charlie", "donald"]

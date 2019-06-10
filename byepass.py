@@ -7,10 +7,9 @@ from watcher import Watcher
 from reporter import Reporter
 from jtr import JohnTheRipper
 from printer import Printer,Level
+from argparser import Parser
 import config as Config
-import subprocess
 import os.path
-import time
 import re
 import argparse
 
@@ -19,153 +18,6 @@ gReporter = Reporter()
 gPrinter = Printer()
 
 #METHODS
-def print_example_usage():
-    print("""
-Attempt to crack hashes using JTR Single Crack Mode\n
-\tpython3 byepass.py --verbose --hash-format=Raw-SHA1 --jtr-single-crack --input-file=linkedin-1.hashes
-\tpython3 byepass.py -v -f Raw-SHA1 -u -i linkedin-1.hashes\n
-Attempt to crack linked-in hashes using base words linkedin and linked\n
-\tpython3 byepass.py --verbose --hash-format=Raw-SHA1 --basewords=linkedin,linked --input-file=linkedin-1.hashes
-\tpython3 byepass.py -v -f Raw-SHA1 -w linkedin,linked -i linkedin-1.hashes\n
-Attempt to brute force words from 3 to 5 characters in length\n
-\tpython3 byepass.py --verbose --hash-format=Raw-MD5 --brute-force=3,5 --input-file=hashes.txt
-\tpython3 byepass.py -f Raw-MD5 -j="--fork=4" -v -b 3,5 -i hashes.txt\n
-Attempt to crack password hashes found in input file "password.hashes" using default techniques\n
-\tpython3 byepass.py --verbose --hash-format=descrypt --input-file=password.hashes
-\tpython3 byepass.py -v -f descrypt -i password.hashes\n
-Be more aggressive by using techniques level 4 in attempt to crack password hashes found in input file "password.hashes"\n
-\tpython3 byepass.py --verbose --techniques=4 --hash-format=descrypt --input-file=password.hashes
-\tpython3 byepass.py -v -t 4 -f descrypt -i password.hashes\n
-Go bonkers and try all techniques. Start with technique level 1 and proceed to level 15 in attempt to crack password hashes found in input file "password.hashes"\n
-\tpython3 byepass.py --verbose --techniques=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 --hash-format=descrypt --input-file=password.hashes
-\tpython3 byepass.py -v -t 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 -f descrypt -i password.hashes\n
-Only try first two techniques. Start with technique level 1 and proceed to level 2 in attempt to crack password hashes found in input file "password.hashes"\n
-\tpython3 byepass.py --verbose --techniques=1,2 --hash-format=descrypt --input-file=password.hashes
-\tpython3 byepass.py -v -t 1,2 -f descrypt -i password.hashes\n
-Attempt to crack password hashes found in input file "password.hashes", then run statistical analysis to determine masks needed to crack 50 percent of passwords, and try to crack again using the masks.\n
-\tpython3 byepass.py --verbose --hash-format=descrypt --stat-crack --percentile=0.50 --input-file=password.hashes
-\tpython3 byepass.py -v -f descrypt -s -p 0.50 -i password.hashes\n
-\"Real life\" example attempting to crack 25 percent of the linked-in hash set\n
-\tpython3 byepass.py --verbose --hash-format=Raw-SHA1 --stat-crack --percentile=0.25 --input-file=linkedin.hashes
-\tpython3 byepass.py -v -f Raw-SHA1 -s -f 0.25 -i linkedin.hashes\n
-Attempt to crack linked-in hashes using base words linkedin and linked\n
-\tpython3 byepass.py --verbose --hash-format=Raw-SHA1 --basewords=linkedin,linked --input-file=linkedin-1.hashes
-\tpython3 byepass.py -v -f -w linkedin,linked -i linkedin-1.hashes\n
-Run statistical analysis to determine masks needed to crack 50 percent of passwords, and try to crack using the masks.\n
-\tpython3 byepass.py -v --hash-format=descrypt --stat-crack --percentile=0.50 --input-file=password.hashes
-\tpython3 byepass.py -v -f descrypt -s -p 0.50 -i password.hashes\n
-Use recycle mode to try cracking remaining hashes using root words generated from already cracked passwords\n
-\tpython3 byepass.py --verbose --hash-format=descrypt --recycle --input-file=password.hashes
-\tpython3 byepass.py -v -f descrypt -r -i password.hashes\n
-Use JTR prince mode with dictionary prince.txt\n
-\tpython3 byepass.py --verbose --hash-format=descrypt --jtr-prince --input-file=password.hashes
-\tpython3 byepass.py -v -f descrypt -c -i password.hashes\n
-Use pass-through to pass fork command to JTR\n
-\tpython3 byepass.py --verbose --pass-through="--fork=4" --hash-format=descrypt --input-file=password.hashes
-\tpython3 byepass.py -v -j="--fork=4" -f descrypt -i password.hashes
-""")
-
-
-def parse_arg_percentile(pArgPercentile: float) -> float:
-
-    if pArgPercentile:
-        if not 0.0 <= pArgPercentile <= 1.00:
-            raise ValueError('The percentile provided must be between 0.0 and 1.0.')
-        return pArgPercentile
-    else:
-        return 1.0
-
-
-def parse_arg_debug(pArgDebug: bool) -> bool:
-    if pArgDebug:
-        return pArgDebug
-    else:
-        return DEBUG
-
-
-def parse_arg_hash_format(pArgHashFormat: str) -> str:
-    if pArgHashFormat is not None:
-        return lArgs.hash_format
-    else:
-        return ""
-
-
-def parse_argTechniques(pArgTechniques: str) -> list:
-    lTechniques = []
-
-    if pArgTechniques is not None:
-
-        lErrorMessage = 'Techniques must be supplied as a comma-separated list of integers between 0 and 15'
-
-        try:
-            lTechniques = list(map(int, pArgTechniques.split(",")))
-        except:
-            raise ValueError(lErrorMessage)
-
-        lObservedTechniques = []
-        for lTechnique in lTechniques:
-            if 0 <= lTechnique <= 15:
-                if lTechnique in lObservedTechniques:
-                    raise ValueError('Duplicate technique specified: {} '.format(lTechnique) + lErrorMessage)
-                lObservedTechniques.append(lTechnique)
-            else:
-                raise ValueError(lErrorMessage)
-
-        lTechniques.sort()
-
-    return lTechniques
-
-
-def parse_arg_brute_force(pArgBruteForce: str) -> tuple:
-
-    lSyntaxErrorMessage = 'Amount of characters to bruce-force must be a comma-separated pair of positive integer greater than 0. The MIN must be less than or equal to the MAX.'
-    lValueErrorMessage = 'For amount of characters to bruce-force, the MIN must be less than or equal to the MAX.'
-
-    try:
-        lParameters = [x.strip() for x in pArgBruteForce.split(',')]
-        lMinCharactersToBruteForce = int(lParameters[0])
-        lMaxCharactersToBruteForce = int(lParameters[1])
-
-        if lMinCharactersToBruteForce < 1:
-            raise ValueError(lSyntaxErrorMessage)
-        if lMaxCharactersToBruteForce < 1:
-            raise ValueError(lSyntaxErrorMessage)
-        if lMaxCharactersToBruteForce < lMinCharactersToBruteForce:
-            raise ValueError(lValueErrorMessage)
-        return lMinCharactersToBruteForce, lMaxCharactersToBruteForce
-    except:
-        raise ValueError(lSyntaxErrorMessage)
-
-
-def print_closing_message(pJTR: JohnTheRipper, pNumberHashes: int, pNumberPasswordsPOTFileAtStart: int,
-                          pNumberPasswordsPOTFileAtEnd: int, pStartTime: float, pEndTime: float) -> None:
-
-        lNumberPasswords = pNumberPasswordsPOTFileAtEnd - pNumberPasswordsPOTFileAtStart
-        lElaspsedTime = time.gmtime(pEndTime - pStartTime)
-        lDurationSeconds = pEndTime - pStartTime
-        lNumberPasswordsCrackedPerSecond = lNumberPasswords // lDurationSeconds
-
-        try:
-            lPercent = round(lNumberPasswords / pNumberHashes * 100, 2)
-        except:
-            lPercent = 0
-
-        print("")
-        gPrinter.print("Techniques Attempted", Level.INFO)
-        gReporter.reportResults()
-        print("")
-        gPrinter.print("Duration: {}".format(time.strftime("%H:%M:%S", lElaspsedTime)), Level.INFO)
-        gPrinter.print("Passwords cracked (estimated): {} out of {} ({}%)".format(lNumberPasswords, pNumberHashes, lPercent), Level.INFO)
-        gPrinter.print("Passwords cracked per second (estimated): {}".format(lNumberPasswordsCrackedPerSecond), Level.INFO)
-        print("")
-        gPrinter.print("Cracking attempt complete. Use john --show to see cracked passwords.", Level.INFO)
-        gPrinter.print("The command should be something like {}{}{} --show {}".format(pJTR.jtr_executable_file_path, " --format=" if lHashFormat else "", lHashFormat, lHashFile), Level.INFO)
-        print("")
-        gPrinter.print("Keep cracking with incremental mode", Level.INFO)
-        gPrinter.print("The command should be something like {}{}{} --incremental {}".format(pJTR.jtr_executable_file_path, " --format=" if lHashFormat else "", lHashFormat, lHashFile), Level.INFO)
-        print("")
-
-
 def do_run_jtr_mask_mode(pJTR: JohnTheRipper, pMask: str, pWordlist: str) -> None:
 
     lCrackingMode = "Mask {}".format(pMask)
@@ -186,7 +38,7 @@ def do_run_jtr_mask_mode(pJTR: JohnTheRipper, pMask: str, pWordlist: str) -> Non
                            pPercentPasswordsCracked=lWatcher.percent_passwords_cracked_by_this_mode)
 
 
-def run_jtr_wordlist_mode(pJTR: JohnTheRipper, pWordlist: str, pRule: str) -> None:
+def do_run_jtr_wordlist_mode(pJTR: JohnTheRipper, pWordlist: str, pRule: str) -> None:
 
     lCrackingMode = "Wordlist {}".format(pWordlist)
     if pRule: lCrackingMode += " with rule {}".format(pRule)
@@ -258,23 +110,22 @@ def do_run_jtr_prince_mode(pJTR: JohnTheRipper) -> None:
                            pPercentPasswordsCracked=lWatcher.percent_passwords_cracked_by_this_mode)
 
 
-def run_jtr_baseword_mode(pJTR: JohnTheRipper, pBaseWords: str) -> None:
+def run_jtr_baseword_mode(pJTR: JohnTheRipper, pBaseWords: list) -> None:
 
     gPrinter.print("Starting mode: Baseword with words {}".format(pBaseWords), Level.INFO)
 
-    lBaseWords = list(pBaseWords.split(","))
     lBaseWordsFileName = 'basewords/basewords.txt'
     lBaseWordsDirectory = os.path.dirname(lBaseWordsFileName)
     if not os.path.exists(lBaseWordsDirectory): os.makedirs(lBaseWordsDirectory)
     lBaseWordsFile = open(lBaseWordsFileName, 'w')
-    for lWord in lBaseWords:
+    for lWord in pBaseWords:
         lBaseWordsFile.write("%s\n" % lWord)
     lBaseWordsFile.flush()
     lBaseWordsFile.close()
 
-    run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lBaseWordsFileName, pRule="Best126")
-    run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lBaseWordsFileName, pRule="OneRuleToRuleThemAll")
-    run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lBaseWordsFileName, pRule="All")
+    do_run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lBaseWordsFileName, pRule="Best126")
+    do_run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lBaseWordsFileName, pRule="OneRuleToRuleThemAll")
+    do_run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lBaseWordsFileName, pRule="All")
 
     os.remove(lBaseWordsFileName)
 
@@ -324,11 +175,11 @@ def run_jtr_recycle_mode(pJTR: JohnTheRipper) -> None:
         gPrinter.print("Using {} unique words for recycle mode".format(str(lCountPasswords)), Level.INFO)
         if lCountPasswords > 1000000: gPrinter.print("That is a lot of words. Recycle mode may take a while.", Level.WARNING)
 
-    run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lRecycleFileName, pRule="SlowHashesPhase1")
-    run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lRecycleFileName, pRule="Best126")
-    run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lRecycleFileName, pRule="SlowHashesPhase2")
-    run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lRecycleFileName, pRule="SlowHashesPhase3")
-    run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lRecycleFileName, pRule="OneRuleToRuleThemAll")
+    do_run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lRecycleFileName, pRule="SlowHashesPhase1")
+    do_run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lRecycleFileName, pRule="Best126")
+    do_run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lRecycleFileName, pRule="SlowHashesPhase2")
+    do_run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lRecycleFileName, pRule="SlowHashesPhase3")
+    do_run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lRecycleFileName, pRule="OneRuleToRuleThemAll")
 
     os.remove(lRecycleFileName)
 
@@ -336,6 +187,8 @@ def run_jtr_recycle_mode(pJTR: JohnTheRipper) -> None:
 
 
 def run_statistical_crack_mode(pJTR: JohnTheRipper, pPercentile: float) -> None:
+
+    lMAX_CHARS_TO_BRUTEFORCE = Config.MAX_CHARS_TO_BRUTEFORCE
 
     # The JTR POT file is the source of passwords
     gPrinter.print("Parsing JTR POT file at {}".format(pJTR.jtr_pot_file_path), Level.INFO)
@@ -352,7 +205,7 @@ def run_statistical_crack_mode(pJTR: JohnTheRipper, pPercentile: float) -> None:
     gPrinter.print("Parsed {} passwords into {} masks".format(lPasswordStats.count_passwords, lPasswordStats.count_masks), Level.INFO)
 
     # Calculate masks most likely need to crack X% of the password hashes
-    lMasks = lPasswordStats.get_popular_masks(lPercentile)
+    lMasks = lPasswordStats.get_popular_masks(pPercentile)
     gPrinter.print("Password masks ({} percentile): {}".format(pPercentile, lMasks), Level.INFO)
 
     # For each mask, try high probability guesses
@@ -365,7 +218,7 @@ def run_statistical_crack_mode(pJTR: JohnTheRipper, pPercentile: float) -> None:
         # If there are more characters than the limit, use "smart brute-force"
         # which is a hybrid between dictionary and mask mode.
         lCountCharacters = int(len(lMask) / 2)
-        if lCountCharacters <= MAX_CHARS_TO_BRUTEFORCE:
+        if lCountCharacters <= lMAX_CHARS_TO_BRUTEFORCE:
             lWordlist = ""
             do_run_jtr_mask_mode(pJTR=pJTR, pMask=lMask, pWordlist=lWordlist)
         else:
@@ -373,24 +226,24 @@ def run_statistical_crack_mode(pJTR: JohnTheRipper, pPercentile: float) -> None:
             # All lowercase letters
             if re.match('^(\?l)+$', lMask):
                 lCountLetters = lMask.count('?l')
-                if lCountLetters > MAX_CHARS_TO_BRUTEFORCE:
+                if lCountLetters > lMAX_CHARS_TO_BRUTEFORCE:
                     lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
                     lRule=""
-                    run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lWordlist, pRule=lRule)
+                    do_run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lWordlist, pRule=lRule)
 
             # All uppercase
             elif re.match('^(\?u)+$', lMask):
                 lCountLetters = lMask.count('?u')
                 lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
                 lRule = "uppercase"
-                run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lWordlist, pRule=lRule)
+                do_run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lWordlist, pRule=lRule)
 
             # Uppercase followed by lowercase (assume only leading letter is uppercase)
             elif re.match('^(\?u)(\?l)+$', lMask):
                 lCountLetters = lMask.count('?u') + lMask.count('?l')
                 lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
                 lRule = "capitalize"
-                run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lWordlist, pRule=lRule)
+                do_run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lWordlist, pRule=lRule)
 
             # Lowercase ending with digits
             elif re.match('^(\?l)+(\?d)+$', lMask):
@@ -398,7 +251,7 @@ def run_statistical_crack_mode(pJTR: JohnTheRipper, pPercentile: float) -> None:
                 lCountDigits = lMask.count('?d')
                 lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
                 lRule = "append{}digits".format(str(lCountDigits))
-                run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lWordlist, pRule=lRule)
+                do_run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lWordlist, pRule=lRule)
 
             # Uppercase followed by digits
             elif re.match('^(\?u)+(\?d)+$', lMask):
@@ -406,7 +259,7 @@ def run_statistical_crack_mode(pJTR: JohnTheRipper, pPercentile: float) -> None:
                 lCountDigits = lMask.count('?d')
                 lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
                 lRule = "uppercaseappend{}digits".format(str(lCountDigits))
-                run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lWordlist, pRule=lRule)
+                do_run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lWordlist, pRule=lRule)
 
             # Uppercase, lowercase, then digits (assume only leading letter is uppercase)
             elif re.match('^(\?u)(\?l)+(\?d)+$', lMask):
@@ -414,7 +267,7 @@ def run_statistical_crack_mode(pJTR: JohnTheRipper, pPercentile: float) -> None:
                 lCountDigits = lMask.count('?d')
                 lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
                 lRule = "capitalizeappend{}digits".format(str(lCountDigits))
-                run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lWordlist, pRule=lRule)
+                do_run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lWordlist, pRule=lRule)
 
             # Low number of digits. We do not cover large numbers of digits because
             # precomputing dictionary files would be huge and running mask mode takes a long time.
@@ -425,7 +278,7 @@ def run_statistical_crack_mode(pJTR: JohnTheRipper, pPercentile: float) -> None:
                 if lCountDigits == 5:
                     lWordlist = "dictionaries/{}-digit-numbers.txt".format(str(lCountDigits))
                     lRule =""
-                    run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lWordlist, pRule=lRule)
+                    do_run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lWordlist, pRule=lRule)
                 else:
                     gPrinter.print("Did not process mask {} because it is out of policy".format(lMask), Level.WARNING)
 
@@ -516,13 +369,60 @@ def run_jtr_prayer_mode(pJTR: JohnTheRipper, pMethod: int) -> None:
     # Run the wordlist and rule
     for lDictionary in lDictionaries:
         for lRule in lRules:
-            run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lFolder + "/" + lDictionary, pRule=lRule)
+            do_run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lFolder + "/" + lDictionary, pRule=lRule)
+
+
+def run_main_program(pParser: Parser):
+
+    gPrinter.verbose = pParser.verbose
+    gPrinter.debug = pParser.debug
+
+    if pParser.show_examples:
+        gPrinter.print_example_usage()
+        exit(0)
+
+    lJTR = JohnTheRipper(pJTRExecutableFilePath = Config.JTR_EXECUTABLE_FILE_PATH, pJTRPotFilePath = Config.JTR_POT_FILE_PATH,
+                         pHashFilePath=pParser.hash_file, pHashFormat=pParser.hash_format, pPassThrough=pParser.jtr_pass_through,
+                         pVerbose=pParser.verbose, pDebug=pParser.debug)
+
+    lWatcher = Watcher(pJTR=lJTR, pCrackingMode="Cracking Job")
+    lWatcher.start_timer()
+    lWatcher.print_program_starting_message()
+
+    # Hopefully user has some knowledge of system to give good base words
+    if pParser.run_basewords_mode:
+        run_jtr_baseword_mode(pJTR=lJTR, pBaseWords=pParser.basewords)
+
+    # John the Ripper Single Crack mode
+    if pParser.run_jtr_single_crack:
+        run_jtr_single_mode(pJTR=lJTR)
+
+    # Smart brute-force
+    if pParser.run_brute_force:
+        run_jtr_brute_force_mode(pJTR=lJTR,
+                                 pMinCharactersToBruteForce=pParser.min_characters_to_brute_force,
+                                 pMaxCharactersToBruteForce=pParser.max_characters_to_brute_force)
+
+    # Try to crack passwords using the techniques specified
+    for i in pParser.techniques:
+        run_jtr_prayer_mode(pJTR=lJTR, pMethod=i)
+
+    # John the Ripper Single Crack mode
+    if pParser.run_jtr_prince_mode:
+        run_jtr_prince_mode(pJTR=lJTR)
+
+    # If the user chooses -s option, begin statistical analysis to aid targeted cracking routines
+    if pParser.run_stat_crack:
+        run_statistical_crack_mode(pJTR=lJTR, pPercentile=pParser.percentile)
+
+    if pParser.recycle_passwords:
+        run_jtr_recycle_mode(pJTR=lJTR)
+
+    lWatcher.stop_timer()
+    lWatcher.print_program_finsihed_message(pReporter=gReporter)
 
 
 if __name__ == '__main__':
-
-    DEBUG = Config.DEBUG
-    MAX_CHARS_TO_BRUTEFORCE = Config.MAX_CHARS_TO_BRUTEFORCE
 
     lArgParser = argparse.ArgumentParser(description="""
   ___          ___
@@ -586,96 +486,5 @@ if __name__ == '__main__':
                                   type=str,
                                   help='Path to file containing password hashes to attempt to crack',
                                   action='store')
-    lArgs = lArgParser.parse_args()
 
-    if lArgs.examples:
-        print_example_usage()
-        exit(0)
-
-    # Input parameter validation
-    if lArgs.percentile and not lArgs.stat_crack:
-        gPrinter.print("Argument 'percentile' provided without argument 'stat_crack'. Percentile will be ignored", Level.WARNING)
-
-    if lArgs.all:
-        lArgs.techniques = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15"
-        lArgs.jtr_single_crack = True
-        lArgs.jtr_prince = True
-        lArgs.recycle = True
-        lArgs.stat_crack = True
-        lArgs.percentile = 0.90
-
-    # Parse and validate input parameters
-    lHashFormat = parse_arg_hash_format(lArgs.hash_format)
-    lBasewords = lArgs.basewords
-    lBruteForce = lArgs.brute_force
-    lStatCrack = lArgs.stat_crack
-    lHashFile = lArgs.input_file
-    lVerbose = lArgs.verbose
-    lRunSingleCrack = lArgs.jtr_single_crack
-    lRecyclePasswords = lArgs.recycle
-    lRunPrince = lArgs.jtr_prince
-    lDebug = parse_arg_debug(lArgs.debug)
-    lTechniques = parse_argTechniques(lArgs.techniques)
-    lPassThrough = lArgs.pass_through
-
-    lRunDefaultTechniques = not lRunSingleCrack and not lBasewords and \
-                            not lBruteForce and not lArgs.techniques and \
-                            not lStatCrack and not lRecyclePasswords and \
-                            not lRunPrince
-
-    lJTR = JohnTheRipper(pJTRExecutableFilePath = Config.JTR_EXECUTABLE_FILE_PATH, pJTRPotFilePath = Config.JTR_POT_FILE_PATH,
-                         pHashFilePath=lHashFile, pHashFormat=lHashFormat, pPassThrough=lPassThrough,
-                         pVerbose=lVerbose, pDebug=lDebug)
-
-    gPrinter.verbose = lVerbose
-    gPrinter.debug = lDebug
-
-    lNumberPasswordsPOTFileAtStart = lJTR.count_passwords_in_pot()
-    lStartTime = time.time()
-
-    gPrinter.print("Working on input file {} ({} lines)".format(lHashFile, lJTR.number_hashes_in_hash_file),
-                   Level.INFO)
-
-    # If user did not specify any technique, run default technique
-    if lRunDefaultTechniques:
-        # Run technique 1,2 and 3 by default
-        lTechniques = [1,2,3]
-        gPrinter.print("No technique specified. Running techniques 1,2 and 3", Level.WARNING)
-
-    # Hopefully user has some knowledge of system to give good base words
-    if lBasewords:
-        run_jtr_baseword_mode(pJTR=lJTR, pBaseWords=lArgs.basewords)
-
-    # John the Ripper Single Crack mode
-    if lRunSingleCrack:
-        run_jtr_single_mode(pJTR=lJTR)
-
-    # Smart brute-force
-    if lBruteForce:
-        lMinCharactersToBruteForce, lMaxCharactersToBruteForce = parse_arg_brute_force(lArgs.brute_force)
-        run_jtr_brute_force_mode(pJTR=lJTR, pMinCharactersToBruteForce=lMinCharactersToBruteForce,
-                                 pMaxCharactersToBruteForce=lMaxCharactersToBruteForce)
-
-    # Try to crack passwords using the techniques specified
-    for i in lTechniques:
-        run_jtr_prayer_mode(pJTR=lJTR, pMethod=i)
-
-    # John the Ripper Single Crack mode
-    if lRunPrince:
-        run_jtr_prince_mode(pJTR=lJTR)
-
-    # If the user chooses -s option, begin statistical analysis to aid targeted cracking routines
-    if lStatCrack:
-        lPercentile = parse_arg_percentile(lArgs.percentile)
-        run_statistical_crack_mode(pJTR=lJTR, pPercentile=lPercentile)
-
-    if lRecyclePasswords:
-        run_jtr_recycle_mode(pJTR=lJTR)
-
-    if lVerbose:
-        lEndTime = time.time()
-        lNumberPasswordsPOTFileAtEnd = lJTR.count_passwords_in_pot()
-        print_closing_message(pJTR=lJTR, pNumberHashes=lJTR.number_hashes_in_hash_file,
-                              pNumberPasswordsPOTFileAtStart=lNumberPasswordsPOTFileAtStart,
-                              pNumberPasswordsPOTFileAtEnd=lNumberPasswordsPOTFileAtEnd,
-                              pStartTime=lStartTime, pEndTime=lEndTime)
+    run_main_program(pParser=Parser(lArgParser.parse_args(), Config))
