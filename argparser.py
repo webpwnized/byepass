@@ -16,6 +16,7 @@ class Parser:
     __mRunJTRPrinceMode: bool = False
     __mRunDefaultTechniques: bool = False
     __mRunBruteForce: bool = False
+    __mRunPathwellMode: bool = False
     __mRunBasewordsMode: bool = False
     __mShowExamples: bool = False
     __mPercentile: float = None
@@ -23,6 +24,8 @@ class Parser:
     __mTechniques: list = None
     __mMinCharactersToBruteForce: int = 0
     __mMaxCharactersToBruteForce: int = 0
+    __mFirstPathwellMask: int = 0
+    __mLastPathwellMask: int = 0
     __mPrinter: Printer = Printer()
 
     @property  # getter method
@@ -80,12 +83,28 @@ class Parser:
         return self.__mTechniques
 
     @property  # getter method
+    def run_brute_force(self) -> bool:
+        return self.__mRunBruteForce
+
+    @property  # getter method
     def min_characters_to_brute_force(self) -> int:
         return self.__mMinCharactersToBruteForce
 
     @property  # getter method
     def max_characters_to_brute_force(self) -> int:
         return self.__mMaxCharactersToBruteForce
+
+    @property  # getter method
+    def run_pathwell_mode(self) -> bool:
+        return self.__mRunPathwellMode
+
+    @property  # getter method
+    def first_pathwell_mask(self) -> int:
+        return self.__mFirstPathwellMask
+
+    @property  # getter method
+    def last_pathwell_mask(self) -> int:
+        return self.__mLastPathwellMask
 
     @property  # getter method
     def recycle_passwords(self) -> bool:
@@ -98,10 +117,6 @@ class Parser:
     @property  # getter method
     def run_default_techniques(self) -> bool:
         return self.__mRunDefaultTechniques
-
-    @property  # getter method
-    def run_brute_force(self) -> bool:
-        return self.__mRunBruteForce
 
     @property  # getter method
     def run_basewords_mode(self) -> bool:
@@ -117,6 +132,7 @@ class Parser:
         self.__parse_arg_hash_format()
         self.__parse_arg_techniques()
         self.__parse_arg_brute_force()
+        self.__parse_arg_pathwell()
         self.__mPrinter.verbose = self.__mVerbose
         self.__mPrinter.debug = self.__mDebug
         self.__mRunJTRSingleCrack = self.__mArgs.jtr_single_crack
@@ -144,11 +160,14 @@ class Parser:
             self.__mPercentile = self.__mConfiguration.RUN_ALL_PERCENTILE
             self.__mRunBasewordsMode = self.__mConfiguration.RUN_ALL_RUN_BASEWORDS_MODE
             self.__mBaseWords = self.__mConfiguration.RUN_ALL_BASEWORDS
+            self.__mRunPathwellMode = self.__mConfiguration.RUN_ALL_RUN_PATHWELL_MODE
+            self.__mFirstPathwellMask = self.__mConfiguration.RUN_ALL_FIRST_PATHWELL_MASK
+            self.__mLastPathwellMask = self.__mConfiguration.RUN_ALL_LAST_PATHWELL_MASK
 
         self.__mRunDefaultTechniques = not self.__mRunJTRSingleCrack and not self.__mBaseWords and \
                                     not self.__mArgs.brute_force and not self.__mTechniques and \
                                     not self.__mRunStatCrack and not self.__mRecylePasswords and \
-                                    not self.__mRunJTRPrinceMode
+                                    not self.__mRunJTRPrinceMode and not self.__mRunPathwellMode
 
         # If user did not specify any technique, run default technique 1,2 and 3 by default
         if self.__mRunDefaultTechniques:
@@ -236,5 +255,32 @@ class Parser:
                 self.__mRunBruteForce = False
                 self.__mMinCharactersToBruteForce = 0
                 self.__mMaxCharactersToBruteForce = 0
+        except:
+            raise ValueError(lSyntaxErrorMessage)
+
+    def __parse_arg_pathwell(self) -> None:
+
+        lSyntaxErrorMessage = 'Pathwell mask parameter must be a comma-separated pair of positive integer greater than 0. The FIRST must be less than or equal to the LAST.'
+        lValueErrorMessage = 'For pathwell mask parameter, the FIRST must be less than or equal to the LAST.'
+
+        try:
+            if self.__mArgs.pathwell:
+                lParameters = [x.strip() for x in self.__mArgs.pathwell.split(',')]
+                lFirstPathwellMask = int(lParameters[0])
+                lLastPathwellMask = int(lParameters[1])
+
+                if lFirstPathwellMask < 1:
+                    raise ValueError(lSyntaxErrorMessage)
+                if lLastPathwellMask < 1:
+                    raise ValueError(lSyntaxErrorMessage)
+                if lLastPathwellMask < lFirstPathwellMask:
+                    raise ValueError(lValueErrorMessage)
+                self.__mRunPathwellMode = True
+                self.__mFirstPathwellMask = lFirstPathwellMask
+                self.__mLastPathwellMask = lLastPathwellMask
+            else:
+                self.__mRunPathwellMode = False
+                self.__mFirstPathwellMask = 0
+                self.__mLastPathwellMask = 0
         except:
             raise ValueError(lSyntaxErrorMessage)

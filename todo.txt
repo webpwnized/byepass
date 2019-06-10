@@ -6,7 +6,6 @@ Add support for Hashcat
 Optimize prince dictionary
 Add aggression levels for prince mode
 Add warning about large keyspaces for prince mode
-Add -l pathwell mode
 Create -m targeted brute force masks
 Automate -k migration to incremental mode
 Have recycle mode run in both password and dictionary modes

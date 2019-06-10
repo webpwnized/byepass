@@ -30,7 +30,10 @@ RUN_ALL_RUN_PRINCE_MODE = True
 RUN_ALL_RUN_RECYCLE_MODE = True
 RUN_ALL_RUN_STAT_CRACK = True
 RUN_ALL_RUN_BASEWORDS_MODE = True
+RUN_ALL_RUN_PATHWELL_MODE = True
 RUN_ALL_TECHNIQUES = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
 RUN_ALL_PERCENTILE = 0.90
+RUN_ALL_FIRST_PATHWELL_MASK = 1
+RUN_ALL_LAST_PATHWELL_MASK = 5
 RUN_ALL_BASEWORDS = ["password", "sunshine", "qwerty", "iloveyou", "princess", "admin", "welcome", "football", "monkey",
                      "charlie", "donald"]

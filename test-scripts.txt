@@ -42,3 +42,7 @@ python3 byepass.py -f Raw-MD5 -j="--fork=16" -t 1,2,3,4,5,6,7,8,9,10,11,12,13,14
 ## All Shortcut
 
 python3 byepass.py -f Raw-MD5 -j="--fork=16" -a -v -i md5.hashes
+
+## Pathwell
+
+python3 byepass.py -f Raw-MD5 -j="--fork=16" -l 1,5 -v -i md5.hashes

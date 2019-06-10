@@ -140,7 +140,7 @@ def run_jtr_recycle_mode(pJTR: JohnTheRipper) -> None:
     # The JTR POT file is the source of passwords
     lListOfPasswords = pJTR.parse_passwords_from_pot()
 
-    lListOfBasewords =  [ "".join(re.findall("[a-z]+", lWord.decode("utf-8"))) for lWord in lListOfPasswords]
+    lListOfBasewords =  [ "".join(re.findall("[a-zA-Z]+", lWord.decode("utf-8"))) for lWord in lListOfPasswords]
     lListOfWordsLess1 = [lWord.decode("utf-8")[:lWord.__len__()-1]  for lWord in lListOfPasswords]
     lListOfWordsLess2 = [lWord.decode("utf-8")[:lWord.__len__()-2]  for lWord in lListOfPasswords]
     lListOfWordsLess3 = [lWord.decode("utf-8")[:lWord.__len__()-3]  for lWord in lListOfPasswords]
@@ -306,6 +306,22 @@ def run_statistical_crack_mode(pJTR: JohnTheRipper, pPercentile: float) -> None:
         "There was no policy defined for the following masks: {}".format(lUndefinedMasks), Level.WARNING)
 
 
+def run_pathwell_mode(pJTR: JohnTheRipper, pFirstMask: int, pLastMask: int) -> None:
+
+    gPrinter.print("Starting Pathwell mode", Level.INFO)
+
+    lPathwellFileName = 'masks/pathwell.txt'
+
+    with open(lPathwellFileName, "r") as lPathwellFile:
+        lMasks = lPathwellFile.read().splitlines()
+    lPathwellFile.close()
+
+    for i in range(pFirstMask-1, pLastMask):
+        do_run_jtr_mask_mode(pJTR=pJTR, pMask=lMasks[i], pWordlist=None)
+
+    gPrinter.print("Finished Pathwell Mode", Level.INFO)
+
+
 def run_jtr_brute_force_mode(pJTR: JohnTheRipper, pMinCharactersToBruteForce: int,
                              pMaxCharactersToBruteForce: int) -> None:
 
@@ -398,17 +414,21 @@ def run_main_program(pParser: Parser):
     if pParser.run_jtr_single_crack:
         run_jtr_single_mode(pJTR=lJTR)
 
+    # Techniques mode
+    for i in pParser.techniques:
+        run_jtr_prayer_mode(pJTR=lJTR, pMethod=i)
+
+    # Pathwell mode
+    if pParser.run_pathwell_mode:
+        run_pathwell_mode(pJTR=lJTR, pFirstMask=pParser.first_pathwell_mask, pLastMask=pParser.last_pathwell_mask)
+
     # Smart brute-force
     if pParser.run_brute_force:
         run_jtr_brute_force_mode(pJTR=lJTR,
                                  pMinCharactersToBruteForce=pParser.min_characters_to_brute_force,
                                  pMaxCharactersToBruteForce=pParser.max_characters_to_brute_force)
 
-    # Try to crack passwords using the techniques specified
-    for i in pParser.techniques:
-        run_jtr_prayer_mode(pJTR=lJTR, pMethod=i)
-
-    # John the Ripper Single Crack mode
+    # John the Ripper Prince mode
     if pParser.run_jtr_prince_mode:
         run_jtr_prince_mode(pJTR=lJTR)
 
@@ -432,7 +452,7 @@ if __name__ == '__main__':
  |___/\_, \___|_| \__,_/__/__/
       |__/
  
- Automated password hash analysis
+ Automated password hash analysis - Fortuna Fortis Paratus
 """, formatter_class=RawTextHelpFormatter)
     lArgParser.add_argument('-f', '--hash-format',
                             type=str,
@@ -442,22 +462,26 @@ if __name__ == '__main__':
                             type=str,
                             help="Supply a comma-separated list of lowercase, unmangled base words thought to be good candidates. For example, if Wiley Coyote is cracking hashes from Acme Inc., Wiley might provide the word \"acme\". Be careful how many words are supplied as Byepass will apply many mangling rules. Up to several should run reasonably fast.\n\n",
                             action='store')
-    lArgParser.add_argument('-b', '--brute-force',
-                            type=str,
-                            help="Bruce force common patterns with at least MIN characters up to MAX characters. Provide minimum and maxiumum number of characters as comma-separated, positive integers (i.e. 4,6 means 4 characters to 6 characters).\n\n",
-                            action='store')
+    lArgParser.add_argument('-u', '--jtr-single-crack',
+                            help='Run John the Ripper''s Single Crack mode. This mode uses information in the user account metadata to generate guesses. This mode is most effective when the hashes are formatted to include GECOS fields.',
+                            action='store_true')
     lArgParser.add_argument('-t', '--techniques',
                             type=str,
                             help="Comma-separated list of integers between 0-15 that determines what password cracking techniques are attempted. Default is level 1,2 and 3. Example of running levels 1 and 2 --techniques=1,2\n\n1: Common Passwords\n2: Small Dictionaries. Small Rulesets\n3: Calendar Related\n4: Medium Dictionaries. Small Rulesets\n5: Small Dictionaries. Medium Rulesets\n6: Medium Dictionaries. Medium Rulesets\n7: Large Password List. Custom Ruleset\n8: Medium-Large Dictionaries. Small Rulesets\n9: Small Dictionaries. Large Rulesets\n10: Medium Dictionaries. Large Rulesets\n11: Medium-Large Dictionaries. Medium Rulesets\n12: Large Dictionaries. Small Rulesets\n13: Medium-Large Dictionaries. Large Rulesets\n14: Large Dictionaries. Medium Rulesets\n15: Large Dictionaries. Large Rulesets\n\n",
                             action='store')
-    lArgParser.add_argument('-u', '--jtr-single-crack',
-                            help='Run John the Ripper''s Single Crack mode. This mode uses information in the user account metadata to generate guesses. This mode is most effective when the hashes are formatted to include GECOS fields.',
+    lArgParser.add_argument('-b', '--brute-force',
+                            type=str,
+                            help="Bruce force common patterns with at least MIN characters up to MAX characters. Provide minimum and maxiumum number of characters as comma-separated, positive integers (i.e. 4,6 means 4 characters to 6 characters).\n\n",
+                            action='store')
+    lArgParser.add_argument('-l', '--pathwell',
+                            type=str,
+                            help="Try common patterns based on pathwell masks. Pathwell masks represent the 50 most common patterns. Use masks number FIRST to LAST. For example, masks 1 thorugh 5. Provide mask numbers as comma-separated, positive integers (i.e. 1,5 means use masks 1-5.\n\n",
+                            action='store')
+    lArgParser.add_argument('-c', '--jtr-prince',
+                            help='Run John the Ripper''s Prince mode. This mode combines words within a dicitonary to generate guesses.',
                             action='store_true')
     lArgParser.add_argument('-r', '--recycle',
                             help='After all cracking attempts are finished, use the root words of already cracked passwords to create a new dictionary. Try to crack more passwords with the new dictionary.',
-                            action='store_true')
-    lArgParser.add_argument('-c', '--jtr-prince',
-                            help='Run John the Ripper''s Prince mode. This mode combines words within a dicitonary to generate guesses.',
                             action='store_true')
     lArgParser.add_argument('-s', '--stat-crack',
                             help="Enable statistical cracking. Byepass will run relatively fast cracking strategies in hopes of cracking enough passwords to induce a pattern and create \"high probability\" masks. Byepass will use the masks in an attempt to crack more passwords.\n\n",
