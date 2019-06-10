@@ -95,10 +95,8 @@ def do_run_jtr_prince_mode(pJTR: JohnTheRipper) -> None:
     pJTR.prince_element_count_max = 2
     pJTR.wordlist = "short-list.txt"
     pJTR.run_prince_mode()
-    pJTR.run_prince_mode()
 
     pJTR.wordlist = "top-10000-english-words.txt"
-    pJTR.run_prince_mode()
     pJTR.run_prince_mode()
 
     lWatcher.stop_timer()
@@ -123,7 +121,10 @@ def run_jtr_baseword_mode(pJTR: JohnTheRipper, pBaseWords: list) -> None:
     lBaseWordsFile.flush()
     lBaseWordsFile.close()
 
+    do_run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lBaseWordsFileName, pRule="SlowHashesPhase1")
     do_run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lBaseWordsFileName, pRule="Best126")
+    do_run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lBaseWordsFileName, pRule="SlowHashesPhase2")
+    do_run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lBaseWordsFileName, pRule="SlowHashesPhase3")
     do_run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lBaseWordsFileName, pRule="OneRuleToRuleThemAll")
     do_run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lBaseWordsFileName, pRule="All")
 
@@ -466,7 +467,7 @@ if __name__ == '__main__':
                             help="Based on statistical analysis of the passwords cracked during initial phase, use only the masks statistically likely to be needed to crack at least the given percent of passwords. For example, if a value of 0.25 provided, only use the relatively few masks needed to crack 25 passwords of the passwords. Note that password cracking effort follows an exponential distribution, so cracking a few more passwords takes a lot more effort (relatively speaking). A good starting value if completely unsure is 25 percent (0.25).\n\n",
                             action='store')
     lArgParser.add_argument('-a', '--all',
-                             help="Shortcut equivalent to -t 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 -s -p 0.9 -u -c -r",
+                             help="Shortcut equivalent to -w [RUN_ALL_BASEWORDS] -t [RUN_ALL_TECHNIQUES] -s -p [RUN_ALL_PERCENTILE] -u -c -r. See config.py for values used.",
                              action='store_true')
     lArgParser.add_argument('-j', '--pass-through',
                              type=str,
