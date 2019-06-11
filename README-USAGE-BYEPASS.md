@@ -35,6 +35,9 @@ tutorials in the following playlist
                             
       -b BRUTE_FORCE, --brute-force BRUTE_FORCE
                         Bruce force common patterns with at least MIN characters up to MAX characters. Provide minimum and maxiumum number of characters as comma-separated, positive integers (i.e. 4,6 means 4 characters to 6 characters).
+
+      -l PATHWELL, --pathwell PATHWELL
+                        Try common patterns based on pathwell masks. Pathwell masks represent the 50 most common patterns. Use masks number FIRST to LAST. For example, masks 1 thorugh 5. Provide mask numbers as comma-separated, positive integers (i.e. 1,5 means use masks 1-5.
                             
       -t TECHNIQUES, --techniques TECHNIQUES
                         Comma-separated list of integers between 0-15 that determines what password cracking techniques are attempted. Default is level 1,2 and 3. Example of running levels 1 and 2 --techniques=1,2
@@ -104,6 +107,12 @@ Attempt to brute force words from 3 to 5 characters in length
 	python3 byepass.py --verbose --hash-format=Raw-MD5 --brute-force=3,5 --input-file=hashes.txt
 	
 	python3 byepass.py -f Raw-MD5 -j="--fork=4" -v -b 3,5 -i hashes.txt
+
+### Use Pathwell Masks 1-5
+
+   	python3 byepass.py --verbose --hash-format=Raw-MD5 --pathwell=1,5 --input-file=hashes.txt
+
+   	python3 byepass.py -f Raw-MD5 -j="--fork=4" -v -l 1,5 -i hashes.txt
 
 ### Using Prayer Mode
 

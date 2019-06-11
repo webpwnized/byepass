@@ -79,6 +79,9 @@ class Printer:
     Attempt to brute force words from 3 to 5 characters in length\n
     \tpython3 byepass.py --verbose --hash-format=Raw-MD5 --brute-force=3,5 --input-file=hashes.txt
     \tpython3 byepass.py -f Raw-MD5 -j="--fork=4" -v -b 3,5 -i hashes.txt\n
+    Use Pathwell masks 1-5\n
+    \tpython3 byepass.py --verbose --hash-format=Raw-MD5 --pathwell=1,5 --input-file=hashes.txt
+    \tpython3 byepass.py -f Raw-MD5 -j="--fork=4" -v -l 1,5 -i hashes.txt\n
     Attempt to crack password hashes found in input file "password.hashes" using default techniques\n
     \tpython3 byepass.py --verbose --hash-format=descrypt --input-file=password.hashes
     \tpython3 byepass.py -v -f descrypt -i password.hashes\n

@@ -3,7 +3,7 @@
 echo '[*] Parsing /opt/JohnTheRipper/run/john.pot'
 cut -f2 -d\: /opt/JohnTheRipper/run/john.pot > /tmp/j
 echo '[*] Merging /opt/JohnTheRipper/run/john.pot with passwords-hailmary.txt'
-sort -u /tmp/j passwords-hailmary.txt > /tmp/p
+sort -u /tmp/j ./passwords-hailmary.txt > /tmp/p
 rm /tmp/j
 mv /tmp/p passwords-hailmary.txt
 echo '[*] Compressing passwords-hailmary.txt'
