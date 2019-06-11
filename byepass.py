@@ -13,10 +13,6 @@ import os.path
 import re
 import argparse
 
-# GLOBALS
-gReporter = Reporter()
-gPrinter = Printer()
-
 #METHODS
 def do_run_jtr_mask_mode(pJTR: JohnTheRipper, pMask: str, pWordlist: str) -> None:
 
@@ -187,9 +183,8 @@ def run_jtr_recycle_mode(pJTR: JohnTheRipper) -> None:
     gPrinter.print("Finished  Mode: Recycle", Level.INFO)
 
 
-def run_statistical_crack_mode(pJTR: JohnTheRipper, pPercentile: float) -> None:
-
-    lMAX_CHARS_TO_BRUTEFORCE = Config.MAX_CHARS_TO_BRUTEFORCE
+def run_statistical_crack_mode(pJTR: JohnTheRipper, pPercentile: float,
+                                 pMaxAllowedCharactersToBruteForce: int) -> None:
 
     # The JTR POT file is the source of passwords
     gPrinter.print("Parsing JTR POT file at {}".format(pJTR.jtr_pot_file_path), Level.INFO)
@@ -209,9 +204,35 @@ def run_statistical_crack_mode(pJTR: JohnTheRipper, pPercentile: float) -> None:
     lMasks = lPasswordStats.get_popular_masks(pPercentile)
     gPrinter.print("Password masks ({} percentile): {}".format(pPercentile, lMasks), Level.INFO)
 
+    run_smart_mask_mode(pJTR=pJTR, pMasks=lMasks, pMaxAllowedCharactersToBruteForce=pMaxAllowedCharactersToBruteForce)
+
+
+def run_pathwell_mode(pJTR: JohnTheRipper, pFirstMask: int, pLastMask: int,
+                                 pMaxAllowedCharactersToBruteForce: int) -> None:
+
+    gPrinter.print("Starting Pathwell mode", Level.INFO)
+
+    lPathwellFileName = 'masks/pathwell.txt'
+
+    with open(lPathwellFileName, "r") as lPathwellFile:
+        lMasks = lPathwellFile.read().splitlines()
+    lPathwellFile.close()
+
+    lPathwellMasks = []
+    for i in range(pFirstMask-1, pLastMask):
+        lPathwellMasks.append(lMasks[i])
+        #do_run_jtr_mask_mode(pJTR=pJTR, pMask=lMasks[i], pWordlist=None)
+
+    run_smart_mask_mode(pJTR=pJTR, pMasks=lPathwellMasks, pMaxAllowedCharactersToBruteForce=pMaxAllowedCharactersToBruteForce)
+
+    gPrinter.print("Finished Pathwell Mode", Level.INFO)
+
+
+def run_smart_mask_mode(pJTR: JohnTheRipper, pMasks: list, pMaxAllowedCharactersToBruteForce: int):
+
     # For each mask, try high probability guesses
     lUndefinedMasks = []
-    for lMask in lMasks:
+    for lMask in pMasks:
         gPrinter.print("Processing mask: {}".format(lMask), Level.INFO)
 
         # If the number of characters in the mask is "small" as defined by
@@ -219,7 +240,7 @@ def run_statistical_crack_mode(pJTR: JohnTheRipper, pPercentile: float) -> None:
         # If there are more characters than the limit, use "smart brute-force"
         # which is a hybrid between dictionary and mask mode.
         lCountCharacters = int(len(lMask) / 2)
-        if lCountCharacters <= lMAX_CHARS_TO_BRUTEFORCE:
+        if lCountCharacters <= pMaxAllowedCharactersToBruteForce:
             lWordlist = ""
             do_run_jtr_mask_mode(pJTR=pJTR, pMask=lMask, pWordlist=lWordlist)
         else:
@@ -227,7 +248,7 @@ def run_statistical_crack_mode(pJTR: JohnTheRipper, pPercentile: float) -> None:
             # All lowercase letters
             if re.match('^(\?l)+$', lMask):
                 lCountLetters = lMask.count('?l')
-                if lCountLetters > lMAX_CHARS_TO_BRUTEFORCE:
+                if lCountLetters > pMaxAllowedCharactersToBruteForce:
                     lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
                     lRule=""
                     do_run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lWordlist, pRule=lRule)
@@ -281,7 +302,7 @@ def run_statistical_crack_mode(pJTR: JohnTheRipper, pPercentile: float) -> None:
                     lRule =""
                     do_run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lWordlist, pRule=lRule)
                 else:
-                    gPrinter.print("Did not process mask {} because it is out of policy".format(lMask), Level.WARNING)
+                    gPrinter.print("Did not process mask {} because it is out of policy".format(lMask), Level.ERROR)
 
             # Lowercase ending with something other than the masks already accounted for. If the
             # ending pattern is longer than 4 characters, we do not try because it takes a long time
@@ -293,33 +314,48 @@ def run_statistical_crack_mode(pJTR: JohnTheRipper, pPercentile: float) -> None:
                 if len(lSuffix) <= 4:
                     lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
                     lMaskParam = "--mask=?w{}".format(lSuffix)
+                    lRule =""
                     do_run_jtr_mask_mode(pJTR=pJTR, pMask=lMaskParam, pWordlist=lWordlist)
                 else:
-                    gPrinter.print("Did not process mask {} because it is out of policy".format(lMask), Level.WARNING)
+                    gPrinter.print("Did not process mask {} because it is out of policy".format(lMask), Level.ERROR)
+
+            # Lowercase ending with something other than the masks already accounted for. If the
+            # ending pattern is longer than 4 characters, we do not try because it takes a long time
+            # to test that many hashes
+            elif re.match('^(\?u)+', lMask):
+                lPrefix = re.search('^(\?u)+', lMask).group()
+                lCountLetters = lPrefix.count("?u")
+                lSuffix = lMask[lCountLetters * 2:]
+                if len(lSuffix) <= 4:
+                    lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
+                    lMaskParam = "--mask=?w{}".format(lSuffix)
+                    lRule =""
+                    do_run_jtr_mask_mode(pJTR=pJTR, pMask=lMaskParam, pWordlist=lWordlist)
+                else:
+                    gPrinter.print("Did not process mask {} because it is out of policy".format(lMask), Level.ERROR)
+
+            # Capitalized ending with something other than the masks already accounted for. If the
+            # ending pattern is longer than 4 characters, we do not try because it takes a long time
+            # to test that many hashes
+            elif re.match('^(\?u)(\?l)+$', lMask):
+                lPrefix = re.search('^(\?u)+', lMask).group()
+                lCountLetters = lPrefix.count('?u') + lPrefix.count('?l')
+                lSuffix = lMask[lCountLetters * 2:]
+                if len(lSuffix) <= 4:
+                    lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
+                    lMaskParam = "--mask=?w{}".format(lSuffix)
+                    lRule =""
+                    do_run_jtr_mask_mode(pJTR=pJTR, pMask=lMaskParam, pWordlist=lWordlist)
+                else:
+                    gPrinter.print("Did not process mask {} because it is out of policy".format(lMask), Level.ERROR)
 
             else:
                 lUndefinedMasks.append(lMask)
-                gPrinter.print("No policy defined for mask {}".format(lMask), Level.WARNING)
+                gPrinter.print("No policy defined for mask {}".format(lMask), Level.ERROR)
 
     # List masks that did not match a pattern so that a pattern can be added
     if lUndefinedMasks: gPrinter.print(
-        "There was no policy defined for the following masks: {}".format(lUndefinedMasks), Level.WARNING)
-
-
-def run_pathwell_mode(pJTR: JohnTheRipper, pFirstMask: int, pLastMask: int) -> None:
-
-    gPrinter.print("Starting Pathwell mode", Level.INFO)
-
-    lPathwellFileName = 'masks/pathwell.txt'
-
-    with open(lPathwellFileName, "r") as lPathwellFile:
-        lMasks = lPathwellFile.read().splitlines()
-    lPathwellFile.close()
-
-    for i in range(pFirstMask-1, pLastMask):
-        do_run_jtr_mask_mode(pJTR=pJTR, pMask=lMasks[i], pWordlist=None)
-
-    gPrinter.print("Finished Pathwell Mode", Level.INFO)
+        "There was no policy defined for the following masks: {}".format(lUndefinedMasks), Level.ERROR)
 
 
 def run_jtr_brute_force_mode(pJTR: JohnTheRipper, pMinCharactersToBruteForce: int,
@@ -398,7 +434,8 @@ def run_main_program(pParser: Parser):
         gPrinter.print_example_usage()
         exit(0)
 
-    lJTR = JohnTheRipper(pJTRExecutableFilePath = Config.JTR_EXECUTABLE_FILE_PATH, pJTRPotFilePath = Config.JTR_POT_FILE_PATH,
+    lJTR = JohnTheRipper(pJTRExecutableFilePath = pParser.config_file.JTR_EXECUTABLE_FILE_PATH,
+                         pJTRPotFilePath = pParser.config_file.JTR_POT_FILE_PATH,
                          pHashFilePath=pParser.hash_file, pHashFormat=pParser.hash_format, pPassThrough=pParser.jtr_pass_through,
                          pVerbose=pParser.verbose, pDebug=pParser.debug)
 
@@ -420,7 +457,8 @@ def run_main_program(pParser: Parser):
 
     # Pathwell mode
     if pParser.run_pathwell_mode:
-        run_pathwell_mode(pJTR=lJTR, pFirstMask=pParser.first_pathwell_mask, pLastMask=pParser.last_pathwell_mask)
+        run_pathwell_mode(pJTR=lJTR, pFirstMask=pParser.first_pathwell_mask, pLastMask=pParser.last_pathwell_mask,
+                          pMaxAllowedCharactersToBruteForce=pParser.config_file.MAX_CHARS_TO_BRUTEFORCE)
 
     # Smart brute-force
     if pParser.run_brute_force:
@@ -434,7 +472,8 @@ def run_main_program(pParser: Parser):
 
     # If the user chooses -s option, begin statistical analysis to aid targeted cracking routines
     if pParser.run_stat_crack:
-        run_statistical_crack_mode(pJTR=lJTR, pPercentile=pParser.percentile)
+        run_statistical_crack_mode(pJTR=lJTR, pPercentile=pParser.percentile,
+                                 pMaxAllowedCharactersToBruteForce=pParser.config_file.MAX_CHARS_TO_BRUTEFORCE)
 
     if pParser.recycle_passwords:
         run_jtr_recycle_mode(pJTR=lJTR)
@@ -444,6 +483,10 @@ def run_main_program(pParser: Parser):
 
 
 if __name__ == '__main__':
+
+    # GLOBALS
+    gReporter = Reporter()
+    gPrinter = Printer()
 
     lArgParser = argparse.ArgumentParser(description="""
   ___          ___

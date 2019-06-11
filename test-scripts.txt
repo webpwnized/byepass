@@ -7,9 +7,9 @@ python3 byepass.py -f Raw-MD5 -j="--fork=16" -v -i md5.hashes
 
 python3 byepass.py -f Raw-MD5 -j="--fork=16" -t 4 -v -i md5.hashes
 
-## Prayer Mode Technique 4
+## Prayer Mode Technique 1
 
-python3 byepass.py -f Raw-SHA1 -j="--fork=32" -t 1 -v -i hibp.sha1
+python3 byepass.py -f Raw-SHA1 -j="--fork=32" -t 1 -v -i md5.hashes
 
 ## Wordlist Mode
 

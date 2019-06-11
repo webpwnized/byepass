@@ -122,6 +122,10 @@ class Parser:
     def run_basewords_mode(self) -> bool:
         return self.__mRunBasewordsMode
 
+    @property  # getter method
+    def config_file(self) -> bool:
+        return self.__mConfiguration
+
     # Constructor Method
     def __init__(self: object, pArgs, pConfig: Config) -> None:
         self.__mArgs = pArgs
