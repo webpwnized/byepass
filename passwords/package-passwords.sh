@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 echo '[*] Parsing /opt/JohnTheRipper/run/john.pot'
 cut -f2 -d\: /opt/JohnTheRipper/run/john.pot > /tmp/j
