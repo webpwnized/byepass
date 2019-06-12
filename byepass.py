@@ -395,7 +395,7 @@ def run_jtr_brute_force_mode(pJTR: JohnTheRipper, pMinCharactersToBruteForce: in
         lMasks.extend(list(set(lSymbolMasks)))
 
         for lMask in lMasks:
-            do_run_jtr_mask_mode(pJTR=pJTR, pMask=lMask, pWordlist=None)
+            do_run_jtr_mask_mode(pJTR=pJTR, pMask=lMask, pWordlist=None, pRule=None)
 
 
 def run_jtr_single_mode(pJTR: JohnTheRipper) -> None:
