@@ -14,21 +14,22 @@ import re
 import argparse
 
 #METHODS
-def do_run_jtr_mask_mode(pJTR: JohnTheRipper, pMask: str, pWordlist: str) -> None:
+def do_run_jtr_mask_mode(pJTR: JohnTheRipper, pMask: str, pWordlist: str, pRule: str) -> None:
 
     lCrackingMode = "Mask {}".format(pMask)
     if pWordlist: lCrackingMode += " using wordlist {}".format(pWordlist)
+    if pRule: lCrackingMode += " with rule {}".format(pWordlist)
 
     lWatcher = Watcher(pCrackingMode=lCrackingMode, pJTR=pJTR)
     lWatcher.start_timer()
     lWatcher.print_mode_start_message()
     
-    pJTR.run_mask_mode(pMask=pMask, pWordlist=pWordlist)
+    pJTR.run_mask_mode(pMask=pMask, pWordlist=pWordlist, pRule=pRule)
 
     lWatcher.stop_timer()
     lWatcher.print_mode_finsihed_message()
 
-    gReporter.appendRecord(pMode=lCrackingMode, pMask=pMask, pWordlist=pWordlist, pRule="",
+    gReporter.appendRecord(pMode=lCrackingMode, pMask=pMask, pWordlist=pWordlist, pRule=pRule,
                            pNumberPasswordsCracked=lWatcher.number_passwords_cracked_by_this_mode,
                            pNumberPasswordsCrackedPerSecond=lWatcher.number_passwords_cracked_by_this_mode_per_second,
                            pPercentPasswordsCracked=lWatcher.percent_passwords_cracked_by_this_mode)
@@ -221,7 +222,6 @@ def run_pathwell_mode(pJTR: JohnTheRipper, pFirstMask: int, pLastMask: int,
     lPathwellMasks = []
     for i in range(pFirstMask-1, pLastMask):
         lPathwellMasks.append(lMasks[i])
-        #do_run_jtr_mask_mode(pJTR=pJTR, pMask=lMasks[i], pWordlist=None)
 
     run_smart_mask_mode(pJTR=pJTR, pMasks=lPathwellMasks, pMaxAllowedCharactersToBruteForce=pMaxAllowedCharactersToBruteForce)
 
@@ -329,7 +329,7 @@ def run_smart_mask_mode(pJTR: JohnTheRipper, pMasks: list, pMaxAllowedCharacters
                 if len(lSuffix) <= 4:
                     lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
                     lMaskParam = "--mask=?w{}".format(lSuffix)
-                    lRule =""
+                    lRule = "uppercase"
                     do_run_jtr_mask_mode(pJTR=pJTR, pMask=lMaskParam, pWordlist=lWordlist)
                 else:
                     gPrinter.print("Did not process mask {} because it is out of policy".format(lMask), Level.ERROR)
@@ -338,13 +338,13 @@ def run_smart_mask_mode(pJTR: JohnTheRipper, pMasks: list, pMaxAllowedCharacters
             # ending pattern is longer than 4 characters, we do not try because it takes a long time
             # to test that many hashes
             elif re.match('^(\?u)(\?l)+$', lMask):
-                lPrefix = re.search('^(\?u)+', lMask).group()
+                lPrefix = re.search('^(\?u)(\?l)+', lMask).group()
                 lCountLetters = lPrefix.count('?u') + lPrefix.count('?l')
                 lSuffix = lMask[lCountLetters * 2:]
                 if len(lSuffix) <= 4:
                     lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
                     lMaskParam = "--mask=?w{}".format(lSuffix)
-                    lRule =""
+                    lRule = "capitalize"
                     do_run_jtr_mask_mode(pJTR=pJTR, pMask=lMaskParam, pWordlist=lWordlist)
                 else:
                     gPrinter.print("Did not process mask {} because it is out of policy".format(lMask), Level.ERROR)
@@ -534,7 +534,7 @@ if __name__ == '__main__':
                             help="Based on statistical analysis of the passwords cracked during initial phase, use only the masks statistically likely to be needed to crack at least the given percent of passwords. For example, if a value of 0.25 provided, only use the relatively few masks needed to crack 25 passwords of the passwords. Note that password cracking effort follows an exponential distribution, so cracking a few more passwords takes a lot more effort (relatively speaking). A good starting value if completely unsure is 25 percent (0.25).\n\n",
                             action='store')
     lArgParser.add_argument('-a', '--all',
-                             help="Shortcut equivalent to -w [RUN_ALL_BASEWORDS] -t [RUN_ALL_TECHNIQUES] -s -p [RUN_ALL_PERCENTILE] -u -c -r. See config.py for values used.",
+                             help="Shortcut equivalent to -w [RUN_ALL_BASEWORDS] -t [RUN_ALL_TECHNIQUES] -l [RUN_ALL_FIRST_PATHWELL_MASK,RUN_ALL_LAST_PATHWELL_MASK] -s -p [RUN_ALL_PERCENTILE] -u -c -r. See config.py for values used.",
                              action='store_true')
     lArgParser.add_argument('-j', '--pass-through',
                              type=str,

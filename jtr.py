@@ -193,7 +193,7 @@ class JohnTheRipper:
         if pRule: lCmdArgs.append("--rule={}".format(pRule))
         self.__crack(lCmdArgs=lCmdArgs)
 
-    def run_mask_mode(self, pMask: str, pWordlist: str) -> None:
+    def run_mask_mode(self, pMask: str, pWordlist: str, pRule: str) -> None:
         # There are two modes that run brute force using masks. Keep track of masks
         # already checked in case the same mask would be tried twice.
         if pMask in self.__mMasksAlreadyBruteForced:
@@ -203,6 +203,7 @@ class JohnTheRipper:
             self.__mMasksAlreadyBruteForced.append(pMask)
             lCmdArgs = ["--mask={}".format(pMask)]
             if pWordlist: lCmdArgs.append("--wordlist={}".format(pWordlist))
+            if pRule: lCmdArgs.append("--pRule={}".format(pRule))
             self.__crack(lCmdArgs=lCmdArgs)
 
     def parse_passwords_from_pot(self) -> list:
