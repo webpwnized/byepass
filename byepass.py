@@ -141,16 +141,10 @@ def run_jtr_recycle_mode(pJTR: JohnTheRipper) -> None:
     lListOfWordsLess1 = [lWord.decode("utf-8")[:lWord.__len__()-1]  for lWord in lListOfPasswords]
     lListOfWordsLess2 = [lWord.decode("utf-8")[:lWord.__len__()-2]  for lWord in lListOfPasswords]
     lListOfWordsLess3 = [lWord.decode("utf-8")[:lWord.__len__()-3]  for lWord in lListOfPasswords]
-    lListOfWordsLess4 = [lWord.decode("utf-8")[:lWord.__len__()-4]  for lWord in lListOfPasswords]
-    lListOfWordsLess5 = [lWord.decode("utf-8")[:lWord.__len__()-5]  for lWord in lListOfPasswords]
-    lListOfWordsLess6 = [lWord.decode("utf-8")[:lWord.__len__()-6]  for lWord in lListOfPasswords]
 
     lListOfBasewords.extend(lListOfWordsLess1)
     lListOfBasewords.extend(lListOfWordsLess2)
     lListOfBasewords.extend(lListOfWordsLess3)
-    lListOfBasewords.extend(lListOfWordsLess4)
-    lListOfBasewords.extend(lListOfWordsLess5)
-    lListOfBasewords.extend(lListOfWordsLess6)
     lUniqueBasewordsPreserveCase = list(set(lListOfBasewords))
 
     lBasewordsLowerCase = [lWord.lower() for lWord in lUniqueBasewordsPreserveCase]
