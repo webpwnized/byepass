@@ -242,7 +242,7 @@ def run_smart_mask_mode(pJTR: JohnTheRipper, pMasks: list, pMaxAllowedCharacters
         lCountCharacters = int(len(lMask) / 2)
         if lCountCharacters <= pMaxAllowedCharactersToBruteForce:
             lWordlist = ""
-            do_run_jtr_mask_mode(pJTR=pJTR, pMask=lMask, pWordlist=lWordlist)
+            do_run_jtr_mask_mode(pJTR=pJTR, pMask=lMask, pWordlist=lWordlist, pRule=None)
         else:
 
             # All lowercase letters
@@ -315,7 +315,7 @@ def run_smart_mask_mode(pJTR: JohnTheRipper, pMasks: list, pMaxAllowedCharacters
                     lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
                     lMaskParam = "--mask=?w{}".format(lSuffix)
                     lRule =""
-                    do_run_jtr_mask_mode(pJTR=pJTR, pMask=lMaskParam, pWordlist=lWordlist)
+                    do_run_jtr_mask_mode(pJTR=pJTR, pMask=lMaskParam, pWordlist=lWordlist, pRule=None)
                 else:
                     gPrinter.print("Did not process mask {} because it is out of policy".format(lMask), Level.ERROR)
 
@@ -330,7 +330,7 @@ def run_smart_mask_mode(pJTR: JohnTheRipper, pMasks: list, pMaxAllowedCharacters
                     lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
                     lMaskParam = "--mask=?w{}".format(lSuffix)
                     lRule = "uppercase"
-                    do_run_jtr_mask_mode(pJTR=pJTR, pMask=lMaskParam, pWordlist=lWordlist)
+                    do_run_jtr_mask_mode(pJTR=pJTR, pMask=lMaskParam, pWordlist=lWordlist, pRule=lRule)
                 else:
                     gPrinter.print("Did not process mask {} because it is out of policy".format(lMask), Level.ERROR)
 
@@ -345,7 +345,7 @@ def run_smart_mask_mode(pJTR: JohnTheRipper, pMasks: list, pMaxAllowedCharacters
                     lWordlist = "dictionaries/{}-character-words.txt".format(str(lCountLetters))
                     lMaskParam = "--mask=?w{}".format(lSuffix)
                     lRule = "capitalize"
-                    do_run_jtr_mask_mode(pJTR=pJTR, pMask=lMaskParam, pWordlist=lWordlist)
+                    do_run_jtr_mask_mode(pJTR=pJTR, pMask=lMaskParam, pWordlist=lWordlist, pRule=lRule)
                 else:
                     gPrinter.print("Did not process mask {} because it is out of policy".format(lMask), Level.ERROR)
 
