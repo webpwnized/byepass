@@ -135,22 +135,23 @@ def run_jtr_recycle_mode(pJTR: JohnTheRipper) -> None:
     gPrinter.print("Starting mode: Recycle", Level.INFO)
 
     # The JTR POT file is the source of passwords
-    lListOfPasswords = pJTR.parse_passwords_from_pot()
+    lListOfPasswords: list = pJTR.parse_passwords_from_pot()
 
     lListOfBasewords =  [ "".join(re.findall("[a-zA-Z]+", lWord.decode("utf-8"))) for lWord in lListOfPasswords]
     lListOfWordsLess1 = [lWord.decode("utf-8")[:lWord.__len__()-1]  for lWord in lListOfPasswords]
     lListOfWordsLess2 = [lWord.decode("utf-8")[:lWord.__len__()-2]  for lWord in lListOfPasswords]
     lListOfWordsLess3 = [lWord.decode("utf-8")[:lWord.__len__()-3]  for lWord in lListOfPasswords]
 
-    lListOfBasewords.extend(lListOfWordsLess1)
-    lListOfBasewords.extend(lListOfWordsLess2)
-    lListOfBasewords.extend(lListOfWordsLess3)
-    lUniqueBasewordsPreserveCase = list(set(lListOfBasewords))
+    lListOfBasewords.extend(lListOfPasswords)   # original password from pot file
+    lListOfBasewords.extend(lListOfWordsLess1)  # original passwords minus last character
+    lListOfBasewords.extend(lListOfWordsLess2)  # minus last two characters
+    lListOfBasewords.extend(lListOfWordsLess3)  # minus last three characters
+    lUniqueBasewordsPreserveCase = list(set(lListOfBasewords))  # remove duplicates
 
     lBasewordsLowerCase = [lWord.lower() for lWord in lUniqueBasewordsPreserveCase]
 
-    lUniqueBasewordsPreserveCase.extend(lBasewordsLowerCase)
-    lUniqueBasewords = list(set(lUniqueBasewordsPreserveCase))
+    lUniqueBasewordsPreserveCase.extend(lBasewordsLowerCase) # lowercase version
+    lUniqueBasewords = list(set(lUniqueBasewordsPreserveCase))  # remove duplicates
 
     lRecycleFileName = 'basewords/recycle.txt'
     lRecycleDirectory = os.path.dirname(lRecycleFileName)
