@@ -37,4 +37,4 @@ RUN_ALL_FIRST_PATHWELL_MASK = 1
 RUN_ALL_LAST_PATHWELL_MASK = 50
 RUN_ALL_BASEWORDS = ["love", "alex", "mike", "angel", "blue", "chris", "password", "sunshine", "qwerty", "iloveyou",
                      "princess", "admin", "welcome", "football", "monkey", "july", "june", "march", "april",
-                     "jan", "feb", "mar", "apr", "may", "aug", "sept", "oct", "nov", "dec" ]
+                     "jan", "feb", "mar", "apr", "may", "aug", "sept", "oct", "nov", "dec"]
