@@ -14,6 +14,18 @@ import re
 import argparse
 
 #METHODS
+def write_list_to_file(pLines: list, pFileName: str) -> None:
+
+    lDirectory = os.path.dirname(pFileName)
+    if not os.path.exists(lDirectory): os.makedirs(lDirectory)
+    lFile = open(pFileName, 'w')
+
+    for lLine in pLines:
+        lFile.write("{}\n".format(lLine))
+    lFile.flush()
+    lFile.close()
+
+
 def do_run_jtr_mask_mode(pJTR: JohnTheRipper, pMask: str, pWordlist: str, pRule: str) -> None:
 
     lCrackingMode = "Mask {}".format(pMask)
@@ -110,13 +122,7 @@ def run_jtr_baseword_mode(pJTR: JohnTheRipper, pBaseWords: list) -> None:
     gPrinter.print("Starting mode: Baseword with words {}".format(pBaseWords), Level.INFO)
 
     lBaseWordsFileName = 'basewords/basewords.txt'
-    lBaseWordsDirectory = os.path.dirname(lBaseWordsFileName)
-    if not os.path.exists(lBaseWordsDirectory): os.makedirs(lBaseWordsDirectory)
-    lBaseWordsFile = open(lBaseWordsFileName, 'w')
-    for lWord in pBaseWords:
-        lBaseWordsFile.write("%s\n" % lWord)
-    lBaseWordsFile.flush()
-    lBaseWordsFile.close()
+    write_list_to_file(pLines=pBaseWords, pFileName=lBaseWordsFileName)
 
     do_run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lBaseWordsFileName, pRule="SlowHashesPhase1")
     do_run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lBaseWordsFileName, pRule="Best126")
@@ -154,14 +160,7 @@ def run_jtr_recycle_mode(pJTR: JohnTheRipper) -> None:
     lUniqueBasewords = list(set(lUniqueBasewordsPreserveCase))  # remove duplicates
 
     lRecycleFileName = 'basewords/recycle.txt'
-    lRecycleDirectory = os.path.dirname(lRecycleFileName)
-    if not os.path.exists(lRecycleDirectory): os.makedirs(lRecycleDirectory)
-    lRecycleFile = open(lRecycleFileName, 'w')
-
-    for lBaseword in lUniqueBasewords:
-        lRecycleFile.write("{}\n".format(lBaseword))
-    lRecycleFile.flush()
-    lRecycleFile.close()
+    write_list_to_file(lUniqueBasewords, lRecycleFileName)
 
     if pJTR.verbose:
         lCountPasswords = lUniqueBasewords.__len__()
