@@ -353,43 +353,48 @@ def run_smart_mask_mode(pJTR: JohnTheRipper, pMasks: list, pMaxAllowedCharacters
 
 
 def run_jtr_brute_force_mode(pJTR: JohnTheRipper, pMinCharactersToBruteForce: int,
-                             pMaxCharactersToBruteForce: int) -> None:
+                             pMaxCharactersToBruteForce: int, pMaxAllowedCharactersToBruteForce: int) -> None:
 
+    lMasks = []
     for i in range(pMinCharactersToBruteForce, pMaxCharactersToBruteForce + 1):
-        lLowersMask = "?l" * i
-        lUppersMask = "?u" * i
-        lDigitsMask = "?d" * i
-        lMasks = [lLowersMask, lUppersMask, lDigitsMask]
 
-        # UpperLower pattern requires at least 2 characters
-        if i > 1:
-            lUpperLowersMask = "?u" + "?l" * (i - 1)
-            lMasks.append(lUpperLowersMask)
+        if i <= pMaxAllowedCharactersToBruteForce:
+            lMasks.append("?a"*i)
+        else:
+            lLowersMask = "?l" * i
+            lUppersMask = "?u" * i
+            lDigitsMask = "?d" * i
+            lMasks.extend([lLowersMask, lUppersMask, lDigitsMask])
 
-        #From 1 digit up to i-1 digits where i is length of pattern
-        for j in range(1, i):
-            lLowerDigitMask = "?l" * (i-j) + "?d" * j
-            lUpperDigitMask = "?u" * (i-j) + "?d" * j
-            lMasks.append(lLowerDigitMask)
-            lMasks.append(lUpperDigitMask)
+            # UpperLower pattern requires at least 2 characters
+            if i > 1:
+                lUpperLowersMask = "?u" + "?l" * (i - 1)
+                lMasks.append(lUpperLowersMask)
 
-            # Only generate capitalized if pattern at least 3 characters (i > 2)
-            # long and starts with at least an upper and a lower (i - j >= 2)
-            if (i > 2) and (i - j >= 2):
-                lUpperLowerDigitMask = "?u" + "?l" * (i-j-1) + "?d" * j
-                lMasks.append(lUpperLowerDigitMask)
+            #From 1 digit up to i-1 digits where i is length of pattern
+            for j in range(1, i):
+                lLowerDigitMask = "?l" * (i-j) + "?d" * j
+                lUpperDigitMask = "?u" * (i-j) + "?d" * j
+                lMasks.append(lLowerDigitMask)
+                lMasks.append(lUpperDigitMask)
 
-        # Make additional masks by replacing last character of each mask with a symbol.
-        # This will create duplicates (i.e. ?l?l?l and ?l?l?d both become ?l?l?s)
-        lSymbolMasks = []
-        for lMask in lMasks:
-            lSymbolMasks.append(lMask[:lMask.__len__()-2] + "?s")
+                # Only generate capitalized if pattern at least 3 characters (i > 2)
+                # long and starts with at least an upper and a lower (i - j >= 2)
+                if (i > 2) and (i - j >= 2):
+                    lUpperLowerDigitMask = "?u" + "?l" * (i-j-1) + "?d" * j
+                    lMasks.append(lUpperLowerDigitMask)
 
-        # Remove duplicates from symbol masks and add to list of masks
-        lMasks.extend(list(set(lSymbolMasks)))
+            # Make additional masks by replacing last character of each mask with a symbol.
+            # This will create duplicates (i.e. ?l?l?l and ?l?l?d both become ?l?l?s)
+            lSymbolMasks = []
+            for lMask in lMasks:
+                lSymbolMasks.append(lMask[:lMask.__len__()-2] + "?s")
 
-        for lMask in lMasks:
-            do_run_jtr_mask_mode(pJTR=pJTR, pMask=lMask, pWordlist=None, pRule=None)
+            # Remove duplicates from symbol masks and add to list of masks
+            lMasks.extend(list(set(lSymbolMasks)))
+
+    for lMask in lMasks:
+        do_run_jtr_mask_mode(pJTR=pJTR, pMask=lMask, pWordlist=None, pRule=None)
 
 
 def run_jtr_single_mode(pJTR: JohnTheRipper) -> None:
@@ -458,7 +463,8 @@ def run_main_program(pParser: Parser):
     if pParser.run_brute_force:
         run_jtr_brute_force_mode(pJTR=lJTR,
                                  pMinCharactersToBruteForce=pParser.min_characters_to_brute_force,
-                                 pMaxCharactersToBruteForce=pParser.max_characters_to_brute_force)
+                                 pMaxCharactersToBruteForce=pParser.max_characters_to_brute_force,
+                                 pMaxAllowedCharactersToBruteForce=pParser.config_file.MAX_CHARS_TO_BRUTEFORCE)
 
     # John the Ripper Prince mode
     if pParser.run_jtr_prince_mode:
