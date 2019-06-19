@@ -16,7 +16,7 @@ mv passwords-hailmary-aa passwords-hailmary-1.txt.zip
 mv passwords-hailmary-ab passwords-hailmary-2.txt.zip
 mv passwords-hailmary-ac passwords-hailmary-3.txt.zip
 mv passwords-hailmary-ad passwords-hailmary-4.txt.zip
-mv passwords-hailmary-ad passwords-hailmary-5.txt.zip
+mv passwords-hailmary-ae passwords-hailmary-5.txt.zip
 echo '[*] Deleting temporary working files'
 rm passwords-hailmary.txt.zip
 echo '[*] Passwords have been packaged for GitHub'
