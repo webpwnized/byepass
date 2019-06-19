@@ -355,45 +355,49 @@ def run_smart_mask_mode(pJTR: JohnTheRipper, pMasks: list, pMaxAllowedCharacters
 def run_jtr_brute_force_mode(pJTR: JohnTheRipper, pMinCharactersToBruteForce: int,
                              pMaxCharactersToBruteForce: int, pMaxAllowedCharactersToBruteForce: int) -> None:
 
-    lMasks = []
+    lSmartMasks = []
+    lSymbolMasks = []
+    lBruteMasks = []
     for i in range(pMinCharactersToBruteForce, pMaxCharactersToBruteForce + 1):
 
         if i <= pMaxAllowedCharactersToBruteForce:
-            lMasks.append("?a"*i)
+            lBruteMasks.append("?a"*i)
         else:
             lLowersMask = "?l" * i
             lUppersMask = "?u" * i
             lDigitsMask = "?d" * i
-            lMasks.extend([lLowersMask, lUppersMask, lDigitsMask])
+            lSmartMasks.extend([lLowersMask, lUppersMask, lDigitsMask])
 
             # UpperLower pattern requires at least 2 characters
             if i > 1:
                 lUpperLowersMask = "?u" + "?l" * (i - 1)
-                lMasks.append(lUpperLowersMask)
+                lSmartMasks.append(lUpperLowersMask)
 
             #From 1 digit up to i-1 digits where i is length of pattern
             for j in range(1, i):
                 lLowerDigitMask = "?l" * (i-j) + "?d" * j
                 lUpperDigitMask = "?u" * (i-j) + "?d" * j
-                lMasks.append(lLowerDigitMask)
-                lMasks.append(lUpperDigitMask)
+                lSmartMasks.append(lLowerDigitMask)
+                lSmartMasks.append(lUpperDigitMask)
 
                 # Only generate capitalized if pattern at least 3 characters (i > 2)
                 # long and starts with at least an upper and a lower (i - j >= 2)
                 if (i > 2) and (i - j >= 2):
                     lUpperLowerDigitMask = "?u" + "?l" * (i-j-1) + "?d" * j
-                    lMasks.append(lUpperLowerDigitMask)
+                    lSmartMasks.append(lUpperLowerDigitMask)
 
-            # Make additional masks by replacing last character of each mask with a symbol.
-            # This will create duplicates (i.e. ?l?l?l and ?l?l?d both become ?l?l?s)
-            lSymbolMasks = []
-            for lMask in lMasks:
-                lSymbolMasks.append(lMask[:lMask.__len__()-2] + "?s")
+    # Make additional masks by replacing last character of each mask with a symbol.
+    # This will create duplicates (i.e. ?l?l?l and ?l?l?d both become ?l?l?s)
+    for lMask in lSmartMasks:
+        lSymbolMasks.append(lMask[:lMask.__len__()-2] + "?s")
 
-            # Remove duplicates from symbol masks and add to list of masks
-            lMasks.extend(list(set(lSymbolMasks)))
+    # Remove duplicates from symbol masks and add to list of masks
+    lSmartMasks.extend(list(set(lSymbolMasks)))
 
-    for lMask in lMasks:
+    # combine brute-force masks with smart masks
+    lSmartMasks.extend(lBruteMasks)
+
+    for lMask in lSmartMasks:
         do_run_jtr_mask_mode(pJTR=pJTR, pMask=lMask, pWordlist=None, pRule=None)
 
 
