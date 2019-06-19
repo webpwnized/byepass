@@ -12,18 +12,26 @@ import config as Config
 import os.path
 import re
 import argparse
+import gc
+import subprocess
+
 
 #METHODS
-def write_list_to_file(pLines: list, pFileName: str) -> None:
+def write_list_to_file(pLines: list, pFileName: str, pAppend: bool) -> None:
 
+    WRITE = 'w'
+    APPEND = 'a+'
+    lMode = APPEND if pAppend else WRITE
     lDirectory = os.path.dirname(pFileName)
     if not os.path.exists(lDirectory): os.makedirs(lDirectory)
-    lFile = open(pFileName, 'w')
+    gPrinter.print(pMessage="Writing to file {}".format(pFileName), pLevel=Level.INFO)
+    lFile = open(pFileName, lMode)
 
     for lLine in pLines:
         lFile.write("{}\n".format(lLine))
     lFile.flush()
     lFile.close()
+    gPrinter.print(pMessage="Finished writing to file {}".format(pFileName), pLevel=Level.INFO)
 
 
 def do_run_jtr_mask_mode(pJTR: JohnTheRipper, pMask: str, pWordlist: str, pRule: str) -> None:
@@ -122,7 +130,7 @@ def run_jtr_baseword_mode(pJTR: JohnTheRipper, pBaseWords: list) -> None:
     gPrinter.print("Starting mode: Baseword with words {}".format(pBaseWords), Level.INFO)
 
     lBaseWordsFileName = 'basewords/basewords.txt'
-    write_list_to_file(pLines=pBaseWords, pFileName=lBaseWordsFileName)
+    write_list_to_file(pLines=pBaseWords, pFileName=lBaseWordsFileName, pAppend=False)
 
     do_run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lBaseWordsFileName, pRule="SlowHashesPhase1")
     do_run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lBaseWordsFileName, pRule="Best126")
@@ -138,34 +146,87 @@ def run_jtr_baseword_mode(pJTR: JohnTheRipper, pBaseWords: list) -> None:
 
 def run_jtr_recycle_mode(pJTR: JohnTheRipper) -> None:
 
-    gPrinter.print("Starting mode: Recycle", Level.INFO)
+    gPrinter.print("Starting Recycle mode", Level.INFO)
 
     # The JTR POT file is the source of passwords
-    lListOfPasswords: list = pJTR.parse_passwords_from_pot()
-
-    lListOfBasewords =  [ "".join(re.findall("[a-zA-Z]+", lWord.decode("utf-8"))) for lWord in lListOfPasswords]
-    lListOfWordsLess1 = [lWord.decode("utf-8")[:lWord.__len__()-1]  for lWord in lListOfPasswords]
-    lListOfWordsLess2 = [lWord.decode("utf-8")[:lWord.__len__()-2]  for lWord in lListOfPasswords]
-    lListOfWordsLess3 = [lWord.decode("utf-8")[:lWord.__len__()-3]  for lWord in lListOfPasswords]
-
-    lListOfBasewords.extend(lListOfPasswords)   # original password from pot file
-    lListOfBasewords.extend(lListOfWordsLess1)  # original passwords minus last character
-    lListOfBasewords.extend(lListOfWordsLess2)  # minus last two characters
-    lListOfBasewords.extend(lListOfWordsLess3)  # minus last three characters
-    lUniqueBasewordsPreserveCase = list(set(lListOfBasewords))  # remove duplicates
-
-    lBasewordsLowerCase = [lWord.lower() for lWord in lUniqueBasewordsPreserveCase]
-
-    lUniqueBasewordsPreserveCase.extend(lBasewordsLowerCase) # lowercase version
-    lUniqueBasewords = list(set(lUniqueBasewordsPreserveCase))  # remove duplicates
-
     lRecycleFileName = 'basewords/recycle.txt'
-    write_list_to_file(lUniqueBasewords, lRecycleFileName)
 
-    if pJTR.verbose:
-        lCountPasswords = lUniqueBasewords.__len__()
-        gPrinter.print("Using {} unique words for recycle mode".format(str(lCountPasswords)), Level.INFO)
-        if lCountPasswords > 1000000: gPrinter.print("That is a lot of words. Recycle mode may take a while.", Level.WARNING)
+    # original password from pot file
+    gPrinter.print("Working on original words", Level.INFO)
+    lListOfPasswords=pJTR.parse_passwords_from_pot()
+    write_list_to_file(pLines=lListOfPasswords, pFileName=lRecycleFileName, pAppend=False)
+
+    # lowercase
+    gPrinter.print("Working on lowercase version", Level.INFO)
+    write_list_to_file(pLines=[lWord.lower() for lWord in lListOfPasswords], pFileName=lRecycleFileName, pAppend=True)
+    gPrinter.print("Garbage collecting", Level.INFO)
+    gc.collect()
+
+    # root words
+    gPrinter.print("Working on root words", Level.INFO)
+    lListOfBasewords =  [ "".join(re.findall("[a-zA-Z]+", lWord.decode("utf-8"))) for lWord in lListOfPasswords]
+    write_list_to_file(pLines=lListOfBasewords, pFileName=lRecycleFileName, pAppend=True)
+
+    # lowercase
+    gPrinter.print("Working on lowercase version", Level.INFO)
+    write_list_to_file(pLines=[lWord.lower() for lWord in lListOfBasewords], pFileName=lRecycleFileName, pAppend=True)
+    gPrinter.print("Garbage collecting", Level.INFO)
+    gc.collect()
+
+    # original passwords minus last character
+    gPrinter.print("Working on original words minus last character", Level.INFO)
+    lListOfBasewords = [lWord.decode("utf-8")[:lWord.__len__()-1]  for lWord in lListOfPasswords]
+    write_list_to_file(pLines=lListOfBasewords, pFileName=lRecycleFileName, pAppend=True)
+
+    # lowercase
+    gPrinter.print("Working on lowercase version", Level.INFO)
+    write_list_to_file(pLines=[lWord.lower() for lWord in lListOfBasewords], pFileName=lRecycleFileName, pAppend=True)
+    gPrinter.print("Garbage collecting", Level.INFO)
+    gc.collect()
+
+    # minus last two characters
+    gPrinter.print("Working on original words minus last two characters", Level.INFO)
+    lListOfBasewords = [lWord.decode("utf-8")[:lWord.__len__()-2]  for lWord in lListOfPasswords]
+    write_list_to_file(pLines=lListOfBasewords, pFileName=lRecycleFileName, pAppend=True)
+
+    # lowercase
+    gPrinter.print("Working on lowercase version", Level.INFO)
+    write_list_to_file(pLines=[lWord.lower() for lWord in lListOfBasewords], pFileName=lRecycleFileName, pAppend=True)
+    gPrinter.print("Garbage collecting", Level.INFO)
+    gc.collect()
+
+    # minus last three characters
+    gPrinter.print("Working on original words minus last three characters", Level.INFO)
+    lListOfBasewords = [lWord.decode("utf-8")[:lWord.__len__()-3]  for lWord in lListOfPasswords]
+    write_list_to_file(pLines=lListOfBasewords, pFileName=lRecycleFileName, pAppend=True)
+
+    # lowercase
+    gPrinter.print("Working on lowercase version", Level.INFO)
+    write_list_to_file(pLines=[lWord.lower() for lWord in lListOfBasewords], pFileName=lRecycleFileName, pAppend=True)
+    gPrinter.print("Garbage collecting", Level.INFO)
+    gc.collect()
+
+    lCmd = ['touch']
+    lCmd.append('/tmp/file')
+    gPrinter.print("Running command {}".format(lCmd), Level.INFO)
+    lCompletedProcess = subprocess.run(lCmd, stdout=subprocess.PIPE)
+
+    lCmd = ['sort']
+    lCmd.append('-u')
+    lCmd.append('-o /tmp/file')
+    lCmd.append(lRecycleFileName)
+    gPrinter.print("Running command {}".format(lCmd), Level.INFO)
+    lCompletedProcess = subprocess.run(lCmd, stdout=subprocess.PIPE)
+
+    lCmd = ['mv']
+    lCmd.append('/tmp/file')
+    lCmd.append(lRecycleFileName)
+    gPrinter.print("Running command {}".format(lCmd), Level.INFO)
+    lCompletedProcess = subprocess.run(lCmd, stdout=subprocess.PIPE)
+
+    gPrinter.print("Wordlist created: {}".format(lRecycleFileName), Level.INFO)
+
+    exit(0)
 
     do_run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lRecycleFileName, pRule="SlowHashesPhase1")
     do_run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lRecycleFileName, pRule="Best126")
@@ -175,7 +236,7 @@ def run_jtr_recycle_mode(pJTR: JohnTheRipper) -> None:
 
     os.remove(lRecycleFileName)
 
-    gPrinter.print("Finished  Mode: Recycle", Level.INFO)
+    gPrinter.print("Finished Recycle mode", Level.INFO)
 
 
 def run_statistical_crack_mode(pJTR: JohnTheRipper, pPercentile: float,
