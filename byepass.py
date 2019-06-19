@@ -213,7 +213,8 @@ def run_jtr_recycle_mode(pJTR: JohnTheRipper) -> None:
 
     lCmd = ['sort']
     lCmd.append('-u')
-    lCmd.append('-o /tmp/file')
+    lCmd.append('-o')
+    lCmd.append('/tmp/file')
     lCmd.append(lRecycleFileName)
     gPrinter.print("Running command {}".format(lCmd), Level.INFO)
     lCompletedProcess = subprocess.run(lCmd, stdout=subprocess.PIPE)
@@ -225,8 +226,6 @@ def run_jtr_recycle_mode(pJTR: JohnTheRipper) -> None:
     lCompletedProcess = subprocess.run(lCmd, stdout=subprocess.PIPE)
 
     gPrinter.print("Wordlist created: {}".format(lRecycleFileName), Level.INFO)
-
-    exit(0)
 
     do_run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lRecycleFileName, pRule="SlowHashesPhase1")
     do_run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lRecycleFileName, pRule="Best126")
