@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 echo '[*] Counting current password list'
-wc -l passwords-hailmary.txt
+cc=`wc -l passwords-hailmary.txt`
+echo "[*] Current password count $cc"
 echo '[*] Parsing /opt/JohnTheRipper/run/john.pot'
 cut -f2 -d\: /opt/JohnTheRipper/run/john.pot > /tmp/j
 echo '[*] Merging /opt/JohnTheRipper/run/john.pot with passwords-hailmary.txt'
@@ -21,5 +22,6 @@ echo '[*] Deleting temporary working files'
 rm passwords-hailmary.txt.zip
 echo '[*] Passwords have been packaged for GitHub'
 echo '[*] Counting new password list'
-wc -l passwords-hailmary.txt
+cc=`wc -l passwords-hailmary.txt`
+echo "[*] New password count $cc"
 ls -lah
