@@ -16,7 +16,7 @@ class Watcher:
     __mNumberPasswordsCrackedByThisMode:int = 0
     __mNumberPasswordsCrackedByThisModePerSecond:int = 0
     __mPercentPasswordsCrackedByThisMode:int = 0.0
-    __mPrinter: Printer = Printer()
+    __mPrinter: Printer = Printer
     __mJTR: JohnTheRipper = None
 
     @property           # getter method

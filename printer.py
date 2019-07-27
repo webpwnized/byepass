@@ -9,6 +9,9 @@ class Level(Enum):
 
 class Printer:
 
+    # ---------------------------------
+    # "Private" static class variables
+    # ---------------------------------
     __grey = 37
     __red = 91
     __green = 92
@@ -36,6 +39,9 @@ class Printer:
         Level.DEBUG: "[*] DEBUG: "
     }
 
+    # ---------------------------------
+    # "Public" static class variables
+    # ---------------------------------
     @property  # getter method
     def verbose(self) -> bool:
         return self.__mVerbose
@@ -52,23 +58,35 @@ class Printer:
     def debug(self: object, pDebug: bool):
         self.__mDebug = pDebug
 
-    # Default Constructor Method
-    def __init__(self) -> None:
-        self.__mVerbose: bool = False
-        self.__mDebug: bool = False
+    # ---------------------------------
+    # public instance constructor
+    # ---------------------------------
+    #def __init__(self) -> None:
+    #    self.__mVerbose: bool = False
+    #    self.__mDebug: bool = False
 
-    # private methods
+    # ---------------------------------
+    # private instance methods
+    # ---------------------------------
 
-    # public method
-    def print(self, pMessage: str, pLevel: Level) -> None:
+    # ---------------------------------
+    # public instance methods
+    # ---------------------------------
+
+    # ---------------------------------
+    # public static class methods
+    # ---------------------------------
+    @staticmethod
+    def print(pMessage: str, pLevel: Level) -> None:
         # Only print INFO and SUCCESS messages if verbose is true
         # Only print DEBUG messages if debug is true
         # Warning, Error are always printed
-        if (pLevel in [Level.INFO, Level.SUCCESS]) and not self.verbose: return None
-        if (pLevel in [Level.DEBUG]) and not self.debug: return None
-        print("\033[1;{}m{}{}\033[21;0m".format(self.__mColorMap[pLevel], self.__mLevelMap[pLevel], pMessage))
+        if (pLevel in [Level.INFO, Level.SUCCESS]) and not Printer.verbose: return None
+        if (pLevel in [Level.DEBUG]) and not Printer.debug: return None
+        print("\033[1;{}m{}{}\033[21;0m".format(Printer.__mColorMap[pLevel], Printer.__mLevelMap[pLevel], pMessage))
 
-    def print_example_usage(self):
+    @staticmethod
+    def print_example_usage():
         print("""
     Attempt to crack hashes using JTR Single Crack Mode\n
     \tpython3 byepass.py --verbose --hash-format=Raw-SHA1 --jtr-single-crack --input-file=linkedin-1.hashes

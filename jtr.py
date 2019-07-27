@@ -18,7 +18,7 @@ class JohnTheRipper:
     __mVerbose: bool = False
     __mDebug: bool = False
     __mNumberHashesInHashFile: int = 0
-    __mPrinter: Printer = Printer()
+    __mPrinter: Printer = Printer
 
     READ_BYTES = 'rb'
 

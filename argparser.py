@@ -26,7 +26,7 @@ class Parser:
     __mMaxCharactersToBruteForce: int = 0
     __mFirstPathwellMask: int = 0
     __mLastPathwellMask: int = 0
-    __mPrinter: Printer = Printer()
+    __mPrinter: Printer = Printer
 
     @property  # getter method
     def show_examples(self) -> bool:

@@ -24,14 +24,14 @@ def write_list_to_file(pLines: list, pFileName: str, pAppend: bool) -> None:
     lMode = APPEND if pAppend else WRITE
     lDirectory = os.path.dirname(pFileName)
     if not os.path.exists(lDirectory): os.makedirs(lDirectory)
-    gPrinter.print(pMessage="Writing to file {}".format(pFileName), pLevel=Level.INFO)
+    Printer.print(pMessage="Writing to file {}".format(pFileName), pLevel=Level.INFO)
     lFile = open(pFileName, lMode)
 
     for lLine in pLines:
         lFile.write("{}\n".format(lLine))
     lFile.flush()
     lFile.close()
-    gPrinter.print(pMessage="Finished writing to file {}".format(pFileName), pLevel=Level.INFO)
+    Printer.print(pMessage="Finished writing to file {}".format(pFileName), pLevel=Level.INFO)
 
 
 def do_run_jtr_mask_mode(pJTR: JohnTheRipper, pMask: str, pWordlist: str, pRule: str) -> None:
@@ -127,7 +127,7 @@ def do_run_jtr_prince_mode(pJTR: JohnTheRipper) -> None:
 
 def run_jtr_baseword_mode(pJTR: JohnTheRipper, pBaseWords: list) -> None:
 
-    gPrinter.print("Starting mode: Baseword with words {}".format(pBaseWords), Level.INFO)
+    Printer.print("Starting mode: Baseword with words {}".format(pBaseWords), Level.INFO)
 
     lBaseWordsFileName = 'basewords/basewords.txt'
     write_list_to_file(pLines=pBaseWords, pFileName=lBaseWordsFileName, pAppend=False)
@@ -141,74 +141,74 @@ def run_jtr_baseword_mode(pJTR: JohnTheRipper, pBaseWords: list) -> None:
 
     os.remove(lBaseWordsFileName)
 
-    gPrinter.print("Finished Baseword Mode", Level.INFO)
+    Printer.print("Finished Baseword Mode", Level.INFO)
 
 
 def run_jtr_recycle_mode(pJTR: JohnTheRipper) -> None:
 
-    gPrinter.print("Starting Recycle mode", Level.INFO)
+    Printer.print("Starting Recycle mode", Level.INFO)
 
     # The JTR POT file is the source of passwords
     lRecycleFileName = 'basewords/recycle.txt'
 
     # original password from pot file
-    gPrinter.print("Working on original words", Level.INFO)
+    Printer.print("Working on original words", Level.INFO)
     lListOfPasswords=pJTR.parse_passwords_from_pot()
     write_list_to_file(pLines=lListOfPasswords, pFileName=lRecycleFileName, pAppend=False)
 
     # lowercase
-    gPrinter.print("Working on lowercase version", Level.INFO)
+    Printer.print("Working on lowercase version", Level.INFO)
     write_list_to_file(pLines=[lWord.lower() for lWord in lListOfPasswords], pFileName=lRecycleFileName, pAppend=True)
-    gPrinter.print("Garbage collecting", Level.INFO)
+    Printer.print("Garbage collecting", Level.INFO)
     gc.collect()
 
     # root words
-    gPrinter.print("Working on root words", Level.INFO)
+    Printer.print("Working on root words", Level.INFO)
     lListOfBasewords =  [ "".join(re.findall("[a-zA-Z]+", lWord.decode("utf-8"))) for lWord in lListOfPasswords]
     write_list_to_file(pLines=lListOfBasewords, pFileName=lRecycleFileName, pAppend=True)
 
     # lowercase
-    gPrinter.print("Working on lowercase version", Level.INFO)
+    Printer.print("Working on lowercase version", Level.INFO)
     write_list_to_file(pLines=[lWord.lower() for lWord in lListOfBasewords], pFileName=lRecycleFileName, pAppend=True)
-    gPrinter.print("Garbage collecting", Level.INFO)
+    Printer.print("Garbage collecting", Level.INFO)
     gc.collect()
 
     # original passwords minus last character
-    gPrinter.print("Working on original words minus last character", Level.INFO)
+    Printer.print("Working on original words minus last character", Level.INFO)
     lListOfBasewords = [lWord.decode("utf-8")[:lWord.__len__()-1]  for lWord in lListOfPasswords]
     write_list_to_file(pLines=lListOfBasewords, pFileName=lRecycleFileName, pAppend=True)
 
     # lowercase
-    gPrinter.print("Working on lowercase version", Level.INFO)
+    Printer.print("Working on lowercase version", Level.INFO)
     write_list_to_file(pLines=[lWord.lower() for lWord in lListOfBasewords], pFileName=lRecycleFileName, pAppend=True)
-    gPrinter.print("Garbage collecting", Level.INFO)
+    Printer.print("Garbage collecting", Level.INFO)
     gc.collect()
 
     # minus last two characters
-    gPrinter.print("Working on original words minus last two characters", Level.INFO)
+    Printer.print("Working on original words minus last two characters", Level.INFO)
     lListOfBasewords = [lWord.decode("utf-8")[:lWord.__len__()-2]  for lWord in lListOfPasswords]
     write_list_to_file(pLines=lListOfBasewords, pFileName=lRecycleFileName, pAppend=True)
 
     # lowercase
-    gPrinter.print("Working on lowercase version", Level.INFO)
+    Printer.print("Working on lowercase version", Level.INFO)
     write_list_to_file(pLines=[lWord.lower() for lWord in lListOfBasewords], pFileName=lRecycleFileName, pAppend=True)
-    gPrinter.print("Garbage collecting", Level.INFO)
+    Printer.print("Garbage collecting", Level.INFO)
     gc.collect()
 
     # minus last three characters
-    gPrinter.print("Working on original words minus last three characters", Level.INFO)
+    Printer.print("Working on original words minus last three characters", Level.INFO)
     lListOfBasewords = [lWord.decode("utf-8")[:lWord.__len__()-3]  for lWord in lListOfPasswords]
     write_list_to_file(pLines=lListOfBasewords, pFileName=lRecycleFileName, pAppend=True)
 
     # lowercase
-    gPrinter.print("Working on lowercase version", Level.INFO)
+    Printer.print("Working on lowercase version", Level.INFO)
     write_list_to_file(pLines=[lWord.lower() for lWord in lListOfBasewords], pFileName=lRecycleFileName, pAppend=True)
-    gPrinter.print("Garbage collecting", Level.INFO)
+    Printer.print("Garbage collecting", Level.INFO)
     gc.collect()
 
     lCmd = ['touch']
     lCmd.append('/tmp/file')
-    gPrinter.print("Running command {}".format(lCmd), Level.INFO)
+    Printer.print("Running command {}".format(lCmd), Level.INFO)
     lCompletedProcess = subprocess.run(lCmd, stdout=subprocess.PIPE)
 
     lCmd = ['sort']
@@ -216,16 +216,16 @@ def run_jtr_recycle_mode(pJTR: JohnTheRipper) -> None:
     lCmd.append('-o')
     lCmd.append('/tmp/file')
     lCmd.append(lRecycleFileName)
-    gPrinter.print("Running command {}".format(lCmd), Level.INFO)
+    Printer.print("Running command {}".format(lCmd), Level.INFO)
     lCompletedProcess = subprocess.run(lCmd, stdout=subprocess.PIPE)
 
     lCmd = ['mv']
     lCmd.append('/tmp/file')
     lCmd.append(lRecycleFileName)
-    gPrinter.print("Running command {}".format(lCmd), Level.INFO)
+    Printer.print("Running command {}".format(lCmd), Level.INFO)
     lCompletedProcess = subprocess.run(lCmd, stdout=subprocess.PIPE)
 
-    gPrinter.print("Wordlist created: {}".format(lRecycleFileName), Level.INFO)
+    Printer.print("Wordlist created: {}".format(lRecycleFileName), Level.INFO)
 
     do_run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lRecycleFileName, pRule="SlowHashesPhase1")
     do_run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lRecycleFileName, pRule="Best126")
@@ -235,29 +235,29 @@ def run_jtr_recycle_mode(pJTR: JohnTheRipper) -> None:
 
     os.remove(lRecycleFileName)
 
-    gPrinter.print("Finished Recycle mode", Level.INFO)
+    Printer.print("Finished Recycle mode", Level.INFO)
 
 
 def run_statistical_crack_mode(pJTR: JohnTheRipper, pPercentile: float,
                                  pMaxAllowedCharactersToBruteForce: int) -> None:
 
     # The JTR POT file is the source of passwords
-    gPrinter.print("Parsing JTR POT file at {}".format(pJTR.jtr_pot_file_path), Level.INFO)
+    Printer.print("Parsing JTR POT file at {}".format(pJTR.jtr_pot_file_path), Level.INFO)
     lListOfPasswords = pJTR.parse_passwords_from_pot()
 
     if pJTR.verbose:
         lCountPasswords = lListOfPasswords.__len__()
-        gPrinter.print("Using {} passwords in statistical analysis: ".format(str(lCountPasswords)), Level.INFO)
-        if lCountPasswords > 1000000: gPrinter.print("That is a lot of passwords. Statistical analysis may take a while.", Level.WARNING)
+        Printer.print("Using {} passwords in statistical analysis: ".format(str(lCountPasswords)), Level.INFO)
+        if lCountPasswords > 1000000: Printer.print("That is a lot of passwords. Statistical analysis may take a while.", Level.WARNING)
 
     # Let PasswordStats class analyze most likely masks
-    gPrinter.print("Beginning statistical analysis", Level.INFO)
+    Printer.print("Beginning statistical analysis", Level.INFO)
     lPasswordStats = PasswordStats(lListOfPasswords)
-    gPrinter.print("Parsed {} passwords into {} masks".format(lPasswordStats.count_passwords, lPasswordStats.count_masks), Level.INFO)
+    Printer.print("Parsed {} passwords into {} masks".format(lPasswordStats.count_passwords, lPasswordStats.count_masks), Level.INFO)
 
     # Calculate masks most likely need to crack X% of the password hashes
     lMasks = lPasswordStats.get_popular_masks(pPercentile)
-    gPrinter.print("Password masks ({} percentile): {}".format(pPercentile, lMasks), Level.INFO)
+    Printer.print("Password masks ({} percentile): {}".format(pPercentile, lMasks), Level.INFO)
 
     run_smart_mask_mode(pJTR=pJTR, pMasks=lMasks, pMaxAllowedCharactersToBruteForce=pMaxAllowedCharactersToBruteForce)
 
@@ -265,7 +265,7 @@ def run_statistical_crack_mode(pJTR: JohnTheRipper, pPercentile: float,
 def run_pathwell_mode(pJTR: JohnTheRipper, pFirstMask: int, pLastMask: int,
                                  pMaxAllowedCharactersToBruteForce: int) -> None:
 
-    gPrinter.print("Starting Pathwell mode", Level.INFO)
+    Printer.print("Starting Pathwell mode", Level.INFO)
 
     lPathwellFileName = 'masks/pathwell.txt'
 
@@ -279,7 +279,7 @@ def run_pathwell_mode(pJTR: JohnTheRipper, pFirstMask: int, pLastMask: int,
 
     run_smart_mask_mode(pJTR=pJTR, pMasks=lPathwellMasks, pMaxAllowedCharactersToBruteForce=pMaxAllowedCharactersToBruteForce)
 
-    gPrinter.print("Finished Pathwell Mode", Level.INFO)
+    Printer.print("Finished Pathwell Mode", Level.INFO)
 
 
 def run_smart_mask_mode(pJTR: JohnTheRipper, pMasks: list, pMaxAllowedCharactersToBruteForce: int):
@@ -287,7 +287,7 @@ def run_smart_mask_mode(pJTR: JohnTheRipper, pMasks: list, pMaxAllowedCharacters
     # For each mask, try high probability guesses
     lUndefinedMasks = []
     for lMask in pMasks:
-        gPrinter.print("Processing mask: {}".format(lMask), Level.INFO)
+        Printer.print("Processing mask: {}".format(lMask), Level.INFO)
 
         # If the number of characters in the mask is "small" as defined by
         # MAX_CHARS_TO_BRUTEFORCE, then use brute-force on the pattern.
@@ -356,7 +356,7 @@ def run_smart_mask_mode(pJTR: JohnTheRipper, pMasks: list, pMaxAllowedCharacters
                     lRule =""
                     do_run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lWordlist, pRule=lRule)
                 else:
-                    gPrinter.print("Did not process mask {} because it is out of policy".format(lMask), Level.ERROR)
+                    Printer.print("Did not process mask {} because it is out of policy".format(lMask), Level.ERROR)
 
             # Lowercase ending with something other than the masks already accounted for. If the
             # ending pattern is longer than 4 characters, we do not try because it takes a long time
@@ -371,7 +371,7 @@ def run_smart_mask_mode(pJTR: JohnTheRipper, pMasks: list, pMaxAllowedCharacters
                     lRule =""
                     do_run_jtr_mask_mode(pJTR=pJTR, pMask=lMaskParam, pWordlist=lWordlist, pRule=None)
                 else:
-                    gPrinter.print("Did not process mask {} because it is out of policy".format(lMask), Level.ERROR)
+                    Printer.print("Did not process mask {} because it is out of policy".format(lMask), Level.ERROR)
 
             # Lowercase ending with something other than the masks already accounted for. If the
             # ending pattern is longer than 4 characters, we do not try because it takes a long time
@@ -386,7 +386,7 @@ def run_smart_mask_mode(pJTR: JohnTheRipper, pMasks: list, pMaxAllowedCharacters
                     lRule = "uppercase"
                     do_run_jtr_mask_mode(pJTR=pJTR, pMask=lMaskParam, pWordlist=lWordlist, pRule=lRule)
                 else:
-                    gPrinter.print("Did not process mask {} because it is out of policy".format(lMask), Level.ERROR)
+                    Printer.print("Did not process mask {} because it is out of policy".format(lMask), Level.ERROR)
 
             # Capitalized ending with something other than the masks already accounted for. If the
             # ending pattern is longer than 4 characters, we do not try because it takes a long time
@@ -401,14 +401,14 @@ def run_smart_mask_mode(pJTR: JohnTheRipper, pMasks: list, pMaxAllowedCharacters
                     lRule = "capitalize"
                     do_run_jtr_mask_mode(pJTR=pJTR, pMask=lMaskParam, pWordlist=lWordlist, pRule=lRule)
                 else:
-                    gPrinter.print("Did not process mask {} because it is out of policy".format(lMask), Level.ERROR)
+                    Printer.print("Did not process mask {} because it is out of policy".format(lMask), Level.ERROR)
 
             else:
                 lUndefinedMasks.append(lMask)
-                gPrinter.print("No policy defined for mask {}".format(lMask), Level.ERROR)
+                Printer.print("No policy defined for mask {}".format(lMask), Level.ERROR)
 
     # List masks that did not match a pattern so that a pattern can be added
-    if lUndefinedMasks: gPrinter.print(
+    if lUndefinedMasks: Printer.print(
         "There was no policy defined for the following masks: {}".format(lUndefinedMasks), Level.ERROR)
 
 
@@ -490,11 +490,11 @@ def run_jtr_prayer_mode(pJTR: JohnTheRipper, pMethod: int) -> None:
 
 def run_main_program(pParser: Parser):
 
-    gPrinter.verbose = pParser.verbose
-    gPrinter.debug = pParser.debug
+    Printer.verbose = pParser.verbose
+    Printer.debug = pParser.debug
 
     if pParser.show_examples:
-        gPrinter.print_example_usage()
+        Printer.print_example_usage()
         exit(0)
 
     lJTR = JohnTheRipper(pJTRExecutableFilePath = pParser.config_file.JTR_EXECUTABLE_FILE_PATH,
@@ -550,7 +550,6 @@ if __name__ == '__main__':
 
     # GLOBALS
     gReporter = Reporter()
-    gPrinter = Printer()
 
     lArgParser = argparse.ArgumentParser(description="""
   ___          ___
