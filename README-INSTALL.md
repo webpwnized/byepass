@@ -1,3 +1,7 @@
+# ByePass
+
+### Automate password cracking attempts
+
 # Installation
 
 ## Important
@@ -34,8 +38,7 @@ A video tutorial is available on the webpwnized YouTube channel at the following
     cd /opt
     git clone https://github.com/webpwnized/byepass.git
     cd bypass/passwords
-    cat passwords-hailmary-1.txt.zip passwords-hailmary-2.txt.zip passwords-hailmary-3.txt.zip > passwords-hailmary.txt.zip
-    unzip passwords-hailmary.txt.zip
+    ./unpackage-passwords.txt
     cd ..
 
 #### Step 3: Verify config.py is properly configured 

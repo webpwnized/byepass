@@ -1,6 +1,11 @@
 Find out how to print actual passwords cracked at end
-Phone numbers
-Table of cracking results display at end
-Prince mode
 Have I been pwned passwords
-Optimize the redundancy in the run_jtr methods
+Take a look at Hashcat automator
+Supress output from popen
+Add support for Hashcat
+Optimize prince dictionary
+Add aggression levels for prince mode
+Add warning about large keyspaces for prince mode
+Create -m targeted brute force masks
+Automate -k migration to incremental mode
+Split out password and dictionary techniques
