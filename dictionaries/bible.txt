@@ -1662,9 +1662,7 @@ buryingplace
 bushel
 bushes
 busied
-business@pglaf
-business@pglaforg
-busy
+3busy
 busybodies
 busybody
 but
@@ -7677,7 +7675,7 @@ play
 played
 playedst
 players
-players			notes
+players
 playeth
 playing
 plea

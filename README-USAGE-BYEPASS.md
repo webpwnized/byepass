@@ -8,6 +8,7 @@ available at the following links. For written instructions, refer to the next se
 * [Using ByePass: More Aggressive Techniques](https://www.youtube.com/watch?v=WlxQ11uYH-U)
 * [Using ByePass: Base Words Technique](https://www.youtube.com/watch?v=5vlW5_iiOPE)
 * [Using ByePass: Statistical Cracking Technique](https://www.youtube.com/watch?v=7McTDayHJs4)
+* [Using ByePass: Brute-Force Technique](https://www.youtube.com/watch?v=U6LDeFZhIu0)
 
 If you would like more help, please see the video 
 tutorials in the following playlist
@@ -18,8 +19,9 @@ tutorials in the following playlist
 
 **Automate the most common password cracking tasks**
 
-**Usage**: byepass.py [-h] [-f HASH_FORMAT] [-s] [-b BASE_WORDS] [-p PERCENTILE]
-                  [-v] [-d] -i INPUT_FILE
+**Usage**: byepass.py [-h] [-f HASH_FORMAT] [-w BASEWORDS] [-b BRUTE_FORCE]
+                  [-t TECHNIQUES] [-s] [-p PERCENTILE] [-j PASS_THROUGH] [-v]
+                  [-d] (-e | -i INPUT_FILE)
 
 **Optional arguments:**
 
@@ -27,8 +29,11 @@ tutorials in the following playlist
       -f HASH_FORMAT, --hash-format HASH_FORMAT
                             The hash algorithm used to hash the password(s). This value must be one of the values supported by John the Ripper. To see formats supported by JTR, use command "john --list=formats". It is strongly recommended to provide an optimal value. If no value is provided, John the Ripper will guess.
                             
-      -b BASEWORDS, --basewords BASEWORDS
-                            Supply a comma-separated list of lowercase, unmangled base words thought to be good candidates. For example, if Wiley Coyote is cracking hashes from Acme Inc., Wiley might provide the word "acme". Be careful how many words are supplied as Byepass will apply many mangling rules. Up to several dozen should run reasonably fast.
+      -w BASEWORDS, --basewords BASEWORDS
+                            Supply a comma-separated list of lowercase, unmangled base words thought to be good candidates. For example, if Wiley Coyote is cracking hashes from Acme Inc., Wiley might provide the word "acme". Be careful how many words are supplied as Byepass will apply many mangling rules. Up to several should run reasonably fast.
+                            
+      -b BRUTE_FORCE, --brute-force BRUTE_FORCE
+                            Bruce force common patterns with at least MIN characters up to MAX characters. Provide minimum and maxiumum number of characters as comma-separated, positive integers (i.e. 4,6 means 4 characters to 6 characters).
                             
       -t TECHNIQUES, --techniques TECHNIQUES
                             Comma-separated list of integers between 0-13 that determines what password cracking techniques are attempted. Default is level 1. Example of running levels 1 and 2 --techniques=1,2
@@ -73,7 +78,15 @@ Attempt to crack linked-in hashes using base words linkedin and linked
 
 	python3 byepass.py --verbose --hash-format=Raw-SHA1 --base-words=linkedin,linked --input-file=linkedin-1.hashes
 
-	python3 byepass.py -v -f Raw-SHA1 -b linkedin,linked -i linkedin-1.hashes
+	python3 byepass.py -v -f Raw-SHA1 -w linkedin,linked -i linkedin-1.hashes
+
+### Using Brute Force Mode
+
+Attempt to brute force words from 3 to 5 characters in length
+
+	python3 byepass.py --verbose --hash-format=Raw-MD5 --brute-force=3,5 --input-file=hashes.txt
+
+    python3 byepass.py -f Raw-MD5 -j="--fork=4" -v -t 0 -b 3,5 -i hashes.txt
 
 ### Using Prayer Mode
 

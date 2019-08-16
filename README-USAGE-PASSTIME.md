@@ -1,5 +1,16 @@
 # Usage
 
+Video tutorials that explain how to use ByePass are 
+available at the following links. For written instructions, refer to the next section.
+
+* [Using PassTime: Identifying Significant Password Patterns](https://www.youtube.com/watch?v=X-dwrLvnY9M)
+* [Using PassTime: More Advanced Pattern Analysis](https://www.youtube.com/watch?v=s-x_aqdtZ8c)
+
+If you would like more help, please see the video 
+tutorials in the following playlist
+
+* [Complete Guide to ByePass](https://www.youtube.com/playlist?list=PLZOToVAK85Mqfcbufx1_lQHZ4pltV8nAm)
+
 ## Using PassTime
 
 **Automate statistical analysis of passwords in support of password cracking tasks**
@@ -15,6 +26,8 @@
                             Based on statistical analysis of the passwords provided, only list masks matching the given PERCENTILE percent of passwords. For example, if a value of 0.25 provided, only lists the relatively few masks needed to crack 25 percent of the passwords. Ideally, these would be the only masks needed to crack the same percentage of the remaining, uncracked passwords. However, the prediction is only as good as the sample passwords provided in the INPUT FILE. The more closely the provided passwords match the target passwords, the better the prediction.
       -a, --analyze-passwords
                             Perform analysis on the password provided in the INPUT FILE. A probability density function (PDF) will be displayed with the masks matching PERCENTILE percent of passwords. The marginal and cummulative percentages represented by each mask are provided with the number of passwords matched by the mask.
+
+**Required arguments:**
       -i INPUT_FILE, --input-file INPUT_FILE
                             Path to file containing passwords to analyze
 

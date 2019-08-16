@@ -1,4 +1,3 @@
-1b
 1pm
 1spatial
 1st
@@ -73,6 +72,7 @@ acasti
 accelerate
 accelerator
 acceleron
+accent
 accenture
 accesso
 acciones
@@ -120,6 +120,7 @@ addus
 addvantage
 adecoagro
 adelanto
+adenauer
 adept
 adept4
 adesto
@@ -167,6 +168,7 @@ aerogels
 aerohive
 aerojet
 aeroportuario
+aerostar
 aerostructures
 aerosystems
 aerovironment
@@ -246,6 +248,7 @@ albion
 albireo
 alcentra
 alcoa
+alcyone
 alder
 aldermore
 aldeyra
@@ -253,6 +256,8 @@ alecto
 aleris
 alexco
 alexion
+alfa
+alfasud
 algo
 algonquin
 alibaba
@@ -264,12 +269,14 @@ alj
 alkermes
 alladin
 alladins
+allante
 allegany
 alleghany
 allegheny
 allegiance
 allegiant
 allegion
+allegro
 allena
 allergan
 allete
@@ -285,6 +292,7 @@ allstar
 allstate
 ally
 almaden
+almera
 alnylam
 aloha
 alonso
@@ -295,6 +303,7 @@ alphadex
 alphagen
 alphamark
 alphatec
+alpine
 alps
 alta
 altaba
@@ -320,6 +329,7 @@ amati
 amazon
 ambac
 ambarella
+ambassador
 ambev
 ambiental
 ambrian
@@ -335,6 +345,7 @@ ameren
 amerenenergy
 ameresco
 ameri
+america
 american
 americawide
 americhoice
@@ -439,6 +450,7 @@ apellis
 apergy
 apn
 apogee
+apollo
 appalachian
 appfolio
 appian
@@ -501,6 +513,7 @@ argos
 arian
 ariana
 ariba
+aries
 arista
 ark
 arkeia
@@ -510,6 +523,7 @@ armadale
 armo
 armory
 armour
+arna
 aron
 a�ropostale
 arotech
@@ -533,6 +547,7 @@ ascena
 ascendis
 ascent
 ascential
+ascona
 ase
 aseana
 asgn
@@ -563,8 +578,10 @@ asta
 astec
 asterias
 astoria
+astra
 astral
 astrazeneca
+astre
 astronics
 astronova
 astrotech
@@ -613,13 +630,18 @@ aukett
 aura
 aurinia
 auris
+aurora
 auryn
+austin
+austinhealey
 autins
+autobianchi
 autodesk
 autohome
 autokirei
 autoliv
 automa
+automobile
 automotriz
 autonation
 autonomous
@@ -640,6 +662,7 @@ avation
 avaya
 avb
 avenal
+aventador
 aveo
 avery
 avesoro
@@ -676,6 +699,7 @@ axsome
 axt
 ayala
 aytu
+aztek
 azul
 azulejos
 azure
@@ -784,6 +808,7 @@ bearingpoint
 bearings
 beasley
 beasts
+beat
 beatty
 beaumont
 beazer
@@ -796,6 +821,7 @@ becton
 beebe
 beech
 beethoven
+beetle
 befa
 begbies
 beigene
@@ -833,7 +859,9 @@ beowulf
 berendsen
 berkley
 berkshire
+berlinetta
 berman
+bermuda
 bermúdez
 betfair
 bethel
@@ -927,6 +955,7 @@ bisichi
 bison
 bitauto
 bith
+biturbo
 biv
 bj
 bjs
@@ -1022,6 +1051,7 @@ bowleven
 bowline
 boxhill
 boxlight
+boxster
 boyd
 brack
 bradesco
@@ -1053,6 +1083,7 @@ breedon
 breeze
 breg
 breitburn
+brera
 brew
 brewery
 brewin
@@ -1109,6 +1140,8 @@ bucyrus
 budweiser
 buena
 buenaventura
+bugatti
+buick
 buildabear
 bulkers
 bullion
@@ -1158,6 +1191,7 @@ cactus
 caddo
 cadence
 cadeville
+cadillac
 cadiz
 cadogan
 cae
@@ -1202,6 +1236,7 @@ calumet
 calvert
 calyxt
 camarero
+camaro
 camber
 cambian
 cambium
@@ -1216,6 +1251,7 @@ camioneros
 camper
 campo
 campofresco
+camry
 camtek
 canandaigua
 canastota
@@ -1235,6 +1271,8 @@ capitala
 capitalcorp
 capitalization
 capline
+cappuccino
+caprice
 capricor
 caprock
 capstar
@@ -1261,6 +1299,7 @@ caribe
 caribex
 caridad
 carillion
+carisma
 carlisle
 carlsbad
 carlyle
@@ -1275,6 +1314,7 @@ carpetright
 carpets
 carphone
 carr
+carrera
 carriage
 carrizo
 carro
@@ -1315,8 +1355,10 @@ caterpillar
 cathay
 cato
 causeway
+cavalier
 cavco
 cavium
+cayenne
 cayuga
 cbak
 cbiz
@@ -1348,6 +1390,7 @@ celesta
 celestial
 celestica
 celgene
+celica
 cellcast
 cellcom
 celldex
@@ -1413,6 +1456,7 @@ chalk
 challenger
 chamberlin
 chambersburg
+champion
 chanarambie
 chandeleur
 chandler
@@ -1428,6 +1472,7 @@ chateaugay
 chatham
 chaves
 checkcap
+checker
 checkpoint
 cheesecake
 cheetah
@@ -1450,6 +1495,7 @@ cherokee
 chesapeake
 chesnara
 chestnut
+chevrolet
 chevron
 chexsystems
 cheyenne
@@ -1472,6 +1518,7 @@ christensen
 christie
 chromadex
 chrysalis
+chrysler
 chs
 chubb
 chubu
@@ -1506,14 +1553,17 @@ cirrus
 cisco
 cision
 cit
+citation
 citgo
 citi
 citigroup
 citius
 citrix
+citroën
 citrus
 cityfibre
 civeo
+civic
 civista
 civitas
 cke
@@ -1524,6 +1574,8 @@ clarion
 claris
 clarkson
 clarus
+class
+classic
 claverhouse
 claymont
 claymore
@@ -1543,7 +1595,9 @@ clevelandcliffs
 cliffs
 clínico
 clinigen
+clio
 clipper
+clk
 clontarf
 clorox
 closedend
@@ -1628,6 +1682,7 @@ comercializadora
 comercio
 comerica
 commerzbank
+commodore
 commscope
 communisis
 commvault
@@ -1637,6 +1692,7 @@ compal
 companhia
 compania
 compañía
+company
 compass
 composites
 compounding
@@ -1685,6 +1741,7 @@ constructors
 cont
 containerships
 contango
+continental
 contingent
 continuum
 contrafect
@@ -1712,6 +1769,7 @@ copano
 copart
 copel
 copelands
+copen
 copthorne
 coram
 corbus
@@ -1734,15 +1792,21 @@ corium
 cormedix
 cornerstone
 corning
+corolla
 corona
+coronet
 corpbanca
 corpbay
 corporacion
 corporati
 correvio
 corridor
+corsa
 corsair
+cortina
+corvair
 corvel
+corvette
 corvus
 cosan
 cosima
@@ -1759,10 +1823,14 @@ coty
 cougar
 coulter
 counselling
+countach
 counterpath
+country
 countryside
 countrywide
 coupa
+coupe
+coupé
 courtland
 cousins
 covanta
@@ -1816,6 +1884,7 @@ crompton
 cronin
 cronos
 cropper
+crosley
 crossamerica
 crossborder
 crossett
@@ -1824,7 +1893,11 @@ crossroads
 crosswind
 crowell
 crowley
+crown
+cruiser
 crumrine
+cruze
+crv
 cryolife
 cryoport
 crystalox
@@ -1850,12 +1923,15 @@ cumberland
 cummins
 curis
 curo
+curren
 currie
 curtisswright
 cushing
 cussons
 custodian
+custom
 cutera
+cutlass
 cutlerhammer
 cuyama
 cvb
@@ -1885,6 +1961,7 @@ cytosorbents
 cytrx
 d4t4
 daejan
+daihatsu
 dairyland
 daktronics
 dalata
@@ -1913,6 +1990,7 @@ datatec
 datawatch
 datc
 dauphin
+dauphine
 davictus
 davidson
 davidstea
@@ -1928,6 +2006,7 @@ dcp
 dcr
 dct
 dearborn
+deauville
 debenhams
 debenture
 decatur
@@ -1935,9 +2014,11 @@ dechra
 deciphera
 decker
 deckers
+dedra
 deepwater
 deere
 deerfield
+defender
 defenx
 defiance
 definedterm
@@ -1948,8 +2029,10 @@ delano
 delek
 delmar
 delmarva
+delorean
 delphi
 deltex
+deluxe
 dempsey
 denali
 denbury
@@ -2019,6 +2102,7 @@ dillon
 dime
 dine
 dineequity
+dino
 diodes
 dior
 diplomat
@@ -2049,6 +2133,7 @@ dmc
 dnb
 doculabs
 docusign
+dodge
 dods
 dogness
 dogwood
@@ -2112,6 +2197,7 @@ duane
 ducommun
 ducor
 duet
+duett
 duff
 duluth
 dun
@@ -2145,6 +2231,7 @@ dynex
 dyon
 e2v
 eafe
+eagle
 eam
 earthport
 earths
@@ -2193,6 +2280,7 @@ edison
 ediston
 edita
 editas
+edsel
 eel
 effingham
 efg
@@ -2206,11 +2294,13 @@ ehealth
 ehi
 eif
 eiger
+eight
 eih
 ejecta
 ekf
 ekso
 eland
+elantra
 elba
 elbit
 elderstreet
@@ -2234,6 +2324,7 @@ elevate
 elgin
 eli
 eligo
+elise
 elizabethtown
 elk
 elkhorn
@@ -2249,6 +2340,7 @@ elmira
 elmore
 elmwood
 eloxx
+elr
 eltek
 elwood
 emagin
@@ -2391,10 +2483,13 @@ escanaba
 escher
 esco
 escondido
+escort
 eservglobal
 esg
 esi
 eskmuir
+espada
+esperante
 esperion
 espey
 esprit
@@ -2465,12 +2560,15 @@ evolent
 evolus
 evolving
 evoqua
+evoque
 evr
 evraz
 ewo
 exantas
+excalibur
 excavation
 excella
+excellence
 exela
 exelixis
 exelon
@@ -2484,6 +2582,7 @@ exova
 expeditions
 expeditors
 experian
+explorer
 exponent
 exponential
 expositions
@@ -2510,6 +2609,8 @@ fabricators
 fabrik
 fabrinet
 facebook
+facel
+facellia
 factset
 fade
 fairchild
@@ -2521,6 +2622,7 @@ fairpoint
 fairview
 falanx
 falcon
+familia
 fang
 fanhua
 fargo
@@ -2552,6 +2654,7 @@ fennec
 fenner
 fenton
 fernández
+ferrari
 ferrellgas
 ferrer
 ferrexpo
@@ -2576,6 +2679,7 @@ fidessa
 fiduciary
 fidus
 fiesta
+figaro
 fih
 filemaker
 filta
@@ -2593,6 +2697,7 @@ fintech
 fintrust
 firearms
 fireball
+firebird
 fireeye
 firestone
 firstenergy
@@ -2605,6 +2710,7 @@ fiserv
 fishguard
 fiske
 fisker
+fit
 fitbit
 fitbug
 fitch
@@ -2646,6 +2752,7 @@ fmc
 fnb
 fncb
 foamix
+focus
 focusrite
 fomento
 fonalledas
@@ -2670,6 +2777,7 @@ fortistar
 fortive
 fortress
 fortuna
+fortwo
 fosgate
 foundry
 fourche
@@ -2686,6 +2794,7 @@ francesca
 franconevada
 frasca
 fraterfood
+frazer
 frederickson
 freeagent
 freebird
@@ -2707,8 +2816,10 @@ frontera
 frontiers
 frontline
 frp
+frua
 frutarom
 fsb
+fso
 fsp
 ftd
 fte
@@ -2725,6 +2836,7 @@ fuller
 fulton
 fundsmith
 funko
+fury
 fuse
 fusionex
 futura
@@ -2740,12 +2852,14 @@ gafisa
 gaia
 gail
 gainesville
+galant
 galantas
 galapagos
 galectin
 galicia
 galileo
 gallagher
+gallardo
 galliford
 galmed
 galt
@@ -2875,6 +2989,7 @@ gloo
 glowpoint
 glu
 glycomimetics
+gm
 gms
 gn
 gnb
@@ -2893,6 +3008,7 @@ goldfinch
 goldman
 goldplat
 goldstone
+golf
 golub
 gom
 gómez
@@ -2921,6 +3037,8 @@ grainger
 grama
 gramercy
 gran
+granada
+grand
 granite
 graphene
 gratiot
@@ -2944,6 +3062,7 @@ greenworks
 greggs
 greif
 greka
+gremlin
 gresham
 greyvoid
 gridglenwood
@@ -2975,12 +3094,19 @@ gsi
 gso
 gsp
 gsv
+gt
+gta
+gtb
 gtech
+gto
+gtr
+gts
 gtt
 gtx
 gty
 guadalupe
 guangshen
+guara
 guaraguao
 guaranty
 gucci
@@ -3103,6 +3229,7 @@ hcp
 hdfc
 headlam
 headwaters
+healey
 healthequity
 healthstream
 heartland
@@ -3131,6 +3258,7 @@ hemisphere
 hemispherx
 hempstead
 hennessy
+henry
 herbalife
 herc
 hercules
@@ -3178,8 +3306,10 @@ hilllake
 hillman
 hillrom
 hilltop
+hilux
 himalayan
 himax
+hindustan
 hingham
 hinson
 hipódromo
@@ -3205,6 +3335,7 @@ hog
 hogg
 holcim
 holdco
+holden
 holdlings
 hollyfrontier
 hollysys
@@ -3233,6 +3364,7 @@ horizonte
 hormel
 hornbeck
 hornby
+hornet
 horseshoe
 horton
 hortonworks
@@ -3255,9 +3387,11 @@ htg
 huami
 huaneng
 huawei
+huayra
 hubbell
 hubspot
 hudbay
+hudson
 hugoton
 hulett
 humana
@@ -3269,6 +3403,7 @@ hunters
 huntley
 huntsman
 huntsworth
+huracán
 hurco
 hurlburt
 huron
@@ -3360,8 +3495,10 @@ immupharma
 immuron
 immutep
 impac
+impala
 impax
 impellam
+imperial
 imperva
 impinj
 implan
@@ -3461,6 +3598,7 @@ intelsat
 interactivecorp
 intercede
 intercept
+interceptor
 intercom
 interconnect
 interconnection
@@ -3470,6 +3608,7 @@ interfood
 intergen
 intergroup
 interiors
+interlagos
 interlink
 intermediateterm
 intermolecular
@@ -3506,6 +3645,7 @@ investar
 investec
 investm
 investmnt
+invicta
 invitae
 invivo
 invmt
@@ -3524,6 +3664,7 @@ ipg
 ipic
 ipo
 ipp
+ipsum
 iq
 iqe
 iqiyi
@@ -3541,9 +3682,12 @@ iroquois
 irsa
 isabel
 isectors
+isetta
 ishares
 isla
 islandwide
+islero
+iso
 iso1
 iso10
 iso2
@@ -3560,6 +3704,7 @@ issuer
 istar
 isuzu
 ita
+ital
 itau
 itc
 ite
@@ -3589,10 +3734,13 @@ jackpotjoy
 jacobs
 jaffray
 jagged
+jaguar
 jakks
+jalpa
 jamba
 jamess
 janus
+jarama
 jarden
 jardine
 jarvis
@@ -3601,9 +3749,11 @@ jaywing
 jbbr
 jbg
 jcpenney
+jeep
 jefferies
 jeffers
 jeldwen
+jensen
 jensyn
 jerash
 jericho
@@ -3611,6 +3761,7 @@ jernigan
 jetblue
 jether
 jetpay
+jetta
 jewelers
 jewettcameron
 jhc
@@ -3676,6 +3827,7 @@ kapstone
 kar
 kare
 karelian
+karma
 karyopharm
 kass
 katbro
@@ -3843,11 +3995,14 @@ labarge
 laboratorio
 lackawanna
 laclede
+lada
 ladbrokes
 laddered
 ladderrite
 ladenburg
 ladi
+laferrari
+lagonda
 laing
 laird
 lakehouse
@@ -3857,8 +4012,11 @@ lakewood
 lam
 lamar
 lamarr
+lamborghini
 lamprell
 lancashire
+lancer
+lancia
 lanco
 land
 landcadia
@@ -3906,6 +4064,7 @@ lci
 lcnb
 ldvf1
 lea
+leaf
 leaning
 leap
 leapfrog
@@ -3913,6 +4072,7 @@ lear
 leathers
 lechera
 ledet
+legacy
 legacytexas
 legg
 leggett
@@ -3933,6 +4093,7 @@ lennox
 lenovo
 lenta
 leopard
+lesabre
 lessee
 lettings
 leveret
@@ -3941,6 +4102,8 @@ lewes
 lewisburg
 lexicon
 lexinfintech
+lexus
+lfa
 lfg
 lgi
 lgl
@@ -3959,6 +4122,7 @@ lifevantage
 lifeway
 lig
 ligand
+light
 lightbridge
 lighthouse
 lightinthebox
@@ -3974,6 +4138,7 @@ limelight
 limitless
 limon
 limoneira
+lincoln
 lindahl
 lindblad
 linde
@@ -4020,6 +4185,7 @@ logis
 logmein
 lokey
 lokn
+lola
 loma
 lomas
 lombard
@@ -4028,6 +4194,7 @@ loncar
 londonmetric
 lonesome
 lonestar
+longchamp
 longevity
 longfellow
 longo
@@ -4047,6 +4214,7 @@ loral
 loréal
 losada
 lotte
+lotus
 louis
 louisianapacific
 loutex
@@ -4067,6 +4235,7 @@ lsl
 lsp
 lsr
 ltc
+ltd
 luby
 lucasfilm
 luceco
@@ -4082,6 +4251,7 @@ lumentum
 luminex
 luna
 luning
+lusso
 luxfer
 luxoft
 luz
@@ -4120,6 +4290,7 @@ madelux
 maderera
 madrigal
 madstone
+maestro
 magal
 magellan
 magicjack
@@ -4154,6 +4325,7 @@ mancharm
 manchief
 mandarin
 mando
+mangusta
 manitex
 manitowoc
 mankato
@@ -4171,7 +4343,9 @@ manulife
 manx
 manzana
 mara
+maranello
 marantz
+marathon
 marcellus
 marchex
 marechale
@@ -4179,10 +4353,12 @@ mariana
 maricopa
 marietta
 marin
+marina
 marinemax
 marinus
 mariposa
 maritimes
+mark
 markel
 marketaxess
 marketer
@@ -4194,6 +4370,8 @@ marlin
 marlowe
 marocaine
 marpor
+marquis
+marquise
 marriot
 marrone
 marshalls
@@ -4204,12 +4382,14 @@ marten
 martinco
 martínez
 martins
+maruti
 maruwa
 marvell
 marwyn
 marxuach
 masawara
 masco
+maserati
 masimo
 masonite
 massie
@@ -4230,6 +4410,7 @@ matl
 matlin
 matomy
 matosantos
+matra
 matson
 mattel
 mattersight
@@ -4245,6 +4426,7 @@ maxaprofit
 maxar
 maxcyte
 maxim
+maxima
 maximus
 maxiserve
 maxitech
@@ -4254,7 +4436,9 @@ maxwell
 mayagüez
 mayair
 mayan
+maybach
 mays
+mazda
 mazor
 mbia
 mbl
@@ -4280,6 +4464,7 @@ mckenzie
 mckesson
 mckinnon
 mckittrick
+mclaren
 mclennan
 mcn
 mdc
@@ -4338,6 +4523,7 @@ mercer
 mercia
 merck
 mercuria
+mercury
 meredith
 mereo
 meridian
@@ -4353,12 +4539,14 @@ merus
 mesabi
 mesoblast
 mesquite
+messerschmitt
 metcalf
 metering
 methanex
 methode
 metlife
 metminco
+metro
 metropolitanos
 mettlertoledo
 mexco
@@ -4368,6 +4556,8 @@ mfa
 mfc
 mfg
 mfs
+mg
+mgb
 mge
 mgic
 mgm
@@ -4377,6 +4567,7 @@ mgtc
 mhp
 michaels
 michelmersh
+micra
 microbot
 microcap
 microchip
@@ -4401,6 +4592,7 @@ middlefield
 middlesex
 middletown
 midgeorgia
+midget
 midillinois
 midla
 midland
@@ -4439,14 +4631,17 @@ minera
 miners
 minerva
 mini
+minivans
 minndakota
 minoan
 minonk
+minor
 mipay
 mipc
 miraclegro
 mirada
 miragen
+mirai
 mirati
 miro
 misonix
@@ -4459,12 +4654,15 @@ mitel
 mithras
 mitie
 miton
+mitsubishi
 mitsui
+miura
 mizuho
 mkango
 mks
 mkts
 mlp
+mm
 mma
 mmp
 moapa
@@ -4472,6 +4670,7 @@ mobeus
 mobil
 mobileiron
 mobilityone
+model
 modesto
 modine
 modwen
@@ -4497,6 +4696,7 @@ monarch
 monchhichi
 mondelez
 mondi
+mondial
 moneygram
 moneysupermarket
 moneyswap
@@ -4516,13 +4716,17 @@ monsanto
 monsource
 montanadakota
 montanaro
+montecarlo
+montego
 monterey
 montezuma
 monticello
 montour
 montpelier
+montreal
 montville
 monument
+monza
 moody
 moog
 mora
@@ -4530,6 +4734,7 @@ moraine
 morgan
 morningstar
 morphosys
+morris
 morro
 morses
 mortgagebacked
@@ -4557,6 +4762,7 @@ mpc
 mplx
 mporium
 mpower
+mpv
 mrc
 mrp
 msa
@@ -4597,12 +4803,14 @@ muniyield
 muñiz
 munnsville
 muñoz
+murcielago
 murgitroyd
 muscat
 musco
 musedia
 muskegon
 muskogee
+mustang
 mutualfirst
 mvb
 mvc
@@ -4724,6 +4932,7 @@ neurosciences
 neurotrope
 nevro
 nevsun
+new
 newater
 newell
 newenergy
@@ -4738,6 +4947,7 @@ newmarket
 newmont
 newpage
 newpark
+newport
 newriver
 newtek
 nex
@@ -4844,6 +5054,7 @@ novus
 nrg
 nst
 nstar
+nsx
 nte
 ntn
 nuance
@@ -4906,6 +5117,7 @@ oconee
 ocotillo
 octagon
 octagonal
+octavia
 octopus
 ocular
 ocwen
@@ -4932,6 +5144,7 @@ oktex
 olajes
 olakes
 olan
+oldsmobile
 oleander
 olin
 ollie
@@ -4972,6 +5185,8 @@ onyx
 onzima
 ooma
 ooredoo
+opala
+opel
 openmarket
 opes
 opg
@@ -5082,10 +5297,12 @@ pacira
 packard
 pacwest
 paddy
+pagani
 pagegroup
 pagseguro
 paints
 paiute
+pajero
 palacios
 palama
 palatin
@@ -5110,6 +5327,8 @@ panhandle
 panmure
 panoche
 panola
+panoz
+pantera
 pantheon
 panther
 pantone
@@ -5140,6 +5359,7 @@ partnerre
 pasadena
 pasco
 passadumkeag
+passat
 pastoria
 patagonia
 paternoster
@@ -5259,6 +5479,7 @@ petrom
 petroneft
 petropavlovsk
 petrowest
+peugeot
 pewt
 pfd
 pfenex
@@ -5328,6 +5549,7 @@ plantation
 plantations
 plante
 plantronics
+platform
 platt
 platte
 playa
@@ -5344,6 +5566,7 @@ pluristem
 plus500
 plutus
 plx
+plymouth
 pme
 pnc
 pne
@@ -5358,12 +5581,14 @@ polaroid
 polemos
 polka
 pollo
+polonez
 polymet
 polymetal
 polyone
 polypipe
 pomona
 pont
+pontiac
 pony
 popeyes
 porsche
@@ -5405,6 +5630,7 @@ prana
 praxair
 precipio
 preformed
+prelude
 premaitha
 premcor
 presbia
@@ -5422,6 +5648,7 @@ primoris
 primorus
 prisa
 prism
+prius
 proactis
 proassurance
 procare
@@ -5464,6 +5691,7 @@ proto
 proton
 provexis
 provident
+prowler
 proxama
 prp
 prudential
@@ -5478,9 +5706,11 @@ publix
 puget
 pulmatrix
 pulp
+pulsar
 pultegroup
 puma
 pumpjack
+punto
 purecircle
 puretech
 purplebricks
@@ -5495,9 +5725,11 @@ pzena
 q2
 qad
 qannas
+qashqai
 qcr
 qep
 qiagen
+qin
 qinetiq
 qiwi
 qorvo
@@ -5519,6 +5751,7 @@ quantrix
 quarterhill
 quartix
 quarto
+quattro
 qudian
 questar
 quickbiz
@@ -5563,18 +5796,25 @@ ramallo
 rambler
 rambus
 ramcogershenson
+ranchero
+rancho
 randall
 randgold
 randolph
+range
 rangeland
+ranger
 rapid7
 rapidcloud
+rapide
+rapier
 raptor
 rasa
 rasmala
 rathbone
 rathdrum
 rausch
+rav4
 rave
 raven
 ravenswood
@@ -5641,7 +5881,9 @@ rema
 renaissancere
 renal
 renasant
+renault
 rendezvous
+renegade
 renesola
 reneuron
 renewables
@@ -5681,6 +5923,7 @@ reunited
 reuters
 revance
 reven
+reventon
 revlon
 revolymer
 rewalk
@@ -5720,6 +5963,7 @@ ritchie
 rite
 riteline
 ritter
+riva
 rivera
 riverdeep
 riverfront
@@ -5727,6 +5971,7 @@ rivernorth
 riverstone
 riverview
 rivet
+riviera
 rjumr
 rld
 rli
@@ -5738,10 +5983,12 @@ rmh
 rmr
 roadhouse
 roadrunner
+roadster
 robison
 robo
 robotics
 roche
+rocket
 rocketdyne
 rockford
 rockgen
@@ -5753,11 +6000,14 @@ rockstar
 rockwell
 roctop
 rodríguez
+rogue
 roku
 rollins
 rollsroyce
 rolta
+romeo
 romgaz
+romi
 romp
 roofing
 roosevelt
@@ -5778,6 +6028,7 @@ rotala
 roth
 rotork
 roundtop
+roundup
 rover
 rovira
 rowan
@@ -5792,6 +6043,7 @@ rps
 rpx
 rrh
 rri
+rs200
 rsa
 rsp
 rtc
@@ -5818,12 +6070,14 @@ ryder
 ryerson
 ryman
 s3
+saab
 saatchi
 sabal
 saban
 sabesp
 sabien
 sabine
+sable
 sabra
 sabre
 sacagawea
@@ -5854,6 +6108,7 @@ saintgobain
 saja
 sal
 sala
+saleen
 salesforce
 salient
 salinas
@@ -5897,6 +6152,7 @@ sarepta
 sareum
 sargent
 sasol
+saturn
 saturns
 sauerdanfoss
 saugus
@@ -5958,6 +6214,7 @@ seanergy
 sears
 seaspan
 seaspine
+seat
 seattles
 seaway
 seaways
@@ -5998,6 +6255,7 @@ sensing
 sensus
 senterra
 sentinel
+sentra
 sepg
 seplat
 sepura
@@ -6009,6 +6267,7 @@ serco
 serendipity
 seres
 serica
+series
 seritage
 serrallés
 servelec
@@ -6100,12 +6359,14 @@ sigmatron
 signa
 signet
 silgan
+silhouette
 silica
 silicom
 silverbow
 silvercorp
 silvercrest
 silversun
+simca
 simec
 simed
 simian
@@ -6125,11 +6386,13 @@ siteone
 sithe
 sito
 sjw
+skala
 skechers
 skellybelvieu
 skellytown
 skic
 skipton
+skoda
 skylar
 skyline
 skywest
@@ -6138,8 +6401,10 @@ slate
 slc
 slingsby
 slm
+slr
 smallcap
 smallmid
+smart
 smartenergy
 smartfinancial
 smartphone
@@ -6162,6 +6427,7 @@ snook
 snoozebox
 snowflake
 snr
+soarer
 sociedad
 societatea
 societe
@@ -6185,6 +6451,7 @@ solios
 solitario
 solverde
 somero
+sonata
 sonoco
 sonoma
 sony
@@ -6218,8 +6485,10 @@ spartannash
 sparton
 spdr
 spearville
+special
 spectra
 spectris
+speed
 speedway
 speedy
 sperian
@@ -6227,6 +6496,7 @@ spero
 spherion
 spherix
 spi
+spider
 spindle
 spinning
 spion
@@ -6238,7 +6508,9 @@ splitter
 splunk
 spok
 spokane
+sport
 sportech
+sports
 sportsman
 sportswear
 spotify
@@ -6270,6 +6542,7 @@ staffordshire
 stag
 stagecoach
 stakeholder
+standard
 standex
 stanley
 stantec
@@ -6286,9 +6559,11 @@ starwood
 starz
 stategy
 stateline
+statesman
 statoil
 statpro
 steadymed
+stealth
 stealthgas
 steamboat
 steckman
@@ -6331,8 +6606,10 @@ stonewall
 stoney
 stony
 stopgrey
+stout
 stovers
 stoxx
+stradale
 strat
 strata
 stratabiz
@@ -6342,6 +6619,7 @@ stratapro
 stratasys
 stratex
 stratmin
+stratos
 strats
 strattec
 stratton
@@ -6354,13 +6632,16 @@ strongbod
 strongbridge
 struggles
 stryker
+studebaker
 sturm
 stuttgart
 stv
 stx
 suadela
 suárez
+subaru
 subex
+suburban
 subway
 sucrs
 suez
@@ -6379,6 +6660,7 @@ sunflower
 sunlands
 sunlight
 sunlink
+sunny
 sunoco
 sunopta
 sunplus
@@ -6390,6 +6672,7 @@ sunstone
 suntrust
 sunwave
 sunworks
+super
 supercom
 superconductor
 superdividend
@@ -6398,6 +6681,7 @@ supermarkets
 supernus
 supervalu
 supervielle
+supra
 sureste
 surety
 surgutneftegaz
@@ -6410,6 +6694,7 @@ susterra
 sutherland
 sutter
 sutton
+suzuki
 svb
 svg
 svm
@@ -6418,8 +6703,10 @@ swamp
 swan
 swanke
 sway
+swb
 sweenyfreeport
 swg
+swift
 swimwear
 sycamore
 sykes
@@ -6467,12 +6754,14 @@ taliesin
 tallbear
 tallgrass
 taloga
+talon
 talos
 tamrio
 tanadgusix
 tandem
 tandy
 tanfield
+tang
 tanger
 tankers
 tanner
@@ -6498,6 +6787,7 @@ tatneft
 tatung
 tau
 taubman
+taurus
 tavern
 taverns
 tavistock
@@ -6557,6 +6847,7 @@ telocation
 telus
 telysium
 templeton
+tempo
 tempur
 tempurpedic
 tenaris
@@ -6588,6 +6879,7 @@ tesco
 tesla
 tesoro
 tessco
+testarossa
 testor
 tethyan
 tethys
@@ -6626,6 +6918,7 @@ thorpe
 thq
 threadneedle
 throgmorton
+thunderbird
 tianli
 tiberius
 tico
@@ -6634,6 +6927,7 @@ tidewater
 tierra
 tiffany
 tigenix
+tiida
 tilly
 tilton
 timberland
@@ -6664,6 +6958,7 @@ toc
 tocagen
 toledo
 tolling
+tomaso
 tomco
 tompkins
 tonawanda
@@ -6690,14 +6985,17 @@ toubro
 touchstar
 touchstone
 towantic
+town
 towne
 townsquare
+toyopet
 toyota
 tpe
 tpg
 tpi
 tpl
 tpw
+trabant
 tracon
 tracsis
 traded
@@ -6720,6 +7018,7 @@ transense
 transenterix
 transforms
 transglobe
+transit
 transmontaigne
 transocean
 transoceanic
@@ -6818,10 +7117,12 @@ tutor
 twentyfirst
 twentyfour
 twilio
+twingo
 twitter
 twp
 tyman
 tyme
+type
 tyr
 tyratech
 tyson
@@ -6890,6 +7191,7 @@ urals
 uranium
 urbanos
 urogen
+urraco
 urstadt
 uru
 usana
@@ -6920,6 +7222,7 @@ validea
 validus
 valirx
 valle
+vallelunga
 valmont
 valores
 valvoline
@@ -6941,13 +7244,16 @@ vasco
 vascular
 vassallo
 vaughan
+vauxhall
 vaxart
 vbi
 vct
 vct2
 veco
 vectoiq
+vector
 vectors
+vectra
 vectren
 vectrus
 vectura
@@ -6956,6 +7262,7 @@ veeco
 veeva
 vega
 vela
+velam
 velázquez
 velocys
 veltyco
@@ -6988,6 +7295,8 @@ vermilion
 vermillion
 vernalis
 verona
+versa
+versailles
 versarien
 versartis
 verseon
@@ -6997,6 +7306,7 @@ vertu
 veru
 verus
 vesuvius
+veyron
 vf
 viacom
 viad
@@ -7008,6 +7318,7 @@ vical
 vici
 vicon
 vicor
+victoria
 victorias
 victoryshares
 victrex
@@ -7015,6 +7326,8 @@ vida
 vident
 viewray
 viewsonic
+villager
+ville
 vimetco
 vina
 vinacapital
@@ -7050,6 +7363,7 @@ vitamax
 vitec
 vitesse
 vitol
+viva
 vivaldi
 viveve
 vivint
@@ -7070,9 +7384,11 @@ volex
 volga
 volitionrx
 volkswagen
+volt
 volta
 volution
 volvere
+volvo
 vonage
 vonmaur
 vornado
@@ -7094,6 +7410,7 @@ wabash
 wabco
 waddell
 wageworks
+wagon
 wahl
 walcom
 walgreen
@@ -7222,6 +7539,7 @@ williamssonoma
 willifood
 willis
 willscot
+willys
 wilmington
 wilprise
 wilsons
@@ -7277,6 +7595,7 @@ worthington
 wpp
 wps
 wpx
+wrangler
 wrighter
 wrldwide
 wsfs
@@ -7364,9 +7683,11 @@ yolo
 yougov
 youngevity
 ypf
+ypsilon
 yrc
 yuba
 yuchai
+yugo
 yulong
 yum
 yum!
@@ -7380,8 +7701,10 @@ zamano
 zambeef
 zanaga
 zapata
+zaporozhets
 zappos
 zara
+zastava
 zavala
 zaxbys
 zayo
@@ -7409,6 +7732,7 @@ ziopharm
 zix
 zk
 zoe
+zoe1b
 zoetis
 zogenix
 zoltav

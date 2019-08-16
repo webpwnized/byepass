@@ -1,17 +1,21 @@
+
 วสันต์
 ฤดูหนาว
 หน้าร้อน
 ฤดูใบไม้ร่วง
 1а
-Aasaq
+aasaq
 abril
 aestas
+āfu
 ago
 agosto
 agósto
-Agüerro
+agüerro
+ai
 aki
 amar
+amzer
 andynaeus
 antradienis
 apellaeus
@@ -28,6 +32,7 @@ aug
 august
 augusts
 augustus
+autaomme
 automne
 auton
 autono
@@ -42,20 +47,30 @@ avgust
 bah
 balandzio
 bamvua
+baridi
 bayue
-Berano  Estiu
+berano
+beranoestiu
+berano  estiu
 birzelio
 biyérnes
+blasto
+blastotem
 blasto-tem
-Blöhtiet
+blöhtiet
 blokétu
 branu
+bunga
 čakča
 caratacu
 ceturtdiena
 cetvrtok
+chakisqa
+chakisqapacha
 chakisqa pacha
 chee
+chiraw
+chirawpacha
 chiraw pacha
 crisa
 critu
@@ -70,17 +85,23 @@ decembris
 dekemvri
 demani
 desember
-Deyr
+deyr
 dic
 diciembre
 dimra
+dingin
 dios
+diskar
+diskaramzer
 diskar-amzer
 disyémbre
-Dongkopomoroduan
+đông
+dongkopomoroduan
+dot
 dsmer
 dunra
 dystrus
+e
 earrach
 ee
 efterår
@@ -90,18 +111,21 @@ enero
 enéro
 enviern
 Èrnouvé
-ertchéyant, autaomme
+ertchéyant
 eryue
 esen
 estate
 estiu
 estive
+étaé,
+étaé,éto
 étaé, éto
 étaï
 ete
 été
 Êté
 etéu
+éto
 fall
 feb
 febrero
@@ -115,14 +139,16 @@ fómhar
 forår
 fouyr
 fredag
-Fréijoer
+fréijoer
 friday
-Friejjohr
+friejjohr
+frigi
+frigitem
 frigi-tem
-Frühling
-Fryhling
+frühling
+fryhling
 fuyu
-Fvorar
+fvorar
 gaeaf
 geamhradh
 geassi
@@ -134,33 +160,34 @@ goañv
 gorpiaeus
 gruodis
 gruodzio
-Gu'
+gu'
+gugur
 gwaf
 gwanwyn
 gwaynten
+hạ
 habr
 hærfest
 haf
 hairst
 hañv
-Härbscht
+härbscht
 harfst
 harīf
 ħarifa
 haru
-Harvst
+harvst
 haust
-Herbst
+herbst
 herfs
 herfst
-Herpfst
+herpfst
 heyst
 hiberno
 hiems
-Hierscht
+hierscht
 hivaer
 hivé
-Hivé
 hiver
 hivern
 hiverne
@@ -174,10 +201,11 @@ hydref
 hyperberetaeus
 ianuarius
 iarnă
-Ibierno
+ibierno
 ihlobo
 ikwindla
 ilkbahar
+init
 intwasahhlobo
 inverno
 invierno
@@ -196,10 +224,9 @@ jar
 jaro
 jesen
 jeseň
-Jeseň
 jesień
 jew
-Jiilaal
+jiilaal
 jiuyue
 jul
 juli
@@ -230,6 +257,7 @@ kış
 kōanga
 kovo
 kynyaf
+lākau
 lapaki
 lapkricio
 lato
@@ -238,7 +266,6 @@ lente
 leo
 lete
 leto
-Leto
 léto
 liepos
 lieta
@@ -251,12 +278,18 @@ lørdag
 lotòn
 lous
 lúnes
-Magadau
+luruh
+mafana
+magadau
 mai
 maijs
 maius
 maj
+majira
+majirayabaridi
 majira ya baridi
+makalili
+mālūlū
 mandag
 mar
 march
@@ -267,32 +300,50 @@ martés
 martius
 marts
 marzo
+mateafu
 may
 mayo
 máyo
+mea
 menuo
 miyérkoles
-Momuroun
+momuroun
 monday
 month
 months
+mùa
+mùađông
 mùa đông
+mùahạ
 mùa hạ
+mùathu
 mùa thu
+mùaxuân
 mùa xuân
+musim
+musimbunga
 musim bunga
+musimdingin
 musim dingin
+musimgugur
 musim gugur
+musimluruh
 musim luruh
+musimpanas
 musim panas
+musimsejuk
 musim sejuk
+musimsemi
 musim semi
+nā
 nalĕćo
 namar
 natsu
 nazyma
 nedela
 negu
+nevez
+nevezamzer
 nevez-amzer
 ngahuru
 niedziela
@@ -312,7 +363,8 @@ oktobris
 oktomvri
 oktúbre
 onsdag
-Osen
+osen
+osogit
 ősz
 otogneu
 otoño
@@ -321,7 +373,9 @@ otrdiena
 otum
 outono
 ovon
+pacha
 panaemus
+panas
 pavasaris
 pavasars
 pdelnik
@@ -342,7 +396,7 @@ poniedzialek
 pranvera
 prentan
 prima
-Primabera
+primabera
 primavaira
 primavara
 primăvară
@@ -351,8 +405,10 @@ printempo
 printemps
 prolet
 proljeće
-Pružina
+pružina
 ptaŋyétu
+qasa
+qasapacha
 qasa pacha
 qayic
 qiyue
@@ -381,7 +437,9 @@ sanyue
 saturday
 sausio
 sayf
+sejuk
 sekmadienis
+semi
 sep
 sept
 september
@@ -408,21 +466,21 @@ sobota
 somero
 sommar
 sommer
-Sommer
 sonbahar
 søndag
 sourey
 sõv
 spalio
+sperma
+spermatem
 sperma tem
-Spotjhor
-spring
+spotjhor
 spring
 sreda
 sroda
 stad
 stav
-S'tembre
+s'tembre
 sügis
 sügüz'
 suh
@@ -431,7 +489,6 @@ sumar
 sumero
 summar
 summer
-Summer
 sumor
 sunday
 suvi
@@ -442,41 +499,63 @@ talv
 tal'v
 talvi
 tardor
+tau
+taueāfuaimea
 tau e āfu ai mea
+taueāfuainālākau
 tau e āfu ai nā lākau
+tauetotogoainālākau
 tau e totogo ai nā lākau
+taumālūlū
 tau mālūlū
+tautotogo
 tau totogo
+tauvevela
 tau vevela
 tavasz
 tél
+tem
+termo
+termotem
 termo-tem
+thu
 thursday
-Tingdagdag
-Ting-init
-Tingpamulak
-Tingtugnaw
+ting
+tingdagdag
+tinginit
+ting-init
+tingpamulak
+tingtugnaw
 tirsdag
 toamnă
 tōla
-Tontok dot osogit
+tontok
+tontokdotosogit
+tontok dot osogit
 torsdag
+totogo
 treciadienis
 tresdiena
 tuesday
+tupu
 ubusika
 uda
 udaberri
 udazken
-Ukiaq
-Ukioq
+ukiaq
+ukioq
 unvier
-Upernaaq
+upernaaq
 urr
 uurs
+vaha
+vahamafana
 vaha mafana
+vahamakalili
 vaha makalili
+vahataumateafu
 vaha tau mateafu
+vahatautupu
 vaha tau tupu
 vár
 vår
@@ -492,8 +571,9 @@ verano
 veranu
 verão
 verne
-Vesna
+vesna
 vetur
+vevela
 vierte
 vinter
 vintro
@@ -507,19 +587,20 @@ vulaililiwa
 vulaimatumatua
 vulaitubutubu
 waníyetu
-Wanter
+wanter
 ware
+wayra
+wayrapacha
 wayra pacha
 wednesday
 wétu
 winter
-Winter
 wiosna
 wtorek
 wunter
 wuu
 wuyue
-Xagaa
+xagaa
 xanticus
 xingqier
 xingqiliu
@@ -531,7 +612,9 @@ xingqiyi
 xitwa
 xiyh
 xiytsˈinˈ
+xuân
 xulegg
+ya
 yaz
 yiyue
 yu
@@ -540,34 +623,9 @@ ziema
 žiema
 ziems
 zima
-Zima
 zomer
 zyma
 þivereu
-اوړى
-بهار
-به هار
-پاييز
-پَتر کیر
-تابستان
- خريف
- ربيع
-زمستان
-زيستان
-ژمى
-سیالہ
-سپرلى
-سه ربه خو
- شتاء
- صيف
-منی
-ھُنالہ
-هاوين
-وݨ پھپھوڑ
- אביב
- חורף
- סתיו
- קיץ
 άνοιξη
 καλοκαίρι
 φθινόπωρο
@@ -580,7 +638,6 @@ zyma
 Гуьйре
 Гюзь
 есен
-зима
 зима
 зіма
 зун
