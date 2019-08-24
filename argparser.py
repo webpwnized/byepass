@@ -15,6 +15,7 @@ class Parser:
     __mRecylePasswords: bool = False
     __mRunJTRPrinceMode: bool = False
     __mRunDefaultTechniques: bool = False
+    __mRunHailmaryMode: list = None
     __mRunBruteForce: bool = False
     __mRunPathwellMode: bool = False
     __mRunBasewordsMode: bool = False
@@ -87,6 +88,10 @@ class Parser:
         return self.__mRunBruteForce
 
     @property  # getter method
+    def run_hailmary_mode(self) -> bool:
+        return self.__mRunHailmaryMode
+
+    @property  # getter method
     def min_characters_to_brute_force(self) -> int:
         return self.__mMinCharactersToBruteForce
 
@@ -140,6 +145,7 @@ class Parser:
         self.__mPrinter.verbose = self.__mVerbose
         self.__mPrinter.debug = self.__mDebug
         self.__mRunJTRSingleCrack = self.__mArgs.jtr_single_crack
+        self.__mRunHailmaryMode = self.__mArgs.hailmary
         self.__mRunJTRPrinceMode = self.__mArgs.jtr_prince
         self.__mParseBasewords()
         self.__mHashFile = self.__mArgs.input_file
@@ -157,6 +163,7 @@ class Parser:
 
         if self.__mArgs.all:
             self.__mTechniques = self.__mConfiguration.RUN_ALL_TECHNIQUES
+            self.__mRunHailmaryMode = self.__mConfiguration.RUN_ALL_RUN_HAILMARY_MODE
             self.__mRunJTRSingleCrack = self.__mConfiguration.RUN_ALL_RUN_SINGLE_CRACK
             self.__mRunJTRPrinceMode = self.__mConfiguration.RUN_ALL_RUN_PRINCE_MODE
             self.__mRecylePasswords = self.__mConfiguration.RUN_ALL_RUN_RECYCLE_MODE
@@ -171,7 +178,8 @@ class Parser:
         self.__mRunDefaultTechniques = not self.__mRunJTRSingleCrack and not self.__mBaseWords and \
                                     not self.__mArgs.brute_force and not self.__mTechniques and \
                                     not self.__mRunStatCrack and not self.__mRecylePasswords and \
-                                    not self.__mRunJTRPrinceMode and not self.__mRunPathwellMode
+                                    not self.__mRunJTRPrinceMode and not self.__mRunPathwellMode and \
+                                    not self.__mRunHailmaryMode
 
         # If user did not specify any technique, run default technique 1,2 and 3 by default
         if self.__mRunDefaultTechniques:
@@ -215,7 +223,7 @@ class Parser:
 
         if self.__mArgs.techniques is not None:
 
-            lErrorMessage = 'Techniques must be supplied as a comma-separated list of integers between 0 and 15'
+            lErrorMessage = 'Techniques must be supplied as a comma-separated list of integers between 0 and 14'
 
             try:
                 lTechniques = list(map(int, self.__mArgs.techniques.split(",")))
@@ -224,7 +232,7 @@ class Parser:
 
             lObservedTechniques = []
             for lTechnique in lTechniques:
-                if 0 <= lTechnique <= 15:
+                if 0 <= lTechnique <= 14:
                     if lTechnique in lObservedTechniques:
                         raise ValueError('Duplicate technique specified: {} '.format(lTechnique) + lErrorMessage)
                     lObservedTechniques.append(lTechnique)

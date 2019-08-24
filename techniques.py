@@ -24,7 +24,6 @@ class Techniques:
 
     # Lists of passwords
     __mWorstPasswordList = ["worst-50000-passwords.txt"]
-    __mHailmaryPasswordList = ["passwords-hailmary.txt"]
 
     # Lists of rules
     __mSmallRules = ["SlowHashesPhase1", "Best126", "SlowHashesPhase2"]
@@ -62,32 +61,29 @@ class Techniques:
         # Words: 10,000 words  Rules: 6,500 mangles Factor: 65,000,000
         self.__mTechniques[6] = Technique(self.__mDictionaryFolder, self.__mMediumDictionaries, self.__mMediumRules)
 
-        # Words: 40,000,000 words  Rules: 1 mangles Factor: 80,000,000
-        self.__mTechniques[7] = Technique(self.__mPasswordFolder, self.__mHailmaryPasswordList, self.__HailmaryRule)
-
         # Words: 180,000 words  Rules: 1,000 mangles Factor: 180,000,000
-        self.__mTechniques[8] = Technique(self.__mDictionaryFolder, self.__mLargeDictionaries, self.__mSmallRules)
+        self.__mTechniques[7] = Technique(self.__mDictionaryFolder, self.__mLargeDictionaries, self.__mSmallRules)
 
         # Words: < 10,000 words  Rules: 50,000 mangles Factor: <500,000,000
-        self.__mTechniques[9] = Technique(self.__mDictionaryFolder, self.__mSmallDictionaries, self.__mLargeRules)
+        self.__mTechniques[8] = Technique(self.__mDictionaryFolder, self.__mSmallDictionaries, self.__mLargeRules)
 
         # Words: 10,000 words  Rules: 50,000 mangles Factor: 500,000,000
-        self.__mTechniques[10] = Technique(self.__mDictionaryFolder, self.__mMediumDictionaries, self.__mLargeRules)
+        self.__mTechniques[9] = Technique(self.__mDictionaryFolder, self.__mMediumDictionaries, self.__mLargeRules)
 
         # Words: 150,000 words  Rules: 6,500 mangles Factor: 975,000,000
-        self.__mTechniques[11] = Technique(self.__mDictionaryFolder, self.__mLargeDictionaries, self.__mMediumRules)
+        self.__mTechniques[10] = Technique(self.__mDictionaryFolder, self.__mLargeDictionaries, self.__mMediumRules)
 
         # Words: 2,000,000 words  Rules: 1,000 mangles Factor: 2,000,000,000
-        self.__mTechniques[12] = Technique(self.__mDictionaryFolder, self.__mVeryLargeDictionaries, self.__mSmallRules)
+        self.__mTechniques[11] = Technique(self.__mDictionaryFolder, self.__mVeryLargeDictionaries, self.__mSmallRules)
 
         # Words: 150,000 words  Rules: 50,000 mangles Factor: 7,500,000,000
-        self.__mTechniques[13] = Technique(self.__mDictionaryFolder, self.__mLargeDictionaries, self.__mLargeRules)
+        self.__mTechniques[12] = Technique(self.__mDictionaryFolder, self.__mLargeDictionaries, self.__mLargeRules)
 
         # Words: 2,000,000 words  Rules: 6,500 mangles Factor: 13,000,000,000
-        self.__mTechniques[14] = Technique(self.__mDictionaryFolder, self.__mVeryLargeDictionaries, self.__mMediumRules)
+        self.__mTechniques[13] = Technique(self.__mDictionaryFolder, self.__mVeryLargeDictionaries, self.__mMediumRules)
 
         # Words: 2,000,000 words  Rules: 50,000 mangles Factor: 100,000,000,000
-        self.__mTechniques[15] = Technique(self.__mDictionaryFolder, self.__mVeryLargeDictionaries, self.__mLargeRules)
+        self.__mTechniques[14] = Technique(self.__mDictionaryFolder, self.__mVeryLargeDictionaries, self.__mLargeRules)
 
     # Public methods
     def get_technique(self, pTechnique: int) -> tuple:

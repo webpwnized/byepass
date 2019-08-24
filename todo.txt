@@ -8,4 +8,3 @@ Add aggression levels for prince mode
 Add warning about large keyspaces for prince mode
 Create -m targeted brute force masks
 Automate -k migration to incremental mode
-Split out password and dictionary techniques

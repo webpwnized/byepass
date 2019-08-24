@@ -32,7 +32,10 @@ tutorials in the following playlist
                             
       -w BASEWORDS, --basewords BASEWORDS
                         Supply a comma-separated list of lowercase, unmangled base words thought to be good candidates. For example, if Wiley Coyote is cracking hashes from Acme Inc., Wiley might provide the word "acme". Be careful how many words are supplied as Byepass will apply many mangling rules. Up to several should run reasonably fast.
-                            
+ 
+      -m, --hailmary
+                        This mode tries passwords from a large list of known passwords
+                             
       -b BRUTE_FORCE, --brute-force BRUTE_FORCE
                         Bruce force common patterns with at least MIN characters up to MAX characters. Provide minimum and maxiumum number of characters as comma-separated, positive integers (i.e. 4,6 means 4 characters to 6 characters).
 
@@ -40,7 +43,7 @@ tutorials in the following playlist
                         Try common patterns based on pathwell masks. Pathwell masks represent the 50 most common patterns. Use masks number FIRST to LAST. For example, masks 1 thorugh 5. Provide mask numbers as comma-separated, positive integers (i.e. 1,5 means use masks 1-5.
                             
       -t TECHNIQUES, --techniques TECHNIQUES
-                        Comma-separated list of integers between 0-15 that determines what password cracking techniques are attempted. Default is level 1,2 and 3. Example of running levels 1 and 2 --techniques=1,2
+                        Comma-separated list of integers that determines what password cracking techniques are attempted. Default is level 1,2 and 3. Example of running levels 1 and 2 --techniques=1,2
                         
                         1: Common Passwords
                         2: Small Dictionaries. Small Rulesets
@@ -48,15 +51,14 @@ tutorials in the following playlist
                         4: Medium Dictionaries. Small Rulesets
                         5: Small Dictionaries. Medium Rulesets
                         6: Medium Dictionaries. Medium Rulesets
-                        7: Large Password List. Custom Ruleset
-                        8: Medium-Large Dictionaries. Small Rulesets
-                        9: Small Dictionaries. Large Rulesets
-                        10: Medium Dictionaries. Large Rulesets
-                        11: Medium-Large Dictionaries. Medium Rulesets
-                        12: Large Dictionaries. Small Rulesets
-                        13: Medium-Large Dictionaries. Large Rulesets
-                        14: Large Dictionaries. Medium Rulesets
-                        15: Large Dictionaries. Large Rulesets
+                        7: Medium-Large Dictionaries. Small Rulesets
+                        8: Small Dictionaries. Large Rulesets
+                        9: Medium Dictionaries. Large Rulesets
+                        10: Medium-Large Dictionaries. Medium Rulesets
+                        11: Large Dictionaries. Small Rulesets
+                        12: Medium-Large Dictionaries. Large Rulesets
+                        13: Large Dictionaries. Medium Rulesets
+                        14: Large Dictionaries. Large Rulesets
                         
       -u, --jtr-single-crack
                         Run John the Rippers Single Crack mode. This mode uses information in the user account metadata to generate guesses. This mode is most effective when the hashes are formatted to include GECOS fields.
@@ -100,6 +102,14 @@ Attempt to crack linked-in hashes using base words linkedin and linked
 	
 	python3 byepass.py -v -f Raw-SHA1 -w linkedin,linked -i linkedin-1.hashes
 
+### Using Hailmary Mode
+
+This mode tries passwords from a large list of known passwords
+
+	python3 byepass.py --verbose --hash-format=Raw-MD5 --hailmary --input-file=hashes.txt
+	
+	python3 byepass.py -f Raw-MD5 -j="--fork=4" -v -m -i hashes.txt
+
 ### Using Brute Force Mode
 
 Attempt to brute force words from 3 to 5 characters in length
@@ -128,11 +138,11 @@ Be more aggressive by using techniques level 4 in attempt to crack password hash
 	
 	python3 byepass.py -v -t 4 -f descrypt -i password.hashes
 
-Go bonkers and try all techniques. Start with technique level 1 and proceed to level 15 in attempt to crack password hashes found in input file "password.hashes"
+Go bonkers and try all techniques. Start with technique level 1 and proceed to level 14 in attempt to crack password hashes found in input file "password.hashes"
 
-	python3 byepass.py --verbose --techniques=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 --hash-format=descrypt --input-file=password.hashes
+	python3 byepass.py --verbose --techniques=1,2,3,4,5,6,7,8,9,10,11,12,13,14 --hash-format=descrypt --input-file=password.hashes
 	
-	python3 byepass.py -v -t 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 -f descrypt -i password.hashes
+	python3 byepass.py -v -t 1,2,3,4,5,6,7,8,9,10,11,12,13,14 -f descrypt -i password.hashes
 
 Only try first two techniques. Start with technique level 1 and proceed to level 2 in attempt to crack password hashes found in input file "password.hashes"
 

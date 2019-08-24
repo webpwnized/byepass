@@ -488,6 +488,10 @@ def run_jtr_prayer_mode(pJTR: JohnTheRipper, pMethod: int) -> None:
             do_run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lFolder + "/" + lDictionary, pRule=lRule)
 
 
+def run_jtr_hailmary_mode(pJTR: JohnTheRipper) -> None:
+    do_run_jtr_wordlist_mode(pJTR=pJTR, pWordlist="passwords/passwords-hailmary.txt", pRule="Hailmary")
+
+
 def run_main_program(pParser: Parser):
 
     Printer.verbose = pParser.verbose
@@ -513,6 +517,9 @@ def run_main_program(pParser: Parser):
     # John the Ripper Single Crack mode
     if pParser.run_jtr_single_crack:
         run_jtr_single_mode(pJTR=lJTR)
+
+    if pParser.run_hailmary_mode:
+        run_jtr_hailmary_mode(pJTR=lJTR)
 
     # Techniques mode
     for i in pParser.techniques:
@@ -573,8 +580,11 @@ if __name__ == '__main__':
                             action='store_true')
     lArgParser.add_argument('-t', '--techniques',
                             type=str,
-                            help="Comma-separated list of integers between 0-15 that determines what password cracking techniques are attempted. Default is level 1,2 and 3. Example of running levels 1 and 2 --techniques=1,2\n\n1: Common Passwords\n2: Small Dictionaries. Small Rulesets\n3: Calendar Related\n4: Medium Dictionaries. Small Rulesets\n5: Small Dictionaries. Medium Rulesets\n6: Medium Dictionaries. Medium Rulesets\n7: Large Password List. Custom Ruleset\n8: Medium-Large Dictionaries. Small Rulesets\n9: Small Dictionaries. Large Rulesets\n10: Medium Dictionaries. Large Rulesets\n11: Medium-Large Dictionaries. Medium Rulesets\n12: Large Dictionaries. Small Rulesets\n13: Medium-Large Dictionaries. Large Rulesets\n14: Large Dictionaries. Medium Rulesets\n15: Large Dictionaries. Large Rulesets\n\n",
+                            help="Comma-separated list of integers that determines what password cracking techniques are attempted. Default is level 1,2 and 3. Example of running levels 1 and 2 --techniques=1,2\n\n1: Common Passwords\n2: Small Dictionaries. Small Rulesets\n3: Calendar Related\n4: Medium Dictionaries. Small Rulesets\n5: Small Dictionaries. Medium Rulesets\n6: Medium Dictionaries. Medium Rulesets\n7: Medium-Large Dictionaries. Small Rulesets\n8: Small Dictionaries. Large Rulesets\n9: Medium Dictionaries. Large Rulesets\n10: Medium-Large Dictionaries. Medium Rulesets\n11: Large Dictionaries. Small Rulesets\n12: Medium-Large Dictionaries. Large Rulesets\n13: Large Dictionaries. Medium Rulesets\n14: Large Dictionaries. Large Rulesets\n\n",
                             action='store')
+    lArgParser.add_argument('-m', '--hailmary',
+                            help='This mode tries passwords from a large list of known passwords',
+                            action='store_true')
     lArgParser.add_argument('-b', '--brute-force',
                             type=str,
                             help="Bruce force common patterns with at least MIN characters up to MAX characters. Provide minimum and maxiumum number of characters as comma-separated, positive integers (i.e. 4,6 means 4 characters to 6 characters).\n\n",

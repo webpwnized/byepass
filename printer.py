@@ -94,6 +94,9 @@ class Printer:
     Attempt to crack linked-in hashes using base words linkedin and linked\n
     \tpython3 byepass.py --verbose --hash-format=Raw-SHA1 --basewords=linkedin,linked --input-file=linkedin-1.hashes
     \tpython3 byepass.py -v -f Raw-SHA1 -w linkedin,linked -i linkedin-1.hashes\n
+    Attempt to crack hashes using a large list of known passwords\n
+    \tpython3 byepass.py --verbose --hash-format=Raw-MD5 --hailmary --input-file=hashes.txt
+    \tpython3 byepass.py -f Raw-MD5 -j="--fork=4" -m -i hashes.txt\n
     Attempt to brute force words from 3 to 5 characters in length\n
     \tpython3 byepass.py --verbose --hash-format=Raw-MD5 --brute-force=3,5 --input-file=hashes.txt
     \tpython3 byepass.py -f Raw-MD5 -j="--fork=4" -v -b 3,5 -i hashes.txt\n
@@ -106,9 +109,9 @@ class Printer:
     Be more aggressive by using techniques level 4 in attempt to crack password hashes found in input file "password.hashes"\n
     \tpython3 byepass.py --verbose --techniques=4 --hash-format=descrypt --input-file=password.hashes
     \tpython3 byepass.py -v -t 4 -f descrypt -i password.hashes\n
-    Go bonkers and try all techniques. Start with technique level 1 and proceed to level 15 in attempt to crack password hashes found in input file "password.hashes"\n
-    \tpython3 byepass.py --verbose --techniques=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 --hash-format=descrypt --input-file=password.hashes
-    \tpython3 byepass.py -v -t 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 -f descrypt -i password.hashes\n
+    Go bonkers and try all techniques. Start with technique level 1 and proceed to level 14 in attempt to crack password hashes found in input file "password.hashes"\n
+    \tpython3 byepass.py --verbose --techniques=1,2,3,4,5,6,7,8,9,10,11,12,13,14 --hash-format=descrypt --input-file=password.hashes
+    \tpython3 byepass.py -v -t 1,2,3,4,5,6,7,8,9,10,11,12,13,14 -f descrypt -i password.hashes\n
     Only try first two techniques. Start with technique level 1 and proceed to level 2 in attempt to crack password hashes found in input file "password.hashes"\n
     \tpython3 byepass.py --verbose --techniques=1,2 --hash-format=descrypt --input-file=password.hashes
     \tpython3 byepass.py -v -t 1,2 -f descrypt -i password.hashes\n
