@@ -37,8 +37,8 @@ def write_list_to_file(pLines: list, pFileName: str, pAppend: bool) -> None:
 def do_run_jtr_mask_mode(pJTR: JohnTheRipper, pMask: str, pWordlist: str, pRule: str) -> None:
 
     lCrackingMode = "Mask {}".format(pMask)
-    if pWordlist: lCrackingMode += " using wordlist {}".format(pWordlist)
-    if pRule: lCrackingMode += " with rule {}".format(pWordlist)
+    if pWordlist: lCrackingMode += " using wordlist {}".format(os.path.basename(pWordlist))
+    if pRule: lCrackingMode += " with rule {}".format(pRule)
 
     lWatcher = Watcher(pCrackingMode=lCrackingMode, pJTR=pJTR)
     lWatcher.start_timer()
@@ -49,7 +49,7 @@ def do_run_jtr_mask_mode(pJTR: JohnTheRipper, pMask: str, pWordlist: str, pRule:
     lWatcher.stop_timer()
     lWatcher.print_mode_finsihed_message()
 
-    gReporter.appendRecord(pMode=lCrackingMode, pMask=pMask, pWordlist=os.path.basename(pWordlist), pRule=pRule,
+    gReporter.appendRecord(pMode=lCrackingMode, pMask=pMask, pWordlist=pWordlist, pRule=pRule,
                            pNumberPasswordsCracked=lWatcher.number_passwords_cracked_by_this_mode,
                            pNumberPasswordsCrackedPerSecond=lWatcher.number_passwords_cracked_by_this_mode_per_second,
                            pPercentPasswordsCracked=lWatcher.percent_passwords_cracked_by_this_mode)
@@ -57,7 +57,7 @@ def do_run_jtr_mask_mode(pJTR: JohnTheRipper, pMask: str, pWordlist: str, pRule:
 
 def do_run_jtr_wordlist_mode(pJTR: JohnTheRipper, pWordlist: str, pRule: str) -> None:
 
-    lCrackingMode = "Wordlist {}".format(pWordlist)
+    lCrackingMode = "Wordlist {}".format(os.path.basename(pWordlist))
     if pRule: lCrackingMode += " with rule {}".format(pRule)
 
     lWatcher = Watcher(pCrackingMode=lCrackingMode, pJTR=pJTR)
@@ -69,7 +69,7 @@ def do_run_jtr_wordlist_mode(pJTR: JohnTheRipper, pWordlist: str, pRule: str) ->
     lWatcher.stop_timer()
     lWatcher.print_mode_finsihed_message()
 
-    gReporter.appendRecord(pMode=lCrackingMode, pMask="", pWordlist=os.path.basename(pWordlist), pRule=pRule,
+    gReporter.appendRecord(pMode=lCrackingMode, pMask="", pWordlist=pWordlist, pRule=pRule,
                            pNumberPasswordsCracked=lWatcher.number_passwords_cracked_by_this_mode,
                            pNumberPasswordsCrackedPerSecond=lWatcher.number_passwords_cracked_by_this_mode_per_second,
                            pPercentPasswordsCracked=lWatcher.percent_passwords_cracked_by_this_mode)
