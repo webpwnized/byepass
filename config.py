@@ -22,7 +22,7 @@ DEBUG = False
 MAX_CHARS_TO_BRUTEFORCE = 6
 
 # If the user does not provide any instructions, these techniques run by default
-DEFAULT_TECHNIQUES = [7]
+DEFAULT_TECHNIQUES = [1,2,3]
 
 # If the user chooses the "all" option, these defaults are used
 RUN_ALL_RUN_HAILMARY_MODE = True

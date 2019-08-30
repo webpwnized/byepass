@@ -70,7 +70,7 @@ tutorials in the following playlist
       -p PERCENTILE, --percentile PERCENTILE
                         Based on statistical analysis of the passwords cracked during initial phase, use only the masks statistically likely to be needed to crack at least the given percent of passwords. For example, if a value of 0.25 provided, only use the relatively few masks needed to crack 25 passwords of the passwords. Note that password cracking effort follows an exponential distribution, so cracking a few more passwords takes a lot more effort (relatively speaking). A good starting value if completely unsure is 25 percent (0.25).
       
-      -a, --all         Shortcut equivalent to -w [RUN_ALL_BASEWORDS] -t [RUN_ALL_TECHNIQUES] -s -p [RUN_ALL_PERCENTILE] -u -c -r. See config.py for values used.
+      -a, --all         Shortcut equivalent to -w [RUN_ALL_BASEWORDS] -t [RUN_ALL_TECHNIQUES] -s -p [RUN_ALL_PERCENTILE] -l [RUN_ALL_FIRST_PATHWELL_MASK, RUN_ALL_LAST_PATHWELL_MASK] -m -u -c -r. See config.py for values used.
       
       -j PASS_THROUGH, --pass-through PASS_THROUGH
                         Pass-through the raw parameter to John the Ripper. Example: --pass-through="--fork=2"

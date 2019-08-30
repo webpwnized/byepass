@@ -267,9 +267,10 @@ def run_statistical_crack_mode(pJTR: JohnTheRipper, pPercentile: float,
 def run_pathwell_mode(pJTR: JohnTheRipper, pFirstMask: int, pLastMask: int,
                                  pMaxAllowedCharactersToBruteForce: int) -> None:
 
+    lThisDirectory = os.path.dirname(os.path.realpath(__file__))
     Printer.print("Starting Pathwell mode", Level.INFO)
 
-    lPathwellFileName = 'masks/pathwell.txt'
+    lPathwellFileName = '{}/{}'.format(lThisDirectory, 'masks/pathwell.txt')
 
     with open(lPathwellFileName, "r") as lPathwellFile:
         lMasks = lPathwellFile.read().splitlines()
@@ -280,6 +281,9 @@ def run_pathwell_mode(pJTR: JohnTheRipper, pFirstMask: int, pLastMask: int,
         lPathwellMasks.append(lMasks[i])
 
     run_smart_mask_mode(pJTR=pJTR, pMasks=lPathwellMasks, pMaxAllowedCharactersToBruteForce=pMaxAllowedCharactersToBruteForce)
+
+    # for i in range(pFirstMask-1, pLastMask):
+    #     do_run_jtr_mask_mode(pJTR=pJTR, pMask=lMasks[i], pWordlist=None, pRule=None)
 
     Printer.print("Finished Pathwell Mode", Level.INFO)
 

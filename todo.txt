@@ -8,3 +8,4 @@ Add aggression levels for prince mode
 Add warning about large keyspaces for prince mode
 Create -m targeted brute force masks
 Automate -k migration to incremental mode
+Have ByePass detect number of CPU cores and issue --fork automatically
