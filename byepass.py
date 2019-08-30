@@ -97,6 +97,8 @@ def do_run_jtr_single_mode(pJTR: JohnTheRipper) -> None:
 def do_run_jtr_prince_mode(pJTR: JohnTheRipper) -> None:
 
     lCrackingMode = "John the Ripper (JTR) Prince Mode"
+    lThisDirectory = os.path.dirname(os.path.realpath(__file__))
+    lPathToWordlists = '{}/{}'.format(lThisDirectory, 'dictionaries')
 
     lWatcher = Watcher(pCrackingMode=lCrackingMode, pJTR=pJTR)
     lWatcher.start_timer()
@@ -104,7 +106,7 @@ def do_run_jtr_prince_mode(pJTR: JohnTheRipper) -> None:
 
     pJTR.prince_element_count_min = 2
     pJTR.prince_element_count_max = 3
-    pJTR.path_to_wordlist = "dictionaries"
+    pJTR.path_to_wordlist = lPathToWordlists
     pJTR.wordlist = "prince.txt"
     pJTR.run_prince_mode()
 
