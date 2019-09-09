@@ -589,9 +589,6 @@ if __name__ == '__main__':
                             type=str,
                             help="Supply a comma-separated list of lowercase, unmangled base words thought to be good candidates. For example, if Wiley Coyote is cracking hashes from Acme Inc., Wiley might provide the word \"acme\". Be careful how many words are supplied as Byepass will apply many mangling rules. Up to several should run reasonably fast.\n\n",
                             action='store')
-    lArgParser.add_argument('-u', '--jtr-single-crack',
-                            help='Run John the Ripper''s Single Crack mode. This mode uses information in the user account metadata to generate guesses. This mode is most effective when the hashes are formatted to include GECOS fields.',
-                            action='store_true')
     lArgParser.add_argument('-t', '--techniques',
                             type=str,
                             help="Comma-separated list of integers that determines what password cracking techniques are attempted. Default is level 1,2 and 3. Example of running levels 1 and 2 --techniques=1,2\n\n1: Common Passwords\n2: Small Dictionaries. Small Rulesets\n3: Calendar Related\n4: Medium Dictionaries. Small Rulesets\n5: Small Dictionaries. Medium Rulesets\n6: Medium Dictionaries. Medium Rulesets\n7: Medium-Large Dictionaries. Small Rulesets\n8: Small Dictionaries. Large Rulesets\n9: Medium Dictionaries. Large Rulesets\n10: Medium-Large Dictionaries. Medium Rulesets\n11: Large Dictionaries. Small Rulesets\n12: Medium-Large Dictionaries. Large Rulesets\n13: Large Dictionaries. Medium Rulesets\n14: Large Dictionaries. Large Rulesets\n\n",
@@ -607,6 +604,9 @@ if __name__ == '__main__':
                             type=str,
                             help="Try common patterns based on pathwell masks. Pathwell masks represent the 50 most common patterns. Use masks number FIRST to LAST. For example, masks 1 thorugh 5. Provide mask numbers as comma-separated, positive integers (i.e. 1,5 means use masks 1-5.\n\n",
                             action='store')
+    lArgParser.add_argument('-u', '--jtr-single-crack',
+                            help='Run John the Ripper''s Single Crack mode. This mode uses information in the user account metadata to generate guesses. This mode is most effective when the hashes are formatted to include GECOS fields.',
+                            action='store_true')
     lArgParser.add_argument('-c', '--jtr-prince',
                             help='Run John the Ripper''s Prince mode. This mode combines words within a dicitonary to generate guesses.',
                             action='store_true')

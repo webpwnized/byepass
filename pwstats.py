@@ -246,14 +246,15 @@ class PasswordStats:
             lMask = ""
             lPassword = lPassword.rstrip(self.__ASCII_CARRIAGE_RETURN_LINE_FEED)
 
-            # Build mask for password
-            for i in lPassword:
-                lMask += self.__mCharacterClasses[i]
+            if lPassword: #Do not use blank passwords
+                # Build mask for password
+                for i in lPassword:
+                    lMask += self.__mCharacterClasses[i]
 
-            if lMask in lMasks:
-                lMasks[lMask] += 1
-            else:
-                lMasks[lMask] = 1
+                if lMask in lMasks:
+                    lMasks[lMask] += 1
+                else:
+                    lMasks[lMask] = 1
 
         # Sort dictionary by popularity of mask descending
         lMasks = OrderedDict(sorted(lMasks.items(), key=lambda x: -x[1]))
