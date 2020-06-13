@@ -79,7 +79,7 @@ Then the config.py should contain the following
 #### Step 4: Tell john the location of byepass's word mangling rules 
 
 The rule are located in <byepass directory>/rules/byepass.conf. To
-tell john the location, add the following line to john.conf.
+tell john the location, add the following line to john-local.conf (create the file in John folder if missing).
 
     .include "<location of bypass>/byepass/rules/byepass.conf"
     .include "<location of bypass>/byepass/rules/OneRuleToRuleThemAll.rule"
@@ -87,7 +87,7 @@ tell john the location, add the following line to john.conf.
 
 where "location of bypass" is the location that byepass is installed.
 For example, if byepass is installed in /opt, add the following line
-into john.conf
+into john-local.conf
 
     .include "/opt/byepass/rules/byepass.conf"
     .include "/opt/byepass/rules/OneRuleToRuleThemAll.rule"
