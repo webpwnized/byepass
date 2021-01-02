@@ -5,14 +5,14 @@
 ## Installation
 
 YouTube deleted the video tutorials. YouTube deletes videos related to security testing at any time without
-reviewing the content. 
+reviewing the content to understand the contents educational intent. 
 
 **More details?** [Installation Document](README-INSTALL.md)
 
 ## Usage
 
 YouTube deleted the video tutorials. YouTube deletes videos related to security testing at any time without
-reviewing the content. 
+reviewing the content to understand the contents educational intent.
 
 **More details?** 
 
@@ -22,4 +22,4 @@ reviewing the content.
 ## More Help
 
 YouTube deleted the video tutorials. YouTube deletes videos related to security testing at any time without
-reviewing the content. 
+reviewing the content to understand the contents educational intent. 
