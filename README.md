@@ -1,13 +1,13 @@
 ## Project Announcements
 
-* Twitter: [https://twitter.com/webpwnized](https://twitter.com/webpwnized)
+* X: [https://x.com/webpwnized](https://x.com/webpwnized)
 
 ## Installation
 
 YouTube deleted the video tutorials. YouTube deletes videos related to security testing at any time without
 reviewing the content to understand the contents educational intent. 
 
-**More details?** [Installation Document](README-INSTALL.md)
+**More details?** [Installation Document](docs/README-INSTALL.md)
 
 ## Usage
 
@@ -16,8 +16,8 @@ reviewing the content to understand the contents educational intent.
 
 **More details?** 
 
-* [ByePass: Usage Instructions](README-USAGE-BYEPASS.md)
-* [PassTime: Usage Instructions](README-USAGE-PASSTIME.md)
+* [ByePass: Usage Instructions](docs/README-USAGE-BYEPASS.md)
+* [PassTime: Usage Instructions](docs/README-USAGE-PASSTIME.md)
 
 ## More Help
 

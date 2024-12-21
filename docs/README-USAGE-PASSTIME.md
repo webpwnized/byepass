@@ -1,7 +1,6 @@
 # Usage
 
-YouTube deleted the video tutorials. YouTube deletes videos related to security testing at any time without
-reviewing the content to understand the contents educational intent.
+YouTube deleted the video tutorials. YouTube deletes videos related to security testing at any time without reviewing the content to understand the contents educational intent.
 
 ## Using PassTime
 
