@@ -1,0 +1,90 @@
+[List.Rules:Best126]
+## This is really about 253 transformations - JD
+## nothing, reverse, uppercase, toggle-case of first letter
+
+# These rules are included in SlowHashes rules
+#:
+#T0
+#u
+
+r
+p
+c p
+^!
+c ^!
+$1 $!
+$! $1
+c $1 $!
+c $! $1
+@a @e @i @o @u
+@a @e @i @o @u $!
+
+## Special character append - JD
+$! $!
+c $! $!
+
+## high frequency append - add "e", note that "s" already added by the "p" (plaural) rule above
+$e
+
+## leetify - JD
+# All combinations, then add digit, then add digit with exclamation point
+sa[a4@] se[e3] si[i1!] so[o0] sg[g9] sl[l1] ss[s5$] st[t7+]
+sa[a4@] se[e3] si[i1!] so[o0] sg[g9] sl[l1] ss[s5$] st[t7+] $[0-9]
+sa[a4@] se[e3] si[i1!] so[o0] sg[g9] sl[l1] ss[s5$] st[t7+] $[0-9] $!
+c sa[a4@] se[e3] si[i1!] so[o0] sg[g9] sl[l1] ss[s5$] st[t7+]
+c sa[a4@] se[e3] si[i1!] so[o0] sg[g9] sl[l1] ss[s5$] st[t7+] $[0-9]
+c sa[a4@] se[e3] si[i1!] so[o0] sg[g9] sl[l1] ss[s5$] st[t7+] $[0-9] $!
+
+## high frequency overwrite at end
+] $a
+] ] $s
+] ] $a
+] ] $e $r
+] ] $i $e
+] ] ] $o
+] ] ] $y
+] ] ] $1 $2 $3
+] ] ] $m $a $n
+] ] ] $d $o $g
+
+## high frequency prepend
+^e ^h ^t
+
+## high frequency overwrite at start
+o0d
+o0m o1a
+
+## simple extracts
+D2
+D2 D2
+D3
+D4
+
+## undouble word
+'5 D3
+'5 $1
+
+## removes suffixes from 'strongified' passwords in dict
+]
+] ]
+] ] ]
+] ] ] d
+] ] D1 ]
+
+# Wordlist mode rules
+#[List.Rules:Wordlist]
+# Duplicate reasonably short pure alphabetic words (fred -> fredfred)
+<7 >1 !?A l d
+# Capitalize and duplicate short pure alphabetic words (fred -> FredFred)
+-c <7 >1 !?A c d
+# Capitalize and reverse pure alphabetic words (fred -> derF)
+-c <+ >2 !?A c r
+# Reverse and capitalize pure alphabetic words (fred -> Derf)
+-c >2 !?A l M r Q c
+# Lowercase and reflect pure alphabetic words (fred -> fredderf)
+<7 >1 !?A l d M 'l f Q
+# Uppercase the last letter of pure alphabetic words (fred -> freD)
+-c <+ >2 !?A l M r Q c r
+# Lowercase/capitalize pure alphabetic words of reasonable length and convert:
+# crack -> cracked, crack -> cracking
+-[:c] <* >2 !?A \p1[lc] M [PI] Q
