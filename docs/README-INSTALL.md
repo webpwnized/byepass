@@ -40,8 +40,9 @@ cd byepass
 
 This script will:
 
-- Reconstruct the `passwords-hailmary.txt` wordlist from five compressed `.zip` parts
+- Reassemble the `passwords-hailmary.txt` wordlist from five `.txt.zip` parts
 - Unzip each practice hash file in `data/hashes/` from its `.txt.zip` archive
+- Validate the contents of each archive before extraction
 - Display the number of lines and size of each unpacked `.txt` file
 
 ### Step 3: Verify `config.py` is properly configured
@@ -94,7 +95,7 @@ The rules are located in `<byepass directory>/res/rules`. To include them in Joh
 
 Example:
 
-If ByePass is installed in `/opt/byepass`, add:
+If ByePass is installed in `/opt/byepass`, then add:
 
 ```
 .include "/opt/byepass/res/rules/byepass.conf"
