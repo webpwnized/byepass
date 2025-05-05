@@ -12,84 +12,100 @@ You should use ByePass with the latest build of John the Ripper. You may use Bye
 
 Video tutorials that explain how to install John the Ripper and ByePass are available at the following links. For written instructions, refer to the next section.
 
-* [How to Install John the Ripper (YouTube)](https://www.youtube.com/watch?v=7R10QN_uCh0)
-* [How to Install ByePass Automated Password Auditor](https://www.youtube.com/watch?v=aQwoJh6cyH8)
+- [How to Install John the Ripper (YouTube)](https://www.youtube.com/watch?v=7R10QN_uCh0)
+- [How to Install ByePass Automated Password Auditor](https://www.youtube.com/watch?v=aQwoJh6cyH8)
 
-If you need help installing VMware, VirtualBox and/or Kali Linux, please see the video tutorials in the following playlist
+If you need help installing VMware, VirtualBox, and/or Kali Linux, please see the video tutorials in the following playlist:
 
-[Complete Guide to ByePass](https://www.youtube.com/playlist?list=PLZOToVAK85Mqfcbufx1_lQHZ4pltV8nAm)
+- [Complete Guide to ByePass](https://www.youtube.com/playlist?list=PLZOToVAK85Mqfcbufx1_lQHZ4pltV8nAm)
 
 ## Setup - Written Instructions
 
-#### Step 1: Install John the Ripper
+### Step 1: Install John the Ripper
 
-A video tutorial is available on the webpwnized YouTube channel at the following link.
+A video tutorial is available on the webpwnized YouTube channel:
 
-[How to Install John the Ripper (YouTube)](https://www.youtube.com/watch?v=7R10QN_uCh0)
+- [How to Install John the Ripper (YouTube)](https://www.youtube.com/watch?v=7R10QN_uCh0)
 
-#### Step 2: Change into desired directory, clone the project and decompress passwords-hailmary.txt.zip
+### Step 2: Clone the project and run the setup script
 
-**Example:**
+Example:
 
-    cd /opt
-    git clone https://github.com/webpwnized/byepass.git
-    cd bypass/res/passwords
-    ./unpackage-passwords.txt
-    cd ..
+```bash
+cd /opt
+git clone https://github.com/webpwnized/byepass.git
+cd byepass
+./scripts/setup.sh
+```
 
-#### Step 3: Verify config.py is properly configured 
+This script will:
 
-##### NOTE: Read and understand the important note above labeled "Important"
+- Reconstruct the `passwords-hailmary.txt` wordlist from five compressed `.zip` parts
+- Unzip each practice hash file in `data/hashes/` from its `.txt.zip` archive
+- Display the number of lines and size of each unpacked `.txt` file
 
-Assuming John the Ripper is installed in the /opt directory, the values should be the following:
+### Step 3: Verify `config.py` is properly configured
 
-    JTR_EXECUTABLE_FILE_PATH = "/opt/JohnTheRipper/run/john"
-    JTR_POT_FILE_PATH = "/opt/JohnTheRipper/run/john.pot"
+> **NOTE:** Read and understand the important note above labeled "Important"
 
-**JTR_EXECUTABLE_FILE_PATH**: Filepath to the john executable. If john is compiled natively, this path is usually <install directory>/JohnTheRipper/run/john.
+Assuming John the Ripper is installed in the `/opt` directory, your values in `config.py` should look like:
 
-**JTR_POT_FILE_PATH**: Filepath of the john.pot file. If john is
- compiled natively, this path is usually <install directory>/JohnTheRipper/run/john.
+```python
+JTR_EXECUTABLE_FILE_PATH = "/opt/JohnTheRipper/run/john"
+JTR_POT_FILE_PATH = "/opt/JohnTheRipper/run/john.pot"
+```
 
-If unsure of location of the John the Ripper executable and pot file, try 
+- `JTR_EXECUTABLE_FILE_PATH`: Filepath to the `john` executable. If John is compiled natively, this path is usually `<install directory>/JohnTheRipper/run/john`.
+- `JTR_POT_FILE_PATH`: Filepath to the `john.pot` file. If John is compiled natively, this path is usually `<install directory>/JohnTheRipper/run/john.pot`.
 
-    which john
-    locate john.pot
+If unsure where these are located, try:
 
-**Example:**
+```bash
+which john
+locate john.pot
+```
 
-if locate finds john installed in the following
+Example:
 
-    which john
-    /opt/JohnTheRipper/run/john
+```bash
+which john
+/opt/JohnTheRipper/run/john
 
-    locate john.pot
-    /opt/JohnTheRipper/run/john.pot
+locate john.pot
+/opt/JohnTheRipper/run/john.pot
+```
 
-Then the config.py should contain the following
+Then `config.py` should contain:
 
-    JTR_EXECUTABLE_FILE_PATH = "/opt/JohnTheRipper/run/john"
-    JTR_POT_FILE_PATH = "/opt/JohnTheRipper/run/john.pot"
+```python
+JTR_EXECUTABLE_FILE_PATH = "/opt/JohnTheRipper/run/john"
+JTR_POT_FILE_PATH = "/opt/JohnTheRipper/run/john.pot"
+```
 
-#### Step 4: Tell john the location of byepass's word mangling rules 
+### Step 4: Tell John where to find ByePass's word mangling rules
 
-The rule are located in <byepass directory>/res/rules/byepass.conf. To
-tell john the location, add the following line to john.conf.
+The rules are located in `<byepass directory>/res/rules`. To include them in John, add the following lines to your `john.conf` file:
 
-    .include "<location of bypass>/byepass/rules/byepass.conf"
-    .include "<location of bypass>/byepass/res/rules/OneRuleToRuleThemAll.rule"
-    .include "<location of bypass>/byepass/res/rules/Best126.rule"
+```
+.include "<location of byepass>/res/rules/byepass.conf"
+.include "<location of byepass>/res/rules/OneRuleToRuleThemAll.rule"
+.include "<location of byepass>/res/rules/Best126.rule"
+```
 
-where "location of bypass" is the location that byepass is installed.
-For example, if byepass is installed in /opt, add the following line
-into john.conf
+Example:
 
-    .include "/opt/byepass/res/rules/byepass.conf"
-    .include "/opt/byepass/res/rules/OneRuleToRuleThemAll.rule"
-    .include "/opt/byepass/res/rules/Best126.rule"
+If ByePass is installed in `/opt/byepass`, add:
 
-**Tips**: 
-* To find a good location in john.conf to place the line, search
-for ".include" and place the new include line near other include lines.
-* The gedit
-editor is easy to use.
+```
+.include "/opt/byepass/res/rules/byepass.conf"
+.include "/opt/byepass/res/rules/OneRuleToRuleThemAll.rule"
+.include "/opt/byepass/res/rules/Best126.rule"
+```
+
+**Tips:**
+- Search `john.conf` for other `.include` lines and add these nearby
+- Use `gedit` or your preferred text editor:
+
+```bash
+gedit /opt/JohnTheRipper/run/john.conf
+```
