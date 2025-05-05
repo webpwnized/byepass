@@ -24,7 +24,6 @@ dist/
 *.tmp
 
 # Application data
-data/hashes/
 *.db
 *.sqlite
 
