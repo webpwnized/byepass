@@ -11,7 +11,7 @@ cd "$(dirname "$0")/.." || { err "Cannot find repo root"; exit 1; }
 
 pw_dir="res/passwords"
 hash_dir="data/hashes"
-john_pot="/opt/JohnTheRipper/run/john.pot"
+john_pot="john.pot"
 pw_file="$pw_dir/passwords-hailmary.txt"
 
 # --- Package HailMary password list ---
@@ -23,7 +23,7 @@ if [[ -f "$pw_file" ]]; then
     sort -u /tmp/byepass-john-pot.txt "$pw_file" > /tmp/byepass-merged.txt
     mv /tmp/byepass-merged.txt "$pw_file"
     rm /tmp/byepass-john-pot.txt
-  elif
+  else
     log "$john_pot was not found. Cracked passwords will not be added to $pw_file."
   fi
 

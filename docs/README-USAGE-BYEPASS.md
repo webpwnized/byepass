@@ -9,7 +9,7 @@ reviewing the content to understand the contents educational intent.
 
 **Usage**: byepass.py [-h] [-f HASH_FORMAT] [-w BASEWORDS] [-b BRUTE_FORCE]
                   [-t TECHNIQUES] [-s] [-p PERCENTILE] [-j PASS_THROUGH] [-v]
-                  [-d] (-e | -i INPUT_FILE)
+                  [-d] [-a] (-e | -i INPUT_FILE)
 
 **Optional arguments:**
 
@@ -156,7 +156,7 @@ Do not run prayer mode. Only run statistical analysis to determine masks needed 
 
 	python3 byepass.py -v --hash-format=descrypt --stat-crack --percentile=0.50 --input-file=password.hashes
 
-	python3 byepass.py -v -a 0 -f descrypt -s -p 0.50 -i password.hashes
+	python3 byepass.py -v -f descrypt -s -p 0.50 -i password.hashes
 
 ### Using Recycle Mode
 
@@ -181,6 +181,40 @@ Use pass-through to pass fork command to JTR
 	python3 byepass.py --verbose --pass-through="--fork=4" --hash-format=descrypt --input-file=password.hashes
 
 	python3 byepass.py -v -j="--fork=4" -f descrypt -i password.hashes
+
+## Recommended Strategy
+
+To maximize cracking effectiveness and reduce wasted time, use the following order of tactics. This strategy starts with the fastest and most fruitful methods and ends with more exhaustive techniques.
+
+### Tactic Order
+
+| Step | Mode                      | Option(s)     | Description                                                                                   |
+|------|---------------------------|---------------|-----------------------------------------------------------------------------------------------|
+| 1    | JTR Single Crack          | `-u`          | Uses metadata (like GECOS fields) to guess passwords. Very fast and often effective.          |
+| 2    | Hailmary Mode             | `-m`          | Uses a large real-world password list. Highly effective against common passwords.             |
+| 3    | Basewords Mode            | `-w`          | Cracks passwords using custom keywords relevant to the target (e.g., company names).          |
+| 4    | Prayer Mode (Techniques)  | `-t`          | Tries dictionary and rule combinations. Start with levels 1-3 and expand to 14 as needed.     |
+| 5    | Prince Mode               | `-c`          | Combines dictionary words to guess passphrases. Useful for multi-word or compound passwords.  |
+| 6    | Statistical Analysis Mode | `-s -p`       | Learns patterns from cracked passwords and builds high-probability masks.                     |
+| 7    | Pathwell Mode             | `-l`          | Applies the top 50 most common password structure patterns (e.g., `?u?l?d`).                  |
+| 8    | Recycle Mode              | `-r`          | Extracts base words from already cracked passwords to crack more.                             |
+| 9    | Brute Force Mode          | `-b`          | Last resort. Try short ranges only (e.g., `-b 3,5`). Computationally expensive.               |
+
+---
+
+### Example Workflow
+
+Start with quick and likely tactics:
+
+```
+python3 byepass.py -u -m -w acme -f Raw-SHA1 -i target.hashes -v
+```
+
+If more effort is needed, expand your tactics:
+
+```
+python3 byepass.py -t 1,2,3 -s -p 0.25 -r -f Raw-SHA1 -i target.hashes -v
+```
 
 # Hashes and Password Lists
 

@@ -97,8 +97,8 @@ def do_run_jtr_single_mode(pJTR: JohnTheRipper) -> None:
 def do_run_jtr_prince_mode(pJTR: JohnTheRipper) -> None:
 
     lCrackingMode = "John the Ripper (JTR) Prince Mode"
-    lThisDirectory = os.path.dirname(os.path.realpath(__file__))
-    lPathToWordlists = '{}/{}'.format(lThisDirectory, 'dictionaries')
+    lResourceRoot = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'res'))
+    lPathToWordlists = '{}/{}'.format(lResourceRoot, 'dictionaries')
 
     lWatcher = Watcher(pCrackingMode=lCrackingMode, pJTR=pJTR)
     lWatcher.start_timer()
@@ -131,8 +131,8 @@ def run_jtr_baseword_mode(pJTR: JohnTheRipper, pBaseWords: list) -> None:
 
     Printer.print("Starting mode: Baseword with words {}".format(pBaseWords), Level.INFO)
 
-    lThisDirectory = os.path.dirname(os.path.realpath(__file__))
-    lBaseWordsFileName = '{}/{}'.format(lThisDirectory, 'basewords/basewords.txt')
+    lResourceRoot = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'res'))
+    lBaseWordsFileName = '{}/{}'.format(lResourceRoot, 'basewords/basewords.txt')
     write_list_to_file(pLines=pBaseWords, pFileName=lBaseWordsFileName, pAppend=False)
 
     do_run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lBaseWordsFileName, pRule="SlowHashesPhase1")
@@ -152,8 +152,8 @@ def run_jtr_recycle_mode(pJTR: JohnTheRipper) -> None:
     Printer.print("Starting Recycle mode", Level.INFO)
 
     # The JTR POT file is the source of passwords
-    lThisDirectory = os.path.dirname(os.path.realpath(__file__))
-    lRecycleFileName = '{}/{}'.format(lThisDirectory, 'basewords/recycle.txt')
+    lResourceRoot = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'res'))
+    lRecycleFileName = '{}/{}'.format(lResourceRoot, 'basewords/recycle.txt')
 
     # original password from pot file
     Printer.print("Working on original words", Level.INFO)
@@ -269,10 +269,10 @@ def run_statistical_crack_mode(pJTR: JohnTheRipper, pPercentile: float,
 def run_pathwell_mode(pJTR: JohnTheRipper, pFirstMask: int, pLastMask: int,
                                  pMaxAllowedCharactersToBruteForce: int) -> None:
 
-    lThisDirectory = os.path.dirname(os.path.realpath(__file__))
+    lResourceRoot = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'res'))
     Printer.print("Starting Pathwell mode", Level.INFO)
 
-    lPathwellFileName = '{}/{}'.format(lThisDirectory, 'masks/pathwell.txt')
+    lPathwellFileName = '{}/{}'.format(lResourceRoot, 'masks/pathwell.txt')
 
     with open(lPathwellFileName, "r") as lPathwellFile:
         lMasks = lPathwellFile.read().splitlines()
@@ -294,7 +294,7 @@ def run_smart_mask_mode(pJTR: JohnTheRipper, pMasks: list, pMaxAllowedCharacters
 
     # For each mask, try high probability guesses
     lUndefinedMasks = []
-    lThisDirectory = os.path.dirname(os.path.realpath(__file__))
+    lResourceRoot = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'res'))
 
     for lMask in pMasks:
         Printer.print("Processing mask: {}".format(lMask), Level.INFO)
@@ -310,48 +310,48 @@ def run_smart_mask_mode(pJTR: JohnTheRipper, pMasks: list, pMaxAllowedCharacters
         else:
 
             # All lowercase letters
-            if re.match('^(\?l)+$', lMask):
+            if re.match(r'^(\?l)+$', lMask):
                 lCountLetters = lMask.count('?l')
                 if lCountLetters > pMaxAllowedCharactersToBruteForce:
-                    lWordlist = "{}/dictionaries/{}-character-words.txt".format(lThisDirectory, str(lCountLetters))
+                    lWordlist = "{}/dictionaries/{}-character-words.txt".format(lResourceRoot, str(lCountLetters))
                     lRule=""
                     do_run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lWordlist, pRule=lRule)
 
             # All uppercase
-            elif re.match('^(\?u)+$', lMask):
+            elif re.match(r'^(\?u)+$', lMask):
                 lCountLetters = lMask.count('?u')
-                lWordlist = "{}/dictionaries/{}-character-words.txt".format(lThisDirectory, str(lCountLetters))
+                lWordlist = "{}/dictionaries/{}-character-words.txt".format(lResourceRoot, str(lCountLetters))
                 lRule = "uppercase"
                 do_run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lWordlist, pRule=lRule)
 
             # Uppercase followed by lowercase (assume only leading letter is uppercase)
-            elif re.match('^(\?u)(\?l)+$', lMask):
+            elif re.match(r'^(\?u)(\?l)+$', lMask):
                 lCountLetters = lMask.count('?u') + lMask.count('?l')
-                lWordlist = "{}/dictionaries/{}-character-words.txt".format(lThisDirectory, str(lCountLetters))
+                lWordlist = "{}/dictionaries/{}-character-words.txt".format(lResourceRoot, str(lCountLetters))
                 lRule = "capitalize"
                 do_run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lWordlist, pRule=lRule)
 
             # Lowercase ending with digits
-            elif re.match('^(\?l)+(\?d)+$', lMask):
+            elif re.match(r'^(\?l)+(\?d)+$', lMask):
                 lCountLetters = lMask.count('?l')
                 lCountDigits = lMask.count('?d')
-                lWordlist = "{}/dictionaries/{}-character-words.txt".format(lThisDirectory, str(lCountLetters))
+                lWordlist = "{}/dictionaries/{}-character-words.txt".format(lResourceRoot, str(lCountLetters))
                 lRule = "append{}digits".format(str(lCountDigits))
                 do_run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lWordlist, pRule=lRule)
 
             # Uppercase followed by digits
-            elif re.match('^(\?u)+(\?d)+$', lMask):
+            elif re.match(r'^(\?u)+(\?d)+$', lMask):
                 lCountLetters = lMask.count('?u')
                 lCountDigits = lMask.count('?d')
-                lWordlist = "{}/dictionaries/{}-character-words.txt".format(lThisDirectory, str(lCountLetters))
+                lWordlist = "{}/dictionaries/{}-character-words.txt".format(lResourceRoot, str(lCountLetters))
                 lRule = "uppercaseappend{}digits".format(str(lCountDigits))
                 do_run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lWordlist, pRule=lRule)
 
             # Uppercase, lowercase, then digits (assume only leading letter is uppercase)
-            elif re.match('^(\?u)(\?l)+(\?d)+$', lMask):
+            elif re.match(r'^(\?u)(\?l)+(\?d)+$', lMask):
                 lCountLetters = lMask.count('?u') + lMask.count('?l')
                 lCountDigits = lMask.count('?d')
-                lWordlist = "{}/dictionaries/{}-character-words.txt".format(lThisDirectory, str(lCountLetters))
+                lWordlist = "{}/dictionaries/{}-character-words.txt".format(lResourceRoot, str(lCountLetters))
                 lRule = "capitalizeappend{}digits".format(str(lCountDigits))
                 do_run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lWordlist, pRule=lRule)
 
@@ -359,7 +359,7 @@ def run_smart_mask_mode(pJTR: JohnTheRipper, pMasks: list, pMaxAllowedCharacters
             # precomputing dictionary files would be huge and running mask mode takes a long time.
             # Right now we support 4-6 digits only. Recall we cover 4 and 6 digits specifically in
             # "prayer" mode so we do not repeat those two masks here.
-            elif re.match('^(\?d)+$', lMask):
+            elif re.match(r'^(\?d)+$', lMask):
                 lCountDigits = lMask.count('?d')
                 if lCountDigits == 5:
                     lWordlist = "{}/dictionaries/{}-digit-numbers.txt".format(str(lCountDigits))
@@ -371,12 +371,12 @@ def run_smart_mask_mode(pJTR: JohnTheRipper, pMasks: list, pMaxAllowedCharacters
             # Lowercase ending with something other than the masks already accounted for. If the
             # ending pattern is longer than 4 characters, we do not try because it takes a long time
             # to test that many hashes
-            elif re.match('^(\?l)+', lMask):
-                lPrefix = re.search('^(\?l)+', lMask).group()
+            elif re.match(r'^(\?l)+', lMask):
+                lPrefix = re.search(r'^(\?l)+', lMask).group()
                 lCountLetters = lPrefix.count("?l")
                 lSuffix = lMask[lCountLetters * 2:]
                 if len(lSuffix) <= 4:
-                    lWordlist = "{}/dictionaries/{}-character-words.txt".format(lThisDirectory, str(lCountLetters))
+                    lWordlist = "{}/dictionaries/{}-character-words.txt".format(lResourceRoot, str(lCountLetters))
                     lMaskParam = "--mask=?w{}".format(lSuffix)
                     lRule =""
                     do_run_jtr_mask_mode(pJTR=pJTR, pMask=lMaskParam, pWordlist=lWordlist, pRule=None)
@@ -386,12 +386,12 @@ def run_smart_mask_mode(pJTR: JohnTheRipper, pMasks: list, pMaxAllowedCharacters
             # Lowercase ending with something other than the masks already accounted for. If the
             # ending pattern is longer than 4 characters, we do not try because it takes a long time
             # to test that many hashes
-            elif re.match('^(\?u)+', lMask):
-                lPrefix = re.search('^(\?u)+', lMask).group()
+            elif re.match(r'^(\?u)+', lMask):
+                lPrefix = re.search(r'^(\?u)+', lMask).group()
                 lCountLetters = lPrefix.count("?u")
                 lSuffix = lMask[lCountLetters * 2:]
                 if len(lSuffix) <= 4:
-                    lWordlist = "{}/dictionaries/{}-character-words.txt".format(lThisDirectory, str(lCountLetters))
+                    lWordlist = "{}/dictionaries/{}-character-words.txt".format(lResourceRoot, str(lCountLetters))
                     lMaskParam = "--mask=?w{}".format(lSuffix)
                     lRule = "uppercase"
                     do_run_jtr_mask_mode(pJTR=pJTR, pMask=lMaskParam, pWordlist=lWordlist, pRule=lRule)
@@ -401,12 +401,12 @@ def run_smart_mask_mode(pJTR: JohnTheRipper, pMasks: list, pMaxAllowedCharacters
             # Capitalized ending with something other than the masks already accounted for. If the
             # ending pattern is longer than 4 characters, we do not try because it takes a long time
             # to test that many hashes
-            elif re.match('^(\?u)(\?l)+$', lMask):
-                lPrefix = re.search('^(\?u)(\?l)+', lMask).group()
+            elif re.match(r'^(\?u)(\?l)+$', lMask):
+                lPrefix = re.search(r'^(\?u)(\?l)+', lMask).group()
                 lCountLetters = lPrefix.count('?u') + lPrefix.count('?l')
                 lSuffix = lMask[lCountLetters * 2:]
                 if len(lSuffix) <= 4:
-                    lWordlist = "{}/dictionaries/{}-character-words.txt".format(lThisDirectory, str(lCountLetters))
+                    lWordlist = "{}/dictionaries/{}-character-words.txt".format(lResourceRoot, str(lCountLetters))
                     lMaskParam = "--mask=?w{}".format(lSuffix)
                     lRule = "capitalize"
                     do_run_jtr_mask_mode(pJTR=pJTR, pMask=lMaskParam, pWordlist=lWordlist, pRule=lRule)
@@ -491,18 +491,19 @@ def run_jtr_prayer_mode(pJTR: JohnTheRipper, pMethod: int) -> None:
 
     lTechniques = Techniques()
     lFolder, lDictionaries, lRules = lTechniques.get_technique(pMethod)
-    lThisDirectory = os.path.dirname(os.path.realpath(__file__))
+    lResourceRoot = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'res'))
+
 
     # Run the wordlist and rule
     for lDictionary in lDictionaries:
         for lRule in lRules:
-            lWordlist = '{}/{}/{}'.format(lThisDirectory, lFolder, lDictionary)
+            lWordlist = '{}/{}/{}'.format(lResourceRoot, lFolder, lDictionary)
             do_run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lWordlist, pRule=lRule)
 
 
 def run_jtr_hailmary_mode(pJTR: JohnTheRipper) -> None:
-    lThisDirectory = os.path.dirname(os.path.realpath(__file__))
-    lWordlist = '{}/{}'.format(lThisDirectory, "passwords/passwords-hailmary.txt")
+    lResourceRoot = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'res'))
+    lWordlist = '{}/{}'.format(lResourceRoot, 'passwords/passwords-hailmary.txt')
     do_run_jtr_wordlist_mode(pJTR=pJTR, pWordlist=lWordlist, pRule="Hailmary")
 
 
@@ -572,7 +573,7 @@ if __name__ == '__main__':
     # GLOBALS
     gReporter = Reporter()
 
-    lArgParser = argparse.ArgumentParser(description="""
+    lArgParser = argparse.ArgumentParser(description=r"""
   ___          ___
  | _ )_  _ ___| _ \__ _ ______
  | _ \ || / -_)  _/ _` (_-<_-<
