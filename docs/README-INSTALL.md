@@ -88,7 +88,7 @@ JTR_POT_FILE_PATH = "/opt/JohnTheRipper/run/john.pot"
 The rules are located in `<byepass directory>/res/rules`. To include them in John, add the following lines to your `john.conf` file:
 
 ```
-.include "<location of byepass>/res/rules/byepass.conf"
+.include "<location of byepass>/res/rules/byepass.rule"
 .include "<location of byepass>/res/rules/OneRuleToRuleThemAll.rule"
 .include "<location of byepass>/res/rules/Best126.rule"
 ```
@@ -98,7 +98,7 @@ Example:
 If ByePass is installed in `/opt/byepass`, then add:
 
 ```
-.include "/opt/byepass/res/rules/byepass.conf"
+.include "/opt/byepass/res/rules/byepass.rule"
 .include "/opt/byepass/res/rules/OneRuleToRuleThemAll.rule"
 .include "/opt/byepass/res/rules/Best126.rule"
 ```

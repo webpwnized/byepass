@@ -36,6 +36,21 @@ RUN_ALL_TECHNIQUES = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
 RUN_ALL_PERCENTILE = 0.90
 RUN_ALL_FIRST_PATHWELL_MASK = 1
 RUN_ALL_LAST_PATHWELL_MASK = 50
-RUN_ALL_BASEWORDS = ["love", "alex", "mike", "angel", "blue", "chris", "password", "sunshine", "qwerty", "iloveyou",
-                     "princess", "admin", "welcome", "football", "monkey", "july", "june", "march", "april",
-                     "jan", "feb", "mar", "apr", "may", "aug", "sept", "oct", "nov", "dec"]
+RUN_ALL_BASEWORDS = [
+    'password', 'qwerty', 'dragon', 'baseball', 'football', 'monkey', 'letmein', 'shadow', 'master', 'qwertyuiop',
+    'mustang', 'michael', 'superman', 'qazwsx', 'killer', 'jordan', 'jennifer', 'zxcvbnm', 'asdfgh', 'hunter',
+    'buster', 'soccer', 'harley', 'batman', 'andrew', 'tigger', 'sunshine', 'iloveyou', 'charlie', 'robert',
+    'thomas', 'hockey', 'ranger', 'daniel', 'starwars', 'klaster', 'george', 'computer', 'michelle', 'jessica',
+    'pepper', 'zxcvbn', 'freedom', 'pass', 'maggie', 'ginger', 'princess', 'joshua', 'cheese', 'amanda',
+    'summer', 'love', 'ashley', 'nicole', 'chelsea', 'matthew', 'access', 'yankees', 'dallas', 'austin',
+    'thunder', 'taylor', 'matrix', 'william', 'corvette', 'hello', 'martin', 'heather', 'secret', 'merlin',
+    'diamond', 'anthony', 'justin', 'test', 'bailey', 'patrick', 'internet', 'orange', 'cookie', 'richard',
+    'samantha', 'welcome', 'james', 'andrea', 'joseph', 'melissa', 'mike', 'hannah', 'money', 'babygirl',
+    'lovely', 'boston', 'phoenix', 'tennis', 'tiffany', 'dakota', 'steven', 'brandon', 'emily', 'purple',
+    'rebecca', 'lauren', 'morgan', 'briana', 'alexis', 'nancy', 'angela', 'karen', 'donald', 'carlos',
+    'johnny', 'teresa', 'travis', 'bobby', 'kelly', 'sabrina', 'georgia', 'nathan', 'jackson', 'isabella',
+    'sydney', 'sierra', 'crystal', 'tyler', 'shannon', 'leslie', 'spider', 'garfield', 'boomer', 'peanut',
+    'scooby', 'maxwell', 'midnight', 'storm', 'sunny', 'roscoe', 'snoopy', 'riley', 'marvin', 'apollo',
+    'simba', 'zeus', 'nugget', 'oreo', 'cody', 'jasper', 'lucky', 'marley', 'lexi', 'toby', 'luna',
+    'bella', 'daisy', 'rocky', 'buddy', 'oliver', 'leo', 'angel', 'jake', 'lucy', 'gingerbread'
+]
