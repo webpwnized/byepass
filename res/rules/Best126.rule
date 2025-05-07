@@ -88,3 +88,30 @@ D4
 # Lowercase/capitalize pure alphabetic words of reasonable length and convert:
 # crack -> cracked, crack -> cracking
 -[:c] <* >2 !?A \p1[lc] M [PI] Q
+## --- Begin High-ROI Enhancements ---
+
+## Capitalize and append common patterns
+c $123           # Capitalize first letter and append '123'
+c $1234          # Capitalize first letter and append '1234'
+c $2024          # Capitalize first letter and append recent year
+c $2025          # Capitalize first letter and append current year
+c $2026          # Capitalize first letter and append current year
+c $2027          # Capitalize first letter and append current year
+c $!             # Capitalize first letter and append '!'
+
+## Append popular suffixes
+$123             # Append '123'
+$1234            # Append '1234'
+$2024            # Append recent year
+$2025            # Append current year
+$2026
+$2027
+
+## Prepend popular prefixes
+^123             # Prepend '123'
+^abc             # Prepend 'abc'
+
+## Popular transforms seen in breached credentials
+c $password      # Capitalize and append 'password'
+c $admin         # Capitalize and append 'admin'
+c $welcome       # Capitalize and append 'welcome'

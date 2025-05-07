@@ -11,7 +11,7 @@ cd "$(dirname "$0")/.." || { err "Cannot find repo root"; exit 1; }
 
 pw_dir="res/passwords"
 hash_dir="data/hashes"
-john_pot="john.pot"
+john_pot="/opt/JohnTheRipper/run/john.pot"
 pw_file="$pw_dir/passwords-hailmary.txt"
 
 # --- Package HailMary password list ---
@@ -34,8 +34,14 @@ if [[ -f "$pw_file" ]]; then
     split -n 5 "$zip_path" "$pw_dir/passwords-hailmary-"
     for i in {a..e}; do
       part="$pw_dir/passwords-hailmary-a$i"
-      target="$pw_dir/passwords-hailmary-$(( $(printf '%d' "'$i") - 96 )).txt.zip"
-      [[ -f "$part" ]] && mv "$part" "$target" || { err "Missing split part $part"; break; }
+      index=$(( $(printf '%d' "\\$i") - 96 ))  # Convert 'a' to 1, 'b' to 2, etc.
+      target="$pw_dir/passwords-hailmary-${index}.txt.zip"
+      if [[ -f "$part" ]]; then
+        mv "$part" "$target"
+      else
+        err "Missing split part $part"
+        break
+      fi
     done
     rm "$zip_path"
     log "Password packaging complete"
