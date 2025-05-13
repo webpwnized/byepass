@@ -27,28 +27,25 @@ if [[ -f "$pw_file" ]]; then
     log "$john_pot was not found. Cracked passwords will not be added to $pw_file."
   fi
 
-  zip_path="$pw_dir/passwords-hailmary.txt.zip"
-  log "Compressing password list"
-  if zip -j -q "$zip_path" "$pw_file"; then
-    rm "$pw_file"
-    split -n 5 "$zip_path" "$pw_dir/passwords-hailmary-"
-    for i in {a..e}; do
-      part="$pw_dir/passwords-hailmary-a$i"
-      index=$(( $(printf '%d' "\\$i") - 96 ))  # Convert 'a' to 1, 'b' to 2, etc.
-      target="$pw_dir/passwords-hailmary-${index}.txt.zip"
-      if [[ -f "$part" ]]; then
-        mv "$part" "$target"
-      else
-        err "Missing split part $part"
-        break
-      fi
-    done
-    rm "$zip_path"
-    log "Password packaging complete"
-    ls -lh "$pw_dir"/passwords-hailmary-*.txt.zip
-  else
-    err "Failed to zip $pw_file"
-  fi
+  log "Splitting password file by lines into 20 parts"
+  split -n l/20 --numeric-suffixes=1 --suffix-length=2 "$pw_file" "$pw_dir/passwords-hailmary-"
+  
+  for i in $(seq -w 1 20); do
+    part="$pw_dir/passwords-hailmary-${i}"
+    txt="$part.txt"
+    zipf="$txt.zip"
+    mv "$part" "$txt"
+    log "Compressing $(basename "$txt") into $(basename "$zipf")"
+    if zip -j -q "$zipf" "$txt"; then
+      rm "$txt"
+    else
+      err "Failed to zip $txt"
+    fi
+  done
+
+  rm "$pw_file"
+  log "Password packaging complete"
+  ls -lh "$pw_dir"/passwords-hailmary-*.txt.zip
 else
   log "$pw_file not found — skipping HailMary packaging"
 fi

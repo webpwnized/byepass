@@ -19,6 +19,10 @@ reviewing the content to understand the contents educational intent.
 * [ByePass: Usage Instructions](docs/README-USAGE-BYEPASS.md)
 * [PassTime: Usage Instructions](docs/README-USAGE-PASSTIME.md)
 
+## Test Scripts
+
+* [ByePass: Bash Test Scripts](docs/README-TEST-SCRIPTS.md)
+
 ## More Help
 
 YouTube deleted the video tutorials. YouTube deletes videos related to security testing at any time without

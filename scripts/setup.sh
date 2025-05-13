@@ -14,24 +14,42 @@ hash_dir="data/hashes"
 
 # --- HailMary password reconstruction ---
 rebuild_hailmary() {
-  local pw_file="$pw_dir/passwords-hailmary.txt"
-  log "Checking for $pw_file"
-  [[ -f "$pw_file" ]] && { log "$pw_file already exists — skipping reassembly"; return; }
+  local final_file="$pw_dir/passwords-hailmary.txt"
+  log "Extracting and reassembling HailMary password file"
 
-  log "Reconstructing password file from zip parts"
-  for i in {1..5}; do
-    part="$pw_dir/passwords-hailmary-${i}.txt.zip"
-    [[ -f "$part" ]] || { err "Missing part: $part"; return; }
+  > "$final_file"  # Clear target file
+
+  for i in $(seq -w 1 20); do
+    zipf="$pw_dir/passwords-hailmary-${i}.txt.zip"
+    txtf="$pw_dir/passwords-hailmary-${i}.txt"
+
+    if [[ ! -f "$txtf" ]]; then
+      if [[ -f "$zipf" ]]; then
+        log "Unzipping $(basename "$zipf")"
+        unzip -q "$zipf" -d "$pw_dir" && rm "$zipf" || { err "Failed to unzip $zipf"; return 1; }
+      else
+        err "Missing archive: $(basename "$zipf")"
+        return 1
+      fi
+    else
+      log "$txtf already exists — skipping unzip"
+    fi
+
+    [[ -f "$txtf" ]] || { err "Expected $txtf not found"; return 1; }
+
+    cat "$txtf" >> "$final_file"
   done
 
-  cat "$pw_dir"/passwords-hailmary-{1..5}.txt.zip > "$pw_dir/passwords-hailmary.txt.zip"
-
-  if unzip -q "$pw_dir/passwords-hailmary.txt.zip" -d "$pw_dir"; then
-    rm "$pw_dir"/passwords-hailmary-{1..5}.txt.zip "$pw_dir/passwords-hailmary.txt.zip"
-    [[ -f "$pw_file" ]] && count=$(wc -l < "$pw_file") && log "$(basename "$pw_file") contains $count lines"
+  if [[ -f "$final_file" ]]; then
+    lines=$(wc -l < "$final_file")
+    log "Reassembled $(basename "$final_file") with $lines lines"
   else
-    err "Failed to unzip combined password archive"
+    err "Final password file was not created"
+    return 1
   fi
+
+  log "Cleaning up split parts"
+  rm -f "$pw_dir"/passwords-hailmary-*.txt
 }
 
 # --- Worst passwords unpack ---
@@ -47,7 +65,7 @@ unpack_worst_passwords() {
     return
   fi
 
-  log "Unzipping worst-50000-passwords.txt"
+  log "Unzipping $(basename "$worst_zip")"
   contents=$(unzip -Z1 "$worst_zip" 2>/dev/null || true)
   if [[ "$contents" != "$(basename "$worst_txt")" ]]; then
     err "Unexpected contents in $(basename "$worst_zip"): $contents"
@@ -55,7 +73,7 @@ unpack_worst_passwords() {
   fi
 
   if unzip -q "$worst_zip" -d "$pw_dir"; then
-    rm "$worst_zip" || err "Failed to delete $worst_zip after extraction"
+    rm "$worst_zip"
     [[ -f "$worst_txt" ]] && count=$(wc -l < "$worst_txt") && log "$(basename "$worst_txt") contains $count lines"
   else
     err "Failed to unzip $worst_zip"
@@ -73,7 +91,6 @@ unpack_hashes() {
   shopt -s nullglob
   for zipf in "$hash_dir"/*.txt.zip; do
     txt="${zipf%.zip}"
-
     if [[ -f "$txt" ]]; then
       log "$(basename "$txt") already exists — skipping"
       continue
@@ -87,7 +104,7 @@ unpack_hashes() {
 
     log "Unzipping $(basename "$zipf")"
     if unzip -q "$zipf" -d "$hash_dir"; then
-      rm "$zipf" || err "Failed to delete $zipf after extraction"
+      rm "$zipf"
       [[ -f "$txt" ]] && count=$(wc -l < "$txt") && log "$(basename "$txt") contains $count lines"
     else
       err "Failed to unzip $zipf"

@@ -493,7 +493,6 @@ def run_jtr_prayer_mode(pJTR: JohnTheRipper, pMethod: int) -> None:
     lFolder, lDictionaries, lRules = lTechniques.get_technique(pMethod)
     lResourceRoot = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'res'))
 
-
     # Run the wordlist and rule
     for lDictionary in lDictionaries:
         for lRule in lRules:
