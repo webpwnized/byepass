@@ -186,6 +186,9 @@ u
 
 # Dynamically used rules
 
+[List.Rules:Capitalize]
+c
+
 [List.Rules:Append1Digits]
 $[0-9]
 [List.Rules:Append2Digits]
